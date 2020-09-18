@@ -1,0 +1,78 @@
+.coupon{
+  padding-left: 20rpx;
+}
+
+.couBox1{
+  width:630rpx;
+  height:202rpx;
+  box-shadow:0rpx 10rpx 30rpx 0rpx rgba(223,50,19,0.3);
+  border-radius:18rpx;
+  background:rgba(255,255,255,1);
+  display: flex;
+  margin-right: 20rpx;
+}
+.more{
+  display: flex;
+}
+.cou1{
+  position: relative;
+}
+.cou1 image{
+  width: 220rpx;
+  height: 203rpx;
+}
+.txtBox1{
+  position: absolute;
+  left: 25rpx;
+  top: 28rpx;
+  color: #fff;
+  font-size: 28rpx;
+  text-align: center;
+}
+.pri{
+  font-size: 40rpx;
+}
+.price1{
+  font-size: 58rpx;
+}
+.cou2{
+  padding: 20rpx 30rpx;
+}
+.btn{
+  width:162rpx;
+  height:58rpx;
+  border-radius:29rpx;
+  margin-top: 18rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 58rpx;
+}
+.btn1{
+  background:rgba(242,57,8,1);
+}
+.detail1{
+  font-size:28rpx;
+  color:rgba(20,20,20,1);
+  width: 336rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.yxq{
+  font-size:24rpx;
+  color:rgba(153,153,153,1);
+  margin-top: 16rpx;
+}
+.condition{
+  margin-top:10rpx;
+  width: 173rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.couBox{
+  margin: 0 auto;
+}
+.btn2{
+  background:rgba(196,196,196,1);
+}

@@ -1,0 +1,110 @@
+.requirement {
+  background: #fff;
+  margin-bottom: 10rpx;
+  width:95%;
+  margin:auto;
+  margin-top:20rpx;
+  border-radius: 6rpx
+}
+.requirement image{
+  width:20rpx;
+  height:23rpx;
+  margin-right:3%
+}
+.reTitle {
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 26rpx;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+/* .reTitle text{
+  border-left:3px solid #f4aa11;
+  padding-left:10rpx 
+} */
+.reContent {
+  padding: 20rpx;
+}
+.listTitle,.listStatus,.listAbnormal{
+  display: flex;
+  color: rgb(74, 74, 74);
+  font-size: 28rpx;
+  align-items: center;
+   /* margin-top: 5px;  */
+}
+.listNum{
+  width: 100rpx;
+}
+.itemMargin{
+  margin-top:5px;
+}
+
+
+money{
+  font-size:36rpx;
+  color:#fc6931;
+  width:15%;
+  text-align:center;
+
+}
+num{
+  color:#ff6636;
+  font-size: 28rpx
+}
+.deliveryAdd {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding:36rpx;
+  padding-left:30rpx;
+  padding-right:10rpx;
+}
+
+.deliveryAdd .userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 80%;
+}
+
+ .userName {
+  font-size: 34rpx;
+  color:#333;
+} 
+
+.userAddress {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.sizeColor{
+  font-size:13px;
+  color:rgb(74,74,74)
+}
+.addressLabel {
+  font-size: 26rpx;
+  color: #999;
+  padding: 4rpx;
+  height: 12.5px;
+  line-height: 12px;
+  text-align: center;
+}
+
+
+
+
+
+.noData{
+  width: 100%;
+  height: 800rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+.noData image{
+  width: 361rpx;
+  height: 363rpx;
+}

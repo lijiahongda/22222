@@ -1,0 +1,1209 @@
+@import "../../../../wxParse/wxParse/wxParse.wxss";
+
+page {
+  background-color: rgb(242, 242, 242);
+}
+
+/* 购买返利 */
+
+.Purchase_Rinay {
+  width: 460rpx;
+  height: 60rpx;
+  background: rgba(253, 75, 21, 1);
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 返利分享 */
+
+.Rebate_share {
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 98rpx;
+  flex-direction: column;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(28, 28, 28, 1);
+  padding-left: 45rpx;
+  padding-right: 45rpx;
+}
+
+.Rebate_share image {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+/* 已省 */
+
+.Already_Province {
+  color: #fe4b15;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  padding-left: 10rpx;
+}
+
+.Already_Province text {
+  color: #989898;
+  font-size: 24rpx;
+}
+
+.Tips {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 25rpx;
+}
+
+.Tips .Rebate {
+  height: 34rpx;
+  background: rgba(249, 19, 19, 1);
+  border-radius: 17rpx;
+  padding-left: 21rpx;
+  padding-right: 21rpx;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 32rpx;
+}
+
+/* 更新时间 */
+
+.Update_time {
+  height: 34rpx;
+  border: 1px solid rgba(254, 75, 21, 1);
+  border-radius: 17rpx;
+  padding-left: 21rpx;
+  padding-right: 21rpx;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(254, 75, 21, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* 授权按钮 */
+
+button:after {
+  border: none;
+}
+
+.authorizationStatus {
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx;
+}
+
+.detailContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.commodity_attr_boxshowModal {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2000;
+  padding-top: 20rpx;
+  height: 100%;
+}
+
+.commodity_attr_boxshowModal .image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100%;
+}
+
+.commodity_attr_boxshowModal .image image {
+  height: 656rpx;
+  width: 480rpx;
+  margin: 25% auto;
+}
+
+button[class="con_listbox"]::after {
+  border: 0;
+}
+
+.number {
+  background-color: #e4311f;
+  border-radius: 50%;
+  font-size: 22rpx;
+  width: 27rpx;
+  height: 27rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  /* position: absolute; */
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+}
+
+.swiper-index swiper {
+  height: 750rpx;
+}
+
+.swiper-index swiper image {
+  width: 100%;
+  height: 100%;
+}
+
+.RushBuy {
+  display: flex;
+  flex-direction: row;
+  height: 41rpx;
+  margin-top: 6rpx;
+}
+
+.RushBuy .RushBuyTitle {
+  font-size: 24rpx;
+  /* width: 116rpx; */
+  text-align: center;
+  line-height: 42rpx;
+  margin-left: 14rpx;
+  color: #fff;
+}
+
+.RushBuy .RushBuyTime {
+  color: #fff;
+  font-size: 22rpx;
+  /* width: 130rpx; */
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  line-height: 41rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  background-color: #ff6636;
+}
+
+.slide-text {
+  /* background-color: #e4393c; */
+  display: block;
+  color: rgb(74, 74, 74);
+  float: right;
+  background-color: #fff;
+  border-radius: 4rpx;
+  width: 50rpx;
+  height: 26rpx;
+  text-align: center;
+  line-height: 26rpx;
+  margin-bottom: 40rpx;
+  font-size: 20rpx;
+  margin-right: 5%;
+}
+
+/* 挖矿 */
+
+.mineral {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 80rpx;
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: rgb(255, 248, 235);
+  align-items: center;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.mineral .mineralIng {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mineral .head {
+  display: flex;
+  flex-direction: row;
+}
+
+.mineral .head image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 5rpx;
+  border-radius: 50%;
+}
+
+.mineral text {
+  color: rgb(255, 177, 28);
+}
+
+.tradeName {
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(33, 33, 29, 1);
+  margin-bottom: 25rpx;
+}
+
+
+.CouponsRule {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #999;
+  font-size: 26rpx;
+}
+
+.CouponsRule image {
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 17rpx;
+}
+
+
+.memberPrice {
+  color: #999;
+  font-size: 40rpx;
+  padding-left: 10rpx;
+}
+
+.memberPrice text {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: #999;
+}
+
+.discount {
+  color: rgb(51, 51, 51);
+  font-size: 28rpx;
+  border-radius: 6rpx;
+  width: 86.6%;
+  padding-left: 3.7%;
+  padding-right: 3.7%;
+  height: 90rpx;
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-left: 3%;
+}
+
+.Deductible {
+  color: #ff6636;
+  font-size: 18rpx;
+  width: 68rpx;
+  height: 26rpx;
+  border: 1px solid #ff6636;
+  border-radius: 3rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 11rpx;
+}
+
+.introduce {
+  width: 92%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 6rpx;
+  padding: 4%;
+}
+
+.supplier {
+  margin-top: 32rpx;
+  border-top: 1px solid #ececec;
+  padding-top: 23rpx;
+  padding-bottom: 23rpx;
+}
+
+.supplier view {
+  width: 95%;
+  margin: auto;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.listItem {
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  font-size: 26rpx;
+  color: #141414;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.listItem image {
+  width: 34rpx;
+  height: 10rpx;
+}
+
+.itemTxt {
+  font-size: 28rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.itemTxt text {
+  color: #333;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 31%;
+}
+
+.itemTxt image {
+  width: 140rpx;
+  height: 40rpx;
+}
+
+.itemBtnRight {
+  display: flex;
+  align-items: center;
+  width: 34rpx;
+  height: 10rpx;
+}
+
+.infoList {
+  margin-top: 10rpx;
+  background: #fff;
+}
+
+/* 线路时间选择 */
+.line_time{
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30rpx;
+  padding-left: 4%
+}
+.line_time .time_list{
+  display: inline-block;
+  min-width:140rpx;
+  padding: 0 10rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  border:1rpx solid rgba(67,67,67,1);
+  border-radius:10rpx;
+  font-size: 24rpx;
+  color: #2A2829;
+  text-align: center;
+  margin-right: 20rpx;
+}
+.scroll-view-x{
+  height: 102rpx;
+}
+.line_time .line_act{
+  background: rgba(249,60,64,1);
+  color: #fff;
+  border: 1rpx solid rgba(249,60,64,1);
+}
+
+.logistics {
+  background-color: #fff;
+}
+
+.logistics view {
+  width: 95%;
+  margin: auto;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.footr {
+  width: 750rpx;
+  height: 98rpx;
+  background: #fff;
+  line-height: 98rpx;
+  font-size: 30rpx;
+  color: #F93A3E;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footr .exchange{
+  width:440rpx;
+  background:linear-gradient(0deg,rgba(255,86,84,1) 0%,rgba(247,48,55,1) 100%);
+  color: #fff;
+}
+
+.gopay {
+  font-size: 30rpx;
+  background: #fd4b15;
+  width: 31%;
+  height: 87rpx;
+  color: rgb(240, 242, 246);
+  line-height: 87rpx;
+}
+
+.add {
+  font-size: 30rpx;
+  background-color: #fff;
+  width: 31%;
+  height: 87rpx;
+  color: #333;
+  border-top: 1px solid #ececec;
+  line-height: 87rpx;
+}
+
+.SelfPurchase {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+  background: #fd4b15;
+  margin-left: 30rpx;
+}
+
+.add:active {
+  background-color: #ececec;
+}
+
+
+.onShare {
+  width: 200rpx;
+  height: 56rpx;
+  border-radius: 0px 30px 30px 0px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #fd4b15;
+  margin-right: 20rpx;
+  border: 1px solid #fd4b15;
+}
+
+.home image {
+  width: 50rpx;
+  height: 42rpx;
+  margin-top: 18rpx;
+  margin-bottom: 3rpx;
+}
+
+.car {
+  background-color: #fff;
+  align-items: center;
+  display: flex;
+  height: 98rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(28, 28, 28, 1);
+  flex-direction: column;
+  padding-left: 45rpx;
+  padding-right: 45rpx;
+}
+
+.car image {
+  width: 51rpx;
+  height: 48rpx;
+  margin-top: 12.5rpx;
+}
+
+/* 
+.SelfPurchase {
+  width: 31%;
+  height: 90rpx;
+  background-color: #ff6636;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+} */
+
+.ShareProfit {
+  width: 31%;
+  height: 90rpx;
+  background-color: #ff6636;
+  opacity: 0.33;
+  color: #fff;
+  font-size: 34rpx;
+  line-height: 90rpx;
+}
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  position: fixed;
+  z-index: 1990;
+  background: #fff;
+  padding-top: 20rpx;
+  bottom: 0rpx;
+  left: 0rpx;
+  overflow: visible;
+  height: 1000rpx;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  width: 96%;
+  background-color: #fff;
+  height: 140rpx;
+}
+
+.close icon {
+  margin-right: 3%;
+}
+
+.commodity {
+  display: flex;
+  flex-direction: row;
+  width: 87%;
+  margin: auto;
+  position: absolute;
+  top: 70rpx;
+  z-index: 1999;
+  margin-left: 24rpx;
+}
+
+.commodity .images image {
+  width: 180rpx;
+  height: 180rpx;
+  background-color: #fff;
+}
+
+.commodity .describe {
+  display: flex;
+  flex-direction: column;
+  margin-top: 26rpx;
+  width: 70%;
+  padding-left: 30rpx;
+  background-color: #fff;
+}
+
+.commodity .describe .money {
+  color: #E4311F;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.commodity .describe .specification {
+  color: #333;
+  font-size: 24rpx;
+}
+
+.NoGoods {
+  color: #A7A2A2;
+  font-size: 20rpx;
+}
+
+.size {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 3.5%;
+  margin-top: 118rpx;
+}
+
+.sizeName {
+  font-size: 30rppx;
+  color: #16151C;
+  font-weight: 500
+}
+
+.channelContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.channelContent view {
+  padding-left: 35rpx;
+  padding-right: 35rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(238,238,238,0.3);
+  margin-right: 4.64%;
+  color: #515151;
+  font-size: 22rpx;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx
+}
+
+.channelContent view.active {
+  color: #FD494A;
+  padding-left: 33rpx;
+  padding-right: 33rpx;
+  background:rgba(255,96,50,0.3);
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.channelContent view .NotOptional {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 93%;
+  margin: auto;
+  margin-top: 20rpx;
+  margin-bottom: 138rpx;
+}
+
+.regulation {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  width:188rpx;
+  height:57rpx;
+  line-height: 57rpx;
+  background:rgba(255,255,255,1);
+  border:1rpx solid rgba(210,210,210,1);
+  border-radius:29rpx;
+  font-size: 30rpx;
+  color: #16151C
+}
+
+.addNumber {
+  width: 74rpx;
+  height: 58rpx;
+  border-left: none;
+  text-align: center;
+  line-height: 58rpx;
+  margin-top: -3rpx;
+}
+
+.amountNumber {
+  width: 70rpx;
+  background: rgba(238,238,238,1);
+  height: 58rpx;
+  text-align: center;
+  line-height: 58rpx;
+  margin-top: -3rpx;
+}
+
+.amountNumber input {
+  height: 58rpx;
+}
+
+.subtract {
+  border: 1px solid #ececec;
+  width: 74rpx;
+  height: 58rpx;
+  border-right: none;
+  text-align: center;
+  line-height: 58rpx;
+  /* border-radius: 4rpx */
+}
+
+/* 商品详情 */
+
+.CommodityDetails {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 100rpx;
+  margin-top: 10rpx;
+  background: #fff;
+}
+
+.CommodityDetails .CommodityDetailsTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 78rpx;
+  line-height: 78rpx;
+  color: #666;
+}
+
+/* display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 101rpx;
+  color: #333;
+  font-size: 34rpx;
+  background-color: #fff;
+  margin-top:24rpx;
+  padding-left:3.4%;
+  width:96.6% */
+
+.sure {
+  height: 90rpx;
+  width: 702rpx;
+  border-radius: 45rpx;
+  background-color: #ff6636;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  margin-left: 3%;
+  margin-bottom: 15rpx;
+}
+
+/* 分享层 */
+
+.share-layer {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+}
+
+.share-layer-mask {
+  width: 100%;
+  height: 100%;
+}
+
+.share-layer-block {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150rpx;
+  background: #fff;
+  text-align: center;
+  z-index: 2;
+}
+
+.share-layer-block-img {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.share-layer-block image {
+  margin-top: 21rpx;
+  width: 100rpx;
+  height: 108rpx;
+}
+
+.share-layer-block-img button {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-color: #fff;
+  box-shadow: 0;
+}
+
+.share-layer-block-img button::after {
+  border: none;
+}
+
+.wxParse-img {
+  width: 100%;
+  display: block;
+}
+
+
+.LyingEarn {
+  color: #F50027;
+  font-size: 32rpx;
+}
+
+.operationButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* 限制 */
+
+.limit {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  background-color: #fff;
+  color: #333;
+  font-size: 28rpx;
+  margin-top: 14rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.limit .limitInfo {
+  display: flex;
+  flex-direction: row;
+  width: 94%;
+}
+
+.limit .limitInfo .limitlist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+}
+
+.limit .limitInfo .limitlist view {
+  position: relative;
+}
+
+.limit .limitInfo .limitlist view image {
+  width: 131rpx;
+  height: 43rpx;
+  margin-right: 20rpx;
+}
+
+.limit .limitInfo .limitlist view text {
+  /* position: absolute;
+  left: 8rpx;
+  top: 4rpx; */
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  background: #fd4b15;
+  color: rgba(255, 255, 255, 1);
+  position: relative; 
+padding: 0 .8rem;
+height: 24rpx;
+}
+.limit .limitInfo .limitlist view text::before{
+  content: '';
+  display: inline-block;
+  width:0; 
+    height:0; 
+border-top: 17rpx solid transparent;
+border-bottom: 17rpx solid transparent;
+border-left: 17rpx solid #fff;
+position: absolute;
+left: 0;
+top: 2.5rpx;
+}
+.limit .limitInfo .limitlist view text::after{
+  content: '';
+  display: inline-block;
+  width:0; 
+    height:0; 
+border-top: 17rpx solid transparent;
+border-bottom: 17rpx solid transparent;
+border-right: 17rpx solid #fff;
+position: absolute;
+right: 0;
+top: 2.5rpx;
+}
+
+.limit .limitImage {
+  width: 34rpx;
+  height: 10rpx;
+}
+
+.limit .title {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(35, 35, 35, 1);
+  margin-right: 4%;
+  width: 14%;
+}
+
+/* .DistributionPlace {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  border-radius: 6rpx;
+  background-color: #fff;
+  color: #333;
+  font-size: 28rpx;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #eee;
+  line-height: 74rpx;
+}
+
+.DistributionPlace .DistributionAddress {
+  display: flex;
+  flex-direction: row;
+  width: 93%;
+}
+
+.DistributionPlace .DistributionAddress .title {
+  color: #999;
+  margin-right: 4%;
+}
+
+.DistributionPlace .DistributionAddress .DistributionInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.DistributionPlace image {
+  width: 34rpx;
+  height: 10rpx;
+  margin-top: 20rpx;
+}
+
+.DistributionPlace .image {
+  height: 80rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.DistributionPlace .DistributionAddress .DistributionInfo .address {
+  margin-bottom: 20rpx;
+}
+
+.DistributionPlace .DistributionAddress .DistributionInfo .FullReduction {
+  display: flex;
+  flex-direction: row;
+  color: #f4b445;
+  font-size: 24rpx;
+}
+
+.DistributionPlace .DistributionAddress .DistributionInfo .FullReduction .isDelivery {
+  color: #999;
+}
+
+.DistributionPlace .DistributionAddress .DistributionInfo .FullReduction .freight {
+  margin-right: 20rpx;
+} */
+
+.tabTitleSelected {
+  font-size: 28rpx;
+  color: #ffff40;
+}
+
+.tabDiv {
+  display: flex;
+  width: 64rpx;
+  height: 4rpx;
+  background-color: #ffff40;
+}
+
+.lookComment {
+  background-color: #fff;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 34rpx;
+}
+
+.lookComment view {
+  width: 208rpx;
+  height: 60rpx;
+  background: rgba(244, 244, 244, 0);
+  border: 1px solid rgba(170, 170, 170, 1);
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+/* 暂无评价 */
+
+.NoEvaluationYet {
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 17rpx;
+  padding-bottom: 19rpx;
+  margin-top: 10rpx;
+}
+
+.NoEvaluationYet .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(37, 36, 36, 1);
+  width: 96%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid rgba(238, 238, 238, 1);
+  margin-bottom: 20rpx;
+}
+
+.NoEvaluationYet .title .stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 14rpx;
+}
+
+.NoEvaluationYet .title .stars image {
+  width: 16rpx;
+  height: 16rpx;
+}
+
+.NoEvaluationYet .title .right {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(104, 104, 104, 1);
+}
+
+.NoEvaluationYet .title .left {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.NoEvaluationYet .tips {
+  width: 100%;
+  height: 64rpx;
+  background: rgba(238, 238, 238, 1);
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(163, 163, 163, 1);
+}
+
+
+/* 未实名 */
+
+.real_name .bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+.real_name .cont {
+  width: 530rpx;
+  height: 366rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  background: #fff;
+  position: fixed;
+  margin-left: 110rpx;
+  top: 30%;
+  font-size: 30rpx;
+  line-height: 48rpx;
+  color: #141414;
+  text-align: center;
+  z-index: 2001;
+}
+
+.real_name .cont .title {
+  font-size: 36rpx;
+  margin-top: 40rpx;
+  margin-bottom: 50rpx;
+}
+
+.real_name .cont .btn {
+  width: 250rpx;
+  height: 80rpx;
+  background: rgba(255, 51, 0, 1);
+  border-radius: 40px;
+  font-size: 32rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  margin-top: 36rpx;
+  color: #fff;
+}

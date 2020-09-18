@@ -1,0 +1,512 @@
+@import "../colorLine/colorLine.wxss";
+
+page {
+  padding-bottom: 100rpx;
+}
+/* 平台客服 */
+.Customer_Service {
+  width: 105rpx;
+  height: 110rpx;
+  position: fixed;
+  top: 700rpx;
+  right: 10rpx
+}
+
+/* 确认收货 */
+
+.Confirm_receipt {
+  width: 150rpx;
+  height: 58rpx;
+  border: 1px solid rgba(230, 0, 18, 1);
+  border-radius: 29rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(249, 57, 62, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10rpx;
+}
+
+.ConfirmReceipt {
+  width: 150rpx;
+  height: 58rpx;
+  border: 1px solid rgba(228, 49, 31, 1);
+  border-radius: 29rpx;
+  line-height: 58rpx;
+  text-align: center;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(228, 49, 31, 1);
+  margin-left: 2%;
+}
+
+.TopContent {
+  width: 100%;
+  height: 250rpx;
+  background: linear-gradient(0deg, rgba(255, 86, 84, 1) 0%, rgba(247, 48, 55, 1) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 37rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.TopContent .status {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.TopContent .status image {
+  width: 43rpx;
+  height: 43rpx;
+  margin-right: 25rpx;
+}
+
+.TopContent .payButton {
+  width: 200rpx;
+  height: 58rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 29rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(248, 53, 59, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 44rpx;
+}
+
+.userInfo {
+  background-color: #fff;
+  border-radius: 30rpx;
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 200rpx;
+  position: relative;
+  top: -26rpx;
+}
+
+.userInfoContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.userInfoContent .info image {
+  width: 27rpx;
+  height: 35rpx;
+  margin-right: 28rpx;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 39rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info .contentInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+}
+
+.info .modify {
+  font-size: 26rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: rgba(27, 28, 35, 1);
+}
+
+.name {
+  font-size: 26rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(28, 28, 28, 1);
+  margin-right: 15rpx;
+}
+
+.phone {
+  font-size: 26rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(28, 28, 28, 1);
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+}
+
+.location .image {
+  width: 10%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.location .image image {
+  width: 14rpx;
+  height: 28rpx;
+}
+
+.location .site .address {
+  /* width:90%;  */
+  color: #999;
+  font-size: 28rpx;
+}
+
+.defaultContent {
+  width: 8%;
+}
+
+.site {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(168, 168, 168, 1);
+  line-height: 39rpx;
+}
+
+.goods {
+  /* margin-top:20rpx; */
+  display: flex;
+  flex-direction: column;
+}
+
+.goods .goodsTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 93%;
+  padding-left: 3.5%;
+  padding-right: 3.5%;
+  border-bottom: 1px solid #ebecee;
+}
+
+.goods .goodsTop .goodsTopImage {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  border-left: 3px solid #d3a791;
+  height: 28rpx;
+  padding-left: 3%;
+  line-height: 28rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.goods .state {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 93%;
+  margin: auto;
+  height: 100rpx;
+  align-items: center;
+}
+
+.borderBottom {
+}
+
+.ItemRight {
+  display: flex;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 56rpx;
+  flex-direction: row;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10rpx;
+}
+
+.Specifications {
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(128, 128, 128, 1);
+  margin-bottom: 22rpx;
+}
+
+.ItemRight .image {
+  margin-right: 3.4%;
+  width: 24.9%;
+}
+
+.checkbox {
+  margin-left: 40rpx;
+  margin-right: 30rpx;
+}
+
+.ItemRight .image image {
+  width: 100%;
+  height: 187rpx;
+}
+
+.describe {
+  display: flex;
+  flex-direction: column;
+  width: 71%;
+}
+
+.describe .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 17rpx;
+}
+
+.describe .title text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.describe .price {
+  font-size: 30rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 26rpx;
+}
+
+.describe .price text {
+  font-size: 20rpx;
+}
+
+.ViewLogistics {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 29rpx;
+}
+
+.ViewLogistics .look {
+  width: 150rpx;
+  height: 58rpx;
+  border: 1px solid rgba(3, 0, 0, 1);
+  border-radius: 29rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+}
+
+.orderInfo {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 20rpx;
+  border-radius: 30rpx;
+}
+
+.order {
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  height: 171rpx;
+  background-color: #fff;
+  border-radius: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.orderNum {
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: 400;
+  color: rgba(30, 30, 30, 1);
+}
+
+.orderNum text {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(30, 30, 30, 1);
+  margin-right: 20rpx;
+}
+
+.pay {
+  display: flex;
+  flex-direction: column;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-top: 20rpx;
+}
+
+.pay view {
+  margin-bottom: 10rpx;
+}
+
+.pay .payList {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(30, 30, 30, 1);
+}
+
+.pay .payList .payname {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(30, 30, 30, 1);
+}
+
+.pay .payList .payname text {
+  /* width:25% *//* text-align: justify; */
+}
+
+.pay .payList .payValue {
+  /* width:75% */
+}
+
+.out-of-pocket {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 93%;
+  margin: auto;
+}
+
+.out-of-pocket view {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  color: #333;
+  font-size: 28rpx;
+}
+
+/* 物流信息 */
+
+/* 普通物流 */
+
+.GeneralLogistics {
+  height: 163rpx;
+  background-color: #fff;
+  padding-left: 4%;
+  width: 92%;
+  padding-right: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20rpx;
+  line-height: 61rpx;
+  margin-bottom: 20rpx;
+}
+
+.GeneralLogistics .item {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.LogisticInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 96%;
+  padding-left: 4%;
+}
+
+.LogisticInfo .spot {
+  width: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.LogisticInfo .listAll {
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  padding-right: 4%;
+  /* margin-left: 5%; */
+}
+
+.LogisticInfo .list {
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+  width: 100%;
+  border-bottom: 1px solid #ededed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.LogisticInfo .list .title {
+  color: #999;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.LogisticInfo .list .time {
+  color: #999;
+  font-size: 24rpx;
+}
+
+/* 申请退款 */
+
+.apply {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 26rpx;
+}
+
+.apply .again_pay, .apply .applys {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(204, 51, 0, 1);
+  width: 139rpx;
+  height: 56rpx;
+  border: 1px solid rgba(202, 37, 25, 1);
+  border-radius: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10rpx
+}

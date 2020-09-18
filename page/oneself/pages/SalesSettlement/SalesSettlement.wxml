@@ -1,0 +1,17 @@
+<!--page/oneself/pages/SalesSettlement/SalesSettlement.wxml-->
+<view class="Commission">
+  <view class="HistoricalCommission">
+    <view class="AccumulatedAmount">
+      <text>￥</text>{{total}}</view>
+    <view class="title">总计</view>
+  </view>
+</view>
+<view class="FunctionalCommission">
+  <view class="Division" bindtap='ProcurementSettlement' wx:for="{{list}}" wx:key="list" style="border-top-left-radius: 10rpx;border-top-right-radius: 10rpx">
+    <view class="title">{{item.title}}</view>
+    <view class="price">
+      <view>￥{{item.amount}}</view>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-20/22/yuelvhuix4yet28hHu1582208093.png"></image>
+    </view>
+  </view>
+</view>

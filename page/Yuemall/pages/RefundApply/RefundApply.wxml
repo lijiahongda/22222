@@ -1,0 +1,46 @@
+<view class="refundApply">
+    <view class="borderBottom">
+      <!-- <view class="ItemRight" wx:for="{{goodsInfo}}" wx:key="goodsInfo" wx:for-index="index" style="border-top-left-radius:{{index == 0?'30rpx':''}};border-top-right-radius:{{index == 0?'30rpx':''}};border-bottom-left-radius: {{index == ((goodsInfo.length)-1)?'30rpx':''}};border-bottom-right-radius:{{index == ((goodsInfo.length)-1)?'30rpx':''}}"> -->
+      <view class="ItemRight">
+        <view class="image">
+          <image src="{{goodmsg.goodsImg}}"></image>
+        </view>
+        <view class="describe">
+          <view class="title">
+            <text>商品名字{{goodmsg.goodsName}}</text>
+          </view>
+          <!-- 如果是书籍加字段 -->
+          <view wx:if="{{item.channelId == 8}}">作者名:{{item.authorName}}</view>
+          <view wx:if="{{item.channelId == 8 && item.publishName !=''}}">出版社:{{item.publishName}}</view>
+          <view class="Specifications">数量：{{goodmsg.goodsNum}}   {{goodmsg.goodsSpec}}</view>
+          <view class="price">
+            <text>￥</text>{{goodmsg.payPrice}}
+          </view>
+          
+        </view>
+      </view>
+    </view>
+    <view class="borderBottom">
+      <view class="border_applys" bindtap="refundMoney">
+        <view class="borderBottom_text">
+          <view class="borderBottom_text_title">我要退款（无需退货）</view>
+          <view class="borderBottom_text_detail">没收到货，或与客服协调同意不用退款</view>
+        </view>
+        <view class="borderBottom_image" >
+          <image src="https://image.yuelvhui.com/open/2019/11/07/5dc40b11bbcce1573128977.png"></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="borderBottom" >
+      <view class="border_applys" bindtap="refundApply">
+        <view class="borderBottom_text">
+          <view class="borderBottom_text_title">我要退货退款</view>
+          <view class="borderBottom_text_detail">已收到货，需要退回已收到的货物</view>
+        </view>
+        <view class="borderBottom_image" >
+          <image src="https://image.yuelvhui.com/open/2019/11/07/5dc40b11bbcce1573128977.png"></image>
+        </view>
+      </view>
+    </view>
+</view>

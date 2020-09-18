@@ -1,0 +1,58 @@
+<block wx:if='{{status==0||status==2}}'>
+  <view class="content">
+    <view class="header">升级进展：待上传截图</view>
+    <view class="desc">为您分配微信群编号：{{data.groupNo}}</view>
+    <view class="desc">您需要做如下操作完成升级</view>
+    <view class="list">
+      <view>
+        <text>{{upgradeContent[0]}}“{{data.groupName}}”</text>
+        <text class="red" bindtap="copy" data-text="{{data.groupName}}">复制群名称</text>
+      </view>
+      <view>
+        <text>{{upgradeContent[1]}}{{data.tutorWx}}</text>
+        <text class="red" bindtap="copy" data-text="{{data.tutorWx}}">复制微信号</text>
+      </view>
+    </view>
+    <view class="list">
+      <view>
+        <text>{{upgradeContent[2]}}</text>
+        <text class="red" bindtap="goImg">查看示例</text>
+      </view>
+    </view>
+    <view class="list">
+      <view>
+        <text>{{upgradeContent[3]}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="upImg">
+    <view>图片上传</view>
+    <view style="display:flex;">
+      <view class="choseIMG" wx:for="{{fileList}}" wx:key="index">
+        <image src="{{item.url}}"></image>
+      </view>
+      <view class="choseIMG" bindtap="choseImg">+</view>
+    </view>
+    <!-- <van-uploader file-list="{{ fileList }}" max-count="2" multiple="{{true}}" bind:afterread="afterRead"/> -->
+  </view> 
+  <view class="submit" bindtap="submit">提交审核</view>
+</block>
+
+<view class="ongoing" wx:elif='{{status==1}}'>
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-09/15/yuelvhuirgoXjdmWpL1586418919.png"></image>
+  <view>升级进展：审核中，请耐心等待</view>
+</view>
+
+<view class="loser" wx:elif='{{status==3}}'>
+  <view class="result">
+    <view class="header">审核结果</view>
+    <view>您好，十分抱歉，您的店长审核没有通过 可能原因如下：</view>
+    <view class="list">群人数未超过<text>{{data.conutNum}}</text>人</view>
+    <view class="list">群主不是您<text>本人微信</text></view>
+    <view class="list">未按要求修改群聊名称</view>
+  </view>
+  <view class="submit" bindtap="goTwo">重新申请</view>
+</view>
+
+<view class="goGroup" bindtap="goGroup">前往群助手</view>
+

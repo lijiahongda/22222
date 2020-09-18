@@ -1,0 +1,213 @@
+
+<view class="orderstatus" wx:if="{{cancelType == 0}}">
+  <view class="state" wx:for="{{orderProcess}}" wx:key="{{orderProcess}}" wx:for-index="id" style="align-items:{{id == 0 ? 'flex-start':id == orderProcessLength ? 'flex-end':''}}">
+    <!-- style="margin-bottom:{{item.showType !== 1?'44rpx':''}}" -->
+    <view class="stateImage">
+      <view class="TransitionLine" wx:if="{{id != 0}}"></view>
+      <image src="https://image.yuelvhui.com/pubfile/2019/06/12/line_1560319483.png" wx:if="{{item.showType == 1}}" style='width:36rpx;height:36rpx;'></image>
+      <image src="/images/hotel/error.png" wx:elif="{{item.showType == 2}}"></image>
+      <image src="/images/hotel/status.png" wx:else></image>
+
+      <view class="TransitionLine" wx:if="{{id != orderProcessLength}}"></view>
+    </view>
+    <view>{{item.stateName}}</view>
+  </view>
+</view>
+<view class="RefundExamine" wx:if="{{changes==2||refundType==3}}">
+  <view class="RefundExmaine_msg" wx:if="{{cancelType == 1}}">
+    <view class="refundStatus">{{lists.title}}</view>
+    <!-- <view class="refundTime">还剩23小时59分</view> -->
+    <view wx:if="{{lists.handleStatus==0||lists.handleStatus==1||lists.handleStatus==8||lists.handleStatus==5||lists.handleStatus==6}}">还剩
+      <text class="times">{{countDownDay}}天{{countDownHour}}小时{{countDownMinute}}分{{countDownSecond}}秒</text>
+    </view>
+    <view class="refundTime" wx:if="{{lists.handleStatus==4||lists.handleStatus==3||lists.handleStatus==2||lists.handleStatus==9}}">{{lists.handleTime}}</view>
+  </view>
+  <view class="RefundExmaine_resault" wx:if="{{lists.handleStatus==0}}">
+    <view class="refundtishi">您已成功发起退款申请，请耐心等待商家退款</view>
+    <view class="refundreser" wx:for="{{refundreason}}" wx:key="refundreason">
+      <text class="crile"></text> {{item}}</view>
+  </view>
+  <view class="RefundExmaine_resault" wx:if="{{lists.handleStatus==2}}">
+    <view class="refundtishi">拒绝原因：{{lists.noPassReason}}</view>
+    <!-- <view class="refundreser" wx:for="{{refundreason}}" wx:key="refundreason"> -->
+       
+  </view>
+  <view class="RefundExmaine_resault" wx:if="{{lists.handleStatus==5||lists.handleStatus==6||lists.handleStatus==4||lists.handleStatus==3||lists.handleStatus==7||lists.handleStatus==8||lists.handleStatus==9}}">
+    <view class="refundAdress">退货寄回地址</view>
+    <view class="ExmaineAddress">
+      <view class="ExmaineAddress_image">
+        <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-20/15/yuelvhui2g9nmXojcT1576826074.png"></image>
+      </view>
+      <view class="ExmaineAddress_text">
+        <view class="ExmaineAddress_title">{{splAddr.name}}
+          <text class="mobile">{{splAddr.mobile}}</text>
+        </view>
+        <view class="ExmaineAddress_cont">{{splAddr.address}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="RefundExmaine_resault" wx:if="{{lists.handleStatus==6||lists.handleStatus==3||lists.handleStatus==7||lists.handleStatus==8||lists.handleStatus==9}}">
+    <view class="refundAdress">快递信息</view>
+    <view class="ExmaineAddress">
+      <view class="ExmaineAddress_image">
+        <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-20/15/yuelvhuiFuAQ1v5HOx1576827292.png"></image>
+      </view>
+      <view class="ExmaineAddress_text">
+        <view class="ExmaineAddress_title">快递公司：
+          <text class="mobile">{{expressInfo.expressName?expressInfo.expressName:reasonText}}</text>
+        </view>
+        <view class="ExmaineAddress_title">快递单号：
+          <text class="mobile">{{expressInfo.expressNo?expressInfo.expressNo:expressnum}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="RefundExmaine_messenge">
+    <view class="refundTitle">退款信息</view>
+    <view class="refundImage">
+      <view class="refundImage_image">
+        <image src="{{lists.goodsCoverImage}}"></image>
+      </view>
+      <view class="refundImage_text">
+        <view class="refundile">{{lists.goodsName}}</view>
+        <view class="refundcon">{{lists.goodsSpec}}</view>
+      </view>
+    </view>
+    <view class="refundText">
+      <view class="refundenger">
+        <text>退款原因：</text>
+        <text class="nobugs">{{lists.reason}}</text>
+      </view>
+      <view class="refundenger">
+        <text>退款金额：</text>
+        <text class="nobugs">¥{{lists.adminRefundPrice}}</text>
+      </view>
+      <view class="refundenger">
+        <text>申请数量：</text>
+        <text class="nobugs">{{lists.goodsNum}}件</text>
+      </view>
+      <view class="refundenger">
+        <text>申请时间：</text>
+        <text class="nobugs">{{lists.applyTime}}</text>
+      </view>
+      <view class="refundenger">
+        <text>退款编号：</text>
+        <text class="nobugs">{{lists.subOrderNo}}</text>
+      </view>
+      <view class="refundenger">
+        <text>退款说明：</text>
+        <text class="nobugs">{{lists.memberRefundContent? lists.memberRefundContent:'无理由退换货（填写了则有）'}}</text>
+      </view>
+    </view>
+    <view class="refundImage_image" wx:for="{{lists.images}}" wx:key="lists">
+      <image src="{{item}}"></image>
+    </view>
+  </view>
+
+  <view class="messenger" bindtap="expressmsg" wx:if="{{lists.handleStatus==5}}">上传快递信息</view>
+</view>
+
+<!-- 仅退款 -->
+
+<view class="RefundExamine" wx:if="{{changes==1||refundType==2}}">
+  <view class="RefundExmaine_msg" wx:if="{{cancelType == 1}}">
+    <view class="refundStatus">{{lists.title}}</view>
+    <!-- <view class="refundTime">还剩23小时59分</view> -->
+    <view wx:if="{{lists.handleStatus==0||lists.handleStatus==1}}">还剩
+      <text class="times">{{countDownHour}}小时{{countDownMinute}}分{{countDownSecond}}秒</text>
+    </view>
+    <view class="refundTime" wx:if="{{lists.handleStatus==4||lists.handleStatus==3||lists.handleStatus==2}}">{{lists.handleTime}}</view>
+  </view>
+  <view class="RefundExmaine_resault" wx:if="{{lists.handleStatus==0}}">
+    <view class="refundtishi">已提交退款申请，请等待审核</view>
+    <view class="refundreser" wx:for="{{refundreason}}" wx:key="refundreason">
+      <text class="crile"></text> {{item}}</view>
+
+  </view>
+  <view class="RefundExmaine_resault" wx:if="{{lists.handleStatus==2}}">
+    <view class="refundtishi">拒绝原因：</view>
+    <view class="refundreser" wx:for="{{refundreason}}" wx:key="refundreason">
+      <text class="crile"></text> {{item}}</view>
+  </view>
+  <view class="RefundExmaine_messenge">
+    <view class="refundTitle">退款信息</view>
+    <view class="refundImage">
+      <view class="refundImage_image">
+        <image src="{{lists.goodsCoverImage}}"></image>
+      </view>
+      <view class="refundImage_text">
+        <view class="refundile">{{lists.goodsName}}</view>
+        <view class="refundcon">{{lists.goodsSpec}}</view>
+      </view>
+    </view>
+    <view class="refundText">
+      <view class="refundenger">
+        <text>退款原因：</text>
+        <text class="nobugs">{{lists.reason}}</text>
+      </view>
+      <view class="refundenger">
+        <text>退款金额：</text>
+        <text class="nobugs">¥{{lists.adminRefundPrice}}</text>
+      </view>
+      <view class="refundenger">
+        <text>申请数量：</text>
+        <text class="nobugs">{{lists.goodsNum}}件</text>
+      </view>
+      <view class="refundenger">
+        <text>申请时间：</text>
+        <text class="nobugs">{{lists.applyTime}}</text>
+      </view>
+      <view class="refundenger">
+        <text>退款编号：</text>
+        <text class="nobugs">{{lists.subOrderNo}}</text>
+      </view>
+      <view class="refundenger">
+        <text>退款说明：</text>
+        <text class="nobugs">{{lists.memberRefundContent? lists.memberRefundContent:'无理由退换货（填写了则有）'}}</text>
+      </view>
+    </view>
+    <view class="refundImage_image" wx:for="{{lists.images}}" wx:key="lists">
+      <image src="{{item}}"></image>
+    </view>
+  </view>
+</view>
+
+
+<view class="bg_black" wx:if="{{services}}"></view>
+<view class="services" wx:if="{{services}}">
+  <view class="title">填写快递信息</view>
+  <image class="close" bindtap="closeService" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-23/10/yuelvhuiPsnKlCauf91577066609.png"></image>
+  <view class="reason_radio">
+    <view class="express_name">
+      <view class="exName">快递名称</view>
+      <view class="exName_left" bindtap="chooseexpres">
+        <view class="exName_text">{{reasonText?reasonText:'请选择'}}</view>
+        <view class="exName_image">
+          <image src="https://image.yuelvhui.com/open/2019/11/07/5dc40b11bbcce1573128977.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="express_num">
+      <view class="expreNum">快递单号</view>
+      <view class="expreber">
+        <input placeholder="填写快递单号" bindinput="bindinput"></input>
+      </view>
+    </view>
+  </view>
+
+  <view class="save" bindtap="submit">确定</view>
+</view>
+
+<view class="bg_black" wx:if="{{service}}"></view>
+<view class="services" wx:if="{{service}}">
+  <view class="title">快递类型</view>
+  <image class="close" bindtap="cloService" src="https://image.yuelvhui.com/pubfile/2019/10/21/line_1571653726_74744.png"></image>
+  <view class="reason_radio">
+    <radio-group class="radio-group" bindchange="radioChange">
+      <radio color="#f2391a" class="radio" wx:for="{{expresslist}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+        <text>{{item.name}}</text>
+      </radio>
+    </radio-group>
+  </view>
+</view>

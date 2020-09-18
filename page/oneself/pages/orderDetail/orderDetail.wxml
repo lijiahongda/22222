@@ -1,0 +1,144 @@
+<!--page/My/pages/orderDetail/orderDetail.wxml-->
+<view class="orderstatus" wx:if="{{orderProcess != ''}}">
+  <view class="state" wx:for="{{orderProcess}}" wx:key="{{orderProcess}}" wx:for-index="id" style="align-items:{{id == 0 ? 'flex-start':id == orderProcessLength ? 'flex-end':''}}">
+    <view>{{item.stateName}}</view>
+    <view class="stateImage">
+      <view class="TransitionLine" wx:if="{{id != 0}}" style="background:{{item.showType == 0?'#303030':''}}"></view>
+      <image src="/images/personalCenter/Completed.png" wx:if="{{item.showType == 1}}"></image>
+      <image src="/images/personalCenter/notCompleted.png" wx:else></image>
+      <view class="TransitionLine" style="background:{{item.showType == 0?'#303030':''}}" wx:if="{{id != orderProcessLength}}"></view>
+    </view>
+  </view>
+</view>
+<view class="tips">
+  <view class="image">
+    <image src="/images/personalCenter/tipsIcon.png"></image>
+  </view>
+  <view class="info">
+    <view wx:if="{{list.orderStatus==0}}" class="tipsTitle">待支付</view>
+    <view wx:if="{{list.orderStatus==1}}" class="tipsTitle">待发货</view>
+    <view wx:if="{{list.orderStatus==2}}" class="tipsTitle">已发货</view>
+    <view wx:if="{{list.orderStatus==3}}" class="tipsTitle">已取消</view>
+    <view wx:if="{{list.orderStatus==4}}" class="tipsTitle">已完成</view>
+    <view wx:if="{{list.orderStatus==2}}">您的订单正在配送中，请耐心等候</view>
+  </view>
+</view>
+<view class="logistics">
+  <view class="logInfo" style="border-bottom:1px solid #ECECEC" wx:if="{{(shippingStatus == 1 && orderThreePartner == 3 && logisticeInfo !='暂无')}}">
+    <view class="image">
+      <image src="/images/personalCenter/Newest.png"></image>
+    </view>
+    <view class="info">
+      <view class="tipsTitle">{{logisticeInfo[0].content}}</view>
+      <view>{{logisticeInfo[0].msgTime}}</view>
+    </view>
+  </view>
+  <view class="logInfo">
+    <view class="image">
+      <image src="/images/personalCenter/DistributionPlace.png" style="width:35rpx;height:42"></image>
+    </view>
+    <view class="info">
+      <view class="tipsTitle">{{list.linkName}} {{list.linkTel}}</view>
+      <view>{{list.address}}</view>
+    </view>
+  </view>
+</view>
+<view class="GroupInfor" wx:if="{{isShow == 1 }}">
+  <view class="title">
+    <view class="image">
+      <image src="/images/personalCenter/groupInfoIcon.png"></image>
+    </view>
+    <view>拼单成功</view>
+  </view>
+  <view class="HeadPortrait">
+    <view class="image" wx:for="{{memberInfo}}" wx:key="memberInfo">
+      <image class="head" src="{{item.head_pic}}" bindtap='ImmediateDelegation'></image>
+      <image class="RegimentalCommander" wx:if="{{item.isTeam == 1}}" src="/images/personalCenter/RegimentalCommander.png"></image>
+    </view>
+  </view>
+</view>
+<view class="goodinfo">
+  <view class="image">
+    <image src='{{list.goodsInfo[0].goodsImg}}'></image>
+  </view>
+  <view class="info">
+    <view class="name">
+      <view class="isgroup" wx:if="{{list.isShow==1}}">
+        拼购
+      </view>
+      <view class="title">
+        <text>{{list.goodsInfo[0].goodsName}}</text>
+      </view>
+    </view>
+    <view class="goodprice">
+      <view class="price">
+        <text>￥</text>{{list.goodsInfo[0].goodsPrice}}
+      </view>
+      <view class="num">x{{list.goodsInfo[0].goodsNum}}</view>
+    </view>
+  </view>
+</view>
+<view class="orderInfo">
+  <view class="pay">
+    <view class="payList">
+      <view class="payname">
+        <text decode="true">订单编号：</text>
+      </view>
+      <view class="payValue">{{list.orderNo}}</view>
+    </view>
+    <view class="payList" wx:if="{{(shippingStatus == 1 && orderThreePartner !=3)}}">
+      <view class="payname">
+        <text decode="true">物流单号：</text>
+      </view>
+      <view class="payValue">{{list.logisticeNumber}}</view>
+      <view class="copy" bindtap='copyText' data-text="{{list.logisticeNumber}}">复制</view>
+    </view>
+    <view class="payList">
+      <view class="payname">
+        <text decode="true">下单时间：</text>
+      </view>
+      <view class="payValue">{{list.createTime}}</view>
+    </view>
+    <view class="payList">
+      <view class="payname">
+        <text decode="true">支付方式：</text>
+      </view>
+      <view class="payValue">微信</view>
+    </view>
+    <view class="payList">
+      <view class="payname">
+        <text decode="true">商品总额：</text>
+      </view>
+      <view class="payValue">¥{{list.totalMoney}}</view>
+    </view>
+    <!-- <view class="payList">
+      <view class="payname">
+        <text decode="true">使用抵扣：</text>
+      </view>
+      <view class="payValue">{{totelDeducPrice}}悦豆</view>
+    </view> -->
+    <view class="payList" wx:if="{{orderType == 0}}">
+      <view class="payname">
+        <text decode="true">优&nbsp;&nbsp;惠&nbsp;&nbsp;券：</text>
+      </view>
+      <view class="payValue">{{list.couponPrice}}元</view>
+    </view>
+    <view class="payList">
+      <view class="payname">
+        <text decode="true">运&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;费：</text>
+      </view>
+      <view class="payValue">{{list.totalFeight}}</view>
+    </view>
+    <view class="payList">
+      <view class="payname">
+        <text decode="true">应付金额：</text>
+      </view>
+      <view class="payValue">¥{{list.actualPrice}}</view>
+    </view>
+  </view>
+  <!-- <view style="border-top:1px solid #ececec"></view>
+    <view class="out-of-pocket">
+      <view>实付金额：</view>
+      <view style="color:#F36F5A"> ¥{{totalPrice}}</view>
+    </view> -->
+</view>

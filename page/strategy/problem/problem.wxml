@@ -1,0 +1,31 @@
+<view class="list">
+  <view class="left">
+    <image src="https://xiongloveying.xyz/my.jpeg"></image>
+    <view>商品类</view>
+  </view>
+  <view class="right">
+    <view>优惠券智能一个号领一次吗？</view>
+    <view>选品的价格和页面的价格不一样是怎么回选品的价格和页面的价格不一样是怎么回...</view>
+    <view>选品的价格和页面的价格不一</view>
+  </view>
+  <view class="button">
+    <view>展开更多</view>
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-02/18/yuelvhuibFEvZJwufJ1585823773.png"></image>
+  </view>
+</view>
+
+<view class="list unfold">
+  <view class="left">
+    <image src="https://xiongloveying.xyz/my.jpeg"></image>
+    <view>商品类</view>
+  </view>
+  <view class="right">
+    <view>优惠券智能一个号领一次吗？</view>
+    <view>选品的价格和页面的价格不一样是怎么回选品的价格和页面的价格不一样是怎么回...</view>
+    <view>选品的价格和页面的价格不一</view>
+  </view>
+  <view class="button">
+    <view>折叠收回</view>
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-02/18/yuelvhuiTZilxvrgpy1585823792.png"></image>
+  </view>
+</view>

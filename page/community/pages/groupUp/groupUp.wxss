@@ -1,0 +1,121 @@
+page{
+  background: #F9F9F9;
+  min-height: 100%;
+}
+.choseIMG{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 5rpx;
+  border: 2rpx solid #eaeaea;
+  background: #fefefe;
+  line-height: 160rpx;
+  text-align: center;
+  margin-right: 20rpx;
+  font-size: 50rpx;
+}
+.choseIMG>image{
+  width: 100%;
+  height: 100%;
+  border-radius: 5rpx;
+}
+.content{
+  background: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  width: 100%;
+  color: #666666;
+  padding-bottom: 29rpx;
+  overflow: hidden;
+}
+.header{
+  line-height: 1;
+  font-size: 28rpx;
+  color: #333333;
+  margin: 30rpx auto 50rpx auto; 
+}
+.desc{
+  font-size: 26rpx;
+  margin-top: 38rpx;
+}
+.content .list{
+  margin-top: 34rpx;
+}
+.list .red{
+  color: #E4311F;
+  padding-left: 18rpx;
+  text-decoration: underline;
+}
+.upImg{
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.upImg > view:nth-child(1){
+  margin-bottom: 30rpx;
+}
+.submit{
+  width: 690rpx;
+  height: 88rpx;
+  border-radius: 10rpx;
+  background: #20AC16;
+  margin: 0 auto;
+  margin-top: 100rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 34rpx;
+}
+.ongoing{
+  width: 100%;
+  color: #333333;
+  font-size: 28rpx;
+  text-align: center;
+}
+.ongoing > image{
+  width: 173rpx;
+  height: 173rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 112rpx;
+}
+.ongoing > view{
+  margin-top: 50rpx;
+}
+.loser .result{
+  width: 690rpx;
+  height: auto;
+  padding: 40rpx 50rpx 70rpx 50rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  color: #333333;
+  font-size: 30rpx;
+}
+.loser .result .header{
+  font-size: 28rpx;
+  margin-bottom: 30rpx;
+  font-weight:500;
+  text-align: center;
+}
+.loser .result .list{
+  padding-left: 80rpx;
+  box-sizing: border-box;
+  margin-top: 10rpx;
+}
+.loser .result .list text{
+  color: #FE394D;
+}
+.goGroup{
+  width: 690rpx;
+  height: 88rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  margin: 0 auto;
+  margin-top: 50rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #333333;
+  font-size: 34rpx;
+}

@@ -1,0 +1,36 @@
+page{
+  background-image: url(http://image.yuelvhui.com/pubfile/2018/11/12/line_1542031429.png);
+  background-size:100% 100%; 
+  background-repeat: no-repeat;
+}
+.UseRules{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top:214rpx;
+  margin-left:13%;
+  margin-right:13%;
+  width: 74%;
+}
+.UseRules .title{
+  color:#ffe100;
+  font-size: 36rpx;
+  margin-bottom:62rpx;
+}
+.UseRules .UseRulesBars{
+  margin-bottom:60rpx;
+  color:#fff3d3;
+  font-size: 28rpx;
+}
+.UseRules .button{
+  width:592rpx;
+  height:90rpx;
+  border-radius: 45rpx;
+  background-color: #fee100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:#333;
+  font-size:30rpx
+}

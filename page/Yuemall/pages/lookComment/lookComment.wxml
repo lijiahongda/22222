@@ -1,0 +1,27 @@
+<!--page/Yuemall//pages/lookComment/lookComment.wxml-->
+<view class="comment">
+  <view class="PersonalComments" wx:for="{{list}}" wx:key="result" wx:for-item="result">
+    <view class="userInfo">
+      <image class="Head" src="{{result.litpic}}"></image>
+      <view class="info">
+        <view>{{result.nickname}}</view>
+        <view class="stars">
+          <image wx:for="{{result.goods_score}}" wx:key="red" src="https://image.yuelvhui.com/pubfile/2019/06/12/line_1560327457.png"></image>
+          <image wx:for="{{5-result.goods_score}}" wx:key="gray" src="https://image.yuelvhui.com/pubfile/2019/06/12/line_1560327461.png"></image>
+        </view>
+        <view class="share" wx:if='{{typeC}}' bindtap="share" >
+          <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-20/20/yuelvhuizrH7e03qfV1587387065.png" ></image>分享
+        </view>
+      </view>
+    </view>
+    <view class="WrittenWords">
+      <text>{{result.comment}}</text>
+    </view>
+    <view class="tab-hSecondLevel">
+      <scroll-view scroll-x class='exploreViewList' scroll-with-animation="true">
+        <image wx:for="{{result.imgs}}" src="{{item}}" data-src="{{item}}" catchtap="imgYu" data-list="{{result.imgs}}" wx:key="imagenum"></image>
+      </scroll-view>
+    </view>
+    <view class="Specifications">{{item.goods_spec}}</view>
+  </view>
+</view>

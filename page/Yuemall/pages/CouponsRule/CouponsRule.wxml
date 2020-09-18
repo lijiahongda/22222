@@ -1,0 +1,8 @@
+<view class="UseRules">
+  <view class="title">悦豆使用规则</view>
+  <view class="UseRulesBars">1.所有用户可挖</view>
+  <view class="UseRulesBars">2.只能会员可消耗：商城、线路消费抵扣或者兑换UTO。非会员提示，成为会员当前订单可省钱多少，一年内可省钱多少</view>
+  <view class="UseRulesBars">3.悦豆获取途径：悦淘app、悦淘商城酒店旅游小程序、悦旅大人小程序、容艺学小程序每日分享产品最高可得1000悦豆，用户消费返还20%支付金额悦豆</view>
+  <view class="button" bindtap='join' data-cardyue="https://api2.yuelvhui.com/images/index/e-2.png" wx:if="{{cardType == 0}}">成为会员</view>
+  <view class="button" wx:else style="background-color:#e9e9e9">您已经是会员啦</view>
+</view>

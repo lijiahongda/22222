@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "爆款拼团",
+  "usingComponents": {
+    "Assemble": "/component/Assemble/Assemble"
+  }
+}

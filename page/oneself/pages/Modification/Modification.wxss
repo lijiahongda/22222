@@ -1,0 +1,36 @@
+/* page/oneself/pages/Modification/Modification.wxss */
+page{
+  border-top: 1px solid #ececec;
+}
+.content{
+  height: 80rpx;
+  width: 92%;
+  padding-left:4%;
+  padding-right: 4%;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+.content input{
+  width: 100%
+}
+.tips{
+  color:#ccc;
+  font-size: 22rpx;
+  margin-top: 15rpx;
+  width: 92%;
+  padding-left:4%;
+  padding-right: 4%;
+  margin-bottom: 40rpx
+}
+.Preservation{
+  width: 640rpx;
+  height: 90rpx;
+  background-color: #FF6032;
+  border-radius: 10rpx;
+  color:#fff;
+  font-size: 30rpx;
+  line-height: 90rpx;
+  text-align: center;
+  margin: auto;
+}

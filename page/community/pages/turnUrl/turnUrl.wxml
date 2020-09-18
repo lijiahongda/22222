@@ -1,0 +1,15 @@
+<view class="text">
+  <textarea placeholder='请输入待转链接文本' maxlength='-1'  value='{{textVal}}' bindinput='bindblur'></textarea>
+</view>
+<view class="trun" bindtap="trun">转链</view>
+<view class="clean" bindtap="clean">清空</view>
+<view wx:if='{{showPopup}}' class="popup">
+  <view>
+    <view class="header">转链成功</view>
+    <view class="content">{{content}}</view>
+    <view class="button">
+      <view bindtap="showPopupBind">取消</view>
+      <view bindtap="copy" data-text="{{content}}" class="copy">复制</view>
+    </view>
+  </view>
+</view>

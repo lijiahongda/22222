@@ -1,0 +1,29 @@
+<banner id="banner" inner-text="{{list}}">
+</banner>
+
+<view class="coupons" bindtap="EliteCard" wx:if="{{cardType==0}}">
+  <image src="{{cardImg}}"></image>
+</view>
+
+
+<view class="{{scrollTop>200 ? 'topnav' : ''}} scrollTop">
+  <view class="tab-h" wx:if="{{types.length >1}}">
+    <scroll-view scroll-x class='exploreViewList' scroll-with-animation="true" scroll-into-view="{{scrollId}}">
+      <view id="{{'d'+item.typeId}}" wx:for="{{types}}" wx:key="skuGoodsType" class="tab-item {{currentTab==item.typeId?'active':''}}" data-current="{{item.typeId}}" data-item="{{item}}" bindtap="swichNav">{{item.typeName}}
+      </view>
+      <view style="width:1rpx;height:20rpx;background:B9B9B9"></view>
+    </scroll-view>
+  </view>
+  <view class="tab-hLeve" wx:if="{{types.length >1}}">
+    <scroll-view scroll-x class='exploreViewList' scroll-with-animation="true" scroll-into-view="{{scrollId}}">
+      <view id="{{'d'+item.typeId}}" wx:for="{{typeList}}" wx:key="typeList" class="tab-item {{currentTabLeve==item.typeId?'active':''}}" data-current="{{item.typeId}}" bindtap="swichNavLeve">{{item.typeName}}
+      </view>
+      <view style="width:1rpx;height:20rpx;background:B9B9B9"></view>
+    </scroll-view>
+  </view>
+</view>
+
+
+
+<!-- 瀑布流列表 -->
+<lineTwoListFlow id="lineTwoListFlow" inner-text="{{list}}"></lineTwoListFlow>

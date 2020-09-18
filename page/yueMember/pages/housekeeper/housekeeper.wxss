@@ -1,0 +1,179 @@
+/* page/yueMember/pages/housekeeper/housekeeper.wxss */
+
+page {
+  background: #fff;
+}
+
+.tab-h {
+  
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  font-size: 16px;
+  border-bottom: 2rpx solid #ececec;
+}
+
+.tab-item {
+  width: 49%;
+  display: inline-block;
+  text-align: center;
+  color: #333;
+  font-size: 28rpx;
+  position: relative;
+}
+
+.tab-item.active {
+  color: #fa937e;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 4rpx;
+  width: 33%;
+  left: 34%;
+  background: #fa937e;
+  position: absolute;
+  bottom: 3rpx;
+}
+
+.con {
+  padding: 13% 4% 4% 4%;
+  width: 92%;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.top .imgs {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  /* background: #fa937e; */
+}
+
+.names {
+  color: #333;
+  font-size: 28rpx;
+  margin-top: 4%;
+}
+
+.adds {
+  color: #333;
+  font-size: 28rpx;
+  margin-top: -2%;
+  line-height: 1.8;
+  padding: 0 7%;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding-left: 9%;
+  margin-top: 9%;
+}
+
+.li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4%;
+}
+
+.types {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.copy, .call {
+  width: 100rpx;
+  height: 48rpx;
+  border: 2rpx solid rgba(250, 147, 126, 1);
+  border-radius: 10rpx;
+  color: #fa937e;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 48rpx;
+  margin-left: 6%;
+}
+.codes{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 11%;
+}
+.erCode {
+  width: 300rpx;
+  height: 300rpx;
+  background: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.code {
+  width: 251rpx;
+  height: 251rpx;
+  
+}
+
+.foot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+.sweepCode {
+  font-size: 26rpx;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+
+.modify {
+  width: 702rpx;
+  height: 80rpx;
+  background: rgba(250, 147, 126, 1);
+  border-radius: 40rpx;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin-top: 3%;
+}
+.edit{
+  width: 29rpx;
+  height: 28rpx;
+  position: fixed;
+  right: 2%;
+  top: 50%;
+}
+.edit image{
+  width: 100%;
+  height: 100%;
+}
+.tips{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.small{
+  width: 181rpx;
+  height: 181rpx;
+  border-radius: 50%;
+}
+.txt{
+  color: rgba(153, 153, 153, 1);
+  font-size: 24rpx;
+  margin-top: 5%;
+}
+

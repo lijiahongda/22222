@@ -1,0 +1,396 @@
+/* page/oneself/pages/myWalletContent/myWalletContent.wxss */
+@import "../../../../wxParse/wxParse/wxParse.wxss";
+page {
+  background-color: #F5F5F9;
+}
+
+.Commission {
+  background: #ffc11f;
+  padding-left: 38.2%;
+  height: 399rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Commission .HistoricalCommission {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Commission .HistoricalCommission .title {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 6rpx;
+}
+
+.Commission .HistoricalCommission .AccumulatedAmount {
+  font-size: 46rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+
+.FunctionalCommission {
+  width: 92%;
+  display: flex;
+  color: #333;
+  flex-direction: column;
+  margin: auto;
+  position: absolute;
+  top: 323rpx;
+  left: 4%;
+}
+
+.FunctionalCommission .Division {
+  background-color: #fff;
+  height: 80rpx;
+  padding-left: 3.8%;
+  padding-right: 2.6%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  font-size: 34rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.FunctionalCommission .Division  image {
+  width: 12rpx;
+  height: 22rpx;
+}
+
+.FunctionalCommission .Division .title {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.FunctionalCommission .Division .price {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 59, 59, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+.FunctionalCommission .Division .price image{
+  margin-left: 34rpx;
+  width: 9rpx;
+  height: 16rpx;
+}
+.tab-h {
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  height: 88rpx;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ededed;
+  font-size: 16px;
+  white-space: nowrap;
+  z-index: 99;
+  margin-top: 90rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+
+.tab-item {
+  margin: 0 3%;
+  /* background-color: #ff6636; */
+  width: 30%;
+  font-size: 30rpx;
+  color: #7a7a7a;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  z-index: 10000;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* line-height: 100rpx */
+}
+
+.tab-item.active {
+  color: #182539;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 3rpx;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(32, 132, 254, 1) 0%, rgba(1, 95, 227, 1) 100%);
+  position: absolute;
+  bottom: 9rpx;
+  left: 5rpx;
+}
+
+.tab-con image {
+  width: 100%;
+  height: 100%;
+}
+
+.tab-con {
+  /* padding: 25rpx 0; */
+  min-height: 100%;
+  position: relative;
+}
+
+.tab-con.gwc {
+  padding-bottom: 125rpx;
+}
+
+.scoll-h {
+  background-color: #fff;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  border-radius: 10rpx;
+}
+
+.list {
+  height: 186rpx;
+  width: 95%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  background-color: #fff;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list .PersonnelInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 65%;
+}
+
+.list .PersonnelInfo image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 22rpx;
+  margin-left: 6rpx;
+  background-color: #e4393c;
+}
+
+.list .PersonnelInfo .name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.list .PersonnelInfo .time {
+  margin-bottom: 14rpx;
+}
+
+.list .PersonnelInfo .name .series {
+  width: 110rpx;
+  height: 36rpx;
+  border-radius: 18rpx;
+  border: 1px solid #0a6aeb;
+  color: #0a6aeb;
+  line-height: 36rpx;
+  text-align: center;
+  font-size: 20rpx;
+}
+
+.list .PersonnelInfo .name .nameText {
+  width: 40%;
+}
+
+.list .PersonnelInfo .name .nameText text {
+  font-size: 28rpx;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap !important;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.list .StatusSum {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  align-items: center;
+}
+
+.list .status {
+  width: 68rpx;
+  height: 30rpx;
+  text-align: center;
+  line-height: 30rpx;
+  border-radius: 6rpx;
+  color: #fff;
+  background-color: #ccc;
+  font-size: 20rpx;
+}
+
+.list .Amount {
+  color: #333;
+  font-size: 24rpx;
+  margin-top: 52rpx;
+}
+
+.list .Amount text {
+  color: #0a6aeb;
+}
+
+.commodity_screenshowModal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 10000;
+  color: #fff;
+}
+
+.drawer_box {
+  width: 390rpx;
+  height: 313rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  overflow: hidden;
+  font-size: 30rpx;
+  color: #000;
+  position: fixed;
+  top: 58%;
+  left: 100rpx;
+  z-index: 10000;
+  background: #fafafa;
+  margin: -150px 50rpx 0 50rpx;
+  border-radius: 20rpx;
+}
+
+.drawer_content {
+  font-size: 30rpx;
+  color: #000;
+  margin-top: 36rpx;
+  line-height: 49rpx;
+}
+
+.closeImage {
+  width: 62rpx;
+  height: 62rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 88%;
+  left: 270rpx;
+  z-index: 10000;
+  margin: -150px 50rpx 0 50rpx;
+}
+
+.CommissionsDescription {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 120rpx;
+  height: 44rpx;
+  background: rgba(255, 244, 92, 1);
+  border-radius: 22rpx 0px 0px 22rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #fff;
+}
+
+.tips {
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 24rpx;
+}
+
+.LyingEarn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 128rpx;
+  width: 84%;
+  background: rgba(126, 206, 244, 0.1);
+  border-radius: 5rpx;
+  margin: auto;
+  margin-top: 10rpx;
+}
+
+.LyingEarn .item {
+  width: 34%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.LyingEarn .item .title {
+  color: #666;
+  font-size: 22rpx;
+  margin-bottom: 12rpx;
+}
+
+.LyingEarn .item .price {
+  color: #333;
+  font-size: 30rpx;
+}
+
+.contentList {
+  width: 92%;
+  background-color: #fff;
+  height: 100%;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  margin: auto;
+  margin-top: 304rpx;
+}
+
+.NoIncome {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: #ccc;
+  margin-bottom: 25rpx;
+}
+
+.NoIncome image {
+  width: 324rpx;
+  height: 252rpx;
+}
+.wxParse{
+  margin-top: 300rpx;
+  margin-left: 6.6%;
+  margin-right: 6.6%;
+  line-height: 1
+}
+
+
+.alert{
+  width:100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5)
+}

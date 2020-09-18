@@ -1,0 +1,104 @@
+<view class="zcontent">
+  <header-com bgcolor="" nickName='{{userInfo.nickName}}' ERM='{{ERM}}' memberType='{{userInfo.memberType}}' litpic='{{userInfo.litpic}}' memberImg='{{userInfo.memberImg}}'></header-com>
+  <!-- banner -->
+  <view class="banner">
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-14/20/yuelvhuiCJuZr1y4391589459659.png"></image>
+  </view>
+  <!-- 激活界面 -->
+  <view class="people" wx:if='{{groupType == 1}}'>
+    <!-- 激活群信息 -->
+    <view class="groupmsg">
+      <view class="cover">
+        <image src="{{haveActivation.myGroupImage}}"></image>
+      </view>
+      <view class="msg">
+        <view class="name">{{haveActivation.myGroupTitle}}</view>
+        <view class="brief">{{haveActivation.myGroupDesc}}</view>
+      </view>
+    </view>
+    <!-- 激活人数 -->
+    <view class="peoplelist">
+      <view class="plist" wx:if='{{haveActivation.activationData.length>0}}' wx:for="{{haveActivation.activationData}}" wx:key="index" >
+        <view class="hapeo" >
+          <image src="{{item.headPic}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="peoTips">
+    邀请 <text>{{haveActivation.num}}个</text> 你的粉丝点击就可助力激活该群
+    </view>
+    <button class="buttonH" open-type='share' >
+      <view class="sharePbt">邀请群里的人激活</view>
+    </button>
+  </view>
+  <!-- 团特卖标题 -->
+  <view class="commotitlt" wx:if='{{groupType == 0}}'>
+    <view class="djh">
+      <image src="../../../../image/djhbg.png"></image>
+      <view>待激活</view>
+    </view>
+    <view class="title">
+      <view class="name">
+        团特卖<text>(群内专享补贴，赚管理奖励)</text>
+      </view>
+      <view class="checkmore" bindtap="commodities">
+        <view>查看更多</view>
+        <view>
+          <image src="../../../../image/rjt.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="commotitlt" wx:if='{{groupType == 1}}' >
+    <view class="djh" style="margin-left:271rpx;">
+      <image src="../../../../image/djhbg.png"></image>
+      <view>待激活</view>
+    </view>
+    <view class="title">
+      <view class="name">
+        每晚20点进群一起买
+      </view>
+      <view class="checkmore">
+        
+      </view>
+    </view>
+  </view>
+  <!-- 商品列表 -->
+  <view class="tips">
+    分享链接到群，有10个你的会员点击就可激活该群，赚群管理奖励！
+  </view>
+  <view class="commoList">
+    <view class="list" wx:for="{{goodsData}}" wx:key="index">
+      <main-commodity roomId='{{room_id}}' goodId='{{item.goodId}}' activityId='{{item.activityId}}'  text='{{text}}' goodVipPrice='{{item.goodVipPrice}}' goodCover='{{item.goodCover}}' sharePrice='{{item.sharePrice}}' imgwidth="342"></main-commodity>
+    </view>
+  </view>
+  <view class="notips">没有更多商品了~</view>
+  <!-- <view style="width:100%;height:200rpx;"></view> -->
+
+  <view class="shareAlert" wx:if='{{eject==1}}'>
+    <view class="alert">
+      <view class="userCover">
+        <image src="{{userInfo.litpic}}"></image>
+      </view>
+      <view class="text">
+        <view>“还差{{haveActivation.num}}人助力，</view>
+        <view>我们就可购买该福利商品”</view>
+      </view>
+      <!-- 激活人数 -->
+      <view class="peoplelist">
+        <view class="plist" wx:if='{{haveActivation.activationData.length>0}}' wx:for="{{haveActivation.activationData}}" wx:key="index" >
+          <view class="hapeo" >
+            <image src="{{item.headPic}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="close" bindtap="close">
+      <image src="https://image.yuelvhui.com/pubfile/2019/09/27/line_1569568154_14644.png"></image>
+    </view>
+  </view>
+</view>
+<button open-type='share' wx:if='{{groupType == 0}}'>
+  <view  class="shareBt">分享链接</view>
+</button>

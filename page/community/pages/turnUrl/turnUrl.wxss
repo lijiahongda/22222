@@ -1,0 +1,88 @@
+.page{
+  background: #fff;
+  min-height: 100%;
+}
+.text{
+  width: 100%;
+  height: 622rpx;
+  background: #F9F9F9;
+  padding: 29rpx;
+  box-sizing: border-box;
+}
+.text textarea{
+  width: 100%;
+  height: 100%;
+  color: #666666;
+  font-size: 26rpx;
+}
+.trun{
+  width:560rpx;
+  height:80rpx;
+  background:rgba(228,49,31,1);
+  border-radius:40rpx;
+  margin: 0 auto;
+  margin-top: 52rpx;
+  color: #F9F9F9;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.clean{
+  width:560rpx;
+  height:80rpx;
+  background:rgba(249,249,249,1);
+  border-radius:40rpx;
+  color: #333333;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+.popup{
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, .66);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.popup > view{
+  width: 690rpx;
+  height: fit-content;
+  background: #fff;
+  border-radius: 18rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 28rpx;
+}
+.popup .header{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+}
+.popup .content{
+  padding: 30rpx;
+}
+.popup .button{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  border-top: 2rpx solid #eee;
+}
+.popup .button > view{
+  width: 50%;
+  text-align: center;
+  font-size: 34rpx
+}
+.popup .button .copy{
+  color: rgba(228,49,31,1);
+}

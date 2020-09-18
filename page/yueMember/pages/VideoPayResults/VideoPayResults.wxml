@@ -1,0 +1,21 @@
+<!--page/yueMember//pages/VideoPayResults/VideoPayResults.wxml-->
+<view class="icon">
+  <image src="https://image.yuelvhui.com/pubfile/2019/09/09/line_1568031112_29249.png" wx:if="{{type ==1}}"></image>
+  <image wx:else src="https://image.yuelvhui.com/pubfile/2019/09/09/line_1568031141_57822.png" style="width:166rpx;"></image>
+</view>
+
+<view class="title" wx:if="{{type ==1}}">支付成功！</view>
+<view class="title" wx:else>支付失败！</view>
+<view class="tips" wx:if="{{type ==1}}">充值稍后到，账请耐心等待</view>
+<view class="tips" wx:else>支付失败，请您重新支付</view>
+<view class="buttonfun">
+  <view class="home" bindtap="home">返回首页</view>
+  <view class="lookOrder" bindtap="lookOrder">查看订单</view>
+</view>
+<view class="moreTitle">更多特权优惠</view>
+<view class="content">
+  <view class="item" wx:for="{{list}}" wx:key="list" data-projectid="{{item.projectId}}" bindtap="VideoRechargeDetail">
+    <image src="{{item.image}}"></image>
+    <view>{{item.name}}</view>
+  </view>
+</view>

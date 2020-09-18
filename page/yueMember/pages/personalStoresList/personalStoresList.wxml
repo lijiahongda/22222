@@ -1,0 +1,51 @@
+<!--page/yueMember//pages/personalStoresList/personalStoresList.wxml-->
+<view class="screen">
+  <view class="item" bindtap="screen" data-type="totle">
+    <image wx:if="{{istotle}}" src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569238609_27472.png"></image>
+    <image wx:else src="https://image.yuelvhui.com/pubfile/2019/08/30/line_1567143124_70964.png"></image>
+    <view>累计</view>
+  </view>
+  <view class="item" bindtap="screen" data-type="today">
+    <image wx:if="{{istoday}}" src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569238609_27472.png"></image>
+    <image wx:else src="https://image.yuelvhui.com/pubfile/2019/08/30/line_1567143124_70964.png"></image>
+    <view>今日</view>
+  </view>
+  <view class="item" bindtap="screen" data-type="yestoday">
+    <image wx:if="{{isyestoday}}" src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569238609_27472.png"></image>
+    <image wx:else src="https://image.yuelvhui.com/pubfile/2019/08/30/line_1567143124_70964.png"></image>
+    <view>昨日</view>
+  </view>
+  <view class="item" bindtap="screen" data-type="month">
+    <image wx:if="{{ismonth}}" src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569238609_27472.png"></image>
+    <image wx:else src="https://image.yuelvhui.com/pubfile/2019/08/30/line_1567143124_70964.png"></image>
+    <view>本月</view>
+  </view>
+
+</view>
+<view class="list" wx:for="{{list}}" wx:key="order">
+  <view class="PersonnelInfo">
+    <view>
+      <image src="{{item.avatar}}"></image>
+    </view>
+    <view class="info">
+      <view class="name">
+        <view class="nameText">
+          <text>{{item.name}}</text>
+        </view>
+        <view class="series">{{item.level}}</view>
+      </view>
+      <view class="time">{{item.time}}</view>
+      <view>
+        <text style=" word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;text-overflow: ellipsis;">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="StatusSum">
+    <view class="Amount" wx:if="{{item.action2 == 1}}">
+      <text>{{item.money}}</text>
+    </view>
+    <view class="Amount" style="color:#0A6AEB" wx:elif="{{item.action2 == 2}}">未结算收益：
+      <text>￥{{item.amount}}222</text>
+    </view>
+  </view>
+</view>

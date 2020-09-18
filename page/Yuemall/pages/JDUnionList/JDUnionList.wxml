@@ -1,0 +1,23 @@
+<swiper class="swiper">
+  <swiper-item wx:for='{{3}}'>
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-18/18/yuelvhuipquNrhJsai1582020297.png"></image>
+  </swiper-item>
+</swiper>
+<view class="content">
+  <view class="list" wx:for='{{19}}'>
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-18/18/yuelvhuipquNrhJsai1582020297.png"></image>
+    <view class="title">
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-18/18/yuelvhuipquNrhJsai1582020297.png"></image>
+      <text>上上上上红打闲零食 小啊猪肉新老机发肠上上上上红打闲零食 小啊猪肉</text>
+    </view>
+    <view class="coupon">100元券</view>
+    <view class="price">
+      <text>￥</text><text>123</text><text>￥343</text>
+    </view>
+    <view class="make">预估赚￥12.56</view>
+    <view class="sales">
+      <text>已售234件</text>
+    </view>
+  </view>
+</view>
+

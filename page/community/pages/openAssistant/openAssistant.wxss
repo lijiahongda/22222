@@ -1,0 +1,238 @@
+page{
+  min-height: 100%;
+  background: #fff;
+}
+.header{
+  width: 100%;
+  height: 114rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 36rpx;
+  box-sizing: border-box;
+}
+.header > view{
+  color: #999999;
+  font-size: 26rpx;
+}
+.header .pass{
+  color: #FF033A;
+}
+.progress{
+  display: flex;
+  box-sizing: border-box;
+  width: 650rpx;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.progress > image{
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+}
+.progress .circle{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: #959595;
+  position: relative;
+  z-index: 1;
+}
+.progress .line{
+  width: 50%;
+  height: 2rpx;
+  background: #EEEEEE;
+  position: absolute;
+  top: 14rpx;
+}
+.progress .line:nth-of-type(1){
+  left: 0;
+}
+.progress .line:nth-of-type(2){
+  left: 50%;
+}
+.progress .pass{
+  background: rgba(228,49,31,1);
+}
+
+.tip{
+  width: 100%;
+  height: 50rpx;
+  align-items: center;
+  color: #333333;
+  font-size: 28rpx;
+  display: flex;
+  margin-top: 30rpx;
+  padding: 0 34rpx;
+  box-sizing: border-box;
+}
+.tip > view:nth-child(2){
+  padding: 12rpx 16rpx;
+  margin-left: 18rpx;
+  background: #EFEFEF;
+}
+.tip .copy{
+  width: 96rpx;
+  height: 50rpx;
+  background:rgba(228,49,31,1);
+  border-radius:5rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #fff;
+  margin-left: 15rpx;
+}
+.tipImg{
+  width: 638rpx;
+  margin: 0 auto;
+  margin-top: 64rpx;
+  display: block;
+}
+.attention{
+  color: #FF033A;
+  font-size: 28rpx;
+  margin-top: 42rpx;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+
+/* 步骤二 */
+.twoStep > view:nth-child(1){
+  color: #FF033A;
+  font-size: 28rpx;
+  margin: 42rpx 0 30rpx 0;
+  text-align: center;
+}
+.twoStep .detail{
+  width: 690rpx;
+  min-height: 340rpx;
+  margin: 0 auto;
+  background:rgba(255,247,247,1);
+  border-radius: 10rpx;
+}
+.twoStep .detail > .title{
+  color: #333333;
+  font-size: 28rpx;
+  text-align: center;
+  position: relative;
+  height: 66rpx;
+  line-height: 68rpx;
+}
+.twoStep .detail > .title::after{
+  content: '';
+  position: absolute;
+  left: 20rpx;
+  top: 50%;
+  background: #DCDCDC;
+  width: 30%;
+  height: 2rpx;
+}
+.twoStep .detail > .title::before{
+  content: '';
+  position: absolute;
+  right: 20rpx;
+  top: 50%;
+  background: #DCDCDC;
+  width: 30%;
+  height: 2rpx;
+}
+.twoStep .detail .num{
+  width: 640rpx;
+  height: 90rpx;
+  background: #E4311F;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 28rpx;
+  color: #fff;
+  margin-bottom: 40rpx;
+}
+.twoStep .detail .num::after{
+  content: '';
+  width: 4rpx;
+  height: 55rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+.twoStep .detail .num > view{
+  width: 50%;
+  text-align: center;
+}
+.twoStep .list{
+  color: #333333;
+  font-size: 26rpx;
+  line-height: 1.5;
+  padding: 0 24rpx;
+}
+
+/* 步骤三 */
+.threeStep{
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  padding-bottom: 100rpx;
+}
+.threeStep .number{
+  width: 100%;
+  height: 110rpx;
+  line-height: 110rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+.threeStep .number text{
+  color: #20AC16;
+  padding-left: 20rpx;
+}
+.threeStep > image{
+  width: 100%;
+}
+.threeStep .title{
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 90rpx;
+  height: 90rpx;
+}
+.threeStep .copy{
+  width:590rpx;
+  height:74rpx;
+  background:rgba(58,161,248,1);
+  border-radius:10rpx;
+  text-align:center;
+  line-height: 74rpx;
+  color: #fff;
+  font-size: 30rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+}
+.threeStep > .list{
+  color: #333333;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin-top: 30rpx;
+}
+
+.next{
+  width:302rpx;
+  height:64rpx;
+  background:rgba(228,49,31,1);
+  border-radius:10rpx;
+  margin: 0 auto;
+  margin-top: 100rpx;
+  margin-bottom: 100rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 64rpx;
+  font-size: 26rpx;
+}

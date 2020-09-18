@@ -1,0 +1,30 @@
+<!--page/yueMember//pages/VideoRechargeDetail/VideoRechargeDetail.wxml-->
+<view class="RechargeAPP">
+  <image src="{{goods_info.image}}"></image>
+  <view>{{goods_info.name}}</view>
+</view>
+<view class="RechargeableAccount">
+  <view class="title">充值账号</view>
+  <input placeholder="" bindinput="mobile"></input>
+</view>
+<view class="borderbottom"></view>
+<view class="tips">请仔细核对账号信息</view>
+<view class="DenominationTitle">面额</view>
+<view class="Denomination">
+  <view class="item {{item.Denomination?'Recommend':''}} {{item.active?'Active':''}}" bindtap="Denomination" data-index="{{index}}" data-active="{{item.active}}" data-price="{{item.sale_price}}" data-pid="{{item.p_id}}" data-province="{{item.province}}"
+    data-officialprice="{{item.official_price}}" wx:for="{{list}}" wx:key="list" wx:index="index">
+    <view class="time">{{item.itemName}}</view>
+    <view class="price" style="text-decoration:{{cardType==0?'line-through':''}}">会员价:{{item.sale_price}}元</view>
+    <view class="OrignalPrice" style="text-decoration:{{cardType==0?'':'line-through'}}">官网价:{{item.official_price}}元</view>
+    <view class="furiousRush" wx:if="{{item.Denomination}}">火爆疯抢</view>
+    <view class="label" wx:if="{{index==0}}">推荐</view>
+  </view>
+</view>
+<view class="pay" bindtap="pay" wx:if="{{cardType > 0}}">
+  <view>立即支付{{price}}元
+    <text>已节省{{province}}元</text>
+  </view>
+</view>
+<view class="pay" bindtap="join" wx:else>
+  开通会员享优惠
+</view>

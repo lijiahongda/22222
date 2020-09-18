@@ -1,0 +1,36 @@
+<view class="{{scrollTop>200 ? 'topnav' : ''}}">
+  <view class="tab-h hide{{showView?'show':''}}">
+    <view wx:for="{{subTypeList}}" wx:key="subTypeList" class="tab-item {{currentTab==item.typeId?'active':''}}" data-current="{{item.typeId}}" bindtap="swichNav">{{item.typeName}}
+    </view>
+  </view>
+</view>
+<view class="list" wx:for="{{list}}" wx:key="list"  wx:for-item="list">
+  <view class="memberInfo">
+    <image src="{{list.pic}}"></image>
+    <view class="info">
+      <view class="title">{{list.nickName}}</view>
+      <view>{{list.createTime}}</view>
+    </view>
+  </view>
+  <view class="ArticleTitle">{{list.title}}</view>
+  <block wx:if="{{list.listImg.length == 1}}">
+    <image src="{{list.listImg[0]}}" class="ArticleImage" data-src="{{list.listImg[0]}}" catchtap="imgYu" data-list="{{list.listImg}}"></image>
+  </block>
+  <block wx:else>
+    <view class="imageList">
+      <image wx:for="{{list.listImg}}" src="{{item}}" wx:key="listImg" data-src="{{item}}" catchtap="imgYu" data-list="{{list.listImg}}"></image>
+    </view>
+  </block>
+
+  <view class="FunItem">
+    <view class="item" bindtap='Fabulous' data-aid="{{list.aid}}">
+      <image  src="https://image.yuelvhui.com/pubfile/2019/07/28/line_1564293382_20880.png"></image>
+      <!-- <image wx:else src="https://image.yuelvhui.com/pubfile/2019/07/28/line_1564293418_81383.png" style=" width: 29rpx;height: 29rpx;"></image> -->
+      <view>{{list.clickLikeNum}}</view>
+    </view>
+    <view class="item" style="border-left:1px solid #e8e8e8" data-aid="{{list.aid}}" bindtap='downloadImgs' data-img="{{list.listImg}}">
+      <image src="https://image.yuelvhui.com/pubfile/2019/07/28/line_1564294122_44865.png" style="width:30rpx;height:30rpx"></image>
+      <!-- <view>{{item.downloadNum}}</view> -->
+    </view>
+  </view>
+</view>

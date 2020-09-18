@@ -1,0 +1,146 @@
+<block wx:if="{{isCollection}}">
+  <view class="container" style="padding-top:0px">
+    <view class="infoList">
+      <view class="listItem" catchtap="Collection" data-type="1">
+        <view class="order">
+          <image class="icon" src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569225265_19479.png"></image>
+          <view class="itemTxt">酒店收藏</view>
+        </view>
+        <view class="itemBtnRight">
+          <image src="/images/memberInformation/myOrderRight.png"></image>
+        </view>
+      </view>
+      <view class="listItem" catchtap="Collection" data-type="2">
+        <view class="order">
+          <image class="icon" src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569225357_52689.png"></image>
+          <view class="itemTxt">商城收藏</view>
+        </view>
+        <view class="itemBtnRight">
+          <image src="/images/memberInformation/myOrderRight.png"></image>
+        </view>
+      </view>
+      <view class="listItem" catchtap="Collection" data-type="3">
+        <view class="order">
+          <image class="icon" src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569225378_95265.png"></image>
+          <view class="itemTxt">线路收藏</view>
+        </view>
+        <view class="itemBtnRight">
+          <image src="/images/memberInformation/myOrderRight.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class="container" style="padding-top:0px">
+    <view class="infoList">
+      <view class="listItem listItem1" catchtap="goOrderListCard">
+        <view class="order">
+          <image class='icon' src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569220305_29215.png"></image>
+          <view class="itemTxt">会员卡订单</view>
+        </view>
+        <view class="itemBtnRight">
+          <image src="../../../../images/memberInformation/myOrderRight.png"></image>
+        </view>
+      </view>
+      <!-- <view class="listItem" catchtap="goOrderListCard">
+        <view class="order">
+          <image class='icon' src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569220780_11661.png"></image>
+          <view class="itemTxt">火车票订单</view>
+        </view>
+        <view class="itemBtnRight">
+          <image src="../../../../images/memberInformation/myOrderRight.png"></image>
+        </view>
+      </view> -->
+      <!-- <view class="listItem listItem1" catchtap="goRechargeOrder">
+        <view class="order">
+          <image class='icon' src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569220815_78737.png"></image>
+          <view class="itemTxt">视频订单</view>
+        </view>
+        <view class="itemBtnRight">
+          <image src="../../../../images/memberInformation/myOrderRight.png"></image>
+        </view>
+      </view> -->
+      <view class="listItem listItem1" catchtap="NewmallOrder">
+        <view class="order">
+          <image class='icon' src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569220858_86732.png"></image>
+          <view class="itemTxt">商城订单</view>
+        </view>
+        <view class="itemBtnRight">
+          <image src="/images/memberInformation/myOrderRight.png"></image>
+        </view>
+      </view>
+      <view class="listItem" catchtap="GroupBuy">
+        <view class="order">
+          <image class='icon' src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569220966_30584.png"></image>
+          <view class="itemTxt">我的拼团</view>
+        </view>
+        <view class="itemBtnRight">
+          <image src="/images/memberInformation/myOrderRight.png"></image>
+        </view>
+      </view>
+      <view class="listItem" catchtap="MyHelp">
+        <view class="order">
+          <image class='icon' src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569221015_56944.png"></image>
+          <view class="itemTxt">我的助力</view>
+        </view>
+        <view class="itemBtnRight">
+          <image src="/images/memberInformation/myOrderRight.png"></image>
+        </view>
+      </view>
+      <view class="listItem" catchtap="SpikeOrder">
+        <view class="order">
+          <image class='icon' src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569221047_99571.png"></image>
+          <view class="itemTxt">我的秒杀</view>
+        </view>
+        <view class="itemBtnRight">
+          <image src="/images/memberInformation/myOrderRight.png"></image>
+        </view>
+      </view>
+      <view class="listItem listItem1" catchtap="HalfPrice">
+        <view class="order">
+          <image class='icon' src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569221081_44491.png"></image>
+          <view class="itemTxt">限时半价</view>
+        </view>
+        <view class="itemBtnRight">
+          <image src="/images/memberInformation/myOrderRight.png"></image>
+        </view>
+      </view>
+      <!-- <view class="listItem" catchtap="goOrderListHotel">
+        <view class="order">
+          <image class='icon' src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569221112_60322.png"></image>
+          <view class="itemTxt">酒店订单</view>
+        </view>
+        <view class="itemBtnRight">
+          <image src="../../../../images/memberInformation/myOrderRight.png"></image>
+        </view>
+      </view> -->
+      <!-- <view class="listItem" catchtap="goOrderListLine">
+        <view class="order">
+          <image class='icon' src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569221141_94116.png"></image>
+          <view class="itemTxt">线路订单</view>
+        </view>
+        <view class="itemBtnRight">
+          <image src="/images/memberInformation/myOrderRight.png"></image>
+        </view>
+      </view> -->
+      <!-- <view class="listItem listItem1" catchtap="CustomTourOrder">
+        <view class="order">
+          <image class='icon' src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569221177_86155.png"></image>
+          <view class="itemTxt">定制游订单</view>
+        </view>
+        <view class="itemBtnRight">
+          <image src="/images/memberInformation/myOrderRight.png"></image>
+        </view> -->
+    </view>
+    <view class="listItem" catchtap="IntegralMallOrder">
+      <view class="order">
+        <image class='icon' src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569221207_26131.png"></image>
+        <view class="itemTxt">积分商城订单</view>
+      </view>
+      <view class="itemBtnRight">
+        <image src="/images/memberInformation/myOrderRight.png"></image>
+      </view>
+    </view>
+  </view>
+</block>

@@ -1,0 +1,52 @@
+  <!-- 头部 --> 
+  <view class="zheader" style="background:{{bgcolor}};padding-top: {{60+top}}rpx;height:{{250+top}}rpx">
+    <view class="back" style="padding-top: {{top-20}}rpx;">
+      <image class="bgimg" src="../../../../image/headerbg.png" bindload="Initialization" style="height:{{320+top}}rpx"></image>
+      <view class="ctrl">
+        <view bindtap="zbackPage">
+          <image src="../../../../image/back.png"></image>
+        </view>
+        <view class="head">{{headerTitle}}</view>
+        <view></view>
+      </view>
+    </view>
+    <!-- 用户头部样式 -->
+    <view class="headerMsg" wx:if="{{!isGroup}}">
+    <!-- 头像 -->
+      <view class="titleImg" style="margin-top:{{bgcolor==''?'20':'40'}}rpx">
+        <image src="{{litpic}}"></image>
+      </view>
+      <!-- 用户信息 -->
+      <view class="msg" style="margin-top:{{bgcolor==''?'20':'40'}}rpx">
+        <view class="name">{{nickName}}</view>
+        <view class="isVip">
+          <view class="iconImg">
+            <image src="{{memberImg}}"></image>
+          </view>
+          <view class="vipTitle">
+            {{memberType}}
+          </view>
+        </view>
+      </view>
+      <!-- 二维码 -->
+      <view class='ewm' bindtap="show" wx:if="{{ERM==false}}">
+        <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-07/16/yuelvhui6i3URbrSwE1588838714.png"></image>
+        <view>官方导师二维码></view>
+      </view>
+    </view>
+    <!-- 群信息头部样式 -->
+    <view class="headerMsg" wx:if="{{isGroup}}">
+    <!-- 头像 -->
+      <view class="gtitleImg" style="margin-top:{{bgcolor==''?'20':'40'}}rpx">
+        <image src="{{litpic}}"></image>
+      </view>
+      <!-- 用户信息 -->
+      <view class="msg" style="margin-top:{{bgcolor==''?'20':'40'}}rpx">
+        <view class="gname">{{nickName}}(共{{member_count}}人)</view>
+        <view class="seeNum">
+           今日{{clickCount}}人看过
+        </view>
+      </view>
+    </view>
+    <image class="bgimg" src="../../../../image/headerbg.png" style="height:{{270+top}}rpx"></image>
+  </view>

@@ -1,0 +1,16 @@
+<!--page/Mall/pages/HaggleList/HaggleList.wxml-->
+<view class="content">
+  <view class="GroupList" wx:for="{{list}}" wx:key="list">
+    <view class="SenderInfo">
+      <image src="{{item.head_pic}}" class=""></image>
+      <view class='help_price_name'>
+        <view style='font-size:24rpx;color:#181818'>{{item.nickname}}</view>
+        <!-- <view style='font-size:20rpx;color:#484848'>已砍<text style='color:#FFD368'>{{item.help_price}}元</text></view> -->
+      </view>
+    </view>
+    <view class="GroupInfo">
+    <view style='font-size:20rpx;color:#484848'>已砍<text style='color:#FFD368'>{{item.help_price}}元</text></view>
+      <!-- <view class="GoGroup">{{item.state==1?'占位':'已得'}}佣金 <text style='color:#FFD368'>{{item.commission_price}}元</text></view> -->
+    </view>
+  </view>
+</view>

@@ -1,0 +1,45 @@
+<!--page/yueMember/pages/CouponCenter/CouponCenter.wxml-->
+<view style="background-color:{{activityInfo.showColor}};padding-bottom:27rpx;">
+  <image class="baimg" src="{{activityInfo.showImg}}"></image>
+  <view class="coupon" wx:for="{{list}}" wx:key="list">
+    <view class="info" bindtap='ImmediateUse' data-couponActivityid="{{item.couponActivityId}}" data-cid="{{item.cid}}">
+      <image class="bg" src="https://image.yuelvhui.com/pubfile/2019/07/04/line_1562223048_10187.png"></image>
+      <view class="content">
+        <image class="goodImage" src="{{item.couponImg}}"></image>
+        <view class="couponInfo">
+          <view class="name">
+            <text>{{item.couponName}}</text>
+          </view>
+          <view class="price">
+            ￥
+            <text>{{item.usedMoney}}</text>
+          </view>
+          <view class="tips">
+            <text>{{item.remind}}  {{item.usedRemind}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="Receive">
+      <image class="bg" src="https://image.yuelvhui.com/pubfile/2019/07/04/line_1562223360_26461.png"></image>
+      <view class="ReceiveImmediately" bindtap='ReceiveImmediately' data-cid="{{item.cid}}" wx:if="{{item.couponState == 0}}">立即领取</view>
+      <view class="ReceiveImmediately" style="background-color:#ccc;color:#fff" wx:if="{{item.couponState == 1}}">过期</view>
+      <view class="ReceiveImmediately" style="background-color:#ccc;color:#fff" wx:if="{{item.couponState == 3}}">已使用</view>
+      <view class="ReceiveImmediately" bindtap='ImmediateUse' data-couponActivityid="{{item.couponActivityId}}" data-cid="{{item.cid}}" wx:if="{{item.couponState == 2}}">立即使用</view>
+    </view>
+  </view>
+</view>
+<view class="commodity_screenlong" wx:if="{{isReceive}}"></view>
+<view class="isReceive" wx:if="{{isReceive}}">
+  <view class="Top">
+    <view class="close">
+      <view bindtap='closeisReceive'>
+        <image src="https://image.yuelvhui.com/pubfile/2019/07/04/line_1562225857_61688.png"></image>
+      </view>
+    </view>
+    <view class="content">
+      <image class="tipsimage" src="https://image.yuelvhui.com/pubfile/2019/07/04/line_1562226199_22391.png"></image>
+      <view>恭喜您，领取成功</view>
+    </view>
+  </view>
+</view>

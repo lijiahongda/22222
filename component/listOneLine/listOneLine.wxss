@@ -1,0 +1,78 @@
+.content {
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 94%;
+}
+
+.list {
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  height: 464rpx;
+  width: 100%;
+  background: #fff;
+  border-radius: 14rpx;
+}
+
+.list .info {
+  padding: 0 20rpx;
+}
+
+.list .image {
+  width: 712rpx;
+  height: 280rpx;
+  border-radius: 14rpx;
+}
+
+.list .info .describe {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 34rpx;
+  line-height: 34rpx;
+  margin: 16rpx 0;
+  font-family: PingFangSC-Regular;
+  font-weight: 600;
+  color: #000;
+  height: 34rpx;
+}
+
+.list .info .pricebutton {
+  display: flex;
+  flex-direction: row;
+  color: #999;
+  font-size: 24rpx;
+  justify-content: space-between;
+}
+
+.list .info .pricebutton .price .Company {
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #f70216;
+}
+
+.list .info .pricebutton .price text {
+  font-size: 38rpx;
+  font-family: PingFang SC;
+  font-weight: 800;
+  color: #f70216;
+}
+
+.list .info .pricebutton .price .OriginalPrice {
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: #b4b4b4;
+  margin-left: 18rpx;
+}
+
+.MustBuy {
+  width: 295rpx;
+  height: 49rpx;
+  background: rgba(217, 53, 59, 1);
+  border-radius: 25rpx;
+}

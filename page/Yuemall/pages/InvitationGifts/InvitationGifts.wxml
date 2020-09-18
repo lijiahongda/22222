@@ -1,0 +1,115 @@
+<view>
+
+
+  <view class="top">
+    <image class="bg" wx:if='{{indexInfo.bgImg}}' src="{{indexInfo.bgImg}}"></image>
+    <image class="bg" wx:if='{{indexInfo.bgImg == null}}' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-15/14/yuelvhuiADIAUN7hxj1584255486.png"></image>
+    <image class="rule" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-13/20/yuelvhuiQ69NMWWUwh1584100946.png" bindtap='rule'></image>
+    <view class="priceN">
+      <view class="left">
+        <text class="price">¥</text>{{indexInfo.myCount?indexInfo.myCount:0}}
+      </view>
+      <view class="right">
+        <text class="price">¥</text>{{indexInfo.friendCount?indexInfo.friendCount:0}}
+      </view>
+    </view>
+
+  </view>
+  <button class="shareBox" bindtap='shareBox'>
+    <image class="share" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-13/18/yuelvhuiSCEGhad4Ia1584094068.gif"></image>
+  </button>
+  <view class="bottom">
+    <view class="content">
+      <view class="record">邀请记录</view>
+      <view class="center">
+        <view class="child">
+          <view>邀请人数</view>
+          <view class="bigBox">
+            <text class="big">{{indexInfo.invitNum?indexInfo.invitNum:0}}</text>人
+          </view>
+        </view>
+        <view class="child">
+          <view>下单好友</view>
+          <view class="bigBox">
+            <text class="big">{{indexInfo.orderNum?indexInfo.orderNum:0}}</text>人
+          </view>
+        </view>
+        <view class="child">
+          <view>累计奖励</view>
+          <view class="bigBox">
+            <text class="big">{{indexInfo.rewardNum?indexInfo.rewardNum:0}}</text>元
+          </view>
+        </view>
+      </view>
+      <view class="list" style="margin-bottom:50rpx;" >
+        <scroll-view bindscrolltolower="{{loadMore ? 'loadInformations' : ' '}}" scroll-into-view="allInformation" data-type="allInformation">
+          <view class="listCon" wx:if='{{recordData && recordData.length > 0}}' wx:for='{{recordData}}' wx:key='index'>
+            <view class="imgBox">
+              <image src="{{item.pic}}"></image>
+            </view>
+            <view class="people">
+              <view class="user">{{item.mobile}}</view>
+              <view>{{item.desc}}</view>
+            </view>
+            <view class="time">{{item.time}}</view>
+          </view>
+          <view class="none" wx:if='{{recordData && recordData.length > 0}}'>没有更多了~</view>
+
+          <view class="none" wx:if='{{recordData == null || recordData.length == 0}}'>暂无数据~</view>
+        </scroll-view>
+        
+      </view>
+    </view>
+  </view>
+  <view class=""></view>
+  <!--优惠券弹窗 -->
+  <gift-pop id="popup" inner-text="{{list}}"></gift-pop>
+  <!-- 分享弹窗 -->
+  <view class="share-layer" wx:if="{{ sharelayer }}">
+    <view class="share-layer-mask" bindtap='shareLayerClosed'>
+    </view>
+    <view class="share-layer-block">
+      <view class="share-layer-block-img">
+        <button open-type='share'>
+          <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-13/19/yuelvhuij3aki5cgBu1584097689.png"></image>
+        </button>
+        <view>分享给好友</view>
+        <view>(可锁粉)</view>
+      </view>
+      <view class="share-layer-block-img" bindtap='saveImage'>
+        <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-13/19/yuelvhuizTwqk2P47Q1584097751.png"></image>
+        <view>保存图片</view>
+        <view>(可锁粉)</view>
+      </view>
+    </view>
+
+    <view class="share-layer-cancel" bindtap='shareLayerClosed'>
+      <view>取消</view>
+    </view>
+  </view>
+  <!-- 预约规则 -->
+  <view class="model" bindtap="hiderule" wx:if='{{modelStatus}}'>
+    <view class="rulecontent">
+      <view class="top1">规则说明</view>
+      <view>
+        <view>1、
+          <text>{{reluData[0]}}</text>
+        </view>
+        <view>2、
+          <text>{{reluData[1]}}</text>
+        </view>
+        <view>3、
+          <text>{{reluData[2]}}</text>
+        </view>
+        <view>4、
+          <text>{{reluData[3]}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="imgClose">
+      <image class="close" bindtap="hiderule" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-15/23/yuelvhuioGalvTuCVa1584286274.png"></image>
+    </view>
+  </view>
+  <!-- 授权按钮 -->
+  <view class="authorizationStatus" bindtap='VerificationCode' wx:if="{{authorizationStatus}}"></view>
+</view>

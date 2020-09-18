@@ -1,0 +1,346 @@
+{
+  "pages": [
+    "page/Mall/YueMall",
+    "page/EliteCard/EliteCard",
+    "page/MyRote/MyRote",
+    "page/MyRoteDetail/MyRoteDetail",
+    "page/personalCenter/personalCenter",
+    "page/MobileRecharge/pages/home/home",
+    "page/MobileRecharge/pages/success/success",
+    "page/MobileRecharge/pages/orders/orders",
+    "page/welfare/invitedWelfare/invitedWelfare",
+    "page/welfare/getWelfare/getWelfare",
+    "page/MobileRecharge/pages/detail/detail",
+    "page/LoadingPopup/LoadingPopup",
+    "page/video/video",
+    "page/GiftPackage/GiftPackage",
+    "page/assembleFree/page/assembleFree/assembleFree",
+    "page/assembleFree/page/InitiateGroup/InitiateGroup",
+    "page/assembleFree/page/groupBalance/groupBalance",
+    "page/assembleFree/page/AssembleDetail/AssembleDetail",
+    "component/zhiboExplosiveProducts/zhiboExplosiveProducts",
+    "page/LiveBroadcast/LiveBroadcast",
+    "page/liveH5/shopDetail/shopDetail",
+    "page/liveH5/h5Pay/h5Pay",
+    "page/liveH5/shopDetail/mywebview/index",
+    "page/strategy/index/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#333333",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "page/Mall/YueMall",
+        "iconPath": "images/tabbar/mall.png",
+        "selectedIconPath": "images/tabbar/mallAfter.png",
+        "text": "悦商城"
+      },
+      {
+        "pagePath": "page/LiveBroadcast/LiveBroadcast",
+        "iconPath": "images/tabbar/line.png",
+        "selectedIconPath": "images/tabbar/lineAfter.png",
+        "text": "直播"
+      },
+      {
+        "pagePath": "page/EliteCard/EliteCard",
+        "iconPath": "images/tabbar/card.png",
+        "selectedIconPath": "images/tabbar/Cardafter.png",
+        "text": "必买爆款"
+      },
+      {
+        "pagePath": "page/strategy/index/index",
+        "iconPath": "images/tabbar/strategy.png",
+        "selectedIconPath": "images/tabbar/strategyAfter.png",
+        "text": "攻略"
+      },
+      {
+        "pagePath": "page/personalCenter/personalCenter",
+        "iconPath": "images/tabbar/My.png",
+        "selectedIconPath": "images/tabbar/AfterMy.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "page/videoDetail/",
+      "pages": [
+        "pages/detail/detail",
+        "pages/detaiChristmas/detaiChristmas",
+        "pages/becomeAdult/becomeAdult"
+      ]
+    },
+    {
+      "root": "page/Yuemall/",
+      "pages": [
+        "pages/GrowthDetails/GrowthDetails",
+        "pages/PinExplain/PinExplain",
+        "pages/IntegralMallDatail/IntegralMallDatail",
+        "pages/PinHome/PinHome",
+        "pages/RefundExamine/RefundExamine",
+        "pages/RefundDetail/RefundDetail",
+        "pages/RefundApply/RefundApply",
+        "pages/DangSearchResult/DangSearchResult",
+        "pages/Dangtuijian/Dangtuijian",
+        "pages/Dangsearch/Dangsearch",
+        "pages/Dangclassification/Dangclassification",
+        "pages/Christmas/Christmas",
+        "pages/DangdangList/DangdangList",
+        "pages/DangBookDetail/DangBookDetail",
+        "pages/DangHome/DangHome",
+        "pages/search/search",
+        "pages/Cart/Cart",
+        "pages/giftPackageDetail/giftPackageDetail",
+        "pages/details/details",
+        "pages/balance/balance",
+        "pages/Coulist/Coulist",
+        "pages/addressAdministration/addressAdministration",
+        "pages/editAddress/editAddress",
+        "pages/RushBuyList/RushBuyList",
+        "pages/searchResult/searchResult",
+        "pages/dailySpecial/dailySpecial",
+        "pages/Monastery/Monastery",
+        "pages/applyProgree/applyProgree",
+        "pages/AllCategories/AllCategories",
+        "pages/JDclassification/JDclassification",
+        "pages/mustBuy/mustBuy",
+        "pages/JDList/JDList",
+        "pages/VerificationCode/VerificationCode",
+        "pages/HotStyle/HotStyle",
+        "pages/MemberPurchase/MemberPurchase",
+        "pages/FacialMask/FacialMask",
+        "pages/NeworderList/NeworderList",
+        "pages/NeworderDetails/NeworderDetails",
+        "pages/LevelDescription/LevelDescription",
+        "pages/AssembleDetail/AssembleDetail",
+        "pages/afterSaleProgree/afterSaleProgree",
+        "pages/BargainPriceList/BargainPriceList",
+        "pages/groupBalance/groupBalance",
+        "pages/InitiateGroup/InitiateGroup",
+        "pages/GroupDetail/GroupDetail",
+        "pages/BargainDetails/BargainDetails",
+        "pages/GroupList/GroupList",
+        "pages/HaggleList/HaggleList",
+        "pages/HelpDetails/HelpDetails",
+        "pages/BargainSettlement/BargainSettlement",
+        "pages/MyHelp/MyHelp",
+        "pages/HalfPrice/HalfPrice",
+        "pages/IntegralMall/IntegralMall",
+        "pages/IntegralMallBean/IntegralMallBean",
+        "pages/IntegralMallOrder/IntegralMallOrder",
+        "pages/IntegralMallOrderDetail/IntegralMallOrderDetail",
+        "pages/RushBuyDetail/RushBuyDetail",
+        "pages/RushBuyBalance/RushBuyBalance",
+        "pages/HalfPriceOrder/HalfPriceOrder",
+        "pages/HalforderDetails/HalforderDetails",
+        "pages/MembershipProductDetails/MembershipProductDetails",
+        "pages/Free/Free",
+        "pages/lookComment/lookComment",
+        "pages/evaluate/evaluate",
+        "pages/SuccessfulComments/SuccessfulComments",
+        "pages/CouponList/CouponList",
+        "pages/ActivationCode/ActivationCode",
+        "pages/NewHotStyle/NewHotStyle",
+        "pages/MaterialCircle/MaterialCircle",
+        "pages/Allarticle/Allarticle",
+        "pages/LevelPages/LevelPages",
+        "pages/LevelList/LevelList",
+        "pages/ViewLogistics/ViewLogistics",
+        "pages/modifyOrderAddress/modifyOrderAddress",
+        "pages/JDSpecialOffer/JDSpecialOffer",
+        "pages/NewLevelPages/NewLevelPages",
+        "pages/NewLevelPagesComp/NewLevelPagesComp",
+        "pages/RankingList/RankingList",
+        "pages/AssembleList/AssembleList",
+        "pages/JDUnion/JDUnion",
+        "pages/JDUnionList/JDUnionList",
+        "pages/JDUnionDetail/JDUnionDetail",
+        "pages/WeiPH/WeiPH",
+        "pages/wphDetail/wphDetail",
+        "pages/ELM/ELM",
+        "pages/bookingActivities/bookingActivities",
+        "pages/bookingDetails/bookingDetails",
+        "pages/pddDetails/details",
+        "pages/threePartiesShare/threePartiesShare",
+        "pages/hotStyleNew/hotStyleNew",
+        "pages/InvitationGifts/InvitationGifts",
+        "pages/luckDraw/luckDraw",
+        "pages/luckDrawDetail/luckDrawDetail",
+        "pages/invitationDraw/invitationDraw",
+        "pages/newZone/newZone",
+        "pages/newZoneN/newZone"
+      ]
+    },
+    {
+      "root": "page/yueMember/",
+      "pages": [
+        "pages/personJob/personJob",
+        "pages/personJobTwo/personJobTwo",
+        "pages/memberOrder/memberOrder",
+        "pages/memberDetails/memberDetails",
+        "pages/CustomTourOrder/CustomTourOrder",
+        "pages/CustomTourDetails/CustomTourDetails",
+        "pages/EliteCardDetails/EliteCardDetails",
+        "pages/OpenEliteCard/OpenEliteCard",
+        "pages/GroupBuy/GroupBuy",
+        "pages/TrainingClass/TrainingClass",
+        "pages/UniversityDetails/UniversityDetails",
+        "pages/MaterialCircle/MaterialCircle",
+        "pages/GiftPackage/GiftPackage",
+        "pages/CouponCenter/CouponCenter",
+        "pages/ImmediateUse/ImmediateUse",
+        "pages/UniversityList/UniversityList",
+        "pages/NethongVilla/NethongVilla",
+        "pages/NethongVillaDetail/NethongVillaDetail",
+        "pages/personalStores/personalStores",
+        "pages/personalStoresList/personalStoresList",
+        "pages/VideoRecharge/VideoRecharge",
+        "pages/VideoRechargeDetail/VideoRechargeDetail",
+        "pages/VideoPayResults/VideoPayResults",
+        "pages/University/University",
+        "pages/housekeeper/housekeeper",
+        "pages/modification/modification",
+        "pages/StandbyCommission/StandbyCommission",
+        "pages/couponsGoods/couponsGoods",
+        "pages/couponsActivity/couponsActivity",
+        "pages/openMember/openMember"
+      ]
+    },
+    {
+      "root": "page/oneself/",
+      "pages": [
+        "pages/EntityCard/EntityCard",
+        "pages/shareCode/shareCode",
+        "pages/RechargeOrder/RechargeOrder",
+        "pages/MemberCenter/MemberCenter",
+        "pages/inviteFriends/inviteFriends",
+        "pages/memberInformation/memberInformation",
+        "pages/about/about",
+        "pages/BrigadeFestival/BrigadeFestival",
+        "pages/myWalletContent/myWalletContent",
+        "pages/Transition/Transition",
+        "pages/CommissionsDescription/CommissionsDescription",
+        "pages/MyPush/MyPush",
+        "pages/Modification/Modification",
+        "pages/Instructions/Instructions",
+        "pages/FunctionIntroduction/FunctionIntroduction",
+        "pages/orderDetail/orderDetail",
+        "pages/videoList/videoList",
+        "pages/videoDetail/videoDetail",
+        "pages/SettlementRecord/SettlementRecord",
+        "pages/SalesSettlement/SalesSettlement",
+        "pages/growthValue/growthValue",
+        "pages/growthRule/growthRule"
+      ]
+    },
+    {
+      "root": "page/CardVolume/",
+      "pages": [
+        "pages/particulars/particulars",
+        "pages/CardVolume/CardVolume",
+        "pages/touristCard/touristCard",
+        "pages/cardDetails/cardDetails",
+        "pages/promptMessage/promptMessage",
+        "pages/Explain/Explain"
+      ]
+    },
+    {
+      "root": "page/Cloud/",
+      "pages": [
+        "pages/index/index",
+        "pages/searchResult/searchResult",
+        "pages/search/search",
+        "pages/brand/brand"
+      ]
+    },
+    {
+      "root": "page/other/",
+      "pages": [
+        "pages/CustomTour/Private/Private",
+        "pages/CustomTour/CustomTour",
+        "pages/poster/poster",
+        "pages/LuckDraw/LuckDraw",
+        "pages/utourletLuckyDraw/utourletLuckyDraw",
+        "pages/LuckyDrawType/LuckyDrawType",
+        "pages/RuleDescription/RuleDescription",
+        "pages/PayResults/PayResults",
+        "pages/LotteryYards/LotteryYards",
+        "pages/YueNews/YueNews",
+        "pages/SharingSet/SharingSet",
+        "pages/BindingHousekeeper/BindingHousekeeper",
+        "pages/Online/Online",
+        "pages/UserAgreement/UserAgreement",
+        "pages/CommoditySharing/CommoditySharing",
+        "pages/Reward/Reward",
+        "pages/enCore/enCore",
+        "pages/LiveNotice/LiveNotice",
+        "pages/playbackList/playbackList",
+        "pages/playbackDetail/playbackDetail"
+      ]
+    },
+    {
+      "root": "page/community/",
+      "pages": [
+        "pages/main/index",
+        "pages/main/group/activation/index",
+        "pages/main/group/noactivation/index",
+        "pages/main/commodities/index",
+        "pages/payment/payMain/index",
+        "pages/payment/Detailed/index",
+        "pages/payment/moneyTransfer/index",
+        "pages/payment/Recharge/index",
+        "pages/groupUp/groupUp",
+        "pages/myGroup/myGroup",
+        "pages/openAssistant/openAssistant",
+        "pages/webUrl/webUrl",
+        "pages/webImg/webImg",
+        "pages/myAddressBook/myAddressBook",
+        "pages/turnUrl/turnUrl",
+        "pages/webVideo/webVideo",
+        "pages/main/communityDetail/communityDetail"
+      ]
+    },
+    {
+      "root": "page/zhibo/",
+      "pages": [
+        "pages/zhiboceshi/zhibo"
+      ]
+    }
+  ],
+  "plugins": {
+    "calendar": {
+      "version": "1.1.3",
+      "provider": "wx92c68dae5a8bb046"
+    },
+    "live-player-plugin": {
+      "version": "1.0.4",
+      "provider": "wx2b03c6e691cd7370"
+    },
+    "Myplugin": {
+      "version": "1.0.0",
+      "provider": "wxa404e150131464ed"
+    }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx07b5caa7866d1697",
+    "wx3b5c2af451998243",
+    "wx40a98b4882ac8a28",
+    "wx84facba553e869a1",
+    "wxd4b442000ca319d7",
+    "wxece3a9a4c82f58c9",
+    "wx13e41a437b8a1d2e",
+    "wx32540bd863b27570",
+    "wxe9714e742209d35f"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

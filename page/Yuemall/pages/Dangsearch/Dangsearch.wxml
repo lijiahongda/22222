@@ -1,0 +1,41 @@
+<import src="/page/LoadingPopup/LoadingPopup.wxml" />
+<block wx:if="{{LoadingStatus}}">
+  <template is="LoadingPopup" />
+</block>
+<view class="dangsearch">
+  <view class="dangsearch_top">
+    <view class="dangsearch_input">
+      <view class="dangsearch_input_image">
+        <image src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569312086_51546.png"></image>
+      </view>
+      <input class="dangsearch_input_inp" placeholder="搜索你想要的书籍" bindblur="bindblur" bindfocus="focus" bindinput="bindinput" bindconfirm="confirm" value="{{inputvalue}}" />
+    </view>
+    <view class="dangsearch_top_del" bindtap="confirm">搜索</view>
+ <view class="modalDlg" wx:if="{{showModal}}">
+  <view class="modeContent" wx:for='{{searchDropGoods}}' wx:key="searchDropGoods">
+   <view class="title" bindtap='titleList' wx:if="{{item.suggestions.suggestion}}" data-name="{{item.suggestions.suggestion}}">{{item.suggestions.suggestion}}</view>
+  </view>
+ </view>
+  </view>
+  <view class="dangsearch_model">
+    <view class="dangsearch_model_records" wx:if="{{history!=''}}">
+      <view class="dangsearch_model_record_text">搜索历史</view>
+      <view class="dangsearch_model_record_image">
+        <image src="https://image.yuelvhui.com/pubfile/2019/09/26/line_1569499237_21185.png" bindtap="onSearchdel"></image>
+      </view>
+    </view>
+    <view class="dangsearch_model_record" wx:if="{{history!=''}}">
+      <view >
+        <text wx:for="{{history}}" wx:key="{{history.index}}" data-text="{{item}}" bindtap='RecentSearch' class="dangsearch_model_record_texts">{{item}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="dangsearch_model">
+    <view class="dangsearch_model_record_text">火热推荐</view>
+    <view class="dangsearch_model_record">
+      <view>
+        <text class="dangsearch_model_record_texts" bindtap='RecentSearch' wx:for="{{tuijian}}" wx:key="tuijian" data-text="{{item.name}}">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+</view>

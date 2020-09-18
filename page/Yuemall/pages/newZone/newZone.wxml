@@ -1,0 +1,84 @@
+<!--page/Yuemall/pages/newZone/newZone.wxml-->
+<view style="padding-bottom:27rpx; ">
+  <view style="position:relative;">
+    <!-- https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-08/21/yuelvhuiJ1RUJX9YSV1586353340.png -->
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-08/21/yuelvhuiJ1RUJX9YSV1586353340.png" class="top"></image>
+    <!-- <view class="pri">{{CouponInfo.amount}}</view> -->
+    <block wx:if='{{CouponInfo.is_send == 1}}'>
+      <view class="djs">距离红包失效仅剩
+        <view class="hour">{{countDownDay}}</view>天
+        <view class="hour">{{countDownHour}}</view>:
+        <view class="hour">{{countDownMinute}}</view>:
+        <view class="hour">{{countDownSecond}}</view>
+      </view>
+    </block>
+    <view class='couponBox'>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-07/14/yuelvhuiRR1kVYgoWH1586241838.png" class="coupon"></image>
+    </view>
+    <view class="con">
+      <view class="conLeft">
+        <view>¥</view>
+        <view>{{CouponInfo.amount}}</view>
+      </view>
+      <view style="margin:0 20rpx;">
+        <view class="new">{{CouponInfo.couponName}}</view>
+        <view>有效期领取之日起{{CouponInfo.antedate}}天</view>
+      </view>
+      <view wx:if='{{is_send == 0}}' bindtap="obtain" class="btn" data-couponid='{{CouponInfo.couponid}}'>立即领取</view>
+    </view>
+    <view wx:if='{{is_send == 1}}' class="received">
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-07/16/yuelvhuiKvavyv3dBk1586247739.png"></image>
+    </view>
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-07/14/yuelvhuihgcf7caNv91586242231.png" class="title"></image>
+  </view>
+  <view class="box">
+    <!-- 爆款专区 -->
+    <view class="explosive" wx:for='{{productListV1}}' wx:key='productListV1' bindtap="detailSp" data-id="{{item.goodId}}" data-skuid="{{item.productSkuId}}" data-url="/page/Yuemall/pages/details/details">
+      <image class="left" src="{{item.goodCover}}"></image>
+      <view class="right">
+        <view class="goodName">{{item.goodName}} </view>
+        <view class="progress">
+          <view class="line">
+            <view style="width:{{item.discount}}%"></view>
+          </view>
+          <view>{{item.discount}}%</view>
+        </view>
+        <view class="price">
+          <view class="priLeft">
+            券后价 ￥
+            <view class="new">{{item.goodVipPrice}}</view>
+            <view class="old">￥{{item.goodPrice}}</view>
+          </view>
+          <view class="btn">立即购买</view>
+        </view>
+      </view>
+    </view>
+    <view class="txt">
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-07/15/yuelvhuiwlzU83e7Tu1586242899.png"></image>
+    </view>
+    <!-- 新人专区 -->
+    <view>
+      <view class="explosive" wx:for='{{productList}}' wx:key='productList' bindtap="detailSp" data-id="{{item.goodId}}" data-skuid="{{item.productSkuId}}" data-url="/page/Yuemall/pages/details/details">
+        <image class="left" src="{{item.goodCover}}"></image>
+        <view class="right">
+          <view class="goodName"> {{item.goodName}}</view>
+          <view class="progress">
+            <view class="line">
+              <view style="width:{{item.discount}}%"></view>
+            </view>
+            <view>{{item.discount}}%</view>
+          </view>
+          <view class="price">
+            <view class="priLeft">
+              券后价 ￥
+              <view class="new">{{item.goodVipPrice}}</view>
+              <view class="old">￥{{item.goodPrice}}</view>
+            </view>
+            <view class="btn">立即购买</view>
+          </view>
+        </view>
+      </view>
+      <view class='none'>很遗憾，没有更多了～</view>
+    </view>
+  </view>
+</view>

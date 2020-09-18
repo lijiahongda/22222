@@ -1,0 +1,271 @@
+<!--page/Yuemall/pages/invitationDraw/invitationDraw.wxml-->
+<block wx:if="{{teamStatus == 0}}">
+  <!-- <block > -->
+  <view class="CountDown">
+    <view class="colon">距开奖剩余：</view>
+    <view  class="list" wx:if='{{countDownDay != 0}}'>{{countDownDay}}</view>
+    <view  class="colon" wx:if='{{countDownDay != 0}}'>天</view>
+    <view class="list">{{countDownHour}}</view>
+    <view class="colon">时</view>
+    <view class="list">{{countDownMinute}}</view>
+    <view class="colon">分</view>
+    <view class="list">{{countDownSecond}}</view>
+    <view class="colon">秒</view>
+  </view>
+</block>
+<block wx:if="{{teamStatus != 0}}">
+  <view class="CountDown">已开奖，活动已结束</view>
+</block>
+<view class="goodInfo">
+  <view style="position:relative;">
+    <view class="sign" wx:if='{{productInfo.draw_status ==1}}'>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-24/13/yuelvhuitRiGyX0Jju1585027358.png"></image>
+    </view>
+    <view class="sign" wx:if='{{productInfo.draw_status ==2}}'>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-24/13/yuelvhuiUz56jTHKte1585027411.png"></image>
+    </view>
+    <image class="main" src="{{productInfo.goodsImg}}"></image>
+  </view>
+  <view class="info">
+    <view class="title">
+      <text>{{productInfo.goodsName}}</text>
+    </view>
+    <view class="groupInfo">
+      <text>{{productInfo.goodsInfo}}</text>
+    </view>
+    <view class="can">
+      <text>参与人数{{productInfo.join_people}}人</text>
+    </view>
+    <view class="OriginalPrice">
+      <view class="gpriceB">
+        ¥
+        <text class="gPrice">{{productInfo.nowPrice}}</text>
+      </view>
+      <view class="OriginalPriceH">
+        ¥{{productInfo.goodsPrice}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="NumberGroups">
+  <view wx:if="{{productInfo.draw_status == 3 && productInfo.invitation_status == 1 }}" class="title">邀请1位好友参与，就能获得抽奖资格</view>
+  <view wx:if="{{productInfo.draw_status == 0 && productInfo.invitation_status == 1}}" class="title">已获得抽奖资格，邀请好友增加中奖概率</view>
+
+  <view class="title" wx:if="{{productInfo.draw_status == 0 && productInfo.invitation_status == 0 }}">等待开奖</view>
+  <view class="title" wx:if="{{productInfo.draw_status == 3 && productInfo.invitation_status == 0 }}">等待开奖</view>
+
+  <view wx:if="{{productInfo.draw_status ==1}}" class="title">恭喜你，中奖了</view>
+  <view wx:if="{{productInfo.draw_status ==1}}" class="tips">您邀请了{{productInfo.invite_member_num}}个好友，获得{{productInfo.lucky_code}}个获奖码</view>
+
+  <view class="title" wx:if="{{productInfo.draw_status ==2}}">很遗憾，未中奖了</view>
+  <view wx:if="{{productInfo.draw_status ==2 }}" class="tips">支付金额将在1-5个工作日原路退还，请耐心等待！</view>
+
+  <view class="HeadPortrait">
+    <view class="image" wx:for="{{team}}" wx:key="team">
+      <image class="head" src="{{item}}" bindtap='ImmediateDelegation'></image>
+    </view>
+    <block wx:if="{{productInfo.draw_status != 1&&productInfo.draw_status != 2 }}">
+      <view class="image">
+        <image class="head" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-22/21/yuelvhuic8sxFu76Pk1584883512.png" bindtap='ImmediateDelegation'></image>
+      </view>
+    </block>
+
+  </view>
+
+  <!-- 是否已抽奖 -->
+  <block>
+  
+    <button bindtap="drawList" wx:if="{{productInfo.draw_status == 3 && productInfo.invitation_status == 0 }}">
+      <view class="InviteFriends">去看看</view>
+    </button>
+    <button bindtap="drawList" wx:if="{{productInfo.draw_status == 0 && productInfo.invitation_status == 0 }}">
+      <view class="InviteFriends">去看看</view>
+    </button>
+    <button open-type='share' wx:if="{{productInfo.draw_status == 3 && productInfo.invitation_status == 1 }}">
+      <view class="InviteFriends">立即获取抽奖资格</view>
+    </button>
+    <button open-type='share' wx:if="{{productInfo.draw_status == 0 && productInfo.invitation_status == 1}}">
+      <view class="InviteFriends">立即邀请好友</view>
+    </button>
+    <button wx:if="{{productInfo.draw_status ==1}}" bindtap="orderList">
+      <view class="InviteFriends">查看奖品</view>
+    </button>
+    <button wx:if="{{productInfo.draw_status ==2}}" bindtap="drawList">
+      <view  class="InviteFriends">继续参与抽奖</view>
+    </button>
+  </block>
+
+  <image class="ruleImg" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-24/15/yuelvhui9eMxfhqv0g1585035337.png"></image>
+</view>
+
+<!-- 猜你喜欢 -->
+<view class="list_title">
+  <view class="title_shop">精选推荐 </view>
+</view>
+<view class="like">
+  <view wx:if="{{item.length > 0}}" class='goodList'>
+    <view class="goodInfo" wx:for="{{item}}" wx:key="item" data-id="{{item.id}}" data-skuid="{{item.skuId}}" data-url="/page/Yuemall/pages/details/details" bindtap='detailSp'>
+      <view style="position:relative">
+        <image class="goodsImg" src="{{item.goodCover}}"></image>
+      </view>
+      <view class="info">
+        <view class="title">
+          <text>{{item.goodName}}</text>
+        </view>
+        <view class="groupInfo">
+          <view class="groupInfoCon">
+            <view class="price">
+              <text>¥ </text>{{item.goodPrice}}</view>
+          </view>
+          <view class="rob">
+            <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-22/19/yuelvhuimFw6tQpEKY1584875427.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{!isHaveMore}}" class="isHaveMore">很遗憾，没有更多了～</view>
+
+</view>
+<!-- 规格 -->
+<view class="commodity_screen" bindtap="hideModal" catchtouchmove="disMove" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" catchtouchmove="disMove" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class="close" data-statu="close" bindtap="hideModal">
+    <image src="/images/YueMAll/close.png" style="width:26rpx;height:24rpx"></image>
+  </view>
+  <view class="commodity" style="">
+    <view class="images" style="background-color:#fff">
+      <image src="{{boxbanner}}" data-src="{{Specificationsimg}}" catchtap="imgYu" data-list="{{bannerItem}}"></image>
+    </view>
+    <view class="describe">
+      <view class="money">
+        <view style="color:#FF5012;margin-right:30rpx">￥
+          <text style="font-size:40rpx">{{productInfo.team_price}}</text>
+        </view>
+        <view>官网价￥{{productInfo.origin_price}}</view>
+      </view>
+      <view class="specification">
+        <text>商品编号：{{skuid}}</text>
+      </view>
+    </view>
+  </view>
+  <scroll-view scroll-y style="height: 378px;">
+    <view class="size" wx:for="{{colorSize}}" style="margin-top:{{isSale.saleState == 0?'124rpx':''}}" wx:for-index="idx" wx:key="colorSize" wx:for-item="colorSize" data-idx="{{idx}}">
+      <view class="sizeName">{{colorSize.title}}</view>
+      <view class="channelContent">
+        <view data-aaa="{{item.isEnable}}" class="{{statusArr[idx] == index?'active':''}}" wx:for="{{colorSize.buttons}}" wx:key="label" data-index='{{index}}' data-idx="{{idx}}" data-name="{{item.text}}" bindtap='{{item.isEnable?"swichLabel":""}}' data-sku="{{item.skuList}}">
+          <text class="{{item.isEnable?'':'NotOptional'}}">{{item.text}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="amount">
+      <view class="sizeName">数量</view>
+      <view class="regulation">
+        <view class="subtract" bindtap='subtract' data-num="{{amountNumber}}">-</view>
+        <view class="amountNumber">{{amountNumber}}</view>
+        <view class="addNumber" bindtap='addNumber' data-num="{{amountNumber}}">+</view>
+      </view>
+    </view> -->
+  </scroll-view>
+  <view style="position:absolute;bottom:0;width:100%">
+    <view class="operationButton">
+      <view class="SeparatePurchase" bindtap='sure'>
+        <view class="">确定</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部 -->
+<view class="footer">
+  <view class="left" bindtap='showcjModel'>
+    <view class="num">{{productInfo.lucky_code}}</view>
+    <view class="txt">抽奖码</view>
+  </view>
+  <view class="left" bindtap='showyqModel'>
+    <view class="num">100+</view>
+    <view class="txt">排行榜</view>
+  </view>
+</view>
+<!-- 抽奖码弹窗 -->
+<view class="couponModel" bindtap="hidecjModel" catchtouchmove="disMove" wx:if="{{cjModel}}">
+  <image class="close2" bindtap="hidecjModel" src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-02-12\/13\/yuelvhuiOjrprRnk231581486109.png"></image>
+  <view class="con1">
+    <view class="tit">您共获得{{productInfo.lucky_code}}个抽奖码</view>
+    <scroll-view scroll-y class="two_scroll_view" scroll-y="true" scroll-with-animation="true">
+      <view class="GroupList GroupListH" wx:for="{{helpListData}}">
+        <!-- <view class="GroupList GroupListH"> -->
+        <view class="SenderInfo SenderInfoH">
+          <view class="portrait">
+            <image src="{{item.litpic}}"></image>
+          </view>
+        </view>
+        <view class="info infoH">
+          <view class="timeH">通过邀请好友
+            <view style="color:#000;">{{item.nickname}}</view>
+          </view>
+          <view class="nameBox" style="display:flex">
+            <view class="name">获取{{item.send_lucky_code}}个抽奖码</view>
+            <view class="fewPeopleH">
+              {{item.created_time}}
+            </view>
+          </view>
+        </view>
+
+      </view>
+      <!-- <view wx:if="{{!isHaveMorea}}" class="isHaveMore">邀好友获得更多抽奖码～</view> -->
+    </scroll-view>
+  </view>
+  <!-- <image class="close1" bindtap="hidecjModel" src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-02-12\/13\/yuelvhuiOjrprRnk231581486109.png"></image> -->
+
+</view>
+<!-- 排行榜弹窗 -->
+<view class="couponModel" bindtap="hideyqModel" catchtouchmove="disMove" wx:if="{{yqModel}}">
+  <image class="close2" bindtap="hideyqModel" src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-02-12\/13\/yuelvhuiOjrprRnk231581486109.png"></image>
+  <view class="con" style="background:url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-24/16/yuelvhuiC7f9jvvGVE1585038354.png);background-repeat: no-repeat; background-size:100% 100%;">
+    <!-- 前三名 -->
+    <view class="awards">
+      <view class="first" wx:if='{{rankData.length>0}}'>
+        <image class="pic" src="{{rankData[0].litpic}}"></image>
+        <view class="name">{{rankData[0].nickname}}获得</view>
+        <view class="num">{{rankData[0].lucky_code}}个</view>
+        <view>抽奖码</view>
+        <image class="brand" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-24/23/yuelvhuifyeUh3pEgT1585063019.png"></image>
+      </view>
+      <view class="second" wx:if='{{rankData.length>1}}'>
+        <image class="pic" src="{{rankData[1].litpic}}"></image>
+        <view class="name">{{rankData[1].nickname}}获得</view>
+        <view class="num">{{rankData[1].lucky_code}}个</view>
+        <view>抽奖码</view>
+        <image class="brand" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-24/23/yuelvhuiytofyJuTo61585063028.png"></image>
+      </view>
+      <view class="third" wx:if='{{rankData.length>2}}'>
+        <image class="pic" src="{{rankData[2].litpic}}"></image>
+        <view class="name">{{rankData[2].nickname}}获得</view>
+        <view class="num">{{rankData[2].lucky_code}}个</view>
+        <view>抽奖码</view>
+        <image class="brand" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-24/23/yuelvhuiqixi64AQiE1585063037.png"></image>
+      </view>
+    </view>
+    <!-- 4名到之后的loser -->
+    <scroll-view scroll-y class="two_scroll_view" wx:if='{{rankData.length>3}}'>
+      <view class="rankingList" wx:for="{{rankData}}" wx:if='{{index>2}}' wx:key="rankData" style="max-height:300rpx;">
+        <view class="index">{{index+1}}</view>
+        <image src="{{item.litpic}}"></image>
+        <view class="name">{{item.nickname}}获得</view>
+        <view class="num">{{item.lucky_code}}</view>
+        <view class="text">抽奖码</view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 自己的排名 -->
+  <!-- <view class="rankingList oneself" >
+    <view class="index">{{myrank.key}}</view>
+    <image src="{{myrank.litpic}}"></image>
+    <view class="name">{{myrank.nickname}}</view>
+    <view class="num">{{myrank.lucky_code}}个</view>
+    <view class="text">抽奖码</view>
+  </view> -->
+
+</view>

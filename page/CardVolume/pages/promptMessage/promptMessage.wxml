@@ -1,0 +1,9 @@
+<view class="content">
+  <view class="top">
+    <view class="cade" style="">
+      <image src="../../../../images/personalCenter/time.png" style="width:90rpx;height:90rpx"></image>
+    </view>
+    <view class="cade" style="">19年年卡将在2018年的12月份统一发放</view>
+    <view class="">请耐心等待</view>
+  </view>
+</view>

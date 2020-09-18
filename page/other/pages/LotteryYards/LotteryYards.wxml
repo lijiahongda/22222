@@ -1,0 +1,29 @@
+<view class="wrap">
+  <view class="tab-h">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">全部
+    </view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">未使用
+    </view>
+    <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">已过期
+    </view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">未中奖
+    </view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">已中奖
+    </view>
+  </view>
+  <view class="tab-content">
+    <!--菜单-->
+    <view class="scoll-h" wx:for="{{list}}" wx:key="{{index}}">
+      <image class="picimg" src="https://image.yuelvhui.com/pubfile/2019/01/07/line_1546857116.png"></image>
+      <view class="item">
+        <view class="code">{{item.code}} <text class="copy" bindtap='copyText' data-text="{{item.code}}" class="copy">复制</text></view>
+        <view class="info">{{item.content}}</view>
+        <view class="codeType">{{item.type==2?'周周乐竞猜码':'天天乐竞猜码'}}</view>
+        <view class="time">{{item.end_date}}</view>
+        <view class="statusimg">
+          <image src="{{item.status == 1 ? statusImg.notUse : item.status == 2 ? statusImg.notWinning : item.status == 3 ? statusImg.winning : statusImg.expired}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

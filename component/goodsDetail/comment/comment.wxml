@@ -1,0 +1,29 @@
+<view class='comment' wx:if='{{comment.comment_total!=0}}'>
+  <view class="header">
+    <view>商品评价</view>
+    <view class="right">
+      <text bindtap="lookComment">查看全部 ({{comment.comment_total}})</text>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-17/11/yuelvhuiyoa0hEDZlb1579232651.png"></image>
+    </view>
+  </view>
+  <view class="list" wx:for='{{comment.result}}' wx:key='{{item}}'>
+    <view class="buyDetail">
+      <view class="buyDetail" >
+        <image src="{{item.litpic}}"></image>
+        <view>
+          <view class="nameStar">
+            <view>{{item.nickname}}</view>
+            <image wx:for="{{item.goods_score}}" wx:key='{{indexSon}}'  src='https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-17/11/yuelvhuiBVOdaHXhaa1579232932.png' ></image>
+            <image wx:for="{{5-item.goods_score}}" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-17/11/yuelvhuiuaIyJrLuAk1579232977.png"></image>
+          </view>
+          <view>{{item.create_time}}</view>
+        </view>
+      </view>
+      <!-- <view class="share" wx:if='{{typeC}}' data-item="{{item}}" bindtap="share" >
+        <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-20/20/yuelvhuizrH7e03qfV1587387065.png" ></image>分享
+      </view> -->
+    </view>
+    <view class="commentText">{{item.comment}}</view>
+    <image wx:for="{{item.imgs}}" wx:for-item="itemSon" wx:for-index="ind" src="{{itemSon}}" class="commentImg" data-imglist="{{item.imgs}}" data-ind="{{ind}}" bindtap="checkImg"></image>
+  </view>
+</view>

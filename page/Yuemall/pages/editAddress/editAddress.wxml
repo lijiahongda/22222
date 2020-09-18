@@ -1,0 +1,58 @@
+<view class="editAddress">
+  <view class="favourable">
+    <view class="item">
+      <view class="title">收货人：</view>
+      <input placeholder-style='color:#999' class="detailed" placeholder='请填写收货人姓名' bindinput='name' value='{{receivername}}'></input>
+    </view>
+    <view class="item">
+      <view class="title">手机号码：</view>
+      <input placeholder-style='color:#999' type='number' class="detailed" placeholder='请填写收货人手机号' bindinput="Phone" value="{{mobile}}"></input>
+    </view>
+    <view class="item" bindtap='LocationMore'>
+      <view class="title">所在地区：</view>
+      <view style="flex:1" class="PcAt">
+        <text>{{province == '请选择'?'':province}}{{city == '请选择'?'':city}}{{area == '请选择'?'':area}}{{Town == '请选择'?'':Town}}</text>
+      </view>
+      <image src="/images/YueMall/LocationMore.png"></image>
+    </view>
+    <view class="textareaitem">
+      <view>详细地址：</view>
+      <input placeholder-style='color:#999' style="width:76%" class="detailed" placeholder='详细地址，如街道、楼牌号等' bindinput='detailed' value="{{address}}"></input>
+      <!-- <textarea bindblur="detailed" placeholder="街道、楼牌号等" value='{{address}}'/> -->
+    </view>
+  </view>
+</view>
+<view class="check">
+  <view>设为默认收货地址</view>
+  <view>(每次下单时均会使用该地址)</view>
+  <switch checked="{{isDefault == 1}}" color='#B9372A' bindchange="checkboxChange" class="default"/>
+</view>
+<view class="footer" bindtap='{{isconservation?"conservation":""}}'>保存地址</view>
+
+<!-- 省市区选择 -->
+<view class="commodity_screenlong" wx:if="{{Status}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_boxlong" wx:if="{{Status}}">
+  <view class="title">
+    <view>配送至</view>
+    <image src="/images/YueMall/LocationClose.png" bindtap='hideModal'></image>
+  </view>
+  <view class="item">
+    <view style="color:{{province == '请选择'?'':'#333'}}" bindtap='defaultData'>{{province}}</view>
+    <view style="color:{{city == '请选择'?'':'#333'}}" bindtap='Selectprovince'>{{province == '请选择'?'':city}}</view>
+    <view style="color:{{area == '请选择'?'':'#333'}}" bindtap='SelectCity'>{{city == '请选择'?'':area}}</view>
+    <view style="color:{{Town == '请选择'?'':'#333'}}" bindtap='SelectTown' wx:if="{{isTown}}">{{area == '请选择'?'':Town}}</view>
+  </view>
+  <view class="region">
+    <scroll-view scroll-y style="height:{{height}}px">
+      <view class="regionList" wx:for="{{isprovince?provincelist:iscity?citylist:isarea?arealist:isTown?Townlist:''}}" wx:key="provincelist" data-id="{{item.id}}" data-name="{{item.name}}" bindtap='{{isprovince?"Selectprovince":iscity?"SelectCity":isarea?"Selectarea":isTown?"SelectTown":""}}'>
+        <view class="{{item.id == provinceId?'active':''}} provinceId" wx:if="{{isprovince}}">{{item.name}}</view>
+        <view class="{{item.id == cityId?'active':''}} cityId" wx:elif="{{iscity}}">{{item.name}}</view>
+        <view class="{{item.id == areaId?'active':''}} areaId" wx:elif="{{isarea}}">{{item.name}}</view>
+        <view class="{{item.id == TownId?'active':''}} TownId" wx:else="{{isTown}}">{{item.name}}</view>
+        <image wx:if="{{item.id == provinceId || item.id == cityId || item.id == areaId || item.id == TownId}}" src="/images/YueMall/regionSelect.png"></image>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<!-- 授权按钮 -->
+<view class="authorizationStatus" bindtap='VerificationCode' wx:if="{{authorizationStatus}}"></view>

@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="scrollView" style="">
+  <image src="{{header}}" class="bg1" mode="widthFix"></image>
+  <!-- <view class="msg">{{msg}}</view> -->
+  <image src="{{bg2}}" class="bg2" mode="widthFix"></image>
+  <view class="container-out" wx:for="{{list}}" data-id="{{item.id}}" wx:key="list">
+    <image src="{{item.image}}" data-id="{{item.id}}" bindtap='lineDetail' mode="widthFix"></image>
+    <view class="exchange" data-goodsid="{{item.goodsId}}" data-skuid="{{item.skuId}}" bindtap='exchange'>去兑换</view>
+  </view>
+  <view class="tips">
+    <view wx:for="{{tips}}" wx:key="tips">{{item}}</view>
+  </view>
+</view>
+
+

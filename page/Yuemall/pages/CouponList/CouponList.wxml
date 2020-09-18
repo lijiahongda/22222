@@ -1,0 +1,28 @@
+<!--page/Yuemall//pages/CouponList/CouponList.wxml-->
+<view class="content">
+  <view class="list" style="background-image:url({{(item.userCouponState == 0 && item.couponState == 1)?'https://image.yuelvhui.com/pubfile/2019/06/16/line_1560676740.png':'https://image.yuelvhui.com/pubfile/2019/06/16/line_1560674215.png'}})" wx:for="{{list}}" wx:key="remind">
+    <view class="info">
+      <view class="title">{{item.couponBelong}}</view>
+      <view class="FullReduction">
+        <view class="Company">¥</view>
+        <view class="price">{{item.amount}}</view>
+        <view style="margin-bottom: 10rpx;">{{item.remind}}</view>
+      </view>
+    </view>
+    <view class="button">
+      <!--未领取 -->
+      <block wx:if="{{item.userCouponState == 0}}">
+        <block wx:if="{{item.couponState == 0}}">
+          <view bindtap='coupon' data-id="{{item.typeId}}">立即领取</view>
+        </block>
+         <block wx:else>
+          <view style="background-color:#999">已领完</view>
+        </block>
+      </block>
+      <!-- 已领取 -->
+      <block wx:else>
+         <view bindtap='ActivationCode' data-id="{{item.typeId}}">查看激活码</view>
+      </block>
+    </view>
+  </view>
+</view>

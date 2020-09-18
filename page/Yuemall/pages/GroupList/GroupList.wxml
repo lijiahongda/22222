@@ -1,0 +1,16 @@
+<!--page/Mall/pages/GroupList/GroupList.wxml-->
+<view class="list" wx:for="{{list}}" wx:key="list">
+  <view class="SenderInfo">
+    <image src="{{item.head_pic}}" class=""></image>
+    <view class="info">
+      <view class="fewPeople">
+        还差
+        <text>{{item.need - item.joins}}人</text>拼成
+      </view>
+      <view class="time">剩余{{item.countDownHour}}:{{item.countDownMinute}}:{{item.countDownSecond}}</view>
+    </view>
+  </view>
+  <view class="GroupInfo">
+    <view class="GoGroup" bindtap='GoGroupDetail' data-id="{{item.id}}">去拼单</view>
+  </view>
+</view>

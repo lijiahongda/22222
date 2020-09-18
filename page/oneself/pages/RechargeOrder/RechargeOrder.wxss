@@ -1,0 +1,43 @@
+.money{
+  font-size:36rpx;
+  color:#fc6931;
+}
+.deliveryAdd {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.deliveryAdd .userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.deliveryAdd .userInfo .userName {
+  font-size: 30rpx;
+  color:#333;
+}
+
+.userAddress {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.sizeColor{
+  font-size:13px;
+  color:rgb(74,74,74)
+}
+.addressLabel {
+  font-size: 24rpx;
+  color: #999;
+  padding: 4rpx;
+  height: 12.5px;
+  line-height: 12px;
+  text-align: center;
+}
+
+
+
+

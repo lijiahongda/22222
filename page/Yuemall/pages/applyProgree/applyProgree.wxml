@@ -1,0 +1,69 @@
+<view class="goods">
+  <view class="title" wx:if="{{isMemberGoods == 1}}">售后商品</view>
+  <view class="title" wx:else>退款商品</view>
+  <view class="goodinfo">
+    <image class="image" mode="aspectFill" src='{{goods.goodsImg}}'></image>
+    <view class="name">{{goods.goodsName}}</view>
+    <view class="goodprice">
+      <view>￥{{goods.goodsPrice}}</view>
+      <view wx:if="{{isMemberGoods!= 1}}">x{{goods.goodsNum}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="reason">
+  <view class="list" bindtap="closeService">
+    <view wx:if="{{isMemberGoods ==1}}">售后原因</view>
+    <view wx:else>退款原因</view>
+    <view><view style="{{reasonText?'':'color:#666'}}">{{reasonText?reasonText:'请选择'}}</view> <image src="https://image.yuelvhui.com/pubfile/2019/10/21/line_1571640727_93953.png"></image> </view>
+  </view>
+  <view wx:if="{{isMemberGoods != 1}}">退款金额： <text style="color:#EF4C25">￥{{refundPrice}}</text> </view>
+  <!-- <view class="price_cont">最多￥49.9，含发货邮费￥0.00</view> -->
+</view>
+
+<view class="logInfo" style="border-bottom:1px solid #f6f6f6">
+  <view wx:if="{{isMemberGoods == 1}}">售后信息：</view>
+  <view wx:else>退款信息：</view>
+  <input placeholder="选填" bindinput="bindinput"></input>
+</view>
+<view class="logInfo" style="border-bottom:1px solid #f6f6f6">
+  <view wx:if="{{isMemberGoods == 1}}">售后信息：</view>
+  <view wx:else>物流单号：</view>
+  <input placeholder="请填写物流单号" bindinput="LogisticsNum"></input>
+</view>
+<view class="orderInfo"> 
+  <view class="title">上传凭证</view>
+  <image class="upload" bindtap='upload' wx:if="{{image == ''}}" src="https://image.yuelvhui.com/pubfile/2019/10/21/line_1571651126_98656.png"></image>
+  <view class="Exhibition" wx:else>
+    <view class="image" wx:for="{{image}}" wx:key="image">
+      <image mode="aspectFill" class="images" src="{{item}}"></image>
+      <image class="deleteImg" data-index="{{index}}" catchtap="deleteImg" src="https://image.yuelvhui.com/pubfile/2019/10/21/line_1571651146_18771.png"></image>
+    </view>
+    <image bindtap='upload' class="upload" wx:if="{{imgs.length < 6}}" src="https://image.yuelvhui.com/pubfile/2019/10/21/line_1571651126_98656.png"></image>
+  </view>
+</view>
+
+
+<!-- 售后服务 -->
+<view class="bg_black" wx:if="{{services}}"></view>
+<view class="services" wx:if="{{services}}">
+  <view class="title">售后服务</view>
+  <image class="close" bindtap="closeService" src="https://image.yuelvhui.com/pubfile/2019/10/21/line_1571653726_74744.png"></image>
+  <view class="tips">
+    <view wx:for="{{tips}}" wx:for-index="index" wx:key="index">{{item}}</view>
+  </view>
+  <view class="reason_radio">
+    <view class="titles" wx:if="{{isMemberGoods == 1}}">请选择售后原因（必选）：</view>
+    <view class="titles" wx:else>请选择取消订单的原因（必选）：</view>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <radio color="#f2391a" class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.type}}" checked="{{item.checked}}">
+        <text>{{item.info}}</text>
+      </radio>
+    </radio-group>
+  </view>
+  <view class="save" bindtap="closeService">提交</view>
+</view>
+
+
+<view class="save" bindtap="save" wx:if="{{saveBtn}}">提交</view>
+<view class="save" wx:else>提交</view>

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#141414",
+  "usingComponents": {
+    "header-com": "../../components/headerCom/index",
+    "main-commodity": "../../components/mainCommodity/index"
+  },
+  "navigationStyle": "custom"
+}

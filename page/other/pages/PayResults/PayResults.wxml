@@ -1,0 +1,90 @@
+<!--page/other/pages/PayResults/PayResults.wxml-->
+<!-- 优惠券弹框 -->
+<couponPopup id="couponPopup" inner-text="{{list}}"></couponPopup>
+
+<import src="/page/GiftPackage/GiftPackage.wxml" />
+<block wx:if="{{GiftPackageStatus}}">
+	<template is="GiftPackagePopup" />
+</block>
+
+<!-- 支付成功 -->
+<view class="content" wx:if="{{isPaySuccess == 'true'}}">
+	<image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-02/17/yuelvhui9KfMM0kk5L1583141681.png"></image>
+	<text class="type">支付成功！</text>
+	<text class="desc">您已下单成功，我们会尽快安排发货，</text>
+	<text class="desc">请耐心等待...</text>
+	<view class="button">
+		<view class="goHome" bindtap="goHome" style="margin: 0 auto;">返回首页</view>
+		<!-- <view class="orderDetail" bindtap="orderDetail">查看订单</view> -->
+	</view>
+</view>
+
+<!-- 支付失败 -->
+<view class="content" wx:else>
+	<image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-02/17/yuelvhuilOQsyrBp9z1583141697.png"></image>
+	<text class="type">支付失败！</text>
+	<text class="desc">请您重新选择支付...</text>
+	<text class="desc"> </text>
+	<view class="button">
+		<view class="goHome" bindtap="goHome">返回首页</view>
+		<!-- <view class="orderDetail" bindtap="orderDetail">查看订单</view> -->
+	</view>
+</view>
+
+<!-- 猜你喜欢 -->
+<view class="list_title">
+	<image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-20/16/yuelvhui3FWrQrWAln1576830924.png"></image>
+	<view class="title_shop">推荐商品 </view>
+	<view class="title_like">猜你喜欢</view>
+</view>
+<lineTwoListFlow id="lineTwoListFlow" inner-text="{{list}}"></lineTwoListFlow>
+
+<!-- 喜从天降 -->
+<view class="happy" wx:if='{{showHappy}}'>
+	<view>
+		<view class="title">恭喜您被礼品砸中</view>
+		<view class="price">1分钱拿好礼</view>
+		<image src="" class="line"></image>
+		<view class="botton">
+			<view bindtap="go" data-channelid="undefined" data-hotid="0" data-id="0" data-name="限时半价" data-redirecttype="33" data-type="undefined" data-typeid="undefined">去逛逛</view>
+			<view bindtap="go" data-channelid="undefined" data-hotid="55" data-id="55" data-name="当月白拿" data-redirecttype="39" data-skuid="undefined" data-type="undefined" data-typeid="undefined">去白拿</view>
+		</view>
+	</view>
+	<image bindtap="closeHappy" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-16/00/yuelvhuiHUVzLqKZLq1581785586.png"></image>
+</view>
+<!-- <view class="tips">提示：订单查询请下载’悦淘‘ app进行查询</view> -->
+<block wx:if="{{isPaySuccess == 'true'}}">
+	<!-- vipresults : 黑金vip背景图  vipresult : 白金vip背景图 -->
+	<view class="vipresult {{statusresult==2?'vipresults':''}}" wx:if="{{vipResult}}">
+		<view>
+			<view class="titles">购买成功</view>
+			<view class="texts">确认收货7天后自动成为{{statusresult==1?'白金':statusresult==2?'黑金':''}}会员，<br />
+				请记得查看哦～</view>
+			<view class="vipbtn" bindtap="Iknow">我知道了</view>
+		</view>
+	</view>
+</block>
+
+<block wx:if="{{displayType==2}}">
+	<view class="share_opo" wx:if="{{displayType==2}}">
+		<view class="share_box">
+		<image class="close_btn" bindtap="closeBox" style="width: 50rpx;height: 50rpx;" src="https://image.yuelvhui.com/pubfile/2019/09/27/line_1569568154_14644.png"></image>
+			<image src="{{tipsImg}}"></image>
+			<view class="tipsImg">
+				<block wx:if="{{firstblod==0}}">
+					<view>分享给好友</view>
+				<view>得<span style="color: red;font-size: 40rpx;">0.01</span>元超值好货</view>
+				</block>
+				<block wx:if="{{firstblod==1}}">
+					<view>分享给好友</view>
+				<view>多得<span style="color: red;font-size: 40rpx;">1</span>次免运费机会</view>
+				</block>
+				<view class="tipsImg" wx:if="{{firstblod==0}}">
+						<image style="width: 120rpx;height:120rpx;margin-top:10rpx;" src="{{shareDatapou.img}}"></image>
+						<view style="font-size: 18rpx;color:#666666;">{{shareDatapou.goodsName}}</view>
+				</view>
+			</view>
+			<button class="share_btn" open-type="share">分享给微信好友</button>
+		</view>
+	</view>
+</block>

@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ActivityTemplate": "/component/ActivityTemplate/ActivityTemplate",
+    "lineTwoListFlow": "/component/lineTwoListFlow/lineTwoListFlow",
+    "banner": "/component/banner/banner",
+    "couponPopup": "/component/couponPopup/couponPopup"
+  }
+}

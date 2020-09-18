@@ -1,0 +1,169 @@
+<!--page/yueMember//pages/personJob/personJob.wxml-->
+<view wx:if="{{status == 0}}">
+  <view class="JobImg">
+    <image src="{{banner}}"></image>
+    <view>悦淘APP是一款优品会员社交电商平台。致力于精致生活的美好体验，集购物、酒店、旅行、加油等于一身，精致生活如此简单。</view>
+  </view>
+  <view class="JobTitle">
+    <view>{{desc}}</view>
+  </view>
+  <view class="JobOrder">
+    <view class="JobOrder_item">
+      <view class="Job_line"></view>
+      <image src="https://image.yuelvhui.com/pubfile/2019/10/27/line_1572173079_18004.png"></image>
+      <view>申请</view>
+    </view>
+    <view class="JobOrder_border"></view>
+    <view class="JobOrder_item">
+      <image src="https://image.yuelvhui.com/pubfile/2019/10/27/line_1572173113_97080.png"></image>
+      <view>审批</view>
+    </view>
+    <view class="JobOrder_border"></view>
+    <view class="JobOrder_item">
+      <image src="https://image.yuelvhui.com/pubfile/2019/10/27/line_1572173155_17704.png"></image>
+      <view>上岗</view>
+    </view>
+  </view>
+  <view class="JobBorder"></view>
+  <view class="JobEdit">
+    <view class="list">
+      <view class="weui-name">姓名</view>
+      <view class="weui-cell">
+        <input class="weui-input" placeholder="请填写姓名" disabled="true" type="text" bindinput="name" value="{{name}}"/>
+      </view>
+    </view>
+    <view class="list">
+      <view class="weui-name">手机号</view>
+      <view class="weui-cell">
+        <input class="weui-input" placeholder="请填写手机号"  disabled="true" type="number" bindinput="phone" value="{{phone}}"/>
+      </view>
+    </view>
+    <view class="list">
+      <view class="weui-name">身份证号</view>
+      <view class="weui-cell">
+        <input class="weui-input" placeholder="请填写身份证"  disabled="true" type="number" bindinput="id_card" value="{{id_card}}"/>
+      </view>
+    </view>
+    <view class="list">
+      <view class="weui-name">采购数量</view>
+      <view class="weui-cell purchase">
+        <block wx:if="{{applyInfo.length==1}}">
+          <view class="number" catchtap="purchaseChose" data-type="{{applyInfo[0].applyType}}" data-item="{{item}}">
+            <image class="plus" catchtap="plus" src="https://image.yuelvhui.com/pubfile/2019/11/21/line_1574327031_39341.png"></image>
+            <input bindblur="applyBlur" type="number" value="{{applyNum}}"></input>
+            <image style="margin-left:0;" class="reduce" catchtap="reduce" src="https://image.yuelvhui.com/pubfile/2019/11/21/line_1574326873_87007.png"></image>
+          </view>
+        </block>
+        <block wx:if="{{applyInfo.length==2}}">
+          <view catchtap="purchaseChose" class="allpy_cont" style="margin-bottom:10rpx;" data-type="{{applyInfo[0].applyType}}" data-item="{{item}}">
+            <image src="https://image.yuelvhui.com/pubfile/2019/11/07/line_1573115275_31186.png" wx:if="{{purchase==2}}"></image>
+            <image src="https://image.yuelvhui.com/pubfile/2019/11/07/line_1573115253_38340.png" wx:else></image>
+            <view class="number">
+              <image class="plus" catchtap="plus" src="https://image.yuelvhui.com/pubfile/2019/11/21/line_1574327031_39341.png"></image>
+              <input bindblur="applyBlur" type="number" value="{{applyNum}}"></input>
+              <image style="margin-left:0;" class="reduce" catchtap="reduce" src="https://image.yuelvhui.com/pubfile/2019/11/21/line_1574326873_87007.png"></image>
+            </view>
+          </view>
+          <view catchtap="purchaseChose" class="allpy_cont" data-type="{{applyInfo[1].applyType}}" data-item="{{item}}">
+            <image src="https://image.yuelvhui.com/pubfile/2019/11/07/line_1573115275_31186.png" wx:if="{{purchase==1}}"></image>
+            <image src="https://image.yuelvhui.com/pubfile/2019/11/07/line_1573115253_38340.png" wx:else></image>
+            <view style="margin-right:40rpx;">{{applyInfo[1].applyNum}}张</view>
+          </view>
+        </block>
+      </view>
+    </view>
+     <view class="list">
+      <view class="weui-name">应付金额</view>
+      <view class="weui-cell purchase">
+        <view class="price" wx:if="{{applyInfo.length==1}}">¥{{applyNum * applyInfo[0].amount}}</view>
+        <view class="price" wx:if="{{applyInfo.length==2}}">¥{{purchase==1?applyNum * applyInfo[0].amount:applyInfo[1].amount*applyInfo[1].applyNum}}</view>
+      </view>
+    </view>
+    <!-- <view class="list">
+      <view class="weui-name">申请城市区域</view>
+      <view class="weui-cell">
+        <view class="NewImgBox">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{city}}">
+          <view class="picker">
+            {{city[index]?city[index]:'请选择城市区域'}}
+          </view>
+        </picker>
+        <image class="three_bor" 
+        src="https://image.yuelvhui.com/pubfile/2019/10/27/line_1572179856_76300.png"></image>
+        </view>
+        
+      </view>
+    </view>
+    <view class="list">
+      <view class="weui-name">负责人</view>
+      <view class="weui-cell">
+        <input class="weui-input" placeholder="请输入负责人姓名" bindinput="select_people"
+        value="{{select_people}}"/>
+      </view>
+    </view> -->
+  </view>
+  <view class="JobBtn">
+    <button bindtap="submitBtn">下一步</button>
+  </view>
+
+  <view class="mask" wx:if="{{scrollUp}}">
+    <view class="mask_up">
+      <view class="mask_up_city">
+       <view class="concel" bindtap="concel">取消</view>
+       <h1 class="h1">城市选择</h1>
+       <view class="dateTime" bindtap="dateTime">确定</view>
+      </view>
+      <!-- 城市滚动 -->
+       <!-- <view class="scrollCity">
+         <view class="kong_line"></view>
+          <view class="city_dask" wx:for="{{city}}" key="index" bindtap="scrollSize" data-city="{{item}}"> 
+            {{item}}
+          </view> 
+       </view> -->
+
+
+        <!-- <view class="scrollCity">
+         <view class="kong_line"></view>
+         <picker bindchange="scrollSize" value="{{index}}" range="{{array}}">
+          <view class="city_dask" wx:for="{{city}}" key="index" data-city="{{item}}">
+            {{item}}
+          </view>
+       </picker>
+       </view> -->
+       
+        <!-- <picker bindchange="scrollUp" value="{{index}}" range="{{array}}">
+         <view class="city_dask" wx:for="{{city}}" key="index" data-city="{{item}}">
+         {{item}}</view>
+        </picker>
+        -->
+        
+    </view>
+  </view>
+</view>
+<view wx:elif="{{status == 1}}" class="ExamPage">
+  <view class="ExamImage">
+    <image src="https://image.yuelvhui.com/pubfile/2019/10/28/line_1572247789_33332.png"></image>
+  </view>
+   <view class="ExamSize">审核中，请耐心等待...</view>
+</view>
+<view wx:elif="{{status == 2}}">
+ <view class="BorderBottom"></view>
+ <view class="ImageBox">
+   <image src="https://image.yuelvhui.com/pubfile/2019/10/28/line_1572250757_54051.png"></image>
+   <view class="workSize">您已经上岗了</view>
+   <view class="tripSize">快开始你的躺赚之旅吧</view>
+   <view class="AgainSize" bindtap="AgainSize"><button>再次采购</button> </view>
+ </view>
+</view>
+<view wx:elif="{{status == 3}}">
+  <view class="ErrorBox">
+    <image src="https://image.yuelvhui.com/pubfile/2019/10/28/line_1572252083_57941.png"></image>
+    <view class="ErrorSize">很遗憾，审核失败</view>
+    <view class="AgainSize" bindtap="AgainSize"><button>再次申请</button> </view>
+  </view>
+</view>
+<view wx:elif="{{status == 4}}">
+  <view style="width:100%;margin-top:200rpx;text-align:center">
+    请去APP实名认证
+  </view>
+</view>

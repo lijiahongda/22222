@@ -1,0 +1,1 @@
+  <textarea value="{{textValue}}" maxlength="10000" disabled="{{true}}"/>

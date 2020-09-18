@@ -1,0 +1,40 @@
+<!--page/other/pages/CommoditySharing/CommoditySharing.wxml-->
+<view class="content">
+  <view class="title">分享图片：</view>
+  <view class="Picture_library">
+    <scroll-view scroll-x class="scroll">
+      <view class="item" wx:for="{{image}}" wx:key="image" wx:for-index="index">
+        <image src="{{item.img}}"></image>
+        <image class="Check_list" data-index="{{index}}" data-shareimage="{{item.img}}" src="{{item.ischeck?yesImage:noImage}}" bindtap="clickImage"></image>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="title">分享文案：</view>
+  <view class="Sharing_Copywriters">
+    <view>👇👇👇</view>
+    <view>{{good_info.goods_name}}</view>
+    <view>{{good_info.sale_desc}}</view>
+    <view>{{good_info.buy_desc}}</view>
+    <view>{{good_info.panic_desc}}</view>
+    <view>{{good_info.panic_link}}</view>
+    <view>{{good_info.yaoqing_code}}</view>
+  </view>
+  <view class="copy" bindtap="copy" data-text="👇👇👇 \n {{good_info.goods_name}} \n {{good_info.sale_desc}} \n {{good_info.buy_desc}} \n {{good_info.panic_desc}} \n {{good_info.panic_link}}">复制</view>
+  <view class="title">分享方式：</view>
+  <view class="Sharing_mode">
+    <view class="Sharing_list">
+      <button class='con_listbox' open-type="share">
+        <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-26/23/yuelvhuivpQrKzYcqO1582729890.png"></image>
+      </button>
+      <view>分享给好友</view>
+      <view>(可锁粉)</view>
+
+    </view>
+    <view class="Sharing_list" bindtap="saveImage">
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-26/23/yuelvhuiDrwagCFqD81582729920.png"></image>
+      <view>保存图片</view>
+      <view>(可锁粉)</view>
+
+    </view>
+  </view>
+</view>

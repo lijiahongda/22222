@@ -1,0 +1,207 @@
+page{
+  min-height: 100%;
+  background: #F7F4F8;
+}
+.couponDetail{
+  width:100%;
+  height: 304rpx;
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-12/17/yuelvhuiC7aBRlL2HL1581501513.png);
+  background-size: 100% 100%;
+  padding-top: 50rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.couponDetail > view{
+  width: 702rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  border-radius: 18rpx;
+  display: flex;
+  background: #fff;
+}
+.couponDetail .left{
+  width: 438rpx;
+  height: 100%;
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-12/16/yuelvhuiXvokxrTSTw1581494917.png);
+  box-sizing:border-box;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #FFBEC7;
+  position: relative;
+}
+.couponDetail .left > view:nth-child(1){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 28rpx;
+  width: 100%;
+  color: #fff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+.couponDetail .left .price{
+  color: #fff;
+  font-size: 30rpx;
+}
+.couponDetail .left .price text:nth-child(1){
+  font-size: 40rpx;
+}
+.couponDetail .left .price text:nth-child(2){
+  font-size: 68rpx;
+  padding-right: 10rpx;
+}
+.couponDetail .left image{
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 110rpx;
+  height: 88rpx;
+}
+.couponDetail .right{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 0 18rpx 18rpx 0;
+}
+.couponDetail .right > view{
+  width:170rpx;
+  height:68rpx;
+  background:linear-gradient(90deg,rgba(234,64,90,1),rgba(248,108,99,1));
+  border-radius:34rpx;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 68rpx;
+}
+.noCanGet .left{
+  color: #666666;
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-12/18/yuelvhuipsHBMeQfXa1581501637.png);
+}
+.noCanGet .left > view:nth-child(1){
+  color: #141414;
+}
+.noCanGet .left .price text{
+  color: #000000;
+}
+.noCanGet .right > view{
+  background: #DADADA;
+  color: #000000;
+}
+.goodsDetail{
+  width: 100%;
+  height: 400rpx;
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-12/17/yuelvhuitbbNfBYgEp1581501491.png);
+  background-size: 100% 100%;
+  padding-top: 48rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-top: -10rpx;
+}
+.goodsDetail > view{
+  width: 702rpx;
+  height: 312rpx;
+  margin: 0 auto;
+  padding: 21rpx 20rpx;
+  box-sizing: border-box;
+  position: relative;
+  background: #F8F6F9;
+  display: flex;
+  border-radius: 18rpx;
+}
+.goodsDetail .left{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 18rpx;
+  display: block;
+  margin-right: 20rpx;
+}
+.goodsDetail .right{
+  flex: 1;
+  font-size: 24rpx;
+  color: #999999;
+}
+.goodsDetail .right .title{
+  min-height: 76rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #333333;
+  font-size: 28rpx;
+  padding-top: 10rpx;
+  overflow: hidden;
+}
+.goodsDetail .right .price{
+  color: #CB2519;
+  font-size: 24rpx;
+}
+.goodsDetail .right .price text:nth-child(1){
+  font-size: 28rpx;
+}
+.goodsDetail .right .price text:nth-child(2){
+  font-size: 42rpx;
+  padding-right: 8rpx;
+}
+.goodsDetail .right >view:last-child{
+  text-decoration: line-through;
+}
+.goodsDetail .bottom{
+  position: absolute;
+  width: 100%;
+  height: 71rpx;
+  background: #F85966;
+  left: 0;
+  bottom: 0;
+  border-radius: 0 0 18rpx 18rpx;
+  text-align: center;
+  line-height: 71rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+.explain{
+  width: 702rpx;
+  height: auto;
+  margin: 30rpx auto;
+  background: #fff;
+  padding: 31rpx 18rpx;
+  box-sizing: border-box;
+  border-radius: 18rpx;
+}
+.explain > image{
+  width: 117rpx;
+  height: 29rpx;
+  margin: 0 auto;
+  margin-bottom: 34rpx;
+  display: block;
+}
+.explain > view{
+  color: #666666;
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+.explain > view text{
+  display: block;
+  padding-top: 4rpx;
+}
+
+/* 授权按钮 */
+
+button:after {
+  border: none;
+}
+
+.authorizationStatus {
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx;
+}

@@ -1,0 +1,12 @@
+<!--page/Yuemall//pages/SuccessfulComments/SuccessfulComments.wxml-->
+<image class="top" src="https://image.yuelvhui.com/pubfile/2019/06/14/line_1560512360.png"></image>
+<view class="tips">心情不错～继续评价</view>
+<view class="list" wx:for="{{list}}" wx:key="list">
+  <image src="{{item.goodsImg}}"></image>
+  <view class="info">
+    <view class="title">
+      <text>{{item.goodsName}}</text>
+    </view>
+    <view class="comment" bindtap='evaluate' data-orderno="{{item.recordId}}" data-goodid="{{item.goodsId}}" data-skuid="{{item.skuId}}" data-img="{{item.goodsImg}}">评价</view>
+  </view>
+</view>

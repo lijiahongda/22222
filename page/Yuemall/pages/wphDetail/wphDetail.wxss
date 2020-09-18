@@ -1,0 +1,243 @@
+page{
+  padding-bottom: 146rpx;
+}
+.swiper{
+  width: 100%;
+  height: 750rpx;
+  position: relative;
+}
+.swiper image{
+  width: 100%;
+  height: 100%;
+}
+.salesBox{
+  position: absolute;
+  right: 24rpx;
+  bottom: 10rpx;
+  background:rgba(0,0,0,1);
+  padding: 8rpx;
+  text-align: center;
+  color: #fff;
+  font-size:24rpx;
+  border-radius:8rpx;
+}
+/* .sales{
+  position: absolute;
+  right: 24rpx;
+  top: 36rpx;
+  color: #999;
+  line-height: 24rpx;
+} */
+.title{
+  padding: 0;
+}
+.content{
+  width: 100%;
+  border-radius: 0 0 18rpx 18rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+.price{
+  padding: 0 24rpx;
+  color: #BA3627;
+  font-size: 24rpx;
+  height: 94rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+}
+.price > text{
+  vertical-align: bottom;
+}
+.price .nowPrice{
+  font-size: 48rpx;
+}
+.price .origin{
+  color: #999999;
+  text-decoration: line-through;
+  padding-left: 4rpx;
+  padding-right: 22rpx;
+}
+.price .make{
+  min-width: 186rpx;
+  height: 44rpx;
+  padding: 0 8rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #CA2519;
+  background: #F4DEE0;
+  color: #CA2519;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 44rpx;
+  position: relative;
+  top: -10rpx;
+  border-radius: 8rpx;
+}
+
+
+.coupon{
+  height: 180rpx;
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-18/22/yuelvhuiJfHxoztzkP1582034595.png);
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  width: 702rpx;
+  margin: 0 auto;
+}
+.coupon .left{
+  width: 210rpx;
+  text-align: center;
+  color: #CA2519;
+  font-size: 32rpx;
+}
+.coupon .left > text:nth-child(2){
+  font-size: 58rpx;
+  vertical-align: top;
+}
+.coupon .middle{
+  color: #CA2519;
+  font-size: 36rpx;
+  width: 260rpx;
+  padding-left: 40rpx;
+}
+.coupon .middle > view:nth-child(2){
+  font-size: 24rpx;
+  margin-top: 6rpx;
+}
+.coupon .right{
+  width: 142rpx;
+  height: 62rpx;
+}
+.shop{
+  width: 702rpx;
+  margin: 0 auto;
+  height: 86rpx;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  color: #141414;
+  font-size: 30rpx;
+  box-sizing: border-box;
+}
+.shop > image{
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 20rpx;
+}
+
+.detail{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border-radius: 18rpx 18rpx 0 0;
+  margin-top: 20rpx;
+}
+.detail .header{
+  width: 100%;
+  height: 96rpx;
+  color: #666666;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 96rpx;
+}
+.footer{
+  width: 90%;
+  margin-left: 5%;
+  height: 98rpx;
+  line-height: 44rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  /* background: #201E1D; */
+  color: #fff;
+  font-size: 24rpx;
+}
+.footer > view{
+  width: 50%;
+  height: 98rpx;
+  text-align: center;
+  line-height: 44rpx;
+}
+.footer> .footer1{
+  border-radius: 50rpx 0rpx 0rpx 50rpx;
+  background: #010000;
+}
+
+.footer .share{
+  background: #CA2519;
+  width: 50%;
+  height: 98rpx;
+  text-align: center;
+  line-height: 44rpx;
+  color: #fff;
+  line-height: 44rpx;
+  font-size: 24rpx;
+  border-radius: 0rpx 50rpx 50rpx 0rpx;
+
+}
+.share::after{
+  border:none;
+  border-radius: 0;
+}
+
+/* 授权 */
+.authorizationStatus {
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx;
+}
+
+
+/* 成长值说明 */
+
+
+
+.WPhbox{
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #666666;
+  font-size: 26rpx;
+  padding: 0 22rpx;
+  box-sizing: border-box;
+}
+.WPhbox .end{
+  margin-left: auto;
+  color: #747474;
+  display: flex;
+  align-items: center;
+}
+.WPhbox .selected{
+  color: #141414;
+  margin-left: 36rpx;
+  width: 70%;
+}
+.WPhbox .end > .end1{
+  padding-left: 12rpx;
+  font-size: 20rpx;
+  font-weight: bold;
+  
+}
+
+.footer1{
+  padding-top: 20rpx;
+}
+.footer1>view{
+  line-height: 30rpx;
+}
+.share{
+  padding-top: 20rpx;
+}
+.share>view{
+  line-height: 30rpx;
+}

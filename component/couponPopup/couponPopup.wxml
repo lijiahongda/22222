@@ -1,0 +1,51 @@
+<!-- 优惠券弹窗 -->
+<block wx:if="{{iscouponPopup}}">
+  <view class="commodity_screenlong" bindtap="hideModal" catchtouchmove="preventTouchMove"></view>
+  <view class="Advertisement" wx:if="{{list.length > 1}}">
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-06\/15\/yuelvhuieABp0auytd1578297053.png" style="width:580rpx;height:940rpx" class="slide-image" />
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-06\/15\/yuelvhui5O0AbWR3cN1578297218.png" class="slide-image1" bindtap='receiveZ' />
+    <view class="scrollBox">
+      <scroll-view scroll-y class="two_scroll_view">
+        <view class="textBox" wx:for="{{list}}" wx:key="index">
+          <image class="bgI" src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-06\/14\/yuelvhuix3lxOLhchR1578293875.png"></image>
+          <view class="txtB">
+            <view class="txtOne">
+              <view>
+                <view>
+                  <text>{{item.name}}</text>
+                </view>
+                <view>满{{item.samount}}元使用</view>
+              </view>
+              <!-- <view class="sign">{{item.label_name}}</view> -->
+            </view>
+            <view class="txtTwo">￥
+              <text style="font-size:52rpx;">{{item.amount}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <image class="close" src="https://image.yuelvhui.com/pubfile/2019/09/27/line_1569568154_14644.png" bindtap='closecouponPopup'></image>
+  </view>
+
+  <view class="Advertisement1" wx:for="{{list}}" wx:key="index" wx:if="{{list.length == 1}}">
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-06\/14\/yuelvhuiYvpIHneJiC1578293427.png" style="width:580rpx;height:890rpx" class="slide-image" bindtap='receiveZ' data-type="{{list.type}}" data-typeid="{{list.typeId}}"
+      data-redirecttype="{{list.redirectType}}" />
+    <view class="textBox1">
+      <image class="bgI1" src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-06\/14\/yuelvhuix3lxOLhchR1578293875.png"></image>
+      <view class="txtB">
+        <view class="txtOne">
+          <view>
+            <view>{{item.name}}</view>
+            <view>满{{item.samount}}元使用</view>
+          </view>
+          <!-- <view class="sign">{{item.label_name}}</view> -->
+        </view>
+        <view class="txtTwo">￥
+          <text style="font-size:52rpx;">{{item.amount}}</text>
+        </view>
+      </view>
+    </view>
+    <image class="close" src="https://image.yuelvhui.com/pubfile/2019/09/27/line_1569568154_14644.png" bindtap='closecouponPopup'></image>
+  </view>
+</block>

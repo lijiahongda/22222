@@ -1,0 +1,47 @@
+<view class="vessel">
+  <view class="searchVessel">
+    <view class="search-cont">
+      <view class="search">
+        <image src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569312086_51546.png"></image>
+        <input placeholder="搜索商品名称" placeholder-class="placeholder" bindconfirm="bindconfirm" bindinput="bindinput" bindfocus="focus" bindblur="bindblur"></input>
+      </view>
+      <view bindtap="bindconfirm">搜索</view>
+    </view>
+    
+
+    <view animation="{{animationData}}" catchtouchmove="disMove" wx:if="{{showModalStatus}}" class="commodity_attr_box" bindtap='close'>
+      <scroll-view scroll-y style="height: 700px" bindscrolltoupper="upper" class="commodity">
+        <view wx:for="{{searchDropGoods}}" class="list" wx:key="searchDropGoods">
+          <view class="title" bindtap='titleList' wx:if="{{item.suggestions.suggestion}}" data-name="{{item.suggestions.suggestion}}">{{item.suggestions.suggestion}}</view>
+          <!-- 分类下右边三个 -->
+          <!-- <view class="content" wx:for="{{item.item}}" wx:for-index="index" wx:key="index" wx:for-item="child" bindtap='contentList'>{{child.keyword}}</view> -->
+        </view>
+        <view style='height:492rpx;width:1rpx'></view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="RecentSearch">
+    <view class="title" wx:if="{{RecentSearch != ''}}">
+      <view>搜索记录</view>
+      <image src="https://image.yuelvhui.com/pubfile/2019/09/26/line_1569499237_21185.png" bindtap='del'></image>
+    </view>
+    <view class="RecentContent" wx:if="{{RecentSearch != ''}}">
+      <view wx:for="{{RecentSearch}}" wx:key="RecentSearch" data-keyword="{{item.keyWord}}" bindtap='RecentSearch'>
+        <text>{{item.keyWord}}</text>
+      </view>
+    </view>
+    <view class="SearchHistory"></view>
+  </view>
+  <view class="RecentSearch">
+    <block wx:for="{{DiscoveryList}}" wx:key="DiscoverySearchList">
+      <view class="search-title">{{item.categoryName}}</view>
+      <view class="RecentContent">
+        <view wx:for="{{item.keyChild}}" wx:key="keyChild" data-keyword="{{item.keyword}}" bindtap='RecentSearch'>
+          <text>{{item.keyword}}</text>
+        </view>
+      </view>
+    </block>
+
+    <view class="SearchHistory"></view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<!--page/Yuemall//pages/PinExplain/PinExplain.wxml-->
+<view class="pinExplain">
+  <view class="pinExplain_title">普通佣金提现和订单说明</view>
+  <view class="pinExplain_cont">
+    <view class="pinExplain_nei">
+      <view class="item" wx:for='{{rule}}' wx:key='index'>
+        <view class="question">Q：{{item.title}}</view>
+        <view class="answer">A：{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<view class="content">
+  <view class="list" wx:for="{{list}}" wx:key="list" bindtap='classificationList' data-skuid="{{item.skuId}}" data-id="{{item.id == undefined?item.parentTypeId:item.id}}">
+    <image class="image" mode='aspectFit' src="{{item.goodCover}}"></image>
+    <view class="info">
+      <view class="describe">{{item.goodName}}</view>
+      <view class="pricebutton">
+        <view wx:if="{{isdalibao}}" class="price">
+          <view class="gopay">
+            <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-26/16/yuelvhuivHi1mjc3oF1587889710.png"></image>
+            <text>成长值{{item.growthValue}}</text>
+          </view>
+          <text class="Company">¥</text>
+          <text>{{item.goodVipPrice}}</text>          
+          <text class="OriginalPrice">¥{{item.goodPrice}}</text>
+        </view>
+        <view class="price" wx:else>
+          <view class="gopay">
+            <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-26/16/yuelvhuivHi1mjc3oF1587889710.png"></image>
+            <text>成长值{{item.growthValue}}</text>
+          </view>
+          <text class="Company">¥</text>
+          <text>{{item.goodVipPrice}}</text>
+          <text class="OriginalPrice">¥{{item.goodPrice}}</text>
+        </view>
+      </view>
+      <view class="MustBuy" wx:if="{{isMustBuy && item.sign.state == 1}}">
+        <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-07/17/yuelvhuiUAB6cEkBz81581066118.png"></image>
+        <view>立即购买</view>
+      </view>
+    </view>
+  </view>
+</view>

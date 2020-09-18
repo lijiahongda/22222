@@ -1,0 +1,12 @@
+<view class="banner" style="height:{{heights}}rpx;margin-top:{{20}}rpx">
+  <swiper class="swiper-box" interval='3000' bindchange="bannerChange" style="height:{{heights}}rpx">
+    <block wx:for="{{ad}}" wx:key="*this">
+      <swiper-item>
+        <image class='image' style="height:{{heights}}rpx" mode="aspectFill" src='{{item.url}}' bindtap="classificationList" data-hotid="{{item.id}}" data-skuid="{{item.skuId}}" data-redirecttype="{{item.redirectType}}" data-typeid="{{item.id}}" data-id="{{item.id}}" data-name="{{item.name}}" ></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <div class="bannerDots flex_c abs" wx:if="{{ad.length>1}}">
+    <div class="dot {{currentBannerIndex==inx?'active':''}}" style="background:{{currentBannerIndex==inx?bgcolor:''}}" wx:for="{{ad}}" wx:for-index="inx" wx:key="inx"></div>
+  </div>
+</view>

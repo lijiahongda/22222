@@ -1,0 +1,54 @@
+<!--page/My/pages/GroupBuy/GroupBuy.wxml-->
+<!-- 补位 -->
+<view class="{{scrollTop>20 ? 'PatchPosition' : ''}}"></view>
+<!-- 切换tab -->
+<view class="{{scrollTop>20 ? 'topnav' : ''}}">
+  <view class="tab-h" wx:if="{{goodsType.length >1}}">
+    <scroll-view scroll-x class='exploreViewList' scroll-with-animation="true" scroll-into-view="{{scrollId}}">
+      <view id="{{'d'+item.goodTypeId}}" wx:for="{{goodsType}}" wx:key="goodsType" class="tab-item {{currentTab==item.goodTypeId?'active':''}}" data-current="{{item.goodTypeId}}" data-channel="{{item.channel_id}}" data-parenttypeid="{{item.parentTypeId}}" data-goodtypeid="{{item.goodTypeId}}"
+        bindtap="swichNav">{{item.goodTypeName}}
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<view class="list" wx:for="{{list}}" wx:for-index="index" wx:key="index">
+  <view class="goodinfo">
+    <view class="image">
+      <image src='{{item.goodsImg}}'></image>
+    </view>
+    <view class="info">
+      <view class="name">
+        <text>{{item.goodsName}}</text>
+      </view>
+      <view class="ChannelPrice">
+        京东价：¥{{item.originPrice}}
+      </view>
+      <view class="groupInfo">
+        <view class="num">已砍至：</view>
+        <view class="price">¥
+          <text>{{item.arrivePrice}}</text>
+        </view>
+      </view>
+    </view>
+    <image class="TeamStatus" wx:if="{{item.state == 2}}" src="/images/personalCenter/HasEnded.png"></image>
+  </view>
+  <view class="func">
+    <view class="GroupBuyIngo" bindtap='GroupBuyIngo' data-id="{{item.foundId}}">砍价详情</view>
+    <view class="GroupBuyIngo" data-bargain="{{item.activityId}}" data-foundid="{{item.foundId}}" style="color:#ED5D2F" bindtap='gopay' wx:if="{{item.state != 2}}">去支付</view>
+    <view class="GroupBuyIngo" data-ordersn="{{item.ordersn}}" wx:if="{{item.state == 2}}" style="color:#ED5D2F" bindtap='goDetail'>订单详情</view>
+    <!-- <view class="GroupBuyIngo" data-ordersn="{{item.ordersn}}" bindtap='delete'>删除</view> -->
+    <view class="GroupBuyIngo" data-orderno="{{item.recordId}}" data-goodid="{{item.goodsId}}" data-skuid="{{item.skuId}}" data-img="{{item.goodImg}}" wx:if="{{item.orderState == 4 && item.isCanComment == 1}}" bindtap='evaluate'>订单详情</view>
+  </view>
+
+</view>
+<view class="commodity_screenshowModal" wx:if="{{isdel}}"></view>
+<view class="deletePopu" wx:if="{{isdel}}">
+  <view class="info">
+    <view class="tips">确认删除此订单？</view>
+    <view class="Inquiry">
+      <view class="cancel" bindtap="canceldelete">取消</view>
+      <view class="confirm" bindtap='confirm'>删除</view>
+    </view>
+  </view>
+</view>

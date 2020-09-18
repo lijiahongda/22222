@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "攻略",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "newPeople": "/page/strategy/newPeople/newPeople",
+    "study": "/page/strategy/study/study",
+    "problem": "/page/strategy/problem/problem",
+    "posters": "/page/strategy/posters/posters"
+  }
+}

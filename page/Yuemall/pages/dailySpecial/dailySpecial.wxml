@@ -1,0 +1,33 @@
+<swiper class="swiper-box" interval='3000' bindtap='' style="height:200rpx;" wx:if="{{isreType}}">
+  <swiper-item>
+    <image class='image' src='{{carousel}}' style="height:200rpx"></image>
+  </swiper-item>
+</swiper>
+<view class="dailySpecial" style="background-image:url({{isShow == 1?backGround:''}});background-repeat: no-repeat">
+  <view class="ContentArea" style="margin-top:{{isShow == 1?810:''}}rpx">
+    <view class="item" wx:for="{{order}}" wx:key="orderMore" data-goodsId="{{item.goodId}}" bindtap='details'>
+      <view class="shopImageLeft">
+        <image class="" src="{{item.goodCover}}"></image>
+      </view>
+      <view class="itemInfo">
+        <view class="Label">
+          <view wx:for="{{item.tag}}" wx:if="{{item.tag.length != 0}}" wx:key="tag">{{item.label_name}}</view>
+        </view>
+        <view class="title">
+          <text style="word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;text-overflow: ellipsis;font-size:24rpx;line-height:36rpx;height:70rpx;">{{item.goodName}} </text>
+        </view>
+        <view>
+          <view class="price">
+            <text style="color:#FE717B;margin-right:16rpx">{{item.priceName}}￥{{item.goodPrice}}
+                  </text>
+            <text decode='true' style="coclor:#999">{{item.remind}}</text>
+          </view>
+        </view>
+        <!-- <view style="display: flex;flex-direction: row;flex-wrap: wrap">
+          <view wx:if="{{item.shareMoney != 0}}" class="LyingEarn">自购省￥{{item.deduc}}</view>
+          <view wx:if="{{item.shareMoney != 0}}" class="LyingEarn">分享赚￥{{item.shareMoney}}</view>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</view>

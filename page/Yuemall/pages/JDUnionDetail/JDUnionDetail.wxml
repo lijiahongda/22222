@@ -1,0 +1,101 @@
+<import src="../../../../wxParse/wxParse/wxParse.wxml" />
+<swiper class="swiper">
+	<swiper-item wx:for='{{goodsInfo.goods_image}}'>
+		<image src="{{item}}"></image>
+	</swiper-item>
+</swiper>
+
+<view class="content">
+	<view class="price">
+		<text>券后价 ￥</text>
+		<text class="nowPrice">{{goodsInfo.jd_price}}</text>
+		<text class="origin">￥{{goodsInfo.original_price}}</text>
+		<!-- <view class="make">分享赚￥{{goodsInfo.share_save_price}}</view> -->
+		<text class="sales">已售{{goodsInfo.sale_num}}件</text>
+	</view>
+
+	<!-- 标题组件-->
+	<title
+	 title='{{goodsInfo.goods_name}}'
+	 image='{{channelIcon}}'
+	 tip="{{goodsInfo.goods_desc}}"
+	 openMember='{{"1"}}'
+	></title>
+	<!--  -->
+	<view class="YGBOx" bindtap="Jumpgrowthvalue">
+		<view>规则：</view>
+
+		<view class="selected">
+			预估成长值说明
+		</view>
+		<view class="end">
+			<text class="end1">></text>
+		</view>
+	</view>
+	<!-- 优惠券 -->
+	<view
+	 class="coupon"
+	 bindtap="go"
+	 wx:if='{{goodsInfo.coupon.discount}}'
+	>
+		<view class="left">
+			<text>￥</text>
+			<text>{{goodsInfo.coupon.discount}}</text>
+		</view>
+		<view class="middle">
+			<view>优惠券</view>
+			<view>有效期到{{goodsInfo.coupon.use_end_time}}</view>
+		</view>
+		<image class="right" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-18/22/yuelvhuip0LePRSHxP1582034609.png"></image>
+	</view>
+
+	<!-- 店铺 -->
+	<view class="shop">
+		<image src="{{goodsInfo.shop_info.shop_logo?goodsInfo.shop_info.shop_logo:'https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-23/20/yuelvhuiESrkAkAiDR1582459569.png'}}"></image>
+		<view>{{goodsInfo.shop_info.shop_name}}</view>
+	</view>
+</view>
+
+<!-- 详情 -->
+<view class="detail" wx:if='{{goodsInfo.detailed}}'>
+	<view class="header">商品详情</view>
+	<template is="wxParse" data="{{wxParseData:goodsInfo.detailed}}" />
+</view>
+
+<view class="footer">
+	<button class="share" bindtap="sharePage">分享赚</button>
+	<view bindtap="go" class="go1">
+		<view>
+			购买预估送
+			<view>
+				{{newShareScore.buy}}成长值
+			</view>
+		</view>
+
+	</view>
+	<view wx:if='{{newShareScore.type == 0}}' class="go3">
+		<view>
+			分享预估赚
+			<view>
+				¥{{newShareScore.share}}
+			</view>
+		</view>
+
+	</view>
+	<view wx:else class="go3">
+		<view>
+			购买预估送
+		</view>
+		<view>
+			{{newShareScore.share}}
+		</view>
+	</view>
+</view>
+
+<!-- 授权按钮 -->
+<view
+ class="authorizationStatus"
+ bindtap='VerificationCode'
+ wx:if="{{authorizationStatus}}"
+></view>
+

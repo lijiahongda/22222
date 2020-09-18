@@ -1,0 +1,27 @@
+<!-- 优惠券弹框 -->
+<couponPopup  id="couponPopup" inner-text="{{list}}"></couponPopup>
+
+<banner id="banner" inner-text="{{list}}"></banner>
+
+<view class="classification">
+  <view class="typeList" wx:for="{{category}}" wx:key="typeList" bindtap='LevelList' data-type="category" data-aid="{{channelId == 1?item.categoryFirstId:item.categorySecondId}}" data-name="{{item.categoryThreeName}}" data-id="{{item.categoryThreeId}}">
+    <image src="{{item.productImage}}"></image>
+    <view>{{item.categoryThreeName}}</view>
+  </view>
+</view>
+
+<view class="coupons" bindtap="EliteCard" wx:if="{{cardType==0}}">
+  <image src="{{cardImg}}"></image>
+</view>
+
+
+<!-- 活动模板版块 -->
+<ActivityTemplate id="ActivityTemplate" inner-text="{{list}}"></ActivityTemplate>
+
+<view class="list_title">
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-20/16/yuelvhui3FWrQrWAln1576830924.png"></image>
+  <view class="title_shop">推荐商品 </view>
+  <view class="title_like">猜你喜欢</view>
+</view>
+<!-- 瀑布流列表 -->
+<lineTwoListFlow id="lineTwoListFlow" inner-text="{{list}}"></lineTwoListFlow>

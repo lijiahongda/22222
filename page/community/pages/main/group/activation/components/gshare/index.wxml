@@ -1,0 +1,96 @@
+<view class="shareRecord">
+  <view class="title">
+    <view class="name">群成员访问记录</view>
+    <view class="Range">
+      <picker mode="date" value="{{startDate}}" start="2000-01-01" end="2100-01-01" bindchange="bindDateChangeS">
+        <view class="datemsg">
+          <view class="ymddate">{{startDate}}</view>
+          <view>
+            <image src="../../../../../../image/datesj.png" bindload="loadData"></image>
+          </view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="peopleNum">
+    <view>
+      <view class="num">{{uv}}</view>
+      <view class="name">访问人数(人)</view>
+    </view>
+    <view>
+      <view class="num">{{pv}}</view>
+      <view class="name">访问人数(次)</view>
+    </view>
+  </view>
+</view>
+<!-- 分享列表 -->
+<view class="shareList" wx:for='{{list}}' wx:key='index' wx:if='{{list.length>0}}' >
+  <!-- 时间部分 -->
+  <view class="date">
+    <view class="ymd">
+      {{item.date}}
+    </view>
+  </view>
+  <!-- 商品部分 -->
+  <view class="shareComm" bindtap="goDetail"  data-goodId='{{item.goods.goods_id}}' data-skuId='{{item.goods.sku_id}}'>
+    <view class="cover">
+      <image src="{{item.goods.img}}"></image>
+    </view>
+    <view class="msg">
+      <view class="title">{{item.goods.title}}</view>
+      <view class="price">群内专享价
+        <text>￥{{item.goods.group_price}}</text>
+      </view>
+      <view class="getMoney">
+        <view class="gmemoney">
+          <view class="zhuan">
+            <image src="../../../../../../image/zhuan.png"></image>
+          </view>
+          <view>￥{{item.goods.reward}}</view>
+        </view>
+        <view class="groupMoney">
+          <!-- +群管理奖励<text>￥0.49</text> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 用户部分 -->
+  <view class="user" wx:for='{{item.browse}}' wx:key='index'>
+    <view class="cover">
+      <image src="{{item.img}}"></image>
+    </view>
+    <view class="msg">
+      <view class="name">{{item.name}}</view>
+      <view class="seeNum">浏览了{{item.count}}次</view>
+    </view>
+    <view class="copyBt" data-text="{{item.name}}" catchtap="copyText">复制昵称</view>
+  </view>
+
+  <view class="seeMore" data-browse="{{item.browse}}" bindtap="seeMore">
+    <view>查看更多</view>
+    <view>
+      <image src="../../../../../../image/datesj.png"></image>
+    </view>
+  </view>
+</view>
+<view class="none" wx:if='{{list.length==0}}'>暂无群分享记录哦～</view>
+<!-- 用户列表弹窗 -->
+<view class="alert" wx:if="{{alertShow}}">
+  <view class="codeAlert">
+    <view class="close" bindtap="closeMyself">
+      <image src="../../../../../../image/closebt.png"></image>
+    </view>
+    <scroll-view scroll-y class="contentText">
+      <view class="user" wx:for='{{peoList}}' wx:key='{{index}}'>
+        <view class="cover">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="msg" style="width:55%;">
+          <view class="name">{{item.name}}</view>
+          <view class="seeNum">浏览了{{item.count}}次</view>
+        </view>
+        <view class="copyBt" data-text="{{item.name}}" catchtap="copyText">复制昵称</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

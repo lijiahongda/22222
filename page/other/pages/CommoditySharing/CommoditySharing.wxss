@@ -1,0 +1,117 @@
+/* page/other/pages/CommoditySharing/CommoditySharing.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.content {
+  border-top: 20rpx solid #f0f1f5;
+}
+
+.content .title {
+  font-size: 28rpx;
+  font-family: PingFang;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  margin-left: 28rpx;
+  margin-top: 29rpx;
+  margin-bottom: 19rpx;
+}
+
+.content .Picture_library {
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  padding: 10rpx 0;
+}
+
+.content .Picture_library .scroll {
+  display: block;
+  width: 94%;
+  margin-left: 24rpx;
+}
+
+.content .Picture_library .scroll .item {
+  margin-right: 22rpx;
+  display: inline-block;
+  position: relative;
+}
+
+.content .Picture_library .scroll .item image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.content .Picture_library .scroll .item .Check_list {
+  width: 46rpx;
+  height: 46rpx;
+  position: absolute;
+  top: 5rpx;
+  right: 5rpx;
+}
+
+.content .Sharing_Copywriters {
+  margin-left: 3.2%;
+  margin-right: 3.2%;
+  padding-left: 3.3%;
+  padding-right: 6%;
+  padding-top: 25rpx;
+  padding-bottom: 33rpx;
+  background-color: #f0f1f5;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(20, 20, 20, 1);
+}
+
+.content .copy {
+  width: 130rpx;
+  height: 60rpx;
+  background: rgba(202, 37, 25, 1);
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 19rpx auto;
+  margin-bottom: 71rpx;
+}
+
+.content .Sharing_mode {
+  margin-top: 65rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .Sharing_mode .Sharing_list {
+  margin-left: 7.6%;
+  margin-right: 7.6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .Sharing_mode .Sharing_list image {
+  width: 110rpx;
+  height: 110rpx;
+  margin-bottom: 21rpx;
+}
+
+button[class="con_listbox"]::after {
+  border: 0;
+}
+
+.con_listbox {
+  margin-top: 0rpx;
+  line-height: 0;
+  margin-bottom: 5rpx;
+  background-color: #fff;
+  padding: 0
+}

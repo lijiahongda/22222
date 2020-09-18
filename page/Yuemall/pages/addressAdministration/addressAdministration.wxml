@@ -1,0 +1,28 @@
+<import src="../colorLine/colorLine.wxml" />
+
+<view class="balance">
+  <!-- 新版 -->
+  <view class="listNew" wx:for="{{list}}" wx:key="list" wx:for-index="idx" style="position:relative" bindtap='SelectAddress' data-item="{{item}}" data-receiverName="{{item.receiverName}}" data-item="{{item}}" data-mobile="{{item.mobile}}" data-address="{{item.address}}"
+        data-addressid="{{item.addressId}}" data-isDefault="{{item.isDefault}}" data-areaid="{{item.areaIds}}">
+    <view style="{{item.txtStyle}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{idx}}">
+      <view class="member">
+        <view>{{item.receiverName}}</view>
+        <view class="default" wx:if="{{item.isDefault == 1}}">默认</view>
+        <view>{{item.mobile}}</view>
+      </view>
+      <view class="site">{{item.proviceName}}{{item.cityName}}{{item.zoneName}}
+      <!-- {{item.townName}} -->
+      {{item.address}}</view>
+      <view class="editNew"  catchtap='edit' data-proviceName="{{item.proviceName}}" data-cityName="{{item.cityName}}" data-zoneName="{{item.zoneName}}" data-receiverName="{{item.receiverName}}" data-mobile="{{item.mobile}}" data-address="{{item.address}}" data-addressId="{{item.addressId}}"
+                  data-isDefault="{{item.isDefault}}" data-type="edit" data-proviceid="{{item.proviceId}}" data-townname="{{item.townName}}" data-cityid="{{item.cityId}}" data-zoneid="{{item.zoneId}}" data-townid="{{item.townId}}">编辑</view>
+    </view>
+    <view class="delete" data-index="{{idx}}" data-addressId="{{item.addressId}}" catchtap="delItem">
+      <image src="/images/YueMall/del.png"></image>
+    </view>
+  </view>
+  <view wx:if='{{list.length==0}}' class="white">暂无收货地址</view>
+  <view class="footer" data-type="add" bindtap='ImmediateSettlement'>添加收货地址</view>
+
+</view>
+<!-- 授权按钮 -->
+<view class="authorizationStatus" bindtap='VerificationCode' wx:if="{{authorizationStatus}}"></view>

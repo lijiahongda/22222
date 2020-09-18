@@ -1,0 +1,118 @@
+<!--page/Channel/Index/index.wxml-->
+<!-- 引入大红包 -->
+<redPopup  id="redPopup" inner-text="{{list}}"></redPopup>
+<!-- 加载中 -->
+<import src="/page/LoadingPopup/LoadingPopup.wxml" />
+<block wx:if="{{LoadingStatus}}">
+  <template is="LoadingPopup" />
+</block>
+<!-- 小红包 -->
+<image class="SmallRedPopup" wx:if="{{isSmallRedPopup}}" src="https://image.yuelvhui.com/pubfile/2019/09/27/line_1569568647_47171.png" bindtap="VerificationCode" style="right:{{SmallRed?'-70rpx':''}}"></image>
+
+
+
+<view class="header">
+  <image class="top" src="{{dataList.banner}}"></image>
+  <image class="join" bindtap="join" src="{{dataList.descImg}}"></image>
+</view>
+
+<view class="sections">
+  <!-- 免费游 -->
+  <view class="section free_travel">
+    <view class="title">
+      <image class="santa_claus" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-23/21/yuelvhuiFMWEY7qmFH1577108084.png"></image>
+      <text>圣诞人气榜</text>
+      <text class="title_two">温馨冬日暖心好礼</text>
+    </view>
+    <view class="items">
+      <scroll-view scroll-x>
+        <view class="item" wx:for="{{hotProduct}}" wx:for-index="index" wx:key="index" data-goodsid="{{item.product_id}}" bindtap='shopDetail' data-skuid="{{item.sku_id}}" data-productid="{{item.product_id}}"> 
+          <view class="img">
+            <image src="{{item.cover_image}}"></image>
+            <view class="num">TOP{{index+1}}</view>
+          </view>
+          <text class="title">{{item.goods_name}}</text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- 网红别墅 -->
+  <view class="section hotel">
+    <view class="title">
+      <image class="santa_claus" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-24/14/yuelvhuiGTorcLikbp1577169926.png"></image>
+      <text>全球免费游</text>
+      <text class="title_two">陪伴家人的美好时光</text>
+    </view>
+     <view class="items">
+      <scroll-view scroll-x>
+        <view class="item" wx:for="{{tourism}}" wx:key="tourism" data-goodsid="{{item.goodsId}}" bindtap='details' data-skuid="{{item.skuId}}">
+          <image src="{{item.goodsImg}}"></image>
+          <text class="title">{{item.goodsName}}</text>
+          <text class="introduce">{{item.goodsInfo}}</text>
+          <text class="price">{{item.integralPrice}}悦豆</text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+
+</view>
+
+<!-- 大人 -->
+<view class="DR_section">
+  <view class="section">
+    <view class="title">
+      <image class="santa_claus" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-24/14/yuelvhuibjgabgzB4h1577170583.png"></image>
+      <text>圣诞暖心推荐</text>
+      <text class="title_two">分享你的平安夜高光时刻</text>
+    </view>
+  </view>
+  <!-- 内容 -->
+  <view class="flow">
+    <view class="flow-list">
+      <view wx:for="{{list}}" data-item="{{item}}" bindtap="videoDetail" wx:for-index="index" wx:key="index" class="flow-list-item {{item.product_type!=5?'short':'high'}}" wx:if="{{index%2==0}}" >
+        <!-- <image class='play' src='/images/find/play.png'></image> -->
+
+        <view class='con-img' data-item="{{item}}">
+          <image mode='aspectFill' class="img" src='{{item.product_cover[0]}}'></image>
+        </view>
+
+        <view class='product-name'>{{item.product_name}}</view>
+        <view class='person'>
+          <view class='person-con'>
+            <image class='person-img' src='{{item.thumb_img}}'></image>
+            <view class='person-name'>{{item.user_name}}</view>
+          </view>
+          <view class="islike">
+            <image wx:if='{{!item.is_zan}}' src='https://image.yuelvhui.com/pubfile/2019/10/13/line_1570952700_30127.png'></image>
+            <image wx:else src="https://image.yuelvhui.com/pubfile/2019/10/13/line_1570952668_51999.png"></image>
+            {{item.zan_num ? item.zan_num : '赞'}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="flow-list">
+      <view wx:for="{{list}}" data-item="{{item}}" bindtap="videoDetail" wx:for-index="index" wx:key="index" class="flow-list-item {{item.product_type!=5?'short':'high'}}" wx:if="{{index%2==1}}">
+        <!-- <image class='play' src='/images/find/play.png'></image> -->
+
+        <view class='con-img' data-item="{{item}}">
+          <image mode='aspectFill' class="img" src='{{item.product_cover[0]}}'></image>
+        </view>
+
+        <view class='product-name'>{{item.product_name}}</view>
+        <view class='person'>
+          <view class='person-con'>
+            <image class='person-img' src='{{item.thumb_img}}'></image>
+            <view class='person-name'>{{item.user_name}}</view>
+          </view>
+            <view class="islike">
+            <image wx:if='{{!item.is_zan}}' src='https://image.yuelvhui.com/pubfile/2019/10/13/line_1570952700_30127.png'></image>
+            <image wx:else src="https://image.yuelvhui.com/pubfile/2019/10/13/line_1570952668_51999.png"></image>
+            {{item.zan_num ? item.zan_num : '赞'}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

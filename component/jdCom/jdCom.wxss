@@ -1,0 +1,95 @@
+page {
+  background-color: #f6f6f6;
+}
+.scrollTop{
+  width: 702rpx;
+  height: 176rpx;
+  margin: 0 auto;
+  border-radius: 18rpx;
+  overflow: hidden;
+}
+.topnav {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+.scrollTop .tab-h {
+  height: 88rpx;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 88rpx;
+  background: #fff;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  white-space: nowrap;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  background: #EEEEEE;
+}
+.scrollTop .tab-h .tab-item.active {
+  background: #fff;
+  border-top: 4rpx solid #F35509;
+  font-size: 30rpx;
+  color: #333333;
+}
+.scrollTop .tab-h .tab-item {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  padding-left: 3%;
+  padding-right: 3%
+}
+.scrollTop .tab-hLeve {
+  height: 88rpx;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 88rpx;
+  background: #fff;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  white-space: nowrap;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+}
+.scrollTop .exploreViewList {
+  width: 100%;
+}
+.tab-hLeve .tab-item {
+  padding: 0 3%;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+.tab-hLeve .tab-item.active {
+  color: #F35109;
+}
+.tab-hLeve .tab-item:last-child::after{
+  border:none;
+}
+.tab-hLeve .tab-item:after {
+  content: "";
+  display: block;
+  height: 20rpx;
+  width: 100%;
+  left: 0;
+  border-right: 1rpx solid #B9B9B9;
+  position: absolute;
+  bottom:34rpx;
+}
+
+.coupons{
+  width: 750rpx;
+  height: 236rpx;
+  margin-bottom: 20rpx;
+}
+.coupons image{
+  width: 750rpx;
+  height: 236rpx;
+}

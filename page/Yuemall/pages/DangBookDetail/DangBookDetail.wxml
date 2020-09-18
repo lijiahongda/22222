@@ -1,0 +1,200 @@
+<!--page/Yuemall//pages/DangBookDetail/DangBookDetail.wxml-->
+<import src="../../../../wxParse/wxParse/wxParse.wxml" />
+<view class="new_Book_box">
+  <view class="DangBook">
+    <view class="Img_Box">
+      <view class="dang_book">
+        <text>{{icon}}</text>
+      </view>
+      <image src="{{Specificationsimg}}" data-src="{{Specificationsimg}}" />
+    </view>
+
+
+    <view class="Right_Box">
+      <view class="Book_Size">
+        <text>{{title}}</text>
+      </view>
+      <view class="Person_Size">作者名：{{authorName}}</view>
+      <view class="Time_Size">
+        <view class="Ten_Time">{{time}}</view>
+        <view class="Price_Box" wx:if="{{isUseCoupon==1}}">
+          <view class="Bown_Price">￥{{goodPrice}}</view>
+          <view class="Red_Price">￥{{goodVipPrice}}</view>
+        </view>
+        <view class="Price_Box" wx:else>
+          <view class="Bown_Price" style="text-decoration:none">￥{{goodPrice}}</view>
+          <!-- <view class="Red_Price">￥{{goodVipPrice}}</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bg"></view>
+  <view class="cityborder">
+    <view class="numbers">
+      <view class="shuliang">数\r\n\r\n\r\n\r\n\r\n\r\n量：</view>
+      <view class="regulation">
+        <view class="subtract" bindtap='subtract' data-num="{{amountNumber}}">-</view>
+        <view class="amountNumber">
+          <input value="{{amountNumber}}" bindinput="amountNumberInput"></input>
+        </view>
+        <view class="addNumber" bindtap='addNumber' data-num="{{amountNumber}}">+</view>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="Address_Box">
+      <view class="Address_Detail">
+        <view class="new_Address">配送地址:</view>
+      </view>
+      <view class="address" wx:if="{{state==1}}" bindtap="addresstap" data-skuid="{{skuId}}" data-goodId="{{goodId}}">{{address.proviceName}}{{address.cityName}}{{address.zoneName}}</view>
+      <view class="shenshi_flex" wx:else bindtap="address" data-skuid="{{skuId}}" data-goodId="{{goodId}}">
+        <view class="left_point">省
+          <image style="width:10rpx;height:16rpx;" src="https://image.yuelvhui.com/open/2019/11/07/5dc40b11bbcce1573128977.png"></image> 市
+          <image style="width:10rpx;height:16rpx;" src="https://image.yuelvhui.com/open/2019/11/07/5dc40b11bbcce1573128977.png"></image> 区</view>
+        <view class="Right_point">
+          <image src="https://image.yuelvhui.com/open/2019/11/07/5dc40b11bbcce1573128977.png"></image>
+        </view>
+
+        <!-- 授权按钮 -->
+        <view class="authorizationStatus" bindtap='VerificationCode' wx:if="{{authorizationStatus}}"></view>
+      </view>
+    </view>
+    <view class="linens"></view>
+    <!-- 优惠券 -->
+    <!--  -->
+    <view class="limit" wx:if="{{goodsCoupon !=''}}" bindtap="limitInfo">
+      <view class="limitInfo">
+        <view class="title">领券：</view>
+        <view class="limitlist">
+          <view wx:for="{{goodsCoupon}}" style="" wx:key="limitlist" wx:for-index="index">
+            <!-- <image src="{{index == 0?'https://image.yuelvhui.com/pubfile/2019/08/28/line_1566984036_36435.png':index == 1?'https://image.yuelvhui.com/pubfile/2019/08/28/line_1566984103_36625.png':'https://image.yuelvhui.com/pubfile/2019/08/28/line_1566984141_18080.png'}}"
+                    style="width:{{index == 1?'168':index==2?'203':''}}rpx;"></image> -->
+            <text>{{item.remind}}</text>
+          </view>
+        </view>
+      </view>
+      <image class="limitImage" style="width:10rpx;height:16rpx;padding-top:30rpx;" src="https://image.yuelvhui.com/open/2019/11/07/5dc40b11bbcce1573128977.png"></image>
+    </view>
+    <view style="padding-left:20rpx;padding-right:20rpx">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+
+    <view class="bg"></view>
+    <!-- 图书滚动 -->
+    <view class="change_Box">
+      <view class="change_Top">
+        <view>浏览本书的人同时浏览</view>
+        <view class="changes_size" bindtap="change" data-goodType="1">
+          <image class="change_Img" src="https://image.yuelvhui.com/open/2019/11/08/5dc52b0844c361573202696.png"></image> 换一批</view>
+      </view>
+      <view class="change_Book_Box">
+        <view class="change_Book" wx:for="{{changeBook}}" wx:key="changeBook" data-goodsid="{{item.goodsId}}" data-goodsskuid="{{item.goodsSkuId}}" data-goodType="{{item.goodType}}" bindtap="watchbook">
+          <view class="dangthree_book">
+            <text>{{item.icon}}</text>
+          </view>
+          <image src="{{item.goodsImg}}"></image>
+          <view class="change_size">
+            <text>{{item.goodsName}}</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <view class="bg"></view>
+    <!-- 开通会员 -->
+    <view class="Big_Infrom_Box">
+      <view class="Infrom_Box">
+        <view class="Infrom_Book">
+          图书信息
+        </view>
+        <view class="Press" wx:if="{{publishHouse !=''}}">
+          出版社：{{publishHouse}}</view>
+        <view class="Press_Time">
+          出版时间：{{publishDate}}
+        </view>
+        <view class="Press_Name">ISBN:{{isbn}}</view>
+        <view class="Press_Img" catchtap="onShare">
+          <image src="https://image.yuelvhui.com/open/2019/11/08/5dc53b8ca47941573206924.png"></image>
+        </view>
+      </view>
+    </view>
+
+    <view style="width:100%;height:120rpx;"></view>
+  </view>
+</view>
+
+
+
+<view class="foot_Box">
+  <view class="Icon_box">
+    <view class="star_Icon">
+      <image bindtap="addCollect" class="collect" wx:if="{{collectState == 0}}" src="https://image.yuelvhui.com/open/2019/11/08/5dc52b40b4e2b1573202752.png"></image>
+      <image wx:else bindtap="addCollect" class="collect" src="https://image.yuelvhui.com/pubfile/2019/06/12/line_1560335006.png"></image>
+      <!-- <image src="https://image.yuelvhui.com/open/2019/11/08/5dc52b40b4e2b1573202752.png"></image> -->
+      <view>收藏</view>
+    </view>
+    <view class="car_Icon" catchtap="GoCart">
+      <image src="https://image.yuelvhui.com/open/2019/11/08/5dc52b7f8cb341573202815.png "></image>
+      <view>购物车</view>
+    </view>
+  </view>
+  <view class="btn_Box">
+    <view class="Yellow_btn" bindtap="openMember" data-id="{{sureId}}" data-amountnumber="{{amountNumber}}" data-goodid="{{goodsId}}" data-id="1">加入购物车</view>
+    <view class="Red_btn" bindtap="noMember" data-skuid="{{skuId}}" data-goodId="{{goodId}}" data-num="{{amountNumber}}">立即购买</view>
+  </view>
+
+
+  <view>
+
+  </view>
+  <!-- 分享弹窗 -->
+  <view class="share-layer" wx:if="{{ sharelayer }}">
+    <view class="share-layer-mask" bindtap='shareLayerClosed'>
+
+    </view>
+    <view class="share-layer-block">
+      <view class="share-layer-block-img">
+        <button open-type='share'>
+          <image src="/images/YueMall/WeChatShare@2x.png"></image>
+        </button>
+      </view>
+      <view class="share-layer-block-img" bindtap='goPoster'>
+        <image src="/images/YueMall/posterShare@2x.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="commodity_screenshowModal" bindtap="hideModal" wx:if="{{showModal}}"></view>
+  <view animation="{{animationData}}" bindtap='hideModalShare' class="commodity_attr_boxshowModal" wx:if="{{showModal}}">
+    <view class="image">
+      <image src="/images/line/share.png"></image>
+    </view>
+  </view>
+</view>
+<!-- 优惠券 -->
+<view class="commodity_screenshowModal" wx:if="{{islimitInfo}}" bindtap="limitInfohidden"></view>
+<view wx:if="{{islimitInfo}}" class="limitInfoPopup">
+  <view class="top">
+    <view>优惠券</view>
+    <image bindtap="limitInfohidden" src="https://image.yuelvhui.com/pubfile/2019/08/28/line_1566983755_39387.png"></image>
+  </view>
+  <view class="CanBeLed">可领优惠券</view>
+  <view class="CouponList" wx:for="{{goodsCoupon}}" wx:key="goodsCoupon">
+    <view style="width: 32.3%;">
+      <view class="couponImage">
+        <view class="price">
+          <text>¥</text>{{item.amount}}
+        </view>
+        <view class="FullReduction">{{item.remindSamount}}</view>
+      </view>
+    </view>
+    <view class="CouponInfo">
+      <view class="name">
+        <text>{{item.name}}</text>
+      </view>
+      <view class="bottom">
+        <view>{{item.usedRemind}}</view>
+        <view class="button" wx:if="{{item.couponState == 0}}" bindtap="GetSoupons" data-cid="{{item.cid}}">点击领取</view>
+        <view class="Receivedbutton" wx:else>已领取</view>
+      </view>
+    </view>
+  </view>
+</view>

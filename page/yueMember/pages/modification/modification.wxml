@@ -1,0 +1,15 @@
+<!--page/yueMember/pages/modification/modification.wxml-->
+<view class="codes">
+  <view class="erCode" bindtap="loadImg">
+    <image class="code" style="background: rgba(246, 246, 246, 1);" src="{{wxImg}}"></image>
+    <text class="add" wx:if="{{!wxImg}}">+</text>
+  </view>
+  <text class="load">上传二维码能够方便您的客户主动联系您</text>
+</view>
+<view class="num">
+  <input placeholder="请输入微信号" class="inp" bindinput="bindKeyInput"></input>
+  <view class="line"></view>
+  <view class="warning">微信号不能超过20个字符，支持字母、数字、下划线和 减号，必须以字母开头
+  </view>
+</view>
+<view class="save" bindtap="save">保存</view>

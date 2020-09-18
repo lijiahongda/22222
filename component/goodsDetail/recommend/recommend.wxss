@@ -1,0 +1,68 @@
+.recommend{
+  width: 100%;
+  height: 500rpx;
+  background: #fff;
+  border-radius: 18rpx;
+  margin-bottom: 20rpx;
+  padding: 30rpx 0 0 0;
+  box-sizing: border-box;
+}
+.header{
+  width: 224rpx;
+  height: 48rpx;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 28rpx;
+}
+.content{
+  width: 100%;
+  white-space: nowrap;
+  padding-left: 24rpx;
+  box-sizing: border-box;
+}
+.list{
+  width: 200rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+}
+.list image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.list > view:nth-child(2){
+  width: 100%;
+  min-height: 80rpx;
+  font-size: 26rpx;
+  color: #141414;
+  line-height: 40rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  padding-right: 18rpx;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+}
+.list > .price{
+  color: #C82519;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: baseline;
+  line-height: 34rpx;
+  width: 100%;
+  height: 60rpx;
+}
+.list > .price > text:nth-child(1){
+  padding-top: 2rpx;
+}
+.list > .price > text:nth-child(2){
+  font-size: 34rpx;
+}
+.list > .price > text:nth-child(3){
+  color: #999;
+  text-decoration: line-through;
+  padding-left: 8rpx;
+  padding-top: 2rpx;
+}

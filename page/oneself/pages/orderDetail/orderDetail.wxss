@@ -1,0 +1,264 @@
+/* page/My/pages/orderDetail/orderDetail.wxss */
+/* 订单状态 */
+.copy {
+  width: 57rpx;
+  height: 28rpx;
+  background: #909090;
+  border-radius: 12rpx;
+  font-size: 16rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20rpx
+}
+.orderstatus{
+  height:171rpx;
+  width:92%;
+  padding-left:4%;
+  padding-right:4%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ececec
+}
+.orderstatus .state{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:100%
+}
+.orderstatus .state .stateImage{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  margin-top:20rpx;
+  height:40rpx;
+}
+.orderstatus .stateValue{
+  display: flex;
+  flex-direction: row;
+  width:100%
+}
+.orderstatus .stateValue view{
+  width:26%;
+  font-size: 22rpx;
+  color:#333
+}
+.orderstatus .state image{
+  width:36rpx;
+  height:36rpx;
+}
+.TransitionLine{
+  background:linear-gradient(24deg,rgba(255,110,91,1),rgba(255,78,74,1));
+  height: 6rpx;
+  flex: 1
+}
+.tips{
+  display: flex;
+  height: 118rpx;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #fff;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-bottom: 20rpx
+}
+.tips image{
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 24rpx;
+}
+.tips .info{
+  display: flex;
+  flex-direction: column;
+  font-size: 20rpx;
+  color: #999;
+}
+.tips .info .tipsTitle{
+  font-size: 26rpx;
+  color: #303030;
+  margin-bottom: 15rpx
+}
+.logistics{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 92%;
+  padding-left:4%;
+  padding-right: 4%;
+  margin-bottom: 20rpx
+}
+.logistics .logInfo{
+  display: flex;
+  height: 132rpx;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.logistics .logInfo image{
+  width: 42rpx;
+  height: 37rpx;
+  margin-right: 24rpx;
+}
+.logistics .logInfo .info{
+  display: flex;
+  flex-direction: column;
+  font-size: 20rpx;
+  color: #999;
+}
+.logistics .logInfo .info .tipsTitle{
+  font-size: 26rpx;
+  color: #303030;
+  margin-bottom: 15rpx
+}
+.GroupInfor{
+  height: 206rpx;
+  width: 92%;
+  padding-left:4%;
+  padding-right: 4%;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx
+}
+.GroupInfor .title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 92rpx;
+  color: #303030;
+  font-size: 28rpx
+}
+.GroupInfor .title .image image{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 16rpx;
+}
+.HeadPortrait {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.HeadPortrait .image {
+  position: relative;
+  margin-right: 40rpx;
+  margin-left: 33rpx;
+}
+
+.HeadPortrait .image .head {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.HeadPortrait .image .RegimentalCommander {
+  position: absolute;
+  bottom: 0rpx;
+  width: 72rpx;
+  height: 18rpx;
+  left: 5.5rpx;
+}
+.goodinfo{
+  height: 192rpx;
+  background-color: #fff;
+  width: 92%;
+  padding-left:4%;
+  padding-right: 4%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx
+}
+.goodinfo .image image{
+  width: 124rpx;
+  height: 124rpx;
+  border-radius: 10rpx;
+  background-color: #303030;
+  margin-right: 30rpx
+}
+.goodinfo .info{
+  display: flex;
+  flex-direction: column;
+}
+.goodinfo .info .name{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.goodinfo .info .name .isgroup{
+  width: 53rpx;
+  height: 26rpx;
+  border: 1px solid #FF504A;
+  border-radius: 6rpx;
+  color:#FF504A;
+  font-size: 18rpx;
+  text-align: center;
+  line-height: 26rpx;
+  margin-right: 24rpx
+}
+.goodinfo .info .name .title{
+  color: #666;
+  font-size: 26rpx;
+  width: 84%
+}
+.goodinfo .info .name .title text{
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.goodinfo .info .goodprice{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 32rpx;
+  margin-top: 33rpx;
+  color: #FF504A;
+}
+.goodinfo .info .goodprice text{
+  font-size: 24rpx;
+}
+.goodinfo .info .goodprice .num{
+  font-size: 26rpx;
+  color: #999
+}
+.orderInfo {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding-left: 4%;
+  padding-right: 4%;
+  width: 92%;
+  padding-top: 33rpx;
+  padding-bottom: 50rpx
+}
+.pay view {
+  margin-bottom: 10rpx;
+}
+
+.pay .payList {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.pay .payList .payname {
+  color: #666;
+  font-size: 26rpx
+}

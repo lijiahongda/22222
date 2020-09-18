@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "唯品会",
+    "usingComponents": {
+      "title": "/component/goodsDetail/title/title",
+      "select": "/component/goodsDetail/select/select",
+      "comment": "/component/goodsDetail/comment/comment",
+      "recommend": "/component/goodsDetail/recommend/recommend"
+    },
+    "navigationBarBackgroundColor": "#F10180",
+    "navigationBarTextStyle": "white"
+}

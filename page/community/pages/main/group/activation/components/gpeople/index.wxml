@@ -1,0 +1,49 @@
+<view class="peopleList" >
+  <!-- <image style="width:0;height:0" class="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-12/22/yuelvhui4AH3nKhZHo1589294563.png" bindload="loadData" ></image> -->
+  <!-- <image bindtap="down" style="width:0;height:0" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-12/22/yuelvhui4AH3nKhZHo1589294563.png" bindload="loadData"></image> -->
+  <!-- 头部 -->
+  <!-- <view class="title">
+    <view class="name">我的群友</view>
+    <view class="ctrl">
+      <view>活跃度</view>
+      <view class="click">
+        <image bindtap="up" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-12/22/yuelvhuihKzRqPOuBI1589294487.png" bindload="loadData"></image>
+        <image bindtap="down" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-12/22/yuelvhui4AH3nKhZHo1589294563.png" bindload="loadData"></image>
+      </view>
+    </view>
+  </view> -->
+  <!-- tab -->
+  <!-- <view class="readioCtrl">
+    <view class="redioBt" data-id="0" bindtap="toggleC">
+      <view bindload="loadData" class="{{peopleToggle?'vip':'clr'}}"></view>
+      <view style="{{peopleToggle?'font-weight:600':''}}">PLUS用户</view>
+    </view>
+    <view class="redioBt" data-id="1"  bindtap="toggleC1">
+      <view class="{{!peopleToggle?'vip':'clr'}}"></view>
+      <view style="{{!peopleToggle?'font-weight:600':''}}">普通用户</view>
+    </view>
+  </view> -->
+  <!-- 列表 -->
+  <!-- <scroll-view scroll-y class="listCon"> -->
+    <view class="user" wx:for='{{list}}' wx:key='{{index}}' wx:if='{{list.length>0}}'>
+      <view class="cover">
+        <image src="{{item.head_img}}" bindload="loadData"></image>
+      </view>
+      <view class="msg">
+        <view class="name">{{item.nickname}}</view>
+        <view class="isVip">
+          <view class="iconImg">
+            <image src="{{item.member.memberImg}}"></image>
+          </view>
+          <view class="vipTitle">
+            {{item.member.memberType}}
+          </view>
+        </view>
+      </view>
+      <view class="tips">{{item.time}}</view>
+      <view class="copyBt" data-text="{{item.nickname}}" catchtap="copyText">复制昵称</view>
+      <!-- <view class="copyBt">复制昵称</view> -->
+    </view>
+  <!-- </scroll-view> -->
+    <view class="none" wx:if='{{list.length==0}}' >还没有群成员，快去分享吧～</view>
+</view>

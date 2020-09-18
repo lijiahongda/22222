@@ -1,0 +1,35 @@
+<!--page/Yuemall/pages/HotStyle/HotStyle.wxml-->
+<view style="background-color:{{backColor}};height:100%">
+  <view class="wrap">
+    <view class="bgImg">
+      <image class="bgImage" mode="widthFix" src="{{backGround}}"></image>
+    </view>
+    <view class="hotStyleCont">
+      <view class="openingMember">
+        <image wx:if="{{isMember == 0}}" bindtap="openingMember" class="openingMemberimg" src="{{openMember}}"></image>
+      </view>
+      <view class="itemList" wx:for="{{order}}" ::key="index" data-skuid="{{item.productSkuId}}" data-goodId="{{item.goodId}}" bindtap="goToInfo">
+        <view class="item">
+          <image class="itemimg" src="{{item.goodCover}}"></image>
+          <view class="itemCont">
+            <view class="itemtitle">{{item.goodName}}</view>
+            <view class="itemMemberPrice">
+              <text class="memberPrice">会员价：￥<text style="font-size:30rpx">{{item.goodVipPrice}}</text></text>
+              <!-- <text wx:if="{{isMember==0}}" class="memberPrice">现价￥{{item.nowPrice}}</text>  -->
+              <text class="originalPrice" decode='true'>{{item.priceName}}￥{{item.goodPrice}}</text>
+            </view>
+            <!-- <view style="position:absolute;bottom:10rpx;left:210rpx;">
+              <view class="itemPrice">自购省￥{{item.deduc}}</view>
+              <view class="itemPrice">分享赚￥{{item.shareMoney}}</view>
+            </view> -->
+          </view>
+        </view>
+        <view class="Coupon" wx:if="{{couponAmount !=0}}">
+          <view>优惠卷</view>
+          <view>可抵¥{{couponAmount}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,29 @@
+<import src="/page/LoadingPopup/LoadingPopup.wxml" />
+<block wx:if="{{LoadingStatus}}">
+  <template is="LoadingPopup" />
+</block>
+<view class="dang_classification">
+  <view class="dangSearch" bindtap="search">
+  <view class="search">
+    <image class="searchImg" src="https://image.yuelvhui.com/open/2019/11/07/5dc40762439211573128034.png"></image>
+    <input type="text" placeholder="搜索你想要的书籍" />
+  </view>
+  <view>搜索</view>
+</view>
+  <view class="dang_classification_content">
+    <view class="dang_classification_content_model" wx:for="{{list}}" wx:key="{{item.id}}">
+      <view class="dang_content_model">
+        <view class="content_model_image">
+          <image src="{{item.icon}}"></image>
+        </view>
+        <view class="content_model_text">{{item.name}}</view>
+      </view>
+      <view class="content_model_textarea">
+        <text class="content_model_textarea_text" style="border-top-left-radius:{{index == 0 ?20:0}}rpx; border-top-right-radius: {{(item.item.length<4 && index == item.item.length-1) || (item.item.length>=4 && index == 3)?20:0}}rpx ;border-bottom-left-radius: {{item.item.length-(item.item.length%4 == 0?4:item.item.length%4) == index?20:0}}rpx; border-bottom-right-radius: {{item.item.length - item.item.length%4 == (index+1) || (index == item.item.length-1) ?20:0}}rpx"
+          wx:for="{{item.item}}" wx:key="item" wx:for-index="index" wx:for-item="text" bindtap='tabclass'data-id='{{text.id}}' data-name='{{text.name}}'> 
+          {{text.name}}
+        </text>
+      </view>
+    </view>
+  </view>
+</view>

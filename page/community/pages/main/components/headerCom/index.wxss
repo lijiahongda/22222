@@ -1,0 +1,192 @@
+.zheader{
+  width: 100%;
+  height: 300rpx;
+  overflow: hidden;
+  position: relative;  
+  /* z-index: -1;   */
+  /* background: url('../../../../image/headerbg.png'); */
+  background-size: 100%;
+  box-sizing: border-box;
+  padding-top: 115rpx;
+}
+
+.zheader>.bgimg{
+  position: absolute;
+  width: 100%;
+  height: 320rpx;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+/* .zheader::after{
+  content:'';
+  width:160%;
+  height:100px;
+  position: absolute;
+  left: -30%;
+  top: 0;
+  z-index: -1;
+  border-radius: 0 0 50% 50%;
+  background: #141414;
+} */
+
+.zheader>.back{
+  width: 100%;
+  height: 80rpx;
+  padding-top: 35rpx;
+  /* display: flex;
+  justify-content: space-between; */
+  font-size:36rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height: 80rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.zheader>.back>.ctrl{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.zheader>.back>.bgimg{
+  width: 750rpx;
+  height: 320rpx;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+.zheader>.back>.ctrl>view:nth-child(1),.zheader>.back>.ctrl>view:nth-child(3){
+  width: 20%;
+}
+.zheader>.back>.ctrl>view>image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.zheader>.headerMsg{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.zheader>.headerMsg>.titleImg{
+  width: 88rpx;
+  height: 88rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-top: 40rpx;
+  margin-left: 64rpx;
+}
+
+.zheader>.headerMsg>.titleImg>image,.zheader>.headerMsg>.gtitleImg>image{
+  width: 100%;
+  height: 100%;
+}
+
+.zheader>.headerMsg>.msg{
+  margin-top: 40rpx;
+  line-height:30rpx;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  margin-left: 20rpx;
+}
+.name{
+  max-width: 400rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.zheader>.headerMsg>.msg>.isVip{
+  width: 156rpx;
+  height: 44rpx;
+  background:#040303;
+  border-radius:22rpx;
+  margin-top: 13rpx;
+  display: flex;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height: 44rpx;
+}
+
+.zheader>.headerMsg>.msg>.isVip>.iconImg{
+  width: 24rpx;
+  height: 24rpx;
+  margin-top: 10rpx;
+  margin-left: 17rpx;
+  margin-right: 5rpx;
+}
+
+.zheader>.headerMsg>.msg>.isVip>.iconImg>image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.zheader>.headerMsg>.gtitleImg{
+  width: 100rpx;
+  height: 100rpx;
+  overflow: hidden;
+  margin-top: 40rpx;
+  margin-left: 64rpx;
+}
+.zheader>.headerMsg>.msg>.gname{
+  width: 550rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  color:rgba(249,226,174,1);
+  line-height: 50rpx;
+}
+.zheader>.headerMsg>.msg>.seeNum{
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(221,221,221,1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.zheader>.headerMsg>.ewm {
+  position: absolute;
+  right: 5rpx;
+  top: 40rpx;
+  display: flex;
+  flex-direction: row;
+}
+.zheader>.headerMsg>.ewm image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 12rpx;
+}
+.zheader>.headerMsg>.ewm view{
+  width: 95rpx;
+  font-size:20rpx;
+  height: 59rpx;
+  color:rgba(124,124,124,1);
+}
+.head{
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}

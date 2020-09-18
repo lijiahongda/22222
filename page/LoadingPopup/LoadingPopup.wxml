@@ -1,0 +1,8 @@
+<template name="LoadingPopup">
+  <!-- 加载中 -->
+  <view bindtap='hideModal' class="commodity_attr_boxlong">
+    <view class="image" style="display: flex;flex-direction: column;text-align:center;">
+      <image src="/images/hotel/loading.gif" style="width:180rpx;height:200rpx;margin:auto"></image>
+    </view>
+  </view>
+</template>

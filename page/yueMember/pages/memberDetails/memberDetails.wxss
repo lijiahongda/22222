@@ -1,0 +1,103 @@
+.requirement {
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+.footr{
+   display: flex; 
+   justify-content: space-between;  
+   align-items: center; 
+  font-size: 22rpx; 
+  color: rgb(155, 155, 155);
+  border-top: 1px solid #eee;
+  position:absolute;
+  bottom:0;
+  width: 100%;
+  line-height: 49px;
+  text-align: center
+}
+.reTitle {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-left:40rpx
+}
+.reTitle text{
+  border-left:3px solid #ffb11c;
+  padding-left:10rpx 
+}
+.reContent {
+  padding: 20rpx;
+}
+.listTitle,.listStatus,.listAbnormal{
+  display: flex;
+  color: rgb(74, 74, 74);
+  font-size: 28rpx;
+  align-items: center;
+   /* margin-top: 5px;  */
+}
+.listNum{
+  width: 100rpx;
+}
+.itemMargin{
+  margin-top:5px;
+}
+
+
+money{
+  font-size:36rpx;
+  color:#fc6931;
+  width:15%;
+  text-align:center;
+
+}
+num{
+  color:rgb(252,105,49);
+  font-size: 26rpx
+}
+.deliveryAdd {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding:36rpx;
+  padding-right:10rpx;
+}
+
+.deliveryAdd .userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 85%;
+  font-size: 28rpx;
+  color:#999
+}
+
+ .userName {
+  font-size: 30rpx;
+  color:#333;
+} 
+
+.userAddress {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.sizeColor{
+  font-size:13px;
+  color:rgb(74,74,74)
+}
+.addressLabel {
+  /* font-size: 24rpx; */
+  color: #999;
+  padding: 4rpx;
+  height: 12.5px;
+  line-height: 12px;
+  text-align: center;
+}
+
+
+
+

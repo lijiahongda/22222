@@ -1,0 +1,84 @@
+.top_cont{
+  width: 100%;
+  font-size: 48rpx;
+  color: #fff;
+  line-height: 60rpx;
+  text-align: center;
+  position: relative;
+  height: 250rpx;
+  background: #ffc11f;
+  padding-top: 40rpx;
+  border-radius: 0 0 10% 10%;
+  z-index: 0
+}
+.top_cont image{
+  width: 9rpx;
+  height: 15rpx;
+  margin-left: 14rpx;
+}
+.top_cont .tip{
+  font-size: 22rpx;
+  color: #fff;
+  position: absolute;
+  left: 24rpx;
+  top: 0;
+}
+.top_cont .tip image{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 8rpx;
+}
+.top_cont .use{
+  position: absolute;
+  right: 0;
+  top: 10rpx;
+  width:100rpx;
+  height:48rpx;
+  line-height: 48rpx;
+  background:#FFE1A5;
+  border-radius:24rpx 0px 0px 24rpx;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #FFFFFF
+}
+
+
+.content{
+  width:702rpx;
+  background:rgba(255,255,255,1);
+  border-radius:10rpx;
+  padding: 14rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-top: -80rpx;
+  position: relative;
+  z-index: 1
+}
+.content .list{
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #F5F5F9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #212121;
+  line-height: 44rpx;
+}
+.content .list:last-child{
+  border: none
+}
+.content .list .cont{
+  text-align: left;
+}
+.content .list .time{
+  font-size: 22rpx;
+  color: #8D8D8E;
+  margin-top: 10rpx;
+}
+.content .list .number{
+  font-size: 36rpx;
+  color: #9D9D9D;
+}

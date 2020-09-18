@@ -1,0 +1,16 @@
+<!-- 分享弹窗 -->
+<view class="share-layer" wx:if="{{ sharelayer }}">
+  <view class="share-layer-mask" bindtap='shareLayerClosed'>
+
+  </view>
+  <view class="share-layer-block">
+    <view class="share-layer-block-img">
+      <button open-type='share'>
+        <image src="/images/YueMall/WeChatShare@2x.png"></image>
+      </button>
+    </view>
+    <view class="share-layer-block-img" bindtap='goPoster'>
+      <image src="/images/YueMall/posterShare@2x.png"></image>
+    </view>
+  </view>
+</view>

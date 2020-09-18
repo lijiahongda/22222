@@ -1,0 +1,109 @@
+.two_class{
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  background: #B31116;
+}
+.two_class .two_scroll_view{
+  display: block;
+  width: 100%;
+}
+.two_class .two_tab_item{
+  margin:0 4%;
+  display: inline-block;
+  text-align: center;
+  font-size: 32rpx;
+  height: 60rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 600;
+  color: #E35B5C;
+  position: relative
+}
+.two_class .two_tab_active{
+  font-size: 32rpx;
+  color: #fff;
+  font-weight:600;
+}
+.two_class .two_tab_active::after{
+  content: "";
+  border: 3rpx solid #eee;
+  width: 90%;
+  margin: 0 auto;
+  background: #fff;
+  display: inline-block;
+  position: absolute;
+  bottom: 1rpx;
+  left: 5%;
+}
+
+
+.operation{
+  position: fixed;
+  top: 46%;
+  right:36rpx;
+  width: 80rpx;
+  z-index: 999
+}
+.operation image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 24rpx;
+}
+
+
+
+
+/* 分享层 */
+
+.share-layer {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+}
+
+.share-layer-mask {
+  width: 100%;
+  height: 100%;
+}
+
+.share-layer-block {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150rpx;
+  background: #fff;
+  text-align: center;
+  z-index: 2;
+}
+
+.share-layer-block-img {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.share-layer-block image {
+  margin-top: 21rpx;
+  width: 100rpx;
+  height: 108rpx;
+}
+
+.share-layer-block-img button {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-color: #fff;
+  box-shadow: 0;
+}
+
+.share-layer-block-img button::after {
+  border: none;
+}

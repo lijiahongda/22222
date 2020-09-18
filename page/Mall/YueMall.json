@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "悦商城",
+  "usingComponents": {
+    "limited-time": "/component/LimitedTime/LimitedTime",
+    "jdCom": "/component/jdCom/jdCom",
+    "Assemble": "/component/Assemble/Assemble",
+    "makeupFood": "/component/makeupFood/makeupFood",
+    "ActivityTemplate":"/component/ActivityTemplate/ActivityTemplate",
+    "banner": "/component/banner/banner",
+    "couponPopup": "/component/couponPopup/couponPopup",
+    "redPopup":"/component/redPopup/redPopup",
+    "userPopup": "/component/userPopup/userPopup",
+    "NewHotStyle":"/component/NewHotStyle/NewHotStyle",
+    "zhiboExplosiveProducts":"/component/zhiboExplosiveProducts/zhiboExplosiveProducts"
+  },
+  "navigationStyle": "custom"
+}

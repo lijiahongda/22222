@@ -1,0 +1,1601 @@
+@import "../../../../wxParse/wxParse/wxParse.wxss";
+
+page {
+  background-color: rgb(242, 242, 242);
+}
+
+/* 授权按钮 */
+
+button:after {
+  border: none;
+}
+
+.authorizationStatus {
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx;
+}
+
+.detailContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.commodity_screenshowModal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_boxshowModal {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2000;
+  padding-top: 20rpx;
+  height: 100%;
+}
+
+.commodity_attr_boxshowModal .image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100%;
+}
+
+.commodity_attr_boxshowModal .image image {
+  height: 656rpx;
+  width: 480rpx;
+  margin: 25% auto;
+}
+
+button[class="con_listbox"]::after {
+  border: 0;
+}
+
+.number {
+  background-color: #ee7849;
+  border-radius: 50%;
+  font-size: 22rpx;
+  width: 27rpx;
+  height: 27rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  /* position: absolute; */
+  margin-left: 30rpx;
+  margin-top: 23rpx;
+}
+
+.swiper-index swiper {
+  height: 750rpx;
+}
+
+.swiper-index swiper image {
+  width: 100%;
+  height: 100%;
+}
+
+.digits {
+  display: flex;
+  flex-direction: column;
+  color: rgb(74, 74, 74);
+  position: absolute;
+  bottom: 0rpx;
+  right: 0rpx;
+  font-size: 20rpx;
+  z-index: 999;
+  top: 704rpx;
+  width: 100%;
+  text-align: right;
+}
+
+.digits .image image {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.digits .image {
+  margin-right: 23rpx;
+  margin-top: 20rpx;
+}
+
+.digits .digitsNum {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 60rpx;
+  width: 95%;
+  clear: both;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #fff;
+  padding-right: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.RushBuy {
+  display: flex;
+  flex-direction: row;
+  height: 41rpx;
+  margin-top: 6rpx;
+  background-color: #999;
+}
+
+.RushBuy .RushBuyTitle {
+  color: #fff;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 42rpx;
+  margin-left: 14rpx;
+}
+
+.RushBuy .RushBuyTime {
+  color: #fff;
+  font-size: 22rpx;
+  /* width: 130rpx; */
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  line-height: 41rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  background-color: #ff6636;
+}
+
+.slide-text {
+  /* background-color: #e4393c; */
+  display: block;
+  color: rgb(74, 74, 74);
+  float: right;
+  background-color: #fff;
+  border-radius: 4rpx;
+  width: 50rpx;
+  height: 26rpx;
+  text-align: center;
+  line-height: 26rpx;
+  margin-bottom: 40rpx;
+  font-size: 20rpx;
+  margin-right: 5%;
+}
+
+/* 挖矿 */
+
+.mineral {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 80rpx;
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: rgb(255, 248, 235);
+  align-items: center;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.mineral .mineralIng {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mineral .head {
+  display: flex;
+  flex-direction: row;
+}
+
+.mineral .head image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 5rpx;
+  border-radius: 50%;
+}
+
+.mineral text {
+  color: rgb(255, 177, 28);
+}
+
+.tradeName {
+  color: rgb(51, 51, 51);
+  font-size: 32rpx;
+  margin-bottom: 17rpx;
+}
+
+.originalCost {
+  color: rgb(153, 153, 153);
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 75rpx;
+}
+
+.originalCost .open {
+  width: 223rpx;
+  height: 46rpx;
+  background: rgba(253, 75, 21, 1);
+  border-radius: 23rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.texture {
+  color: rgb(153, 153, 153);
+  font-size: 28rpx;
+  margin-bottom: 25rpx;
+}
+
+.originalCost {
+  /* margin-bottom: 23rpx; */
+}
+
+.rule {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between;
+  align-items: center; */
+}
+
+.CouponsRule {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #999;
+  font-size: 26rpx;
+}
+
+.CouponsRule image {
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 17rpx;
+}
+
+.originalCost text {
+  font-size: 24rpx;
+}
+
+.memberPrice {
+  color: #ff4646;
+  font-size: 40rpx;
+}
+
+.memberPrice text {
+  font-size: 24rpx;
+}
+
+.discount {
+  color: rgb(51, 51, 51);
+  font-size: 28rpx;
+  border-radius: 6rpx;
+  width: 86.6%;
+  padding-left: 3.7%;
+  padding-right: 3.7%;
+  height: 90rpx;
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-left: 3%;
+}
+
+.Deductible {
+  color: #ff6636;
+  font-size: 18rpx;
+  width: 68rpx;
+  height: 26rpx;
+  border: 1px solid #ff6636;
+  border-radius: 3rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 11rpx;
+}
+
+/* 秒杀价格 */
+
+.seckill {
+  width: 100%;
+  height: 110rpx;
+  background: #ca2519;
+  display: flex;
+  justify-content: space-between;
+}
+
+.seckill .price {
+  width: 532rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 24rpx;
+  box-sizing: border-box;
+}
+
+.seckill .price > view:nth-child(1) {
+  /* display: flex; *//* justify-content: baseline; */
+  font-size: 24rpx;
+  color: #fff;
+  vertical-align: bottom;
+}
+
+.seckill .price > view:nth-child(1) > text:nth-child(2) {
+  font-size: 42rpx;
+  padding-left: 4rpx;
+}
+
+.seckill .price > view:nth-child(2) {
+  display: flex;
+  justify-content: baseline;
+  font-size: 24rpx;
+  color: #f4b2b2;
+}
+
+.seckill .price > view:nth-child(2) > text:nth-child(1) {
+  padding-right: 40rpx;
+  text-decoration: line-through;
+}
+
+.seckill .time {
+  width: 218rpx;
+  height: 110rpx;
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-17/21/yuelvhuiBO8RkPKLuR1579266749.png);
+  background-size: 100% 100%;
+}
+
+.seckill .time > image {
+  width: 138rpx;
+  height: 26rpx;
+  display: block;
+  margin: 14rpx 0 14rpx 50rpx;
+}
+
+.seckill .time .showTime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seckill .time .showTime > view:nth-child(2n-1) {
+  background: #fbffd2;
+  border-radius: 8rpx;
+  width: 40rpx;
+  height: 40rpx;
+  color: #30302e;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.seckill .time .showTime > view:nth-child(2n) {
+  color: #fbffd2;
+  font-size: 24rpx;
+  padding: 0 4rpx;
+}
+
+.seckillWill .price > view:nth-child(1) > text:last-child {
+  color: #f4b2b2;
+  text-decoration: line-through;
+  padding-left: 14rpx;
+}
+
+.seckillWill .price > view:nth-child(2) {
+  color: #fbffd2;
+  align-items: center;
+  padding-bottom: 10rpx;
+}
+
+.seckillWill .price > view:nth-child(2) > text:nth-child(1) {
+  padding-right: 40rpx;
+  background: #fbffd2;
+  text-align: center;
+  padding: 4rpx 8rpx;
+  border-radius: 20rpx;
+  color: #30302e;
+  text-decoration: none;
+}
+
+.seckillWill .price > view:nth-child(2) > text:nth-child(2) {
+  padding-left: 10rpx;
+}
+
+.seckillWill .time .showTime {
+  color: #fbffd2;
+  font-size: 24rpx;
+}
+
+.white {
+  width: 100%;
+  height: 20rpx;
+  background: #fff;
+}
+
+.introduce {
+  width: 92%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 6rpx;
+  padding: 4%;
+}
+
+.supplier {
+  margin-top: 32rpx;
+  border-top: 1px solid #ececec;
+  padding-top: 23rpx;
+  padding-bottom: 23rpx;
+}
+
+.supplier view {
+  width: 95%;
+  margin: auto;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.listItem {
+  height: 73rpx;
+  display: flex;
+  font-size: 28rpx;
+  color: rgb(0, 0, 0);
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.listItem image {
+  width: 34rpx;
+  height: 10rpx;
+}
+
+.itemTxt {
+  font-size: 28rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.itemTxt text {
+  color: #333;
+}
+
+.itemTxt image {
+  width: 140rpx;
+  height: 40rpx;
+}
+
+.itemBtnRight {
+  display: flex;
+  align-items: center;
+  width: 34rpx;
+  height: 10rpx;
+}
+
+.couponContainer {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-right: 15rpx;
+}
+
+.lines {
+  position: absolute;
+  font-size: 24rpx;
+  color: rgb(244, 170, 17);
+}
+
+.infoList {
+  margin-top: 14rpx;
+  position: relative;
+}
+
+.logistics {
+  background-color: #fff;
+  /* margin-bottom: 100rpx; */
+}
+
+.logistics view {
+  width: 95%;
+  margin: auto;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.footr {
+  display: flex;
+  align-items: center;
+  font-size: 22rpx;
+  color: rgb(155, 155, 155);
+  border-top: 1px solid #eee;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  z-index: 1990;
+  height: 110rpx;
+}
+
+.gopay {
+  font-size: 30rpx;
+  background: #ca2519;
+  width: 50%;
+  height: 87rpx;
+  color: rgb(240, 242, 246);
+  line-height: 87rpx;
+}
+
+/* .add {
+  font-size: 30rpx;
+  background-color: #fff;
+  width: 31%;
+  height: 87rpx;
+  color: #333;
+  border-top: 1px solid #ececec;
+  line-height: 87rpx;
+} */
+
+.SelfPurchase {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+  background: linear-gradient(90deg, rgba(242, 35, 0, 1) 0%, rgba(255, 76, 22, 1) 100%);
+  margin-left: 43rpx;
+}
+
+.add:active {
+  background-color: #ececec;
+}
+
+.home {
+  background-color: #fff;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 98rpx;
+  flex-direction: column;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  padding-left: 45rpx;
+  padding-right: 45rpx;
+}
+
+.onShare {
+  width: 200rpx;
+  height: 60rpx;
+  background: linear-gradient(90deg, rgba(255, 166, 0, 1) 0%, rgba(255, 187, 0, 1) 100%);
+  border-radius: 0px 30px 30px 0px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin-right: 20rpx;
+}
+
+.home image {
+  width: 33rpx;
+  height: 33rpx;
+}
+
+.car {
+  background-color: #fff;
+  flex: 1;
+  align-items: center;
+  /* justify-content: center; */
+  display: flex;
+  height: 110rpx;
+  /* border-top: 1px solid #ececec; */
+  border-right: 1px solid #ececec;
+  font-size: 24rpx;
+  color: #333;
+  flex-direction: column;
+}
+
+.car image {
+  width: 39rpx;
+  height: 36rpx;
+  margin-top: 23.5rpx;
+}
+
+/* 
+.SelfPurchase {
+  width: 31%;
+  height: 90rpx;
+  background-color: #ff6636;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+} */
+
+.ShareProfit {
+  width: 31%;
+  height: 90rpx;
+  background-color: #ff6636;
+  opacity: 0.33;
+  color: #fff;
+  font-size: 34rpx;
+  line-height: 90rpx;
+}
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  position: fixed;
+  z-index: 1990;
+  background: #fff;
+  padding-top: 20rpx;
+  bottom: 0rpx;
+  left: 0rpx;
+  overflow: visible;
+  height: 1000rpx;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  width: 96%;
+  background-color: #fff;
+  height: 140rpx;
+}
+
+.close icon {
+  margin-right: 3%;
+}
+
+.commodity {
+  display: flex;
+  flex-direction: row;
+  width: 87%;
+  margin: auto;
+  position: absolute;
+  top: 20rpx;
+  z-index: 1999;
+  margin-left: 3%;
+}
+
+.commodity .images image {
+  width: 180rpx;
+  height: 180rpx;
+  background-color: #fff;
+}
+
+.commodity .describe {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  margin-top: 45rpx;
+  padding-top: 45rpx;
+  width: 70%;
+  padding-left: 2%;
+  background-color: #fff;
+}
+
+.commodity .describe view {
+  /* margin-left: 30rpx; */
+}
+
+.commodity .describe .money {
+  color: #666;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.commodity .describe .specification {
+  color: #141414;
+  font-size: 24rpx;
+  /* margin-left:60rpx */
+}
+
+.NoGoods {
+  color: #ed5d2f;
+  font-size: 30rpx;
+  /* margin-left:60rpx */
+}
+
+.size {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 3.5%;
+  margin-top: 118rpx;
+}
+
+.sizeName {
+  font-size: 28rppx;
+  color: #141414;
+}
+
+.channelContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.channelContent view {
+  height: 56rpx;
+  padding-left: 35rpx;
+  padding-right: 35rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ececec;
+  margin-right: 4.64%;
+  color: #333;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+}
+
+.channelContent view.active {
+  color: #ca2519;
+  padding-left: 33rpx;
+  padding-right: 33rpx;
+  background: #fae9e8;
+  border: 1px solid #ca2519;
+}
+
+.channelContent view .NotOptional {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 93%;
+  margin: auto;
+  margin-top: 20rpx;
+  margin-bottom: 138rpx;
+}
+
+.regulation {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+
+.addNumber {
+  border: 1px solid #ececec;
+  width: 56rpx;
+  height: 56rpx;
+  border-left: none;
+  text-align: center;
+  line-height: 56rpx;
+  /* border-radius: 4rpx; */
+}
+
+.amountNumber {
+  border: 1px solid #ececec;
+  width: 88rpx;
+  height: 56rpx;
+  text-align: center;
+  line-height: 56rpx;
+}
+
+.amountNumber input {
+  height: 56rpx;
+}
+
+.subtract {
+  border: 1px solid #ececec;
+  width: 56rpx;
+  height: 56rpx;
+  border-right: none;
+  text-align: center;
+  line-height: 56rpx;
+  /* border-radius: 4rpx */
+}
+
+/* 商品详情 */
+
+.CommodityDetails {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 100rpx;
+}
+
+.CommodityDetails .CommodityDetailsTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 97rpx;
+  color: #141414;
+  font-size: 28rpx;
+  background: #fff;
+  border-radius: 18rpx 18rpx 0 0;
+}
+
+/* display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 101rpx;
+  color: #333;
+  font-size: 34rpx;
+  background-color: #fff;
+  margin-top:24rpx;
+  padding-left:3.4%;
+  width:96.6% */
+
+.sure {
+  height: 90rpx;
+  width: 702rpx;
+  border-radius: 45rpx;
+  background-color: #ff6636;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  margin-left: 3%;
+  margin-bottom: 15rpx;
+}
+
+/* 分享层 */
+
+.share-layer {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+}
+
+.share-layer-mask {
+  width: 100%;
+  height: 100%;
+}
+
+.share-layer-block {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150rpx;
+  background: #fff;
+  text-align: center;
+  z-index: 2;
+}
+
+.share-layer-block-img {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.share-layer-block image {
+  margin-top: 21rpx;
+  width: 100rpx;
+  height: 108rpx;
+}
+
+.share-layer-block-img button {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-color: #fff;
+  box-shadow: 0;
+}
+
+.share-layer-block-img button::after {
+  border: none;
+}
+
+.wxParse-img {
+  width: 100%;
+  display: block;
+}
+
+/* 躺赚 */
+
+.LyingEarn {
+  color: #fff;
+  font-size: 24rpx;
+  border: 4rpx solid #ff6032;
+  text-align: center;
+  background: rgba(255, 70, 70, 1);
+  border-radius: 23rpx;
+  padding-top: 11rpx;
+  padding-bottom: 11rpx;
+  padding-right: 15rpx;
+  padding-left: 15rpx;
+}
+
+.serialNum {
+  color: #999;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 60rpx;
+  width: 100%;
+  height: 60rpx;
+}
+
+.operationButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 702rpx;
+  height: 88rpx;
+  border-radius: 44rpx;
+  margin: 0 auto;
+}
+.add {
+  font-size: 30rpx;
+  background-color: #2d2d2d;
+  width: 50%;
+  height: 87rpx;
+  color: #fff;
+  border-top: 1px solid #ececec;
+  line-height: 87rpx;
+}
+.StatementAmount {
+  width: 92%;
+  margin: auto;
+  background-color: #fff;
+  padding: 4%;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+}
+
+.StatementAmount .title {
+  font-size: 28rpx;
+  margin-bottom: 27rpx;
+}
+
+.StatementAmount .ListAs {
+  color: #999;
+  line-height: 40rpx;
+  margin-top: 12rpx;
+}
+
+/* 限制 */
+
+.limit {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  border-radius: 6rpx;
+  background-color: #fff;
+  color: #333;
+  font-size: 28rpx;
+  margin-top: 14rpx;
+  align-items: center;
+}
+
+.limit .title {
+  color: #999;
+  margin-right: 4%;
+}
+
+.DistributionPlace {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 29rpx;
+  padding-bottom: 29rpx;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  border-radius: 6rpx;
+  background-color: #fff;
+  color: #333;
+  font-size: 28rpx;
+  margin-top: 14rpx;
+  align-items: center;
+  position: relative;
+}
+
+.DistributionPlace .DistributionAddress {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+}
+
+.DistributionPlace .DistributionAddress .title {
+  color: #999;
+  margin-right: 4%;
+}
+
+.DistributionPlace .DistributionAddress .DistributionInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.DistributionPlace image {
+  width: 34rpx;
+  height: 10rpx;
+}
+
+.DistributionPlace .image {
+  height: 80rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.DistributionPlace .DistributionAddress .DistributionInfo .address {
+  margin-bottom: 20rpx;
+}
+
+.DistributionPlace .DistributionAddress .DistributionInfo .FullReduction {
+  display: flex;
+  flex-direction: row;
+  color: #f4b445;
+  font-size: 24rpx;
+}
+
+.DistributionPlace .DistributionAddress .DistributionInfo .FullReduction .isDelivery {
+  color: #999;
+  /* margin-left: 20rpx; */
+}
+
+.DistributionPlace .DistributionAddress .DistributionInfo .FullReduction .freight {
+  margin-right: 20rpx;
+}
+
+.tabContainer1 {
+  position: fixed;
+  top: 0rpx;
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  z-index: 1000;
+  height: 106rpx;
+}
+
+.tabContainer {
+  background-color: #f34746;
+  width: 100%;
+  height: 100rpx;
+  /* margin-top: 26rpx; */
+  display: flex;
+  box-sizing: border-box;
+}
+
+.tabItem {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #fff;
+  padding-bottom: 20rpx;
+}
+
+.space {
+  flex: 1;
+}
+
+.tabTitleSelected {
+  font-size: 28rpx;
+  color: #ffff40;
+}
+
+.tabDiv {
+  display: flex;
+  width: 64rpx;
+  height: 4rpx;
+  background-color: #ffff40;
+}
+
+/* 评论 */
+
+.comment {
+  background-color: #fff;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 30rpx;
+}
+
+.comment .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 30rpx;
+}
+
+.comment .Commentary {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+}
+
+.comment .PersonalComments {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid #ebecee;
+  margin-bottom: 31rpx;
+}
+
+.comment .PersonalComments .userInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 23rpx;
+}
+
+.comment .PersonalComments .userInfo .Head {
+  width: 54rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 14rpx;
+}
+
+.comment .PersonalComments .userInfo .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment .PersonalComments .userInfo .info .stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.comment .PersonalComments .userInfo .info .stars image {
+  width: 17rpx;
+  height: 16rpx;
+  margin-right: 8rpx;
+  margin-top: 9rpx;
+}
+
+.comment .PersonalComments .WrittenWords text {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 21rpx;
+}
+
+.comment .PersonalComments .tab-hSecondLevel {
+  height: 180rpx;
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+}
+
+.comment .PersonalComments .tab-hSecondLevel image {
+  width: 180rpx;
+  height: 180rpx;
+  background-color: #ccc;
+  margin-right: 10rpx;
+}
+
+.comment .PersonalComments .Specifications {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-bottom: 30rpx;
+}
+
+.lookComment {
+  background-color: #fff;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 34rpx;
+}
+
+.lookComment view {
+  width: 208rpx;
+  height: 60rpx;
+  background: rgba(244, 244, 244, 0);
+  border: 1px solid rgba(170, 170, 170, 1);
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+/* 暂无评价 */
+
+.NoEvaluationYet {
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 17rpx;
+  padding-bottom: 19rpx;
+}
+
+.NoEvaluationYet .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(37, 36, 36, 1);
+  width: 96%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid rgba(238, 238, 238, 1);
+  margin-bottom: 20rpx;
+}
+
+.NoEvaluationYet .title .stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 14rpx;
+}
+
+.NoEvaluationYet .title .stars image {
+  width: 16rpx;
+  height: 16rpx;
+}
+
+.NoEvaluationYet .title .right {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(104, 104, 104, 1);
+}
+
+.NoEvaluationYet .title .left {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.NoEvaluationYet .tips {
+  width: 100%;
+  height: 64rpx;
+  background: rgba(238, 238, 238, 1);
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(163, 163, 163, 1);
+}
+
+/* 未实名 */
+
+.real_name .bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+.real_name .cont {
+  width: 530rpx;
+  height: 366rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20rpx;
+  background: #fff;
+  position: fixed;
+  margin-left: 110rpx;
+  top: 30%;
+  font-size: 30rpx;
+  line-height: 48rpx;
+  color: #141414;
+  text-align: center;
+  z-index: 2001;
+}
+
+.real_name .cont .title {
+  font-size: 36rpx;
+  margin-top: 40rpx;
+  margin-bottom: 50rpx;
+}
+
+.real_name .cont .btn {
+  width: 250rpx;
+  height: 80rpx;
+  background: rgba(255, 51, 0, 1);
+  border-radius: 40px;
+  font-size: 32rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  margin-top: 36rpx;
+  color: #fff;
+}
+
+/* 底部 */
+
+.SMSBooking {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 750rpx;
+  height: 80rpx;
+  background: rgba(255, 252, 216, 1);
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(245, 68, 7, 1);
+  position: fixed;
+  bottom: 98rpx;
+}
+
+.SMSBooking .tips {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 35rpx;
+}
+
+.SMSBooking .Booking {
+  width: 134rpx;
+  height: 50rpx;
+  border: 2rpx solid rgba(244, 171, 15, 1);
+  border-radius: 25rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(245, 68, 7, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25rpx;
+}
+
+.SMSBooking .Booked {
+  width: 134rpx;
+  height: 50rpx;
+  background: rgba(187, 187, 187, 1);
+  border-radius: 25rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25rpx
+}
+
+.SMSBooking .tips image {
+  width: 40.9rpx;
+  height: 38.9rpx;
+  margin-right: 16rpx;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  font-size: 22rpx;
+  color: rgb(155, 155, 155);
+  position: fixed;
+  background-color: #fff;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1990;
+  height: 98rpx;
+  border-top: 2rpx solid rgba(0, 0, 0, 0.2);
+  padding-left: 50rpx;
+  box-sizing: border-box;
+}
+
+.footer > .left {
+  width: 70rpx;
+  height: 100%;
+  color: #999;
+  font-size: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30rpx;
+  padding-top: 8rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.footer > .left > image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-bottom: 8rpx;
+}
+
+.footer > .left .shopNum {
+  position: absolute;
+  top: 4rpx;
+  right: 0rpx;
+  width: 34rpx;
+  height: 34rpx;
+  color: #fff;
+  background: #f22300;
+  text-align: center;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  border-radius: 50%;
+}
+
+.footer > .right {
+  width: 360rpx;
+  height: 80rpx;
+  background: #ca2519;
+  border-radius: 40rpx;
+  color: #fff;
+  display: flex;
+  position: absolute;
+  bottom: 8rpx;
+  right: 24rpx;
+}
+
+.footer > .right > .red {
+  background: #2d2d2d;
+}
+
+.footer > .right > view {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer > .right > view.double {
+  line-height: 30rpx;
+  font-size: 22rpx;
+}
+
+.footer > .right > view.double > view:nth-child(2) {
+  font-size: 24rpx;
+}
+
+.footer > .right > .join {
+  width: 100%;
+  color: #fce893;
+  font-size: 30rpx;
+}
+
+.footer > .right > .allRed {
+  width: 100%;
+  background: #ca2519;
+  color: #fff;
+  font-size: 30rpx;
+}
+.sign{
+  background: #fff;
+  padding:0 3.7% 2%;
+  display: flex;
+  
+}
+.sign text {
+  background:rgba(27,23,22,1);
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(255,254,237,1);
+  padding:10rpx 12rpx;
+  border-radius:8rpx;
+  text-align: center;
+  margin-right: 8rpx;
+}

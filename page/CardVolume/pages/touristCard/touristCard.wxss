@@ -1,0 +1,97 @@
+.wrap{
+  position: relative;
+}
+.bgImg{
+  height: 2748rpx;
+  width: 100%;
+}
+.wrap .content{
+  position: absolute;
+  top:700rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrap .receive{
+  width: 338rpx;
+  height: 66rpx;
+  background:linear-gradient(to right, rgba(81, 85, 165, 1), rgba(232, 10, 97, 1));
+  color:#fff;
+  text-align:center;
+  line-height: 66rpx;
+  border-radius: 10rpx;
+}
+.wrap .info {
+  font-size: 30rpx;
+  color: #666;
+  margin-top:20rpx;
+}
+.wrap .info1{
+  margin-top:61rpx;
+}
+.wrap .qrcode{
+  width: 234rpx;
+  height: 234rpx;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: block;
+  margin: 1400rpx auto 0;
+}
+.wrap .noMember{
+  z-index: 111;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.2);
+}
+.wrap .noMember .noMemberCont{
+  width: 100%;
+  padding: 0 50rpx;
+  height: 570rpx;
+  box-sizing: border-box;
+  z-index: 112;
+  position: fixed;
+  top: 200rpx;
+  left: 0;
+}
+.wrap .noMember .noMemberCont image{
+  width: 100%;
+  height: 100%;
+}
+.wrap .noMember .noMemberCont .refused,.wrap .noMember .noMemberCont .accept{
+  width: 196rpx;
+  height: 62rpx;
+  border-radius: 31rpx;
+  background-color: #fff;
+  text-align: center;
+  line-height: 62rpx;
+  position: absolute;
+  bottom:30rpx;
+  font-size: 26rpx;
+}
+.wrap .noMember .noMemberCont .refused{
+  left: 22%;
+  color: #666;
+}
+.wrap .noMember .noMemberCont .accept{
+  right: 22%;
+  color: #ED7C1CFF;
+}
+.wrap .noMember .noMemberCont .colseNomember{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  bottom: -120rpx;
+  left: 50%;
+  margin-left: -30rpx;
+  border: 1rpx solid #fff;
+  color: #fff;
+  font-size: 40rpx;
+  text-align: center;
+  line-height: 54rpx;
+  border-radius: 50%;
+  cursor: pointer;
+}

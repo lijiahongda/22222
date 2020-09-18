@@ -1,0 +1,21 @@
+/* pages/colorLine/colorLine.wxss */
+.colorLine{
+  width: 99%;
+  height: 3px;
+  display: flex;
+  flex-wrap: nowrap;
+  /* border: 1px solid rgb(151,151,151); */
+  /* margin-bottom: 15rpx; */
+}
+.colorLine .innerline{
+  transform: skewX(-30deg);
+    align-items:stretch;
+    flex-grow:1;
+    border-right: 1px solid rgb(151,151,151)
+}
+.colorLine .color-red{
+  background-color: #E9748A;
+}
+.colorLine .color-blue{
+  background-color: #86C6FC;
+}

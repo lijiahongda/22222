@@ -1,0 +1,28 @@
+<!--page/Mall/pages/BargainPriceList/BargainPriceList.wxml-->
+<image class="bg" src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569222764_14019.png"></image>
+<swiper class="swiper-box">
+  <block wx:for="{{ad}}" wx:key="ad">
+    <swiper-item>
+      <image src="{{item.url}}" bindtap='classificationList' data-id="{{item.id}}" data-skuid="{{item.skuId}}" data-redirecttype="{{item.redirectType}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="content">
+  <view class="goodInfo" wx:for="{{item}}" wx:key="item" data-id="{{item.activityId}}" data-skuid="{{item.skuId}}" data-url="/page/Yuemall/pages/BargainDetails/BargainDetails" bindtap='detail'>
+    <view>
+      <image src="{{item.goodsImg}}"></image>
+    </view>
+    <view class="info">
+      <view class="title">
+        <text>{{item.goodsName}}</text>
+      </view>
+      <view class="OriginalPrice">{{item.remind}}：¥{{item.originPrice}} </view>
+      <view class="groupInfo">
+        <view class="title">砍至最低：</view>
+        <view class="price"><text>¥</text>{{item.bargainPrice}}</view>
+      </view>
+      <view class="InitiateBargain">发起砍价</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{!isHaveMore}}" class="isHaveMore">没有更多了～</view>

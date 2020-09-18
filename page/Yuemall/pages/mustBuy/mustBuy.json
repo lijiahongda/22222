@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "必买",
+  "navigationBarBackgroundColor": "#B31116",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "banner": "/component/banner/banner",
+    "listOneLine":"/component/listOneLine/listOneLine",
+    "listTwoLine":"/component/listTwoLine/listTwoLine",
+    "shareLayer":"/component/shareLayer/shareLayer"
+  }
+}

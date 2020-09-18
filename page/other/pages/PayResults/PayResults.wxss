@@ -1,0 +1,613 @@
+/* page/other/pages/PayResults/PayResults.wxss */
+@import "/page/GiftPackage/GiftPackage.wxss";
+
+page {
+  background-color: #F6F6F6;
+  min-height: 100%;
+}
+
+.tips {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 30rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(249, 85, 85, 1);
+}
+
+.wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrap .paySuccess {
+  width: 100%;
+  margin-top: 68rpx;
+  text-align: center;
+  padding-bottom: 70rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #ccc;
+}
+
+.wrap .paySuccess .payImg {
+  display: block;
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #ececec;
+  margin: 0 auto 40rpx;
+}
+
+.wrap .paySuccess .payText {
+  font-size: 36rpx;
+  color: #000;
+}
+
+.wrap .enter {
+  margin-top: 65rpx;
+}
+
+.wrap .enter .enterTitle {
+  font-size: 36rpx;
+  color: #000;
+  text-align: center;
+  margin-bottom: 72rpx;
+}
+
+.wrap .enter .enterCont {
+  width: 100%;
+  height: 352rpx;
+  padding: 0 4%;
+  width: 92%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.wrap .enter .enterCont .item {
+  width: 302rpx;
+  height: 352rpx;
+  padding: 40rpx 20rpx 0;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.wrap .enter .enterCont .item .title {
+  color: #fff;
+  font-size: 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.wrap .enter .enterCont .item .code,
+.wrap .enter .enterCont .item .time {
+  color: #fff;
+  font-size: 28rpx;
+  margin-bottom: 34rpx;
+}
+
+.wrap .enter .enterCont .item .time {
+  font-size: 24rpx;
+}
+
+.wrap .enter .enterCont .item .luck {
+  color: #e14d38ff;
+  font-size: 24rpx;
+  display: block;
+  width: 204rpx;
+  height: 42rpx;
+  background-color: #fff;
+  border: 1rpx solid #fff;
+  border-radius: 21rpx;
+  text-align: center;
+  line-height: 40rpx;
+  box-sizing: border-box;
+}
+
+/* 支付信息 */
+
+.payError {
+  border-top: 1px solid transparent;
+  padding-top: 20rpx;
+}
+
+.payError .complete {
+  margin: 0 auto;
+  width: 116rpx;
+  height: 116rpx;
+  display: block;
+  margin-bottom: 26rpx;
+  overflow: hidden;
+}
+
+.payError .completeImg {
+  width: 100%;
+  height: 100%;
+}
+
+.payError .payTextCont {
+  font-size: 30rpx;
+  display: block;
+  margin: 0 auto 30rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.payError .payErrorText {
+  display: block;
+  text-align: left;
+  margin: 0 auto;
+  border-bottom: 10rpx solid #ececec;
+  padding-bottom: 20rpx;
+  padding-left: 54rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+
+.payError .payText {
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.payMentsCont {
+  margin-bottom: 20rpx;
+}
+
+.payError .errorText {
+  margin-bottom: 13rpx;
+}
+
+.payError .contText {
+  font-size: 30rpx;
+}
+
+.payError .contAmout {
+  font-size: 44rpx;
+}
+
+.payError .payOrderText {
+  font-size: 30rpx;
+  margin: 0 0 13rpx 0;
+  display: block;
+}
+
+.payError .other {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  margin-top: 90rpx;
+}
+
+.payError .orderB {
+  width: 260rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  font-size: 24rpx;
+  padding: 0;
+  margin: 0;
+}
+
+.payError .otherGoods {
+  border: 1px solid #ff6e44;
+  color: #ff6e44;
+  background-color: transparent;
+}
+
+.payError .queryOrder {
+  background-color: #ff6e44;
+  color: #fff;
+}
+
+.payError radio {
+  width: 48rpx;
+  height: 48rpx;
+  padding: 0;
+  margin-right: 70rpx;
+}
+
+.payMents {
+  font-size: 28rpx;
+}
+
+.radio-group {
+  display: block;
+}
+
+.radio {
+  height: 48rpx;
+  line-height: 48rpx;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  position: relative;
+  margin-top: 20rpx;
+}
+
+.payMent {
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  margin-right: 8rpx;
+  position: absolute;
+  top: 6rpx;
+  left: 70rpx;
+}
+
+.payMent image {
+  width: 100%;
+  height: 100%;
+}
+
+.input_box .tel {
+  width: 450rpx;
+}
+
+/* page/Popup/Popup.wxss */
+
+.commodity_screenlong {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1200;
+  color: #fff;
+}
+
+/* 大红包弹窗 */
+
+.Advertisement {
+  position: fixed;
+  top: 23%;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 73.8%;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding-top: 15rpx;
+  left: 13.1%;
+}
+
+.Advertisement .slide-image {
+  width: 540rpx;
+  height: 680rpx;
+}
+
+.Advertisement .close {
+  width: 21rpx;
+  height: 21rpx;
+  margin-left: 485rpx;
+  margin-bottom: 26rpx;
+}
+
+.Advertisement .title {
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 4rpx;
+}
+
+.address {
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+  padding-bottom: 73rpx;
+  border-bottom: 1px solid #e1e1e1;
+  margin-bottom: 33rpx;
+}
+
+.address text {
+  width: 84%;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(132, 132, 132, 1);
+}
+
+.address image {
+  width: 28rpx;
+  height: 36rpx;
+  margin-right: 24rpx;
+  margin-top: 47rpx;
+}
+
+.Maddress {
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(233, 21, 21, 1);
+  margin-bottom: 40rpx;
+}
+
+.happy {
+  width: 100%;
+  height: 100vh;
+  background: #686666;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+}
+
+.happy>view {
+  width: 651rpx;
+  height: 749rpx;
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-16/00/yuelvhuiyZpkB3Kwdx1581784810.png);
+  background-size: 100% 100%;
+  margin: 0 auto;
+  margin-top: 195rpx;
+  padding-top: 1rpx;
+}
+
+.happy .title {
+  color: #CC1127;
+  font-size: 30rpx;
+  margin-top: 390rpx;
+  text-align: center;
+}
+
+.happy .price {
+  color: #FF0000;
+  font-size: 58rpx;
+  margin-top: 36rpx;
+  text-align: center;
+  line-height: 58rpx;
+}
+
+.happy>view>image {
+  width: 354rpx;
+  height: 2rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+
+.happy .botton {
+  width: 422rpx;
+  height: 82rpx;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 22rpx;
+  justify-content: space-between;
+}
+
+.happy .botton view {
+  width: 188rpx;
+  height: 82rpx;
+  box-shadow: 0px 0px 18rpx 0px rgba(255, 172, 171, 1);
+  background: linear-gradient(0deg, rgba(225, 27, 49, 1) 1%, rgba(243, 53, 78, 1) 100%);
+  border-radius: 41rpx;
+  text-align: center;
+  line-height: 82rpx;
+  font-size: 34rpx;
+  color: #F4E1C5;
+}
+
+.happy>image {
+  width: 66rpx;
+  height: 66rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  display: block;
+}
+
+/* 新版支付信息 */
+.content {
+  width: 100%;
+  height: auto;
+  padding: 30rpx 80rpx 90rpx 80rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 0 0 18rpx 18rpx;
+  text-align: center;
+}
+
+.content>image {
+  width: 110rpx;
+  height: 110rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.content .type {
+  color: #010101;
+  font-size: 34rpx;
+  line-height: 34rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.content .desc {
+  color: #999999;
+  font-size: 26rpx;
+  line-height: 26rpx;
+  display: block;
+  margin-top: 10rpx;
+}
+
+.content .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60rpx;
+}
+
+.content .button .goHome {
+  width: 240rpx;
+  height: 88rpx;
+  border-radius: 44rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+  font-size: 32rpx;
+  border: 2rpx solid #DDDDDD;
+}
+
+.content .button .orderDetail {
+  width: 240rpx;
+  height: 88rpx;
+  border-radius: 44rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 32rpx;
+  background: #BB3627;
+}
+
+/* 猜你喜欢 */
+.list_title {
+  font-size: 32rpx;
+  color: #141414;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 4%;
+  margin-top: 30rpx;
+}
+
+.list_title image {
+  width: 44rpx;
+  height: 42rpx;
+  margin-right: 6rpx;
+}
+
+.list_title .title_like {
+  font-size: 28rpx;
+  color: #999999;
+  margin-left: 20rpx;
+}
+
+.vipresult {
+  width: 100%;
+  height: 100vh;
+  background: #686666;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+}
+
+.vipresult>view {
+  width: 520rpx;
+  height: 528rpx;
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-20/17/yuelvhuijVTVcKRsYf1589967538.png);
+  background-size: 100% 100%;
+  margin: 0 auto;
+  margin-top: 394rpx;
+  padding-top: 1rpx;
+}
+
+.vipresults>view {
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-21/00/yuelvhuiWgLE1bvjU11589993959.png);
+}
+
+.vipresult>view>.titles {
+  font-size: 36rpx;
+  margin-top: 197rpx;
+  text-align: center;
+}
+
+.vipresult>view>.texts {
+  font-size: 28rpx;
+  margin-top: 39rpx;
+  padding: 0 52rpx;
+  text-align: center;
+}
+
+.vipresult>view>.vipbtn {
+  width: 360rpx;
+  height: 88rpx;
+  margin: 0 auto;
+  margin-top: 57rpx;
+  background: rgba(48, 48, 46, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+
+
+.share_opo {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  /* opacity: 0.9; */
+
+}
+
+.share_box {
+  width: 500rpx;
+  height: 500rpx;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.share_box image {
+  width: 100%;
+  height: 100%;
+}
+
+.share_btn {
+  width: 335rpx;
+  line-height: 65rpx;
+  color: #ffffff;
+  font-size: 35rpx;
+  background: #ED8846;
+  position: absolute;
+  bottom: 10rpx;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  border-radius: 40rpx;
+}
+
+.close_btn {
+  position: absolute;
+  right: -25rpx;
+  top: -55rpx;
+}
+.tipsImg{
+  position: absolute;
+top: 85rpx;
+text-align: center;
+color: #725634;
+font-size: 35rpx;
+line-height: 45rpx;
+width: 100%;
+}

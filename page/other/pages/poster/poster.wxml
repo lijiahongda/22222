@@ -1,0 +1,9 @@
+<!--page/other/pages/poster/poster.wxml-->
+<view >
+  <view class="poster-img">
+    <image src="{{downloadUrl}}" mode="widthFix"></image>
+  </view>
+  <view class="poster-btn" bindtap='savePic' wx:if="{{isShow}}">
+    <text>保存到相册</text>
+  </view>
+</view>

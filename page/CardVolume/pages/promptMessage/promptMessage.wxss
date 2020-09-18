@@ -1,0 +1,21 @@
+page{
+  background-color: #fff;
+}
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;  
+  padding:0 30rpx;
+}
+.top{
+  padding-top:80px;
+  padding-bottom:50px;
+  width:98%;
+   text-align: center 
+}
+.cade{
+  color:rgb(48,48,48);
+  font-size:30rpx;
+  margin-top:10px;
+}

@@ -1,0 +1,242 @@
+.header{
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+.search {
+  width: 100%;
+  position: relative;
+  height: 92rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  background: #f10180;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.search > input {
+  width: 590rpx;
+  height: 68rpx;
+  background: #fff;
+  color: #BBBBBB;
+  border-radius: 35rpx;
+  font-size: 26rpx;
+  padding-left: 70rpx;
+  box-sizing: border-box;
+}
+
+.search > image {
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  left: 60rpx;
+  bottom: 25rpx;
+}
+
+.tab {
+  width: 100%;
+  height: 80rpx;
+  /* padding-left: 20rpx;
+  box-sizing: border-box; */
+  background: #fff;
+}
+
+.tabScroll {
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+}
+
+.tab .list {
+  display: inline-block;
+  min-width: 140rpx;
+  height: 100%;
+  position: relative;
+  color: #141414;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 80rpx;
+  padding: 0 16rpx;
+  box-sizing: border-box;
+  width: 50%;
+}
+
+.tab .list .verticalBar {
+  width: 2rpx;
+  height: 28rpx;
+  background: #b8b8b8;
+  position: absolute;
+  top: 26rpx;
+  right: 0;
+}
+
+.tab .list:last-child .verticalBar {
+  display: none;
+}
+
+.tab .list.select {
+  color: #f10180;
+  font-size: 32rpx;
+}
+
+.tab .list.select::after {
+  content: ' ';
+  position: absolute;
+  left: 50%;
+  margin-left: -25rpx;
+  bottom: 0rpx;
+  background: #f10180;
+  width: 50rpx;
+  height: 8rpx;
+  border-radius: 4rpx;
+}
+
+.content {
+  margin-top: 280rpx;
+  padding: 0 24rpx;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.content .list {
+  width: 342rpx;
+  /* height: 615rpx; */
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 18rpx;
+  margin-bottom: 20rpx;
+}
+
+.content .list .left {
+  width: 100%;
+  height: 342rpx;
+  display: block;
+  margin: 0 auto;
+  border-radius: 18rpx 18rpx 0rpx 0rpx;
+}
+
+.content .list .right {
+  padding: 20rpx;
+}
+
+.content .list .title {
+  width: 297rpx;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.content .list .title image {
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin-right: 6rpx;
+}
+
+.content .list .sales {
+  color: #999;
+  font-size: 24rpx;
+  width: 100%;
+  height: 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10rpx;
+  text-align: center;
+}
+
+.content .list .sales .coupons {
+  min-width: 124rpx;
+  height: 36rpx;
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-18/19/yuelvhuizIikmvuGOT1582024273.png);
+  background-size: 100% 100%;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  margin-right: 60rpx;
+  text-align: center;
+}
+
+.content .list .price {
+  width: 100%;
+  color: #c82519;
+  font-size: 24rpx;
+  margin-top: 15rpx;
+}
+
+.content .list .price > text:nth-child(2) {
+  font-size: 38rpx;
+  padding-right: 6rpx;
+}
+
+.content .list .price > text:nth-child(3) {
+  color: #999;
+  text-decoration: line-through;
+}
+
+ .make {
+  min-width: 186rpx;
+  display: inline-block;
+  height: 44rpx;
+  padding: 0 8rpx;
+  background: #f4dee0;
+  color: #ca2519;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 44rpx;
+  background: rgba(244, 222, 224, 1);
+  border: 2rpx solid rgba(203, 37, 25, 1);
+  border-radius: 8rpx;
+  font-weight:500;
+  margin-top:5rpx;
+}
+
+.searchH {
+  width: 100%;
+  height: 80rpx;
+  background: #f10180;
+  color: #fff;
+  font-size: 32rpx;
+  position: relative;
+}
+
+.tips {
+  margin: 0 auto;
+  width: 702rpx !important;
+  height: 54rpx !important;
+  margin-bottom: 21rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 66rpx;
+}
+.tipsTxt{
+  
+}
+.img{
+  position: relative;
+}
+.discount{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color:rgba(255,255,255,1);
+  width: 97rpx;
+  height: 48rpx;
+  text-align: center;
+  line-height: 48rpx;
+}

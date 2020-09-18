@@ -1,0 +1,409 @@
+/* page/community/pages/main/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.zcontent{
+  width: 100%;
+  min-height: 100%;
+  margin-bottom: 88rpx;
+}
+
+.zcontent>.banner{
+  width: 100%;
+  height: 160rpx;
+  margin:0 auto;
+  /* margin-top: -100rpx; */
+  position: relative;
+  margin-top: 20rpx;
+}
+
+.zcontent>.banner>image{
+  width: 702rpx;
+  height: 232rpx;
+  position: absolute;
+  top: 40rpx;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.zcontent>.commotitlt{
+  width:750rpx;
+  height:114rpx;
+  margin-top: 20rpx;
+  background:rgba(255,255,255,1);
+  overflow: hidden;
+}
+
+.zcontent>.commotitlt>.djh{
+  width: 93rpx;
+  height: 40rpx;
+  position: relative;
+  text-align: center;
+  line-height: 40rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  margin-top:9rpx;
+  margin-left: 64rpx;
+}
+
+.zcontent>.commotitlt>.djh>image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.zcontent>.commotitlt>.djh>view{
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.zcontent>.commotitlt>.title{
+  width: 702rpx;
+  /* height: 80rpx; */
+  line-height: 50rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.zcontent>.commotitlt>.title>.name{
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(20,20,20,1);
+}
+
+.zcontent>.commotitlt>.title>.name>text{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  margin-left: 18rpx;
+}
+
+.zcontent>.commotitlt>.title>.checkmore{
+  display: flex;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+
+.zcontent>.commotitlt>.title>.checkmore>view>image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 5rpx;
+}
+
+.zcontent>.tips{
+  width:750rpx;
+  height:68rpx;
+  background:rgba(254,250,239,1);
+  font-size:24rpx;
+  line-height: 68rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(183,38,25,1);
+  text-align: center;
+}
+
+.zcontent>.commoList{
+  width: 702rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.zcontent>.commoList>.list{
+  width:342rpx;
+  height:480rpx;
+  background:rgba(255,255,255,1);
+  border-radius:16px;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+
+.notips{
+  width: 100%;
+  height: 100rpx;
+  font-size:24rpx;
+  line-height: 100rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  text-align: center;
+}
+
+.shareBt{
+  width:100%;
+  height:88rpx;
+  background:rgba(26,23,22,1);
+  border-radius:16rpx;
+  text-align: center;
+  line-height: 88rpx;
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(245,227,180,1);
+  position: fixed;
+  bottom: 0;
+  left:0;
+}
+
+.zcontent>.people{
+  width:750rpx;
+  height:571rpx;
+  background:rgba(255,255,255,1);
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+
+.zcontent>.people>.groupmsg{
+  width: 702rpx;
+  height: 88rpx;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 10rpx;
+}
+
+.zcontent>.people>.groupmsg>.msg{
+  width: 590rpx;
+  height: 100%;
+  margin-left: 20rpx;
+}
+
+.zcontent>.people>.groupmsg>.msg>.name{
+  width: 100%;
+  height: 44rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 44rpx;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(20,20,20,1);
+}
+
+.zcontent>.people>.groupmsg>.msg>.brief{
+  width: 100%;
+  height: 44rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 44rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+
+.zcontent>.people>.groupmsg>.cover{
+  width: 88rpx;
+  height: 88rpx;
+}
+
+.zcontent>.people>.groupmsg>.cover>image{
+  width: 100%;
+  height: 100%;
+}
+
+.zcontent>.people>.peoplelist{
+  width: 400rpx;
+  /* height: 166rpx; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-top: 24rpx;
+}
+
+.zcontent>.people>.peoplelist>.plist{
+  width: 68rpx;
+  height: 68rpx;
+  margin-top: 30rpx;
+}
+
+.zcontent>.people>.peoplelist>.plist>.nopeo{
+  background:rgba(250,229,233,1);
+  border:2rpx dashed rgba(216,47,58,1);
+  border-radius:50%;
+  text-align: center;
+  line-height: 68rpx;
+  font-size:34rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(220,72,37,1);
+}
+
+.zcontent>.people>.peoplelist>.plist>.hapeo{
+  width: 100%;
+  height: 100%;
+  border-radius:50%;
+}
+
+.zcontent>.people>.peoplelist>.plist>.hapeo>image{
+  width: 100%;
+  height: 100%;
+  border-radius:50%;
+}
+
+.zcontent>.people>.peoTips{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  margin-top: 40rpx;
+}
+
+.zcontent>.people>.peoTips>text{
+  color: #CA2519;
+}
+.buttonH{
+  background: #fff;
+}
+button::after {
+  border: none;
+  background: none;
+}
+.sharePbt{
+  width:500rpx;
+  height:88rpx;
+  background:rgba(202,37,25,1);
+  border-radius:16rpx;
+  text-align: center;
+  line-height: 88rpx;
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  margin: 0 auto;
+
+}
+
+.zcontent>.shareAlert{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 100;
+}
+
+.zcontent>.shareAlert>.alert{
+  width:580rpx;
+  height:640rpx;
+  background:rgba(255,255,255,1);
+  border-radius:16rpx;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.zcontent>.shareAlert>.alert>.userCover{
+  width: 100%;
+  height: 160rpx;
+  position: relative;
+}
+
+.zcontent>.shareAlert>.alert>.userCover>image{
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.zcontent>.shareAlert>.alert>.text{
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 40rpx;
+  font-size:34rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(0,0,0,1);
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 40rpx;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+
+.zcontent>.shareAlert>.alert>.peoplelist{
+  width: 400rpx;
+  /* height: 166rpx; */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-top: 24rpx;
+}
+
+.zcontent>.shareAlert>.alert>.peoplelist>.plist{
+  width:70rpx;
+  height: 70rpx;
+  margin-top: 30rpx;
+}
+
+.zcontent>.shareAlert>.alert>.peoplelist>.plist>.nopeo{
+  background:rgba(250,229,233,1);
+  border:2rpx dashed rgba(216,47,58,1);
+  border-radius:50%;
+  text-align: center;
+  line-height: 68rpx;
+  font-size:34rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(220,72,37,1);
+}
+
+.zcontent>.shareAlert>.alert>.peoplelist>.plist>.hapeo{
+  width: 100%;
+  height: 100%;
+  border-radius:50%;
+}
+
+.zcontent>.shareAlert>.alert>.peoplelist>.plist>.hapeo>image{
+  width: 100%;
+  height: 100%;
+  border-radius:50%;
+}
+
+.zcontent>.shareAlert>.alert>.tips{
+  width: 100%;
+  height: 150rpx;
+  line-height: 150rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  text-align: center;
+}
+.close{
+  width:100%;
+  text-align: center;
+  position: absolute;
+  top: 74%;
+}
+.close image{
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+}

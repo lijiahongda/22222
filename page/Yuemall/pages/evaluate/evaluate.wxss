@@ -1,0 +1,221 @@
+/* page/Yuemall//pages/evaluate/evaluate.wxss */
+
+.goods {
+  padding-top: 28rpx;
+  background-color: #fff;
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+
+.goods image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 6rpx;
+}
+
+.goods .stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.goods .stars image {
+  width: 34rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+
+.tips {
+  height: 60rpx;
+  background: rgba(244, 244, 244, 1);
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+}
+
+.CommentaryArea {
+  background-color: #fff;
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.CommentaryArea .section {
+  display: flex;
+  flex-direction: row;
+}
+
+.CommentaryArea .section image {
+  width: 26rpx;
+  height: 32rpx;
+  margin-right: 21rpx;
+  margin-top: 20rpx;
+}
+
+.CommentaryArea .section textarea {
+  height: 163rpx;
+  width: 656rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.upload {
+  width: 100%;
+  height: 160rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 1px 2px 18px 3px rgba(35, 24, 21, 0.05);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.upload image {
+  width: 71rpx;
+  height: 60rpx;
+  margin-bottom: 17rpx;
+}
+
+.Exhibition {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.Exhibition .images {
+  width: 180rpx;
+  height: 180rpx;
+  box-shadow: 1px 2px 18px 3px rgba(35, 24, 21, 0.05);
+}
+
+.Exhibition .upload {
+  width: 180rpx;
+  height: 180rpx;
+  box-shadow: 1px 2px 18px 3px rgba(35, 24, 21, 0.05);
+}
+
+.Exhibition .image {
+  width: 180rpx;
+  height: 180rpx;
+  position: relative;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.Exhibition .deleteImg {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.anonymous {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  margin-top: 21rpx;
+}
+
+.anonymous image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 12rpx;
+}
+
+.serve {
+  padding-top: 32rpx;
+  padding-bottom: 32rpx;
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.serve .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 39rpx;
+}
+
+.serve .title image {
+  width: 35rpx;
+  height: 33rpx;
+  margin-right: 16rpx;
+}
+
+.serve .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 39rpx;
+  margin-left: 7%;
+}
+
+.serve .item .stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.serve .item .stars image {
+  width: 34rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+
+.Submission {
+  width: 100%;
+  height: 88rpx;
+  background: rgba(243, 71, 70, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #fff;
+}

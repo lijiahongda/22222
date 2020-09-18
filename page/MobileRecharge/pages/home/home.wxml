@@ -1,0 +1,21 @@
+<!--page/MobileRecharge/pages/home/home.wxml-->
+<view class="page">
+  <view class="page-header">
+    <input class="weui-input" type="number" auto-focus placeholder="请输入手机号"/>
+  </view>
+  <view class="page-body">
+    <text>充话费</text>
+
+    <radio-group class="radio-group" bindchange="radioChange">
+     <label wx:for="{{list}}" wx:key="item.id"  class="radio {{item.checked?'activeClass':''}}">
+        <radio value="{{item.id}}" checked="{{item.status}}"  class="{{item.status?'activeClass':''}}">
+        <text class="title">{{item.label}}元</text>
+         <text class="info">售价{{item.text}}元</text>
+         </radio>
+      </label>
+      </radio-group>
+  </view>
+  <view class="page-footer">
+    <button>立即支付</button>
+  </view>
+</view>

@@ -1,0 +1,45 @@
+<swiper class="swiper-box" wx:if="{{channelId == 3}}">
+  <block>
+    <swiper-item>
+      <image src="{{backImg}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- tab选项卡 -->
+<view class="{{scrollTop>200 ? 'topnav' : ''}}">
+  <view class="tab-h hide{{showView?'show':''}}" wx:if="{{skuGoodsType.length >1}}">
+    <scroll-view scroll-x class='exploreViewList' scroll-with-animation="true" scroll-into-view="{{scrollId}}">
+      <view id="{{'d'+item.goodTypeId}}" wx:for="{{skuGoodsType}}" wx:key="skuGoodsType" class="tab-item {{currentTab==item.goodTypeId?'active':''}}" data-current="{{item.goodTypeId}}" bindtap="swichNav">{{item.goodTypeName}}
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class="tab-content" bindchange="switchTab">
+  <!--菜单-->
+  <view class="ContentArea">
+    <view class="item" wx:for="{{list}}" wx:key="list" data-skuid="{{item.productSkuId}}" data-goodsId="{{item.goodId}}" bindtap='details' data-skuid="{{typePage == 'quanqiugou'?item.productSkuId:item.skuId}}">
+      <view class="shopImageLeft">
+        <image class="" src="{{item.goodCover}}"></image>
+      </view>
+      <view class="itemInfo">
+        <view class="title">
+          <text>{{item.goodName}}</text>
+        </view>
+        <view>
+          <view class="price">
+            <view style="color:#FD6974;margin-right:8rpx">会员价￥
+              <text style="font-size:30rpx">{{item.goodVipPrice}}</text>
+              <!-- {{cardType == 0?'现价':'会员价'}}￥{{cardType == 0?item.nowPrice:item.vipPrice}} -->
+            </view>
+            <view decode='true' style="coclor:#999">{{item.priceName}}￥{{item.goodPrice}}</view>
+          </view>
+        </view>
+        <!-- <view style="  display: flex;flex-direction: row;flex-wrap: wrap">
+          <view class="LyingEarn" wx:if="{{item.shareMoney != 0}}">自购省￥{{item.deduc}}</view>
+          <view class="LyingEarn" wx:if="{{item.shareMoney != 0}}">分享赚￥{{item.shareMoney}}</view>
+        </view> -->
+        <!-- <view class="Deductible" wx:if='{{item.goodDedue != 0}}'>抵扣{{item.goodDedue}}悦豆</view> -->
+      </view>
+    </view>
+  </view>
+</view>

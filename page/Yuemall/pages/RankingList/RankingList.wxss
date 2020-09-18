@@ -1,0 +1,213 @@
+/* page/Yuemall/pages/HalfPrice/HalfPrice.wxss */
+
+page {
+  background-color: #f4f4f4;
+}
+
+.bg {
+  width: 100%;
+  height: 224rpx;
+}
+
+.swiper-box {
+  width: 93.6%;
+  margin-left: 3.2%;
+  height: 250rpx;
+  margin-top: -172rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.swiper-box .image {
+  width: 100%;
+  height: 250rpx;
+  display: block;
+  border-radius: 20rpx;
+}
+
+/* 授权按钮 */
+
+.authorizationStatus {
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 94%;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  width: 92.7%;
+  border-radius: 24rpx;
+  padding-left: 3.2%;
+  padding-right: 4.1%;
+  padding-top: 24rpx;
+  margin-bottom: 20rpx;
+  padding-bottom: 23rpx;
+  position: relative;
+}
+
+.list .image {
+  width: 253rpx;
+  height: 253rpx;
+  margin-right: 25rpx;
+}
+
+.list .image image {
+  width: 253rpx;
+  height: 253rpx;
+  background-color: #ececec;
+}
+
+.list .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.list .info .title text {
+  margin-top: 13rpx;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 94rpx;
+}
+
+.list .info .describe {
+  height: 68rpx;
+}
+
+.list .info .describe text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 38rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.list .info .Surplus {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 5rpx;
+}
+
+.list .info .pricebutton {
+  display: flex;
+  flex-direction: row;
+  color: #999;
+  font-size: 24rpx;
+  justify-content: space-between;
+}
+
+.list .info .pricebutton .price .Company {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(253, 75, 21, 1);
+}
+
+.list .info .pricebutton .price text {
+  font-size: 35rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(253, 75, 21, 1);
+}
+
+.list .info .pricebutton .price .OriginalPrice {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: rgba(153, 153, 153, 1);
+  margin-left: 30rpx;
+}
+
+.list .info .pricebutton .button {
+  width: 180rpx;
+  height: 56rpx;
+  background: rgba(255, 102, 54, 1);
+  border-radius: 28px;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 56rpx;
+  text-align: center;
+}
+
+.list .Ranking {
+  height: 42rpx;
+  width: 121rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  color: rgba(244, 244, 244, 1);
+}
+
+.list .Ranking view {
+  margin-top: -39rpx;
+  margin-left: 17rpx;
+}
+
+.list .RushBuy {
+  width: 150rpx;
+  height: 60rpx;
+  background: rgba(254, 75, 21, 1);
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.list .Ranking image {
+  width: 89rpx;
+  height: 42rpx;
+}
+
+.isHaveMore {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 40rpx;
+  margin-bottom: 95rpx;
+}

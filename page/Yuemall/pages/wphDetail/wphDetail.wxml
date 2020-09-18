@@ -1,0 +1,119 @@
+<import src="../../../../wxParse/wxParse/wxParse.wxml" />
+<swiper class="swiper">
+	<swiper-item wx:for='{{goodsInfo.goods_image}}' wx:key='index'>
+		<image src="{{item}}"></image>
+	</swiper-item>
+	<view class="salesBox">
+		已售{{goodsInfo.sale_num}}件
+		<!-- <text class="sales">已售{{goodsInfo.sale_num}}件</text> -->
+	</view>
+</swiper>
+
+<view class="content">
+	<view class="price">
+		<text>折后价 ￥</text>
+		<text class="nowPrice">{{goodsInfo.wph_price}}</text>
+		<text class="origin">￥{{goodsInfo.original_price}}</text>
+		<!-- <view class="make" wx:if='{{goodsInfo.save_price != ""}}'>分享赚￥{{goodsInfo.share_save_price}}</view> -->
+		<!-- <text class="sales">已售{{goodsInfo.sale_num}}件</text> -->
+	</view>
+
+	<!-- 标题组件-->
+	<title
+	 title='{{goodsInfo.goods_name}}'
+	 image='{{channelIcon}}'
+	 tip="{{goodsInfo.goods_desc}}"
+	 openMember='{{"1"}}'
+	></title>
+
+	<!-- 预估成长值 -->
+
+	<view class="WPhbox" bindtap="WPHClick">
+		<view>规则：</view>
+
+		<view class="selected">
+			预估成长值说明
+		</view>
+		<view class="end">
+			<text class="end1">></text>
+		</view>
+	</view>
+
+	<!-- 优惠券 -->
+	<!-- <view class="coupon" bindtap="go" wx:if='{{goodsInfo.coupon.discount}}'>
+    <view class="left">
+      <text>￥</text><text>{{goodsInfo.coupon.discount}}</text>
+    </view>
+    <view class="middle">
+      <view>优惠券</view>
+      <view>有效期到{{goodsInfo.coupon.use_end_time}}</view>
+    </view>
+    <image class="right" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-18/22/yuelvhuip0LePRSHxP1582034609.png"></image>
+  </view> -->
+
+</view>
+
+<!-- 详情 -->
+<view class="detail" wx:if='{{goodsInfo.detailed}}'>
+	<view class="header">商品详情</view>
+	<view wx:for='{{goodsInfo.detailed}}' wx:key='index'>
+		<image
+		 style="width:750rpx;"
+		 mode="widthFix"
+		 src="{{item}}"
+		> </image>
+	</view>
+</view>
+
+<view class="footer">
+	<!-- <view bindtap="go" wx:if='{{goodsInfo.save_price == ""}}'>立即购买</view>
+  <view bindtap="go" wx:else >购买省￥{{goodsInfo.save_price}}</view>
+  <button class="share" bindtap="sharePage" wx:if='{{goodsInfo.share_save_price== ""}}'>
+    分享
+  </button>
+  <button class="share" bindtap="sharePage" wx:else>
+    分享赚￥{{goodsInfo.share_save_price}}
+  </button> -->
+
+	<view bindtap="go" class="footer1">
+		<view>
+			购买预估送
+		</view>
+
+		<view>{{newShareScore.buy}}成长值</view>
+	</view>
+	<button
+	 class="share"
+	 bindtap="sharePage"
+	 wx:if='{{newShareScore.type == 0}}'
+	>
+		<view class="share1">
+			<view>
+				分享预估赚
+			</view>
+
+			<view>¥{{newShareScore.share}}</view>
+		</view>
+	</button>
+	<button
+	 class="share"
+	 bindtap="sharePage"
+	 wx:else
+	>
+		<view class="share2">
+			购买预估送
+			<view>
+				{{newShareScore.share}}成长值
+			</view>
+		</view>
+	</button>
+
+</view>
+
+<!-- 授权按钮 -->
+<view
+ class="authorizationStatus"
+ bindtap='VerificationCode'
+ wx:if="{{authorizationStatus}}"
+></view>
+

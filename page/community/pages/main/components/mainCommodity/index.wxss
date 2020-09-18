@@ -1,0 +1,67 @@
+/* page/community/pages/main/components/mainCommodity/index.wxss */
+.mainCommodity{
+  width: 100%;
+  /* width: 240rpx; */
+  /* margin-left: 20rpx; */
+}
+.mainCommodity>.cover{
+  /* width: 240rpx; */
+  /* height: 240rpx; */
+  background:rgba(220,220,220,1);
+  /* border-radius:16rpx; */
+  overflow: hidden;
+}
+
+.mainCommodity>.cover>image{
+  width: 100%;
+  height: 100%;
+  /* border-radius:16rpx; */
+}
+
+.mainCommodity>.price{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(20,20,20,1);
+  margin-top: 20rpx;
+  line-height: 24rpx;
+  /* padding-left: 20rpx; */
+}
+
+.mainCommodity>.price>text{
+  font-size:36rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  line-height: 36rpx;
+  color:rgba(202,37,25,1);
+}
+
+.mainCommodity>.reward{
+  width: 80%;
+  height:48rpx;
+  background:rgba(249,226,174,1);
+  border-radius:8rpx;
+  display: flex;
+  font-size:22rpx;
+  font-family:PingFang SC;
+  line-height: 48rpx;
+  font-weight:500;
+  color:rgba(26,23,21,1);
+  overflow: hidden;
+  margin-top: 10rpx;
+  /* margin-left: 20rpx; */
+}
+
+.mainCommodity>.reward>.img{
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.mainCommodity>.reward>.img>image{
+  width: 100%;
+  height: 100%;
+}
+
+.mainCommodity>.reward>.rewardMoney{
+  margin-left: 8rpx;
+}

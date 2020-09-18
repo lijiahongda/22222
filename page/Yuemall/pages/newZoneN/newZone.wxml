@@ -1,0 +1,49 @@
+<!--page/Yuemall/pages/newZone/newZone.wxml-->
+<view style="padding-bottom:27rpx; ">
+  <view style="position:relative;">
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-07/22/yuelvhuicxhsBEQxMr1586270184.png" class="top"></image>
+    <view class="pri">{{CouponInfo.amount}}</view>
+    <view class='couponBox'>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-07/22/yuelvhuibKrNbMnesO1586270274.png" class="coupon"></image>
+    </view>
+    <view style="">
+      <view class="new">{{CouponInfo.couponName}}</view>
+      <view class="con">
+        <view style="margin:0 20rpx;">
+          <view class="conLeft">
+            <view style="margin-top:36rpx;">¥</view>
+            <view>{{CouponInfo.amount}}</view>
+          </view>
+        </view>
+        <view class="djs">距失效仅剩
+          <view class="hour">{{countDownDay}}</view>天
+          <view class="hour">{{countDownHour}}</view>:
+          <view class="hour">{{countDownMinute}}</view>:
+          <view class="hour">{{countDownSecond}}</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class="box">
+    <view class="explosive" wx:for='{{productList}}' wx:key='productList' bindtap="detailSp" data-id="{{item.goodId}}" data-skuid="{{item.productSkuId}}" data-url="/page/Yuemall/pages/details/details">
+      <image class="left" src="{{item.goodCover}}"></image>
+      <view class="right">
+        <view class="name">{{item.goodName}}</view>
+        <view class="price">
+          <view>
+            <view class="priLeft">
+              券后价 ￥
+              <view class="newH">{{item.goodVipPrice}}</view>
+            </view>
+            <view class="old">￥{{item.goodPrice}}</view>
+          </view>
+          <view class="btn">
+            <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-07/23/yuelvhuiortKrOWD1I1586272710.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='none'>很遗憾，没有更多了～</view>
+  </view>
+</view>

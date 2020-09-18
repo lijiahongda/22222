@@ -1,0 +1,259 @@
+/* page/My/pages/GroupBuy/GroupBuy.wxss */
+
+page {
+  background-color: #ececec;
+}
+
+/* tab是否置顶 */
+
+.topnav {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #fff;
+}
+
+/* tab样式 */
+
+.tab-h {
+  height: 79rpx;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 69rpx;
+  background: #fff;
+  font-size: 16px;
+  white-space: nowrap;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+}
+
+.tab-h image {
+  width: 40rpx;
+  height: 28rpx;
+}
+
+.exploreViewList {
+  width: 95%;
+}
+
+.tab-item {
+  margin: 0 13.5%;
+  font-size: 26rpx;
+  color: #666;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+.tab-item.active {
+  color: #ff4e4a;
+  font-size: 26rpx;
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 5rpx;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255, 115, 93, 1) 0%, rgba(255, 69, 69, 1) 100%);
+  position: absolute;
+  bottom: 0;
+}
+
+/* 补位 */
+
+.PatchPosition {
+  height: 79rpx;
+  width: 100%;
+}
+
+/* 列表 */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 88%;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-left: 4%;
+  margin-right: 4%;
+  border-radius: 14rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.list .goodinfo {
+  height: 228rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #ececec;
+  position: relative
+}
+
+.list .goodinfo .image {
+  margin-right: 25rpx;
+}
+
+.list .goodinfo .image image {
+  width: 172rpx;
+  height: 172rpx;
+  background-color: #ececec;
+}
+
+.list .goodinfo .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.list .goodinfo .info .name {
+  color: #303030;
+  font-size: 30rpx;
+  margin-bottom: 26rpx;
+}
+.list .goodinfo .info .ChannelPrice{
+  color: #666;
+  font-size: 26rpx;
+  margin-bottom: 26rpx;
+}
+.list .goodinfo .info .name text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list .goodinfo .info .groupInfo{
+  display: flex;
+  flex-direction: row;
+  color: #303030;
+  font-size: 30rpx;
+  align-items: center
+}
+.list .goodinfo .info .groupInfo .price{
+  color: #ED5D2F;
+}
+.list .goodinfo .info .groupInfo .price text{
+  font-size: 40rpx
+}
+.list .func{
+  height: 78rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.list .func .GroupBuyIngo{
+  width: 152rpx;
+  height: 42rpx;
+  text-align: center;
+  line-height: 42rpx;
+  color:#666;
+  font-size: 22rpx;
+  background-color: #fff;
+  border-radius: 14rpx;
+  box-shadow:0px 1px 13px 0px rgba(0, 0, 0, 0.09);
+  margin-left: 32rpx
+}
+.list .goodinfo .TeamStatus{
+  position: absolute;
+  width: 130rpx;
+  height: 120rpx;
+  top: 0rpx;
+  right: -11rpx
+}
+
+.deletePopu {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  color: #000;
+  font-size: 36rpx;
+  border-radius: 25rpx;
+  position: fixed;
+  top: 25%;
+  z-index: 1000;
+  left: 7.5%;
+  width: 85%;
+}
+
+.deletePopu .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 206rpx;
+  border-bottom: 1px solid rgba(210, 211, 213, 1);
+}
+
+.deletePopu .info .title {
+  font-size: 36rpx;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 32rpx;
+}
+
+.deletePopu .info .tips {
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  margin-bottom: 50rpx
+}
+
+.deletePopu .Inquiry {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-bottom-left-radius: 15rpx;
+  border-bottom-right-radius: 15rpx;
+}
+
+.deletePopu .Inquiry .cancel {
+  width: 190rpx;
+  height: 55rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(230, 0, 18, 1);
+  border-radius: 28px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(241, 32, 12, 1);
+  margin-right: 35rpx;
+}
+
+.deletePopu .Inquiry .confirm {
+  width: 190rpx;
+  height: 55rpx;
+  background: rgba(230, 0, 18, 1);
+  border-radius: 28rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.commodity_screenshowModal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}

@@ -1,0 +1,104 @@
+
+<view class="contentInfo" style="margin-bottom:20rpx">
+  <view class="item" data-type="昵称">
+    <view class="title">个人头像</view>
+    <view class="info">
+      <image class="tits" src="{{tits}}"></image>
+    </view>
+  </view>
+  <view class="item" style="border-bottom:1rpx solid #eee">
+    <view class="title">姓名</view>
+    <view class="info">
+      <view>{{name == ''?'':name}}</view>
+    </view>
+  </view>
+  <view class="item" data-type="昵称" style="border-bottom:1rpx solid #eee" bindtap='Modification' data-value="{{nickname}}">
+    <view class="title">昵称</view>
+    <view class="info">
+      <view>{{nickname == ''?'请输入昵称':nickname}}</view>
+      <image src="/images/memberInformation/myOrderRight.png"></image>
+    </view>
+  </view>
+  <view class="item">
+    <picker bindchange="bindCasPickerChange" value="{{casIndex1}}" style="width:100%" range="{{casArray}}">
+      <view style="display: flex;flex-direction: row;justify-content: space-between;align-items: center;">
+        <view class="telNum" decode="{{true}}">性别</view>
+        <view style="display: flex;flex-direction: row;align-items: center;">
+          <view style="color:#cacaca">{{casArray[casIndex]}}</view>
+          <image src="/images/memberInformation/myOrderRight.png"></image>
+        </view>
+      </view>
+    </picker>
+  </view>
+  <view class="item" style="border-bottom:none">
+    <view class="title">手机号</view>
+    <view class="info">
+      <view>{{mobile}}</view>
+    </view>
+  </view>
+</view>
+<view class="contentInfo" style="margin-top:20rpx">
+  <view class="item">
+    <view class="title">国家</view>
+    <view class="info">
+      <view>{{country}}</view>
+    </view>
+  </view>
+  <!-- <view class="item" data-type="picker" bindtap='Modification'>
+    <view class="title">地区</view>
+    <view class="info">
+      <view wx:if="{{(province && city && district) == ''}}">请选择您的地区</view>
+      <view wx:else>{{province}} {{city}} {{district}}</view>
+      <image src="/images/memberInformation/myOrderRight.png"></image>
+    </view>
+  </view> -->
+  <view class="item" data-type="地址" bindtap='Modification' data-value="{{address}}">
+    <view class="title">地址管理</view>
+    <view class="info">
+      <!-- <view>{{address}}</view> -->
+      <image src="/images/memberInformation/myOrderRight.png"></image>
+    </view>
+  </view>
+  <view class="item">
+    <view style="width:100%;display: flex;flex-direction: row;justify-content: space-between;align-items: center;">
+      <view class="telNum" decode="{{true}}">证件类型</view>
+      <view style="display: flex;flex-direction: row;align-items: center;">
+        <view style="color:#cacaca">{{DocumentType[certifiType-1]}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">证件号</view>
+    <view class="info">
+      <view>{{cardNo}}</view>
+    </view>
+  </view>
+  <view class="item" data-type="邮箱"  style="border-bottom:none" bindtap='Modification' data-value="{{email}}">
+    <view class="title">绑定邮箱</view>
+    <view class="info">
+      <view>{{email == ''?'请输入邮箱':email}}</view>
+      <image src="/images/memberInformation/myOrderRight.png"></image>
+    </view>
+  </view>
+  <!-- <view class="item" bindtap="goModifyPassword" style="border-bottom:none">
+    <view class="title">修改登录密码</view>
+    <view class="info">
+      <image src="/images/memberInformation/myOrderRight.png"></image>
+    </view>
+  </view> -->
+</view>
+
+<view class="contentInfo" style="margin-top:20rpx">
+  <view class="item" bindtap='about'>
+    <view class="title">关于我们</view>
+    <view class="info">
+      <image src="/images/memberInformation/myOrderRight.png"></image>
+    </view>
+  </view>
+  <view class="item" data-type="地址" bindtap='calltel' data-tel="4001109600" style="border-bottom:none">
+    <view class="title">客服电话</view>
+    <view class="info">
+      <image src="/images/memberInformation/myOrderRight.png"></image>
+    </view>
+  </view>
+</view>

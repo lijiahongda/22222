@@ -1,0 +1,35 @@
+<!--page/Yuemall/pages/Ranking/HalfPrice.wxml-->
+<image class="bg" src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569216762_87614.png"></image>
+<swiper class="swiper-box" interval='3000'>
+  <block>
+    <swiper-item>
+      <image class='image' src='{{ad}}'></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="content">
+  <view class="list" wx:for="{{list}}" wx:for-index="index" wx:key="list" bindtap='Details' data-skuid="{{item.productSkuId}}" data-activityid="{{item.activityId}}" data-id="{{item.goodId}}">
+    <view class="image">
+      <image src="{{item.goodCover}}"></image>
+    </view>
+    <view class="info">
+      <view class="title">
+        <text>{{item.goodName}}</text>
+      </view>
+
+      <view class="pricebutton">
+        <view class="price">
+          <view class="Surplus">仅剩{{item.goodsStock}}件</view>
+          <text class="Company">¥</text>
+          <text>{{item.goodVipPrice}}</text>
+          <text class="OriginalPrice">原价¥{{item.goodPrice}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="Ranking">
+      <image src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569211611_65144.png"></image>
+      <view>TOP{{index+1}}</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{!isHaveMore}}" class="isHaveMore">没有更多了～</view>

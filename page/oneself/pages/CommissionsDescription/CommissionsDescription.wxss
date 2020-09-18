@@ -1,0 +1,15 @@
+/* page/oneself/pages/CommissionsDescription/CommissionsDescription.wxss */
+@import "../../../../wxParse/wxParse/wxParse.wxss";
+page{
+  border-top:1px solid #ebecee;
+  background-color: #fff;
+  width:100%;
+  padding-left: 1.5%;
+  padding-top:42rpx;
+  height: 100%
+}
+
+.wxParse-img {
+  width: 100%;
+  display: block;
+}

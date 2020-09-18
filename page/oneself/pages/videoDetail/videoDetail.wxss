@@ -1,0 +1,100 @@
+page{
+  color: #333;
+}
+.requirement {
+  background: #fff;
+  margin: 0 auto;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+  width: 710rpx;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+}
+.requirement .requir-title{
+  font-size: 30rpx;
+  line-height: 50rpx;
+  font-weight: 500;
+}
+.requirement .time{
+  font-size: 24rpx;
+  font-weight: 400;
+}
+
+
+.detail{
+  padding: 28rpx 10rpx 36rpx 18rpx;
+}
+.requirement .cont{
+  display: flex;
+  align-items: center;
+  margin-bottom: 60rpx;
+}
+.requirement .cont image{
+  width:147rpx;
+  height:147rpx;
+  border-radius:30rpx;
+  margin-right: 20rpx;
+}
+.requirement .cont .title-detail{
+  width: 515rpx;
+}
+.requirement .cont .title-detail .title{
+  font-size: 28rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  width: 60%;
+}
+.requirement .cont .title-all{
+  display: flex;
+  align-items: flex-end;
+}
+.requirement .cont .title-all .price{
+  width: 40%;
+  font-size: 36rpx;
+  color: #E6B773;
+  display: flex;
+  align-items: flex-end;
+}
+.requirement .card-type,.requirement .total{
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #999;
+}
+.requirement .total{
+  padding-right: 38rpx;
+}
+
+
+.footr{
+  width:690rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  background:linear-gradient(267deg,rgba(230,183,115,1),rgba(243,210,150,1));
+  border-radius:40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #572F00;
+  margin: 0 auto;
+  margin-top: 48rpx;
+  font-weight: 600;
+}
+.explain{
+  width: 470rpx;
+  margin: 36rpx auto;
+}
+.explain view{
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 24rpx;
+}
+.explain .explain-title{
+  font-size: 30rpx;
+  width: 100%;
+  margin-bottom: 35rpx;
+  text-align: center;
+  font-weight: 400;
+  color: rgba(51,51,51,0.8);
+}

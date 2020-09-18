@@ -1,0 +1,53 @@
+page {
+  background-color: #fff;
+}
+
+.listItem {
+  height: 50px;
+  display: flex;
+  font-size: 28rpx;
+  color: rgb(0, 0, 0);
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  border-bottom: 1rpx solid #eee;
+  width: 90%;
+  margin: auto;
+}
+
+.listItem1 {
+  border-bottom:10rpx solid rgba(246,246,246,1);
+}
+
+.listItem .order{
+  display: flex;
+  align-items: center;
+}
+.listItem .order .icon {
+  width: 36rpx;
+  height: 27rpx;
+}
+.icons{
+  width: 36rpx;
+  height: 34rpx;
+}
+.icon1{
+  width: 36rpx;
+  height: 18rpx;
+}
+.listItem image {
+  width: 12rpx;
+  height: 22rpx;
+}
+
+.itemBtnRight {
+  display: flex;
+  align-items: center;
+}
+
+.itemTxt {
+  font-size: 30rpx;
+  color: #333;
+  margin-left: 10%;
+  width: 300rpx;
+}

@@ -1,0 +1,57 @@
+<view class="container" style="padding-top:0px">
+  <view class="tab-h">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">未使用</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">已使用</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">已过期</view>
+  </view>
+  <view class="tab-content" bindchange="switchTab" style="overflow: auto">
+    <!--菜单-->
+    <view class="scoll-h" style="overflow: auto">
+      <view class="item" wx:if="{{item.type==2 || item.type==10 ||item.type==5}}" wx:for="{{currentTab == 0?notUsed:currentTab == 1?use:currentTab == 2?overdue:''}}" wx:key="notUsed">
+        <view class="itemImage">
+          <image src="{{currentTab == 2?'https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-13/17/yuelvhuiXZhZ9G0So51581587457.png':item.isShare==1?'https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-13/17/yuelvhuiHT90IJtoJm1581587416.png':'https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-13/18/yuelvhuiyIdccRnkpk1581591487.png'}}"></image>
+          <view class="imageInfo">
+            <view class="PreferentialAmount">
+              <text class="text">￥</text>{{item.amount}}
+            </view>
+            <view class="desc">{{item.desc}}</view>
+            <image wx:if='{{currentTab==0&&item.isShare==1}}' class="showShare" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-13/18/yuelvhuii6Lvpsa6cp1581588240.png"></image>
+            <image wx:elif='{{currentTab!=0&&item.isShare==1}}' class="showShare" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-13/18/yuelvhuiKVv1PqdioG1581589168.png"></image>
+            <view class="hasCount">×{{item.count}}张</view>
+          </view>
+        </view>
+        <view class="itemInfo">
+          <view class="title">
+            <block wx:if="{{currentTab == 0}}">
+              <view class="tag" style="background-color:{{item.type == 1?'#FFB900':'#F6AA07'}};">{{item.cate}}</view>
+            </block>
+            <block wx:else>
+              <view class="tag" style="background-color:#dadada;color:#fff">{{item.cate}}</view>
+            </block>
+            <view class="bar">
+              <text>{{item.name}}</text>
+            </view>
+          </view>
+          <view class="line">
+            <view class="time">有效期：{{item.entTime}}</view>
+            <view class="ImmediateUse" wx:if="{{item.isShare == 0&&currentTab == 0}}" data-id="{{item.product_id}}" bindtap='immediateUse' data-type="{{item.type}}" data-modules="{{item.modules}}" data-typeid="{{item.typeid}}" data-goodid="{{item.product_id}}" data-skuid="{{item.skuId}}">立即使用</view>
+            <view class="ImmediateUse" wx:elif='{{item.isShare == 1&&currentTab == 0}}' data-cid="{{item.cid}}" data-modules='{{item.modules}}' data-redirect='{{item.redirect.redirectType}}' bindtap="shareCoupon">立即分享</view>
+            <view class="ImmediateUse AlreadyUsed" wx:elif="{{currentTab == 1}}">已使用</view>
+            <view class="ImmediateUse AlreadyUsed" wx:elif="{{currentTab == 2}}">已过期</view>
+          </view>
+          <view class="count" wx:if="{{currentTab == 0&&item.remainDays<4}}">{{item.remainDays}}天后过期</view>
+          <!-- <view class="count" wx:else style="background-color:#dadada;">{{item.count}}张</view> -->
+        </view>
+        <view class="instruction {{item.showDesc?'open':'close'}}" data-cid="{{item.cid}}" wx:if='{{item.couponDes!==""}}' bindtap="instruction">
+          <text>{{item.couponDes}}</text>
+          <image wx:if='{{item.showDesc}}' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-23/17/yuelvhuihccZr5N1CC1582450925.png" class="up"></image>
+          <image wx:else src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-23/17/yuelvhuibk8rTzGQ8E1582450931.png" class="dowm"></image>
+        </view>
+      </view>
+    </view>
+    <view class="expire" wx:if='{{notUsed.length > 0 }}'>
+      <view>优惠券到期提醒</view>
+      <switch checked="{{switchChecked}}" bindchange="changeExpire" />
+    </view>
+  </view>
+</view>

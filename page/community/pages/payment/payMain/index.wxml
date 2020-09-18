@@ -1,0 +1,74 @@
+<!--page/payment/payMain/index.wxml-->
+<view class="zcontent">
+  <!-- loading -->
+  <import src="/page/LoadingPopup/LoadingPopup.wxml" />
+  <block wx:if="{{LoadingStatus}}">
+    <template is="LoadingPopup" />
+  </block>
+  <!-- 弹窗组件 -->
+  <view class="alert" wx:if="{{alertShow}}">
+    <my-code id="myCode" bindclosealert="closeAlert" bindnextCom="nextAlert" wx:if="{{comIndex==0}}" userPhone="{{userMsg.mobile}}" userMsgIsNeed="{{userMsg.isNeedWord}}"></my-code>
+    <my-moneypsw wx:if="{{comIndex==1}}" bindclosealert="closeAlert" bindnextCom="nextAlert" userMsgIsNeed="{{userMsg.isNeedWord}}"></my-moneypsw>
+    <my-nowpsw wx:if="{{comIndex==2}}" bindclosealert="closeAlert" bindnextCom="nextAlert"></my-nowpsw>
+    <my-other wx:if="{{comIndex==3}}" bindclosealert="closeAlert" bindnextCom="nextAlert"></my-other>
+    <my-agreement wx:if="{{comIndex==4}}" bindclosealert="closeAlert" bindnextCom="nextAlert" textValue="{{textValue}}"></my-agreement>
+  </view>
+  <view class="money">
+    <!-- 余额view -->
+    <view class="moneyNum">
+      <view class="moneyNtitle">当前余额(元)</view>  
+      <view class="moneyNnum">{{balanceMoney}}</view>
+    </view>
+    <!-- 第一行的充值按钮 -->
+    <view class="moneyCtrl">
+      <view class="btList" wx:for="{{moneyRule}}" wx:key="index" wx:if="{{index<3}}" data-index="{{index+1}}" data-value="{{item.actualMoney}}元" data-id="{{item.id}}" bindtap="choseMoney" style="{{moneyBtIndex==(index+1)?'border: 2rpx solid rgba(202,37,25,1);':''}}">
+        <!-- <view class="tips" wx:if="{{item.item!=''}}" style="{{moneyBtIndex==(index+1)?'background:rgba(202,37,25,1);':''}}">{{item.item}}</view> -->
+
+        <view class="tips" wx:if="{{index==1}}" style="background:#f98406;"><image src="{{item.item}}"></image></view>
+        <view class="tips" wx:if="{{index==2}}" style="background:rgba(202,37,25,1);"><image src="{{item.item}}"></image></view>
+
+        <view class="fMoney" style="{{moneyBtIndex==(index+1)?'color:rgba(202,37,25,1);':''}}">{{item.showMoney}}<text class="unit">元</text></view>
+        <view class="tMoney" style="{{moneyBtIndex==(index+1)?'color:rgba(202,37,25,1);':''}}">仅需{{item.actualMoney}}元</view>
+      </view>
+    </view>
+    <!-- 第二行的充值按钮 -->
+    <view class="moneyCtrl">
+      <view class="btList" wx:for="{{moneyRule}}" wx:key="index" wx:if="{{index>=3&&index<=5}}" data-index="{{index+1}}" data-value="{{item.actualMoney}}元" data-id="{{item.id}}" bindtap="choseMoney" style="{{moneyBtIndex==(index+1)?'border: 2rpx solid rgba(202,37,25,1);':''}}">
+        <view class="tips" wx:if="{{item.item!=''}}" style="{{moneyBtIndex==(index+1)?'background:rgba(202,37,25,1);':''}}">{{item.item}}</view>
+       <view class="fMoney" style="{{moneyBtIndex==(index+1)?'color:rgba(202,37,25,1);':''}}">{{item.showMoney}}<text class="unit">元</text></view>
+        <view class="tMoney" style="{{moneyBtIndex==(index+1)?'color:rgba(202,37,25,1);':''}}">仅需{{item.actualMoney}}元</view>
+      </view>
+      <!-- 其他金额去掉 -->
+       <view class="btList" data-index="6" data-value="{{otherMoney}}" bindtap="choseMoney" wx:if="{{false}}">
+        <view class="otherText" wx:if="{{moneyBtIndex!='6'||(!otherFocus&&otherMoney=='')}}" style="{{moneyBtIndex=='6'?'color:rgba(202,37,25,1);':''}}">其他金额</view>
+        <view class="fMoney" wx:if="{{moneyBtIndex=='6'}}" style="{{moneyBtIndex=='6'?'color:rgba(202,37,25,1);':''}}">
+          <!-- 金额输入框  如果焦点为true则显示 -->
+          <input type="number" style="{{otherMoney==''?'font-size:28rpx;':''}}" wx:if="{{otherFocus}}" placeholder="请输入金额" focus="{{otherFocus}}" value="{{otherMoney}}" bindinput="moneyInput" bindblur="otherInputBlur"></input>
+          <!-- 金额显示  如果焦点为false则显示 -->
+          <text wx:if="{{!otherFocus&&otherMoney!=''}}">{{otherMoney}}<text class="unit">元</text></text>
+        </view>
+        <view class="tMoney" wx:if="{{(moneyBtIndex=='6'&&otherFocus)||otherMoney!=''}}" style="{{moneyBtIndex=='6'?'color:rgba(202,37,25,1);':''}}">仅需{{otherMoney}}元</view>
+      </view>
+    </view>
+    <!-- 确认充值按钮 -->
+    <!-- <view class="payBt" bindtap="toRecharge">去充值{{payPrice}}{{otherMoney!=''?'元':''}}</view> -->
+    <view class="payBt" bindtap="toRecharge">去充值</view>
+    <!-- 充值协议 -->
+    <view class="payWord" bindtap="openagreement">点击【去充值】代表您已阅读并同意<text>《充值协议》</text></view>
+  </view>
+  <!-- 其他页跳转按钮 -->
+  <view class="hrefList">
+    <view class="list" bindtap="openDetailed">
+      <view class="name">交易明细</view>
+      <view class="icon"><text class="iconfont icon-youjiantou"></text></view>
+    </view>
+    <view class="list" bindtap="updatePassword">
+      <view class="name">修改密码</view>
+      <view class="icon"><text class="iconfont icon-youjiantou"></text></view>
+    </view>
+    <view class="list" style="border:none;" bindtap="openMoneyTransfer">
+      <view class="name">佣金转入</view>
+      <view class="icon"><text class="iconfont icon-youjiantou"></text></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,334 @@
+/* page/Yuemall/pages/JDList/JDList.wxss */
+
+page {
+  background-color: #fff;
+}
+
+/* tab */
+
+.tab-h {
+  height: 83rpx;
+  width: 98%;
+  box-sizing: border-box;
+  line-height: 80rpx;
+  background: #fff;
+  font-size: 16px;
+  white-space: nowrap;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+}
+
+.tab-h image {
+  width: 40rpx;
+  height: 28rpx;
+}
+
+.exploreViewList {
+  width: 89%;
+  /* margin-left: 2.5% */
+}
+
+.tab-item {
+  margin: 0 7%;
+  font-size: 26rpx;
+  color: #000;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+.tab-item.active {
+  color: #f95353;
+  font-size: 26rpx;
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 4rpx;
+  width: 100%;
+  background: #f95353;
+  position: absolute;
+  bottom: 0;
+}
+
+.tab-con image {
+  width: 100%;
+  height: 100%;
+}
+
+.tab-con {
+  padding: 25rpx 0;
+  min-height: 100%;
+  position: relative;
+}
+
+.tab-con.gwc {
+  padding-bottom: 125rpx;
+}
+.topnav {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #fff;
+}
+.tabImage {
+  width: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabImage image {
+  width: 26rpx;
+  height: 15rpx;
+}
+
+/* 全部频道 */
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.channel {
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: #fff;
+  z-index: 1100;
+  position: fixed;
+  top: -1rpx;
+  left: 0;
+}
+
+.channel .title {
+  display: flex;
+  flex-direction: row;
+  width: 94%;
+  padding-left: 3%;
+  align-items: center;
+  
+}
+
+.channelImage {
+  width: 40rpx;
+  height: 28rpx;
+}
+
+.channelContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 20rpx;
+}
+
+.channelContent view {
+  width: 20%;
+  height: 50rpx;
+  display: inline-block;
+  border: 1px solid #999;
+  text-align: center;
+  line-height: 50rpx;
+  margin-right: 1.8%;
+  margin-left: 2.5%;
+  margin-top: 20rpx;
+  color: #999;
+  font-size: 24rpx;
+  border-radius: 4rpx;
+}
+.channelContent view text{
+   word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.channelContent view.active {
+  color: #f95353;
+  border: 1px solid #f95353;
+}
+
+/* 列表 */
+
+.FlashSale {
+  display: flex;
+  width: 95%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  background-color: #fff;
+  /* align-items: center; */
+  flex-direction: column;
+  padding-bottom: 25rpx;
+}
+
+.FlashSale .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+}
+
+.FlashSale .top .function {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  height: 100rpx;
+}
+
+.FlashSale .top .function image {
+  width: 7rpx;
+  height: 34rpx;
+  margin-right: 3%;
+}
+
+.FlashSale .top .function .RushBuy {
+  display: flex;
+  flex-direction: row;
+  height: 41rpx;
+  margin-top: 6rpx;
+}
+
+.FlashSale .top .function .RushBuy .RushBuyTitle {
+  font-size: 24rpx;
+  width: 96rpx;
+  text-align: center;
+  line-height: 42rpx;
+  /* background-color: #ff6636;
+  border-top-left-radius: 8rpx;
+  border-bottom-left-radius: 8rpx; */
+  color: #999;
+  margin-left: 18rpx;
+}
+
+.FlashSale .top .function .RushBuy .RushBuyTime {
+  /* color: #ff6636;
+  font-size: 22rpx;
+  width: 128rpx;
+  border: 1px solid #ff6636;
+  line-height: 41rpx;
+  text-align: center;
+  border-top-right-radius: 8rpx;
+  border-bottom-right-radius: 8rpx; */
+}
+
+.LyingEarn {
+  color: #FF6032;
+  border: 1px solid #FF6032;
+  margin-right: 10rpx;
+  font-size: 22rpx;
+  padding: 2rpx;
+  border-radius: 6rpx;
+  display: inline-block;
+  flex-direction: row;
+}
+
+.LyingEarn .text {
+  font-size: 30rpx;
+  
+}
+
+.bg_ff {
+  width: 32rpx;
+  height: 32rpx;
+  display: inline-block;
+  color: #fd236e;
+  line-height: 32rpx;
+  font-size: 22rpx;
+  text-align: center;
+  border-radius: 6rpx;
+  /* border: 1px solid #bebebe; */
+  margin: 0 4rpx;
+}
+
+.RushToBuy {
+  margin-top: 40rpx;
+}
+
+.RushToBuy .Rushitem .Rushimage {
+  width: 240rpx;
+  height: 240rpx;
+  background-color: #ececec;
+}
+
+.RushToBuy .Rushitem {
+  width: 92%;
+  margin: auto;
+  height: 240rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+}
+
+.RushToBuy .Rushitem .RushInfo {
+  display: flex;
+  flex-direction: column;
+  width: 58%;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  margin-left: 21rpx;
+}
+
+.price {
+  font-size: 24rpx;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  line-height: 36rpx;
+  flex-wrap: wrap;
+}
+
+.price .MonasteryPrice {
+  color: rgb(243, 111, 90);
+  line-height: 36rpx;
+}
+
+.price .MonasteryPrice text {
+  font-size: 42rpx;
+}
+
+.price .OriginalPrice text {
+  text-decoration: line-through;
+}
+
+.RushToBuy .Rushitem .RushInfo .goodName text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  height: 70rpx;
+  color: #000;
+}
+
+/* 列表结束 */

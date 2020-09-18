@@ -1,0 +1,36 @@
+<!--components/popup/popup.wxml-->
+<view class="popup" wx:if='{{flag}}'  >
+    <view class='popup-container'>
+    <!-- <view class="popup-title">{{list.title}}</view> -->
+    <view>
+    </view>
+    <view class="popup-con">
+      <view class="pop-title">{{list.title}}</view>
+      <scroll-view scroll-y="true" style="height: 450rpx">
+        <!-- 单张优惠卷 -->
+        <view class="Coupon-box" wx:for='{{list.couponInfo}}' wx:key='index' style="background:url('https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-15/16/yuelvhuifjo2HRFJZu1584262461.png') no-repeat;background-size:100% 100%;">
+          <view class="Coupon-left">
+            <view class="coupon-money">¥
+              <text>{{item.couponPrice}}</text>
+            </view>
+            <view  class="desc">{{item.couponDesc}}</view>
+          </view>
+          <view class="center" style="background:url('https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-15/17/yuelvhuiwLVWEdhLAd1584263643.png') no-repeat;background-size:100% 100%;"></view>
+          <view class="Coupon-right">
+            <view class='coupon-where'>{{item.couponName}}</view>
+            <view class="coupon-btn">
+              <text class="coupon-time">{{item.couponTime}}</text>
+              <text bindtap='goUse' data-skuid="{{item.skuid}}" data-modules="{{item.son_modules}}" data-id="{{item.typeid}}" class="user-btn">{{item.couponButton}}</text>
+            </view>
+          </view>
+        </view>
+        
+      </scroll-view>
+      <view>{{list.desc}}</view>
+      <view>我知道了～</view>
+    </view>
+  </view>
+    <view class="imgClose">
+      <image class="close"  bindtap='hidePopup'  src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-15/23/yuelvhuioGalvTuCVa1584286274.png"></image>
+    </view>
+</view>

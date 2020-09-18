@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "我要拼团",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "title": "/component/goodsDetail/titleNew/title",
+    "select": "/component/goodsDetail/select/select",
+    "comment": "/component/goodsDetail/comment/comment",
+    "recommend": "/component/goodsDetail/recommend/recommend"
+  },
+  "navigationBarTextStyle": "black"
+}

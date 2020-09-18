@@ -1,0 +1,78 @@
+page{
+  background: #ddd;
+}
+.content{
+  width:690rpx;
+  height:1157rpx;
+  background:rgba(255,255,255,1);
+  border-radius:20rpx;
+  margin: 0 auto;
+  margin-top: 3%;
+  position: relative;
+}
+.content .header{
+  width: 100%;
+  border-bottom: 1rpx solid #DDDDDD;
+  height: 110rpx;
+  line-height: 110rpx;
+  font-size: 32rpx;
+  color: #666;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.content .header .nav{
+  width: 49.9%;
+  text-align: center;
+  border-right: 1rpx solid #DDDDDD;
+  height: 37rpx;
+  line-height: 37rpx;
+}
+.content .header .nav:last-child{
+  border: none;
+}
+.content .header .active{
+  color: #070707;
+}
+.content .header .line{
+  width:105rpx;
+  height:8rpx;
+  background:linear-gradient(90deg,rgba(215,63,128,1),rgba(232,105,77,1));
+  border-radius:4rpx;
+  position: absolute;
+  left: 103rpx;
+  bottom: -4rpx;
+  z-index: 4
+}
+
+
+.cont{
+  width: 100%;
+  padding: 0 40rpx;
+  box-sizing:border-box;
+  font-size: 26rpx;
+  color: #333333;
+  margin-top: 60rpx;
+  line-height: 44rpx;
+}
+.cont .logo{
+  width: 148rpx;
+  height: 148rpx;
+  margin: 0 auto;
+  margin-bottom: 74rpx;
+  display: block;
+}
+
+.btn{
+  width:610rpx;
+  height:88rpx;
+  background:linear-gradient(90deg,rgba(215,63,128,1),rgba(232,105,77,1));
+  border-radius:44rpx;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 88rpx;
+  color: #fff;
+  position: absolute;
+  bottom: 170rpx;
+  left: 40rpx;
+}

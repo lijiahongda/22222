@@ -1,0 +1,71 @@
+<view wx:if='{{!yifen}}'>
+  <!-- <view class="openMember" bindtap="openMember" wx:if='{{openMember==0}}'>
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-16/22/yuelvhuiOdDg2WzNJw1579185669.png"></image>
+  </view> -->
+  <view class="title">
+    <view class="titleDetail">
+      <image src="{{image}}"></image>
+      <text>{{title}}</text>
+    </view>
+    <view class="rule" bindtap="openModal">
+      <view class="ruleOne">
+        <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-05/11/yuelvhui9N3wDH9s9Y1580873249.png"></image>
+        <text class="left">成团规则</text>
+        <text class="center"></text>
+        <text class="right">{{needer}}人成团，拼团成功团长免费拿</text>
+      </view>
+      <image class="ruleTwo" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-05/11/yuelvhuiE7yFNdx4iM1580873218.png"></image>
+    </view>
+  </view>
+  <!-- 规则提示 -->
+  <view class="commodity_screen" bindtap="hideModal" catchtouchmove="disMove" wx:if="{{showModalStatus}}">
+    <view class="con">
+      <view class="tit">拼团说明</view>
+      <view>
+        <text>{{rule}}</text>
+      </view>
+    </view>
+    <image class="close" bindtap="hideModal" src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-02-12\/13\/yuelvhuiOjrprRnk231581486109.png"></image>
+  </view>
+  <view class="reason" wx:if="{{tip != ''}}">
+    <view>
+      <text>推荐理由：</text>
+      <text>{{tip}}</text>
+    </view>
+  </view>
+</view>
+<view wx:if='{{yifen}}'>
+  <view class="title">
+    <view class="titleDetailH">
+      <image src="{{list.channelIcon}}"></image>
+      <text>{{list.goodName}}</text>
+    </view>
+    <view class="det">
+      <text>{{list.goodsInfo}}</text>
+    </view>
+    <view class="rule" bindtap="openModal">
+      <view class="ruleOne">
+        <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-22/18/yuelvhuiJTResN3wAl1584874259.png"></image>
+        <text class="left">抽奖规则</text>
+        <text class="center"></text>
+        <text class="right">0.01元参与商品抽奖规则</text>
+      </view>
+      <image class="ruleTwo" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-05/11/yuelvhuiE7yFNdx4iM1580873218.png"></image>
+    </view>
+  </view>
+  <!-- 规则提示 -->
+  <view class="commodity_screen" bindtap="hideModal" catchtouchmove="disMove" wx:if="{{showModalStatus}}">
+    <view class="con">
+      <view class="tit">活动规则说明</view>
+      <view>
+        <view wx:for='{{list2.lottery_rule_v2}}' wx:key='rule'>
+          <view>
+            {{item}}
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <image class="close" bindtap="hideModal" src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-02-12\/13\/yuelvhuiOjrprRnk231581486109.png"></image>
+  </view>
+</view>

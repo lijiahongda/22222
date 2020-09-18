@@ -1,0 +1,95 @@
+<view class="content">
+	<view class="listes" wx:if='{{grouth }}'>
+		<view>成长值：</view>
+		<view class="grouth">
+			<image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-20/19/yuelvhuieSZvwFFdwm1589975325.png"></image>
+			购买此商品可获得{{grouth}}成长值
+		</view>
+	</view>
+	<view
+	 class="list"
+	 bindtap="showMask"
+	 wx:if='{{goodsCoupon.length}}'
+	>
+		<view>优惠：</view>
+		<view class="selected couponList">
+			<view wx:for="{{goodsCoupon}}">{{item.remind}}</view>
+		</view>
+		<view class="end">
+			<text style="color:#999999">领劵</text>
+			<text>></text>
+		</view>
+	</view>
+	<view class="list" bindtap="ToUp">
+		<view>规格：</view>
+
+		<view class="selected">
+			<text wx:for='{{sizeSelectText}}' wx:key='item'>{{item}}</text>
+		</view>
+		<view class="end">
+			<text>></text>
+		</view>
+	</view>
+
+	<view class="list" bindtap="selectAddress">
+		<view>送至：</view>
+		<view class="selected" wx:if="{{address.proviceName !=''}}">{{address.proviceName}}{{address.cityName}}{{address.zoneName}}</view>
+		<view class="selected" wx:else>请选择配送地</view>
+		<view class="end">
+			<text>></text>
+		</view>
+	</view>
+
+	<view class="ZYbox" bindtap="GrowthTab">
+		<view>规则：</view>
+
+		<view class="selected">
+			预估成长值说明
+		</view>
+		<view class="end">
+			<text>></text>
+		</view>
+	</view>
+	<!-- <view class="list">
+    <view>运费：</view>
+    <view class="selected">{{goodFreight}}</view>
+    <view class="end">
+      <text>></text>
+    </view>
+  </view> -->
+</view>
+
+<!-- 优惠券弹窗列表 -->
+<view class="couponGet" wx:if='{{mask}}'>
+	<view>
+		<view class="couponGetList" wx:for='{{goodsCoupon}}'>
+			<view class="left">
+				<view>
+					<text>￥</text>
+					<text>{{item.amount}}</text>
+				</view>
+				<view>{{item.remindSamount}}</view>
+			</view>
+			<view class="right">
+				<view class="title">
+					<view>商城券</view>
+					<text>{{item.name}}</text>
+				</view>
+				<view>有效期 {{tiem.usedRemind}}</view>
+				<view
+				 class="get"
+				 wx:if='{{item.couponState==0}}'
+				 bindtap="getCoupon"
+				 data-id="{{item.cid}}"
+				>立即领取
+				</view>
+				<view class="overGet" wx:else>已领取</view>
+			</view>
+		</view>
+		<view class="noMore">没有更多了～</view>
+		<view class="over" bindtap="closeMask">
+			<view>完成</view>
+		</view>
+	</view>
+</view>
+

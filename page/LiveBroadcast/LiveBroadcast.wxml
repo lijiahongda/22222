@@ -1,0 +1,204 @@
+<!-- 直播列表 更多 -->
+<!-- <subscribe room-id="70"></subscribe> -->
+<scroll-view class="live_more" animation="{{animationData}}" scroll-x="true" bindscrolltolower="bindscrolltolower" wx:if="{{roomInfo}}">
+  <view class="live_scroll">
+    <view wx:for="{{roomInfo}}" wx:for-index="index" wx:key="index" class="live_list" data-item="{{item}}">
+      <view class="live_broadcast">
+        <navigator wx:if="{{item.cover_img}}" url="plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id={{item.roomid}}">
+          <image class="bg"  src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-17/17/yuelvhuiDdnBlwQf4c1584438002.gif"></image>
+        </navigator>
+        <image class="img" src="{{item.cover_img}}" mode='aspectFill'></image>
+        <view class="live_type"></view>
+      </view>
+      <view class="live_title">{{item.name}}</view>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- banner、视频同款 -->
+<view class="top">
+  <!-- banner -->
+  <view class="banner" wx:if='{{banner.length!=0}}'>
+    <swiper class="swiperbox" indicator-dots="true" indicator-active-color='#E05259' indicator-color='#D6D6D6' style="margin-top:{{showViewHeight?80:''}}rpx" interval='3000' autoplay='true'>
+      <block wx:for="{{banner}}" wx:key="{{item}}">
+        <swiper-item>
+          <image class='image' bindtap="gobanner" data-actid="{{item.actId}}" data-redirecttype="{{item.redirectType}}" data-url="{{item.redirectUrl}}" src="{{item.url}}" mode="aspectFill"></image>
+          <view class="notice" wx:if='{{item.redirectType==98}}'>
+            <view class="NoticeContent">
+              <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-17/17/yuelvhuiXgrRKyZ15v1584436736.png"></image>
+              <view>预告</view>
+            </view>
+            <view>{{item.want_number}}想看</view>
+          </view>
+          <view class="mask"  wx:if='{{item.redirectType==98}}'>
+            <view class="person">
+              <image src="{{item.headimg}}"></image>
+              <view>{{item.nickname}}</view>
+            </view>
+          </view>        
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 视频同款 -->
+  <view class="videotk"  wx:if='{{goods.length!=0}}'>
+    <view class="video_title">
+      <image class="vid_image" mode="aspectFill" src="https://yuelvdaren-1300766538.cos.ap-beijing.myqcloud.com/daren/2020/03/05/5e5ff5030be951583346947.png"></image>
+      <view class="vid_title">视频同款</view>
+      <view class="title_left">总有一款适合你～</view>
+    </view>
+    <view class="vid_list">
+      <scroll-view class="scroll_view_H dang_list_nav_scroll" scroll-with-animation="true" scroll-x>
+        <view wx:for="{{goods}}" wx:key="{{item.gid}}" class="list scroll-view-item_H" bindtap="goDetail" data-item="{{item}}">
+          <view class="video" style="background-image:url({{item.videoCover}})">
+            <image src="https://yuelvdaren-1300766538.cos.ap-beijing.myqcloud.com/daren/2020/03/06/5e6152bcf24ee1583436476.png"></image>
+            <view class="mask">
+              <view class="person">
+                <image src="{{item.headImg}}"></image>
+                <view>{{item.nickName}}</view>
+              </view>
+            </view>        
+          </view>
+          <view class="goods">
+            <image src="{{item.productImage}}"></image>
+            <view class="title">{{item.productName}}</view>
+            <view class="price">
+              <text>￥</text><text>{{item.productPrice}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+
+<!-- 直播、回放、短视频 -->
+<view class="special">
+  <view class="special_nav">
+    <view data-type='2' bindtap="sortvid" data-clname="sortvid" class="active {{clname=='sortvid'?'tabvid':''}}">直播</view>
+    <!-- <view data-type='3' bindtap="sortvid" data-clname="huifang" class="active {{clname=='huifang'?'tabvid':''}}">回放</view> -->
+    <view data-type='4' bindtap="sortvid" data-clname="shortVideo" class="active {{clname=='shortVideo'?'tabvid':''}}">短视频</view>
+    <view data-type='5' bindtap="sortvid" data-clname="daogou" class="active {{clname=='daogou'?'tabvid':''}}">导购专区</view>
+  </view>
+  <view class="videolist">
+    <view class="goodlist {{ (index==0&&clname=='sortvid') ?'lineOne':''  }}" wx:if='{{ !(clname=="sortvid"&&index>2) }}' wx:for="{{listdata}}" wx:for-index="index" wx:key="index">
+      <view class="goodlist_image" data-item="{{item}}">
+        <view class="mask"></view>
+        <view class="Notice" wx:if="{{item.type == 1}}">
+          <view class="NoticeContent">
+            <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-17/17/yuelvhuiXgrRKyZ15v1584436736.png"></image>
+            <view>预告</view>
+          </view>
+          <view>{{item.want_number}}想看</view>
+        </view>
+        <view class="Notice" wx:elif="{{clname=='sortvid'}}" style="padding:0rpx">
+          <view class="NoticeContent" style="width:116rpx;height:40rpx;background:linear-gradient(264deg,rgba(223,74,81,1),rgba(227,85,93,1));margin-right:0rpx">
+            <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-17/17/yuelvhuiaJpCKH9LHG1584437968.gif" style="width:23rpx;height:19rpx;"></image>
+            <view>直播中</view>
+          </view>
+          <!-- <view>{{item.want_number}}观看中</view> -->
+        </view>
+        <image class='play' mode="aspectFill" wx:if="{{clname != 'huifang' }}" bindtap='{{item.videoCover?"goDetail":item.liveCover?"NoticeDetail":item.cover_img?"Liveroom":""}}' data-roomid="{{item.roomid}}" data-item="{{item}}" src="https://yuelvdaren-1300766538.cos.ap-beijing.myqcloud.com/daren/2020/03/06/5e6152bcf24ee1583436476.png"></image>
+        <navigator wx:if="{{item.cover_img && clname == 'sortvid'}}" url="plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id={{item.roomid}}&&custom_params={{customParams}}">
+          <image src="{{item.cover_img}}" mode="aspectFill"></image>
+        </navigator>
+        <image class="image" wx:elif="{{item.videoCover}}" src="{{item.videoCover}}" mode="aspectFill" bindtap='goDetail' data-item="{{item}}"></image>
+        <image class="image" bindtap="NoticeDetail" data-item="{{item}}" wx:elif="{{item.liveCover}}" src="{{item.liveCover}}" mode="aspectFill"></image>
+        <image class="image" wx:else src="{{item.cover_img}}" data-item="{{item}}" bindtap="playbackList" mode="aspectFill"></image>
+        <image wx:if="{{clname == 'huifang'}}" class="huifangImg" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-23/17/yuelvhuioEpl7pmESg1584956041.png"></image>
+      </view>
+      <!-- 播主信息 -->
+      
+      <view class=" {{item.showGoods==1?'goodinfo':'goodinfos'}}">
+        <view class="goodinfo_image">
+          <image src="{{item.headImg}}" mode="aspectFill"></image>
+        </view>
+        <view class="goodinfo_text">
+          <view>{{item.nickName}}</view>
+          <view class="goodinfo_jian">{{item.videoTitle}}</view>
+        </view>
+      </view>
+      <!-- 直播播主信息 -->
+      <view class="mask" bindtap="Liveroom" data-roomid="{{item.roomid}}"  wx:if="{{clname=='sortvid'}}">
+        <view class="person">
+          <image src="{{item.cover_img}}"></image>
+          <view>{{item.name}}</view>
+        </view>
+      </view>
+      <!-- 商品信息 -->
+      <view class="shopInfo" wx:if="{{item.showGoods==1}}" data-skuid="{{item.productSkuId}}" data-goodsid="{{item.productId}}" bindtap="onTapclier">
+        <view class="shopInfo_image">
+          <image src="{{item.productImage}}" mode="aspectFill"></image>
+        </view>
+        <view class="shopInfo_text">
+          <view class="shop_title">{{item.productName}}</view>
+          <view class="shopInfo_jian">¥
+            <text>{{item.productPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 直播大于三个的横排 -->
+    <scroll-view scroll-x="true" class="liveing">
+      <view class="goodlist {{ (index==0&&clname=='sortvid') ?'lineOne':''  }}" wx:if='{{index>2&&clname=="sortvid"}}' wx:for="{{listdata}}" wx:for-index="index" wx:key="index">
+        <view class="goodlist_image" data-item="{{item}}">
+          <view class="mask"></view>
+          <view class="Notice" wx:if="{{item.type == 1}}">
+            <view class="NoticeContent">
+              <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-17/17/yuelvhuiXgrRKyZ15v1584436736.png"></image>
+              <view>预告</view>
+            </view>
+            <view>{{item.want_number}}想看</view>
+          </view>
+          <view class="Notice" wx:elif="{{clname=='sortvid'}}" style="padding:0rpx">
+            <view class="NoticeContent"style="width:116rpx;height:40rpx;background:linear-gradient(264deg,rgba(223,74,81,1),rgba(227,85,93,1));margin-right:0rpx">
+              <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-17/17/yuelvhuiaJpCKH9LHG1584437968.gif" style="width:23rpx;height:19rpx;"></image>
+              <view>直播中</view>
+            </view>
+            <!-- <view>{{item.want_number}}观看中</view> -->
+          </view>
+          <image class='play' mode="aspectFill" wx:if="{{clname != 'huifang' }}" bindtap='{{item.videoCover?"goDetail":item.liveCover?"NoticeDetail":""}}' data-item="{{item}}" src="https://yuelvdaren-1300766538.cos.ap-beijing.myqcloud.com/daren/2020/03/06/5e6152bcf24ee1583436476.png"></image>
+          <navigator wx:if="{{item.cover_img && clname == 'sortvid'}}" url="plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id={{item.roomid}}">
+            <image src="{{item.cover_img}}" mode="aspectFill"></image>
+          </navigator>
+          <image class="image" wx:elif="{{item.videoCover}}" src="{{item.videoCover}}" mode="aspectFill" bindtap='goDetail' data-item="{{item}}"></image>
+          <image class="image" bindtap="NoticeDetail" data-item="{{item}}" wx:elif="{{item.liveCover}}" src="{{item.liveCover}}" mode="aspectFill"></image>
+          <image class="image" wx:else src="{{item.cover_img}}" data-item="{{item}}" bindtap="playbackList" mode="aspectFill"></image>
+        </view>
+        <!-- 播主信息 -->
+        <view class=" {{(item.showGoods==1||clname=='sortvid')?'goodinfo':'goodinfos'}}">
+          <view class="goodinfo_image">
+            <image src="{{item.headImg}}" mode="aspectFill"></image>
+          </view>
+          <view class="goodinfo_text">
+            <view>{{item.nickName}}</view>
+            <view class="goodinfo_jian">{{item.videoTitle}}</view>
+          </view>
+        </view>
+        <!-- 直播播主信息 -->
+        <view class="mask" bindtap="Liveroom" data-roomid="{{item.roomid}}" wx:if="{{clname=='sortvid'}}">
+          <view class="person">
+            <image src="{{item.cover_img}}"></image>
+            <view>{{item.name}}</view>
+          </view>
+        </view>
+        <!-- 商品信息 -->
+        <view class="shopInfo" wx:if="{{item.showGoods==1}}" data-skuid="{{item.productSkuId}}" data-goodsid="{{item.productId}}" bindtap="onTapclier">
+          <view class="shopInfo_image">
+            <image src="{{item.productImage}}" mode="aspectFill"></image>
+          </view>
+          <view class="shopInfo_text">
+            <view class="shop_title">{{item.productName}}</view>
+            <view class="shopInfo_jian">¥
+              <text>{{item.productPrice}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <video class="emptyVideo" src="{{emptyVideo.url}}" wx:if="{{emptyVideo.show && clname=='sortvid'}}" autoplay='true'></video>
+  </view>
+</view>
+<view class="Mask" wx:if="{{isload}}"></view>

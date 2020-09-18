@@ -1,0 +1,145 @@
+/* page/yueMember/pages/MaterialCircle/MaterialCircle.wxss */
+
+.tab-h {
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 80rpx;
+  background: #fff;
+  font-size: 16px;
+  white-space: nowrap;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 4rpx 8px #ddd;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.tab-item {
+  margin: 0 3.5%;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  padding-left: 1%;
+}
+
+.tab-item.active {
+  color: #ff6636;
+  /*position: relative;*/
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 6rpx;
+  width: 100%;
+  background: #ff6636;
+  position: absolute;
+  bottom: 0;
+  left: 5rpx;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 29rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.list .memberInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.list .memberInfo image {
+  width: 82rpx;
+  height: 82rpx;
+  border-radius: 50%;
+  margin-right: 18rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.list .memberInfo .info {
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(129, 129, 129, 1);
+  margin-bottom: 37rpx;
+}
+
+.list .memberInfo .info .title {
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(1, 1, 1, 1);
+  margin-bottom: 10rpx;
+}
+
+.ArticleTitle {
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(17, 17, 17, 1);
+  margin-bottom: 42rpx;
+}
+
+.ArticleImage {
+  margin-bottom: 30rpx;
+  width: 250rpx;
+  height: 430rpx;
+  border-radius: 10rpx;
+}
+
+.FunItem {
+  display: flex;
+  flex-direction: row;
+  height: 81rpx;
+  border-top: 1px solid #e8e8e8;
+  align-items: center;
+  justify-content: center;
+}
+
+.topnav {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.FunItem .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.FunItem .item image {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+
+.imageList{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.imageList image{
+  width:215rpx;
+  height: 214rpx;
+  border-radius: 10rpx;
+  background-color: #eee;
+  margin-right: 8rpx;
+  margin-left: 8rpx;
+  margin-bottom: 10rpx;
+}

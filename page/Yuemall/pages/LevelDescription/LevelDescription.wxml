@@ -1,0 +1,30 @@
+<!--page/Yuemall/pages/LevelDescription/LevelDescription.wxml-->
+<view class="CurrentLevel">
+  <view class="Level">
+    <view class="title">当前等级：</view>
+    <view>{{level.name}}</view>
+  </view>
+  <view class="Surplus">
+    <view>剩余</view>
+    <image class="" src="/images/YueMall/KylinCoin.png"></image>
+    <view>x {{level.available}}个</view>
+  </view>
+</view>
+<view class="describe">
+  <view class="item" wx:for="{{explain}}" wx:key="explains">
+    <view class="title">{{item.name}}</view>
+    <view>{{item.text}}</view>
+  </view>
+</view>
+<view class="membertitle">会员等级：</view>
+<view class="list" wx:for="{{list}}" wx:key="list">
+  <view class="image">
+    <image src="{{item.icon}}"></image>
+  </view>
+  <view class="info">
+    <view class="title" style="color:{{item.color}}">{{item.name}}</view>
+    <view class="condition">
+      <view wx:for="{{item.explain}}" wx:key="explain">{{item}}</view>
+    </view>
+  </view>
+</view>

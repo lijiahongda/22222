@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "支付结果",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "couponPopup": "/component/couponPopup/couponPopup",
+    "lineTwoListFlow": "/component/lineTwoListFlowNew/lineTwoListFlow"
+  }
+}

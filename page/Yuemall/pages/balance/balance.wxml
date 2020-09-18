@@ -1,0 +1,404 @@
+<import src="../colorLine/colorLine.wxml" />
+<view class="balance">
+	<scroll-view scroll-y>
+		<!-- <image wx:if='{{cardType==0}}' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-02/20/yuelvhuiqM5Xtj8FFt1583152297.png" bindtap="join" style="width:100%;height:100rpx;"></image> -->
+		<view>
+			<view class="userInfo" bindtap='addressAdministration' wx:if="{{address == null||address=='NaNundefined'}}">
+				<view class="userInfoContent">
+					<view class="info">
+						<view class="name">{{receiverName}}</view>
+						<view class="default" wx:if="{{isDefault == 1}}">默认</view>
+						<view class="phone">{{mobile}}</view>
+					</view>
+					<view class="location">
+						<view class="site">
+							<view class="address">暂无收货地址</view>
+							<view class="image">
+								<image style="width:100%;height:100%;" src="/images/YueMall/right.png"></image>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="userInfo" wx:else bindtap='addressAdministration'>
+				<view class="userInfoContent">
+					<view class="info">
+						<view class="name">{{receiverName}}</view>
+						<view class="default" wx:if="{{isDefault == 1}}">默认</view>
+						<view class="phone">{{mobile}}</view>
+					</view>
+					<view class="location">
+						<image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-02/14/yuelvhui5f005RDl7K1583131957.png"></image>
+						<view class="site">
+							<view class="address">{{address}}</view>
+							<view class="image">
+								<image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-02/14/yuelvhui6QlHcKzU4o1583132025.png"></image>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<template is="colorLine" />
+		<view class="list">
+			<view>
+				<view class="borderBottom" wx:for="{{goodsList}}" wx:key="goodsList">
+					<view class="first">
+						<image src="{{item.imgIcon}}"></image>
+						<text>{{item.name}}</text>
+					</view>
+					<view class="ItemRight" wx:for="{{item.data}}" wx:key="index">
+						<view class="image">
+							<image src="{{item.goodCover}}"></image>
+						</view>
+						<view class="describe">
+							<view class="title">
+								<text>{{item.goodName}}</text>
+								<view>X{{item.goodNum}}</view>
+							</view>
+							<view class="bookhidden">
+								<view wx:if="{{item.channelId == 8}}">作者名:{{item.authorName}}</view>
+								<view wx:if="{{item.channelId == 8 && item.publishName !=''}}">出版社:{{item.publishName}}</view>
+							</view>
+							<view style='flex:1;color:rgb(153,153,153)' wx:if="{{item.goodSpec != undefined}}" class="goodSpec">{{item.goodSpec}}</view>
+							<view class="specifications">
+								<!-- <view class="money" wx:if="{{item.activityPrice}}">￥{{item.activityPrice}}</view>
+                <view class="money" wx:elif="{{cardType == 0}}">￥{{item.goodPrice}}</view>
+                <view class="money" wx:else>￥{{item.vipPrice}}
+                  <text style="text-decoration:line-through;font-xize:20rpx;margin-left:10rpx;color:#999">￥{{item.goodPrice}}</text>
+                </view> -->
+								<view class="money">￥{{item.vipPrice}}</view>
+
+								<!-- <view class="stockNum">剩余{{item.stockMessage.stock_num}}件</view> -->
+								<!-- <view class="originalCost">
+                  <text>￥{{item.goodPrice}}</text>
+                </view> -->
+							</view>
+						</view>
+					</view>
+					<view class="thirt">
+						<text>运费</text>
+						<view>
+							￥<text style="font-size:36rpx">{{item.freight}}</text>
+						</view>
+					</view>
+					<view class="frith">
+						<view style="color:#999999;margin-right:10rpx">共{{item.data.length}}件</view>
+						<view style="margin:0 10rpx">小计:</view>￥
+						<view style="font-size:36rpx">{{item.allMoney}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="favourable">
+			<view class="item">
+				<view>商品总额</view>
+				<view style="flex:1"></view>
+				<view class="price">￥{{totelPrice}}</view>
+			</view>
+      <view class="item" wx:if="{{list.isReductionMoney > 0}}">
+				<view>老会员立减</view>
+				<view style="flex:1"></view>
+				<view class="price">-￥{{list.isReductionMoney}}</view>
+			</view>
+			<view class="item">
+				<view>运费
+					<text style='color:#999999;'>（暂不支持港澳台及武汉地区）</text>
+				</view>
+				<view style="flex:1"></view>
+				<view class="price">￥{{totalFreight}}</view>
+			</view>
+
+			<view class="item" bindtap='coupon' style="border:none">
+				<view>优惠券</view>
+				<view style="flex:1"></view>
+				<view wx:if="{{couponList.length == 0}}" style="font-size:28rpx;font-family:PingFangSC-Regular;font-weight:400;color:rgba(153,153,153,1);">无可用</view>
+				<view wx:else class="DiscountAmount">
+					<text wx:if="{{DiscountAmount != '不使用优惠劵'}}">{{DiscountAmount}}{{Discountmoney}}元</text>
+          <text wx:else>{{DiscountAmount}}</text>				
+        </view>
+				<image src='/images/YueMall/right.png'></image>
+			</view>
+			<view class="item" bindtap='goCoulist' wx:if="{{list.isFreeGoods==1}}">
+				<view>凑单免运费
+				</view>
+				<view style="flex:1"></view>
+				<view class="price">去凑单</view>
+				<image src='/images/YueMall/right.png'></image>
+			</view>
+		</view>
+		<view wx:if="{{couponid != 0}}" style="margin-left:20rpx;margin-top:20rpx;font-size:30rpx;color:#ae0000;">提示：</view>
+		<view wx:if="{{couponid != 0}}" style="margin-left:20rpx;margin-top:20rpx;font-size:30rpx;color:#ae0000;">·优惠券一经使用概不退还</view>
+		<view style="margin-left:20rpx;margin-top:20rpx;font-size:30rpx;color:#ae0000;">{{ispay}}</view>
+
+	</scroll-view>
+
+	<!-- <view class="footr" style="padding-bottom:{{isFill?'20':''}}rpx;background-color:{{isFill?'#fff':''}}">
+    <view class="total">
+      <text style='flex:1'><text style="color:#333;font-size:32rpx">合计</text>￥{{actualPrice}}</text>
+    </view>
+    
+    <view class="settle" wx:if="{{actualPrice == 0}}" style="background-color:{{isgopay?'':'#ccc'}}" bindtap="exchangeBox">兑换</view>
+    <view class="settle" wx:else style="background-color:{{isgopay?'':'#ccc'}}" bindtap='{{isgopay?"payment":""}}'>支付</view>
+  </view> -->
+</view>
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus && couponList.length != 0}}"></view>
+<view class="commodity_attr_box" wx:if="{{showModalStatus&& couponList.length != 0}}">
+	<view class="close">
+		<view></view>
+		<view>优惠券</view>
+		<view>
+			<icon type="cancel" size="20" color="black" class="icon btn_close" data-statu="close" bindtap="hideModal" style="margin-left:5px" />
+		</view>
+	</view>
+	<view class="workability">可使用优惠券</view>
+	<scroll-view scroll-y="{{scroll}}" style="height:600rpx">
+		<view class="ite" wx:for="{{couponList}}" wx:key="couponList" wx:for-index="index">
+			<image src="/images/inviteFriends/bg.png" style="width:690rpx;height:200rpx"></image>
+			<view class="bg">
+				<view>
+					<image src='/images/inviteFriends/o.png' class='coupon'></image>
+				</view>
+				<view class="vessel" style="text-align:{{item.couponName == '不使用优惠劵'?'left':''}};width:{{item.couponName == '不使用优惠劵'?'360rpx':''}};line-height:{{item.couponName == '不使用优惠劵'?'100rpx':''}};">
+					<view class="TagName">
+						<text>{{item.couponName}}</text>
+					</view>
+					<view class="time" wx:if="{{item.couponName != '不使用优惠劵'}}">有效期截止：{{item.endtime}}</view>
+				</view>
+				<view class="operation" style="margin-left:{{item.couponName == '不使用优惠劵'?'0rpx':''}}">
+					<view class="residue" wx:if="{{item.couponName != '不使用优惠劵'}}">剩余</view>
+					<view class="cnsh" wx:if="{{item.couponName != '不使用优惠劵'}}">
+						<text class="character">{{item.couponNum}}</text>
+						<text class="unit">张</text>
+					</view>
+					<view data-couponId="{{item.couponId}}" data-couponName="{{item.couponName}}" style="" class="immediateUse" bindtap='immediateUse' data-index="{{index}}"> {{item.couponName != '不使用优惠劵'?'立即使用':'不使用'}}</view>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+
+</view>
+
+<!-- 底部 -->
+<view class="footer">
+	<text>合计：</text>
+	<text class="price">￥{{actualPrice}}</text>
+	<view class="submit" wx:if='{{goodsList.length!=0}}' bindtap='{{isgopay?"confirmSite":""}}' style="background-color:{{isgopay?'':'#ccc'}}">提交订单</view>
+</view>
+
+<!-- 兑换弹框 -->
+<view class="exchang_bg" wx:if="{{exchangeBoxShow}}"></view>
+<view class="exchange_box" wx:if="{{exchangeBoxShow}}">
+	<view class="top_box">
+		<view>请确认您选择的店主礼包，</view>
+		<view>一经兑换不可更换</view>
+	</view>
+	<view class="bot">
+		<view class="consider" bindtap="exchangeBox">再考虑一下</view>
+		<view class="sure_exchange" bindtap="exchange">确认兑换</view>
+	</view>
+</view>
+
+<!-- 确认收货地址 -->
+<view class="confirmSite" wx:if='{{confirmSiteShow}}' bindtap="closeConfirm">
+	<view catchtap='addressAdministration'>
+		<template is='colorLine'></template>
+		<view class="header">请确认收货地址</view>
+		<view class="userInfo">
+			<text class="name">{{receiverName}}</text>
+			<text wx:if="{{isDefault == 1}}" class="default">默认</text>
+			<text>{{mobile}}</text>
+		</view>
+		<view class="site" catchtap='addressAdministration'>{{address=='NaNundefined'?'暂无收货地址':address}}</view>
+		<view class="button">
+			<view class="changeSite" catchtap='addressAdministration'>修改地址</view>
+			<view class="confirm" catchtap='{{isgopay?"toPay":""}}' style="background-color:{{isgopay?'':'#ccc'}}">确定</view>
+		</view>
+	</view>
+</view>
+
+
+<!-- 弹窗组件 -->
+<view class="alert" wx:if="{{alertShow}}">
+	<!--page/payment/component/code/index.wxml-->
+	<view class="codeAlert">
+		<view class="close" bindtap="closeMyself">
+			<text class="iconfont icon-guanbi"></text>
+		</view>
+		<view class="text">输入余额密码</view>
+		<view class="inputCode">
+			<input type="number" placeholder="请输入6位密码" password="{{true}}" value="{{password}}" bindinput="setPsw"></input>
+		</view>
+		<view class="alertBt" style="{{password!=''?'':'background:rgba(153,153,153,1)'}}" bindtap="nextAlert">提交</view>
+	</view>
+</view>
+
+<!-- 支付选择弹窗 -->
+<view class="alert" style="{{alertChoseShow?'left:0rpx;z-index:1995;':'left:-750rpx'}}" bindtap="closeTypeAlert">
+	<!--page/payment/component/code/index.wxml-->
+	<view class="typeAlert" style="{{alertChoseShow?'bottom:0rpx':'bottom:-500rpx'}}">
+		<view class="title">
+			<view>支付方式</view>
+			<view bindtap="closeTypeAlert"><text class="iconfont icon-guanbi"></text></view>
+		</view>
+
+		<view class="list" data-index="1" catchtap="choseType">
+			<view class="listname">
+				<view class="img">
+					<image src="../../../../images/YueMall/wechart.png"></image>
+				</view>
+				<view class="text">微信支付</view>
+			</view>
+			<view class="chose">
+				<view>
+					<image src="../../../../images/YueMall/chose.png" wx:if="{{typeIndex=='1'?true:false}}"></image>
+				</view>
+			</view>
+		</view>
+
+		<view class="list" data-index="2" catchtap="choseType">
+			<view class="listname">
+				<view class="img">
+					<image src="../../../../images/YueMall/money.png"></image>
+				</view>
+				<view class="text">
+					余额支付 <text>(当前余额￥{{balanceMoney}})</text>
+				</view>
+			</view>
+			<view class="chose">
+				<view>
+					<image src="../../../../images/YueMall/chose.png" wx:if="{{typeIndex=='2'?true:false}}"></image>
+				</view>
+			</view>
+		</view>
+
+		<view class="topay" catchtap="payment">去支付￥{{actualPrice}}</view>
+	</view>
+</view>
+
+<!-- 新人大礼包 -->
+<view class="mask" wx:if="{{showRedPacket}}">
+    <view class="gift-box">
+        <image class="close" src="/images/YueMall/add-close.png" catchtap="hideRedPacket"></image>
+        <view class="bgs">
+            <image class="pic" src="/images/YueMall/add-red-packet.png"></image>
+            <view class="txts">
+                <view>
+                    <text
+                        >加<text style="font-size: 80rpx;"
+                            >100</text
+                        >元可得</text
+                    >
+                </view>
+                <view>两份399大礼包</view>
+            </view>
+            <view class="btns">
+                <image class="btn-left" src="/images/YueMall/add-give-up.png" catchtap="hideRedPacket"></image>
+                <image class="btn-right" src="/images/YueMall/add-hg.png" catchtap="huangou"></image>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!-- 老用户立减***元 -->
+<view class="mask" wx:if="{{addMask}}">
+    <view class="gift-box">
+        <view class="bgs">
+            <image class="pic" src="/images/YueMall/add-red-packet.png"></image>
+            <view class="txt">
+                优惠立减{{isReductionMoney}}元
+            </view>
+            <view
+                class="btns"
+                style="justify-content: center;"
+            >
+                <image class="btn-middle" src="/images/YueMall/add-get.png" catchtap="hideMask"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 新人大礼包，凑单列表及规格 -->
+<view class="mask" wx:if="{{showCoudanList}}" data-bools="{{false}}" catchtap="changeShow" >
+    <view class="list-box">
+        <view class="add-buy-title">
+            <view class="le">超值换购</view>
+            <view class="ri">
+                <text>已加购<text style="color:#E43F44"> {{hasAddBuy}} </text>(上限{{maxAddBuy}}个）</text>
+                <image class="closes" src="/images/YueMall/close.png" catchtap="hideCoudanList"></image>
+            </view>
+        </view>
+        <scroll-view style="height: 725rpx" scroll-y bindscrolltolower="loadMore">
+          <view class="list" wx:for="{{coudanList}}" wx:key="index">
+              <image class="cover" src="{{item.goodsCover}}"></image>
+              <view class="infos">
+                  <view class="tit">{{item.goodsName}}</view>
+                  <view class="bm">
+                      <view class="l">
+                          <text class="p2"><text style="font-size:24rpx">¥</text>{{item.vipPrice}}</text>
+                          <text class="p3">¥{{item.goodsPrice}}</text>
+                      </view>
+                      <view class="r" data-id="{{item.goodsSkuId}}" data-idx="{{index}}" data-bol="{{true}}" catchtap="getSkuDetailMk">加入购物车</view>
+                  </view>
+              </view>
+          </view>
+        </scroll-view>
+    </view>
+    <view class="btm">
+        <view class="shop-car" catchtap="toShopCar">
+            <view class="shop-icon">
+                <image class="pc" src="/images/YueMall/shop-car.png"></image>
+                <view class="shop-num">{{cartTotal}}</view>
+            </view>
+            <view style="text-align:center">购物车</view>
+        </view>
+        <view class="sure-btn" catchtap="toShopCar">确定</view>
+    </view>
+    <view class="sku" wx:if="{{showGoodsSku}}" data-bools="{{true}}" catchtap="changeShow" >
+        <view class="sku-tp">
+            <image class="le" src="{{coudanList[goodsIdx].goodsCover}}"></image>
+            <view class="ri">
+                <text class="t"><text class="o">¥</text>{{coudanList[goodsIdx].vipPrice}}</text>
+                
+                <text class="th">¥{{coudanList[goodsIdx].goodsPrice}}</text>
+                
+                <view class="tt">已选： {{guigeList[statusIndex].text}} {{goodsCount}}件</view>
+            </view>
+        </view>
+        
+        <view class="status-box">
+            <view class="tits">颜色分类</view>
+            <view style="height:250rpx;overflow:hidden">
+                <view class="status" style="height:250rpx;overflow:auto">
+                    <text class="{{statusIndex == index ? 'box act' : 'box'}}" wx:for="{{guigeList}}" wx:key="index" data-guige="{{item.skuList[0]}}" data-idx="{{index}}" catchtap="changeGuige">{{item.text}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="num-box">
+            <view>数量</view>
+            <view class="handles">
+                <view class="edge" catchtap="edgeCount">-</view>
+                <view class="cou">{{goodsCount}}</view>
+                <view class="add" catchtap="addCount">+</view>
+            </view>
+        </view>
+        <view class="last-btn" catchtap="addShopCar">确定</view>
+    </view>
+</view>
+<!-- wx:if="{{list.isFreeGoods==1}}" -->
+<block wx:if="{{isFreeGoods==1}}">
+		<view class="share_opo" wx:if="{{isFreeGoods==1}}">
+		<view class="share_box">
+			<view class="shareview1" bindtap="closeRedbag">
+				<image class="guanbi" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-07-28/05/yuelvhuitssvlyWkA71595884705.png"></image>
+			</view>
+			<view class="shareview2" bindtap='goCoulist'>
+				<image class="hbbanner" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-07-28/05/yuelvhuigP4AbGVnPv1595884668.png"></image>
+			</view>
+			<view class="shareview3">
+				<image class="g_btnss" bindtap='goCoulist' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-07-28/05/yuelvhuivBL0lbYUuB1595884727.png"></image>
+			</view>
+				
+				
+		</view>	
+		</view>
+</block>

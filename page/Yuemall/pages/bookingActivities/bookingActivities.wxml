@@ -1,0 +1,115 @@
+  <import src="../colorLine/colorLine.wxml" />
+  <image class="top" mode='widthFix'   src="{{actInfo.bgTop}}"></image>
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-04/17/yuelvhuialFfXP6xOV1583312705.png" class="rules" bindtap="rulesChange"></image>
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-04/15/yuelvhuil0TQGe8RPc1583306652.png" class="steps"></image>
+  <!-- <view class="rules">
+    <view class="header">预约规则：</view>
+    <view class="describe"> 预约成功后可以参与购买，每个用户仅限参与一次，同一用户3天内仅限预约一次。</view>
+  </view> -->
+  <view style="background: linear-gradient(180deg, {{actInfo.color}}, {{actInfo.endColor}});position:relative;">
+  <view class="header">
+    <view class="title" wx:if='{{actInfo.status==1}}'>距活动开始还剩</view>
+    <view class="title" wx:elif='{{actInfo.status==2}}'>活动已开始</view>
+    <view class="title" wx:elif='{{actInfo.status==3}}'>距活动已结束</view>
+    <view class="time" wx:if='{{actInfo.status==1}}'>
+      <view>{{countDownHour}}</view>
+      <view>:</view>
+      <view>{{countDownMinute}}</view>
+      <view>:</view>
+      <view>{{countDownSecond}}</view>
+    </view>
+  </view>
+
+  <view class="content" wx:for='{{goodsList}}'>
+    <view class="list" bindtap="goDetails" data-item="{{item}}">
+      <image class="left" src="{{item.goodCover}}"></image>
+      <view class="right">
+        <view class="title">{{item.goodName}}</view>
+        <view class="desc">{{item.goodsInfo}}</view>
+        <view class="num">{{item.sale_count}}人已预约</view>
+        <view class="progress">
+          <view class="line">
+            <view style="width:{{( item.count*100 / (item.restCount+item.count) )}}%"></view>
+          </view>
+          <view>还差{{item.restCount}}人</view>
+        </view>
+        <view class="bottom">
+          <view class="price">￥{{item.goodActPrice}}</view>
+          <view class="origin">{{item.goodPrice}}</view>
+          <!-- <view class="button">立即预约</view> -->
+        </view>
+      </view>
+      <image wx:if='{{item.isStock==0}}' class="gone" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-03/16/yuelvhuiD0g3Ln6eJZ1583225590.png"></image>
+    </view>
+    <!-- 活动未开始（已抢光） -->
+    <view wx:if='{{actInfo.status==1&&item.isStock==0}}' class="button buttonOver">已抢光</view>
+    <!-- 活动未开始、未预约（立即预约） -->
+    <image wx:elif='{{actInfo.status==1&&item.isReserve==0}}' data-item="{{item}}" bindtap="sure" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-04/16/yuelvhuiIUELa8qDXy1583312088.gif" class="buttonImg"></image>
+    <!-- 活动未开始、已预约 （邀请好友）-->
+    <button open-type="share" class="shareBox" wx:elif='{{actInfo.status==1&&item.isReserve==1}}'>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-04/16/yuelvhuiiOkdotd8wy1583312091.gif" class="buttonImg"></image>
+    </button>
+
+    <!-- 活动开始、已预约、邀请人够38 （订单免费拿）-->
+    <view class="button" bindtap="goOrder"   wx:if='{{actInfo.status==2&&item.isReserve==1&&item.restCount==0}}' >查看订单（助力成功）</view>
+    <!-- 活动开始、已预约、邀请人不够38、库存空（已售罄）-->
+    <view wx:if='{{actInfo.status==2&&item.isReserve==1&&item.restCount!=0&&item.isStock==0}}' class="button buttonOver">已售罄</view>
+    <!-- 活动开始、已预约、邀请人不够38、库存有（立即抢购）-->
+    <image wx:if='{{actInfo.status==2&&item.isReserve==1&&item.restCount!=0&&item.isStock!=0}}' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-04/16/yuelvhuiIFsYovScBU1583309878.gif" bindtap="goDetails"  data-item="{{item}}" class="buttonImg"></image>
+    <!-- 活动开始、未预约 （未预约，无资格）-->
+    <view wx:if='{{actInfo.status==2&&item.isReserve==0}}' class="button buttonOver">未预约，无购买资格</view>
+
+    <!-- 活动结束 -->
+    <view class="button buttonOver" wx:if='{{actInfo.status==3}}'>活动已结束</view>
+  </view>
+
+  <view class="GuessYouLike">
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-04/16/yuelvhuimnfOQekbtD1583312140.png" class="headerLike"></image>
+    <view class="LikeContent">
+      <view class="likelist" data-goodsId="{{item.goodId}}" bindtap='details' data-skuid="{{item.productSkuId}}" wx:for="{{goodinfo}}" wx:key="goodinfo">
+        <image src="{{item.goodCover}}"></image>
+        <view class="likeTitle">
+          <text>{{item.goodName}}</text>
+        </view>
+        <!-- <view class="tag">
+          <view wx:for="{{item.tag}}" wx:key="tag">{{item}}</view>
+        </view> -->
+        <view class="price">
+          <view class="vipPrice">
+            <text>¥</text>{{item.goodVipPrice}}</view>
+          <view class="OriginalPrice">
+            <text>¥{{item.goodPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="noMore">很遗憾，没有更多了～</view>
+  </view>
+  </view>
+  <!-- 规则 -->
+  <view class="rulesDetail" wx:if='{{rulesShow}}' >
+    <view>
+      <view class="title">规则说明</view>
+      <view wx:for='{{actInfo.tips}}'>
+        <view class="desc">{{item}}</view>
+      </view>
+    </view>
+    <image  bindtap="rulesChange" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-16/00/yuelvhuiHUVzLqKZLq1581785586.png"></image>
+  </view>
+  <!-- 确认收货地址 -->
+<view class="confirmSite" wx:if='{{confirmSiteShow}}'>
+  <view>
+    <template is='colorLine'></template>
+    <view class="headerH">请确认收货地址</view>
+    <view class="userInfo">
+      <text class="name">{{address.receiverName}}</text>
+      <text wx:if="{{address.isDefault == 1}}" class="default">默认</text>
+      <text>{{address.mobile}}</text>
+    </view>
+    <view class="site">{{address.proviceName}}{{address.cityName}}{{address.zoneName}}{{address.townName}}{{address.address}}</view>
+    <view class="button">
+      <view class="changeSite" bindtap='addressAdministration'>修改地址</view>
+      <view class="confirm" bindtap='sure' style="background-color:{{isgopay?'':'#ccc'}}">确定</view>
+    </view>
+  </view>
+</view>

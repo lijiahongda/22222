@@ -1,0 +1,43 @@
+
+
+<banner id="banner" inner-text="{{list}}"></banner>
+
+
+<view class="exclusive">
+  <view class="header">
+    <view class="title">专属推荐</view>  
+    <view class="choose" bindtap="choose">
+      <image class="image" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-19/14/yuelvhuiwWF7HvQR2I1576737941.png"></image>
+      <view>换一换</view>
+    </view>
+  </view>
+  <view class="ex_list">
+    <view class="list_cont" wx:for="{{exclusive}}" wx:for-index="index" wx:key="index" bindtap='Details' data-skuid="{{item.productSkuId}}" data-activityid="{{item.activityId}}" data-id="{{item.goodId}}">
+      <image src="{{item.goodCover}}"></image>
+      <view class="price">¥ <text style="font-size:38rpx">{{item.goodVipPrice}}</text></view>
+      <view class="old_price">¥{{item.goodPrice}}</view>
+    </view>
+  </view>
+</view>
+
+
+<view class="content">
+  <view class="list" wx:for="{{list}}" wx:key="list" bindtap='Details' data-skuid="{{item.productSkuId}}" data-activityid="{{item.activityId}}" data-id="{{item.goodId}}">
+    <image class="image" src="{{item.goodCover}}"></image>
+    <view class="info">
+      <view class="title">
+        <text class="discount" wx:if="{{item.isHalf}}">5折</text>{{item.goodName}}
+      </view>
+      <view class="describe">{{item.goodsInfo}}</view>
+      <!-- <view class="coupon">满{{item.goodsStock}}减{{item.goodsStock}}元</view> -->
+      <view class="pricebutton">
+        <view class="price">
+          <text class="Company">¥</text>
+          <text>{{item.goodVipPrice}}</text>
+          <text class="OriginalPrice">原价¥{{item.goodPrice}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{!isHaveMore}}" class="isHaveMore">我是有底线的～</view>

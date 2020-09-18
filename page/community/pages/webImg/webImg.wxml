@@ -1,0 +1,1 @@
+<image wx:for='{{list}}' mode='widthFix' src='{{item}}'></image>

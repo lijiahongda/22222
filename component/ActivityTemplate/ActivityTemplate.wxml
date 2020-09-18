@@ -1,0 +1,101 @@
+<block wx:for="{{activity}}" wx:key="activity">
+  <view class="headTop" wx:if="{{item.typeInfo.temType == 1}}" style="margin-bottom:{{item.typeInfo.temDownHeight}}rpx;margin-top:{{item.typeInfo.temTopHeight}}rpx">
+    <image src="{{item.goodsInfo[0].image}}" style="height:{{item.typeInfo.height}}rpx" bindtap="classificationList" data-channelid="{{item.goodsInfo[0].channelId}}" data-hotid="{{item.goodsInfo[0].id}}" data-skuid="{{item.goodsInfo[0].skuId}}" data-redirecttype="{{item.goodsInfo[0].redirectType}}"
+      data-typeid="{{item.goodsInfo[0].id}}" data-id="{{item.goodsInfo[0].id}}" data-name="{{item.goodsInfo[0].name}}"></image>
+  </view>
+
+
+
+  
+
+
+
+
+
+  <view class="footerBottom" wx:if="{{item.typeInfo.temType == 2}}">
+    <image class="bg" src="{{item.typeInfo.temBgimg}}" style="margin-bottom:{{item.typeInfo.temDownHeight}}rpx;margin-top:{{item.typeInfo.temTopHeight}}rpx;height:{{item.typeInfo.temBgHeight}}rpx"></image>
+    <view class="goodList">
+      <view class="goodposi" wx:for="{{item.goodsInfo}}" wx:key="goodsInfo">
+        <view class="list">
+          <image class="goodImage" bindtap="classificationList" data-hotid="{{item.id}}" data-skuid="{{item.skuId}}" data-redirecttype="{{item.redirectType}}" data-typeid="{{item.id}}" data-id="{{item.id}}" data-name="{{item.name}}" src="{{item.image}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="topGoods" wx:if="{{item.typeInfo.temType == 3}}" style="top:{{item.typeInfo.temTopHeight}}rpx;margin-bottom:{{item.typeInfo.temDownHeight}}rpx;">
+    <scroll-view scroll-x class='exploreViewList' scroll-with-animation="true" scroll-into-view="{{scrollId}}">
+      <view class="goodList" wx:for="{{item.goodsInfo}}" bindtap="classificationList" data-hotid="{{item.id}}" data-skuid="{{item.skuId}}" data-redirecttype="{{item.redirectType}}" data-typeid="{{item.id}}" data-id="{{item.id}}" data-name="{{item.name}}" wx:key="goodList">
+        <image class="goodListImage" src="{{item.image}}"></image>
+        <view class="name">
+          <text>{{item.goodsName}}</text>
+        </view>
+        <view class="goodListtext">
+          <view class="ConcessionalRate">¥
+            <text>{{item.vipPrice}}</text>
+          </view>
+          <view class="OriginalPrice">
+            <text>¥{{item.goodsPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- <view class="ActivityModule" wx:if="{{item.typeInfo.temType == 4}}" style="margin-top:{{item.typeInfo.temTopHeight}}rpx;margin-bottom:{{item.typeInfo.temDownHeight}}rpx;">
+    <view class="Spike" style="background-image:url({{item.goodsInfo[0].image}})" bindtap='classificationList' data-redirecttype="{{item.goodsInfo[0].redirectType}}" data-id="{{item.goodsInfo[0].id}}" data-hotid="{{item.goodsInfo.id}}" data-name="{{item.goodsInfo.name}}">
+    </view>
+    <view class="GoodGoods" data-hotid="{{item.goodsInfo[1].id}}" data-name="{{item.goodsInfo[1].name}}" bindtap='classificationList' data-url="/hd/assemble" data-title="拼团" data-id="{{item.goodsInfo[1].id}}" data-redirecttype="{{item.goodsInfo[1].redirectType}}"
+      style="background-image:url({{item.goodsInfo[1].image}})"></view>
+    <view class="Chop">
+      <view class="Assemble" style="background-image:url({{item.goodsInfo[2].image}})" bindtap='classificationList' data-id="{{item.goodsInfo[2].id}}" data-redirecttype="{{item.goodsInfo[2].redirectType}}"></view>
+      <view class="Assemble" data-hotid="{{item.goodsInfo[3].id}}" style="background-image:url({{item.goodsInfo[3].image}})" bindtap='classificationList' data-id="{{item.goodsInfo[3].id}}" data-redirecttype="{{item.goodsInfo[3].redirectType}}" data-name="{{item.goodsInfo[3].name}}"></view>
+    </view>
+    <view class="Chop">
+      <view class="Assemble" data-hotid="{{item.goodsInfo[4].id}}" style="background-image:url({{item.goodsInfo[4].image}})" bindtap='classificationList' data-id="{{item.goodsInfo[4].id}}" data-redirecttype="{{item.goodsInfo[4].redirectType}}" data-name="{{item.goodsInfo[4].name}}"></view>
+      <view class="Assemble" style="background-image:url({{item.goodsInfo[5].image}});border:0rpx" bindtap='classificationList' data-redirecttype="{{item.goodsInfo[5].redirectType}}" data-url="/hd/bargainLists" data-id="{{item.goodsInfo[5].id}}" data-title="砍价"></view>
+    </view>
+  </view> -->
+  <view class="ActivityModule" wx:if="{{item.typeInfo.temType == 4}}" style="margin-top:{{item.typeInfo.temTopHeight}}rpx;margin-bottom:{{item.typeInfo.temDownHeight}}rpx;">
+    <view class="Spike" style="background-image:url({{item.goodsInfo[0].image}})" bindtap='classificationList' data-redirecttype="{{item.goodsInfo[0].redirectType}}" data-id="{{item.goodsInfo[0].id}}" data-hotid="{{item.goodsInfo[0].id}}" data-name="{{item.goodsInfo[0].name}}">
+    </view>
+    <view class="GoodGoods" data-hotid="{{item.goodsInfo[1].id}}" data-name="{{item.goodsInfo[1].name}}" bindtap='classificationList' data-id="{{item.goodsInfo[1].id}}" data-redirecttype="{{item.goodsInfo[1].redirectType}}" style="background-image:url({{item.goodsInfo[1].image}})"></view>
+    <view class="Chop">
+      <!-- <view class="Assemble" style="background-image:url({{item.goodsInfo[2].image}})" bindtap='classificationList' data-id="{{item.goodsInfo[2].id}}" data-redirecttype="{{item.goodsInfo[2].redirectType}}"></view> -->
+    </view>
+
+    <view class="Chop">
+      <image class="Assemble" data-hotid="{{item.goodsInfo[2].id}}" src="{{item.goodsInfo[2].image}}" style="margin-right:10rpx" bindtap='classificationList' data-id="{{item.goodsInfo[2].id}}" data-redirecttype="{{item.goodsInfo[2].redirectType}}" data-name="{{item.goodsInfo[2].name}}"></image>
+      <image class="Assemble" data-hotid="{{item.goodsInfo[3].id}}" src="{{item.goodsInfo[3].image}}" style="margin-right:10rpx" bindtap='classificationList' data-id="{{item.goodsInfo[3].id}}" data-redirecttype="{{item.goodsInfo[3].redirectType}}" data-name="{{item.goodsInfo[3].name}}"></image>
+      <image class="Assemble" src="{{item.goodsInfo[4].image}}" bindtap='classificationList' data-redirecttype="{{item.goodsInfo[4].redirectType}}" data-id="{{item.goodsInfo[4].id}}" data-hotid="{{item.goodsInfo[4].id}}"></image>
+    </view>
+  </view>
+  <view class="Template" wx:if="{{item.typeInfo.temType == 5}}" style="margin-bottom:{{item.typeInfo.temDownHeight}}rpx;margin-top:{{item.typeInfo.temTopHeight}}rpx">
+    <view class="right">
+      <image style="border-top-right-radius:10rpx" bindtap='classificationList' wx:for="{{item.goodsInfo}}" data-channelid="{{item.channelId}}" data-hotid="{{item.id}}" data-skuid="{{item.skuId}}" data-redirecttype="{{item.redirectType}}" data-typeid="{{item.id}}" data-id="{{item.id}}" data-name="{{item.name}}" src="{{item.image}}"></image>
+    </view>
+  </view>
+  <view class="brand" wx:if="{{item.typeInfo.temType == 6}}" style="margin-bottom:{{item.typeInfo.temDownHeight}}rpx;margin-top:{{item.typeInfo.temTopHeight}}rpx">
+    <view class="title">甄选品牌</view>
+    <view class="listImage">
+      <scroll-view scroll-x scroll-into-view="{{intoView}}" bindscroll="bindscroll" scroll-left="{{scrollleft}}">
+        <image src="{{item.image}}" data-id="{{item.id}}" data-redirecttype="{{item.redirectType}}" data-name="{{item.name}}" croll-with-animation="true" wx:for-index="index" wx:for="{{item.goodsInfo}}" wx:key="image" id="d{{index}}" catchtap='classificationList'></image>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="active_six" wx:if="{{item.typeInfo.temType == 7}}" style="margin-bottom:{{item.typeInfo.temDownHeight}}rpx;margin-top:{{item.typeInfo.temTopHeight}}rpx">
+    <view class="six_top">
+      <view class="six_top_img" wx:for="{{item.goodsInfo}}" wx:for-index="index" wx:for-item="items" wx:key="index" wx:if="{{index<3}}">
+        <image mode="scaleToFill" src="{{items.image}}" bindtap="classificationList" data-channelid="{{items.channelId}}" data-hotid="{{items.id}}" data-skuid="{{items.skuId}}" data-redirecttype="{{items.redirectType}}" data-typeid="{{items.id}}" data-id="{{items.id}}" data-name="{{items.name}}"></image></view>
+
+    </view>
+
+    <view class="six_bottom" style="height:136rpx;">
+      <view class="six_img" wx:for="{{item.goodsInfo}}" wx:for-index="index" wx:for-item="items" wx:key="index" wx:if="{{index>=3 && index<7}}">
+        <image mode="scaleToFill" src="{{items.image}}" bindtap="classificationList" data-channelid="{{items.channelId}}" data-hotid="{{items.id}}" data-skuid="{{items.skuId}}" data-redirecttype="{{items.redirectType}}" data-typeid="{{items.id}}" data-id="{{items.id}}" data-name="{{items.name}}"></image>
+      </view>
+    </view>
+    <view class="six_bottom">
+      <view class="six_img" wx:for="{{item.goodsInfo}}" wx:for-index="index" wx:for-item="items" wx:key="index" wx:if="{{index>=7 && index<11}}">
+      <image mode="scaleToFill" src="{{items.image}}" bindtap="classificationList" data-channelid="{{items.channelId}}" data-hotid="{{items.id}}" data-skuid="{{items.skuId}}" data-redirecttype="{{items.redirectType}}" data-typeid="{{items.id}}" data-id="{{items.id}}" data-name="{{items.name}}"></image></view>
+    </view>
+  </view>
+</block>

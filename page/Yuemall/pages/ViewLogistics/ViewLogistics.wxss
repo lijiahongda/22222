@@ -1,0 +1,111 @@
+/* page/Yuemall//pages/ViewLogistics/ViewLogistics.wxss */
+page{
+  background-color: #fff;
+}
+.ItemRight {
+  display: flex;
+  flex-direction: row;
+}
+.ItemRight .image {
+  margin-right: 3.4%;
+  width: 24.9%;
+}
+
+.ItemRight .image image {
+  width: 100%;
+  height: 187rpx;
+}
+.describe {
+  display: flex;
+  flex-direction: column;
+  width: 71%;
+}
+
+.describe .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 17rpx;
+}
+
+.describe .title text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.describe .price {
+  font-size: 30rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 26rpx;
+}
+
+.describe .price text {
+  font-size: 20rpx;
+}
+.Specifications {
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(128, 128, 128, 1);
+  margin-bottom: 22rpx;
+}
+.LogisticsInfo {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 4%;
+  padding-right: 4%;
+  width: 92%;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(48, 48, 48, 1);
+  line-height: 52rpx;
+  margin-bottom: 20rpx;
+  border-bottom: 20rpx solid #eee
+}
+
+.LogisticsDetail {
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 42rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(48, 48, 48, 1);
+  background-color: #fff;
+}
+
+.LogisticsDetail .list {
+  display: flex;
+  flex-direction: column;
+  width: 82.8%
+}
+
+.LogisticsDetail .list .title {
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(48, 48, 48, 1);
+  margin-bottom: 24rpx;
+}
+
+.LogisticsDetail .list .time {
+  font-size: 24rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: rgba(48, 48, 48, 1);
+  margin-bottom: 25rpx;
+}

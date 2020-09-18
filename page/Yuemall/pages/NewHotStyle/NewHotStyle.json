@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "coupon": "/component/coupon/coupon",
+    "NewHotStyle": "/component/NewHotStyle/NewHotStyle"
+  },
+  "navigationBarTextStyle": "black"
+}

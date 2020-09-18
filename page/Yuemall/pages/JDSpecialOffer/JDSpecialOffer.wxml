@@ -1,0 +1,2 @@
+
+<jdCom id="jdCom"  bind:myevent="onMyEvent" inner-text="{{list}}"></jdCom>

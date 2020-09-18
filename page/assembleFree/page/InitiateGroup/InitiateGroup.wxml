@@ -1,0 +1,189 @@
+<!--page/Mall/pages/InitiateGroup/InitiateGroup.wxml-->
+<block wx:if="{{teamStatus == 1}}">
+  <!-- <block > -->
+  <view class="CountDown">
+    <view class="colon">本团剩余：</view>
+    <view class="list">{{countDownDay}}</view>
+    <view class="colon">天</view>
+    <view class="list">{{countDownHour}}</view>
+    <view class="colon">时</view>
+    <view class="list">{{countDownMinute}}</view>
+    <view class="colon">分</view>
+    <view class="list">{{countDownSecond}}</view>
+    <view class="colon">秒</view>
+    <!-- <view class="tips1">后拼团过期</view> -->
+  </view>
+</block>
+
+<view class="NumberGroups">
+  <view class="commander">
+    <image class="headH" src="{{headH}}"></image>
+    <view class="logo">
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-05/16/yuelvhuiIKxgx1SXS01580891424.png"></image>团长
+    </view>
+  </view>
+  <!-- 拼团成功 -->
+  <view wx:if="{{teamStatus == 4}}" class="title">恭喜你，开团成功！</view>
+  <view wx:if="{{teamStatus == 4}}" class="tips">我们会尽快安排发货，请耐心等待</view>
+  <!-- 拼团失败 -->
+  <!-- <view wx:elif="{{teamStatus == 3 || teamStatus == 4}}" class="title">很遗憾，参团失败！</view>
+  <view wx:if="{{teamStatus == 3 ||  teamStatus == 4}}" class="tips">支付金额将在3-5个工作日原路退还，请耐心等待！</view> -->
+  <view wx:elif="{{teamStatus == 3 }}" class="title">很遗憾，参团失败！</view>
+  <view wx:if="{{teamStatus == 3 }}" class="tips">支付金额将在3-5个工作日原路退还，请耐心等待！</view>
+  <!-- 分享进入参团结束 -->
+  <!-- <view wx:if="{{teamStatus == 3}}" class="title">本团已结束，请重新开团！</view>
+  <view wx:if="{{teamStatus == 3}}" class="tips">重新开团成为团长，免费白拿</view> -->
+  <!-- 分享进入拼团完成结束 -->
+  <!-- <view wx:if="{{teamStatus == 2}}" class="title">本团人数已满，请重新开团！</view>
+  <view wx:if="{{teamStatus == 2}}" class="tips">重新开团成为团长，免费白拿</view> -->
+
+  <view class="title" wx:if="{{teamStatus == 2}}">
+    恭喜您拼单成功
+  </view>
+  <!-- <view class="title" wx:elif="{{teamStatus == 3}}">
+    该团未能按时凑齐人数，拼单失败 -->
+  <!-- </view> -->
+  <!-- <view class="title" wx:elif="{{isfail == 'fail'}}">
+    拼单失败
+  </view> -->
+  <view class="titleH" wx:if="{{teamStatus == 1}}">
+    还差
+    <text class="titleHtext"> {{(productInfo.needer - productInfo.joins)}}人 </text> 超值商品免费到手！
+  </view>
+  <view class="HeadPortrait">
+    <view class="image" wx:for="{{team}}" wx:key="team">
+      <image class="head" src="{{item.headpic}}" bindtap='ImmediateDelegation'></image>
+      <!-- <image class="RegimentalCommander" wx:if="{{item.type == 1}}" src="/images/YueMall/RegimentalCommander.png"></image> -->
+    </view>
+  </view>
+  <!-- <block wx:if="{{teamStatus !=2 }}"> -->
+  <!-- 是否已参团 -->
+  <block wx:if="{{isInTeam == 1}}">
+    <button open-type='share' wx:if="{{teamStatus == 1}}">
+      <view class="InviteFriends">邀请好友参团</view>
+    </button>
+    <button bindtap='goOn' data-teamStatus="3" data-id="{{productInfo.team_id}}" data-skuid="{{productInfo.sku_id}}" wx:if="{{teamStatus == 2}}">
+      <view class="InviteFriends">继续开团</view>
+    </button>
+    <button bindtap='goOn' data-teamStatus="2" data-id="{{productInfo.team_id}}" data-skuid="{{productInfo.sku_id}}" wx:if="{{teamStatus == 3 ||  teamStatus == 4 }}">
+      <view class="InviteFriends">再次开团</view>
+    </button>
+  </block>
+  <block wx:else >
+    <view class="InviteFriends" bindtap="IwantCan" style="margin-top:20rpx">我要参团</view>
+  </block>
+  <!-- <block wx:if="{{teamStatus == 2}}">
+    <view class="Success">
+      <view class="lookorder" bindtap='lookorder'>查看订单</view>
+      <view class="MoreBenefits" bindtap='MoreBenefits'>领取更多福利</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view style='height:55rpx;'></view>
+  </block> -->
+  <!-- <view class="orderDetail" bindtap='orderDetail'>
+    <view class="">订单详情</view>
+    <view class="info">
+      <view style='width:95%'>
+        <text>{{productInfo.goods_name}}</text>
+      </view>
+      <image src="/images/YueMall/roow.png"></image>
+    </view>
+  </view> -->
+  <!-- <view class="OrderRules">
+    <view>订单规则</view>
+    <view>好友拼单 · 人满发货 · 人不满退款</view>
+  </view> -->
+  <image wx:if="{{teamStatus == 2}}" src="/images/YueMall/Success.png" class="SuccessImage"></image>
+</view>
+
+<!-- <view class="goodInfo" wx:if="{{(Entrance =='b') || (Entrance == 'h')}}"> -->
+<view class="goodInfo">
+  <view style="position:relative;">
+    <image src="{{productInfo.goods_img}}"></image>
+    <image class="free" wx:if="{{1==1}}" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-05/15/yuelvhuiZrEwq1YWgc1580889316.png"></image>
+    <view class="status statusS" wx:if="{{teamStatus==1}}">拼团中...</view>
+    <view class="status statusS" wx:if="{{teamStatus==4}}">拼团成功</view>
+    <view class="status statusf" wx:if="{{teamStatus==3}}">拼团失败</view>
+  </view>
+  <view class="info">
+    <view class="title">
+      <text>{{productInfo.goods_name}}</text>
+    </view>
+    <view class="groupInfo">
+      <!-- <view class="title">{{productInfo.needer}}人拼团仅需：</view>
+      <view class="price">¥{{productInfo.team_price}}</view> -->
+      <!-- <text style="font-size:24rpx;color:#999;">人拼团仅需</text> -->
+    </view>
+    <view class="OriginalPrice">
+      <view class="gpriceB">
+        ¥
+        <text class="gPrice">{{productInfo.team_price}}</text>
+      </view>
+      <view class="OriginalPriceH">
+        ¥{{productInfo.origin_price}}
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 拼团规则 -->
+<view class="rule">
+  <image src="{{ruleImg}}"></image>
+</view>
+
+<!-- 猜你喜欢 -->
+<view class="list_title">
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-20/16/yuelvhui3FWrQrWAln1576830924.png"></image>
+  <view class="title_shop">推荐商品 </view>
+  <view class="title_like">猜你喜欢</view>
+</view>
+<lineTwoListFlow id="lineTwoListFlow" inner-text="{{list}}"></lineTwoListFlow>
+
+<!-- 规格 -->
+<view class="commodity_screen" bindtap="hideModal" catchtouchmove="disMove" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" catchtouchmove="disMove" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class="close" data-statu="close" bindtap="hideModal">
+    <image src="/images/YueMAll/close.png" style="width:26rpx;height:24rpx"></image>
+  </view>
+  <view class="commodity" style="">
+    <view class="images" style="background-color:#fff">
+      <image src="{{boxbanner}}" data-src="{{Specificationsimg}}" catchtap="imgYu" data-list="{{bannerItem}}"></image>
+    </view>
+    <view class="describe">
+      <view class="money">
+        <view style="color:#FF5012;margin-right:30rpx">￥
+          <text style="font-size:40rpx">{{productInfo.team_price}}</text>
+        </view>
+        <view>官网价￥{{productInfo.origin_price}}</view>
+      </view>
+      <view class="specification">
+        <text>商品编号：{{skuid}}</text>
+      </view>
+    </view>
+  </view>
+  <scroll-view scroll-y style="height: 378px;">
+    <view class="size" wx:for="{{colorSize}}" style="margin-top:{{isSale.saleState == 0?'124rpx':''}}" wx:for-index="idx" wx:key="colorSize" wx:for-item="colorSize" data-idx="{{idx}}">
+      <view class="sizeName">{{colorSize.title}}</view>
+      <view class="channelContent">
+        <view data-aaa="{{item.isEnable}}" class="{{statusArr[idx] == index?'active':''}}" wx:for="{{colorSize.buttons}}" wx:key="label" data-index='{{index}}' data-idx="{{idx}}" data-name="{{item.text}}" bindtap='{{item.isEnable?"swichLabel":""}}' data-sku="{{item.skuList}}">
+          <text class="{{item.isEnable?'':'NotOptional'}}">{{item.text}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="amount">
+      <view class="sizeName">数量</view>
+      <view class="regulation">
+        <view class="subtract" bindtap='subtract' data-num="{{amountNumber}}">-</view>
+        <view class="amountNumber">{{amountNumber}}</view>
+        <view class="addNumber" bindtap='addNumber' data-num="{{amountNumber}}">+</view>
+      </view>
+    </view> -->
+  </scroll-view>
+  <view style="position:absolute;bottom:0;width:100%">
+    <view class="operationButton">
+      <view class="SeparatePurchase" bindtap='sure'>
+        <view class="">确定</view>
+      </view>
+    </view>
+  </view>
+</view>

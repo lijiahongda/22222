@@ -1,0 +1,289 @@
+.LyingEarn {
+  color: #FF6032;
+  border: 1px solid #FF6032;
+  font-size: 22rpx;
+  padding:2rpx 4rpx;
+  border-radius: 8rpx;
+  display:inline-block;
+  flex-direction: row;
+  margin-top: 10rpx;
+  margin-right: 10rpx;
+}
+
+.LyingEarn text {
+  font-size: 30rpx;
+}
+
+.dailySpecialContent {
+  background-color: 3f8f8f8;
+  width: 100%;
+}
+
+.swiper-box {
+  width: 100%;
+  height: 400rpx;
+  background-color: gray;
+}
+
+.swiper-box .image {
+  width: 100%;
+  height: 400rpx;
+  display: block;
+}
+
+.swiper-box .wx-swiper-dots.wx-swiper-dots-horizontal {
+  margin-bottom: 2rpx;
+}
+
+.swiper-box .wx-swiper-dot {
+  width: 18rpx;
+  display: inline-flex;
+  height: 4rpx;
+  margin-left: 2rpx;
+  justify-content: space-between;
+}
+
+.swiper-box .wx-swiper-dot::before {
+  content: '';
+  flex-grow: 1;
+  background: rgb(255, 255, 255);
+  border-radius: 8rpx;
+}
+
+.swiper-box .wx-swiper-dot-active::before {
+  background: rgb(238, 121, 72);
+}
+
+.list {
+  display: flex;
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 20rpx;
+}
+
+.list image {
+  width: 262rpx;
+  height: 260rpx;
+}
+
+.originalCost {
+  color: rgb(153, 153, 153);
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+}
+
+.originalCost text {
+  text-decoration: line-through;
+}
+
+.memberPrice {
+  color: rgb(185, 24, 50);
+  font-size: 34rpx;
+  margin-bottom: 10rpx;
+}
+
+.Price {
+  font-size: 24rpx;
+  color: rgb(51, 51, 51);
+}
+
+.listContent {
+  margin-left: 8%;
+}
+
+.name {
+  margin-bottom: 10rpx;
+  margin-top: 40rpx;
+  color: rgb(51, 51, 51);
+  font-size: 28rpx;
+}
+
+.attribute {
+  width: 76rpx;
+  height: 32rpx;
+  background-color: #ed8f66;
+  color: #fff;
+  line-height: 32rpx;
+  text-align: center;
+  border-radius: 4rpx;
+  margin-top: 10rpx;
+  font-size: 22rpx;
+  margin-right: 3%;
+}
+
+.attributeContent {
+  display: flex;
+  flex-direction: row;
+}
+
+.Notice {
+  height: 100rpx;
+  width: 95%;
+  padding-left: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  border-top: 1px solid #ececec;
+}
+
+.Notice image {
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.dailySpecial {
+  /* margin-top: 20rpx; */
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-size: 100%;
+}
+
+.dailySpecial .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(51, 51, 51);
+  font-size: 32rpx;
+  margin-bottom: 27rpx;
+}
+
+.dailySpecial .title .titleLeft {
+  width: 67%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #ff6032;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.dailySpecial .title .titleLeft image {
+  margin-right: 3%;
+}
+
+.dailySpecial .title .myWallet {
+  width: 7rpx;
+  height: 34rpx;
+}
+
+.ContentArea {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 94%;
+  padding-left: 3%;
+  justify-content: space-between;
+  margin-top: 27rpx;
+}
+
+.ContentArea .item {
+  width:49%;
+  background-color: #fff;
+  box-shadow:0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.ContentArea .item image {
+  width: 100%;
+  height: 329rpx;
+  background-color: #f4f4f4;
+}
+
+.ContentArea .item .itemInfo .title {
+  color: #333;
+  font-size: 24rpx;
+  margin-bottom: 22rpx;
+}
+
+.shopImageLeft {
+  position: relative;
+}
+
+.dContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  bottom: 6rpx;
+  right: 0;
+}
+
+.posi {
+  /* position: absolute; */
+  bottom: 0;
+  right: 0;
+  background-color: #ff6032;
+  background: linear-gradient(120deg, transparent 2em, #ff6032 0);
+  padding-left: 50rpx;
+}
+
+.posi text {
+  /* position: absolute; */
+  bottom: 6rpx;
+  right: 8rpx;
+  font-size: 22rpx;
+  color: #fff;
+  margin-left: 20rpx;
+  margin-top: 24rpx;
+}
+.itemInfo{
+  width: 96%;
+  padding-left:4%;
+}
+.Label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12rpx;
+  margin-top: 12rpx;
+  height: 17rpx;
+}
+
+.Label view {
+  background-color: #f36032;
+  border-radius: 4rpx;
+  padding: 5rpx;
+  font-size: 18rpx;
+  color: #fff;
+  margin-right: 5rpx;
+}
+
+.price {
+  font-size: 24rpx;
+  color: rgb(153, 153, 153);
+  display: flex;
+  flex-direction: row;
+  line-height: 36rpx;
+  /* width: 50%; *//* justify-content: flex-end ;
+  align-items: center */
+}
+
+.price .MonasteryPrice {
+  color: rgb(243, 111, 90);
+  line-height: 36rpx;
+}
+
+.price .MonasteryPrice text {
+  font-size: 42rpx;
+}
+
+.price .OriginalPrice text {
+  text-decoration: line-through;
+}
+
+.more {
+  width: 210rpx;
+  height: 68rpx;
+  border: 1px solid #ff6032;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+  margin: auto;
+  color: #ff6032;
+  line-height: 68rpx;
+  text-align: center;
+  margin-top: 78rpx;
+}

@@ -1,0 +1,95 @@
+.comment{
+  width: 750rpx;
+  padding: 30rpx 24rpx;
+  box-sizing: border-box;
+  border-radius: 18rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.comment .header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #141414;
+  font-size: 28rpx;
+  margin-bottom: 40rpx;
+}
+.comment .header .right{
+  color: #999999;
+  font-size: 26rpx;
+  padding-right: 12rpx;
+  display: flex;
+  align-items: center;
+}
+.comment .header .right image{
+  width: 16rpx;
+  height: 26rpx;
+  margin-left: 12rpx;
+}
+.comment .list{
+  width: 100%;
+  margin-top: 20rpx;
+}
+.comment .list .buyDetail{
+  width: 100%;
+  display: flex;
+}
+.buyDetail > image{
+  width:68rpx;
+  height: 68rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.buyDetail > view .nameStar{
+  display: flex;
+  align-items: center;
+  color: #141414;
+  font-size: 28rpx;
+  min-height: 40rpx;
+}
+.buyDetail > view .nameStar view{
+  margin-right: 12rpx;
+}
+.buyDetail > view .nameStar image{
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 4rpx;
+}
+.buyDetail > view .nameStar + view{
+  color: #999999;
+  font-size: 24rpx;
+}
+.commentText{
+  color: #141414;
+  font-size: 26rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  padding: 30rpx 0rpx;
+}
+.commentImg{
+  width: 184rpx;
+  height: 184rpx;
+  border-radius: 18rpx;
+  margin-right: 16rpx;
+}
+.share{
+  width:140rpx;
+  height:60rpx;
+  background:rgba(239,54,5,1);
+  border-radius:29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+}
+.share image{
+  width:40rpx;
+  height:40rpx;
+}

@@ -1,0 +1,9 @@
+/* page/other/pages/playbackDetail/playbackDetail.wxss */
+video{
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width:750rpx;
+  height:100%;
+}

@@ -1,0 +1,62 @@
+<view class="cardDetails">
+  <view class="AllianceCard">
+
+    <view class="topImage" wx:if="{{give == 0}}" style="background-image: url({{cardImageBg}});">
+      <view class="CardName">
+        <view>{{mainTitle}}</view>
+        <view class="CardText">刷卡入园免排队</view>
+      </view>
+      <view class="CardCont">{{mainDescOne}}</view>
+      <view class="CardCont">{{subDesc}}</view>
+      <view class="introduce" style='color:#FF6032;' bindtap='ImmediatelyReceive'>会员免费领取</view>
+    </view>
+
+    <view class="topImage" wx:if="{{give != 0}}" style="background-image: url({{cardImageBg}});">
+      <view class="CardName">{{mainTitle}}</view>
+      <view class="CardInfo" wx:if="{{number != '' && pwd != ''}}">卡号: {{number}} 密码: {{pwd}}</view>
+      <view class="CardCont">{{mainDescOne}}</view>
+      <view class="CardCont">{{subDesc}}</view>
+      <view class="CardTime">刷卡入园免排队</view>
+      <view class="introduce" style='color:#FF6032;'> {{give == 1 ? '已领取' : '等待发放'  }}</view>
+    </view>
+
+
+  </view>
+  <view class="briefIntroduction">
+    <view class="item">
+      <view class="name">
+        <view>简介</view>
+      </view>
+      <view class="briefIntroductionContent">{{bodyDesc}}</view>
+    </view>
+    <view class="item">
+      <view class="name">
+        <view class="">如何激活年卡</view>
+      </view>
+      <view class="briefIntroductionContent" wx:for="{{activ}}" wx:key="*this">{{item}}</view>
+    </view>
+    <view class="item">
+      <view class="name">
+        <view class="">规则</view>
+      </view>
+      <view class="briefIntroductionContent" wx:for="{{use}}" wx:key="index">{{item}}</view>
+    </view>
+    <view class="item">
+      <view class="name">
+        <view class="">官方联系方式</view>
+      </view>
+      <view class="briefIntroductionContent" wx:key="*this">{{contact[0]}}</view>
+      <view class="briefIntroductionContent" wx:key="*this">{{contact[1]}}</view>
+      <view class="briefIntroductionContent" bindtap='calltel' data-tel="{{tel}}">电话：{{tel}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="noMember" wx:if="{{noMember}}">
+    <view class="noMemberCont">
+      <image class="noMemberImg" src="{{noMemberImg}}"></image>
+      <view class="refused" bindtap='refused'>残忍拒绝</view>
+      <view class="accept" bindtap='accept'>升级，领年卡</view>
+      <view class="colseNomember" bindtap='colseNomember'>×</view>
+    </view>
+  </view>

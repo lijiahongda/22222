@@ -1,0 +1,11 @@
+<template name="GiftPackagePopup">
+  <!-- 填写地址领礼包 -->
+  <view class="commodity_screenlong" bindtap="hideModal"></view>
+  <view bindtap='hideModal' class="commodity_attr_boxlong">
+    <image src="https://image.yuelvhui.com/pubfile/2019/10/28/line_1572271861_83754.png" class="close" bindtap="close"></image>
+    <view class="content">
+      <view>请填写地址，领取您的礼包</view>
+      <view class="sure" bindtap="sure">立即填写</view>
+    </view>
+  </view>
+</template>

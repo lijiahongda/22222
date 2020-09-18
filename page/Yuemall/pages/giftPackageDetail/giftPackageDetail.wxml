@@ -1,0 +1,70 @@
+<import src="../colorLine/colorLine.wxml" />
+<view class="orderDetails">
+  <view class="userInfo">
+    <view class="userInfoContent">
+      <view class="info">
+        <view class="name">{{linkName}}</view>
+        <view class="phone">{{linkTel}}</view>
+      </view>
+      <view class="location">
+        <view class="defaultContent"> </view>
+        <view class="site">
+          <view class="address">{{address}}</view>
+          <view class="image"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <template is="colorLine" />
+  <view class="goods">
+    <view class="goodsTop">
+      <view class="goodsTopImage">订单信息</view>
+    </view>
+    <view class="order">
+      <view class="orderNum">
+        订单编号:
+        <text> {{ordersn}}</text> </view>
+      <view class="orderNum">
+        下单时间:
+        <text> {{createTime}}</text> </view>
+    </view>
+    <view class="borderBottom">
+      <view class="ItemRight">
+        <view class="image">
+          <image src="{{goodsImg}}"></image>
+        </view>
+        <view class="describe">
+          <view class="title">
+            <text>{{goodsName}}</text>
+          </view>
+          <view class="price">
+            ￥{{goodsPrice}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="Specifications">
+    <view>已选规格 {{goodsSpec}}</view>
+  </view>
+  <!-- 物流信息 -->
+  <!-- 普通物流 -->
+  <view class="GeneralLogistics">
+    <view class="item">
+      <text>物流单号：</text>
+      <text>{{logisticeNum}}</text>
+    </view>
+    <view class="item">
+      <text>物流公司：</text>
+      <text>{{logisticeCompany}}</text>
+    </view>
+  </view>
+</view>
+<view class="footer">
+  <view class='remind'>{{remind}}</view>
+  <!-- wx:if="{{orderStatus == 0 ||refundButtonType == 1}}" -->
+  <view class="ReceivingGoods" bindtap='ConfirmReceipt' data-orderson="{{ordersn}}" wx:if="{{orderStatus == 0 ||refundButtonType == 1}}">
+    <view class="ReceivingGoods" wx:if="{{orderStatus == 0 }}">确认收货</view>
+    <view class="ReceivingGoods" data-item="{{goods}}" wx:if="{{refundButtonType == 1}}" bindtap="{{refundButtonType == 3?'aftersaleProgree':'apply'}}">{{refundButtonText}}</view>
+  </view>
+</view>

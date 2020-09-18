@@ -1,0 +1,56 @@
+<!--page/Yuemall/pages/JDList/JDList.wxml-->
+<view class="{{scrollTop>50 ? 'topnav' : ''}}">
+  <view class="tab-h hide{{showView?'show':''}}" wx:if="{{goodsType.length >1}}">
+    <scroll-view scroll-x class='exploreViewList' scroll-with-animation="true" scroll-into-view="{{scrollId}}">
+      <view id="{{'d'+item.goodTypeId}}" wx:for="{{goodsType}}" wx:key="goodsType" class="tab-item {{currentTab==item.goodTypeId?'active':''}}" data-current="{{item.goodTypeId}}" bindtap="swichNav">{{item.goodTypeName}}
+      </view>
+    </scroll-view>
+    <view class="tabImage" style="width:{{ArrowWidth}}" bindtap='cutImage'>
+      <image src="/images/YueMall/bottom.png" class="hide{{showView?'show':''}}"></image>
+    </view>
+  </view>
+</view>
+<view class="RushToBuy">
+  <view class="Rushitem" wx:for="{{list}}" wx:if="{{list.length!=0}}" wx:key="flashStateitem" data-goodsId="{{item.goodId}}" bindtap='details' data-skuid="{{item.skuId}}">
+    <view>
+      <image class="Rushimage" style="width:240rpx;height:240rpx;" src="{{item.goodCover}}"></image>
+    </view>
+    <view class="RushInfo">
+      <view class="goodName">
+        <text>{{item.goodName}}</text>
+      </view>
+      <view style="height:130rpx;display:flex;flex-direction:column;justify-content: flex-end">
+        <view class="price">
+          <view style="color:#FD6974;margin-right:20rpx;">会员价￥
+            <text style="font-size:30rpx">{{item.goodVipPrice}}</text>
+          </view>
+          <view decode='true' style="coclor:#999">{{item.priceName}}￥{{item.goodPrice}}</view>
+        </view>
+        <!-- <view class="" style="  display: flex;flex-direction: row;flex-wrap: wrap">
+          <view class="LyingEarn" wx:if="{{item.shareMoney != 0}}">自购省￥{{item.deduc}}</view>
+          <view class="LyingEarn" wx:if="{{item.shareMoney != 0}}">分享赚￥{{item.shareMoney}}</view>
+        </view> -->
+        <view style=" display: flex;flex-direction: row;align-items: center;">
+          <view class="Label" style="margin-top:10rpx;margin-left:10rpx;">
+            <view wx:if="{{item.tag.length != 0}}" wx:for="{{item.tag}}" wx:key="tag">{{item.label_name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{list.length==0}}" style='width:100%;text-align:center;margin-top:100rpx'>暂无记录</view>
+</view>
+<!-- 全部频道 -->
+<!-- <view class="commodity_screen hide{{showView?'':'show'}}" bindtap='cutImage' catchtouchmove="disMove"></view> -->
+<view class="hide{{showView?'':'show'}} channel" catchtouchmove="disMove">
+  <view class="title">
+    <text>全部频道</text>
+    <view style='flex:1'></view>
+    <image src="/images/YueMall/top.png" bindtap='cutImage' class="hide{{showView?'':'show'}} channelImage" style="width:28rpx;height:14rpx"></image>
+  </view>
+  <view class="channelContent">
+    <view class="{{Tab==item.goodTypeId?'active':''}}" wx:for="{{goodsType}}" wx:key="goodsTypeChannel" data-label="{{item.goodTypeId}}" bindtap='swichLabel'>
+      <text>{{item.goodTypeName}}</text>
+    </view>
+  </view>
+</view>

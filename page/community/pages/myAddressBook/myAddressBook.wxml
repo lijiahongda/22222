@@ -1,0 +1,67 @@
+<view class="fanList">
+  <view class="header">
+    <text>我的</text>
+    <text class="desc">赶快填写微信号把～方便导师添加你进行指导</text>
+  </view>
+  <view class="detail">
+    <image src="{{myself.litpic}}"></image>
+    <view class="right">
+      <view>{{myself.nickname}}</view>
+      <view class="desc" wx:if='{{myself.wechat}}'>{{myself.wechat}}</view>
+      <view class="desc" wx:else>
+        <block wx:if='{{!showEdit}}'>
+           <view bindtap="showEditBind">点击填写微信号</view>
+           <image bindtap="showEditBind" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-10/15/yuelvhui6JeqnrHLXi1586502497.png"></image>
+        </block>
+        <block wx:else>
+          <input confirm-type='done' focus placeholder='填写微信号' bindconfirm='bindconfirm'></input>
+        </block>
+      </view> 
+    </view>
+  </view>
+</view>
+<view class="fanList">
+  <view class="header">
+    <text>邀请人</text>
+  </view>
+  <view class="detail">
+    <image src="{{parentUser.litpic}}"></image>
+    <view class="right">
+      <view>{{parentUser.nickname}}</view>
+      <view class="desc" wx:if='{{parentUser.wechat}}'>{{parentUser.wechat}}</view>
+      <view class="desc" wx:else>暂未填写微信号</view>
+    </view>
+  </view>
+</view>
+<view class="fanList" wx:if='{{teacher.length}}'>
+  <view class="header">
+    <text>导师</text>
+  </view>
+  <view class="detail" wx:for='{{teacher}}'>
+    <image src="{{item.litpic}}"></image>
+    <view class="right">
+      <view>{{item.nickname}}</view>
+      <view class="desc" wx:if='{{item.wechat}}'>{{item.wechat}}</view>
+      <view class="desc" wx:else>暂未填写微信号</view>
+    </view>
+  </view>
+</view>
+
+<view class="fanList">
+  <view class="header">
+    <text>我的粉丝</text>
+    <text class="desc">仅显示已填写微信号的粉丝</text>
+  </view>
+  <view class="detail" wx:for='{{fans}}' wx:if='{{fans.length}}'>
+    <image src="{{item.litpic}}"></image>
+    <view class="right">
+      <view>{{item.nickname}}</view>
+      <view class="desc" wx:if='{{item.mobile}}'>{{item.mobile}}</view>
+    </view>
+  </view>
+  <view wx:if='{{fans.length==0}}' class="white">
+    <view class="line"></view>
+    <view>暂无数据～</view>
+    <view class="line"></view>
+  </view>
+</view>

@@ -1,0 +1,1572 @@
+@import "/page/LoadingPopup/LoadingPopup.wxss";
+
+/* 小红包 */
+
+.SmallRedPopup {
+  width: 83rpx;
+  height: 79rpx;
+  position: fixed;
+  right: 24rpx;
+  z-index: 10000;
+  top: 779rpx;
+}
+
+.two_tab_item {
+  margin: 0 4.5%;
+  display: inline-block;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(153, 153, 153, 1);
+}
+.Gift_tab_item {
+  margin: 0 2%;
+  display: inline-block;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(153, 153, 153, 1);
+}
+.two_tab_item_border {
+  border-bottom: 4rpx solid #fff;
+  width: 76%;
+  border-radius: 2rpx;
+  margin-top: 19rpx;
+  margin: 19rpx auto;
+}
+.Gift_tab_item_border {
+  border-bottom: 4rpx solid #fff;
+  width: 76%;
+  border-radius: 2rpx;
+  margin-top: 19rpx;
+  margin: 20rpx auto 0 auto;
+}
+.two_scroll_view {
+  display: block;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.Gift_scroll_view {
+  display: block;
+  width: 100%;
+  margin-bottom: 20rpx;
+  background-color: #1A1716;
+  padding-top: 29rpx;
+  height: 64rpx;
+}
+.two_tab_item_active {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 254, 240, 1);
+  margin: 0 4%;
+  display: inline-block;
+}
+.Gift_tab_item_active {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 254, 240, 1);
+  margin: 0 4%;
+  display: inline-block;
+}
+.Ordinary_activities_goodList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.Ordinary_activities_goodList .Member_provinces {
+  width: 110rpx;
+  height: 80rpx;
+  background: linear-gradient(0deg, rgba(244, 225, 176, 1), rgba(255, 255, 241, 1));
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(54, 40, 41, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4%;
+  margin-left: 6.4%;
+}
+
+.Ordinary_activities_goodList .Member_provinces .price {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(218, 79, 40, 1);
+}
+
+.Ordinary_activities_goodList .goodImage {
+  width: 14.6%;
+  height: 110rpx;
+  border-radius: 8rpx;
+  margin-right: 4%;
+  background-color: #fff;
+  margin-left: 3.9%;
+}
+
+.Ordinary_activities_goodList .goodInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  width: 50%;
+}
+
+.Ordinary_activities_goodList .goodInfo .title text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Ordinary_activities_goodList .goodInfo .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 254, 240, 1);
+}
+
+.Ordinary_activities_goodList .goodInfo .price .Original_price text {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: rgba(153, 153, 153, 1);
+  margin-left: 20rpx;
+}
+
+.White_moon_title {
+  width: 91%;
+  padding-left: 4.5%;
+  padding-right: 4.5%;
+  height: 100rpx;
+  background: linear-gradient(90deg, rgba(244, 225, 176, 1), rgba(248, 237, 209, 1));
+  border-radius: 30rpx 30rpx 0px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  color: rgba(54, 40, 41, 1);
+}
+
+.White_moon_title text {
+  color: #d73c12;
+}
+
+.White_moon_title image {
+  width: 180rpx;
+  height: 60rpx;
+}
+
+.topGoods {
+  padding-top: 40rpx;
+  width: 100%;
+  padding-left: 2.8%;
+  box-sizing: border-box;
+  background: #1a1716;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+  padding-bottom: 40rpx;
+  margin-bottom: 28rpx;
+}
+
+.topGoods .goodList {
+  display: inline-block;
+  margin-right: 20rpx;
+  width: 190rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+}
+
+.topGoods .goodList .goodListImage {
+  width: 100%;
+  height: 190rpx;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+  margin-bottom: 11rpx;
+}
+
+.topGoods .goodList .goodListtext {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.topGoods .goodList .goodListtext .ConcessionalRate {
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(218, 79, 40, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 19rpx;
+}
+
+.topGoods .goodList .goodListtext .ConcessionalRate text {
+  font-size: 34rpx;
+  margin-right: 12rpx;
+}
+
+.topGoods .goodList .goodListtext .OriginalPrice text {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  text-decoration: line-through;
+  color: rgba(153, 153, 153, 1);
+}
+
+.topGoods .goodList .goodListtext .ConcessionalRate image {
+  width: 88rpx;
+  height: 34rpx;
+}
+
+.topGoods .goodList .name text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(20, 20, 20, 1);
+  margin-bottom: 13rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.Coupon {
+  width: 100%;
+  border-radius: 16rpx;
+  background-color: #fff;
+  padding-bottom: 27rpx;
+  margin-bottom: 33rpx;
+}
+
+.Coupon .titleImage {
+  background-size: 100%;
+  height: 214rpx;
+  background-color: #ffefd3;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  position: relative;
+}
+
+.Coupon .titleImage image {
+  width: 180rpx;
+  height: 60rpx;
+  position: absolute;
+  bottom: 19rpx;
+  left: 41rpx;
+}
+
+.Coupon .list {
+  width: 38.6%;
+  margin-left: 22rpx;
+  display: inline-block;
+  margin-top: 39rpx;
+}
+
+.Coupon .list .coupon_list {
+  
+  height: 130rpx;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 50rpx;
+}
+
+.Coupon .list .coupon_list .Voucher_value {
+  font-size: 48rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  color: rgba(218, 79, 40, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.Coupon .list .coupon_list .Voucher_value text {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(218, 79, 40, 1);
+  margin-right: 8rpx;
+}
+
+.Coupon .list .coupon_list .Full_reduction {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(82, 57, 0, 1);
+}
+
+.Coupon .Coupon_content {
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.Free_swim {
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  padding-left: 16rpx;
+  padding-right: 16rpx;
+  background-color: #1a1716;
+  border-bottom-right-radius: 16rpx;
+  border-bottom-left-radius: 16rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32rpx;
+}
+
+.Free_swim .Free_swim_list {
+  width: 317rpx;
+  background-color: #fffffa;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Free_swim .Free_swim_list .Line_image {
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  height: 316rpx;
+  margin-bottom: 21rpx;
+  background-color: #83bbb1;
+  width: 100%;
+}
+
+.Free_swim .Free_swim_list .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 9rpx;
+}
+
+.Free_swim .Free_swim_list .title .icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.Free_swim .Free_swim_list .Label {
+  width: 188rpx;
+  height: 48rpx;
+  background: linear-gradient(-30deg, rgba(244, 225, 176, 1), rgba(248, 237, 209, 1));
+  border-radius: 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(126, 91, 42, 1);
+  margin-bottom: 21rpx;
+}
+
+.Gift_Package_title {
+  font-size:34rpx;
+  font-family:PingFang SC;
+  font-weight:600;
+  color:rgba(255,247,220,1);
+  margin-bottom: 31rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+page {
+  background-color: #000;
+  /* background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-26/22/yuelvhuiczsQNqOqZ91585234337.png); */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content {
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.titleHead {
+  z-index: 100;
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  background-color:#181923;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 55.6%;
+  padding-right: 40.4%;
+  padding-left: 4%;
+  top: 0;
+  padding-bottom: 21rpx;
+}
+
+.titleHead image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 21rpx;
+  width: 100%;
+}
+
+.head .Member_info {
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(153, 153, 153, 1);
+  width: 73%;
+  align-items: center;
+}
+
+.head .Member_info .Head_portrait {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-right: 19rpx;
+}
+
+.head .Member_info .info {
+  display: flex;
+  flex-direction: column;
+  color: #000004;
+}
+
+.head .Member_info .info .title {
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.head .Member_info .info .title text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.head .Member_info .info .title .Member_Type {
+  margin-left: 13rpx;
+  width: 156rpx;
+  height: 44rpx;
+  background: rgba(4, 3, 3, 1);
+  border-radius: 22rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.head .Member_info .info .title .Member_Type image {
+  width: 34rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.openImage {
+  width: 100%;
+  height: 161rpx;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+}
+
+.head .button {
+  width: 160rpx;
+  height: 60rpx;
+  background: #A8B8E7;
+  border-radius: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1);
+}
+
+.Ordinary_activities {
+  background-color: #1a1716;
+  padding-top: 50rpx;
+  padding-bottom: 11rpx;
+  border-bottom-right-radius: 16rpx;
+  border-bottom-left-radius: 16rpx;
+  margin-bottom: 33rpx;
+}
+
+.Remarks {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #000004;
+}
+
+.head .Member_info .button {
+  width: 160rpx;
+  height: 60rpx;
+  background: linear-gradient(-30deg, rgba(244, 225, 176, 1), rgba(248, 237, 209, 1));
+  border-radius: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.ServiceHousekeeper {
+  width: 140rpx;
+  height: 50rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 25rpx 0px 0px 25rpx;
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 74rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.swiperbox {
+  height: 360rpx;
+  width: 100%;
+}
+
+.swiperbox image {
+  height: 360rpx;
+  width: 100%;
+}
+
+.makeMoney .item .tips {
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(116, 116, 116, 1);
+  margin-top: 9rpx;
+}
+
+.place {
+  display: flex;
+}
+
+.place view {
+  font-size: 30rpx;
+  font-family: Lantinghei SC;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+
+/* 授权按钮 */
+
+.authorizationStatus {
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx;
+}
+
+/* 卡 */
+
+.swiper-box {
+  width: 690rpx;
+  height: 300rpx;
+  /* background-color: #ffac49; */
+  /* margin-left: 4%; */
+}
+
+.swiper-box image {
+  width: 690rpx;
+  height: 300rpx;
+  /* background-color: #ffac49; */
+}
+
+.Frame {
+  margin-top: 16rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #3f3f3f;
+  height: 6rpx;
+  width: 92%;
+  margin-left: 4%;
+  margin-bottom: 50rpx;
+}
+
+.Frame .progress {
+  height: 6rpx;
+  width: 50%;
+  background-color: #fff;
+}
+
+.listTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-bottom: 27rpx;
+}
+
+.listTitle .available {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #fff;
+  font-size: 26rpx;
+}
+
+.listTitle .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 213, 122, 1);
+}
+
+.listTitle .title image {
+  height: 26rpx;
+}
+
+.listTitle .MainTitle {
+  margin-left: 18rpx;
+  margin-right: 18rpx;
+}
+
+.listTitle .Subheading {
+  font-size: 24rpx;
+}
+
+.ListCommodities {
+  width: 93.6%;
+  margin-left: 3.2%;
+  margin-right: 3.2%;
+  margin-bottom: 19rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15rpx;
+}
+
+.posi {
+  position: relative;
+}
+
+.describe {
+  font-size: 34rpx;
+  font-family: Lantinghei SC;
+  font-weight: 800;
+  color: rgba(152, 108, 49, 1);
+  padding-left: 4.2%;
+  margin-top: 24rpx;
+  margin-bottom: 13rpx;
+}
+
+.newYear .newYearContent {
+  width: 100%;
+  padding: 0rpx 4.2%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(209, 46, 51, 1);
+  margin-bottom: 23rpx;
+}
+
+.ShareProfits {
+  width: 172rpx;
+  height: 54rpx;
+  background: rgba(193, 14, 4, 1);
+  border-radius: 27rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: Lantinghei SC;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+
+.newYear .growth{
+  width: auto;
+  height: 44rpx;
+  background: #1A1716;
+  padding: 2rpx 10rpx;
+  padding-right: 16rpx;
+  display: flex;
+  align-items: center;
+  color: #FFFEEF;
+  font-size: 24rpx;
+  border-radius: 22rpx;
+}
+.newYear .growth > image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 6rpx;
+}
+
+.newYear .newYearContent .title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 28rpx;
+  font-family: Lantinghei SC;
+  font-weight: 600;
+  color: rgba(41, 41, 41, 1);
+  line-height: 30rpx;
+}
+
+.newYear .newYearContent .price {
+  font-size: 50rpx;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.newYear .newYearContent .price text:last-child {
+  font-size: 24rpx;
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.ListCommodities .image {
+  width: 100%;
+}
+
+.ListCommodities .image image {
+  width: 96%;
+  padding-left: 2%;
+  height: 359rpx;
+  background-color: #fff;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  margin-top: 15rpx;
+}
+
+.ListCommodities .content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2.5%;
+  width: 95%;
+}
+
+.ListCommodities .content .title {
+  margin-bottom: 42rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 30rpx;
+}
+
+.ListCommodities .content .title text {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ListCommodities .content .MembershipPrice {
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  color: #303030;
+  align-items: center;
+  margin-bottom: 9rpx;
+}
+
+.ListCommodities .content .MembershipPrice .price {
+  color: #ed5d2f;
+}
+
+.ListCommodities .content .MembershipPrice .price text {
+  font-size: 40rpx;
+}
+
+.ListCommodities .content .SupplierPrice {
+  color: #999;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 26rpx;
+}
+
+.ListCommodities .labels {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 41rpx;
+  padding-right: 20rpx;
+}
+
+.ListCommodities .labels .list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 96%;
+  padding-left: 4%;
+}
+
+.ListCommodities .labels .SelfPurchase {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(214, 51, 55, 1);
+}
+
+.ListCommodities .labels .ShareProfits text {
+  color: #999;
+  font-size: 24rpx;
+  text-decoration: line-through;
+  margin-left: 20rpx;
+}
+
+.ListCommodities .labels .free {
+  height: 60rpx;
+  line-height: 60rpx;
+  background: rgba(209, 46, 51, 1);
+  border-radius: 30rpx;
+  text-align: center;
+  padding: 0 16rpx;
+  color: #fff;
+}
+
+.OpeningButton {
+  height: 98rpx;
+  width: 100%;
+  line-height: 98rpx;
+  text-align: center;
+  background-color: #ed5d2f;
+  font-size: 36rpx;
+  color: #fff;
+  position: fixed;
+  bottom: 0rpx;
+}
+
+.commodity_attr_boxshowModal {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2000;
+  padding-top: 20rpx;
+  height: 100%;
+}
+
+.commodity_attr_boxshowModal .image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+}
+
+.commodity_attr_boxshowModal .image image {
+  height: 656rpx;
+  width: 480rpx;
+  margin: 25% auto;
+}
+
+/* 加载中 */
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1200;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2000;
+  padding-top: 20rpx;
+  height: 79%;
+}
+
+.commodity_attr_box_house {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2000;
+  padding-top: 20rpx;
+  max-height: 1084rpx;
+  min-height: 800rpx;
+  background-color: #fff;
+}
+
+.commodity_attr_box_house .button {
+  display: flex;
+  flex-direction: row;
+  height: 90rpx;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.commodity_attr_box_house .button .OnlinePayment {
+  width: 57%;
+  height: 90rpx;
+  color: #333;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 90rpx;
+  background-color: #fff;
+}
+
+.commodity_attr_box_house .button .Reserve {
+  width: 43%;
+  height: 90rpx;
+  background-color: #ff6636;
+  color: #f2f3f5;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+/* 3月27会员卡改版 */
+
+.tabMember {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50rpx;
+  width: 100%;
+  height: 200rpx;
+  align-items: flex-end;
+}
+
+.tabMember image {
+  width: 688rpx;
+  height: 122rpx;
+}
+
+.tabMember .tabContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #fff;
+  width: 100%;
+}
+
+.tabMember .tabContent .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tabMember .tabContent .content .DirectPush {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  font-size: 46prx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(250, 250, 250, 1);
+  justify-content: center;
+}
+
+.tabMember .tabContent .content .Cumulative {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  font-size: 30prx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(250, 250, 250, 1);
+  justify-content: center;
+  border-left: 1px solid #eee;
+}
+
+.tabMember .tabContent .content .Cumulative .num,
+.tabMember .tabContent .content .DirectPush .num {
+  color: #fff;
+  font-size: 46rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+}
+
+.tabMember .tabContent .content .Estimate {
+  font-size: 26rpx;
+  margin-bottom: 18rpx;
+  font-weight: 400;
+}
+
+.tabMember .tabContent .content .InviteFriendsTip {
+  font-size: 22rpx;
+}
+
+.tabMember .button {
+  height: 50rpx;
+  width: 116rpx;
+  background: linear-gradient(0deg, rgba(223, 183, 111, 1) 0%, rgba(236, 199, 118, 1) 53%);
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+  color: #fff;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  line-height: 50rpx;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 31rpx;
+}
+
+.MembershipTerms {
+  width: 100%;
+  /* height: 503.9rpx; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 28rpx;
+  border-radius: 10rpx;
+  padding: 2.9rpx;
+  padding-top: 60rpx;
+  /* background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-17/01/yuelvhuiglwrK04I3f1581873452.png); */
+  background-size: 100% 532rpx;
+  box-sizing: border-box;
+}
+
+.MembershipTerms .item {
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  font-family: Lantinghei SC;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  align-items: center;
+  justify-content: space-between;
+  width: 25%;
+  height: 145rpx;
+  margin-bottom: 46rpx;
+  position: relative;
+}
+.Copywriting{
+  position: absolute;
+  top: -30rpx;
+  right: -5rpx;
+  background:rgba(255,12,0,1);
+  border-radius:24rpx;
+  color: #fff;
+  padding: 8rpx 20rpx;
+}
+.MembershipTerms .item image {
+  width: 110rpx;
+  height: 90rpx;
+  margin-bottom: 19rpx;
+}
+
+.commodity_screenshowModal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.7;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.ShareSuccess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 138rpx;
+  width: 515rpx;
+  border-radius: 23rpx;
+  background-color: #fff;
+  position: fixed;
+  top: 36%;
+  z-index: 100004;
+  left: 16%;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(42, 42, 42, 1);
+}
+
+.RushBuy {
+  width: 150rpx;
+  height: 60rpx;
+  background: rgba(209, 46, 51, 1);
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin-right: 35rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Supplier {
+  position: absolute;
+  right: 24rpx;
+  top: 0rpx;
+  padding-left: 6rpx;
+  padding-right: 7rpx;
+  height: 30rpx;
+  background: rgba(209, 46, 51, 1);
+  border-radius: 0px 15rpx 0px 15rpx;
+  font-size: 16rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.EquityTitle {
+  width: 93.6%;
+  margin-left: 3.2%;
+  height: 28rpx;
+  margin-top: 50rpx;
+  margin-bottom: 40rpx;
+}
+
+.upgrading {
+  width: 600rpx;
+  height: 80rpx;
+  background: rgba(209, 46, 51, 1);
+  border-radius: 40rpx;
+  line-height: 80rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 28rpx;
+  position: fixed;
+  bottom: 36rpx;
+  left: 74rpx;
+}
+
+/* 弹出优惠券 */
+
+.bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.coupon_box {
+  width: 624rpx;
+  height: 754rpx;
+  left: 54rpx;
+  top: 15%;
+  position: fixed;
+  z-index: 3;
+}
+
+.coupon_box image {
+  width: 624rpx;
+  height: 754rpx;
+}
+
+/* 用户信息-成长值 */
+.header{
+  width: 690rpx;
+  height: 272rpx;
+  /* margin: 0 auto; */
+  margin: 30px auto;
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-24/14/yuelvhui5HKoyWmnin1587710696.png);
+  background-size: 100% 100%;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+.ordinaryUser{
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-24/14/yuelvhuik6uHKsFBR31587710709.png);
+}
+.blackUser{
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-26/17/yuelvhuiyhER96yTqe1587893840.png)
+}
+.header .userInfo{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.header .userInfo > image{
+  width: 88rpx;
+  height: 88rpx;
+  display: block;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+.header .userInfo .detail{
+  flex: 1;
+}
+.header .userInfo .name{
+  display: flex;
+  align-items: center;
+}
+.header .userInfo .userName{
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(0,0,0,1);
+  max-width: 200rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.blackUser .userInfo .userName{
+  color: #EDBF9E;
+}
+ .lvName{
+  display: flex;
+  /* width:156rpx; */
+  /* height:44rpx; */
+  /* background:rgba(5,4,10,1); */
+  border-radius:22rpx;
+  align-items: center;
+  font-size: 32rpx;
+  color: #000004;
+  /* margin-left: 8rpx; */
+  justify-content: center;
+  margin-bottom: 10rpx;
+}
+ .lvName > image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 8rpx;
+}
+ .time{
+  color: #7D663D;
+  font-size: 22rpx;
+  margin-top: 10rpx;
+}
+ .lv{
+  width:156rpx;
+  height:44rpx;
+  background:rgba(255,255,255,1);
+  border-radius:22rpx 0px 0px 22rpx;
+  color: #05040A;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 44rpx;
+  position: relative;
+  right: -32rpx;
+  top: 0;
+}
+.blackUser .userInfo .lv{
+  background: #EDBF9E;
+  color: #05040A;
+}
+.blackUser .cow{
+  color: #EDC09E;
+  font-size: 34rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.blackUser .cow > image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 12rpx;
+}
+.blackUser .cow + view > image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 12rpx;
+}
+ .growth{
+  width: 100%;
+  display: flex;
+  color: #000000;
+  font-size: 24rpx;
+  align-items: center;
+  margin-top: 30rpx;
+  justify-content: space-between;
+}
+ .growth .num > text{
+  font-size: 28rpx;
+}
+ .growth .numText{
+  text-align: right;
+  flex: 1;
+}
+.blackUser .growth .numText{
+  text-align: left;
+  flex: 1;
+  color: #A58F81;
+  margin-top: 20rpx;
+  line-height: 1;
+}
+ .growth > image{
+  width: 30rpx;
+  height: 30rpx;
+}
+ .progress{
+  width: 100%;
+  height: 24rpx;
+  border-radius: 12rpx;
+  /* background: #7E97D4; */
+  margin-top: 10rpx;
+  margin-bottom: 18rpx;
+}
+.ordinaryUser .progress{
+  background: #7886C1;
+}
+ .progress > view{
+  height:24rpx;
+  background:rgba(255,255,255,1);
+  /* box-shadow:0px 3rpx 7rpx 0px rgba(230, 0, 130, 0.35); */
+  border-radius:12rpx;
+}
+.enjoy{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,254,239,1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.enjoyNum{
+  color: #EDBF9E;
+}
+.titleH{
+  width:690rpx;
+  height:59rpx;
+  font-size:24rpx;
+  background:rgba(24,25,35,1);
+  border-radius:8rpx;
+  color:rgba(255,255,255,1);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.titleH image{
+  width:40rpx;
+  height: 40rpx;
+  margin-left:40rpx;
+  margin-right: 8rpx;
+}
+/* 轮播 */
+.containerH{
+  position: relative;
+  margin-bottom: 30rpx;
+}
+
+.swiper {
+  width: 100%;
+  height: 272rpx;
+  margin: 20rpx 0rpx;
+}
+
+.swiper_item {
+  height: 272rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper_imge {
+  width: 670rpx;
+  height: 272rpx;
+  border-radius:32rpx;
+  position: relative;
+
+}
+.up {
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  align-items: center;
+  /* width: 27rpx; */
+  /* height: 16rpx; */
+}
+.up image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.con{
+  width: 606rpx;
+  height: 182rpx;
+  padding: 45rpx 37rpx ;
+  position: absolute;
+  left:0 ;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.nameH{
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+.level{
+  position: absolute;
+  right: 1.5%;
+  top: 0;
+  width: 156rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background-size: 100% 100%;
+  z-index: 10;
+}
+.txt{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #000004;
+  font-size:24rpx;
+}
+.txtOne{
+  font-size: 32rpx;
+}
+.txt2{
+  font-size:22rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(0,0,4,1);
+}
+.shareHl{
+  background: none;
+  width: 690rpx!important;
+  height: 88rpx!important;
+  margin: 60rpx 0;
+}
+.shareHl::after{
+  border:none;
+  
+}
+.shareH{
+  /* width:690rpx; */
+  height:86rpx;
+  background:rgba(27,22,22,1);
+  border:1rpx solid rgba(255,244,207,1);
+  border-radius:44rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color:rgba(251,231,198,1);
+}
+.shareH image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.headBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 302rpx;
+  width: 91.8%;
+  padding-left: 4.2%;
+  padding-right: 4.2%;
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-24/14/yuelvhuik6uHKsFBR31587710709.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: #000004;
+}

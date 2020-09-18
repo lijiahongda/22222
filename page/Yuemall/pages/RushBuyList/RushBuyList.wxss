@@ -1,0 +1,483 @@
+page{
+  background-color: #fff;
+}
+/* 授权按钮 */
+.authorizationStatus{
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx
+}
+.tab-h {
+  height: 100rpx;
+  width: 100%;
+  box-sizing: border-box;
+  /* line-height: 80rpx; */
+  background: #fff;
+  font-size: 16px;
+  white-space: nowrap;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4rpx 8px #ddd;
+  background-color: #ff6636;
+}
+
+.tab-item {
+  margin:0 15%;
+  /* background-color: #ff6636; */
+  font-size: 30rpx;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  z-index: 10000;
+  height:100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* line-height: 100rpx */
+}
+
+.tab-item.active {
+  color: #333;
+  background-color: #fff6db;
+  border-radius: 30rpx;
+  height:60rpx;
+  width:180rpx
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  width: 100%;
+  background-repeat: no-repeat;
+  height: 45rpx;
+  /* background-image: url(http://image.yuelvhui.com/pubfile/2018/10/23/line_1540262428.png); */
+  /* background-color: #ff6636; */
+  position: absolute;
+  top: 53rpx;
+  left: 35%;
+}
+
+.tab-con image {
+  width: 100%;
+  height: 100%;
+}
+
+.tab-con {
+  /* padding: 25rpx 0; */
+  min-height: 100%;
+  position: relative;
+}
+
+.tab-con.gwc {
+  padding-bottom: 125rpx;
+}
+
+.RushBuyTime {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 91rpx;
+  width: 95%;
+  margin-left:2.5%;
+  margin-right:2.5%;
+  align-items: center;
+  background-color: #fff;
+  border-bottom:1px solid #ececec
+}
+.RushBuyTime .GoodThing{
+  display: flex;
+  flex-direction: row;
+  width:50%;
+  align-items: center;
+  color:#333;
+  font-size: 28rpx
+}
+.RushBuyTime .RushBuyTimeRight{
+  display: flex;
+  flex-direction: row;
+  width:50%;
+  align-items: center;
+  color:#333;
+  font-size: 28rpx;
+  justify-content: flex-end
+}
+.RushBuyTime .GoodThing image{
+  width:7rpx;
+  height:34rpx;
+  margin-right:3%
+}
+.RushBuyTime .title {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.bg_ff{
+  width: 34rpx;
+  height: 32rpx;
+  display: inline-block;
+  color: #999;
+  line-height: 34rpx;
+  font-size: 22rpx;
+  text-align: center;
+  border-radius: 6rpx;
+  border:1px solid #bebebe;
+  margin: 0 4rpx;
+}
+.RushBuyTime .time {
+  color: #333;
+  /* font-weight: bold; */
+  /* font-size: 36rpx; */
+  /* letter-spacing: 5rpx; */
+  margin-left: 2%;
+}
+
+.scoll-h {
+  height: 100%;
+  position: relative;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  height: 265rpx;
+  align-items: center;
+  width:95%;
+  padding-left:2.5%;
+  padding-right:2.5%
+}
+
+.ListContent {
+  display: flex;
+  width: 93%;
+  margin: auto;
+  height: 200rpx;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 20rpx;
+}
+
+.borderBottom {
+  border-top: 1px solid #ececec;
+}
+
+.list .image image {
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.describe {
+  display: flex;
+  flex-direction: column;
+  height: 251rpx;
+  margin-left: 3%;
+  justify-content: center;
+  border-bottom:1px solid #ececec;
+  width:80%;
+}
+
+.describe .function {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60rpx;
+  align-items: center;
+}
+.describe .function .Deductible{
+  width:118rpx;
+  height:26rpx;
+  border-radius: 3rpx;
+  border:1px solid #ff6032;
+  color:#f36f5a;
+  font-size: 18rpx;
+  text-align: center;
+  line-height: 26rpx
+}
+.describe .function .Surplus {
+  color: #333;
+  font-size: 20rpx;
+}
+
+.describe .function .Reminding {
+  width: 180rpx;
+  height: 56rpx;
+  color: #fff;
+  background-color: #ff6636;
+  text-align: center;
+  line-height: 56rpx;
+  border-radius: 28rpx
+}
+
+.describe .function .cancelReminding {
+  width: 180rpx;
+  height: 56rpx;
+  color: #ff6636;
+  border: 1px solid #ff6636;
+  text-align: center;
+  line-height: 56rpx;
+  border-radius: 28rpx
+}
+
+.describe .title {
+  display: flex;
+  font-size: 30rpx;
+  color: rgb(51, 51, 51);
+  margin-bottom: 16rpx;
+}
+
+.describe .title text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.describe .Remarks{
+    display: flex;
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 24rpx;
+  /* line-height: 45rpx; */
+}
+.describe .Remarks text{
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.memberPrice {
+  color: #ff6636;
+  font-size: 34rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.originalCost {
+  color: #999;
+  font-size: 24rpx;
+  /* margin-left: 30rpx; */
+}
+
+.originalCost text {
+  text-decoration: line-through;
+}
+
+.tips {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.tips .share {
+  color: #ffb11c;
+  font-size: 20rpx;
+  border: 1px solid #ffb11c;
+  width: 106rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 15rpx;
+  text-align: center;
+}
+
+.lists .tips image {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.describe .price {
+  color: #a31e13;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.describe .specifications {
+  display: flex;
+}
+
+.describe .money {
+  display: flex;
+  align-items: flex-end;
+  color: rgb(185, 24, 50);
+  font-size: 30rpx;
+}
+
+.ListContent .image {
+  margin-right: 3.4%;
+}
+
+.button {
+  width: 93%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20rpx;
+}
+
+.button view {
+  border: 1px solid #f4aa11;
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #f4aa11;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  margin-left: 2%;
+}
+
+.button view.pay {
+  /* border:none; */
+  background-color: #f4aa11;
+  color: #fff;
+}
+
+/* 设置成功 */
+
+.SeTupSuccess {
+  display: flex;
+  flex-direction: row;
+  width: 240rpx;
+  height: 80rpx;
+  background-color:rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 8rpx;
+  position: fixed;
+  top: 40%;
+  left: 35%;
+}
+
+.SeTupSuccess image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 3%;
+}
+
+/* 取消成功 */
+
+.AbolishSuccess {
+  display: flex;
+  flex-direction: column;
+  width: 402rpx;
+  height: 136rpx;
+  border-radius: 8rpx;
+  color:#fff;
+  background-color:rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 40%;
+  left: 25%;
+}
+
+.AbolishSuccess .Abolish {
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom:25rpx
+}
+
+.AbolishSuccess .Abolish image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right:3%
+}
+/* 轮播 */
+.swiper-box {
+  width: 100%;
+  height: 200rpx;
+  background-color: gray;
+}
+
+.swiper-box .image {
+  width: 100%;
+  height: 200rpx;
+  display: block;
+}
+
+.swiper-box .wx-swiper-dots.wx-swiper-dots-horizontal {
+  margin-bottom: 2rpx;
+}
+
+.swiper-box .wx-swiper-dot {
+  width: 18rpx;
+  display: inline-flex;
+  height: 4rpx;
+  margin-left: 2rpx;
+  justify-content: space-between;
+}
+
+.swiper-box .wx-swiper-dot::before {
+  content: '';
+  flex-grow: 1;
+  background: rgb(255, 255, 255);
+  border-radius: 8rpx;
+}
+
+.swiper-box .wx-swiper-dot-active::before {
+  background: rgb(238, 121, 72);
+}
+.topnav {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+.lootall{
+  background-color:rgba(0, 0, 0, 0.24);
+  height:231rpx;
+  width:233rpx;
+  position: absolute;
+  color:#fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+.lootall image{
+  width:75rpx;
+  height:42rpx
+}
+/* 暂无数据 */
+.NoCommodityData{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:700rpx;
+  color:#999;
+  font-size: 26rpx
+}
+.NoCommodityData image{
+  width:253rpx;
+  height:240rpx;
+  margin-bottom: 37rpx
+}
+.NoCommodityData .goMall{
+  width:220rpx;
+  height:60rpx;
+  border-radius: 30rpx;
+  color:#fff;
+  text-align: center;
+  line-height: 60rpx;
+  background-color: #ff6636;
+  font-size: 28rpx;
+  margin-top:78rpx
+}

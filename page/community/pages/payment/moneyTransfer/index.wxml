@@ -1,0 +1,43 @@
+<!--page/payment/moneyTransfer/index.wxml-->
+<view class="zcontent">
+<!-- loading -->
+  <import src="/page/LoadingPopup/LoadingPopup.wxml" />
+  <block wx:if="{{LoadingStatus}}">
+    <template is="LoadingPopup" />
+  </block>
+  <view class="tips">
+  佣金转入后可消费不可提现，请谨慎操作。
+  </view>
+<!-- 余额 -->
+  <view class="userMoney">
+    <view class="title">
+      <text class="iconfont icon-yueb"></text>
+      当前余额
+    </view>
+    <view class="money">{{balanceMoney}} 元</view>
+  </view>
+  <!-- 转入金额 -->
+  <view class="inputMoney">
+    <view class="title">转入佣金</view>
+    <view class="inputCtrl">
+      <view class="icon">￥</view>
+      <view class="input">
+        <view wx:if="{{!moneyFocus&&moneyValue==''}}" bindtap="getFocus">请输入转入金额</view>
+        <input type="number" wx:if="{{moneyFocus}}" focus="{{moneyFocus}}" value="{{moneyValue}}" bindinput="moneyInput"/>
+      </view>
+      <view class="allbt" bindtap="setMoney">全部</view>
+    </view>
+    <view class="text">当前佣金最多可转入{{bonusMoney}}元</view>
+  </view>
+  <!-- 确认按钮 -->
+  <view class="subBt" style="{{moneyValue!=''?'background:#CA2519;':''}}" bindtap="intoMoney">确认转入</view>
+
+  <!-- 弹窗 -->
+  <view class="alert" wx:if="{{alertShow}}">
+    <my-code id="myCode" bindclosealert="closeAlert" bindnextCom="nextAlert" wx:if="{{comIndex==0}}" userPhone="{{phone}}"></my-code>
+    <my-moneypsw wx:if="{{comIndex==1}}" bindclosealert="closeAlert" bindnextCom="nextAlert"></my-moneypsw>
+    <my-nowpsw wx:if="{{comIndex==2}}" bindclosealert="closeAlert" bindnextCom="nextAlert" bindinto="intoStart"></my-nowpsw>
+    <my-other wx:if="{{comIndex==3}}" bindclosealert="closeAlert" bindnextCom="nextAlert"></my-other>
+    <my-agreement wx:if="{{comIndex==4}}" bindclosealert="closeAlert" bindnextCom="nextAlert" textValue="{{textValue}}"></my-agreement>
+  </view>
+</view>

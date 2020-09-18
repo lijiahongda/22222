@@ -1,0 +1,411 @@
+/* page/Yuemall//pages/LevelPages/LevelPages.wxss */
+
+page {
+  background-color: #eee;
+}
+.contentLeve{
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.content .AdvertisingSpace {
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.content .ActiveTemplateOne {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content .ActiveTemplateOne .list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content .ActiveTemplateOne .list image {
+  width: 100%;
+  height: 527rpx;
+  margin-bottom: 30rpx;
+}
+
+.content .ActiveTemplateOne .list .title {
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  height: 63rpx;
+}
+
+.content .ActiveTemplateOne .list .title text {
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(42, 42, 42, 1);
+  margin-bottom: 31rpx;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content .ActiveTemplateOne .list .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-bottom: 12rpx;
+}
+
+.content .ActiveTemplateOne .list .info .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.content .ActiveTemplateOne .list .info .price .vipPrice {
+  color: #bd2b36;
+  font-size: 36rpx;
+  font-weight: 500;
+}
+
+.content .ActiveTemplateOne .list .info .price .vipPrice text {
+  font-size: 24rpx;
+}
+
+.content .ActiveTemplateOne .list .info .price .originalPrice text {
+  color: #7a7a7a;
+  font-size: 20rpx;
+  text-decoration: line-through;
+  margin-left: 10rpx;
+}
+
+.content .ActiveTemplateOne .list .info .GO {
+  width: 111rpx;
+  height: 42rpx;
+  border-radius: 7px 5px 37px 7px;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(248, 248, 248, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .ActiveTemplateTow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.content .ActiveTemplateTow .list {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10rpx;
+  border-radius: 10rpx;
+  background-color: #fff
+}
+
+.content .ActiveTemplateTow .list image {
+  width: 100%;
+  height: 328rpx;
+  margin-bottom: 22rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+
+.content .ActiveTemplateTow .list .title {
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-bottom: 22rpx;
+  height: 63rpx;
+}
+
+.content .ActiveTemplateTow .list .title text {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(25, 25, 25, 1);
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content .ActiveTemplateTow .list .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  color: #191919;
+  font-size: 18rpx;
+  margin-bottom: 21rpx;
+}
+
+.content .ActiveTemplateTow .list .info .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .ActiveTemplateTow .list .info .price .vipPrice {
+  color: #ff4545;
+  font-size: 30rpx;
+}
+
+.content .ActiveTemplateTow .list .info .price .vipPrice text {
+  font-size: 20rpx;
+}
+
+.content .ActiveTemplateTow .list .info .price .OriginalPrice text {
+  color: #7a7a7a;
+  font-size: 18rpx;
+  text-decoration: line-through;
+  margin-left: 10rpx;
+}
+
+.content .ActiveTemplateThree {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.content .ActiveTemplateThree .list {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+
+.content .ActiveTemplateThree .list image {
+  width: 100%;
+  height: 240rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  margin-bottom: 12rpx;
+}
+
+.content .ActiveTemplateThree .list .title {
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-bottom: 14rpx;
+  height: 63rpx;
+}
+
+.content .ActiveTemplateThree .list .title text {
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(25, 25, 25, 1);
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content .ActiveTemplateThree .list .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  color: #191919;
+  font-size: 18rpx;
+  margin-bottom: 21rpx;
+}
+
+.content .ActiveTemplateThree .list .info .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .ActiveTemplateThree .list .info .price .vipPrice {
+  color: #ff4545;
+  font-size: 22rpx;
+}
+
+.content .ActiveTemplateThree .list .info .price .vipPrice text {
+  font-size: 18rpx;
+}
+.content .ActiveTemplateThree .list .info .price .originalPrice text {
+  color: #7a7a7a;
+  font-size: 20rpx;
+  text-decoration: line-through;
+  margin-left: 10rpx;
+}
+.content .ActiveTemplateFour {
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+}
+
+.content .ActiveTemplateFour .list {
+  width: 31%;
+  display: inline-block;
+  margin-bottom: 10rpx;
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+  background-color: #fff
+}
+
+.content .ActiveTemplateFour .list image {
+  width: 100%;
+  height: 240rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  margin-bottom: 12rpx;
+}
+
+.content .ActiveTemplateFour .list .title {
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-bottom: 14rpx;
+  overflow: hidden;
+  white-space: normal;
+  height: 60rpx
+}
+
+.content .ActiveTemplateFour .list .title text {
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(25, 25, 25, 1);
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content .ActiveTemplateFour .list .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  color: #191919;
+  font-size: 18rpx;
+  margin-bottom: 21rpx;
+}
+
+.content .ActiveTemplateFour .list .info .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .ActiveTemplateFour .list .info .price .vipPrice {
+  color: #ff4545;
+  font-size: 22rpx;
+}
+
+.content .ActiveTemplateFour .list .info .price .vipPrice text {
+  font-size: 18rpx;
+}
+.content .ActiveTemplateFour .list .info .price .originalPrice text {
+  color: #7a7a7a;
+  font-size: 20rpx;
+  text-decoration: line-through;
+  margin-left: 10rpx;
+}
+
+.AdvertisingSpace {
+  width: 100%;
+  height: 300rpx;
+  background-color: #eee;
+  display: block
+}
+
+.Level {
+  padding-left: 2.6%;
+  padding-right: 2.6%;
+  width: 94.8%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.Level .list {
+  width: 125rpx;
+  height: 100%;
+  margin-left: 26rpx;
+  margin-right: 26rpx;
+  margin-bottom: 30rpx;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+}
+
+.Level .list image {
+  width: 100%;
+  height: 125rpx;
+  border-radius: 50%;
+  margin-bottom: 16rpx;
+}
+
+.title {
+  width: 82.9%;
+  margin-left: 8.55%;
+  height: 57rpx;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.categorytitle {
+  width: 80.2%;
+  margin-left: 9.9%;
+  height: 61rpx;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}

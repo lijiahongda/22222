@@ -1,0 +1,4 @@
+/* page/liveH5/shopDetail/shopDetail.wxss */
+page{
+  padding-top: 20rpx;
+}

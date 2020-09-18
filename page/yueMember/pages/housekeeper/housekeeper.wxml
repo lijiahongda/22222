@@ -1,0 +1,66 @@
+<!--page/yueMember/pages/housekeeper/housekeeper.wxml-->
+<view class="tab-h">
+  <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">我的管家</view>
+  <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">我的导师</view>
+</view>
+
+<view class="con">
+  <!-- 个人信息 -->
+  <block wx:if="{{currentTab == 0}}">
+    <block wx:if="{{housekeeperInfo != ''}}">
+      <view class="top">
+        <image class="imgs" src="{{housekeeperInfo.litpic}}"></image>
+        <text class="names">{{housekeeperInfo.name}}</text>
+        <text class="adds">{{housekeeperInfo.hellow}}</text>
+      </view>
+      <view class="contact">
+        <view class="li">
+          <text class="types">微信号：{{housekeeperInfo.wxNumber}}</text>
+          <text class="copy" bindtap="copyText" data-text="{{housekeeperInfo.wxNumber}}">复制</text>
+        </view>
+      </view>
+      <view class="codes">
+        <view class="erCode">
+          <image class="code" style="background: #fa937e;" src="{{housekeeperInfo.wxImg}}"></image>
+        </view>
+      </view>
+      <view class="sweepCode">扫码加好友</view>
+    </block>
+    <block wx:else>
+      <view class="tips">
+        <image class="small" src="https://image.yuelvhui.com/pubfile/2019/09/26/line_1569470282_92040.png"></image>
+        <text class="txt">您的管家太懒了， 还没有上传微信信息</text>
+      </view>
+    </block>
+  </block>
+  <block wx:if="{{currentTab == 1}}">
+    <view class="top">
+      <image class="imgs" src="{{parentInfo.litpic}}"></image>
+      <text class="names">{{parentInfo.name}}</text>
+      <text class="adds">{{parentInfo.hellow}}</text>
+    </view>
+    <view class="contact">
+      <view class="li">
+        <text class="types">微信号：{{parentInfo.wxNumber}}</text>
+        <text class="copy" bindtap="copyText" data-text="{{parentInfo.wxNumber}}">复制</text>
+      </view>
+    </view>
+    <view class="codes">
+      <view class="erCode">
+        <image class="code" style="background: red;" src="{{parentInfo.wxImg}}"></image>
+      </view>
+    </view>
+    <view class="sweepCode">扫码加好友</view>
+  </block>
+  <view class="foot">
+    <block wx:if="{{currentTab == 0}}">
+      <view class="modify" bindtap="saves" wx:if="{{housekeeperInfo.wxImg}}">保存二维码到相册</view>
+    </block>
+    <block wx:else>
+      <view class="modify" bindtap="saves" wx:if="{{parentInfo.wxImg}}">保存二维码到相册</view>
+    </block>
+  </view>
+</view>
+<view class="edit">
+  <image bindtap="toModification" src="https://image.yuelvhui.com/pubfile/2019/09/26/line_1569470191_49245.png"></image>
+</view>

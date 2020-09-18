@@ -1,0 +1,44 @@
+<!--pages/colorLine/colorLine.wxml-->
+<template name="colorLine">
+  <view class='colorLine'>
+    <view class='innerline'></view>
+    <view class='innerline color-red'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-blue'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-red'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-blue'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-red'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-blue'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-red'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-blue'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-red'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-blue'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-red'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-blue'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-red'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-blue'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-red'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-blue'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-red'></view>
+    <!-- <view class='innerline'></view>
+    <view class='innerline color-blue'></view>
+    <view class='innerline'></view>
+    <view class='innerline color-red'></view>
+    <view class='innerline'></view> -->
+  </view>
+</template>

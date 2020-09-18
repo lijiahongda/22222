@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "今日爆款",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "onReachBottomDistance":800
+}

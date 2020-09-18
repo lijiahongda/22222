@@ -1,0 +1,41 @@
+<view class="couponDetail {{noCanGet?'noCanGet':''}}">
+  <view>
+    <view class="left">
+      <view>{{couponInfo.couponName}}</view>
+      <view class="price">
+        <text>￥</text><text>{{couponInfo.amount}}</text><text>优惠券</text>
+      </view>
+      <view>有效期:{{couponInfo.usedRemind}}</view>
+      <image wx:if='{{!noCanGet}}' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-12/17/yuelvhuiVSYC6rYE6G1581501534.png" alt=""></image>
+      <image wx:else src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-12/17/yuelvhuiqvuxi0jk5R1581501580.png" alt=""></image>
+    </view>
+    <view wx:if='{{getCoupons==1}}' class="right"  bindtap="{{noCanGet?'':'getCoupons'}}">
+      <view>立即领取</view>
+    </view>
+    <view wx:else class="right">
+      <button open-type='share'>立即分享</button>
+    </view>
+  </view>
+</view>
+<view class="goodsDetail">
+  <view bindtap="goodsDetail" data-goodsid='{{goodsInfo.goodsId}}' data-skuid='{{goodsInfo.skuId}}'>
+    <image src="{{goodsInfo.goodsImg}}" alt="" class="left"></image>
+    <view class="right">
+      <view class="title">{{goodsInfo.goodsName}}</view>
+      <view class="price">
+        <text>￥</text><text>{{goodsInfo.goodsCouponPrice}}</text><text>券后价</text>
+      </view>
+      <view>原价 ￥{{goodsInfo.goodsVipPrice}}</view>
+    </view>
+    <view class="bottom">查看商品</view>
+  </view>
+</view>
+<view class="explain">
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-12/16/yuelvhuiy5Y0C2bEpX1581497589.png" alt=""></image>
+  <view>
+    <text wx:for='{{remind}}' wx:key="*this">{{item}}</text>     
+  </view>
+</view>
+
+<!-- 授权按钮 -->
+<view class="authorizationStatus" bindtap='VerificationCode'  wx:if="{{authorizationStatus}}"></view>

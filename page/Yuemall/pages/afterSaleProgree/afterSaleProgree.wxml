@@ -1,0 +1,99 @@
+
+<view class="tips">
+  <view class="title">{{list.refundStatusText}}</view>
+  <view class="time">{{list.updateTime}}</view>
+  <view class="info">{{list.tips}}</view>
+</view>
+
+<!-- 进度 -->
+<view class="orderstatus">
+  <view class="line_green"></view>
+  <view class="line_gray" style="{{list.isCompleted==1?'background: #0CBF36;':''}}"></view>
+  <view class="state">
+    <image src="https://image.yuelvhui.com/pubfile/2019/10/20/line_1571569758_53318.png"></image>
+    <view>提交申请</view>
+  </view>
+  <view class="state">
+    <image src="https://image.yuelvhui.com/pubfile/2019/10/20/line_1571569770_66560.png" style="width:30rpx;height:30rpx;margin-top:4rpx;"></image>
+    <view>审核中</view>
+  </view>
+  <view class="state">
+    <image wx:if="{{list.isCompleted==1}}" src="https://image.yuelvhui.com/pubfile/2019/10/20/line_1571569770_66560.png" style="width:30rpx;height:30rpx;margin-top:4rpx;"></image>
+    <image wx:else src="https://image.yuelvhui.com/pubfile/2019/10/20/line_1571569732_56299.png"></image>
+    <view>已完成</view>
+  </view>
+</view>
+
+<view class="logInfo" style="border-bottom:1px solid #f6f6f6">
+  <view>退款信息</view>
+  <view></view>
+</view>
+<view class="logInfo">
+  <view>退款金额：</view>
+  <view>￥{{list.memberRefundPrice}}</view>
+</view>
+<view class="price">
+  <view>商品金额</view>
+  <view>￥{{list.memberRefundPrice}}</view>
+</view>
+<view class="logInfo">
+  <view>返回原支付账号({{list.payType}})</view>
+  <view>￥{{list.adminRefundPrice}}</view>
+</view>
+
+<view class="after_sale">
+  <view>售后信息</view>
+  <view></view>
+</view>
+
+
+
+<view class="goodinfo">
+  <image class="image" mode="aspectFill" src='{{list.goodsCoverImage}}'></image>
+  <view class="name">{{list.goodsName}}</view>
+  <view class="goodprice">
+    <view>￥{{list.memberRefundPrice}}</view>
+    <view>x{{list.goodsNum}}</view>
+  </view>
+</view>
+
+
+
+<view class="orderInfo">
+  <view class="payList">
+    <view class="payname">售后单号：</view>
+    <view class="payValue">{{list.orderNo}}</view>
+    <view class="copy" bindtap='copyText' data-text="{{list.orderNo}}">复制</view>
+  </view>
+  <view class="payList">
+    <view class="payname">申请时间：</view>
+    <view class="payValue">{{list.createTime}}</view>
+  </view>
+</view>
+<view class="orderInfo">
+  <view class="payList">
+    <view class="payname">售后类型：</view>
+    <view class="payValue">{{list.refundType}}</view>
+  </view>
+  <view class="payList">
+    <view class="payname">收货状态：</view>
+    <view class="payValue">{{list.receivingStatus}}</view>
+  </view>
+  <view class="payList">
+    <view class="payname">申请售后原因：</view>
+    <view class="payValue">{{list.reason}}</view>
+  </view>
+   <view class="payList">
+    <view class="payname">申请数量：</view>
+    <view class="payValue">{{list.goodsNum}}</view>
+  </view>
+  <view class="payList">
+    <view class="payname">退款金额：</view>
+    <view class="payValue">{{list.adminRefundPrice}}元</view>
+  </view>
+  <view class="payList">
+    <view class="payname">问题描述：</view>
+    <view class="payValue">{{list.memberRefundContent}}</view>
+  </view>
+  
+</view>

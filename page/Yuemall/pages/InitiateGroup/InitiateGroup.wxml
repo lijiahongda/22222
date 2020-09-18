@@ -1,0 +1,104 @@
+<!--page/Mall/pages/InitiateGroup/InitiateGroup.wxml-->
+<view class="goodInfo" wx:if="{{(Entrance =='b') || (Entrance == 'h')}}">
+  <view>
+    <image src="{{productInfo.goods_img}}"></image>
+  </view>
+  <view class="info">
+    <view class="title">
+      <text>{{productInfo.goods_name}}</text>
+    </view>
+    <view class="groupInfo">
+      <view class="title">{{productInfo.needer}}人拼团仅需：</view>
+      <view class="price">¥{{productInfo.team_price}}</view>
+    </view>
+    <view class="OriginalPrice">官网价：¥{{productInfo.origin_price}} </view>
+  </view>
+</view>
+<view class="NumberGroups">
+  <view class="title" wx:if="{{teamStatus == 2}}">
+    恭喜您拼单成功
+  </view>
+  <view class="title" wx:elif="{{teamStatus == 3}}">
+    该团未能按时凑齐人数，拼单失败
+  </view>
+  <view class="" wx:elif="{{isfail == 'fail'}}">
+    拼单失败
+  </view>
+  <view class="title" wx:else>
+    还差
+    <!-- <text wx:if="{{Entrance == 'b'}}"> {{(productInfo.needer - productInfo.joins)-1}}人 </text> -->
+    <text> {{productInfo.needer - productInfo.joins}}人 </text> 赶快邀请好友来拼单吧
+  </view>
+  <view class="HeadPortrait">
+    <view class="image" wx:for="{{team}}" wx:key="team">
+      <image class="head" src="{{item.headpic}}" bindtap='ImmediateDelegation'></image>
+      <image class="RegimentalCommander" wx:if="{{item.type == 1}}" src="/images/YueMall/RegimentalCommander.png"></image>
+    </view>
+  </view>
+  <!-- <block wx:if="{{teamStatus !=2 }}"> -->
+  <block wx:if="{{teamStatus == 1}}">
+    <view class="CountDown">
+      <!-- <view class="list">{{countDownDay}}</view>
+    <view class="colon">天</view> -->
+      <view class="list">{{countDownHour}}</view>
+      <view class="colon">:</view>
+      <view class="list">{{countDownMinute}}</view>
+      <view class="colon">:</view>
+      <view class="list">{{countDownSecond}}</view>
+      <view class="tips">后拼团过期</view>
+    </view>
+    <button open-type='share'>
+      <view class="InviteFriends">邀请好友拼单</view>
+    </button>
+  </block>
+  <!-- </block> -->
+
+  <block wx:elif="{{teamStatus == 2}}">
+    <view class="Success">
+      <view class="lookorder" bindtap='lookorder'>查看订单</view>
+      <view class="MoreBenefits" bindtap='MoreBenefits'>领取更多福利</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view style='height:55rpx;'></view>
+  </block>
+  <view class="orderDetail" bindtap='orderDetail'>
+    <view class="">订单详情</view>
+    <view class="info">
+      <view style='width:95%'>
+        <text>{{productInfo.goods_name}}</text>
+      </view>
+      <image src="/images/YueMall/roow.png"></image>
+    </view>
+  </view>
+  <view class="OrderRules">
+    <view>订单规则</view>
+    <view>好友拼单 · 人满发货 · 人不满退款</view>
+  </view>
+  <image wx:if="{{teamStatus == 2}}" src="/images/YueMall/Success.png" class="SuccessImage"></image>
+</view>
+<view class="Invitation">
+  <view class="titlemore">
+    <view class="title">一起拼团优惠购</view>
+    <view class="more" bindtap='BargainPriceList' data-url="/hd/assemble" data-title="拼团">
+      <view>查看更多</view>
+      <image src="/images/YueMall/roow.png"></image>
+    </view>
+  </view>
+  <view class="shopList">
+    <view class="list" bindtap='AssembleDetail' data-id="{{item.id}}" wx:for-index="index" data-skuid="{{item.skuId}}" wx:for="{{assembleList}}" wx:if="{{index == 0 || index == 1}}" wx:key="assembleList">
+      <image src="{{item.goodsImg}}"></image>
+      <view class="goodtitle">
+        <text>{{item.goodsName}}</text>
+      </view>
+      <view class="goodInfo">
+        <view>{{item.needer}}人拼团仅需：</view>
+        <view class="price">
+          ¥
+          <text>{{item.teamPrice}}</text>
+        </view>
+      </view>
+      <view class="SpellNum">官网价：¥{{item.originPrice}}</view>
+    </view>
+  </view>
+</view>

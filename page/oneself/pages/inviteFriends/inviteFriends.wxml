@@ -1,0 +1,54 @@
+<!--page/oneself/pages/myWalletContent/myWalletContent.wxml-->
+<!-- <view class="CommissionsDescription" bindtap='CommissionsDescription' data-statu="open">推荐规则</view> -->
+<view class="Commission">
+  <view class="HistoricalCommission">
+    <image src="{{member.avatar}}"></image>
+    <view class="AccumulatedAmount">{{member.name}}</view>
+  </view>
+</view>
+<view class="FunctionalCommission">
+  <view class="Division">
+    <view class="title">总人数</view>
+    <view>{{newteam.total}}</view>
+  </view>
+  <view class="Division" style="border:none">
+    <view class="title">店主人数</view>
+    <view>{{newteam.shopNum}}</view>
+  </view>
+</view>
+<view class="CommonFunction">
+  <view class="borderLeft">邀请明细({{order.length}})</view>
+</view>
+<view class="list" wx:for="{{order}}" wx:key="order" data-mid="{{item.mid}}" bindtap='MyPush'>
+  <view class="PersonnelInfo">
+    <view>
+      <image src="{{item.avatar}}"></image>
+    </view>
+    <view class="info">
+      <view class="name">
+        <view class="nameText">
+          <text>{{item.name}}</text>
+        </view>
+        <!-- <view class="series">{{item.mobile}}</view> -->
+      </view>
+      <view class="time">{{item.createTime}}</view>
+      <view>{{item.mobile}}</view>
+    </view>
+  </view>
+  <view class="StatusSum">
+    <image src="/images/memberInformation/right.png"></image>
+    <view class="Amount">
+      {{item.joinTime}}
+    </view>
+  </view>
+</view>
+
+
+
+<view class="commodity_screenshowModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+  <image src="/images/memberInformation/commit.png" style="width:500rpx;height:570rpx"></image>
+  <view class="drawer_content">{{content}}</view>
+
+</view>
+<image src="/images/login/close.png" bindtap="hideModal" animation="{{animationData}}" class="closeImage" wx:if="{{showModalStatus}}"></image>

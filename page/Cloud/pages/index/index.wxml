@@ -1,0 +1,79 @@
+<view class="header">
+  <view class="top-bg"></view>
+  <view class="top-bg-bot"></view>
+  <view class="header-cont">
+    <view class="serach" bindtap="search">
+      <image src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569312086_51546.png"></image>
+      <view>搜索商品名称</view>
+    </view>
+    <!-- 轮播 -->
+    <!-- <swiper class="swiper-box"> -->
+    <swiper class="swiper-box" autoplay="true" interval='3000'>
+      <block wx:for="{{banner}}" wx:for-index="index" wx:key="index">
+        <swiper-item>
+          <image class='image' src='{{item.url}}' mode="aspectFill" bindtap="classificationList" data-hotid="{{item.id}}" data-skuid="{{item.skuId}}" data-redirecttype="{{item.redirectType}}" data-typeid="{{item.id}}" data-id="{{item.id}}" data-name="{{item.name}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+
+
+<!-- 分类 -->
+<view class="class-cont">
+  <view class="class-list" wx:for="{{trade}}" wx:for-index="index" wx:key="index" bindtap="goClassInfoList" data-xyType="xy" data-keyword="{{item.typeName}}" data-channelid="{{item.channelId}}" data-indexkey="{{item.indexKey}}" data-id="{{item.id}}" data-brandid=''>
+    <image src="{{item.img}}" mode="aspectFill"></image>
+    <view>{{item.typeName}}</view>
+  </view>
+</view>
+
+<!-- 四个板块 -->
+<view class="plate" style="{{'margin-top:'+activity.typeInfo.temTopHeight+'rpx;margin-bottom:'+activity.typeInfo.temDownHeight+'rpx'}}">
+  <image wx:for="{{activity.goodsInfo}}" wx:for-index="index" wx:key="index" src="{{item.image}}" bindtap="classificationList" data-hotid="{{item.id}}" data-skuid="{{item.skuId}}" data-redirecttype="{{item.redirectType}}" data-typeid="{{item.id}}" data-id="{{item.id}}" data-name="{{item.name}}" mode="aspectFill"></image>
+</view>
+
+<!-- 推荐品牌 -->
+<view class="recommend">
+  <view class="title">
+    <view>推荐品牌</view>
+    <view class="more" bindtap="brandMore">更多 ＞</view>
+  </view>
+  <view class="recom-cont">
+    <view class="list" wx:for="{{brand}}" wx:for-index="index" wx:key="index" bindtap="goClassInfoList" data-type="brand" data-xyType="" data-keyword="{{item.brandName}}" data-channelid="7" data-brandid="{{item.brandId}}">
+      <image src="{{item.brandImg}}" mode="aspectFit"></image>
+      <view>{{item.brandName}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 全球馆 -->
+<view class="global">
+  <view class="title">
+    <view>全球馆</view>
+  </view>
+  <swiper class="swiper-block" previous-margin="158rpx" next-margin="158rpx" circular="true" current="0" bindchange="swiperChange">
+    <block wx:for="{{area}}" wx:for-index="index" wx:key="index" >
+      <swiper-item class="swiper-item">
+        <image bindtap="goClassInfoList" data-xyType="xy" data-channelid="{{item.channelId}}" data-indexKey="{{item.indexKey}}" data-keyword="" data-brandid=""  data-id="{{item.id}}" src="{{item.img}}" mode="aspectFill" class="slide-image {{swiperIndex == index ? 'active' : ''}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 横排分类 -->
+<view class="line-class">
+  <view bindtap="choseClass" wx:for="{{cate}}" wx:for-index="index" wx:key="index" data-index="{{index}}" data-id="{{item.category_id}}" class="{{choseCIndex==index?'active':''}}" >{{item.category_name}}</view>
+  <view bindtap="goClassList" data-keyword="{{cate[0].category_name}}" data-categoryfirstid="{{cate[0].category_id}}" data-indexkey="indexkey">更多 ＞</view>
+</view>
+
+<!-- 底部列表 -->
+<view class="bot-list">
+  <view class="list" wx:for="{{list}}" wx:for-index="index" wx:key="index" bindtap="classificationList" data-hotid="{{item.id}}" data-skuid="{{item.skuId}}" data-redirecttype="3" data-typeid="{{item.id}}" data-id="{{item.id}}" data-name="{{item.productName}}">
+    <image src="{{item.productImage}}" mode="aspectFill"></image>
+    <view class="name">{{item.productName}}</view>
+    <view class="price">
+      <view class="vip-price">会员价:¥{{item.vipPrice}}</view>
+      <view class="jd-price">{{item.channelName}}:¥{{item.price}}</view>
+    </view>
+  </view>
+</view>

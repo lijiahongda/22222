@@ -1,0 +1,328 @@
+/* 授权按钮 */
+.authorizationStatus{
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx
+}
+/* page/Mall/pages/GroupDetail/GroupDetail.wxss */
+page{
+  background-color: #ECECEC;
+}
+.goodInfo{
+  width: 88%;
+  margin-left: 4%;
+  margin-right: 4%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 35rpx;
+  padding-bottom: 35rpx;
+  border-radius: 16rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+.goodInfo image{
+  width: 240rpx;
+  height: 240rpx;
+  margin-right: 30rpx;
+  background-color: #ffac49
+}
+.goodInfo .info{
+  display: flex;
+  flex-direction: column;
+}
+.goodInfo .info .title text{
+  color: #303030;
+  font-size: 30rpx;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;  
+  margin-bottom: 25rpx
+}
+.goodInfo .info .groupInfo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 30rpx;
+  margin-bottom: 23rpx;
+}
+.goodInfo .info .groupInfo .title{
+  color: #303030;
+}
+.goodInfo .info .groupInfo .price{
+  color:#ED5D2F;
+}
+.goodInfo .info .OriginalPrice{
+  color:#999;
+  font-size: 26rpx;
+}
+.NumberGroups{
+  width: 82%;
+  margin-left: 4%;
+  margin-right: 4%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 30rpx;
+  padding-bottom: 60rpx;
+  border-radius: 16rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.NumberGroups .title{
+  color: #303030;
+  font-size: 30rpx;
+  margin-bottom: 58rpx
+}
+.NumberGroups .title text{
+  color: #FF6D5B;
+}
+.NumberGroups .HeadPortrait{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+.NumberGroups .HeadPortrait .image{
+  position: relative;
+  margin-right: 40rpx;
+  margin-left: 33rpx;
+  margin-top: 20rpx;
+}
+.NumberGroups .HeadPortrait .image .head{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+}
+.NumberGroups .HeadPortrait .image .RegimentalCommander{
+  position: absolute;
+  bottom: 0rpx;
+  width: 123rpx;
+  height: 30rpx;
+  left: 5.5rpx;
+}
+.ImmediateDelegation{
+  height: 98rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0rpx;
+  text-align: center;
+  line-height: 98rpx;
+  color: #fff;
+  font-size: 36rpx;
+  background:linear-gradient(157deg,rgba(255,112,91,1),rgba(255,80,74,1));
+}
+button[class="con_listbox"]::after {
+  border: 0;
+}
+button {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-color: #fff;
+  box-shadow: 0;
+  line-height: 1
+}
+button::after {
+  border: none;
+}
+
+
+/* 选择规格 */
+.SeparatePurchase {
+  width: 100%;
+  height: 98rpx;
+  background-color: #ff6e5b;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-size: 24rpx;
+  align-items: center;
+  justify-content: center;
+}
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+.commodity_attr_box {
+  width: 100%;
+  position: fixed;
+  z-index: 1990;
+  background: #fff;
+  padding-top: 20rpx;
+  bottom: 0rpx;
+  left: 0rpx;
+  overflow: visible;
+  height: 1000rpx;
+}
+.close {
+  display: flex;
+  justify-content: flex-end;
+  width: 96%;
+  background-color: #fff;
+  height: 140rpx;
+}
+
+.close icon {
+  margin-right: 3%;
+}
+.commodity {
+  display: flex;
+  flex-direction: row;
+  width: 87%;
+  margin: auto;
+  position: absolute;
+  top: -30rpx;
+  z-index: 1999;
+  margin-left: 3%;
+}
+
+.commodity .images image {
+  width: 180rpx;
+  height: 180rpx;
+  background-color:#fff;
+}
+
+.commodity .describe {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  margin-top: 45rpx;
+  padding-top: 45rpx;
+  width: 70%;
+  padding-left: 2%;
+  background-color: #fff;
+}
+.commodity .describe .money {
+  color: #333;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.commodity .describe .specification {
+  color: #333;
+  font-size: 24rpx;
+}
+.size {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 3.5%;
+  margin-top: 118rpx;
+}
+
+.sizeName {
+  font-size: 28rppx;
+  color: rgb(102, 102, 102);
+}
+.channelContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.channelContent view {
+  padding-left: 35rpx;
+  padding-right: 35rpx;
+  height: 52rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ececec;
+  margin-right: 4.64%;
+  color: #333;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  border-radius: 25rpx;
+}
+
+.channelContent view.active {
+  color: #ed5d2f;
+  height: 50rpx;
+  padding-left: 33rpx;
+  padding-right: 33rpx;
+  background: rgba(255, 238, 233, 1);
+  border: 1px solid rgba(237, 93, 47, 1);
+}
+.channelContent view .NotOptional{
+  text-decoration:line-through;
+  color:#999
+}
+.amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 93%;
+  margin: auto;
+  margin-top: 20rpx;
+  margin-bottom: 138rpx;
+}
+.sizeName {
+  font-size: 28rppx;
+  color: rgb(102, 102, 102);
+}
+.regulation {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+
+.addNumber {
+  border: 1px solid #ececec;
+  width: 74rpx;
+  height: 58rpx;
+  border-left: none;
+  text-align: center;
+  line-height: 58rpx;
+  /* border-radius: 4rpx; */
+}
+.amountNumber {
+  border: 1px solid #ececec;
+  width: 104rpx;
+  height: 58rpx;
+  text-align: center;
+  line-height: 58rpx;
+}
+.operationButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.subtract {
+  border: 1px solid #ececec;
+  width: 74rpx;
+  height: 58rpx;
+  border-right: none;
+  text-align: center;
+  line-height: 58rpx;
+  /* border-radius: 4rpx */
+}

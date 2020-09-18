@@ -1,0 +1,367 @@
+
+/* 活动 */
+/* 1 */
+.headTop {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.headTop image {
+  width: 100%;
+  border-radius:18rpx 18rpx 0px 0px;
+}
+
+/* 2 */
+.footerBottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -1rpx;
+}
+
+.footerBottom image.bg {
+  width: 100%;
+  height: 310rpx;
+}
+
+.footerBottom .goodList {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 89.3%;
+  top: 35rpx;
+}
+
+.footerBottom .goodposi {
+  width: 31.4%;
+  position: relative;
+  border-radius: 12rpx;
+}
+
+.footerBottom .goodList .list .goodImage {
+  width: 214rpx;
+  height: 248rpx;
+  border-radius: 12rpx;
+}
+
+.footerBottom .goodList .goodInfo {
+  background-image: url(https://image.yuelvhui.com/pubfile/2019/07/04/line_1562235200_94610.png);
+  background-size: 100%;
+  width: 213rpx;
+  background-repeat: no-repeat;
+  height: 101rpx;
+  bottom: -60rpx;
+  position: absolute;
+  left: -13rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerBottom .goodList .goodInfo .title {
+  margin-top: 22rpx;
+}
+
+.footerBottom .goodList .goodInfo .title text {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(58, 58, 58, 1);
+}
+
+.footerBottom .goodList .goodInfo .describe text {
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(58, 58, 58, 1);
+}
+/* 3 */
+
+.topGoods {
+  position: relative;
+  padding-top: 20rpx;
+  width: 94.6%;
+  margin: 0 auto;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  box-sizing: border-box;
+  background: #fff;
+  white-space: nowrap;
+  /* z-index: 99; */
+  display: flex;
+  flex-direction: row;
+  border-radius: 0px 0px 10rpx 10rpx;
+  padding-bottom: 30rpx;
+}
+
+.topGoods .goodList {
+  display: inline-block;
+  margin-right: 20rpx;
+  width: 180rpx;
+}
+
+.topGoods .goodList .goodListImage {
+  width: 186rpx;
+  height: 186rpx;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+}
+.topGoods .goodList .goodListtext {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.topGoods .goodList .goodListtext .ConcessionalRate {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #C82519;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 6rpx;
+}
+.topGoods .goodList .goodListtext .ConcessionalRate text {
+  font-size: 34rpx;
+}
+
+.topGoods .goodList .goodListtext .OriginalPrice text {
+  font-size: 20rpx;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 2rpx;
+}
+
+.topGoods .goodList .name text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 21rpx;
+}
+/* 4 */
+
+.ActivityModule {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 5rpx;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.ActivityModule .Spike {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ececec;
+  margin-right: 10rpx;
+  width: 49.1%;
+  background-size: 100%;
+  height: 276rpx;
+  background-repeat: no-repeat;
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+}
+.ActivityModule .Spike .describe {
+  color: #888;
+  font-size: 20rpx;
+}
+
+.ActivityModule .Spike .title {
+  color: #f13232;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.ActivityModule .GoodGoods {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ececec;
+  width: 49.1%;
+  background-size: 100%;
+  height: 276rpx;
+  background-repeat: no-repeat;
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.ActivityModule .GoodGoods .describe {
+  color: #3892d7;
+  font-size: 20rpx;
+}
+
+.ActivityModule .GoodGoods .GoodGoodsLabel {
+  width: 87rpx;
+  height: 27rpx;
+  background: linear-gradient(-49deg, rgba(39, 42, 64, 1) 0%, rgba(66, 82, 151, 1) 100%);
+  border-radius: 4px;
+  font-size: 18rpx;
+  color: #f3f3f3;
+  text-align: center;
+  line-height: 27rpx;
+  margin-left: 15rpx;
+}
+
+.ActivityModule .GoodGoods .title {
+  color: #141414;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.ActivityModule .Chop {
+  display: flex;
+  flex-direction: row;
+  width: 99%;
+}
+
+.ActivityModule .Chop .Assemble {
+  width: 32.6%;
+  height: 276rpx;
+  border-radius: 10rpx;
+}
+
+.ActivityModule .Chop .Assemble image {
+  width: 155rpx;
+  height: 188rpx;
+  border-radius: 10rpx;
+  background-color: #f19149;
+}
+
+.ActivityModule .Chop .title {
+  display: flex;
+  flex-direction: row;
+  color: #31baff;
+  font-size: 24rpx;
+  margin-bottom: 12rpx;
+}
+
+.ActivityModule .Chop .title image {
+  width: 36rpx;
+  height: 19rpx;
+  background-color: #ff6032;
+}
+.ActivityModule .Spike .left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: -7rpx;
+}
+
+/* 5 */
+.Template {
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.Template .left {
+  width: 50%;
+  height: 470rpx;
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+  border-right: 1px solid #ccc;
+}
+
+.Template .right {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 470rpx;
+  flex-wrap: wrap;
+}
+
+.Template .right image {
+  width: 50%;
+  height: 235rpx;
+}
+/* 6 */
+.brand {
+  width: 94.6%;
+  margin-left: 2.7%;
+  margin-right: 2.7%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+}
+
+.brand .title {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
+
+.brand .listImage {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+}
+
+.brand image {
+  width: 130rpx;
+  height: 130rpx;
+  display: inline-block;
+  margin-right: 31rpx;
+}
+
+
+
+/* 7 */
+
+.active_six .six_top, .active_six .six_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.six_top_img {
+  width: 250rpx;
+  height: 182rpx;
+  overflow: hidden;
+}
+
+.active_six .six_top view image {
+  width: 100%;
+  height: 182rpx;
+}
+
+.six_img {
+  width: 25%;
+  height: 146rpx;
+  overflow: hidden;
+}
+
+.active_six .six_bottom image {
+  width: 188rpx;
+  height: 146rpx;
+}

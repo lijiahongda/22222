@@ -1,0 +1,529 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": false,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": false,
+		"autoAudits": true,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.1",
+	"appid": "wxa404e150131464ed",
+	"projectname": "%E6%82%A6%E6%B7%98",
+	"cloudfunctionTemplateRoot": "",
+	"watchOptions": {
+		"ignore": []
+	},
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "退款",
+					"pathName": "page/Yuemall/pages/NeworderDetails/NeworderDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "必买",
+					"pathName": "page/Yuemall/pages/mustBuy/mustBuy",
+					"query": "scene=I%3d1%26C%3d23%26B%3d1111"
+				},
+				{
+					"id": -1,
+					"name": "大礼包",
+					"pathName": "page/EliteCard/EliteCard",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "page/Yuemall/pages/Coulist/Coulist",
+					"pathName": "page/Yuemall/pages/Coulist/Coulist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "page/Yuemall/pages/details/details",
+					"pathName": "page/Yuemall/pages/details/details",
+					"query": "goodsId=381282&skuid=413017",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付结果",
+					"pathName": "page/other/pages/PayResults/PayResults",
+					"query": "goodsId= 277511&skuid= 254095&productType=0",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "在线义诊",
+					"pathName": "page/other/pages/Online/Online",
+					"query": "reCode=11111",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "page/personalCenter/personalCenter",
+					"query": "reCode=11111",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "pdd详情",
+					"pathName": "page/Yuemall/pages/pddDetails/details",
+					"query": "goodsId= 7440289",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "中转站",
+					"pathName": "page/other/pages/SharingSet/SharingSet",
+					"query": "scene=I%3d15%26C%3dF0000%26B%3d80159"
+				},
+				{
+					"id": 9,
+					"name": "111",
+					"pathName": "page/Yuemall/pages/NeworderDetails/NeworderDetails",
+					"query": "orderSon=11715813218726999&type="
+				},
+				{
+					"id": 11,
+					"name": "page/assembleFree/page/InitiateGroup/InitiateGroup",
+					"pathName": "page/assembleFree/page/InitiateGroup/InitiateGroup",
+					"query": "id=19453&type=2",
+					"scene": null
+				},
+				{
+					"id": 12,
+					"name": "page/videoDetail/pages/detail/detail",
+					"pathName": "page/videoDetail/pages/detail/detail",
+					"query": "goodsId=369447&skuid=387264",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "直播",
+					"pathName": "page/zhibo/pages/zhiboceshi/zhibo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 14,
+					"name": "page/assembleFree/page/AssembleDetail/AssembleDetail",
+					"pathName": "page/assembleFree/page/AssembleDetail/AssembleDetail",
+					"query": "teamid=613&skuid=387264",
+					"scene": null
+				},
+				{
+					"id": 15,
+					"name": "详情",
+					"pathName": "page/Yuemall/pages/details/details",
+					"query": "goodsId=364634&skuid=378155",
+					"scene": null
+				},
+				{
+					"id": 16,
+					"name": "砍价",
+					"pathName": "page/Yuemall/pages/BargainPriceList/BargainPriceList",
+					"query": "goodsId=364634&skuid=378155",
+					"scene": null
+				},
+				{
+					"id": 17,
+					"name": "销售结算",
+					"pathName": "page/oneself/pages/SalesSettlement/SalesSettlement",
+					"query": "goodsId=364634&skuid=378155",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单列表",
+					"pathName": "page/oneself/pages/MemberCenter/MemberCenter",
+					"query": "goodsId=364634&skuid=378155",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/oneself/pages/about/about",
+					"pathName": "page/oneself/pages/about/about",
+					"query": "goodsId=364634&skuid=378155",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "商城订单",
+					"pathName": "page/Yuemall/pages/NeworderList/NeworderList",
+					"query": "cur = 0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登陆注册",
+					"pathName": "page/Yuemall/pages/VerificationCode/VerificationCode",
+					"query": "goodsId=364634&skuid=378155",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品分享",
+					"pathName": "page/other/pages/CommoditySharing/CommoditySharing",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "page/Yuemall/pages/Cart/Cart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "地址管理",
+					"pathName": "page/Yuemall/pages/addressAdministration/addressAdministration",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加地址",
+					"pathName": "page/Yuemall/pages/editAddress/editAddress",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 27,
+					"name": "秒杀订单",
+					"pathName": "page/Yuemall/pages/RushBuyBalance/RushBuyBalance",
+					"query": "Entrance=RushBuy&activityId=10953&areaid=132149&goodid=369025&goodsnum=1&skuid=386101&type=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "下单结果页",
+					"pathName": "page/other/pages/PayResults/PayResults",
+					"query": "Entrance=RushBuy&activityId=10953&areaid=132149&goodid=369025&goodsnum=1&skuid=386101&type=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "预约活动",
+					"pathName": "page/Yuemall/pages/bookingActivities/bookingActivities",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "唯品会",
+					"pathName": "page/Yuemall/pages/WeiPH/WeiPH",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 30,
+					"name": "预约活动详情",
+					"pathName": "page/Yuemall/pages/bookingDetails/bookingDetails",
+					"query": "goodsId=37819&activityExtId=11229&uid=0",
+					"scene": null
+				},
+				{
+					"id": 32,
+					"name": "爆款",
+					"pathName": "page/Yuemall/pages/hotStyleNew/hotStyleNew",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 32,
+					"name": "直播",
+					"pathName": "page/LiveBroadcast/LiveBroadcast",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 33,
+					"name": "一分钱抽奖",
+					"pathName": "page/Yuemall/pages/luckDraw/luckDraw",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 34,
+					"name": "一分钱",
+					"pathName": "page/Yuemall/pages/invitationDraw/invitationDraw",
+					"query": "activityId=8",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/LiveBroadcast/LiveBroadcast",
+					"pathName": "page/LiveBroadcast/LiveBroadcast",
+					"query": "goodsId=364634&skuid=378155",
+					"scene": null
+				},
+				{
+					"id": 36,
+					"name": "h5",
+					"pathName": "page/liveH5/shopDetail/shopDetail",
+					"query": "goodsId=181701&skuid=111",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "h5支付",
+					"pathName": "page/liveH5/h5Pay/h5Pay",
+					"query": "ordersn=24905406397",
+					"scene": null
+				},
+				{
+					"id": 38,
+					"name": "1111",
+					"pathName": "page/liveH5/shopDetail/shopDetail",
+					"query": "goodsId=176153&skuid=171",
+					"scene": null
+				},
+				{
+					"id": 39,
+					"name": "社群-攻略",
+					"pathName": "page/community/pages/main/commodities/index",
+					"query": "C=887&R=4687",
+					"scene": 1047
+				},
+				{
+					"id": -1,
+					"name": "打开社群购",
+					"pathName": "page/community/pages/main/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "打开结算页",
+					"pathName": "page/payment/payMain/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/Yuemall/pages/RushBuyBalance/RushBuyBalance",
+					"pathName": "page/Yuemall/pages/RushBuyBalance/RushBuyBalance",
+					"query": "?Entrance=RushBuy&goodsnum=1&goodid=366760&skuid=381722&areaid=146779&activityId=187429&type=0",
+					"scene": null
+				},
+				{
+					"id": 43,
+					"name": "page/Yuemall/pages/balance/balance",
+					"pathName": "page/Yuemall/pages/balance/balance",
+					"query": "?type=gopay&amountnumber=1&goodid=345799&labelName=&leaderId=undefined&skuid=343333&addressIds=1_2810_55540_null&areaId=146779&addressType=0&productType=0&video=",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "成长值",
+					"pathName": "page/oneself/pages/growthValue/growthValue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 45,
+					"name": "社群商品详情",
+					"pathName": "page/community/pages/main/communityDetail/communityDetail",
+					"query": "goodsId=277560&activityId=5",
+					"scene": null
+				},
+				{
+					"id": 46,
+					"name": "白拿",
+					"pathName": "page/Yuemall/pages/NewHotStyle/NewHotStyle",
+					"query": "id=55",
+					"scene": 1044,
+					"shareInfo": {
+						"groupName": "测试模拟群0",
+						"shareName": "9gHrCjCMxJQXvsjHCGrDi1LrrTs_Has1Bb0XjZAAwAI@cr4dev",
+						"shareKey": "wcWBPHjPW5IZg9K4JGF_vrw2_7ERer6WdLcHpGC781VY024BXy5cBzZhWtOlGzno-jkg_zZGTOFnh4exacofJg~~"
+					}
+				},
+				{
+					"id": 47,
+					"name": "未激活",
+					"pathName": "page/Yuemall/pages/hotStyleNew/hotStyleNew",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 48,
+					"name": "秒杀商品详情",
+					"pathName": "page/Yuemall/pages/RushBuyDetail/RushBuyDetail",
+					"query": "goodsId=380489&activityId=390641",
+					"scene": null
+				},
+				{
+					"id": 49,
+					"name": "会员权益",
+					"pathName": "page/EliteCard/EliteCard",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 50,
+					"name": "page/other/pages/SharingSet/SharingSet",
+					"pathName": "page/other/pages/SharingSet/SharingSet",
+					"query": "scene=I%3D34%26A%3D391021%26R%3D222",
+					"scene": 1012
+				},
+				{
+					"id": 51,
+					"name": "page/Yuemall/pages/NewHotStyle/NewHotStyle",
+					"pathName": "page/Yuemall/pages/NewHotStyle/NewHotStyle",
+					"query": "id=478&type=478",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "page/Yuemall/pages/Cart/Cart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "预估成长值",
+					"pathName": "page/Yuemall/pages/GrowthDetails/GrowthDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "预估成长值",
+					"pathName": "page/Yuemall/pages/GrowthDetails/GrowthDetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "京东详情",
+					"pathName": "page/Yuemall/pages/JDUnionDetail/JDUnionDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "京东详情",
+					"pathName": "page/Yuemall/pages/JDUnionDetail/JDUnionDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "京东详情",
+					"pathName": "page/Yuemall/pages/JDUnionDetail/JDUnionDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "京东详情",
+					"pathName": "page/Yuemall/pages/JDUnionDetail/JDUnionDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "京东详情",
+					"pathName": "page/Yuemall/pages/JDUnionDetail/JDUnionDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 60,
+					"name": "page/community/pages/main/communityDetail/communityDetail",
+					"pathName": "page/community/pages/main/communityDetail/communityDetail",
+					"query": "scene=I%3D34%26C%3DF71909351%26A%3D464389%26R%3D6254",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "下单页面（大礼包模拟）",
+					"pathName": "page/Yuemall/pages/balance/balance",
+					"query": "addressIds=1_72_2839_0&addressType=0&amountnumber=1&areaId=291593&goodid=395771&labelName=\"\"&leaderId=\"undefined\"&pagetype=\"dalibao\"&skuid=4377724&type=gopay",
+					"scene": null
+				},
+				{
+					"id": 62,
+					"name": "下单",
+					"pathName": "page/Yuemall/pages/balance/balance",
+					"query": "addressIds=1_72_2839_0&addressType=0&amountnumber=1&areaId=291593&goodid=395771&labelName=\"\"&leaderId=\"undefined\"&pagetype=\"dalibao\"&skuid=437724&type=gopay",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "砍价列表",
+					"pathName": "page/Yuemall/pages/BargainPriceList/BargainPriceList",
+					"query": "scene=I%3D34%26C%3DF71909351%26A%3D464389%26R%3D6254",
+					"scene": null
+				},
+				{
+					"id": 64,
+					"name": "帮好友砍价",
+					"pathName": "page/Yuemall/pages/HelpDetails/HelpDetails",
+					"query": "found_id=9489&isFriend=true",
+					"scene": null
+				}
+			]
+		}
+	}
+}

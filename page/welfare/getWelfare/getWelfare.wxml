@@ -1,0 +1,13 @@
+<!--page/welfare/getWelfare/getWelfare.wxml-->
+<view class="page">
+  <view class="page-body">
+    <text class="title">恭喜你获得</text>
+    <text class="money">5.00<text>元</text></text>
+    <text class="welfare-type">现金红包</text>
+    <text class="info">填写手机号领取红包</text>
+    <input placeholder="输入手机号"  type="number" class="phone"  placeholder-style="color:#FDFAF0"></input>
+     <input placeholder="输入验证码" type="number"  placeholder-style="color:#FDFAF0"></input>
+     <button bindtap='downLoad'>确认领取</button>
+  </view>
+  <navigator open-type="exit" target="miniProgram"></navigator>
+</view>

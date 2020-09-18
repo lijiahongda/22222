@@ -1,0 +1,51 @@
+/* page/Mall/pages/HaggleList/HaggleList.wxss */
+page{
+  background-color: #ECECEC
+}
+.content{
+  background-color: #fff;
+  border-radius: 16rpx;
+  margin-top: 30rpx;
+  width: 92%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+.GroupList {
+  border-bottom: 1px solid #ececec;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.GroupList .SenderInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 24rpx;
+  color: #000;
+}
+
+.GroupList .SenderInfo image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background-color: #ff7666;
+  margin-right: 20rpx;
+}
+
+.GroupList .GroupInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.GroupList .GroupInfo .GoGroup {
+  font-size: 24rpx;
+  color: #494949;
+}

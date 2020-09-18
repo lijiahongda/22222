@@ -1,0 +1,74 @@
+/* page/Yuemall//pages/NewLevelPages/NewLevelPages.wxss */
+
+page {
+  background-color: #f6f6f6;
+}
+
+
+.classification {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 702rpx;
+  margin: 0 auto;
+  padding: 30rpx 26rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 18rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  padding-bottom: 0;
+}
+
+.classification .typeList {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 30rpx;
+}
+
+.classification .typeList image {
+  width: 92rpx;
+  height: 92rpx;
+  margin-bottom: 16rpx;
+  border-radius: 50%;
+}
+
+
+.list_title{
+  font-size: 32rpx;
+  color: #141414;
+  display: flex;
+  align-items: center;
+  padding-left: 4%;
+  margin-top: 30rpx;
+}
+.list_title image{
+  width: 44rpx;
+  height: 42rpx;
+  margin-right: 6rpx;
+}
+.list_title .title_like{
+  font-size: 28rpx;
+  color: #999999;
+  margin-left: 20rpx;
+}
+
+
+.coupons{
+  width: 750rpx;
+  height: 236rpx;
+  margin-bottom: 20rpx;
+}
+.coupons image{
+  width: 750rpx;
+  height: 236rpx;
+}

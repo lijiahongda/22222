@@ -1,0 +1,26 @@
+<view class="Recommend">
+  <view class="content">
+    <view class="list" wx:for="{{list}}" wx:for-index="index" wx:key="index" wx:if="{{index%2==0}}" bindtap="details" data-goodsid="{{item.goodId}}" data-skuid="{{item.skuId?item.skuId:item.productSkuId}}" data-productType="{{item.productType}}">
+      <image src="{{item.goodCover}}"></image>
+      <view class="name">{{item.goodName}}</view>
+      <view class="two_name">{{item.goodName}}</view>
+      <view class="coupon" wx:if="{{item.isUseCoupon}}">满{{item.couponInfo.total}}减{{item.couponInfo.amount}}</view>
+      <view class="price">
+        <view class="money"><text style="font-size:24rpx">¥</text>{{item.goodVipPrice}}</view>
+        <view class="OriginalPrice">¥{{item.goodPrice}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="list" wx:for="{{list}}" wx:for-index="index" wx:key="index" wx:if="{{index%2==1}}" bindtap="details" data-goodsid="{{item.goodId}}" data-skuid="{{item.skuId?item.skuId:item.productSkuId}}" data-productType="{{item.productType}}">
+      <image src="{{item.goodCover}}"></image>
+      <view class="name">{{item.goodName}}</view>
+      <view class="two_name">{{item.goodName}}</view>
+      <view class="coupon" wx:if="{{item.isUseCoupon}}">满{{item.couponInfo.total}}减{{item.couponInfo.amount}}</view>
+      <view class="price">
+        <view class="money"><text style="font-size:24rpx">¥</text>{{item.goodVipPrice}}</view>
+        <view class="OriginalPrice">¥{{item.goodPrice}}</view>
+      </view>
+    </view>
+  </view>
+</view>

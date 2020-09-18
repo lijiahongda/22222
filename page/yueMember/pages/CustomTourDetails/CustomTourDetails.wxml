@@ -1,0 +1,111 @@
+<scroll-view scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true" class="scr" style="height:{{windowHeight}}px">
+  <view class="item">
+    <view class="image" style="background-image: url({{banner}})">
+      <view class="note">
+        <view class="left">{{type}} | {{start_place}}出发</view>
+        <view>{{join_number}}人出行 | {{satisfaction}}满意</view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="lineTitle">{{main_title}}</view>
+      <view class="introduce">
+        <text>{{slave_title}}</text>
+      </view>
+      <view class="money">
+        <text class="unit">￥</text>
+        <text class="num">{{price}}</text>
+        <text class="qi">起</text>
+        <text class="save">已省￥{{economize_price}}</text>
+      </view>
+      <view class="labels">
+        <view class="lists" wx:for="{{tags}}" wx:key="tags">{{item}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="CustomerRecommends">
+    <view class="title">
+      <image src="../../../../images/LineRevision/Recommends.png"></image>
+      <view>定制师推荐</view>
+    </view>
+    <view class="CustomerContent">
+      <view class="contentItem">
+        <view class="ContentLabel">出发地</view>
+        <view>{{start_place}}</view>
+      </view>
+      <view class="contentItem">
+        <view class="ContentLabel">目的地</view>
+        <view>{{end_place}}</view>
+      </view>
+      <view class="contentItem">
+        <view class="ContentLabel">参考交通</view>
+        <view>{{traffic_style}}</view>
+      </view>
+      <view class="contentItem">
+        <view class="ContentLabel">行程天数</view>
+        <view>{{travel_days}}</view>
+      </view>
+      <view class="contentItem">
+        <view class="ContentLabel">游览城市</view>
+        <view>{{travel_cities}}</view>
+      </view>
+      <view class="contentItem">
+        <view class="ContentLabel">住宿标注</view>
+        <view>{{stay_standard}}</view>
+      </view>
+      <view class="contentItem">
+        <view class="ContentLabel">经典景点</view>
+        <view>{{classic_view}}</view>
+      </view>
+      <view class="contentItem">
+        <view class="ContentLabel">有无导游</view>
+        <view>有</view>
+      </view>
+    </view>
+  </view>
+  <view class="tab-h hide{{showView?'show':''}}">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">产品详情</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">费用须知</view>
+  </view>
+  <view id="Id0">
+    <view class="productItem" wx:for="{{product_desc}}" wx:key="product_desc">
+      <view class="productName">
+        <view class="circle"></view>
+        <view class="" style="position: absolute">{{item.title}}</view>
+      </view>
+      <rich-text nodes="{{item.content}}"></rich-text>
+    </view>
+  </view>
+  <view id="Id1">
+    <rich-text nodes="{{expenses_tips}}"></rich-text>
+
+
+    <!-- <view class="CostIncludes">
+      <view class="CostIncludesName">费用包含</view>
+      <view class="CostIncludesContent">
+        <view>1.往返香港航空经济舱机票，香港直飞，国内多个城市可以匹配联运(福州出发+700，重庆/成都/上海/杭州/南京+800,天津/北京+1000)</view>
+        <view>2.团票不接受退改更，否则全损</view>
+        <view>3.行程所列酒店住宿费用</view>
+        <view>4.以出团通知为准！</view>
+        <view>5.含早餐</view>
+        <view>6.马累国际机场至酒店快艇往返接送</view>
+        <view>7.年龄2--12周岁（不含）,不占床,服务标准同成人</view>
+      </view>
+    </view>
+    <view class="Self-care">
+      <view class="Self-careName">自理费用</view>
+      <view class="Self-careContent">
+        <view>1.本产品不包含保险，建议您自行购买旅游意外保险。</view>
+        <view>2.单房差</view>
+        <view>3.出入境个人物品海关征税；超重行李的托运费、保管费; 因交通延阻、罢工、天气、机器故障等不可抗力原因所导 致的额外费用: 酒店内洗衣、理发、电话、传真、收费电 视、饮品、烟酒等个人消费; 自由活动期间的用车服务; 提 供导游服务的产品在自由活动期间无陪同服务; 当地参加 的自费以及“费用包含”中不包含的其它项目。
+        </view>
+      </view>
+    </view> -->
+  </view>
+  <view class="foot">
+    <view class="Consultation" bindtap='calltel'>
+      <image src="../../../../images/LineRevision/Consultation.png"></image>
+      <view>咨询</view>
+    </view>
+    <view class="ImmediateCustomization" bindtap='ImmediateCustomization'>立即定制</view>
+  </view>
+</scroll-view>

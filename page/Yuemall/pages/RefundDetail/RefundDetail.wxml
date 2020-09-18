@@ -1,0 +1,101 @@
+ <view class="borderBottom">
+    <view class="ItemRight">
+      <view class="image">
+        <image src="{{goodmsg.goodsImg}}"></image>
+      </view>
+      <view class="describe">
+        <view class="title">
+          <text>商品名字{{goodmsg.goodsName}}</text>
+        </view>
+          <!-- 如果是书籍加字段 -->
+        <view wx:if="{{item.channelId == 8}}">作者名:{{item.authorName}}</view>
+        <view wx:if="{{item.channelId == 8 && item.publishName !=''}}">出版社:{{item.publishName}}</view>
+        <view class="Specifications">{{goodmsg.goodsSpec}}</view>
+        <view class="price">
+          <text>￥{{goodmsg.payPrice}}</text>
+          <text>x{{goodmsg.goodsNum}} </text>
+        </view>
+          
+      </view>
+    </view>
+  </view>
+
+<view class="reason">
+  <view class="list" bindtap="closeService">
+    <view>退款原因</view>
+    <view><view style="{{reasonText?'':'color:#666'}}">{{reasonText?reasonText:'请选择'}}</view> <image src="https://image.yuelvhui.com/pubfile/2019/10/21/line_1571640727_93953.png"></image> </view>
+  </view>
+  <view class="list">
+    <view>退款数量</view>
+    <view>{{goodmsg.goodsNum}}</view>
+    <!-- <view class="infonum" wx:if="{{changes==2}}"> 
+      <view class="delnum" bindtap="delnum">-</view>
+      <view class="number">{{goodmsg.goodsNum}}</view>
+      <view class="addnum" bindtap="addnum">+</view>
+    </view> -->
+  </view>
+  <!-- <view class="price_cont">最多￥49.9，含发货邮费￥0.00</view> -->
+</view>
+<view class="reason">
+   <view class="reasonault">
+    <view>退款金额：</view> 
+    <input placeholder="{{goodmsg.payPrice}}" bindinput="binchange"></input>
+   </view>
+  <view>实付金额： <text style="color:#EF4C25">￥{{goodmsg.payPrice}}</text> </view>
+  <view class="reasonault">
+    <view> 退款说明：</view>
+    <input placeholder="必填" bindinput="bindinput"></input>
+  </view>
+  <!-- <view class="price_cont">最多￥49.9，含发货邮费￥0.00</view> -->
+</view>
+<view class="orderInfo"> 
+  <view class="title">上传凭证（最多三张）</view>
+  <image class="upload" bindtap='upload' wx:if="{{image == ''}}" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-29/17/yuelvhuiasv8ErPtJW1577611572.png"></image>
+  
+  <view class="Exhibition" wx:else>
+    <view class="image" wx:for="{{image}}" wx:key="image">
+      <image mode="aspectFill" class="images" src="{{item}}"></image>
+      <image class="deleteImg" data-index="{{index}}" catchtap="deleteImg" src="https://image.yuelvhui.com/pubfile/2019/10/21/line_1571651146_18771.png"></image>
+    </view>
+    <image bindtap='upload' class="upload" wx:if="{{imgs.length < 3}}" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-27/17/yuelvhuinIGz4rYS1h1577438947.png"></image>
+  </view>
+</view>
+
+
+<!-- 退款原因 -->
+<view class="bg_black" wx:if="{{services}}"></view>
+  <view class="services" wx:if="{{services}}">
+    <view class="title">退款原因</view>
+    <image class="close" bindtap="closeService" src="https://image.yuelvhui.com/pubfile/2019/10/21/line_1571653726_74744.png"></image>
+    <view class="reason_radio">
+      <radio-group class="radio-group" bindchange="radioChange">
+        <radio color="#f2391a" class="radio" wx:for="{{expresslist}}" wx:key="name" value="{{item.type}}" checked="{{item.checked}}" >
+          <text>{{item.info}}</text>
+        </radio>
+      </radio-group>
+  </view>
+  
+  <!-- <view class="save" bindtap="closeService">提交</view> -->
+</view>
+
+<!-- 退款-提示弹窗 -->
+<view class="bg_blacks" wx:if="{{severshow}}"></view>
+<view class="severs" wx:if="{{severshow}}">
+    <view class="tupian">
+      <view class="tupian_image">
+          <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-19/17/yuelvhuioo2n2MiK2T1576746452.png"></image>
+      </view>
+      <view class="tupian_text">提示</view>
+    </view>
+    <view class="services_text">
+      申请退款后，您购买商品的佣金将扣除，请确认是否继续～
+    </view>
+    <view class="services_btn">
+      <view class="services_btn_fou" bindtap="closeshow">否</view>
+      <view class="services_btn_yes" bindtap="onfirmrend">是</view>
+    </view>
+</view>
+
+
+<view class="save" bindtap="save">提交</view>
+

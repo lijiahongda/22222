@@ -1,0 +1,255 @@
+page{
+  font-family:PingFang SC;
+  padding-bottom: 2000rpx
+}
+.header{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.header > view{
+  width: 50%;
+  height: 100%;
+  line-height: 80rpx;
+  color: #333333;
+  font-size: 28rpx;
+  text-align: center;
+  position: relative;
+}
+.header > view.active{
+  color: #C82519;
+}
+.header > view.active::after{
+  content: ' ';
+  width: 40rpx;
+  height: 4rpx;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -20rpx;
+  background: #C82519;
+  border-radius: 2rpx;
+}
+
+.list{
+  width: 702rpx;
+  height: 284rpx;
+  background: #fff;
+  padding: 20rpx 30rpx 20rpx 20rpx;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  border-radius: 16rpx;
+  display: flex;
+  position: relative;
+}
+.list .left{
+  width: 244rpx;
+  height: 244rpx;
+  margin-right: 30rpx;
+}
+.list .right{
+  width: 364rpx;
+  height: 100%;
+  position: relative;
+}
+.list .right .title{
+  width: 100%;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 68rpx;
+  color: #333333;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+.list .right .sku{
+  color: #999;
+  font-size: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 8rpx;
+}
+.list .right .progress{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #999;
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+.list .progress .bar{
+  width: 220rpx;
+  height: 22rpx;
+  background: rgba(255,96,50,.1);
+  border-radius: 11rpx;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.list .progress .bar > view{
+  width: 50%;
+  height: 100%;
+  border-radius: 11rpx;
+  background: #C12B15;
+}
+.list .time{
+  height: 36rpx;
+  border: 2rpx solid #DF270A;
+  padding: 0 10rpx;
+  border-radius: 20rpx;
+  color: #DF270A;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:fit-content;
+  margin-top: 8rpx;
+}
+.list .price{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #DA341A;
+  font-size: 36rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.list .price .priceDetail{
+  display: flex;
+  align-items: baseline;
+}
+.list .price .priceDetail > view:last-child{
+  color: #999999;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  text-decoration: line-through;
+}
+.list .price .goBuy{
+  width: 110rpx;
+  height: 48rpx;
+  text-align: center;
+  line-height: 48rpx;
+  color: #fff;
+  font-size: 28rpx;
+  background:linear-gradient(262deg,rgba(244,57,68,1),rgba(242,120,121,1));
+  border-radius: 24rpx;
+}
+
+.detail{
+  background: #fff;
+}
+.newHeader{
+  width: 296rpx;
+  height: 35rpx;
+  margin: 30rpx auto 20rpx auto;
+  display: block;
+}
+.tab{
+  width: 100%;
+  height: 88rpx;
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+}
+.tabScroll{
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  background: #fff;
+}
+.tab .tabList{
+  display: inline-block;
+  min-width: 188rpx;
+  height: 100%;
+  position: relative;
+  color: #333333;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 88rpx;
+  padding: 0 16rpx;
+  box-sizing: border-box;
+}
+.tab .tabList:last-child .verticalBar{
+  display: none;
+}
+.tab .tabList.select{
+  color: #fff;
+  vertical-align: middle;
+  position: relative;
+}
+.tab .tabList.select > view{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 54rpx;
+  border-radius: 30rpx;
+  background:linear-gradient(91deg,rgba(253,92,109,1) 0%,rgba(255,22,46,1) 100%);
+  line-height: 54rpx;
+}
+/* .tab .tabList.select::after{
+  content: ' ';
+  position: absolute;
+  left: 50%;
+  margin-left: -20rpx;
+  bottom: 20rpx;
+  background: #C82519;
+  width: 40rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+} */
+.tabTop{
+  position: fixed;
+  top: -20rpx;
+  left: 0;
+  z-index: 1;
+  background: #fff;
+}
+.list .goBuyDetail{
+  width: 114rpx;
+  height: 56rpx;
+  text-align: center;
+  line-height: 56rpx;
+  color: #DA341A;
+  font-size: 26rpx;
+  border: 2rpx solid rgba(228,49,31,.5);
+  border-radius: 28rpx;
+  box-sizing: border-box;
+}
+.list .top{
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  width: 60rpx;
+  height: 60rpx;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 30rpx;
+}
+.list .top > view:nth-child(2){
+  font-size: 18rpx;
+  line-height: 20rpx;
+}
+.more{
+  width: 100%;
+  text-align: center;
+  padding: 60rpx;
+  box-sizing: border-box;
+  color: #666;
+  font-size: 24rpx;
+}

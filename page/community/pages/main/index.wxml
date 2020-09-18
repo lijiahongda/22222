@@ -1,0 +1,78 @@
+<!--page/community/pages/main/index.wxml-->
+<view class="zcontent">
+  <!-- 头部 -->
+  <header-com bgcolor="#fff" bindshow='show' ERM='{{ERM}}' nickName='{{userInfo.nickName}}' memberType='{{userInfo.memberType}}' litpic='{{userInfo.litpic}}' memberImg='{{userInfo.memberImg}}' qrCode='{{qrCode}}'  headerTitle="悦淘社群购"></header-com>
+  <!-- 群特卖 -->
+  <view class="groupShop">
+    <view class="title">
+      <view class="name">
+        群特卖
+        <text>(群内专享补贴，赚钱管理奖励)</text>
+      </view>
+      <view class="checkMore" bindtap="commodities">
+        <view>查看更多</view>
+        <view><image src="../../image/rjt.png"></image></view>
+      </view>
+    </view>
+    <scroll-view scroll-x="{{true}}" class="commodityList">
+      <view class="zlist" style="width:{{groupSaleGoodsData.length*260}}rpx">
+        <view class="listbox"  wx:for="{{groupSaleGoodsData}}" wx:key="index">
+          <main-commodity  imgwidth="240" goodId='{{item.goodId}}' activityId='{{item.activityId}}' text='{{text}}' goodVipPrice='{{item.goodVipPrice}}' goodCover='{{item.goodCover}}' sharePrice='{{item.sharePrice}}' ></main-commodity>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 群列表 -->
+  <view class="groupList">
+    <view class="title">
+      <view class="tab">
+        <view class="{{tabIndex=='1'?'chose':''}}" data-value="1" bindtap="groupTabC">激活群({{actiNum}})</view>
+        <!-- <view class="{{tabIndex=='0'?'chose':''}}" data-value="0" bindtap="groupTabC" style="margin-left: 20rpx;">未激活群({{notActiNum}})</view> -->
+      </view>
+      <!-- <view class="more">
+        <view>
+          <image src="../../image/th.png"></image>
+        </view>
+        <view>群管理奖励</view>
+      </view> -->
+    </view>
+    <!-- <view class="Tips">分享链接到群，有10个你的会员点击就可激活该群，赚群管理奖励！</view> -->
+    <!-- 群列表信息 -->
+    <view class="groupMsg">
+      <!-- 群列表消息 -->
+      <view class="group" wx:for="{{list}}" data-roomid="{{item.room_id}}"  wx:key="index" bindtap="opengroup">
+        <view class="groupImg">
+          <image src="{{item.head_img}}"></image>
+        </view>
+        <view class="msg">
+          <view class="title">
+            <view class="name">{{item.name}}</view>
+            <view class="checkMore">
+              <view>查看详情</view>
+              <view><image src="../../image/rjt.png"></image></view>
+            </view>
+          </view>
+          <view class="content">
+            <view wx:if="{{tabIndex=='0'}}"  class="brief">{{item.bad_num}}</view>
+            <view  wx:if="{{tabIndex=='1'}}"  class="brief">{{item.browese_num}}</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="tips">没有更多群了~</view>
+    </view>
+  </view>
+</view>
+<!-- 二维码弹窗 -->
+<view class="model" wx:if='{{model}}'  >
+  <view class="close" bindtap="modelClose">
+    <image src="https://image.yuelvhui.com/pubfile/2019/09/27/line_1569568154_14644.png"></image>
+  </view>
+</view>
+<view class="center" wx:if='{{model}}' >
+  <view>添加官方导师微信</view>
+  <view>导师手把手教你玩转社群</view>
+  <view>自购省钱，分享赚钱</view>
+  <image class="people"  src="{{qrCode}}"></image>
+  <view bindtap='savePic'>保存二维码到相册</view>
+</view>

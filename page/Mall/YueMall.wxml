@@ -1,0 +1,380 @@
+<!-- 引入大红包 -->
+<view class="   stop-scroll">
+  <import src="/page/LoadingPopup/LoadingPopup.wxml" />
+  <block wx:if="{{LoadingStatus}}">
+    <template is="LoadingPopup" />
+  </block>
+  <!-- 用户链路 -->
+  <userPopup id="userPopup" inner-text="{{list}}"></userPopup>
+
+  <redPopup id="redPopup" inner-text="{{list}}"></redPopup>
+  <!--优惠券弹窗 -->
+  <couponPopup id="couponPopup" inner-text="{{list}}"></couponPopup>
+
+  <!-- 优惠券到期提醒 -->
+  <view class="couponExpire" wx:if='{{couponExpire}}'>
+    <image bindtap="goCoupon" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-25/16/yuelvhuiYAmjvYyzfO1582619380.png"></image>
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-25/16/yuelvhuiJiTqvfoJ9P1582619414.png" bindtap="couponExpireChange"></image>
+  </view>
+
+
+
+  <!-- 顶部内容及二级菜单 -->
+  <view class="mallHeader">
+    <view class="info" style="width:750rpx;height:{{titleHeight}}px;background-image:url({{!isbackground?newYear.url.allUp:''}});background-color:{{isbackground?'#fff':''}}">
+      <view class="info_con">
+        <!-- <view class="userInfo">
+          <image src="{{memberMessage.litpic?memberMessage.litpic:'/images/memberInformation/UnloggedAvatar.png'}}" class="HeadPortrait"></image>
+          <view>
+            <view wx:if="{{memberMessage == ''}}" bindtap="VerificationCode">登录/注册</view>
+            <view wx:else style="width:150rpx;height:30rpx;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+              <text style="color:{{isbackground?'rgba(80,80,80,1);':'#fff'}};font-size:26rpx;">{{nickName}}</text>
+            </view>
+            <view class="memberType" bindtap='memberType'>
+              <view style="color:{{isbackground?'rgba(80,80,80,1);':'#fff'}};font-size:20rpx;">{{memberMessage.memberName}}</view>
+            </view>
+          </view>
+        </view> -->
+        <view class="trun" bindtap="trun">
+          <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-10/19/yuelvhuiO11SesHZDw1586516530.png"></image>
+          <text>转链</text>
+        </view>
+
+        <view class="searchVessel">
+          <view class="search" bindtap='search'>
+            <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-17/19/yuelvhui6Qth8BhZ7y1576583401.png"></image>
+            会员省钱购
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 二级菜单标题 -->
+    <view class="two_class {{twoIndex!=0?'two_class_top':''}}" style="margin-top:{{titleHeight -2}}px;background-image:url({{!isbackground?newYear.url.allUp:''}});background-color:{{isbackground?'#fff':''}};background-size:100% {{tworedirectType != 666?'372rpx':''}}"
+      wx:if="{{!isSeckill}}">
+      <scroll-view scroll-x class="two_scroll_view">
+        <view wx:for="{{topIcon}}" wx:for-index="index" wx:key="index" class="{{(isbackground && twoIndex==index)?'two_tab_activered':'two_tab_item'}}" style="color:{{(isbackground && twoIndex!=index)?'#333333':(!isbackground &&twoIndex==index)?'#fff':''}};align-items:center"
+          bindtap="onTwoItemClick" data-index="{{index}}" data-item="{{item}}" wx:if="{{index != 1}}">
+          <view style="height:34rpx;" wx:if="{{item.redirectType !='84'}}">{{item.name}}</view>
+          <image wx:else src="{{item.img}}" style="width:120rpx;height:34rpx; vertical-align: bottom"></image>
+          <view wx:if="{{item.redirectType !='84'}}">
+            <view wx:if="{{twoIndex==index}}" class="{{isbackground?'two_tab_item_border_red':'two_tab_item_border'}}"></view>
+          </view>
+          <view wx:else>
+            <view wx:if="{{twoIndex==index}}" class="two_tab_item_border_caise"></view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+
+
+  <!-- 首页 -->
+  <block wx:if="{{tworedirectType==666}}">
+    <!-- 购物车 -->
+    <view class="shop_cart">
+      <image catchtap='gocar' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-18/11/yuelvhuiOr9gKMvpsS1576641075.png"></image>
+    </view>
+    <!-- 商城 -->
+    <scroll-view scroll-y="{{isEnableScroll}}" bindtouchstart="mytouchstart" bindtouchmove="mytouchmove" bindscroll="bindscroll" bindscrolltolower="bindscrolltolower" style="height:{{windowHeight}}px" scroll-into-view="{{intoView}}">
+      <!-- 了解更多 -->
+      <view class="learnMore" bindtap="classificationList" data-redirecttype="{{newYear.redirectType}}" data-id="{{newYear.id}}" data-hotid="{{newYear.id}}" style="background-image:url({{newYear.url.iphone}})">
+        <view></view>
+        <image src="{{newYear.butten}}"></image>
+      </view>
+      <!-- 商城头部 -->
+      <view class="" id="id1">
+        <view class="mallHard">
+
+          <!-- 分类 两排-->
+          <view style="position: relative;padding-top:30rpx;background:#fff;">
+            <scroll-view scroll-x="true" class="scroll-view-x" scroll-with-animation="true" scroll-left='0' bindscroll="getleft">
+              <view style="padding-top:20rpx;">
+                <!-- || (indexTypes.length-2)==index) && index!=27 如果想三排加上这个判断-->
+                <view class="navigator_second" wx:for="{{iconNewYearWx}}" wx:key="indexTypesone" wx:if="{{index%2==0}}" bindtap='classificationList' data-type="{{item.type}}" data-skuid="{{item.skuId}}" data-hotid="{{item.id}}" data-typeid="{{item.typeid}}" data-name="{{item.name}}"
+                  data-redirecttype="{{item.redirectType}}" data-id="{{item.id == undefined?item.parentTypeId:item.id}}" data-channelid="{{item.channelId}}">
+                  <image class="navigator_icon" src="{{item.url}}"></image>
+                  <text class="navigator_name">{{item.name}}</text>
+                  <text class="navigator_text">{{item.label}}</text>
+                </view>
+              </view>
+              <view>
+                <!-- || (indexTypes.length-1)==index 如果想三排加上这个判断---->
+                <view class="navigator_second" wx:for="{{iconNewYearWx}}" wx:key="indexTypesTow" wx:if="{{index%2==1}}" bindtap='classificationList' data-type="{{item.type}}" data-hotid="{{item.id}}" data-typeid="{{item.typeid}}" data-name="{{item.name}}" data-redirecttype="{{item.redirectType}}"
+                  data-id="{{item.id == undefined?item.parentTypeId:item.id}}" data-channelid="{{item.channelId}}">
+                  <image class="navigator_icon" src="{{item.url}}"></image>
+                  <text class="navigator_name">{{item.name}}</text>
+                  <text class="navigator_text">{{item.label}}</text>
+                </view>
+              </view>
+              <!-- <view>
+                <view class="navigator_second" wx:for="{{iconNewYearWx}}" wx:key="indexTypesTow" wx:if="{{index%3==2 && index!=26}}" bindtap='classificationList' data-hotid="{{item.id}}" data-type="{{item.type}}" data-typeid="{{item.typeid}}" data-name="{{item.name}}"
+                  data-redirecttype="{{item.redirectType}}" data-id="{{item.id == undefined?item.parentTypeId:item.id}}" data-channelid="{{item.channelId}}">
+                  <image class="navigator_icon" src="{{item.url}}"></image>
+                  <text class="navigator_name">{{item.name}}</text>
+                  <text class="navigator_text">{{item.label}}</text>
+                </view>
+              </view> -->
+            </scroll-view>
+            <view class="slide">
+              <view class='slide-bar'>
+                <view class="slide-show" style="width:{{slideWidth}}rpx; margin-left:{{slideLeft<=1 ? 0 : slideLeft+'rpx'}};"></view>
+              </view>
+            </view>
+          </view>
+          <!-- 分类 两排 -->
+          <!-- <view style="position: relative;padding-top:30rpx;background:#fff;">
+            <scroll-view scroll-x="true" class="scroll-view-x" scroll-with-animation="true" scroll-left='0' bindscroll="getleft">
+              <view style="padding-top:20rpx;">
+                <view class="navigator_second" wx:for="{{iconNewYearWx}}" wx:key="indexTypesone" wx:if="{{index%2==0}}" bindtap='classificationList' data-type="{{item.type}}" data-skuid="{{item.skuId}}" data-hotid="{{item.id}}"
+                  data-typeid="{{item.typeid}}" data-name="{{item.name}}" data-redirecttype="{{item.redirectType}}" data-id="{{item.id == undefined?item.parentTypeId:item.id}}" data-channelid="{{item.channelId}}">
+                  <image class="navigator_icon" src="{{item.url}}"></image>
+                  <text class="navigator_name">{{item.name}}</text>
+                  <text class="navigator_text">{{item.label}}</text>
+                </view>
+              </view>
+              <view>
+                <view class="navigator_second" wx:for="{{iconNewYearWx}}" wx:key="indexTypesTow" wx:if="{{index%2==1}}" bindtap='classificationList' data-type="{{item.type}}" data-hotid="{{item.id}}" data-typeid="{{item.typeid}}" data-name="{{item.name}}"
+                  data-redirecttype="{{item.redirectType}}" data-id="{{item.id == undefined?item.parentTypeId:item.id}}" data-channelid="{{item.channelId}}">
+                  <image class="navigator_icon" src="{{item.url}}"></image>
+                  <text class="navigator_name">{{item.name}}</text>
+                  <text class="navigator_text">{{item.label}}</text>
+                </view>
+              </view>
+              <view>
+              </view>
+            </scroll-view>
+            <view class="slide">
+              <view class='slide-bar'>
+                <view class="slide-show" style="width:{{slideWidth}}rpx; margin-left:{{slideLeft<=1 ? 0 : slideLeft+'rpx'}};"></view>
+              </view>
+            </view>
+          </view> -->
+
+          <!-- banner -->
+          <!-- <banner id="banner" inner-text="{{list}}"></banner> -->
+
+          <!-- 活动模板版块 -->
+          <!-- <ActivityTemplate id="ActivityTemplate" inner-text="{{list}}"></ActivityTemplate> -->
+
+        </view>
+      </view>
+      <view id="id2"></view>
+
+      <!--用户链路 -->
+      <block wx:if='{{isShowCapsulePosition==1}}'>
+        <view class='userLink' wx:if='{{typeH == 0}}'>
+          <view class='Uncolcon' bindtap="goNext" data-couponid="{{couponid}}" data-userLayer='{{userLayerL}}' data-urltype='{{userLayer.urlType}}' style="border-radius:16rpx;background: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-09/23/yuelvhuiqIxwRXBowU1586446752.gif);background-repeat: no-repeat;background-size: 100% 100%;height:120rpx;">
+          </view>
+        </view>
+        <view class='userLink' wx:if='{{typeH == 1}}'>
+          <view class="Uncollected" style="background: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-09/23/yuelvhuiBI454oL9ym1586447387.png);background-repeat: no-repeat;background-size: 100% 100%;">
+            <view class='Uncolcon'>
+              <view class="jiage">
+                <view class="big">{{userLayer.capsulePositionInfo.amount}}</view>
+                <view>元</view>
+              </view>
+              <view class="Uncolcenter">
+                <view class="activeN">活动剩余:
+                  <view class="hour">{{countDownDay}}</view>天
+                  <view class="hour">{{countDownHour}}</view>时
+                  <view class="hour">{{countDownMinute}}</view>分
+                  <view class="hour">{{countDownSecond}}</view>秒
+                </view>
+                <view class="ling">下1笔{{userLayer.capsulePositionInfo.mamount}}元订单，可得{{userLayer.capsulePositionInfo.amount}}元红包</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <block>
+          <view class='userLink' wx:if='{{typeH == 2}}'>
+            <view class="Uncollected" bindtap="haveRecitve" style="background: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-10/13/yuelvhuixUjBXC4vUM1586498395.gif);background-repeat: no-repeat;background-size: 100% 100%;">
+              <view class='Uncolcon'>
+                <view class="Uncolcenter">
+                  <view class="activeN">限时福利:
+                    <view class="hour">{{countDownDay}}</view>天
+                    <view class="hour">{{countDownHour}}</view>时
+                    <view class="hour">{{countDownMinute}}</view>分
+                    <view class="hour">{{countDownSecond}}</view>秒
+                  </view>
+                  <view class="ling">任意{{userLayer.capsulePositionInfo.antedate}}天，每天领取100金币，可得{{userLayer.capsulePositionInfo.amount}}元</view>
+                </view>
+                <view class="jiage">
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <block>
+          <view class='userLink' wx:if='{{typeH == 3}}'>
+            <view class="UncollectedN" style="background: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-10/14/yuelvhuibJaN9Cgc1R1586498894.gif);background-repeat: no-repeat;background-size: 100% 100%;">
+              <view class='Uncolcon'>
+                <view class="Uncolcenter">
+                  <view class="activeN">限时福利:
+                    <view class="hour">{{countDownDay}}</view>天
+                    <view class="hour">{{countDownHour}}</view>时
+                    <view class="hour">{{countDownMinute}}</view>分
+                    <view class="hour">{{countDownSecond}}</view>秒
+                  </view>
+                  <view class="ling">任意{{userLayer.capsulePositionInfo.antedate}}天，每天领取100金币，可得{{userLayer.capsulePositionInfo.amount}}元</view>
+                  <view class="progress">
+                    <view class="line">
+                      <view class="borderBox">
+                        <view class="borChi"></view>
+                        <view class="borChi"></view>
+                        <view class="borChi"></view>
+                        <view class="borChi"></view>
+                        <view class="borChi"></view>
+                        <view class="borChi"></view>
+                        <view class="borChi"></view>
+                      </view>
+                      <view class="linPress" style="width:{{completionDegree*50}}rpx"></view>
+                    </view>
+                    <view>{{goldEggsNumber}}/{{antedate}}天</view>
+                  </view>
+                </view>
+                <view class='recitive' bindtap="haveRecitve" wx:if='{{buttonStatus==1}}'>领取金币</view>
+                <view class='recitived' wx:if='{{buttonStatus==0}}'>已领取</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </block>
+
+      <!-- 爆品秒杀 -->
+      <view class="Seckill">
+        <view class="Seckilltitle">
+          <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-17/20/yuelvhui9C5UC9DjZq1576586038.png"></image>
+          <view>爆品秒杀</view>
+        </view>
+        <view class="tab-Seckill {{isSeckill?'topnav':''}}" style="top:{{isSeckill?titleHeight:'0'}}px">
+          <scroll-view scroll-x scroll-with-animation="true" scroll-into-view="{{scrollIntoView}}" scroll-left="{{scrollLeft}}" id="scroll-view">
+            <view id="{{'d'+item.activityId}}" wx:for="{{activityList}}" wx:key="activityList" class="tab-item {{currentTabLevel==item.activityId?'active':''}}" data-current="{{item.activityId}}" data-id="{{item.activityId}}" data-state="{{item.state}}" bindtap="onCouponItemClick">
+              <view>{{item.time}}</view>
+              <view style="font-size:20rpx;" class="{{item.state==2 && currentTabLevel!=item.activityId?'state_end':'state_ends'}}">{{item.stateRemind}}</view>
+            </view>
+          </scroll-view>
+        </view>
+        <view class="content">
+          <block wx:for="{{SeckillList}}" wx:key="SeckillList">
+            <view class="SeckillList" wx:if="{{item.type == 1}}" data-state="{{item.state}}" bindtap="flashGoodsDetail" data-goodid="{{item.goodId}}" data-activityid="{{item.activityId}}" data-skuid="{{item.productSkuId}}">
+              <view class="image">
+                <image src="{{item.goodCover}}" mode="aspectFit"></image>
+                <image class="Looting" wx:if="{{item.isStock == 0}}" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-21/17/yuelvhuiKmmF6ld40y1582276479.png"></image>
+              </view>
+              <view class="seckill_list">
+                <view class="goodname">
+                  <text style="color:{{item.isStock == 0?'#999':''}}">{{item.goodName}}</text>
+                </view>
+                <view class="price_num">
+                  <view style="width:560rpx">
+                    <view class="operation">
+                      <view class="progress">
+                        <progress percent="{{item.isStock == 0?'100':item.discount}}" wx:if="{{item.state !=0 && item.state!=3}}" color="#C82519" border-radius="50" stroke-width="5" />
+                        <view wx:if="{{item.state !=0 && item.state!=3}}">已售{{item.isStock == 0?100:item.discount}}%</view>
+                      </view>
+                    </view>
+                    <view class="price">
+                      <view class="Pricecontent">
+                        <view class="DiscountPrice">
+                          <text style="font-size:24rpx;">¥</text>{{item.goodVipPrice}}</view>
+                        <view class="OriginalPrice">
+                          <text>¥{{item.goodPrice}}</text>
+                        </view>
+                      </view>
+                    </view>
+                    <view class="share">
+                      <!-- <view class="ShareProfits">分享赚 ￥{{item.sharePrice}}</view> -->
+                      <view class="ToSnapUp" wx:if="{{item.isStock == 1}}">马上抢</view>
+                      <view class="NoToSnapUp" wx:else>马上抢</view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="SeckillActivity" style="margin-top:{{item.typeInfo.temType == 1?'20rpx':''}};  border-top-left-radius:{{item.typeInfo.temType == 1?'20rpx':''}};border-top-right-radius: {{item.typeInfo.temType == 1?'20rpx':''}};border-bottom-left-radius:{{item.typeInfo.temType == 3?'20rpx':''}};border-bottom-right-radius:{{item.typeInfo.temType == 3?'20rpx':''}}"
+              wx:if="{{item.type == 2}}">
+              <image class="Bannerimage" style="height:250rpx" wx:if="{{item.typeInfo.temType == 1}}" src="{{item.goodsInfo[0].image}}" bindtap="classificationList" data-hotid="{{item.goodsInfo[0].id}}" data-skuid="{{item.goodsInfo[0].skuId}}" data-redirecttype="{{item.goodsInfo[0].redirectType}}"
+                data-typeid="{{item.goodsInfo[0].id}}" data-id="{{item.goodsInfo[0].id}}" data-name="{{item.goodsInfo[0].name}}"></image>
+              <scroll-view scroll-x scroll-with-animation="true" style="margin-top: 44rpx;padding-bottom: 48rpx;" wx:if="{{item.typeInfo.temType == 3}}">
+                <view class="goodList">
+                  <view class="goodposi" wx:for="{{item.goodsInfo}}" wx:key="goodsInfo" wx:for-item="list">
+                    <view class="list" bindtap="classificationList" data-hotid="{{list.id}}" data-skuid="{{list.skuId}}" data-redirecttype="{{list.redirectType}}" data-typeid="{{list.id}}" data-id="{{list.id}}" data-name="{{list.name}}">
+                      <image class="goodImage" src="{{list.image}}"></image>
+                      <view class="title">
+                        <text>{{list.goodsName}}</text>
+                      </view>
+                      <view class="price">
+                        ¥
+                        <text>{{list.vipPrice}}</text>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </scroll-view>
+            </view>
+          </block>
+        </view>
+      </view>
+
+      <!-- 超值好物 -->
+      <!-- <ActivityTemplate id="ActivityTemplateBot" inner-text="{{list}}"></ActivityTemplate> -->
+
+
+      <!-- 未登录 购卡 -->
+      <view class='card' bindtap='eliteCard' wx:if="{{cardType == 0}}"></view>
+
+      <image src="https://image.yuelvhui.com/pubfile/2019/06/26/line_1561544630.png" class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+      <view class="commodity_screenshowModal" bindtap="hideModal" wx:if="{{showModal}}"></view>
+      <view animation="{{animationData}}" bindtap='hideModal' class="commodity_attr_boxshowModal" wx:if="{{showModal}}">
+        <view class="image">
+          <image src="/images/line/share.png"></image>
+        </view>
+      </view>
+
+      <!-- 小红包 -->
+      <view class="payoff"></view>
+    </scroll-view>
+    <view class="modal_view" bindtap="toggleModal" wx:if="{{TouchMove}}" catchtouchmove="preventTouchMove"></view>
+  </block>
+
+  <view wx:if="{{twoIndex!=0 && tworedirectType!=39}}" style="width:750rpx;height:{{titleHeight+51}}px"></view>
+  <view wx:if="{{twoIndex!=0 && tworedirectType==39}}" style="width:750rpx;height:{{titleHeight+38}}px"></view>
+
+  <!-- 限时半价 -->
+  <block wx:if="{{tworedirectType==33}}">
+    <limited-time id="limited-time" inner-text="{{list}}"></limited-time>
+  </block>
+
+  <!-- 京东特价 -->
+  <block wx:if="{{tworedirectType==44}}">
+    <jdCom id="jdCom" inner-text="{{list}}"></jdCom>
+  </block>
+
+  <!-- 爆款拼团 -->
+  <block wx:if="{{tworedirectType==34}}">
+    <Assemble id="Assemble" inner-text="{{list}}"></Assemble>
+  </block>
+
+  <!-- 美妆个护  食品 -->
+  <block wx:if="{{tworedirectType==70 ||tworedirectType ==71}}">
+    <makeupFood id="makeupFood" inner-text="{{list}}"></makeupFood>
+  </block>
+
+  <!-- 抗肺炎 -->
+  <block wx:if="{{tworedirectType==39}}">
+    <NewHotStyle id="NewHotStyle" inner-text="{{list}}"></NewHotStyle>
+  </block>
+
+  <!-- 直播爆品 -->
+  <!-- <block wx:if="{{tworedirectType==84}}">
+    <zhiboExplosiveProducts id="zhiboExplosiveProducts" inner-text="{{list}}"></zhiboExplosiveProducts>
+  </block> -->
+</view>
+<!-- <button class='modal-btn' open-type="launchApp" app-parameter="wechat" binderror="launchApp">进入【悦淘APP】</button> -->
+<!-- <view class='modal-bg' catchtap='dismissConcatModal' catchtouchmove='move'>
+  <view class='modal-content-bg'>
+    <text class='modal-text'>在客服会话中回复“mm/萌萌/小萌伴”</text>
+    <button class='modal-btn' open-type='contact'>进入【小萌伴】APP</button>
+  </view>
+</view> -->

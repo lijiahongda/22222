@@ -1,0 +1,132 @@
+page{
+  min-height: 100%;
+  background: #F9F9F9;
+}
+.header{
+  width: 100%;
+  height: 108rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header > view{
+  width: 270rpx;
+  height: 66rpx;
+  border-radius: 33rpx;
+  text-align: center;
+  line-height: 66rpx;
+  color: #999999;
+  font-size: 28rpx;
+  position: relative;
+  background: #F3F3F3;
+}
+.header > view.active:nth-child(1){
+  background: #20AC16;
+  margin-right: -50rpx;
+  z-index: 1;
+  color: #fff;
+}
+.header > view.active:nth-child(2){
+  background: #20AC16;
+  margin-left: -50rpx;
+  z-index: 1;
+  color: #fff;
+}
+.tip{
+  width: 100%;
+  height:86rpx;
+  text-align: center;
+  line-height: 86rpx;
+  font-size: 26rpx;
+  color: #999999;
+}
+.list{
+  width: 100%;
+  height: 110rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
+.list .left{
+  width: 520rpx;
+  color: #333333;
+  font-size: 28rpx;
+}
+.list .left > view{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.list .left > view:nth-child(2){
+  color: #999999;
+  font-size: 26rpx;
+  margin-top: 8rpx;
+}
+.list .right{
+  color: #20AC16;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.list .right image{
+  width: 30rpx;
+  height: 44rpx;
+  margin-left: 10rpx;
+}
+.list .rightButton{
+  width: 120rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24rpx;
+  background: rgba(32,172,22,1);
+  border-radius: 30rpx;
+}
+.tip{
+  padding-left: 30rpx;
+  color: #333;
+  font-size: 24rpx;
+  text-align: left;
+  padding-top: 10rpx;
+}
+.add{
+  width:690rpx;
+  height:88rpx;
+  background:rgba(32,172,22,1);
+  border-radius:10rpx;
+  text-align: center;
+  line-height: 88rpx;
+  color: #F9F9F9;
+  font-size: 34rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  margin: 50rpx auto;
+  margin-top: 0;
+}
+.content{
+  width:690rpx;
+  min-height:627rpx;
+  background:rgba(255,255,255,1);
+  border-radius:10rpx;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+.content .title{
+  color: #333333;
+  font-size: 34rpx;
+}
+.content .desc{
+  color: #333333;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin-top: 20rpx;
+}

@@ -1,0 +1,48 @@
+<view class="search" bindtap="goSearch">
+  <input placeholder='复制标题搜索京东优惠券' placeholder-style='line-height:68rpx;' value="{{keyWord}}" bindblur='bindblur'></input>
+  <!-- <view>搜索</view> -->
+  <image  src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-21/17/yuelvhui3a8fw61sz31582276925.png" class="glass"></image>
+</view>
+
+<!-- <view class="swiper">
+  <swiper>
+    <swiper-item wx:for='{{bannerData}}' wx:key='*this' bindtap="goJD" data-redirecttype="{{item.redirectType}}" data-id="{{item.id}}" data-hotid="{{item.id}}" data-path='{{item.link}}'>
+      <image src="{{item.img_url}}"></image>
+    </swiper-item>
+  </swiper>
+</view> -->
+
+<!-- <view class="classification">
+  <view class="list" wx:for='{{8}}'>
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-18/18/yuelvhuipquNrhJsai1582020297.png"></image>
+    <view>超级卖场</view>
+  </view>
+</view> -->
+
+<view class="tab">
+  <scroll-view class="tabScroll" scroll-x>
+    <view class="list {{item.select?'select':''}}" wx:for='{{classData}}' wx:key='*this' data-id="{{item.id}}" bindtap="switchTab">
+      <view>{{item.class_name}}</view>
+      <view class="verticalBar"></view>    
+    </view>
+  </scroll-view>
+</view>
+<view class="content">
+  <view class="list" wx:for='{{goodsList}}' wx:key='item.goodsInfo.goods_id' bindtap="goDetail" data-goodsid="{{item.goodsInfo.goods_id}}">
+    <image class="left" src="{{item.goodsInfo.goods_image}}"></image>
+    <view class="right">
+      <view class="title">
+        <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-23/09/yuelvhuiI9ee3xGzmq1582420967.png"></image>
+        <text>{{item.goodsInfo.goods_name}}</text>
+      </view>
+      <view class="sales">
+        <view class="coupon" wx:if='{{item.coupon.discount}}'>{{item.coupon.discount}}元券</view>
+        <text>已售{{item.goodsInfo.sale_num}}件</text>
+      </view>
+      <view class="price">
+        <text>￥</text><text>{{item.goodsInfo.jd_price}}</text><text>￥{{item.goodsInfo.original_price}}</text>
+      </view>
+      <!-- <view class="make" wx:if='{{item.commission_info.earn_price}}'>预估赚 ￥{{item.commission_info.earn_price}}</view> -->
+    </view>
+  </view>
+</view>

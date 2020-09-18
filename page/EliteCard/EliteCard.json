@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "会员权益",
+  "usingComponents": {
+    "redPopup": "/component/redPopup/redPopup",
+    "listTwoLine": "/component/listTwoLine/listTwoLine"
+  },
+  "navigationStyle": "custom"
+}

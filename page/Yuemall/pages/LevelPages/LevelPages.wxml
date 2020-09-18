@@ -1,0 +1,85 @@
+<!--page/Yuemall//pages/LevelPages/LevelPages.wxml-->
+<image class="AdvertisingSpace" src="{{banner}}"></image>
+<view class="contentLeve">
+  <image src="https://image.yuelvhui.com/pubfile/2019/07/24/line_1563977203_91499.png" wx:if="{{brandlist}}" class="title"></image>
+  <view class="Level">
+    <view class="list" bindtap='LevelList' data-type="brand" wx:for="{{brandlist}}" wx:key="brandlist" data-name="{{item.brandName}}" data-id="{{item.brandId}}">
+      <image src="{{item.brandImg}}"></image>
+    </view>
+  </view>
+
+</view>
+<view class="contentLeve">
+  <image src="https://image.yuelvhui.com/pubfile/2019/07/24/line_1563977198_31891.png" wx:if="{{categorylist}}" class="categorytitle"></image>
+  <view class="Level">
+    <view class="list" bindtap='LevelList' data-type="category" wx:for="{{categorylist}}" wx:key="categorylist" data-aid="{{channelId == 1?item.categoryFirstId:item.categorySecondId}}" data-name="{{item.categoryThreeName}}" data-id="{{item.categoryThreeId}}">
+      <image src="{{item.productImage}}"></image>
+      <view>{{item.categoryThreeName}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="content" wx:for="{{list}}" wx:key="list">
+  <image class="AdvertisingSpace" src="{{item.teamBanner}}" style="height:{{item.teamHeight}}rpx"></image>
+  <view class="ActiveTemplateOne" wx:if="{{item.teamType == 1}}">
+    <view class="list" wx:for="{{item.goodsInfo}}" wx:key="one" data-skuid="{{item.skuId}}" data-goodId="{{item.goodId}}" bindtap="goToInfo">
+      <image src="{{item.goodCover}}"></image>
+    </view>
+  </view>
+  <view class="ActiveTemplateTow" wx:if="{{item.teamType == 2}}">
+    <view class="list" wx:for="{{item.goodsInfo}}" wx:key="Tow" data-skuid="{{item.skuId}}" data-goodId="{{item.goodId}}" bindtap="goToInfo">
+      <image src="{{item.goodCover}}"></image>
+      <view class="title">
+        <text>{{item.goodName}}</text>
+      </view>
+      <view class="info">
+        <view class="price">
+          <view class="vipPrice">
+            <text>¥</text>{{item.goodVipPrice}}
+          </view>
+          <view class="OriginalPrice">
+            <text>¥{{item.goodPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="ActiveTemplateThree" wx:if="{{item.teamType == 3}}">
+    <view class="list" wx:for="{{item.goodsInfo}}" wx:key="Three" data-skuid="{{item.skuId}}" data-goodId="{{item.goodId}}" bindtap="goToInfo">
+      <image src="{{item.goodCover}}"></image>
+      <view class="title">
+        <text>{{item.goodName}}</text>
+      </view>
+      <view class="info">
+        <view class="price">
+          <view class="vipPrice">
+            <text>¥</text>{{item.goodVipPrice}}
+          </view>
+          <view class="originalPrice">
+            <text>¥{{item.goodPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="ActiveTemplateFour" wx:if="{{item.teamType == 4}}">
+    <scroll-view scroll-x scroll-with-animation="true">
+      <view class="list" wx:for="{{item.goodsInfo}}" wx:key="four" data-skuid="{{item.skuId}}" data-goodId="{{item.goodId}}" bindtap="goToInfo">
+        <image src="{{item.goodCover}}"></image>
+        <view class="title">
+          <text>{{item.goodName}}</text>
+        </view>
+        <view class="info">
+          <view class="price">
+            <view class="vipPrice">
+              <text>¥</text>{{item.goodVipPrice}}
+            </view>
+            <view class="originalPrice">
+              <text>¥{{item.goodPrice}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

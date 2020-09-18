@@ -1,0 +1,33 @@
+<!--page/yueMember//pages/University/University.wxml-->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{banner}}">
+    <swiper-item>
+      <image src="{{item.url}}" bindtap="classificationList" data-hotid="{{item.id}}" data-skuid="{{item.skuId}}" data-redirecttype="{{item.redirectType}}" data-typeid="{{item.id}}" data-id="{{item.id}}" data-name="{{item.name}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="makeMoney">
+  <view class="item" bindtap='makeMoney' wx:if="{{item.type != 1}}" data-type="{{item.type}}" wx:for="{{datas.iconList3}}" wx:key="item">
+    <image src="{{item.icon}}"></image>
+    <view class="describe">
+      <view class="txt">{{item.text}}</view>
+      <view class="tips">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+<view class="University">
+  <view class="title">
+    <image src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569322920_11267.png"></image>
+    <view style="font-size:32rpx;">悦旅大学</view>
+  </view>
+  <view class="UniversityContent">
+    <view class="item" wx:for="{{datas.iconList4}}" bindtap='University' data-name="{{item.name}}" data-type="{{item.typeId}}" wx:key="list">
+      <image src="{{item.imgUrl}}"></image>
+      <view class="describe">
+        <view style="color:#303030;font-size:24rpx;">{{item.name}}</view>
+        <view class="tips">{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+</view>

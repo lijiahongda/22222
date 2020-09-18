@@ -1,0 +1,81 @@
+/* page/yueMember/pages/GiftPackage/GiftPackage.wxss */
+
+.list {
+  margin-top: 24rpx;
+  width: 86%;
+  margin-left: 4%;
+  margin-right: 4%;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: #fff;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.list .title {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 33rpx;
+}
+
+.list .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 30rpx;
+}
+
+.list .info text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list .info .lookDetail {
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  height: 50rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid #E4311F;
+  border-radius: 25rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #E4311F;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.payPrice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(245, 47, 70, 1);
+}
+.payPrice text{
+  font-size: 32rpx;
+}
+.payPrice .time{
+  color: #2A2A2A
+}

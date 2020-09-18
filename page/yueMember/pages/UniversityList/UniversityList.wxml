@@ -1,0 +1,10 @@
+<!--page/yueMember//pages/UniversityList/UniversityList.wxml-->
+<view class="list" bindtap='Detail' wx:for="{{list}}" data-id="{{item.aid}}" wx:key="list">
+  <image src="{{item.coverImg}}"></image>
+  <view class="info">
+    <view class="title">
+      <text>{{item.title}}</text>
+    </view>
+    <view class="time">{{item.createTime}}</view>
+  </view>
+</view>

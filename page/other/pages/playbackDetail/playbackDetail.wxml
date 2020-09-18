@@ -1,0 +1,1 @@
+<!--page/other/pages/playbackDetail/playbackDetail.wxml--><video id="myVideo" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{palyURL}}" title="{{orderList.videoTitle}}" autoplay poster="{{orderList.videoCover}}" enable-play-gesture="{{true}}" show-fullscreen-btn="{{isvslide}}" loop vslide-gesture-in-fullscreen="{{isvslide}}" auto-pause-if-open-native="true"></video>

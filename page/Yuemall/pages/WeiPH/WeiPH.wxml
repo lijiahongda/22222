@@ -1,0 +1,41 @@
+<view class="header" >
+  <view class="search" bindtap="goSearch">
+    <input placeholder='复制商品标题，搜索领券拿返利' placeholder-style='line-height:68rpx;' value="{{keyWord}}" bindblur='bindblur' ></input>
+    <view>搜索</view>
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-03-07\/10\/yuelvhuit4cUxgo4om1583548410.png" class="glass"></image>
+  </view>
+  <view class="searchH" >
+    <view class="tips"  style="background:url(https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-03-07\/10\/yuelvhui4l6vxbn8zl1583548714.png);background-repeat: no-repeat;background-size: 100%;" >小贴士：1复制唯品会商品标题 2来悦淘搜索购买拿返利</view>
+  </view>
+
+  <view class="tab">
+    <scroll-view class="tabScroll" scroll-x>
+      <view class="list {{item.select?'select':''}}" wx:for='{{classData}}' wx:key='index' data-id="{{item.cat_id}}" bindtap="switchTab">
+        <view>{{item.cat_name}}</view>
+        <view class="verticalBar"></view>    
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class="content">
+  <view class="list" wx:for='{{goodsList}}' wx:key='index' bindtap="goDetail" data-goodsid="{{item.goodssInfo.goods_id}}" >
+    <view class="img" >
+      <image class="left" src="{{item.goodssInfo.goods_image}}"></image>
+      <view class="discount"  style="background:url(https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-03-07\/14\/yuelvhuitCExhy0INU1583563635.png);background-repeat: no-repeat;background-size: 100%;" >{{item.goodssInfo.discount}}折</view>
+    </view>
+    <view class="right">
+      <view class="title">
+        <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-03-07\/14\/yuelvhuiTi3Ybdsx771583562505.png"></image>
+        <text>{{item.goodssInfo.goods_name}}</text>
+      </view>
+      <view class="sales">
+        <text>已售{{item.goodssInfo.sale_num}}件</text>
+      </view>
+      <view class="price">
+        <text>￥</text><text>{{item.goodssInfo.vip_price}}</text><text>￥{{item.goodssInfo.original_price}}</text>
+      </view>
+      <!-- <view class="make">预估赚 ￥{{item.commission_info.earn_price}}</view> -->
+
+    </view>
+  </view>
+</view>

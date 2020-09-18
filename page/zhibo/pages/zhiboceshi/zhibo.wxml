@@ -1,0 +1,9 @@
+<!--page/zhiboceshi/zhibo.wxml-->
+<view class="content">
+  <view class="liveList">
+  <!-- <image src="{{item.anchor_img}}"></image> -->
+    <!-- <navigator url=""> -->
+    <image src="{{item.cover_img}}" bindtap="navigator" data-roomid="72"></image>
+    <!-- </navigator> -->
+  </view>
+</view>

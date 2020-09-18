@@ -1,0 +1,540 @@
+page{
+  width: 100%;
+  position: relative;
+}
+.top{
+  width: 100%;
+  height: 970rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.rules{
+  width: 144rpx;
+  height: 44rpx;
+  position: absolute;
+  top: 30rpx;
+  right: 0;
+}
+.steps{
+  width: 100%;
+  height: 252rpx;
+  margin-top: 663rpx;
+  position: relative;
+  z-index: -10;
+  opacity: 0;
+}
+.header{
+  width: 663rpx;
+  /* height: 66rpx; */
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.header .title{
+  width: 260rpx;
+  height: 66rpx;
+  margin: 0 auto;
+  font-size: 30rpx;
+  color: #E14095;
+  line-height: 66rpx;
+}
+.header::after{
+  content: " ";
+  width: 200rpx;
+  height: 2rpx;
+  background: #E14095;
+  position: absolute;
+  top: 32rpx;
+  left: 0;
+}
+.header::before{
+  content: " ";
+  width: 200rpx;
+  height: 2rpx;
+  background: #E14095;
+  position: absolute;
+  top: 32rpx;
+  right: 0;
+}
+.header .time{
+  width: 100%;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #DF368F;
+  font-size: 28rpx;
+}
+.header .time > view:nth-child(2n-1){
+  width: 48rpx;
+  height: 48rpx;
+  background: #E14095;
+  border-radius: 8rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .time > view:nth-child(2n){
+  padding: 0 12rpx;
+}
+
+.list{
+  background: #fff;
+  width: 710rpx;
+  height: 300rpx;
+  border-radius: 18rpx;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  display: flex;
+  padding: 20rpx 30rpx 20rpx 20rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.list .left{
+  width: 260rpx;
+  height: 260rpx;
+  margin-right: 30rpx;
+}
+.list .right{
+  width: 370rpx;
+  height: 250rpx;
+  position: relative;
+}
+.list .right .title{
+  color: #141414;
+  font-size: 30rpx;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.list .right .desc,.list .right .num{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #666666;
+  width: 100%;
+  font-size: 24rpx;
+  margin-top: 12rpx;
+}
+.list .progress{
+  width: 100%;
+  color: #E14095;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 16rpx;
+}
+.list .progress .line{
+  width: 204rpx;
+  height: 18rpx;
+  background: #FFD5EA;
+  border-radius: 10rpx;
+  border: 2rpx solid #E14095;
+  margin-right: 13rpx;
+}
+.list .progress .line view{
+  height: 100%;
+  background: #E14095;
+  border-radius: 10rpx;
+}
+.list .right .bottom{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 54rpx;
+  display: flex;
+  align-items: baseline;
+}
+.list .right .bottom .price{
+  color: #C82519;
+  font-size: 38rpx;
+}
+.list .right .bottom .origin{
+  color: #999999;
+  font-size: 24rpx;
+  text-decoration: line-through;
+  margin-left: 20rpx;
+}
+.list .right .bottom .button{
+  width: 150rpx;
+  height: 54rpx;
+  background: #CA2519;
+  color: #fff;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 28rpx;
+}
+.list .booking{
+  position: absolute;
+  top: 20rpx;
+  left:20rpx;
+  width: 100rpx;
+  height: 40rpx;
+  border-radius: 0 20rpx 20rpx 0;
+  border: 2rpx solid #C82519;
+  color: #C82519;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list .time{
+  width: 250rpx;
+  height: 50rpx;
+  position: absolute;
+  left: 20rpx;
+  bottom: 20rpx;
+  background: #F48D17;
+  color: #fff;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list .gone{
+  position: absolute;
+  top: 66rpx;
+  left: 66rpx;
+  width: 160rpx;
+  height: 160rpx;
+}
+.buttonImg{
+  width: 750rpx;
+  height: 232rpx;
+}
+.button{
+  width: 600rpx;
+  height: 88rpx;
+  background: #FEDE06;
+  color: #D50472;
+  font-size: 36rpx;
+  margin: 60rpx auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 44rpx;
+}
+.buttonOver{
+  background: #BBBBBB;
+  color: #fff;
+}
+
+.headerLike{
+  width: 266rpx;
+  height: 52rpx;
+  margin: 0 auto;
+  margin-bottom: 34rpx;
+}
+.GuessYouLike {
+  display: flex;
+  flex-direction: column;
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-bottom: 120rpx;
+}
+
+.GuessYouLike .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(20, 20, 20, 1);
+  margin-bottom: 28rpx;
+}
+
+.GuessYouLike .title text {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.GuessYouLike .title image {
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 8rpx;
+}
+
+.GuessYouLike .LikeContent {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.GuessYouLike .LikeContent .likelist {
+  display: flex;
+  flex-direction: column;
+  width: 48.5%;
+  background-color: #fff;
+  border-radius: 18rpx;
+  margin-bottom: 21rpx;
+}
+
+.GuessYouLike .LikeContent .likelist image {
+  width: 100%;
+  height: 347rpx;
+  border-top-left-radius: 18rpx;
+  border-top-right-radius: 18rpx;
+  margin-bottom: 16rpx;
+}
+
+.GuessYouLike .LikeContent .likelist .likeTitle {
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.GuessYouLike .LikeContent .likelist .likeTitle text {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(25, 25, 25, 1);
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 39rpx;
+}
+
+.GuessYouLike .LikeContent .likelist .tag {
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 29rpx;
+  flex-wrap: wrap;
+}
+
+.GuessYouLike .LikeContent .likelist .tag view {
+  padding-left: 6rpx;
+  padding-right: 6rpx;
+  padding-top: 3rpx;
+  padding-bottom: 3rpx;
+  border-radius: 5rpx;
+  margin-right: 10rpx;
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: bold;
+  color: rgba(230, 0, 18, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(230, 0, 18, 1);
+}
+
+.GuessYouLike .LikeContent .likelist .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-bottom: 22rpx;
+}
+
+.GuessYouLike .LikeContent .likelist .price .vipPrice {
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #bb3627;
+}
+
+.GuessYouLike .LikeContent .likelist .price .vipPrice text {
+  font-size: 24rpx;
+}
+
+.GuessYouLike .LikeContent .likelist .price .OriginalPrice text {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  text-decoration: line-through;
+  color: rgba(153, 153, 153, 1);
+  margin-left: 10rpx;
+}
+
+.rulesDetail{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .7);
+  z-index: 100;
+}
+.rulesDetail > view{
+  margin: 0 auto;
+  margin-top: 26vh;
+  width: 600rpx;
+  height: auto;
+  background: #fff;
+  border-radius: 18rpx;
+  padding: 0 50rpx 100rpx 37rpx;
+  box-sizing: border-box;
+}
+.rulesDetail > image{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 38rpx auto;
+  display: block;
+}
+.rulesDetail .title{
+  color: #141414;
+  font-size: 32rpx;
+  height: 110rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.rulesDetail .desc{
+  color: #141414;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+.noMore{
+  margin: 0 auto;
+  margin-top: 68rpx;
+  text-align: center;
+  color: #999999;
+  font-size: 24rpx;
+}
+.shareBox{
+  /* justify-content: space-between; */
+  /* margin: 0 auto; */
+  /* width: 383rpx; */
+  /* margin: 49rpx auto 35rpx; */
+  background: none;
+  border: 0rpx solid #eee;
+  outline: none;
+  padding: 0;
+}
+.shareBox::after{
+  border:none;
+}
+.confirmSite{
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0,.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1994;
+}
+.confirmSite > view{
+  width: 560rpx;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 30vh;
+  background: #FFFFFF;
+  border-radius: 18rpx;
+  overflow: hidden;
+  padding-bottom: 40rpx;
+}
+.confirmSite .colorLine{
+  width: 100%;
+}
+.confirmSite .headerH{
+  text-align: center;
+  color: #141414;
+  font-size: 32rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  border-bottom: 1rpx solid rgba(221,221,221,.5);
+}
+.confirmSite .userInfo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #141414;
+  font-size: 32rpx;
+  padding: 0 60rpx;
+  box-sizing: border-box;
+  width: 100%;
+  height: 94rpx;
+}
+.confirmSite .userInfo .name{
+  max-width: 100rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+}
+.confirmSite .userInfo .default{
+  padding: 4rpx 6rpx;
+  background: #F9ECEC;
+  color: #BB3627;
+  font-size: 24rpx;
+  margin-left: -30rpx;
+  border-radius: 4rpx;
+}
+.confirmSite .userInfo > text:last-child{
+  color: #999;
+}
+.confirmSite .site{
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 30rpx;
+  color: #333333;
+  font-size: 28rpx;
+  padding: 0 60rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+.confirmSite .button{
+  display: flex;
+  width: 100%;
+  height: 68rpx;
+  padding: 0 60rpx;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+}
+.confirmSite .button .changeSite{
+  width: 180rpx;
+  height: 69rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #BB3627;
+  font-size: 30rpx;
+  border: 2rpx solid #BB3627;
+  background: #fff;
+  border-radius: 36rpx;
+}
+.confirmSite .button .confirm{
+  width: 180rpx;
+  height: 69rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 30rpx;
+  background: #BB3627;
+  border-radius: 36rpx;
+}

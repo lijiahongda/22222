@@ -1,0 +1,38 @@
+/* page/community/pages/main/group/activation/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  /* overflow: auto!important; */
+}
+.zcontent{
+  width: 100%;
+  min-height: 100%;
+}
+
+.zcontent>.grouptab{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  line-height: 78rpx;
+}
+
+.zcontent>.grouptab>view{
+  height: 78rpx;
+  border-bottom: 4rpx solid #fff;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(20,20,20,1);
+  transition: all ease 0.2s;
+}
+
+.zcontent>.grouptab>.chose{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(20,20,20,1);
+  transition: all ease 0.2s;
+  border-bottom: 4rpx solid #F9E2AE;
+}

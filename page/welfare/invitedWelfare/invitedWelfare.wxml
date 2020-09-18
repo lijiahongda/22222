@@ -1,0 +1,9 @@
+<!--page/welfare/invitedWelfare/invitedWelfare.wxml-->
+<view class="page">
+  <view class="page-body">
+    <image class="photo"></image>
+    <text>郭靖哥哥 给你发送了一个红包</text>
+    <image class="open" src="https://image.yuelvhui.com/pubfile/2019/10/12/line_1570886170_55475.png"></image>
+  </view>
+  <navigator open-type="exit" target="miniProgram"></navigator>
+</view>

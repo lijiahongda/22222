@@ -1,0 +1,38 @@
+/* page/oneself/pages/Transition/Transition.wxss */
+
+page {
+  height: 100%;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+}
+
+.MyreCode {
+  position: absolute;
+  top: 1040rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+}
+
+.MyreCode .code {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: bold;
+  color: rgba(233, 93, 61, 1);
+  margin-top: 16rpx
+}
+
+.content {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}

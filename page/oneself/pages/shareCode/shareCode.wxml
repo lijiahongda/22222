@@ -1,0 +1,25 @@
+<view style="position: relative;height:100%">
+  <image src="{{list.bgImage}}" style="width:100%;height: 100%;">
+  </image>
+  <view class="content" style="background-color:{{list.bgColor}}">
+    <image src="{{list.wxQr}}"></image>
+    <view>扫码省钱购</view>
+    <view class="info">
+      <view>
+        <image class="HeadPortrait" src="{{list.avatar}}"></image>
+      </view>
+      <view>
+        <view class="isname">
+          <view>{{list.name}}</view>
+          <view class="tips">{{list.desc}}</view>
+        </view>
+        <view class="share">
+          <view class="sharecode">悦淘号：
+            <text>{{list.reCode}}</text>
+          </view>
+          <view class="copy" bindtap='copyText' data-text="{{list.reCode}}">复制</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

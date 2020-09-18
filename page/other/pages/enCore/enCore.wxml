@@ -1,0 +1,11 @@
+<!--page/bring//pages/enCore/enCore.wxml-->
+<view class="topimg" data-url='{{backgd.top_url}}' >
+    <image mode="widthFix" src="{{backgd.top_img}}"></image>
+    <text>{{backgd.top_url}}</text>
+    <view class="copys" bindtap="copyurl">点击复制</view>
+  </view>
+  <view class="contimg">
+    <image class="endimg" mode="widthFix" src="{{backgd.end_img}}"></image>
+    <image class="codeimg" mode="widthFix" src="{{backgd.code_img}}"></image>
+    <video class="videos"  src="{{backgd.video}}"  autoplay id="myVideo"></video>
+  </view>

@@ -1,0 +1,367 @@
+/* page/community/pages/main/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.zcontent{
+  width: 100%;
+  min-height: 100%;
+}
+.zcontent>.zheader{
+  width: 100%;
+  height: 190rpx;
+  overflow: hidden;
+  position: relative;  
+  z-index: -1;  
+  background: #fff;
+}
+
+.zcontent>.zheader::after{
+  content:'';
+  width:160%;
+  height:100px;
+  position: absolute;
+  left: -30%;
+  top: 0;
+  z-index: -1;
+  border-radius: 0 0 50% 50%;
+  background: #141414;
+}
+
+.zcontent>.zheader>.headerMsg{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.zcontent>.zheader>.headerMsg>.titleImg{
+  width: 88rpx;
+  height: 88rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-top: 40rpx;
+  margin-left: 64rpx;
+}
+
+.zcontent>.zheader>.headerMsg>.titleImg>image{
+  width: 100%;
+  height: 100%;
+}
+
+.zcontent>.zheader>.headerMsg>.msg{
+  margin-top: 40rpx;
+  line-height:30rpx;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  margin-left: 20rpx;
+}
+
+.zcontent>.zheader>.headerMsg>.msg>.isVip{
+  width: 156rpx;
+  height: 44rpx;
+  background:rgba(4,3,3,1);
+  border-radius:22rpx;
+  margin-top: 13rpx;
+  display: flex;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height: 44rpx;
+}
+
+.zcontent>.zheader>.headerMsg>.msg>.isVip>.iconImg{
+  width: 24rpx;
+  height: 24rpx;
+  margin-top: 10rpx;
+  margin-left: 17rpx;
+  margin-right: 5rpx;
+}
+
+.zcontent>.zheader>.headerMsg>.msg>.isVip>.iconImg>image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.zcontent>.groupShop{
+  width: 100%;
+  height: 430rpx;
+  background: #fff;
+}
+
+.zcontent>.groupShop>.title{
+  width: 702rpx;
+  line-height: 100rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.zcontent>.groupShop>.title>.name{
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(20,20,20,1);
+}
+
+.zcontent>.groupShop>.title>.name>text{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+
+.zcontent>.groupShop>.title>.checkMore{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  display: flex;
+}
+
+.zcontent>.groupShop>.title>.checkMore>view>image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 30rpx;
+  margin-right: -10rpx;
+}
+
+.zcontent>.groupShop>.commodityList{
+  width: 100%;
+  /* margin-top: 30rpx;  */
+  /* margin-top: -12px; */
+  /* display: flex; */
+}
+
+.zlist{
+  display: flex;
+  padding-right: 20rpx;
+}
+
+.listbox{
+  width: 240rpx;
+  height: 300rpx;
+  border-radius:16px;
+  overflow: hidden;
+  margin-left: 20rpx;
+}
+
+.groupList{
+  width: 100%;
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.groupList>.title{
+  width: 702rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #eee;
+  margin: 0 auto;
+}
+
+.groupList>.title>.tab{
+  display: flex;
+}
+
+.groupList>.title>.tab>view{
+  /* margin-left: 20rpx; */
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  transition: all ease 0.2s;
+}
+
+.groupList>.title>.tab>.chose{
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(20,20,20,1);
+  transition: all ease 0.2s;
+}
+
+.groupList>.title>.more{
+  display: flex;
+  /* margin-right: 20rpx; */
+}
+
+.groupList>.title>.more>view>image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 30rpx;
+  margin-right: 13rpx;
+}
+
+.groupList>.Tips{
+  width: 100%;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(200,0,0,1);
+  background:rgba(255,250,238,1);
+}
+
+.groupList>.groupMsg{
+  width: 100%;
+  background: #fff;
+}
+
+.groupList>.groupMsg>.group{
+  width: 702rpx;
+  height: 100rpx;
+  margin: 40rpx auto;
+  display: flex;
+}
+
+.groupList>.groupMsg>.group>.groupImg{
+  width: 100rpx;
+  height: 100rpx;
+  background:rgba(220,220,220,1);
+}
+
+.groupList>.groupMsg>.group>.groupImg>image{
+  width: 100%;
+  height: 100%;
+}
+
+.groupList>.groupMsg>.tips{
+  text-align: center;
+  line-height: 100rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+
+.groupList>.groupMsg>.group>.msg{
+  width: 82%;
+  padding-left: 20rpx;
+  
+}
+
+.groupList>.groupMsg>.group>.msg>.title{
+  width: 100%;
+  line-height: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  height: 50rpx;
+  overflow: hidden;
+}
+
+.groupList>.groupMsg>.group>.msg>.title>.name{
+  max-width: 400rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(20,20,20,1);
+}
+
+.groupList>.groupMsg>.group>.msg>.title>.name>text{
+  color:rgba(202,37,25,1);
+}
+
+.groupList>.groupMsg>.group>.msg>.title>.checkMore{
+  display: flex;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+
+.groupList>.groupMsg>.group>.msg>.title>.checkMore>view>image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top:5rpx;
+  margin-right: -15rpx;
+}
+
+.groupList>.groupMsg>.group>.msg>.content{
+  width: 100%;
+}
+
+.groupList>.groupMsg>.group>.msg>.content>.brief{
+  font-size:24rpx;
+  line-height: 50rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.model{
+  width:100%;
+  height: 100%;
+  background: rgba(0,0,0,.7);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1994; 
+}
+.center{
+  z-index: 1995; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 580rpx;
+  height: 660rpx;
+  background: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-07/17/yuelvhuiI2wCoqIOB81588842276.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 25%;
+  left: 85rpx;
+}
+.center>view:nth-child(1){
+  font-size:44rpx;
+  /* line-height: 44rpx; */
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(0,0,0,1); 
+}
+.center>view:nth-child(2),.model>.center>view:nth-child(3){
+  font-size:28rpx;
+  line-height: 38rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}
+.center>view:last-child{
+  width:400rpx;
+  height:88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(20,20,20,1);
+  background:rgba(254,225,167,1);
+  border-radius:44rpx;
+}
+.center>.people{
+  width:280rpx;
+  height:280rpx; 
+  margin: 30rpx 0;
+}
+.close{
+  width:100%;
+  text-align: center;
+  position: absolute;
+  top: 76%;
+}
+.close image{
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+}

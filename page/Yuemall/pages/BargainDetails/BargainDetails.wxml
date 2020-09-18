@@ -1,0 +1,273 @@
+<!--page/Mall/detail/detail.wxml-->
+<import src="../../../../wxParse/wxParse/wxParse.wxml" />
+<scroll-view scroll-y="true" scroll-with-animation="true" bindscroll="bindscroll" class='productFeatures' scroll-into-view="{{scrollId}}" style="height:{{windowHeight}}px">
+  <block wx:if="{{scrollTop > 100}}">
+    <!--导航-->
+    <view class="{{ scrollTop > 100 ? 'tabContainer1' : '' }}">
+      <view class="tabContainer">
+        <view class='tabItem' bindtap='NavTab' wx:for-index="index" data-index="{{index}}" wx:for="{{lineText}}" wx:key="lineText">
+          <view class='space'></view>
+          <text class='{{ index == tabIndex ? "tabTitleSelected":"tabTitle" }}'>{{item.title}}</text>
+          <view class='space'></view>
+          <view class='tabDiv' wx:if='{{tabIndex == index}}'></view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="" style="margin-bottom:100rpx;">
+    <view id="d0">
+      <!-- 轮播 -->
+      <view class="swiper-index">
+        <swiper autoplay="false" interval="15000" duration="300" bindchange='bindChange'>
+          <block wx:for="{{banner}}" wx:key="bannerItem">
+            <swiper-item>
+              <image src="{{item}}" class="slide-image" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <!-- <view class="digits">
+          <text class="slide-text">{{current+1}}/{{bannerItem.length}}</text>
+        </view> -->
+      </view>
+      <!-- 商品信息 -->
+      <view class="goodInfo">
+        <view class="SellInfo">
+          <view class="price">
+            <view class="vip">最低砍至：￥
+              <text>{{bargain_price}}</text>
+            </view>
+            <view class="Original">
+              {{priceName}}：
+              <text>￥{{OriginPrice}}</text>
+            </view>
+          </view>
+          <view class="Spell">已有{{count}}参与</view>
+        </view>
+        <view class="titleInfo">
+          <view class="title" bindtap='copyText' data-text="{{goods_name}}">
+            <text>{{goods_name}}</text>
+          </view>
+          <view class="titleShare" bindtap='shareBox'>
+            <image src="/images/YueMall/shareTitle.png"></image>
+            <view class="authorizationStatus" bindtap='VerificationCode' wx:if="{{authorizationStatus}}"></view>
+          </view>
+        </view>
+        <view class="describe">{{goodsInfo}}</view>
+      </view>
+      <view class="listItem">
+        <view class="itemTxt">
+          <text class="LyingEarn">供应商：{{goodSupplier}}</text>
+        </view>
+      </view>
+      <!-- 配送至 -->
+      <view class="DistributionPlace" bindtap='address'>
+        <view class="DistributionAddress">
+          <view class="title">配送至：</view>
+          <view class="DistributionInfo">
+            <view class="address" wx:if="{{state == 1}}">{{address.proviceName}}{{address.cityName}}{{address.zoneName}}</view>
+            <view class="address" style="color:#ff6032" wx:else>请选择配送地址</view>
+            <view class="FullReduction">
+              <!-- <view class="freight" wx:if="{{goodFreight}}">{{goodFreight}}</view> -->
+              <view class="isDelivery">{{isSale.saleDetail}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="image">
+          <image src="https://image.yuelvhui.com/pubfile/2019/06/11/line_1560261526.png"></image>
+        </view>
+        <view class="authorizationStatus" bindtap='VerificationCode' wx:if="{{authorizationStatus}}"></view>
+      </view>
+
+      <!-- 拼团标题-->
+      <view class="GroupHeader" wx:if="{{groupInfo != ''}}">
+        <view class="Conduct">砍价记录</view>
+        <view class="lookMore" bindtap='lookMore'>
+          <view>查看更多</view>
+          <image class="" src="/images/YueMall/roow.png"></image>
+        </view>
+      </view>
+      <!-- 拼团列表 -->
+      <view class="GroupList" wx:for="{{groupInfo}}" wx:if="{{(item.countDownHour != '00'&&item.countDownMinute != '00'&& item.countDownSecond != '00')}}" wx:key="list">
+        <view class="SenderInfo">
+          <image src="{{item.head_pic}}" class=""></image>
+          <view class='help_price_name'>
+            <view style='font-size:24rpx;color:#181818'>{{item.nickname}}</view>
+            <!-- <view style='font-size:20rpx;color:#484848'>已砍
+              <text style='color:#FFD368'>{{item.help_price}}元</text>
+            </view> -->
+          </view>
+        </view>
+        <view class="GroupInfo">
+         <view style='font-size:20rpx;color:#484848'>已砍
+              <text style='color:#FFD368'>{{item.help_price}}元</text>
+            </view>
+          <!-- <view class="GoGroup" wx:if="{{item.commission_price!=0.00}}">{{item.state==1?'占位':'已得'}}佣金
+            <text style='color:#FFD368'>{{item.commission_price}}元</text>
+          </view> -->
+        </view>
+      </view>
+    </view>
+    <!-- 评论 -->
+    <view id="d1">
+      <view class="comment" wx:if="{{comment.comment_total != 0}}">
+        <view class="title">
+          <view class="Total">评价({{comment.comment_total}})</view>
+          <view class="Commentary">好评度 {{comment.good_favourable}}</view>
+        </view>
+        <view class="PersonalComments" wx:for="{{comment.result}}" wx:key="result" wx:for-item="result">
+          <view class="userInfo">
+            <image class="Head" src="{{result.litpic}}"></image>
+            <view class="info">
+              <view>{{result.nickname}}</view>
+              <view class="stars">
+                <image wx:for="{{result.goods_score}}" wx:key="red" src="https://image.yuelvhui.com/pubfile/2019/06/12/line_1560327457.png"></image>
+                <image wx:for="{{5-result.goods_score}}" wx:key="gray" src="https://image.yuelvhui.com/pubfile/2019/06/12/line_1560327461.png"></image>
+              </view>
+            </view>
+          </view>
+          <view class="WrittenWords">
+            <text>{{result.comment}}</text>
+          </view>
+          <view class="tab-hSecondLevel">
+            <scroll-view scroll-x class='exploreViewList' scroll-with-animation="true">
+              <image wx:for="{{result.imgs}}" src="{{item}}" data-src="{{item}}" catchtap="imgYu" data-list="{{result.imgs}}" wx:key="imagenum"></image>
+            </scroll-view>
+          </view>
+          <view class="Specifications">{{item.goods_spec}}</view>
+        </view>
+        <view class="lookComment" wx:if="{{comment.comment_total >2}}">
+          <view bindtap='lookComment'>查看全部评价</view>
+        </view>
+      </view>
+      <view wx:else class="NoEvaluationYet">
+        <view class="title">
+          <view class="left">
+            <view class="">评价</view>
+            <view class="stars">
+              <image wx:for="{{three}}" wx:key="red" src="https://image.yuelvhui.com/pubfile/2019/06/12/line_1560327457.png"></image>
+            </view>
+          </view>
+          <view class="right">
+            共0条评论
+          </view>
+        </view>
+        <view class="tips">暂无评论</view>
+      </view>
+    </view>
+    <!-- 商品详情 -->
+    <view class="articletitle" id="d2">产品详情</view>
+    <view class='CommodityDetails'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  </view>
+  <!-- 底部按钮 -->
+  <view class="footr" catchtouchmove="disMove">
+    <view class="home" catchtap='gohome'>
+      <image src="/images/YueMall/homeAss.png"></image>
+    </view>
+    <!-- <view class="Collection" catchtap='Collection'>
+    <image src="/images/mall/Collection.png"></image>
+    <image src="/images/mall/collectionHave.png"></image>
+  </view> -->
+    <view class="Share" bindtap='shareBox'>
+      <image src="/images/YueMall/shareAss.png"></image>
+    </view>
+    <view class="SeparatePurchase" data-id="1" bindtap='SelectionSpecification' style="height:60rpx;font-size:24rpx;">
+      <view class="price">￥{{origin_price}}</view>
+      <view class="">单独购买</view>
+    </view>
+    <view class="InitiateList" data-id="2" bindtap='SelectionSpecification' style="height:60rpx;font-size:24rpx;">
+      <view class="price">邀请好友</view>
+      <view class="">帮我砍价</view>
+    </view>
+    <view class="authorizationStatus" bindtap='VerificationCode' style="width:80%;left:20%" wx:if="{{authorizationStatus}}"></view>
+  </view>
+</scroll-view>
+<!-- 规格 -->
+<view class="commodity_screen" bindtap="hideModal" catchtouchmove="disMove" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" catchtouchmove="disMove" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class="close" data-statu="close" bindtap="hideModal">
+    <image src="/images/YueMall/close.png" style="width:26rpx;height:24rpx"></image>
+  </view>
+
+  <view class="commodity" style="">
+    <view class="images" style="background-color:#fff">
+      <image src="{{boxbanner}}" data-src="{{Specificationsimg}}" catchtap="imgYu" data-list="{{bannerItem}}"></image>
+    </view>
+    <view class="describe">
+      <view class="money" wx:if="{{buttonId == 2}}">
+        <view style="color:#FF5012;margin-right:30rpx">￥
+          <text style="font-size:40rpx">{{bargain_price}}</text>
+        </view>
+        <view>官网价￥{{origin_price}}</view>
+      </view>
+      <view wx:else>
+        <view style="color:#FF5012;margin-right:30rpx">￥
+          <text style="font-size:40rpx" wx:if="{{cardType>0}}">{{goodVipPrice}}</text>
+          <text style="font-size:40rpx" wx:else>{{origin_price}}</text>
+        </view>
+        <view>官网价￥{{origin_price}}</view>
+      </view>
+      <view class="NoGoods" wx:if="{{isSale.saleState == 0}}">
+        <text>无货</text>
+      </view>
+      <view class="specification">
+        <text>商品编号：{{skuid}}</text>
+      </view>
+    </view>
+  </view>
+  <scroll-view scroll-y style="height: 378px;">
+    <view class="size" wx:for="{{colorSize}}" style="margin-top:{{isSale.saleState == 0?'124rpx':''}}" wx:for-index="idx" wx:key="colorSize" wx:for-item="colorSize" data-idx="{{idx}}">
+      <view class="sizeName">{{colorSize.title}}</view>
+      <view class="channelContent">
+        <view data-aaa="{{item.isEnable}}" class="{{statusArr[idx] == index?'active':''}}" wx:for="{{colorSize.buttons}}" wx:key="label" data-index='{{index}}' data-idx="{{idx}}" data-name="{{item.text}}" bindtap='{{item.isEnable?"swichLabel":""}}' data-sku="{{item.skuList}}">
+          <text class="{{item.isEnable?'':'NotOptional'}}">{{item.text}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="amount">
+      <view class="sizeName">数量</view>
+      <view class="regulation">
+        <view class="subtract" bindtap='subtract' data-num="{{amountNumber}}">-</view>
+        <view class="amountNumber">{{amountNumber}}</view>
+        <view class="addNumber" bindtap='addNumber' data-num="{{amountNumber}}">+</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view wx:if="{{isSale.saleState == 0}}">
+    <view class="add" style="width:100%;text-align:center;background-color:#999;color:#fff;position:absolute;bottom:0;" bindtap='FindSimilarity'>
+      热脱销 找相似
+    </view>
+  </view>
+  <view style="position:absolute;bottom:0;width:100%" wx:else>
+    <view class="operationButton">
+      <view class="SeparatePurchase" wx:if="{{buttonId == 1}}" data-id="1" style="width:100%;border-radius:0rpx;margin-left:0rpx" bindtap='sure'>
+        <view class="price">￥{{origin_price}}</view>
+        <view class="">单独购买</view>
+      </view>
+      <view class="InitiateList" wx:else data-id="2" style="width:100%;border-radius:0rpx;margin-right:0rpx" bindtap='sure'>
+        <view class="price">邀请好友</view>
+        <view class="">帮我砍价</view>
+      </view>
+    </view>
+  </view>
+
+</view>
+<!-- 分享弹窗 -->
+<view class="share-layer" wx:if="{{ sharelayer }}">
+  <view class="share-layer-mask" bindtap='shareLayerClosed'>
+  </view>
+  <view class="share-layer-block">
+    <view class="share-layer-block-img">
+      <button open-type='share'>
+        <image src="/images/YueMall/WeChatShare.png"></image>
+      </button>
+    </view>
+    <view class="share-layer-block-img" bindtap='goPoster'>
+      <image src="/images/YueMall/posterShare.png"></image>
+    </view>
+  </view>
+  <view class="share-layer-cancel" bindtap='shareLayerClosed'>
+    <view>取消</view>
+  </view>
+</view>

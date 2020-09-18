@@ -1,0 +1,38 @@
+<import src="/page/LoadingPopup/LoadingPopup.wxml" />
+<block wx:if="{{LoadingStatus}}">
+  <template is="LoadingPopup" />
+</block>
+<view class="dang_list">
+  <view class="hr"></view>
+  <view class="dang_list_list" wx:for="{{list}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-skuid="{{item.skuId}}" bindtap="detailbook" wx:if="{{list!=''}}">
+    <view class="image" >
+      <view class="image_img">
+        <image src="{{item.productImage}}"></image>
+        <view class="image_fixed">
+          <text>{{item.icon}}</text>
+        </view>
+      </view>
+      <view class="image_text">
+        <view class="image_text_name"><text>{{item.productName}}</text></view>
+        <view class="image_text_order"><text>作者名:{{item.authorName}}</text></view>
+        <view class="image_text_chuban">{{item.publishingHouse}}</view>
+        <view class="image_text_footer">
+          <view wx:if='{{item.isUseCoupon==1}}'>
+            <text class="image_text_oldprice">¥{{item.price}}</text>
+            <text class="image_text_price" style="padding-left:12rpx">¥{{item.couponPrice}}</text>
+          </view>
+          <view wx:if='{{item.isUseCoupon==0}}'>
+            <text class="image_text_price">¥{{item.price}}</text>
+          </view>
+          <view class="image_text_footer_buy">立即购买</view>
+        </view>
+      </view>
+    </view>
+    <view class="hrs"></view>
+  </view>
+  <view wx:if="{{list==''}}">
+    <view class="none_image">
+      <image src="https://image.yuelvhui.com/pubfile/2019/11/21/line_1574337754_20364.png"></image>
+    </view>
+  </view>
+</view>

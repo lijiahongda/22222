@@ -1,0 +1,148 @@
+<!-- 筛选弹框 -->
+<view class="black-grd" bindtap="screenBox" wx:if="{{screenBox}}"></view>
+<view class="screen-shell" wx:if="{{screenBox}}">
+  <view class="screen-con">
+    <view class="screen-type">
+      <view class="title">{{screenOrder.priceList.title}}</view>
+      <view class="price-input">
+        <input placeholder="最低价" type="number" bindinput="bindinputMin"></input>
+        <view class="line"></view>
+        <input placeholder="最高价" type="number" bindinput="bindinputMax"></input>
+      </view>
+      <view class="screen-list">
+        <view class="{{minprice===item.min?'chose':''}}" wx:for="{{screenOrder.priceList.item}}" wx:for-index="index" wx:key="index" bindtap="choseSceen" data-item="{{item}}" data-type="price">{{item.min}}-{{item.max}}</view>
+      </view>
+    </view>
+    <view class="screen-type">
+      <view class="title">
+        <view>{{screenOrder.brandList.title}}</view>
+        <image bindtap="priceRange" wx:if="{{range=='up'}}" data-type="down" data-clas="brand" src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569319191_83623.png"></image>
+        <image bindtap="priceRange" wx:else data-type="up" data-clas="brand" src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569319206_11692.png"></image>
+      </view>
+      <view class="screen-list">
+        <view wx:for="{{screenOrder.brandList.item}}" class="{{brandId==item.brandId?'chose':''}}" wx:if="{{range=='up'?index>0:index<3}}" wx:for-index="index" wx:key="index" bindtap="choseSceen" data-item="{{item}}" data-type="brand">{{item.brandName}}</view>
+      </view>
+    </view>
+    <view class="screen-type">
+      <view class="title">
+        <view>{{screenOrder.categoryList.title}}</view>
+        <image bindtap="priceRange" wx:if="{{rangeCate=='up'}}" data-type="down" src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569319191_83623.png"></image>
+        <image bindtap="priceRange" wx:else data-type="up" src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569319206_11692.png"></image>
+      </view>
+      <view class="screen-list">
+        <view wx:for="{{screenOrder.categoryList.item}}" class="{{categoryThreeId==item.categoryThreeId?'chose':''}}" wx:if="{{rangeCate=='up'?index>0:index<3}}" wx:for-index="index" wx:key="index" bindtap="choseSceen" data-item="{{item}}" data-type="category">{{item.categoryThreeName}}</view>
+      </view>
+    </view>
+    <view class="screen-type">
+      <view class="title">{{screenOrder.channelList.title}}</view>
+      <view class="screen-list">
+        <view wx:for="{{screenOrder.channelList.item}}" class="{{channelId==item.channelId?'chose':''}}" wx:for-index="index" wx:key="index" bindtap="choseSceen" data-item="{{item}}" data-type="channel">{{item.channelName}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="screen-btn">
+    <view class="reset" bindtap="reset">重置</view>
+    <view class="sure" bindtap="screenBox">确定</view>
+  </view>
+</view>
+
+
+<view class="header">
+  <view class="search">
+    <view class="search-con" bindtap="goBack">
+      <image src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569312086_51546.png"></image><view>{{keyWord?keyWord:'搜索商品名称'}}</view>
+    </view>
+    <image class="search-type" bindtap="sortSwitch" data-type="line" wx:if="{{searchType}}" src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569306513_36804.png" ></image>
+    <image class="search-type" wx:else src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569307041_11020.png" bindtap="sortSwitch" data-type="square"></image>
+  </view>
+  <view class="sort">
+    <view class="{{sortVal==1?'active':''}} list" bindtap="sort" data-val="1">综合</view>
+    <view class="{{sortVal==2?'active':''}} list" bindtap="sort" data-val="2">销量</view>
+    <view class="{{sortVal==3?'active':''}} list price-icon" bindtap="sort" data-val="3">
+      <view>价格{{sortPrice}}</view>
+      <view>
+        <image wx:if="{{sortUp==''}}" class="price-up" src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569308200_96214.png"></image>
+        <image wx:if="{{sortUp=='up'}}" class="price-up" src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569308254_45761.png"></image>
+
+        <!-- 下 -->
+        <image wx:if="{{sortDown==''}}" class="price-down" src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569308163_42879.png"></image>
+        <image wx:if="{{sortDown=='down'}}" class="price-down" src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569308222_88266.png"></image>
+      </view>
+    </view>
+    <view class="list screen" bindtap="screenBox">
+      <view>筛选</view>
+      <image src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569308274_94525.png"></image>
+    </view>
+  </view>
+  <view class="category">
+    <scroll-view scroll-with-animation="{{animation}}" scroll-left='{{scrollTop}}' scroll-x class="nav" scroll-into-view="{{textid}}">
+        <view id="{{'to'+item.channelid}}" wx:for="{{categorylist}}"  wx:for-index='index'  wx:key="index" wx:for-index="idx" data-item="{{item}}" data-idx="{{idx}}" class="nav-item {{currentTab == idx?'activeChild':''}}" bindtap="switchNav"><text>{{item.title}}</text></view>
+    </scroll-view>
+  </view>
+</view>
+
+<view class="{{searchType?'content':'ContentArea'}}" wx:if="{{order.length}}">
+  <block wx:for="{{order}}" wx:key="order" >
+    <!-- 方 -->
+    <view class="item" wx:if="{{!searchType}}" bindtap='details' data-goodsId="{{item.goodId?item.goodId:item.productId}}" data-productId="{{item.productId}}"  data-skuid="{{item.skuId}}">
+      <view class="shopImageLeft">
+        <view class="source" wx:if="{{item.channelName}}">{{item.channelName}}</view>
+        <image src="{{item.productImage}}"></image>
+      </view>
+      <view class="itemInfo">
+        <view class="title">{{item.productName}}</view>
+        <view class="hot" wx:if="{{item.orderPayCount!='0'}}">热销{{item.orderPayCount}}件</view>
+        <view class="price">
+          <view>￥<text style="font-size:30rpx">{{item.vipPrice}}</text></view>
+          <view class="old-price" decode='true'>￥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 横版 -->
+    <view class="item" wx:if="{{searchType}}" bindtap='details' data-goodsId="{{item.goodId?item.goodId:item.productId}}" data-productId="{{item.productId}}"  data-skuid="{{item.skuId}}">
+      <view class="image">
+        <image src="{{item.productImage}}"></image>
+      </view>
+      <view class="info"  >
+        <view class="title titleH" >
+          <image class="wph" wx:if="{{channelid=='101'}}" src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-03-07\/14\/yuelvhuiTi3Ybdsx771583562505.png"></image>
+          <text style="margin-bottom:{{item.shareSavePrice || item.couponFee?'16rpx':''}};">{{item.productName}}</text>
+        </view>
+        <!-- 大礼包标签 -->
+        <view class="bigLtags" wx:if="{{item.isGift!=0}}">
+          <view class="viptag" wx:if="{{item.isGift==1}}">
+            <view><image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-20/13/yuelvhuiQ64OEUrRK71589954278.png"></image></view>
+            <view>送白金会员</view>
+          </view>
+          <view class="viptag" style="color:rgba(237,191,158,1);" wx:if="{{item.isGift==2}}">
+            <view><image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-18/17/yuelvhuiWnhxQF6KCn1589794479.png"></image></view>
+            <view>送黑金VIP</view>
+          </view>
+          <view class="nomtag">再赠送精美礼包</view>
+        </view>
+        <view wx:if="{{channelid=='98'||channelid=='100'}}" class="disync" style="margin-bottom:{{item.shareSavePrice || item.couponFee?'16rpx':''}}">
+          <text wx:if='{{item.couponFee}}'>优惠券：¥{{item.couponFee}}</text>
+          <text wx:if='{{item.shareSavePrice}}'>分享赚:￥{{item.shareSavePrice}}</text>
+        </view>
+        <!-- <view wx:if="{{channelid=='101'}}" class="disync" style="margin-bottom:{{item.shareSavePrice || item.couponFee?'16rpx':''}}">
+          <text wx:if='{{item.couponFee}}'>{{item.couponFee}}折</text>
+        </view> -->
+        <view class="pricebutton">
+          <view class="price">
+            <text class="Company">¥</text>
+            <text>{{item.vipPrice}}</text>
+            <text class="OriginalPrice">¥{{item.price}}</text>
+            <view class="Surplus" wx:if="{{item.orderPayCount!='0'}}">热销{{item.orderPayCount}}件</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </block>
+</view>
+
+<view class="NoCommodityData" wx:else>
+  <image src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569318188_35989.png"></image>
+  <view>暂无此商品...</view>
+</view>

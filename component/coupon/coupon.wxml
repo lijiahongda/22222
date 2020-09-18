@@ -1,0 +1,44 @@
+<view class="coupon" style="margin-top:30rpx;" >
+  <scroll-view scroll-x class="two_scroll_view" wx:if="{{couponList.length > 1}}">
+    <view class="more" >
+      <view class="couBox1" wx:for="{{couponList}}" wx:for-index="index" wx:key="index" >
+        <view class="cou1">
+          <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-07/14/yuelvhuiIjDLqkyJk61578377405.png" wx:if="{{item.couponState == 0}}"></image>
+          <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-07/16/yuelvhuizLLw4EWDts1578384155.png" wx:if="{{item.couponState == 2}}"></image>
+          <view class="txtBox1">
+            <view>
+              <text class="pri">¥</text>
+              <text class="price1">{{item.usedMoney}}</text>
+            </view>
+            <view class="condition"> {{item.remind}}</view>
+          </view>
+        </view>
+        <view class="cou2">
+          <view class="detail1">{{item.couponName}}</view>
+          <view class="yxq">{{item.usedRemind}}</view>
+          <view class="btn btn1" wx:if="{{item.couponState == 0}}" data-cid="{{item.cid}}" data-couponState="{{item.couponState}}" bindtap="receive">立即领取</view>
+          <view class="btn btn2" wx:if="{{item.couponState == 2 }}"  data-couponState="{{item.couponState}}" bindtap="receive">已领取</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="couBox1 couBox" wx:for-index="index" wx:key="index" wx:for="{{couponList}}" wx:if="{{couponList.length == 1}}">
+    <view class="cou1">
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-07/14/yuelvhuiIjDLqkyJk61578377405.png" wx:if="{{item.couponState == 0}}"></image>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-07/16/yuelvhuizLLw4EWDts1578384155.png" wx:if="{{item.couponState == 2}}"></image>
+      <view class="txtBox1">
+        <view>
+          <text class="pri">¥</text>
+          <text class="price1">{{item.usedMoney}}</text>
+        </view>
+        <view class="condition"> {{item.couponName}}</view>
+      </view>
+    </view>
+    <view class="cou2">
+      <view class="detail1">{{item.couponName}}</view>
+      <view class="yxq">{{item.usedRemind}}</view>
+      <view class="btn btn1" wx:if="{{item.couponState == 0}}" data-cid="{{item.cid}}" data-couponState="{{item.couponState}}" bindtap="receive">立即领取</view>
+      <view class="btn btn2" wx:if="{{item.couponState == 2 }}"  data-couponState="{{item.couponState}}" bindtap="receive">已领取</view>
+    </view>
+  </view>
+</view>

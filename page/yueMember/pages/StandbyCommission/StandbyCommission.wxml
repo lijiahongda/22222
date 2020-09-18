@@ -1,0 +1,78 @@
+<!--page/yueMember/pages/StandbyCommission/StandbyCommission.wxml-->
+<!-- tab -->
+<view class="tab">
+  <view class=" tab_item {{currentTab==item.id? 'active': ''}}" data-current="{{item.id}}" wx:for="{{titleitem}}" bindtap="swichNav" wx:key="item">
+    <view>{{item.name}}</view>
+  </view>
+</view>
+<!-- 选择时间 -->
+<view class="time_content" wx:if="{{currentTab == 2}}">
+  <view class="content">
+    <view class="time_item">
+      <view class="time_title">开始时间</view>
+      <view class="time_select">
+        <picker mode="date" value="{{startdate}}" bindchange="bindstartdate">
+          <view class="picker">
+            <view class="time_date">{{startdate}}</view>
+            <image src="https://image.yuelvhui.com/pubfile/2019/10/15/line_1571144716_65334.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="time_item">
+      <view class="time_title">结束时间</view>
+       <view class="time_select">
+        <picker mode="date" value="{{enddate}}" bindchange="bindenddate">
+          <view class="picker">
+            <view class="time_date">{{enddate}}</view>
+            <image src="https://image.yuelvhui.com/pubfile/2019/10/15/line_1571144716_65334.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 总计 -->
+<view class="Total">
+  <view class="Total_item">
+    <view class="Total_title">订单数</view>
+    <view class="Total_Number">
+      {{orderCount}}
+      <text>单</text>
+    </view>
+  </view>
+  <view class="Total_border"></view>
+  <view class="Total_item">
+    <view class="Total_title">待到账佣金</view>
+    <view class="Total_Number">
+      {{orderSum}}
+      <text>单</text>
+    </view>
+  </view>
+</view>
+<!-- 标题 -->
+<view class="Detailed_Title">
+  <view class="Detailed_left_border"></view>
+  <view>待到账明细</view>
+</view>
+<!-- 列表明细 -->
+<view class="Detailed_list" wx:if="{{list.length}}" wx:for="{{list}}" wx:for-index="index" wx:key="index">
+  <view>
+    <image src="{{item.litpic}}"></image>
+  </view>
+  <view class="Detailed_info">
+    <view class="Detailed_top">
+      <view class="Detailed_name">
+        <text>{{item.nickname}}</text>
+      </view>
+      <view class="Detailed_type">{{item.product_type}}</view>
+      <view class="Detailed_Commission">佣金：{{item.amount}}元</view>
+    </view>
+    <view class="Detailed_bottom">
+      <view>{{item.created_at}}</view>
+      <view class="Detailed_tips">{{item.tips}}</view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{list.length==0}}" style="width:100%;margin-top:100rpx;text-align:center;">暂无数据</view>

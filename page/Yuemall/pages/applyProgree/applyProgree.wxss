@@ -1,0 +1,217 @@
+page{
+  background: #F6F6F6
+}
+
+.goods{
+  width:750rpx;
+  height:252rpx;
+  background:rgba(255,255,255,1);
+  padding: 48rpx 24rpx;
+  box-sizing: border-box;
+  margin-bottom: 10rpx;
+  border-top: 1rpx solid #f6f6f6
+}
+.goods .title{
+  font-size: 26rpx;
+  line-height: 26rpx;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+.goods .goodinfo{
+  height: 170rpx;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #333;
+}
+.goods .goodinfo .image{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx
+}
+.goods .goodinfo .name{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  width: 470rpx;
+}
+.goods .goodinfo .goodprice{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+
+.reason{
+  width:750rpx;
+  /* height:190rpx; */
+  background:rgba(255,255,255,1);
+  padding: 26rpx;
+  font-size: 26rpx;
+  color: #333;
+  line-height: 50rpx;
+  box-sizing: border-box;
+  margin-bottom: 10rpx;
+}
+.reason .list,.reason .list view{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.reason .list image{
+  width: 16rpx;
+  height: 28rpx;
+  margin-left: 22rpx;
+}
+.reason .price_cont{
+  color: #666;
+  font-size: 24rpx;
+}
+
+
+
+.logInfo{
+  font-size: 26rpx;
+  color: #333333;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  margin-bottom: 10rpx;
+}
+.logInfo input{
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 26rpx;
+  width: 500rpx;
+}
+
+
+
+.orderInfo {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 92%;
+  padding: 28rpx 4%;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 40rpx;
+  border-bottom: 1rpx solid #f6f6f6;
+}
+.orderInfo .title{
+  font-size: 26rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+.orderInfo .upload,.orderInfo .Exhibition .image image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.orderInfo .Exhibition{
+  display: flex;
+  flex-wrap: wrap;
+}
+.orderInfo .Exhibition .image{
+  width: 150rpx;
+  height: 150rpx;
+  position: relative;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+.orderInfo .Exhibition .image .deleteImg{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: -14rpx;
+  top: -18rpx;
+}
+
+/* 弹出服务 */
+.bg_black{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1
+}
+.services{
+  width:750rpx;
+  height:1100rpx;
+  background:rgba(255,255,255,1);
+  border-radius:20rpx 20rpx 0px 0px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  padding: 20rpx 24rpx;
+  box-sizing: border-box;
+}
+.services .title{
+  width: 100%;
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+  margin-top: 20rpx;
+  margin-bottom: 50rpx;
+}
+.services .close{
+  width: 42rpx;
+  height: 42rpx;
+  position: absolute;
+  right: 24rpx;
+  top: 28rpx;
+}
+.services .tips{
+  /* height:300rpx; */
+  background:rgba(246,246,246,1);
+  border-radius:10rpx;
+  font-size: 26rpx;
+  color: #333;
+  padding: 40rpx;
+  line-height: 58rpx;
+  box-sizing: border-box;
+}
+.services .reason_radio .titles{
+  font-size: 30rpx;
+  font-weight:500;
+  line-height: 30rpx;
+  margin: 36rpx 0;
+}
+.services .radio-group{
+  display: flex;
+  flex-wrap: wrap
+}
+.services .radio-group .radio{
+  display: block;
+  width: 100%;
+  margin-bottom: 40rpx;
+}
+.services .radio-group .radio text{
+  margin-left: 30rpx;
+}
+
+
+.save{
+  width:688rpx;
+  height:70rpx;
+  background:linear-gradient(90deg,rgba(240,48,35,1) 0%,rgba(239,82,37,1) 100%);
+  border-radius:35rpx;
+  position: fixed;
+  bottom: 30rpx;
+  left: 30rpx;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 70rpx;
+}

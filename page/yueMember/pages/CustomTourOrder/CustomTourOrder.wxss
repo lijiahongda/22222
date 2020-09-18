@@ -1,0 +1,155 @@
+/* pages/yueMember/CustomTourOrder/CustomTourOrder.wxss */
+
+page {
+  background-color: #f8f8f8;
+  padding-top: 20rpx;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 95%;
+  margin: auto;
+  border-radius: 6rpx;
+  /* height: 220rpx; */
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.item .head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #ececec;
+  height:80rpx;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.item .head image {
+  width: 25rpx;
+  height: 28rpx;
+  margin-right: 3%;
+}
+
+.item .custom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left:5%;
+  margin-right:5%;
+  border-bottom: 1px solid #ececec;
+  height:80rpx;
+  
+}
+
+.item .custom .customType {
+  color: #333;
+  font-size: 34rpx;
+}
+
+.item .custom .wrie {
+  font-size: 28rpx;
+  color: rgb(102, 102, 102);
+}
+
+.item .custom .state {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.item .head .ordernum {
+  color: rgb(153, 153, 153);
+  font-size: 30rpx;
+}
+
+.item .head .ordernum text {
+  color: rgb(51, 51, 51);
+  font-size: 30rpx;
+}
+
+.item .content {
+  /* height:180rpx */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5%;
+  padding-right:5%
+}
+.item .content .lookDetail{
+  width:150rpx;
+  height:60rpx;
+  border-radius: 6rpx;
+  background-color: #ff6032;
+  line-height: 60rpx;
+  text-align: center;
+  color:#fff;
+  font-size: 30rpx;
+}
+.item .content .title {
+  color: #333;
+  font-size: 34rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.item .content .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.item .content .info .travelInfo {
+  color: #999;
+  font-size: 26rpx;
+  width: 80%;
+}
+
+.item .content .info .travelInfo .adult {
+  margin-right: 3%;
+}
+
+.item .content .info .travelInfo .children {
+  margin-right: 3%;
+}
+
+.item .content .info .details {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.NewItinerary {
+  width: 100%;
+  height: 98rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #f4aa11;
+  font-size: 32rpx;
+  position: fixed;
+  bottom: 0rpx;
+}
+
+.NewItinerary image {
+  width: 29rpx;
+  height: 29rpx;
+  margin-right: 2%;
+}
+
+.noData{
+  width: 100%;
+  height: 800rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+.noData image{
+  width: 361rpx;
+  height: 363rpx;
+}

@@ -1,0 +1,2 @@
+<!--page/other/pages/UserAgreement/UserAgreement.wxml-->
+<web-view src="https://www.yuetao.group/RegistrationAgreement.html"></web-view>

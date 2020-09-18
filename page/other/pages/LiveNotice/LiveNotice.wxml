@@ -1,0 +1,15 @@
+<!--page/other/pages/LiveNotice/LiveNotice.wxml-->
+<image class="content" src="{{bgImg}}"></image>
+<view class="Notice">预告</view>
+<view class="CountDown">
+  <view class="list">{{countDownDay}}</view>
+  <view class="colon">天</view>
+  <view class="list">{{countDownHour}}</view>
+  <view class="colon">时</view>
+  <view class="list">{{countDownMinute}}</view>
+  <view class="colon">分</view>
+  <view class="list">{{countDownSecond}}</view>
+  <view class="colon">秒</view>
+</view>
+<video class="videos" src="{{videoUrl}}" wx:if="{{videoUrl}}" autoplay id="myVideo"></video>
+<image class="videos" wx:else src="{{videoCover}}"></image>

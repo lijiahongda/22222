@@ -1,0 +1,30 @@
+<scroll-view scroll-y='true' style="height:{{height}}px" bindscrolltolower='lower' wx:if="{{orderData !=''}}">
+  <view class="requirement" bindtap='goDetails' data-orderNo="{{item.orderNo}}" wx:for="{{orderData}}" wx:key="*this">
+    <view class="reTitle">
+      <image src="/images/memberInformation/order.png"></image>
+      <view>订单号：{{item.orderNo}}</view>
+    </view>
+    <view class="deliveryAdd">
+      <view class="userInfo">
+        <view class="userName">
+          {{item.title}}
+        </view>
+        <view class="userAddress">
+          <view class="addressLabel">
+            {{item.addTime}}
+          </view>
+        </view>
+      </view>
+      <view class="money">
+        <view class="num" style="color:rgb(252,105,49);">￥
+          <text style="font-size:34rpx">{{item.price}}</text>
+        </view>
+        <view style="margin-top:20rpx;color: #999;">{{item.statusDesc}}</view>
+      </view>
+    </view>
+  </view>
+
+</scroll-view>
+<view class="noData" wx:else>
+  <image src="https://image.yuelvhui.com/pubfile/2019/06/26/line_1561541023.png"></image>
+</view>

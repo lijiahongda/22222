@@ -1,0 +1,23 @@
+<view class="Growthbox">
+	<view class="Growthbox1">
+		<view
+		 wx:for="{{list.content}}"
+		 wx:for-item="item1"
+		 class="Growthbox2"
+		>
+			<view class="YGbox">
+				{{item1.title}}
+
+			</view>
+			<view
+			 wx:for="{{item1.content}}"
+			 wx:for-item="item2"
+			 class="YGbox1"
+			>
+				{{item2}}
+			</view>
+		</view>
+	</view>
+
+</view>
+

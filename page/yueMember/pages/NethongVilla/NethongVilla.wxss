@@ -1,0 +1,12 @@
+/* page/yueMember//pages/NethongVilla/NethongVilla.wxss */
+.bg{
+  display: block;
+  position: relative
+}
+.button{
+  width: 272rpx;
+  height: 62rpx;
+  position: absolute;
+  top: 689rpx;
+  left: 34%;
+}

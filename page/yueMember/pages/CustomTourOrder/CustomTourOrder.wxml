@@ -1,0 +1,34 @@
+<view style="" wx:if="{{list != ''}}">
+  <view class="item" wx:for="{{list}}" wx:key="*this">
+    <view class="head">
+      <image src="/images/memberInformation/order.png"></image>
+      <view class="ordernum">
+        <text>订单号：</text>{{item.ordersn}}</view>
+    </view>
+    <view class="custom">
+      <view class="customType">{{item.typeName}}</view>
+      <view class="state">{{item.statusName}}</view>
+    </view>
+    <view class="content">
+      <view style="width:80%">
+        <view class="title">{{item.productName}}</view>
+        <view class="info">
+          <view class="travelInfo">
+            <text class="adult">{{item.adultnum}}成人</text>
+            <text class="children">{{item.childnum}}儿童</text>
+            <text>{{item.starttime}}出发</text>
+          </view>
+          <!-- <view class="details" bindtap='CustomTourDetails'>查看详情</view> -->
+        </view>
+      </view>
+      <!-- <view class="lookDetail">查看详情</view> -->
+    </view>
+  </view>
+</view>
+<view class="noData" wx:else>
+  <image src="https://image.yuelvhui.com/pubfile/2019/06/26/line_1561541023.png"></image>
+</view>
+<view class="NewItinerary" bindtap='NewItinerary'>
+  <image src="../../../../images/LineRevision/plus.png"></image>
+  <view>定制新的行程</view>
+</view>

@@ -1,0 +1,185 @@
+<!--page/yueMember//pages/personalStores/personalStores.wxml-->
+<!-- <view class="top">
+  <view class="list" bindtap='connections'>
+    <view class="title">总人数</view>
+    <view class="people">{{people.total}}人</view>
+  </view>
+  <view class="border"></view>
+  <view class="list" bindtap='connections'>
+    <view class="title">一度人脉</view>
+    <view class="people">{{people.two}}人</view>
+  </view>
+  <view class="border"></view>
+  <view class="list">
+    <view class="title">潜在人脉</view>
+    <view class="people">{{people.other}}人</view>
+  </view>
+</view> -->
+
+<view class="Withdraw">
+  <view class="item" bindtap='StandbyCommission' data-statu="open">
+    <view class="">待到账佣金</view>
+    <view class="Price">
+      <image src="https://image.yuelvhui.com/pubfile/2019/08/30/line_1567136283_53645.png"></image>
+    </view>
+  </view>
+</view>
+<view class="Withdraw">
+  <view class="item">
+    <view class="">历史收益</view>
+    <view class="Price">
+      <view>
+        <text>¥</text>{{historyBalance}}</view>
+    </view>
+  </view>
+</view>
+<view class="Withdraw">
+  <view class="item" bindtap='Division' data-statu="open">
+    <view class="">可提收益</view>
+    <view class="Price">
+      <view>
+        <text>¥</text>{{balance}}</view>
+      <image src="https://image.yuelvhui.com/pubfile/2019/08/30/line_1567136283_53645.png"></image>
+    </view>
+  </view>
+</view>
+<view class="Withdraw">
+  <view class="item" bindtap='Division' data-statu="open">
+    <view class="">历史提现记录</view>
+    <view class="Price">
+      <image src="https://image.yuelvhui.com/pubfile/2019/08/30/line_1567136283_53645.png"></image>
+    </view>
+  </view>
+</view>
+<!-- 
+<view class="Upservice">
+  <view class="Upservices">
+    <view class="content">
+      <view class="text">距离您升级服务商还差8个大礼包</view>
+      <view class="progress">
+        <progress percent="{{service.total}}" color="#F35B56" border-radius="50" stroke-width="12" />
+        <view>{{service.total}}个</view>
+      </view>
+    </view>
+    <image src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569222499_90034.png"></image>
+  </view>
+</view> -->
+<!-- 今 -->
+<view class="GiftPackage">
+  <view class="title">
+    <view class="left" bindtap="swivel" data-type="today" data-pos="left">
+      <view class="info">
+        <view style="color:{{today.gPackage.state == 1?'#FA4043':'#1B1B1B'}}">今日采购结算</view>
+        <view class="Arrow" wx:if="{{today.gPackage.state == 1}}"></view>
+      </view>
+    </view>
+    <image class="logo" src="https://image.yuelvhui.com/pubfile/2019/09/25/line_1569400818_12291.png"></image>
+    <view class="right" bindtap="swivel" data-type="today" data-pos="right">
+      <view style="color:{{today.sale.state == 1?'#FA4043':'#1B1B1B'}}">今日销售提成</view>
+      <view class="Arrow" wx:if="{{today.sale.state == 1}}"></view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="order" bindtap="detail" data-left="left" data-time="today">
+      <view>{{today.gPackage.state == 1?today.gPackage.orderNum:today.sale.orderNum}}</view>
+      <view class="title">付款订单</view>
+    </view>
+    <view class="order" bindtap="detail" data-left="right" data-time="today">
+      <view>{{today.gPackage.state == 1?today.gPackage.money:today.sale.money}}</view>
+      <view class="title">结算收益</view>
+    </view>
+  </view>
+</view>
+<!-- 昨 -->
+<view class="GiftPackage">
+  <view class="title">
+    <view class="left" bindtap="swivel" data-type="yestoday" data-pos="left">
+
+      <view class="info">
+        <view style="color:{{yestoday.gPackage.state == 1?'#FA4043':'#1B1B1B'}}">昨日采购结算</view>
+        <view class="Arrow" wx:if="{{yestoday.gPackage.state == 1}}"></view>
+      </view>
+    </view>
+    <image class="logo" src="https://image.yuelvhui.com/pubfile/2019/09/25/line_1569400778_48069.png"></image>
+    <view class="right" bindtap="swivel" data-type="yestoday" data-pos="rigth">
+      <view style="color:{{yestoday.sale.state == 1?'#FA4043':'#1B1B1B'}}">昨日销售提成</view>
+      <view class="Arrow" wx:if="{{yestoday.sale.state == 1}}"></view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="order" bindtap="detail" data-left="left" data-time="yestoday">
+      <view>{{yestoday.gPackage.state == 1?yestoday.gPackage.orderNum:yestoday.sale.orderNum}}</view>
+      <view class="title">付款订单</view>
+    </view>
+    <view class="order" bindtap="detail" data-left="rigth" data-time="yestoday">
+      <view>{{yestoday.gPackage.state == 1?yestoday.gPackage.money:yestoday.sale.money}}</view>
+      <view class="title">结算收益</view>
+    </view>
+  </view>
+</view>
+<!-- 本月 -->
+<view class="GiftPackage">
+  <view class="title">
+    <view class="left" bindtap="swivel" data-type="month" data-pos="left">
+      <view class="info">
+        <view style="color:{{month.gPackage.state == 1?'#FA4043':'#1B1B1B'}}">本月采购结算</view>
+        <view class="Arrow" wx:if="{{month.gPackage.state == 1}}"></view>
+      </view>
+    </view>
+    <image class="logo" src="https://image.yuelvhui.com/pubfile/2019/09/25/line_1569400842_85340.png"></image>
+
+    <view class="right" bindtap="swivel" data-type="month" data-pos="right">
+      <view style="color:{{month.sale.state == 1?'#FA4043':'#1B1B1B'}}">本月销售提成</view>
+      <view class="Arrow" wx:if="{{month.sale.state == 1}}"></view>
+
+    </view>
+  </view>
+  <view class="list">
+    <view class="order" bindtap="detail" data-left="left" data-time="month">
+      <view>{{month.gPackage.state == 1?month.gPackage.orderNum:month.sale.orderNum}}</view>
+      <view class="title">付款订单</view>
+    </view>
+    <view class="order" bindtap="detail" data-left="rigth" data-time="month">
+      <view>{{month.gPackage.state == 1?month.gPackage.money:month.sale.money}}</view>
+      <view class="title">结算收益</view>
+    </view>
+  </view>
+</view>
+<!-- 累计 -->
+<view class="GiftPackage">
+  <view class="title">
+    <view class="left" bindtap="swivel" data-type="total" data-pos="left">
+
+      <view class="info">
+        <view style="color:{{total.gPackage.state == 1?'#FA4043':'#1B1B1B'}}">累计采购结算</view>
+        <view class="Arrow" wx:if="{{total.gPackage.state == 1}}"></view>
+        <!-- <image class="Arrow"  src="https://image.yuelvhui.com/pubfile/2019/08/30/line_1567138601_41266.png"></image>
+        <image class="Arrow" wx:else src="https://image.yuelvhui.com/pubfile/2019/08/30/line_1567138894_61273.png"></image> -->
+      </view>
+    </view>
+    <image class="logo" src="https://image.yuelvhui.com/pubfile/2019/09/25/line_1569400856_86146.png"></image>
+    <view class="right" bindtap="swivel" data-type="total" data-pos="right">
+      <view style="color:{{total.sale.state == 1?'#FA4043':'#1B1B1B'}}">累计销售提成</view>
+      <view class="Arrow" wx:if="{{total.sale.state == 1}}"></view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="order" bindtap="detail" data-left="left" data-time="total">
+      <view>{{total.gPackage.state == 1?total.gPackage.orderNum:total.sale.orderNum}}</view>
+      <view class="title">付款订单</view>
+    </view>
+    <view class="order" style="width:33%" bindtap="detail" data-left="right" data-time="total">
+      <view>{{total.gPackage.state == 1?total.gPackage.money:total.sale.money}}</view>
+      <view class="title">结算收益</view>
+    </view>
+  </view>
+</view>
+<view class="commodity_screenshowModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+  <view class="drawer_content">
+    <view>您好，小程序暂不提供提现服务，请在
+      <text style="color:#FF4C45">”悦淘“</text>微信公众号中下载APP或者在各大应用市场搜索
+      <text style="color:#FF4C45">”悦淘“</text>进行下载提现 </view>
+  </view>
+</view>
+<image src="/images/login/close.png" bindtap="hideModal" animation="{{animationData}}" class="closeImage" wx:if="{{showModalStatus}}"></image>

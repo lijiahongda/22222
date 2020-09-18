@@ -1,0 +1,59 @@
+
+<view class="toppbars">
+  <view class="pinHome_search row" bindtap="search">
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-23/15/yuelvhuibjJ0pbkb4D1582442542.png"></image>
+    <text style="padding-left:16rpx;">复制标题搜索拼多多优惠券</text>
+  </view>
+</view>
+<!-- <view class="banner">
+  <swiper class="swiperbox" indicator-dots="{{indicatorDots}}" autoplay="true" interval='3000' style="margin-top:{{showViewHeight?80:''}}rpx">
+    <block  wx:for="{{imgs}}" wx:key="{{item.id}}">
+      <!-- data-redirectType="{{item.redirectType}}"这个参数是后期点击banner穿的参数   现在为666 -->
+      <!-- <swiper-item>
+        <image class='image' bindtap="gobanner" data-id="{{item.id}}" data-name="{{item.name}}"   data-typeId="{{item.typeId}}"  src="{{item.image_url}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view> -->
+<view class="pinHome_nav">
+  <scroll-view class="scroll-view_H dang_list_nav_scroll" scroll-with-animation="true" scroll-x>
+    <view id="demo1" wx:for="{{list}}" wx:key="{{item.opt_id}}" data-index="{{index}}" class=" scroll-view-item_H {{index==idx?'active':''}}" bindtap="onTapclier" data-id="{{item.opt_id}}" data-name="{{item.opt_name}}">
+      <view>{{item.opt_name}}</view>
+      <view class="{{index==idx?'scroll-view-item_H_tab':''}}"></view>
+    </view>
+  </scroll-view>
+</view>
+<view class="pinHome_list">
+  <view class="pinHome_lister" wx:for="{{goodlist}}" wx:key="{{item.info.goods_id}}" data-index="{{index}}" data-id="{{item.info.goods_id}}" bindtap="seedetail">
+    <view class="pinHome_lister_image">
+      <image src="{{item.info.goods_image_url}}"></image>
+    </view>
+    <view class="pinHome_text">
+      <!-- <view class="title">
+        <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-03-07\/14\/yuelvhuiTi3Ybdsx771583562505.png"></image>
+        <text>{{item.goodssInfo.goods_name}}</text>
+      </view> -->
+      <view class="pinHome_text_title">
+        <image class="pinHome_text_title_image" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-23/13/yuelvhui1D3Q8x8CoC1582435363.png" ></image>
+        <text>{{item.info.goods_name}}</text>
+      </view>
+      <view class="disnysc" wx:for="{{item.coupon}}" wx:for-item="items" wx:key="items">
+        优惠券：¥{{items.coupon_discount}}
+      </view>
+      <view class="pinHome_text_disnycs">
+        <view class="pinHome_text_disnycs_left">
+          <!-- <view class="pinHome_disnycs">
+            <text>分享赚¥{{item.info.tk}}</text>
+          </view> -->
+          <view class="pinHome_disnysc_money">
+            <text class="money_icon">¥{{item.info.jh_price}}</text>
+            <text class="shoping">抢购</text>
+          </view>
+        </view>
+        <view class="pinHome_text_disnycs_right">
+          <text>抢</text>
+        </view>
+      </view>
+  </view>
+  </view>
+</view>

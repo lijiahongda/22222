@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#141414",
+  "usingComponents": {
+    "header-com": "../../components/headerCom/index",
+    "group-share": "./components/gshare/index",
+    "group-order": "./components/gorder/index",
+    "group-people": "./components/gpeople/index"
+  },
+  "navigationStyle": "custom"
+}

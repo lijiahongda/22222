@@ -1,0 +1,108 @@
+.swiper{
+  width: 750rpx;
+  height: 296rpx;
+}
+.swiper image{
+  width: 750rpx;
+  height: 296rpx;
+}
+.content{
+  width: 100%;
+  display: flex;
+  padding: 21rpx 0 0 24rpx;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+.content .list{
+  width: 342rpx;
+  /* height: 626rpx; */
+  margin-right: 18rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+  background: #fff;
+  border-radius: 18rpx;
+  margin-bottom: 18rpx;
+}
+.content .list > image{
+  width: 342rpx;
+  height: 342rpx;
+  display: block;
+}
+.content .list > view{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.content .list .title{
+  width: 100%;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  font-size: 28rpx;
+  color: #141414;
+}
+.content .list .title > image{
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin-right: 6rpx;
+}
+.content .list .coupon{
+  min-width: 124rpx;
+  height: 36rpx;
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-18/19/yuelvhuizIikmvuGOT1582024273.png);
+  background-size: 100% 100%;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 0;
+  margin-left: 20rpx;
+  box-sizing: border-box;
+  margin-top: 10rpx;
+  text-align: center;
+  display: inline-block;
+}
+.content .list .price{
+  width: 100%;
+  color: #C82519;
+  font-size: 24rpx;
+  margin-top: 28rpx;
+}
+.content .list .price > text:nth-child(2){
+  font-size: 38rpx;
+  padding-right: 6rpx;
+}
+.content .list .price > text:nth-child(3){
+  color: #999999;
+  text-decoration: line-through;
+}
+.content .list .make{
+  min-width: 186rpx;
+  height: 44rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #CA2519;
+  background: #F4DEE0;
+  color: #CA2519;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 44rpx;
+  margin-top: 10rpx;
+  display: inline-block;
+  margin-left: 20rpx;
+}
+.content .list .sales{
+  width: 100%;
+  height: 65rpx;
+  background: linear-gradient(180deg,rgba(0,0,0,0),#817E81);
+  position: absolute;
+  top: 276rpx;
+  right: 0rpx;
+  font-size: 24rpx;
+  color: #fff;
+  line-height: 80rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+  text-align: right
+}

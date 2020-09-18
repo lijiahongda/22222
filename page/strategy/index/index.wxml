@@ -1,0 +1,56 @@
+<view class="tab">
+  <view class="{{steps==0 ? 'active' : ''}}" bindtap="changeSteps" data-steps="0">新人上手</view>
+  <view class="{{steps==1 ? 'active' : ''}}" bindtap="changeSteps" data-steps="1">进阶学习</view>
+  <!-- <view class="{{steps==2 ? 'active' : ''}}" bindtap="changeSteps" data-steps="2">常见问题</view> -->
+  <view class="{{steps==3 ? 'active' : ''}}" bindtap="changeSteps" data-steps="3">邀请海报</view>
+</view>
+
+<view class="scontent" style="{{!hGroup?'height:850rpx;overflow:hidden;':''}}">
+  <!-- <view class="zzc" wx:if="{{status==0||status==3?true:false}}" catchtouchmove="{{true}}"></view> -->
+  <!-- 审核流程 -->
+  <view class="speed" wx:if="{{status!=0}}">
+    <view class="speedTop">
+
+      <view class="clr" style="{{status==1||status==2||status==3?'background:rgba(227,242,216,1);':''}}">
+        <view class="sClr" style="{{status==1||status==2||status==3?'background:#58a42f;':''}}">
+          <text class="iconfont icon-duihao"></text>
+        </view>
+      </view>
+
+      <view class="line"></view>
+
+      <view class="clr" style="{{status==1||status==2||status==3?'background:rgba(227,242,216,1);':''}}">
+        <view class="sClr" style="{{status==1 ?'background:#ec4e4c;':status==1||status==2||status==3?'background:#58a42f;':''}}">
+          <text class="iconfont {{status==1?'icon-shenglvehao':'icon-duihao'}}"></text>
+        </view>
+      </view>
+
+      <view class="line"></view>
+
+      <view class="clr" style="{{status==1||status==2||status==3?'background:rgba(227,242,216,1);':''}}">
+        <view class="sClr" style="{{status==3 ?'background:#ec4e4c;':status==2?'background:#58a42f':''}}">
+          <text class="iconfont {{status==3?'icon-shenglvehao':'icon-duihao'}}"></text>
+        </view>
+      </view>
+
+    </view>
+    <view class="speedBottom">
+      <view>发起申请</view>
+      <view style="{{status==1?'color:#FF3B43':''}}">审核中</view>
+      <view style="{{status==2||status==3?'color:#FF3B43':''}}">{{status==2?'审核通过':status==3?'审核不通过':'审核结果'}}</view>
+    </view>
+  </view>
+  <newPeople class="{{steps==0?'':'hide'}}" />
+
+  <study  class="{{steps==1?'':'hide'}}"/>
+  
+  <!-- <problem wx:if='{{steps==2}}'/> -->
+  <posters  class="{{steps==3?'':'hide'}}"/>
+
+  <view class="footer" wx:if="{{steps==0}}">
+    <view class="subBotton" bindtap="subBotton" style="{{status==1?'':'background:linear-gradient(90deg,rgba(255,51,71,1),rgba(254,98,51,1));'}}">{{status==0?'申请店长':status==1?'等待审核':status==2?'立即邀请':'申请店长'}}
+      <button wx:if="{{status==2?true:false}}" open-type='share'></button>
+    </view>
+    <view class="groupZ" bindtap="goGroup">我的群助手></view>
+  </view>
+</view>

@@ -1,0 +1,191 @@
+<!--page/community/pages/main/commodities/index.wxml-->
+<scroll-view scroll-y="{{true}}" class="scrollbox">
+  <view class="zcontent">
+    <header-com bgcolor="#fff" ERM='{{ERM}}' headerTitle="悦淘社群购"></header-com>
+
+    <view class="banner" wx:for="{{list}}" wx:key="index" style="top:{{225+top}}rpx">
+      <image src="{{item.url}}"></image>
+    </view>
+    <!-- bannerbox -->
+    <view style="width:100%;height:180rpx;background:#fff;">
+      <view style="width:100%;height:130rpx;background:#fff;"></view>
+      <!-- <view class="tipsMsg">
+        <view class="cover">
+          <image src="http://tiebapic.baidu.com/forum/pic/item/564e9258d109b3de9522560ddbbf6c81800a4c31.jpg"></image>
+        </view>
+        <view class="msg">用户*****称悦淘社群爆款群</view>
+      </view> -->
+    </view>
+    <!-- 正品 全场 买贵 7天提示文字 -->
+    <view class="tips">
+      <view class="list">
+        <view>
+          <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-10/23/yuelvhuimQCtLbODjT1589123979.png"></image>
+        </view>
+        <view>正品保障</view>
+      </view>
+      <view class="list">
+        <view>
+          <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-10/23/yuelvhuiOQ0WSb1bU81589124029.png"></image>
+        </view>
+        <view>全场包邮</view>
+      </view>
+      <view class="list">
+        <view>
+          <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-10/23/yuelvhuiYBxm8048ST1589124071.png"></image>
+        </view>
+        <view>买贵就赔</view>
+      </view>
+      <view class="list">
+        <view>
+          <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-10/23/yuelvhui6wzgAsn5bx1589124106.png"></image>
+        </view>
+        <view>7天物无理由</view>
+      </view>
+    </view>
+    <!-- 商品列表 -->
+    <view class="commlist" bindtap="goDetail" wx:for='{{goodList}}' data-activityId="{{item.activityId}}"  data-goodId="{{item.goodId}}"  wx:key='index'>
+      <!-- 列表标题 -->
+      <view class="title">群内特供好货</view>
+      <!-- 列表时间 -->
+      <view class="endDate">
+        <text style="margin-right:10rpx"  wx:if='{{time == 1 }}'>距离活动开始剩余</text> 
+        <text style="margin-right:10rpx" wx:if='{{time == 2 }}'>距离活动结束剩余</text>
+        <text class="num" wx:if='{{countDownHour > 24}}'>{{countDownDay}}</text>
+        <text class="fh" wx:if='{{countDownHour > 24}}'>天</text>
+        <text class="num">{{countDownHour}}</text>
+        <text class="fh">:</text>
+        <text class="num">{{countDownMinute}}</text>
+        <text class="fh">:</text>
+        <text class="num">{{countDownSecond}}</text>
+      </view>
+      <!-- 列表商品和福利 -->
+      <view class="commDetail">
+        <!-- 商品列表 -->
+        <!-- <swiper class="listbox" indicator-dots="{{true}}"
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{500}}" display-multiple-items="1.5">
+          <block wx:for="{{list}}" wx:key="*this">
+            <swiper-item>
+              <view class="com">
+                <view class="tips">新人群内专享</view>
+                <image src="{{item.goodCover}}"></image>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper> -->
+        <scroll-view scroll-x="{{true}}" class="listbox">
+          <view class="comlist">
+            <view class="com">
+              <view class="tips">新人群内专享</view>
+              <image src="{{item.goodCover}}"></image>
+            </view>
+          </view>
+          <!-- <view class="scrollTips">某某用户正在购买</view> -->
+        </scroll-view>
+        <!-- 金额 -->
+        <view class="backPrice">
+          <view class="priceText">群内首次购买 ¥
+            <text>{{item.goodVipPrice}}</text>
+            <text>悦淘价 ¥{{item.goodPrice}}</text>
+          </view>
+
+          <!-- <view class="reward" style="{{imgwidth!='240'?'margin-left:20rpx':''}}">
+            <view class="img">
+              <image src="../../../image/zhuan.png"></image>
+            </view>
+            <view class="rewardMoney">￥{{item.sharePrice}}</view>
+          </view> -->
+          <view class="tipsP">
+            <view>抢群</view>
+            <view>福利</view>
+          </view>
+        </view>
+        <block wx:if="{{item.comment.id}}">
+        <!-- wx:if="{{item.comment != '{}' }}" -->
+          <view class="ugc"  >
+            <view class="ugc_user">
+              <view class="uu_cover">
+                <image src="{{item.comment.litpic}}"></image>
+              </view>
+              <view class="uu_msg">
+                <view class="name">{{item.comment.nickname}}</view>
+                <!-- <view class="brief">{{item.comment.nickname}}</view> -->
+              </view>
+            </view>
+            <view class="ugc_content">
+              {{item.comment.comment}}
+            </view>
+            <block>
+              <!-- wx:if='{{item.comment[0].imgs.length>0}}' -->
+              <view class="ugc_img" >
+                <!-- 一张图片效果 -->
+                <!-- <view class="img_one" wx:if="{{ true}}">
+                  <image src="http://tiebapic.baidu.com/forum/pic/item/564e9258d109b3de9522560ddbbf6c81800a4c31.jpg"></image>
+                </view> -->
+                <!-- 两张图片效果 -->
+                <!-- <view class="img_two" wx:if="{{false}}">
+                  <view>
+                    <image src="http://tiebapic.baidu.com/forum/pic/item/564e9258d109b3de9522560ddbbf6c81800a4c31.jpg"></image>
+                  </view>
+                  <view>
+                    <image src="http://tiebapic.baidu.com/forum/pic/item/564e9258d109b3de9522560ddbbf6c81800a4c31.jpg"></image>
+                  </view>
+                </view> -->
+                <!-- 很多图片效果 -->
+                <view class="img_more" wx:if="{{item.comment.imgs.length>0}}">
+                  <!-- item.comment[0].imgs -->
+                  <!-- style="{{(index+1)%3==0?'':'margin-right:20rpx'}}" -->
+                  <view wx:for="{{item.comment.imgs}}" wx:key="index" style="{{(index+1)%3==0?'':'margin-right:20rpx'}}">
+                    <image src="http://tiebapic.baidu.com/forum/pic/item/564e9258d109b3de9522560ddbbf6c81800a4c31.jpg"></image>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:else></block>
+      </view>
+    </view>
+    <view class='none'> 没有更多了~</view>
+  </view>
+</scroll-view>
+
+<view class="shareBt" bindtap="shareBtn">分享链接</view>
+<!-- 分享弹窗 -->
+<view class="share-layer" wx:if="{{ sharelayer }}">
+  <view class="share-layer-mask" bindtap='shareLayerClosed'>
+
+  </view>
+  <view class="share-layer-block">
+    <view class="share-layer-block">
+      <view class="share-layer-block-img">
+        <button open-type='share'>
+          <image src="/images/YueMall/WeChatShare@2x.png"></image>
+        </button>
+        <view class="shbottom">分享好友</view>
+        <view>（可锁粉）</view> 
+      </view>
+      <!-- <view class="share-layer-block-img" bindtap='goPoster'>
+        <image src="/images/YueMall/posterShare@2x.png"></image>
+        <view class="shbottom">推广海报</view>
+        <view>（可锁粉）</view> 
+      </view> -->
+    </view>
+    <view class='closeN' bindtap='shareLayerClosed'>取消</view>
+
+  </view>
+</view>
+<view class="share-layerN"  wx:if='{{community}}' >
+    <scroll-view scroll-y style="height:600rpx;"class='qList' wx:for='{{listQ}}' wx:key='index'  >
+      <view class="listCon" bindtap='onShare' data-room_id="{{item.room_id}}">
+        <image src="{{item.head_img}}"></image>
+        <view class="shareTit">
+          <view>{{item.name}}</view>
+          <view>共{{item.member_count}}人</view>
+        </view>
+        <view class="shareBtn" >分享此群</view>
+      </view>
+      <view class='none'>没有更多群了~</view>
+    </scroll-view>
+  <image class="closeQ" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-15/23/yuelvhuioGalvTuCVa1584286274.png" bindtap='closeQ'></image>
+</view>

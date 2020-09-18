@@ -1,0 +1,25 @@
+<!--page/yueMember/pages/TrainingClass/TrainingClass.wxml-->
+<block wx:if="{{type == 10001}}">
+  <swiper class="swiper-box">
+    <block>
+      <swiper-item>
+        <image src="{{banners.url}}" data-id="{{banners.aid}}" bindtap='detail' class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="ClassContent">
+    <view class="item" wx:for="{{subList}}" wx:key="subList" bindtap='subList' data-id="{{item.typeId}}" style="background-image:url({{item.url}})" data-name="{{item.typeName}}">
+    </view>
+  </view>
+</block>
+<view class="listContent">
+  <view class="list" wx:for="{{list}}" data-id="{{item.aid}}" bindtap='detail' wx:key="articleList">
+    <image mode="aspectFill" src="{{item.coverImg}}"></image>
+    <view class="info">
+      <view class="title">
+        <text>{{item.title}}</text>
+      </view>
+      <view class="time">{{item.createTime}}</view>
+    </view>
+  </view>
+</view>

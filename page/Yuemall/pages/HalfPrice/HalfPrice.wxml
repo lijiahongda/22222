@@ -1,0 +1,2 @@
+
+<limited-time id="limited-time"  bind:myevent="onMyEvent" inner-text="{{list}}"></limited-time>

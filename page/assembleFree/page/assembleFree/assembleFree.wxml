@@ -1,0 +1,117 @@
+<!-- 拼团商城 -->
+<view class="content" wx:if="{{mall}}">
+  <view wx:if="{{item.length > 0}}">
+    <view class="goodInfo" wx:for="{{item}}" wx:key="item" data-id="{{item.id}}" data-skuid="{{item.skuId}}" data-url="/page/assembleFree/page/AssembleDetail/AssembleDetail" bindtap='detail'>
+      <view style="position:relative">
+        <image class="goodsImg" src="{{item.goodsImg}}"></image>
+        <image class="logo" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-05/15/yuelvhuiZrEwq1YWgc1580889316.png"></image>
+      </view>
+      <view class="info">
+        <view class="title">
+          <text>{{item.goodsName}}</text>
+        </view>
+        <view class="introduction">
+          <text>{{item.goodsName}}</text>
+        </view>
+        <view class="ClusteringNum">
+          <view>已拼{{item.successCount}}件</view>
+          <view class="num">{{item.needer}}人成团</view>
+        </view>
+        <view class="groupInfo">
+          <view class="groupInfoCon">
+            <view class="price">
+              <text>¥ </text>{{item.teamPrice}}</view>
+            <view class="OriginalPrice">¥{{item.originPrice}} </view>
+          </view>
+          <view class="OpeningRegiment">立即开团</view>
+        </view>
+
+      </view>
+    </view>
+    <view wx:if="{{!isHaveMore}}" class="isHaveMore">没有更多了～</view>
+  </view>
+  <view class="NoCommodityData" wx:else>
+    <image src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569318188_35989.png"></image>
+    <view>暂无商品...</view>
+  </view>
+</view>
+
+<!-- 我的拼团 -->
+<view wx:if="{{assemble}}" class="assembleB" >
+  <view>
+    <view class="tab-h">
+      <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">全部
+      </view>
+      <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">拼团中
+      </view>
+      <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">拼团成功
+      </view>
+    </view>
+    <view class="content" wx:if="{{list.length>0}}">
+      <view class="conB" wx:for="{{list}}" wx:key="index">
+        <!-- <view class="conB" > -->
+        <view class="first">
+          <view>
+            <image class="commander" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-05/22/yuelvhuiUnPhDvBkgB1580912580.png"></image>
+            <!-- <text wx:if="{{item.status==0}}">活动剩余 {{countDownDay}}:{{countDownHour}}:{{countDownMinute}}:{{countDownSecond}}</text> -->
+            <text>{{item.endTime}}</text>
+          </view>
+          <view wx:if="{{item.status==1}}">拼团中...</view>
+          <view wx:if="{{item.status==2}}">拼团成功</view>
+          <view wx:if="{{item.status==3}}">拼团失败</view>
+        </view>
+        <view class="line"></view>
+        <view class="goodInfo goodInfoH">
+          <view style="position:relative">
+            <image class="goodsImg" src="{{item.goodImg}}"></image>
+            <view class="crown" wx:if="{{item.type == 1}}">
+              <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-05/16/yuelvhuiIKxgx1SXS01580891424.png"></image>
+              <text>团长</text>
+            </view>
+          </view>
+          <view class="info">
+            <view class="title">
+              <text>{{item.goodsName}}</text>
+            </view>
+            <view class="introduction">
+              <text>{{item.goodsInfo}}</text>
+            </view>
+            <view class="groupInfo">
+              <view class="groupInfoCon">
+                <view class="price">
+                  <text>¥ </text>{{item.teamPrice}}</view>
+                <view class="OriginalPrice">¥{{item.originPrice}} </view>
+              </view>
+              <view class="OpeningRegiment OpeningRegimentH" data-id="{{item.id}}" data-type="{{item.type}}" data-ordersn="{{item.ordersn}}" data-url="/page/assembleFree/page/InitiateGroup/InitiateGroup" data-foundid="{{item.found}}" bindtap='detailPt'>查看详情</view>
+            </view>
+          </view>
+        </view>
+        <!-- <view class="invitation" wx:if="{{item.status==1}}">邀好友参团</view> -->
+        <button wx:if="{{item.status==1}}" bindtap="InviteFriends" data-id="{{item.found}}" open-type='share'>
+          <view class="InviteFriends">邀请好友参团</view>
+        </button>
+        <view style="height:1rpx;width:200rpx"></view>
+      </view>
+      <view wx:if="{{!isHaveMore}}" class="isHaveMore">没有更多了～</view>
+    </view>
+    <view class="NoCommodityData" wx:else>
+      <image src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569318188_35989.png"></image>
+      <view>快去下单吧...</view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 新底部 -->
+<view class="footer">
+  <view class="left" bindtap='getMall'>
+    <image wx:if="{{mall}}" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-05/21/yuelvhuimNnbzJQdtg1580908299.png"></image>
+    <image wx:else src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-05/21/yuelvhui3ILnj6wOwj1580908192.png"></image>
+    <view>拼团商城</view>
+  </view>
+  <view class="left" bindtap='getAssemble'>
+    <image wx:if="{{assemble}}" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-05/21/yuelvhuiskZsu7FsCW1580908259.png" style="height:32rpx;margin-bottom:12rpx;"></image>
+    <image wx:else src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-05/21/yuelvhuij9vIQCCgXQ1580908226.png" style="height:32rpx;margin-bottom:12rpx;"></image>
+    <view>我的拼团</view>
+  </view>
+</view>

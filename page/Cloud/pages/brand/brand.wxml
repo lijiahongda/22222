@@ -1,0 +1,21 @@
+<view class="header">
+  <view class="top-bg"></view>
+  <view class="header-cont">
+    <!-- 轮播 -->
+    <!-- <swiper class="swiper-box"> -->
+    <swiper class="swiper-box" autoplay="true" interval='3000'>
+      <block wx:for="{{banner}}" wx:for-index="index" wx:key="index">
+        <swiper-item>
+          <image class='image' src='{{item.url}}' mode="aspectFill" bindtap="classificationList" data-hotid="{{item.id}}" data-skuid="{{item.skuId}}" data-redirecttype="{{item.redirectType}}" data-typeid="{{item.id}}" data-id="{{item.id}}" data-name="{{item.name}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+
+
+<view class="brand_list">
+  <view class="list" wx:for="{{list}}" wx:for-index="index" wx:key="index" bindtap="goClassInfoList" data-type="brand" data-xyType="" data-keyword="{{item.brandName}}" data-channelid="7" data-brandid="{{item.brandId}}" style="{{index>list.length-4?'border-bottom:none':''}}">
+    <image src="{{item.brandImg}}" mode="aspectFit"></image>
+  </view>
+</view>

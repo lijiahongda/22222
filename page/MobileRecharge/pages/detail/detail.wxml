@@ -1,0 +1,50 @@
+<!--page/MobileRecharge/pages/detail/detail.wxml-->
+<!-- 头部 -->
+<view class="detail-header">
+ <view>
+  <view>
+    <text class="title">待付款</text>
+    <text class="date">下单时间：2019-09-09  12:12:12</text>
+    <text class="code">订单编号：123214124</text>
+  </view>
+  <image src="https://image.yuelvhui.com/pubfile/2019/10/12/line_1570866962_16226.png"></image>
+ </view>
+ <view class="phone-number">
+  <image src='https://image.yuelvhui.com/pubfile/2019/10/12/line_1570867066_36286.png'></image>
+  <text>充值手机号码：17600010001</text>
+ </view>
+</view>
+
+<!-- 详情 -->
+<view class="detail-body">
+  <view class="body-header">
+    <image></image>
+    <view>
+      <view>
+        <text class="provider-name">供应商名称:</text>
+        <text>¥100.00</text>
+      </view>
+      <view>
+        <text>充值面额：100元</text>
+        <text>X1</text>
+      </view>
+    </view>
+  </view>
+  <view class="body-main">
+    <view>
+      <text>订单总价：</text>
+      <text>¥100.00 </text>
+    </view>
+    <view>
+      <text>实付金额：</text>
+      <text>¥100.00 </text>
+    </view>
+    <view>
+      <text>已优惠：</text>
+      <text>¥100.00 </text>
+    </view>
+  </view>
+</view>
+
+<!-- 支付 -->
+<button>立即支付</button>

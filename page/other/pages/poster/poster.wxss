@@ -1,0 +1,21 @@
+/* page/other/pages/poster/poster.wxss */
+page{
+  background: #fff;
+}
+.poster-img{
+  width: 100%;
+}
+.poster-img image{
+  width: 100%;
+}
+.poster-btn{
+  margin: 0 auto;
+  width: 630rpx;
+  height: 90rpx;
+  line-height: 90rpx;  
+  background: #ff6032;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+}

@@ -1,0 +1,204 @@
+<scroll-view scroll-y>
+  <view class="Cart" wx:if="{{GoodsId != ''}}">
+    <!-- <view class="editor" wx:if="{{GoodsId != ''}}">
+      <view class="edit" bindtap='edit' data-edit="{{edit}}">{{edit}}</view>
+    </view> -->
+    <!-- <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-27/21/yuelvhuitV6lpPSj3d1582811631.png" class="cardType" bindtap="cardType" wx:if="{{cardType==0}}"></image> -->
+    <view class="content">
+
+      <!-- 普通商品+秒杀 -->
+      <view wx:for="{{GoodsId}}" wx:key="goodid" wx:for-index="index" data-index="{{index}}">
+        <view class="list Seckilllist">
+          <view class="top">
+            <checkbox-group data-item="{{item}}" bindtap='checkChange1' data-index="{{index}}" data-cartId='{{item.cartId}}' data-selected='{{item.selected}}' data-channelId='{{item.channelId}}'>
+              <checkbox class='checkbox' style="margin-right:10rpx" value="" checked='{{item.selected}}' />
+            </checkbox-group>
+            <image src="{{item.imgIcon}}"></image>
+            <view>{{item.name}}</view>
+          </view>
+          <!-- <view  wx:if='{{item.channelId == 0}}' class="bad" >
+            <view>悦淘优选全场包邮</view>
+          </view> -->
+          <view  wx:if='{{item.channelId != 0 &&  item.all < 0}}' class="bad" >
+            <view>已免运费</view>
+          </view>
+          <view bindtap="goCollect" wx:if='{{item.channelId != 0 && item.all > 0}}' data-redirectType="{{item.redirectType}}" data-id='{{item.id}}' class="bad">
+            <view>还差{{item.all}}元免运费</view>
+            <view> <text>去凑单</text> > </view>
+          </view>
+          <view class="Beingmad" wx:if="{{item.activity_status == 0}}">
+            <view class="title">即将秒杀
+              <text>距离活动开始还剩</text>
+            </view>
+            <view class="time">
+              {{item.countDownHour}}
+            </view>
+            <view style="margin-left:10rpx;margin-right:10rpx">:</view>
+            <view class="time">
+              {{item.countDownMinute}}
+            </view>
+            <view style="margin-left:10rpx;margin-right:10rpx">:</view>
+            <view class="time">
+              {{item.countDownSecond}}
+            </view>
+            <image wx:if="{{item.activity_status == 0}}" data-type="1"  bindtap='delSelect'  src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-28/13/yuelvhuihxVMOCVj7b1582869312.png"></image>
+          </view>
+          <view style="position:relative"  wx:for="{{item.data}}" wx:key="goodid" wx:for-index="idx"  class="Seckillitem" style="{{item.txtStyle}}" >
+          <!-- bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{idx}}" -->
+            <checkbox-group>
+              <view data-item="{{item}}" bindtap='checkChange' data-index="{{index}}" data-cartId='{{item.cartId}}' data-selected='{{item.selected}}' data-channelId='{{item.channelId}}'>
+                <checkbox class='checkbox the' value="{{item.cartId}}" data-type="1" checked='{{item.isChecked}}' />
+              </view>
+            </checkbox-group>
+            <view class="image">
+              <image src="{{item.goodCover}}"></image>
+            </view>
+            <view class="describe">
+              <view class="title">
+                <text>{{item.goodName}}</text>
+                <image wx:if="{{item.activity_status != 0}}" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-28/13/yuelvhuihxVMOCVj7b1582869312.png" data-type="1" data-cartid="{{item.cartId}}" bindtap='delSelect'></image>
+              </view>
+              <view>
+                {{item.goodSpec}}
+              </view>
+              <view class="SeckillTag" wx:if="{{item.activityId}}">限时秒杀</view>
+              <view class="specifications">
+                <view class="money">
+                  <!-- <block wx:if="{{item.activityId}}">
+                    <view class="vipPrice">
+                      <text>会员价￥{{item.vipPric}}</text>
+                    </view>
+
+                  </block> -->
+                  <!-- <block wx:else> -->
+                    <!-- <view class="vipPrice" wx:if="{{cardType == 0}}">
+                      <text style="text-decoration:{{item.activityId?'':'none'}}">会员价￥{{item.vipPric}}</text>
+                    </view> -->
+                    
+                    <view wx:if="{{item.activityId}}">
+                      <text>￥</text>{{item.skPrice}}
+                    </view>
+                    <view wx:else class="vipPrice">
+                      <text style="text-decoration:{{item.activityId?'':'none'}}">官网价￥{{item.vipPric}}</text>
+                    </view>
+                  <!-- </block> -->
+
+                  <!-- <view wx:if="{{item.activityId}}">
+                    <text>￥</text>{{item.skPrice}}
+                  </view>
+                  <view wx:else>
+                    <block wx:if="{{cardType == 0}}">
+                      <text>￥</text>{{item.goodPrice}}
+                    </block>
+                    <block wx:else>
+                      <text>￥</text>{{item.vipPric}}
+                    </block>
+                  </view> -->
+                </view>
+                <view class="regulation">
+                  <view class="subtract" data-item="{{item}}" bindtap='subtract' data-index="{{index}}" data-goodid="{{item.goodId}}" data-num="{{item.goodNum}}">
+                    <view></view>
+                  </view>
+                  <view class="amountNumber">{{item.goodNum}}</view>
+
+                  <view class="addNumber" bindtap='addNumber' data-item="{{item}}" data-index="{{index}}"  data-goodid="{{item.goodId}}" data-num="{{item.goodNum}}">
+                    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-27/19/yuelvhuimxdPEXYCYF1582803690.png"></image>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <!-- <view class="delete" data-index="{{idx}}" data-addressId="{{item.addressId}}" catchtap="delItem">
+              <image src="/images/YueMall/del.png"></image>
+            </view> -->
+          </view>
+        </view>
+      </view>
+      <!-- 失效商品 -->
+      <view class="Invalid" wx:if="{{InvalidList !=''}}">
+        <view class="InvalidTitle">
+          <view>失效宝贝({{InvalidList.length}})件</view>
+          <view class="Invalidempty" data-type="2" data-cartid="{{item.cartId}}" bindtap='delSelect'>
+            <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-02-28\/13\/yuelvhuiYEsSAIIfoO1582866652.png"></image>
+            <view>清空失效商品</view>
+          </view>
+        </view>
+        <view wx:for="{{InvalidList}}" wx:key="*this" wx:for-index="index" data-index="{{index}}">
+          <view class="list" style="background-color:#F8F8F8">
+            <view class="Invalidtag">失效</view>
+            <view class="image">
+              <image src="{{item.goodCover}}"></image>
+            </view>
+            <view class="describe">
+              <view class="title">
+                <text style="color:rgba(153,153,153,1);width:100%">{{item.goodName}}</text>
+              </view>
+              <view style="color:rgba(153,153,153,1);">
+                {{item.goodSpec}}
+              </view>
+              <view class="specifications">
+                <view class="money" style="font-size:26rpx;font-family:PingFang SC;font-weight:500;color:rgba(20,20,20,1);margin-top:83rpx">
+                  很抱歉，商品下架啦！
+                </view>
+                <view class="regulation">
+
+
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class="noData" wx:else>
+    <image src="https://image.yuelvhui.com/pubfile/2019/06/24/line_1561366007.png"></image>
+    <view class="tips">购物车竟然是空的</view>
+    <view class='GoShopping' bindtap='GoShopping'>去逛逛</view>
+  </view>
+  <view class="GuessYouLike">
+    <view class="title" src="https://image.yuelvhui.com/pubfile/2019/06/26/line_1561526588.png">
+      <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-02-28\/13\/yuelvhuit2i3yjS2bK1582866685.png"></image>
+      <view>推荐商品
+        <text>猜你喜欢</text>
+      </view>
+    </view>
+    <view class="LikeContent">
+      <view class="likelist" data-goodsId="{{item.goodId}}" bindtap='details' data-skuid="{{item.productSkuId}}" wx:for="{{goodinfo}}" wx:key="goodinfo">
+        <image src="{{item.goodCover}}"></image>
+        <view class="likeTitle">
+          <text>{{item.goodName}}</text>
+        </view>
+        <!-- <view class="tag">
+          <view wx:for="{{item.tag}}" wx:key="tag">{{item}}</view>
+        </view> -->
+        <view class="price">
+          <view class="vipPrice">
+            <text>¥</text>{{item.goodVipPrice}}</view>
+          <view class="OriginalPrice">
+            <text>¥{{item.goodPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<block wx:if="{{GoodsId != ''}}">
+  <view class="footr" style="padding-bottom:{{isFill?'20rpx':''}}">
+    <view class="add">
+      <checkbox-group bindchange="checkboxChange">
+        <checkbox class='checkbox' style="margin-right:10rpx" value="" checked='{{isSelecteAll}}' />全选
+      </checkbox-group>
+    </view>
+    <view class="right">
+      <view class="total">合计：
+        <text><text style="font-size:28rpx">￥</text>{{total}}</text>
+      </view>
+      <view class="balance" bindtap='ImmediateSettlement'>结算({{length}})</view>
+    </view>
+    <!-- <view class="gopay" bindtap='delSelect'>删除所选</view> -->
+  </view>
+  <!-- <view class="footr" wx:else>
+    
+  </view> -->
+</block>

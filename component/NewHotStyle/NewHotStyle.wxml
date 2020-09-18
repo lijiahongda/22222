@@ -1,0 +1,69 @@
+<view style="background-color:{{backColor}};height:100%">
+  <image src="{{backGround}}" class="bg"></image>
+  <!-- coupon -->
+    <coupon id="coupon" inner-text="{{list}}"></coupon>
+  <view class="content" wx:for="{{list}}" wx:key="list">
+    <image class="AdvertisingSpace" src="{{item.teamBanner}}" style="height:{{item.teamHeight}}rpx"></image>
+    <view class="ActiveTemplateOne" wx:if="{{item.teamType == 1}}">
+      <view class="list" wx:for="{{item.goodsInfo}}" wx:key="one" data-skuid="{{item.skuId}}" data-goodId="{{item.goodId}}" bindtap="goToInfo" data-channelid="{{item.channelId}}">
+        <image src="{{item.goodCover}}" style="height:{{item.goodsHeight}}rpx"></image>
+      </view>
+    </view>
+    <view class="ActiveTemplateTow" wx:if="{{item.teamType == 2}}">
+      <view class="list" wx:for="{{item.goodsInfo}}" wx:key="Tow" data-skuid="{{item.skuId}}" data-goodId="{{item.goodId}}" bindtap="goToInfo" data-channelid="{{item.channelId}}">
+        <image src="{{item.goodCover}}"></image>
+        <view class="title">
+          <text>{{item.goodName}}</text>
+        </view>
+        <view class="info">
+          <view class="price">
+            <view class="vipPrice">
+              <text>¥</text>{{item.goodVipPrice}}
+            </view>
+            <view class="OriginalPrice">
+              <text>¥{{item.goodPrice}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="ActiveTemplateThree" wx:if="{{item.teamType == 3}}">
+      <view class="list" wx:for="{{item.goodsInfo}}" wx:key="Three" data-skuid="{{item.skuId}}" data-goodId="{{item.goodId}}" bindtap="goToInfo" data-channelid="{{item.channelId}}">
+        <image src="{{item.goodCover}}"></image>
+        <view class="title">
+          <text>{{item.goodName}}</text>
+        </view>
+        <view class="info">
+          <view class="price">
+            <view class="vipPrice">
+              <text>¥</text>{{item.goodVipPrice}}
+            </view>
+            <view class="originalPrice">
+              <text>¥{{item.goodPrice}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="ActiveTemplateFour" wx:if="{{item.teamType == 4}}">
+      <scroll-view scroll-x scroll-with-animation="true">
+        <view class="list" wx:for="{{item.goodsInfo}}" wx:key="four" data-skuid="{{item.skuId}}" data-goodId="{{item.goodId}}" bindtap="goToInfo" data-channelid="{{item.channelId}}">
+          <image src="{{item.goodCover}}"></image>
+          <view class="title">
+            <text>{{item.goodName}}</text>
+          </view>
+          <view class="info">
+            <view class="price">
+              <view class="vipPrice">
+                <text>¥</text>{{item.goodVipPrice}}
+              </view>
+              <view class="originalPrice">
+                <text>¥{{item.goodPrice}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

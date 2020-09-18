@@ -1,0 +1,12 @@
+<!--page/other/pages/RuleDescription/RuleDescription.wxml-->
+<view class="wrap">
+  <view class="cont">
+    <image mode="widthFix" class="picimg" src="{{bgImage}}"></image>
+  </view>
+  <!-- <view class="text">
+    <view class="title">抽奖规则</view>
+    <view class="textCont">
+      <text wx:for="{{rule}}" :key="index">{{item}}</text>
+    </view>
+  </view> -->
+</view>

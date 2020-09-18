@@ -1,0 +1,5 @@
+<!--page/yueMember//pages/NethongVilla/NethongVilla.wxml-->
+<image wx:for="{{img}}" wx:key="img" class="bg" src="{{item.url}}" style="width:{{item.width}}rpx;height:{{item.height}}rpx"></image>
+<image class="button" wx:if="{{state == 3}}" bindtap="NethongVillaDetail"    src="https://image.yuelvhui.com/pubfile/2019/08/28/line_1566987804_85784.png"></image>
+<image class="button" wx:elif="{{state == 1}}" bindtap="detail"  src="https://image.yuelvhui.com/pubfile/2019/08/28/line_1566987850_18193.png"></image>
+<image class="button" wx:elif="{{state == 2}}" src="https://image.yuelvhui.com/pubfile/2019/08/28/line_1566987883_41722.png"></image>

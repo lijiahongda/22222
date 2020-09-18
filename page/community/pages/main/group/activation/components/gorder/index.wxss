@@ -1,0 +1,371 @@
+/* page/community/pages/main/group/activation/components/gshare/index.wxss */
+.shareRecord{
+  width: 100%;
+  height: 254rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.shareRecord>.title{
+  width: 702rpx;
+  line-height: 50rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  display:flex;
+  justify-content: space-between;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+
+.shareRecord>.title>.name{
+  color:rgba(20,20,20,1);
+}
+
+.shareRecord>.title>.Range{
+  display: flex;
+  line-height: 50rpx;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(20,20,20,1);
+}
+
+.shareRecord>.title>.Range>.text{
+  padding:0 15rpx;
+}
+
+.shareRecord>.title>.Range .datemsg{
+  display: flex;
+  width: 181rpx;
+  height: 44rpx;
+  border:2rpx solid rgba(221,221,221,1);
+  border-radius:8rpx;
+  line-height: 44rpx;
+  
+}
+
+
+.shareRecord>.title>.Range .datemsg>view>image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.shareRecord>.title>.Range .datemsg>.ymddate{
+  width: 140rpx;
+  height: 40rpx;
+  text-align: center;
+  font-size:24rpx;
+  line-height: 40rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  padding-left: 10rpx;
+}
+
+.peopleNum{
+  width: 550rpx;
+  /* display: flex;
+  justify-content: space-between; */
+  margin: 0 auto;
+  margin-top: 42rpx;
+}
+
+.peopleNum>view{
+  /* width: 140rpx; */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.peopleNum>view>.num{
+  font-size:50rpx;
+  line-height: 50rpx;
+  font-family:PingFang SC;
+  font-weight:600;
+  color:rgba(20,20,20,1);
+}
+
+.peopleNum>view>.name{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  line-height: 24rpx;
+  font-weight:500;
+  margin-top: 25rpx;
+  color:rgba(153,153,153,1);
+}
+
+.shareList{
+  width:702rpx;  
+  /* height:597rpx; */
+  background:rgba(255,255,255,1);
+  border-radius:16rpx;
+  margin: 20rpx auto;
+  overflow: hidden;
+  padding-bottom: 30rpx;
+}
+
+.shareList>.date{
+  width: 662rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  line-height: 40rpx;
+}
+
+.shareList>.date>.ymd{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(20,20,20,1);
+}
+
+.shareList>.date>.endDate{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+}
+
+.shareList>.date>.endDate>.num{
+  border-radius:8rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  background: #000;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+}
+
+.shareList>.date>.endDate>.fh{
+  padding: 0 10rpx;
+}
+
+.shareList>.shareComm{
+  width: 662rpx;
+  height: 240rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 28rpx;
+}
+
+.shareList>.shareComm>.cover{
+  width: 240rpx;
+  height: 240rpx;
+  background:rgba(180,180,180,1);
+  border-radius:16rpx;
+  overflow: hidden;
+}
+
+.shareList>.shareComm>.cover>image{
+  width: 100%;
+  height: 100%;
+}
+
+.shareList>.shareComm>.msg{
+  width: 391rpx;
+  height: 240rpx;
+}
+
+.shareList>.shareComm>.msg>.title{
+  width: 100%;
+  height: 66rpx;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+  line-height: 33rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 13rpx;
+}
+
+.shareList>.shareComm>.msg>.price{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(20,20,20,1);
+  margin-top: 30rpx;
+}
+
+.shareList>.shareComm>.msg>.price>text{
+  font-size:36rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(202,37,25,1);
+}
+
+.shareList>.shareComm>.msg>.getMoney{
+  height: 48rpx;
+  display: flex;
+  font-size:24rpx;
+  line-height: 48rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(20,20,20,1);
+  margin-top: 20rpx;
+} 
+
+.shareList>.shareComm>.msg>.getMoney>.gmemoney{
+  width: 139rpx;
+  height: 48rpx;
+  display: flex;
+  background:rgba(249,226,174,1);
+  border-radius:8rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(26,23,21,1);
+  line-height: 48rpx;
+}
+
+.shareList>.shareComm>.msg>.getMoney>.gmemoney>.zhuan{
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 5rpx;
+}
+.shareList>.shareComm>.msg>.getMoney>.gmemoney>.zhuan>image{
+  width: 100%;
+  height: 100%;
+}
+
+.groupMoney{
+  margin-left: 10rpx;
+}
+
+.groupMoney>text{
+  color: #CA2519;
+}
+
+.orderTab{
+  width: 100%;
+  height: 140rpx;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20rpx;
+}
+
+.orderTab>view{
+  width:220rpx;
+  height:140rpx;
+  background:rgba(255,255,255,1);
+  border-radius:16rpx;
+  text-align: center;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(27,23,22,1);
+  transition: all ease 0.2s;
+}
+
+.orderTab>view>.name{
+  margin-top: 34rpx;
+}
+
+.orderTab>view>view{
+  line-height: 40rpx;
+}
+
+.orderTab>.chose{
+  background:rgba(249,226,174,1);
+}
+
+.headerMsg{
+  width: 662rpx;
+  height: 80rpx;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  margin-top: 29rpx;
+  justify-content: space-between;
+}
+
+.headerMsg>.usermsg{
+  display: flex;
+}
+
+.headerMsg>.usermsg>.titleImg{
+  width: 80rpx;
+  height: 80rpx;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.headerMsg>.usermsg>.titleImg>image{
+  width: 100%;
+  height: 100%;
+}
+
+.headerMsg>.usermsg>.msg{
+  line-height:30rpx;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+  margin-left: 20rpx;
+}
+
+.headerMsg>.usermsg>.msg>.isVip{
+  width: 156rpx;
+  height: 44rpx;
+  background:rgba(4,3,3,1);
+  border-radius:22rpx;
+  margin-top: 10rpx;
+  display: flex;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height: 44rpx;
+}
+
+.headerMsg>.usermsg>.msg>.isVip>.iconImg{
+  width: 24rpx;
+  height: 24rpx;
+  margin-top: 10rpx;
+  margin-left: 17rpx;
+  margin-right: 5rpx;
+}
+
+.headerMsg>.usermsg>.msg>.isVip>.iconImg>image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.headerMsg>.date{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+
+.tips{
+  width: 662rpx;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(7,7,8,1);
+  line-height:40rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.none{
+  width: 100%;
+  text-align: center;
+  color: #999999;
+  font-size: 24rpx;
+  margin-top: 40rpx;
+}

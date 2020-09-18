@@ -1,0 +1,18 @@
+<!--page/yueMember/pages/GiftPackage/GiftPackage.wxml-->
+<view class="list" wx:for="{{list}}" wx:key="list">
+  <view class="title">店主大礼包</view>
+  <view class="info">
+    <view style="width:{{item.buttonType == 2?'70%':'63%'}}">
+      <text>{{item.goodName}}</text>
+    </view>
+
+    <view class="lookDetail" bindtap='lookDetail' data-orderno="{{item.orderNo}}" wx:if="{{item.buttonType == 2}}">查看详情</view>
+    <view class="lookDetail" bindtap='modifyOrderAddress' data-orderno="{{item.ordersn}}" wx:else>填写地址领礼包</view>
+  </view>
+  <view class="payPrice">
+    <view>¥
+      <text>{{item.goodPrice}}</text>
+    </view>
+    <view class="time">{{item.createTimes}}</view>
+  </view>
+</view>

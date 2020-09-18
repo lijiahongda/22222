@@ -1,0 +1,26 @@
+<view class="container"style="padding-top:0px">
+  <view class="deliveryAddress" style="background-color:#fff;margin-bottom:15rpx">
+    <navigator url="" style="padding:13px;border-bottom:1px solid #ececec;" hover-class="none" wx:for="{{orderData}}" wx:key="*this">
+      <view class="deliveryAdd">
+        <view class="userInfo">
+          <view class="userName">
+            {{item.title}}
+          </view>
+          <view class="userAddress">
+            <view class="addressLabel">
+              状态： {{item.payText}}
+            </view>
+          </view>
+          <view class="userAddress">
+            <view class="addressLabel">
+              时间： {{item.createTime}}
+            </view>
+          </view>
+        </view>
+        <view class="money">
+          ￥{{item.price}}
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

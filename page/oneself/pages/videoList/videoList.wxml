@@ -1,0 +1,51 @@
+<!--page/My/pages/GroupBuy/GroupBuy.wxml-->
+<!-- 补位 -->
+<view class="{{scrollTop>20 ? 'PatchPosition' : ''}}"></view>
+<!-- 切换tab -->
+<view class="{{scrollTop>20 ? 'topnav' : ''}}">
+  <view class="tab-h" wx:if="{{goodsType.length >1}}">
+    <scroll-view scroll-x class='exploreViewList' scroll-with-animation="true" scroll-into-view="{{scrollId}}">
+      <view id="{{'d'+item.goodTypeId}}" wx:for="{{goodsType}}" wx:key="goodsType" class="tab-item {{currentTab==item.goodTypeId?'active':''}}" data-current="{{item.goodTypeId}}" data-channel="{{item.channel_id}}" data-parenttypeid="{{item.parentTypeId}}" data-goodtypeid="{{item.goodTypeId}}"
+        bindtap="swichNav">{{item.goodTypeName}}
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<swiper class="swiperbox" bindchange="intervalChange" indicator-dots="{{indicatorDots}}" autoplay="true" interval='3000'>
+  <block wx:for="{{banner}}" wx:key="banner">
+    <swiper-item>
+      <image class='image' bindtap="classificationList" data-hotid="{{item.id}}" data-skuid="{{item.skuId}}" data-redirecttype="{{item.redirectType}}" data-typeid="{{item.id}}" data-id="{{item.id}}" data-name="{{item.name}}" src='{{item.url}}'></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- <view class="Advertisement">
+  <image mode="aspectFill" src="{{item}}"></image>
+</view> -->
+
+<view class="list" wx:for="{{list}}" wx:if="{{list.length}}" wx:for-index="index" wx:key="index" bindtap="goDetail" data-ordersn="{{item.order_sn}}" data-statusname="{{item.order_status_name}}">
+  <view class="state-title">{{item.order_status_name}}</view>
+  <view class="goodinfo">
+    <view class="image">
+      <image mode="aspectFill" src='{{item.goods_image}}'></image>
+    </view>
+    <view class="info">
+      <view class="list-title">
+        <view class="name">{{item.goods_title}}</view>
+        <view class="ChannelPrice">{{item.goods_spec}}</view>
+      </view>
+      <view class="groupInfo">￥{{item.total_amount}}</view>
+    </view>
+  </view>
+  <view class="func" style="height:{{item.order_status == 1?'194rpx':''}};padding-top:{{item.order_status == 1?'':'20rpx'}};padding-bottom:{{item.order_status == 1?'':'20rpx'}}">
+    <view class="total">总计：￥{{item.total_amount}}</view>
+    <view class="GroupBuyIngo" wx:if="{{item.order_status == 1}}" bindtap="goDetail" data-ordersn="{{item.order_sn}}">去支付</view>
+  </view>
+</view>
+<view wx:if="{{showAll}}" class="show-all">已显示全部内容</view>
+
+
+<view class="noList" wx:if="{{list.length==0}}">
+  <image src="/images/personalCenter/videoOrder.png"></image>
+  <view>您暂时没有订单哦</view>
+</view>

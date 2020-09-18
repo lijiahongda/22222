@@ -1,0 +1,179 @@
+<!-- 轮播结束 -->
+<view class="orderList">
+  <view style="height:100rpx;width:100%">
+    <view class="{{scrollTop>80 ? 'topnav' : ''}}">
+      <view class="tab-h">
+        <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">正在疯抢
+        </view>
+        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">即将开抢
+        </view>
+        <!-- <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">明日预告
+        </view> -->
+      </view>
+    </view>
+  </view>
+  <view class="tab-content" bindchange="switchTab">
+    <!--菜单-->
+    <view class="scoll-h" wx:if="{{currentTab==0}}">
+      <block wx:if="{{list !=''}}">
+        <view class="RushBuyTime">
+          <view class="GoodThing">
+            <image src="/images/memberInformation/CommonFunction.png"></image>
+            <view>好物低价，先到先得</view>
+          </view>
+          <view class="RushBuyTimeRight">
+            <view class="title">距结束时间</view>
+            <view class="time">
+              <text class='bg_ff'>{{countDownHour}}</text>:
+              <text class='bg_ff'>{{countDownMinute}}</text>:
+              <text class='bg_ff'>{{countDownSecond}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="list" wx:for="{{list}}" wx:key="list0" data-skuid="{{item.productSkuId}}" bindtap='{{item.goodsStock == 0?"":"orderDetails"}}'  data-id="{{item.goodId}}" data-activityid="{{item.activityId}}">
+          <view class="image">
+            <view class="lootall" wx:if="{{item.goodsStock == 0}}">
+              <image src="/images/YueMall/lootall.png" style="width:132rpx;height:140rpx"></image>
+            </view>
+            <image src="{{item.goodCover}}"></image>
+          </view>
+          <view class="describe">
+            <view class="title">
+              <text>{{item.goodName}}</text>
+            </view>
+            <view class="Remarks">
+              <text>{{item.goodInfo}}</text>
+            </view>
+            <view class="function">
+              <view class="Surplus">仅剩{{item.goodsStock}}件</view>
+            </view>
+            <view class="function">
+              <view class="memberPrice">
+                <view>
+                  <text style="font-size:24rpx;">¥</text>{{item.goodVipPrice}}</view>
+                <view class="originalCost">
+                  <text>/￥{{item.goodPrice}}</text>
+                </view>
+              </view>
+              <view class="Reminding" data-skuid="{{item.productSkuId}}" bindtap='{{item.goodsStock == 0?"":"orderDetails"}}' style="background-color:{{item.goodsStock == 0?'#ccc':''}}" data-id="{{item.goodId}}" data-activityid="{{item.activityId}}">{{item.goodsStock == 0?'已结束':'马上抢'}}</view>
+              <!-- <view class="cancelReminding" wx:else bindtap='orderDetails' data-id="{{item.goodId}}">去购买</view> -->
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="NoCommodityData">
+          <image src="/images/YueMall/NoCommodityData.png"></image>
+          <view>暂无抢购商品哦</view>
+          <view class="goMall" bindtap='goMall'>去首页看看</view>
+        </view>
+      </block>
+    </view>
+    <view class="scoll-h" wx:if="{{currentTab==1}}">
+      <block wx:if="{{list !=''}}">
+        <view class="RushBuyTime">
+          <view class="GoodThing">
+            <image src="/images/memberInformation/CommonFunction.png"></image>
+            <view>好物低价，先到先得</view>
+          </view>
+          <view class="RushBuyTimeRight">
+            <view class="title">距开始时间</view>
+            <view class="time">
+              <text class='bg_ff'>{{countDownHour}}</text>:
+              <text class='bg_ff'>{{countDownMinute}}</text>:
+              <text class='bg_ff'>{{countDownSecond}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="list" wx:for="{{list}}" wx:key="list0" data-skuid="{{item.productSkuId}}" bindtap='GoShopping' data-id="{{item.goodId}}" data-activityid="{{item.activityId}}">
+          <view class="image">
+            <image src="{{item.goodCover}}"></image>
+          </view>
+          <view class="describe">
+            <view class="title">
+              <text>{{item.goodName}}</text>
+            </view>
+            <view class="memberPrice">
+              <view style="color:#333;font-size:24rpx;margin-right:2%">限时价</view>
+              <view>
+                <text style="font-size:24rpx;">¥</text>{{item.goodVipPrice}}</view>
+              <view class="originalCost">
+                <text>￥{{item.goodPrice}}</text>
+              </view>
+            </view>
+            <view class="function">
+              <view class="Surplus">仅剩{{item.goodsStock}}件</view>
+              <view class="cancelReminding" data-skuid="{{item.productSkuId}}" bindtap='GoShopping' data-id="{{item.goodId}}" data-activityid="{{item.activityId}}">去购买</view>
+              <!-- <view class="Reminding" catchtap='RemindingMe' data-time="{{item.flashTime}}" data-id="{{item.goodId}}" data-isremid="0" wx:if="{{item.remindState == 0}}">提醒我</view>
+              <view class="cancelReminding" catchtap='RemindingMe' data-time="{{item.flashTime}}" data-id="{{item.goodId}}" data-isremid="1" wx:else>取消提醒</view> -->
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="NoCommodityData">
+          <image src="/images/YueMall/NoCommodityData.png"></image>
+          <view>暂无抢购商品哦</view>
+          <view class="goMall" bindtap='goMall'>去首页看看</view>
+        </view>
+      </block>
+    </view>
+    <!-- <view class="scoll-h" wx:if="{{currentTab==2}}">
+      <block wx:if="{{list !=''}}">
+
+        <view class="RushBuyTime">
+          <view class="GoodThing">
+            <image src="/images/memberInformation/CommonFunction.png"></image>
+            <view>好物低价，先到先得</view>
+          </view>
+          <view class="RushBuyTimeRight">
+            <view class="title">明日</view>
+            <view class="time">{{tomorrowTime}}</view>
+            <view>即将开抢</view>
+          </view>
+        </view>
+        <view class="list" wx:for="{{list}}" wx:key="list0" bindtap='orderDetails' data-id="{{item.goodId}}" data-state="{{item.flashNumState}}">
+          <view class="image">
+            <image src="{{item.goodCover}}"></image>
+          </view>
+          <view class="describe">
+            <view class="title">
+              <text>{{item.goodName}}</text>
+            </view>
+            <view class="memberPrice">
+              <view style="color:#333;font-size:24rpx;margin-right:2%">限时价</view>
+              <view>
+                <text style="font-size:24rpx;">¥</text>{{item.goodVipPrice}}</view>
+              <view class="originalCost">
+                <text>￥{{item.goodPrice}}</text>
+              </view>
+            </view>
+            <view class="function">
+              <view class="Surplus">仅剩{{item.goodsStock}}件</view>
+              <view class="cancelReminding" data-skuid="{{item.productSkuId}}" bindtap='GoShopping' data-id="{{item.goodId}}" data-activityid="{{item.activityId}}">去购买</view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="NoCommodityData">
+          <image src="/images/YueMall/NoCommodityData.png"></image>
+          <view>暂无抢购商品哦</view>
+          <view class="goMall" bindtap='goMall'>去首页看看</view>
+        </view>
+      </block>
+    </view> -->
+  </view>
+</view>
+<!-- </scroll-view> -->
+<view class="SeTupSuccess" wx:if="{{SeTupSuccess}}" animation="{{animationData}}">
+  <image src="/images/YueMall/SeTupSuccess.png"></image>
+  <view>设置成功</view>
+</view>
+<view class="AbolishSuccess" wx:if="{{AbolishSuccess}}" animation="{{animationData}}">
+  <view class="Abolish">
+    <image src="/images/YueMall/AbolishSuccess.png"></image>
+    <view>取消成功</view>
+  </view>
+  <view style="font-size:24rpx;">提醒已取消，您可能会抢不到呦...</view>
+</view>

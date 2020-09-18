@@ -1,0 +1,126 @@
+/* page/yueMember//pages/VideoPayResults/VideoPayResults.wxss */
+
+page {
+  border-top: 1px solid #eee;
+  background-color: #fff;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 91rpx;
+  margin-bottom: 34rpx;
+}
+
+.icon image {
+  width: 185rpx;
+  height: 166rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(1, 1, 1, 1);
+  margin-bottom: 39rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tips {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(48, 48, 48, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 96rpx;
+}
+
+.buttonfun {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 44rpx;
+  border-bottom: 2px solid #ececec;
+}
+
+.buttonfun .home {
+  width: 286rpx;
+  height: 86rpx;
+  border: 2px solid rgba(230, 184, 116, 1);
+  border-radius: 43rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(230, 183, 115, 1);
+}
+
+.buttonfun .lookOrder {
+  width: 286rpx;
+  height: 86rpx;
+  background: rgba(230, 184, 116, 1);
+  border-radius: 43rpx;
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #fff;
+}
+
+.moreTitle {
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+  margin-top: 58rpx;
+  padding-bottom: 33rpx;
+  border-bottom: 1px solid #eee;
+  padding-left:2.8%
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 3.8%;
+  padding-right: 3.8%;
+  width: 92.4%;
+  margin-top: 30rpx
+}
+
+.content .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(16, 16, 16, 1);
+  margin-bottom: 109rpx;
+  width: 26%;
+
+}
+.content .item image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom:20rpx;
+}

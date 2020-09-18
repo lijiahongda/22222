@@ -1,0 +1,281 @@
+page {
+  background-color: #eee;
+}
+.top {
+  height: 194rpx;
+  background: #c74340;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  
+  align-items: flex-end;
+}
+
+.top .border {
+  width: 1px;
+  height: 24rpx;
+  background-color: #fff;
+  margin-bottom: 40rpx;
+}
+
+.top .list {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 19rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.top .list .title {
+  margin-top: 7rpx;
+}
+
+.Withdraw {
+  width: 82%;
+  margin-left: 2.6%;
+  margin-right: 2.6%;
+  padding-left: 6.4%;
+  padding-right: 6.4%;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+}
+
+.Withdraw .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.Withdraw .item .Price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(219, 78, 74, 1);
+}
+
+.Withdraw .item .Price text {
+  font-size: 24rpx;
+}
+
+.Withdraw .item .Price image {
+  width: 10rpx;
+  height: 18rpx;
+  margin-left: 19rpx;
+}
+
+.Upservices {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  width: 82%;
+  margin-left: 2.6%;
+  margin-right: 2.6%;
+  padding-left: 6.4%;
+  padding-right: 6.4%;
+  border-radius: 10rpx;
+  padding-top: 10rpx;
+  padding-bottom: 3%;
+  margin-bottom: 20rpx;
+}
+
+.Upservices .content {
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(94, 94, 94, 1);
+  margin-bottom: 20rpx;
+}
+
+.Upservices .content .text {
+  margin-bottom: 29rpx;
+}
+
+.Upservices image {
+  width: 140rpx;
+  height: 120rpx;
+}
+
+.Upservices .content .progress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Upservices .content .progress progress {
+  width: 393rpx;
+  height: 22rpx;
+  margin-right: 15rpx;
+}
+
+.GiftPackage {
+  width: 82%;
+  margin-left: 2.6%;
+  margin-right: 2.6%;
+  padding-left: 6.4%;
+  padding-right: 6.4%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+}
+
+.GiftPackage .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  height: 79rpx;
+}
+
+.GiftPackage .title .left {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(254, 80, 79, 1);
+  position: relative;
+}
+
+.GiftPackage .title .logo {
+  width: 21rpx;
+  height: 21rpx;
+  margin-right: 14rpx;
+  margin-top: -26rpx;
+}
+
+.GiftPackage .title .left .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.GiftPackage .title .left .info .Arrow {
+  width: 50rpx;
+  height: 5rpx;
+  background: #f35b56;
+  border-radius: 3rpx;
+  margin-top: 16rpx;
+  position: absolute;
+  bottom: -22rpx;
+}
+
+.GiftPackage .title .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(27, 27, 27, 1);
+  font-size: 24rpx;
+  position: relative
+}
+
+.GiftPackage .title .right .Arrow {
+  width: 50rpx;
+  height: 5rpx;
+  background: #f35b56;
+  border-radius: 3rpx;
+  position: absolute;
+  bottom: -22rpx;
+}
+
+.GiftPackage .list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30rpx;
+  padding-bottom: 27rpx;
+}
+
+.GiftPackage .list .order {
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #C74340;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.GiftPackage .list .order .title {
+  font-size: 20rpx;
+  color: #707070;
+  border: 0;
+  padding: 0;
+}
+
+.commodity_screenshowModal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 10000;
+  color: #fff;
+}
+
+.drawer_box {
+  width: 390rpx;
+  height: 313rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  overflow: hidden;
+  font-size: 30rpx;
+  color: #000;
+  position: fixed;
+  top: 58%;
+  left: 100rpx;
+  z-index: 10000;
+  background: #fafafa;
+  margin: -150px 50rpx 0 50rpx;
+  border-radius: 20rpx;
+}
+
+.drawer_content {
+  font-size: 30rpx;
+  color: #000;
+  margin-top: 36rpx;
+  line-height: 49rpx;
+}
+
+.closeImage {
+  width: 62rpx;
+  height: 62rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 88%;
+  left: 294rpx;
+  z-index: 10000;
+  margin: -150px 50rpx 0 50rpx;
+}

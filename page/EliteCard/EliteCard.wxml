@@ -1,0 +1,315 @@
+<!-- 引入大红包 -->
+<!-- <redPopup  id="redPopup" inner-text="{{list}}"></redPopup> -->
+<!-- 加载中 -->
+<scroll-view scroll-y="true" scroll-with-animation="true" class='productFeatures' scroll-into-view="{{toView}}" style="height:{{windowHeight}}px">
+  <import src="/page/LoadingPopup/LoadingPopup.wxml" />
+  <block wx:if="{{LoadingStatus}}">
+    <template is="LoadingPopup" />
+  </block>
+  <!-- 小红包 -->
+  <image class="SmallRedPopup" wx:if="{{isSmallRedPopup}}" src="https://image.yuelvhui.com/pubfile/2019/09/27/line_1569568647_47171.png" bindtap="VerificationCode" style="right:{{SmallRed?'-70rpx':''}}"></image>
+
+  <!-- <view bindtouchstart="mytouchstart" bindtouchmove="mytouchmove"> -->
+
+  <view class="titleHead" style="padding-top:{{navTop}}rpx;">
+    <!-- <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-26/23/yuelvhuiBhFxg9Eapl1585235193.png"></image> -->
+    <view>会员权益</view>
+  </view>
+  <view bindtap="goLevel" class="titleH" wx:if="{{uid}}" style="margin-top:{{navTop+84}}rpx"> <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-18/22/yuelvhui0xc8up4d0F1589810975.png"></image> 会员成长值规则更新升级啦，点击查看详情</view>
+  <view wx:if="{{uid}}" class="containerH" style="margin-top:60rpx">
+    <swiper previous-margin="30rpx" next-margin="30rpx" bindchange="swiperBindchange"  current="{{swiper_curPage}}"  class="swiper">
+      <block wx:for="{{levelList}}"  wx:key="index">
+        <swiper-item class='swiper_item'>
+          <image src='{{item.bgImg}}' class="swiper_imge" mode='scaleToFill' data-level='{{}}' data-item="{{item}}" ></image>
+          <view class="level" wx:if='{{item.isCurrentLevel == 1}}' bindtap="goGrowth" style=" background-image: url({{item.currentIcon}})">当前等级</view>
+          <view class="con">
+            <view class="nameH">
+              <!-- <view class="userName">{{datas.memberInfo.nickname}}</view> -->
+              <view class="lvName" >
+                <text wx:if='{{item.level !=4}}' >{{item.levelName}}</text>
+                <text wx:else style="color:#EDBF9E;" >{{item.levelName}}</text>
+                <image src="{{item.levelIcon}}"></image>
+              </view>
+            </view>
+            <view class="txt2" wx:if='{{item.isCurrentLevel==0&&item.level!=4 }}'>{{item.levelDesc}}</view>
+            <view class="txt2" style="color:#EDBF9E" wx:if='{{item.isCurrentLevel==0&&item.level==4 }}'>{{item.levelDesc}}</view>
+            <!-- 进度条 -->
+            <view class="progress"  style="background:#7E97D4" wx:if='{{item.isCurrentLevel==1 && item.level==1}}'>
+              <view style="width:{{item.userGrowth*100/item.totalGrowth}}%;"></view>
+            </view>
+            <view class="progress" style="background:rgba(197,132,19,.5)" wx:if='{{tem.isCurrentLevel==1 && item.level==2}}'>
+              <view style="width:{{item.userGrowth*100/item.totalGrowth}}%;" wx:if='{{item.level==2}}' ></view>
+            </view>
+            <view class="progress" style="background:#B8BABF" wx:if='{{item.isCurrentLevel==1 && item.level==3}}'>
+              <view style="width:{{item.userGrowth*100/item.totalGrowth}}%;" wx:if='{{item.level==3}}' ></view>
+            </view>
+            <view wx:if='{{item.isCurrentLevel==1&&item.level!=4}}' class="txt">
+              <view>
+                <text class="txtOne">{{item.userGrowth}}</text>/{{item.totalGrowth}}
+              </view>
+              <view class="numText">{{item.levelDesc}}</view>
+            </view>
+            <!-- 进度条 -->
+            <view class="growth" wx:if='{{item.level!=4}}' bindtap="goGrowth" >
+              <view class="num">成长值详情</view>
+              <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-24/14/yuelvhuisDZIhTJGcK1587710748.png"></image>
+            </view>
+            <view class="growth" wx:else bindtap="goGrowth" >
+              <view class="num" style="color:#EDBF9E">成长值详情</view>
+              <image  style="width:40rpx;height:40rpx;" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-19/17/yuelvhui8VcxIzlMrB1589880279.png"></image>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  
+  <view class="content" id="a1">
+    <!-- 用户信息 -->
+    <view class="headBox" bindtap="VerificationCode" style="margin-top:{{navTop+84}}rpx" wx:if="{{!uid}}"> 
+      <view class="head">
+        <view class="Member_info">
+          <view class="info">
+            <view class="title">
+              <view style="max-width:50%">
+                <text>您还未登录</text>
+              </view>
+            </view>
+            <view class="Remarks">立即登录，查看您的会员等级及权益</view>
+          </view>
+        </view>
+        <view class="button" >立即登录</view>
+      </view>
+      <view class="growth" bindtap="goGrowth" >
+        <view class="num">成长值详情</view>
+        <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-24/14/yuelvhuisDZIhTJGcK1587710748.png"></image>
+      </view>
+    </view>
+    <!-- userIdentity  = 0  普通会员   1 体验会员  2  精英会员   3  黑金PLUS会员 -->
+    <!-- <view class="header {{datas.memberInfo.userIdentity==0?'ordinaryUser': datas.memberInfo.userIdentity==3?'blackUser':''}}  " bindtap="goGrowth"  wx:else >
+      <view class="userInfo">
+        <image src="{{datas.memberInfo.litpic}}"></image>
+        <view class="detail">
+          <view class="name">
+            <view class="userName">{{datas.memberInfo.nickname}}</view>
+            <view class="lvName" wx:if='{{datas.memberInfo.userIdentity!=3}}'>
+              <text wx:if='{{datas.memberInfo.userIdentity==0}}'>普通会员</text>
+              <text wx:if='{{datas.memberInfo.userIdentity==1}}'>体验会员</text>
+              <text wx:if='{{datas.memberInfo.userIdentity==2}}'>精英会员</text>
+              <text wx:if='{{datas.memberInfo.userIdentity==3}}'>黑金会员</text>
+              <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-24/14/yuelvhuipWNAYneXz71587710723.png"></image>
+            </view>
+          </view>
+          <view class="time" wx:if='{{datas.memberInfo.userIdentity==1||datas.memberInfo.userIdentity==2}}'>有效期至{{datas.memberInfo.date}}</view>
+        </view>
+        <view class="lv">当前等级</view>
+      </view>
+      <block wx:if='{{datas.memberInfo.userIdentity==3}}'>
+        <view class="cow">
+          <text>黑金会员</text>
+          <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-26/18/yuelvhuivutENpwBQB1587895439.png"></image>
+        </view>
+        <view>
+          <view class="numText">{{datas.memberInfo.remind}}</view>
+          <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-24/14/yuelvhuisDZIhTJGcK1587710748.png"></image>
+        </view>
+      </block>
+      <view class="progress" wx:if='{{datas.memberInfo.userIdentity!=3}}'>
+        <view style="width:{{progress}}%"></view>
+      </view>
+      <view class="growth" wx:if='{{datas.memberInfo.userIdentity!=3}}'>
+        <view class="num">成长值详情</view>
+        <view class="num">成长值：<text>{{datas.memberInfo.userGrowth}}</text>/{{datas.memberInfo.needGrowth}}</view>
+        <view class="numText">{{datas.memberInfo.remind}}</view>
+        <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-24/14/yuelvhuisDZIhTJGcK1587710748.png"></image>
+      </view>
+    </view> -->
+    <view class="enjoy">
+      <view class="One">
+        <text>注册会员享</text>
+        <text class="enjoyNum">{{equityAmount}}项</text> 
+        <text>权益</text>
+      </view>
+      <view bindtap="up" wx:if='{{up == true}}' class="up">
+        <text>展开</text>
+        <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-19/12/yuelvhuiYmFGYYl34m1589863426.png"> </image>
+      </view>
+      <view bindtap="down" wx:if='{{up == false}}' class="up">
+        <text>收起</text>
+        <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-19/12/yuelvhuiHlPMlUI4EH1589863514.png"> </image>
+      </view>
+    </view>
+    <scroll-view>
+    
+    </scroll-view>
+    <view class="MembershipTerms">
+      <view class="item" wx:for="{{iconDataList}}" wx:key="iconDataList" data-title="{{item.name}}" bindtap='iconDetail' data-type="{{item.type}}" data-shareimg="{{item.shareImg}}" data-button='{{item.button}}' data-sharetitle="{{item.title}}" data-color="{{item.bgColor}}" data-image="{{item.detailImg}}">
+        <view wx:if='{{item.isRed == 1}}' class="Copywriting">{{item.redWords}}</view>
+        <image src="{{item.iconImg}}"></image>
+        <view wx:if='{{item.textColor == 0}}' style="color:#666666" >{{item.name}}</view>
+        <view wx:if='{{item.textColor == 1}}'>{{item.name}}</view>
+
+      </view>
+    </view>
+    <!-- <image class="openImage" wx:if="{{datas.user.userIdentity == 2}}" src="{{datas.gif_data.sq_adv}}"></image> -->
+    <!-- <image class="openImage" bindtap="openMember" wx:if="{{datas.user.userIdentity == 1}}" src="{{datas.gif_data.sj_adv}}" data-type="{{datas.user.userIdentity}}"></image> -->
+    <!-- <image class="openImage" bindtap="openMember" wx:if="{{datas.user.userIdentity == 0}}" src="{{datas.gif_data.kt_adv}}" data-type="{{datas.user.userIdentity}}"></image> -->
+    <!-- <view class="Ordinary_activities">
+      <view style="box-sizing: border-box;white-space: nowrap;">
+        <scroll-view scroll-x class="two_scroll_view">
+          <view wx:for="{{categoryInfo}}" wx:for-index="index" wx:key="index" class="{{twoIndex==item.id?'two_tab_item_active':'two_tab_item'}}" bindtap="onTwoItemClick" data-index="{{index}}" data-item="{{item}}">
+            <view>{{item.name}}</view>
+            <view wx:if="{{twoIndex==item.id}}" class="two_tab_item_border"></view>
+          </view>
+        </scroll-view>
+      </view>
+
+      <view class="Ordinary_activities_goodList" wx:for="{{OrdinaryList}}" data-id="{{item.goodId}}" data-skuid="{{item.productSkuId}}" bindtap="goodsActiyDetail" wx:key="OrdinaryList">
+        <image class="goodImage" src="{{item.goodCover}}"></image>
+        <view class="goodInfo">
+          <view class="title">
+            <text>{{item.goodName}}</text>
+          </view>
+          <view class="price">
+            <view>到手价: {{item.goodVipPrice}}</view>
+            <view class="Original_price">
+              <text>原价:{{item.goodPrice}} </text>
+            </view>
+          </view>
+        </view>
+        <view class="Member_provinces">
+          <view>会员省</view>
+          <view class="price">{{item.savePrice}}</view>
+        </view>
+      </view>
+    </view> -->
+    <!-- <view class="White_moon_title">
+      <view>会员每月白拿</view>
+      <image wx:if="{{datas.user.userIdentity == 2}}" bindtap="takeWithout" src="{{datas.gif_data.gd_bt}}"></image>
+      <image wx:if="{{datas.user.userIdentity == 1}}" bindtap="openMember" data-type="{{datas.user.userIdentity}}" src="{{datas.gif_data.sj_bt}}"></image>
+      <image wx:if="{{datas.user.userIdentity == 0}}"  bindtap="openMember" data-type="{{datas.user.userIdentity}}" src="{{datas.gif_data.kt_bt}}"></image>
+    </view> -->
+    <!-- <view class="topGoods">
+      <scroll-view scroll-x scroll-with-animation="true">
+        <view class="goodList" wx:for="{{datas.white_data}}" wx:key="white_data">
+          <image class="goodListImage" src="{{item.goodCover}}"></image>
+          <view class="name">
+            <text>{{item.goodName}}</text>
+          </view>
+          <view class="goodListtext">
+            <view class="OriginalPrice">
+              <text>原价:{{item.goodPrice}}</text>
+            </view>
+            <view class="ConcessionalRate">
+              <text>{{item.vipPrice}}</text>
+              <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-27/15/yuelvhuiwBhz6nRVU31585293102.png"></image>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view> -->
+    <!-- <view class="Coupon">
+      <view class="titleImage" style="background-image: url({{datas.gif_data.bg_coupon}});">
+        <image wx:if="{{datas.user.userIdentity == 2}}" bindtap="CouponMore" src="{{datas.gif_data.gd_bt}}"></image>
+      <image wx:if="{{datas.user.userIdentity == 1}}"  bindtap="openMember" data-type="{{datas.user.userIdentity}}" src="{{datas.gif_data.sj_bt}}"></image>
+      <image wx:if="{{datas.user.userIdentity == 0}}" bindtap="openMember" data-type="{{datas.user.userIdentity}}" src="{{datas.gif_data.kt_bt}}"></image>
+      </view>
+      <view class="Coupon_content">
+        <scroll-view scroll-x scroll-with-animation="true">
+          <view class="list" wx:for="{{datas.coupon_data.list}}" bindtap="{{datas.user.userIdentity == 2?'CouponMore':'openMember'}}" wx:key="coupon_data">
+            <view class="coupon_list" style="background-image: url({{datas.user.userIdentity== 2?datas.gif_data.ck_coupon:datas.gif_data.lq_coupon}});">
+              <view class="Voucher_value">
+                <text>¥</text>{{item.usedMoney}}
+              </view>
+              <view class="Full_reduction">{{item.remind}}</view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view> -->
+    <!-- <view class="White_moon_title">
+      <view>新会员
+        <text>2次免费游</text>
+      </view>
+      <image wx:if="{{datas.user.userIdentity == 2}}" bindtap="IntegralMall" src="{{datas.gif_data.gd_bt}}"></image>
+     <image wx:if="{{datas.user.userIdentity == 1}}" bindtap="openMember" data-type="{{datas.user.userIdentity}}" src="{{datas.gif_data.sj_bt}}"></image>
+      <image  wx:if="{{datas.user.userIdentity == 0}}" bindtap="openMember" data-type="{{datas.user.userIdentity}}" src="{{datas.gif_data.kt_bt}}"></image>
+    </view> -->
+    <!-- <view class="Free_swim">
+      <view class="Free_swim_list" bindtap="IntegralMallDetails" data-goodsid="{{item.goodsId}}" data-skuid="{{item.skuId}}" wx:for="{{datas.travel_data}}" wx:key="travel_data">
+        <image class="Line_image" src="{{item.image}}"></image>
+        <view class="title">
+          <image class="icon" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-27/16/yuelvhuiSbi8xrQkAk1585299395.png"></image>
+          <view>{{item.title}}</view>
+        </view>
+        <view class="Label">新会员免费游</view>
+      </view>
+    </view> -->
+    <!-- <button class="shareHl" open-type="share">
+      <view class="shareH"> <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-19/12/yuelvhuiRPQgxnH5xb1589863562.png"></image> 邀请好友获得会员权益</view>
+    </button> -->
+    <view class="Gift_Package_title">购买以下商品可快速成为会员</view>
+  </view>
+  <view id="a3"></view>
+  <view class="Gift_view" id="a2">
+    <scroll-view scroll-x class="Gift_scroll_view">
+      <view wx:for="{{GiftType}}" wx:for-index="index" wx:key="index" class="{{GiftIndex==item.id?'Gift_tab_item_active':'Gift_tab_item'}}" bindtap="onGifItemClick" data-index="{{index}}" data-item="{{item}}">
+        <view>{{item.name}}</view>
+        <view wx:if="{{GiftIndex==item.id}}" class="Gift_tab_item_border"></view>
+      </view>
+    </scroll-view>
+  </view>
+  <view style="margin-bottom:160rpx;">
+    <view class="posi" wx:for="{{GiftList}}" wx:if="{{teamType == 0}}" bindtap='goodsDetail' data-id="{{item.goodId}}" data-skuid="{{item.productSkuId}}" wx:for-index="index" wx:key="order">
+      <view class="ListCommodities newYear">
+        <view class="image">
+          <image src="{{item.goodCover}}" mode="widthFix"></image>
+        </view>
+        <view class="describe">{{item.titleName}} </view> 
+        <view class="newYearContent">
+          <view class="title">{{item.goodName}}</view>
+        </view>
+
+        <view class="labels">
+          <view class="list">
+            <view class="price">
+              <text style="font-size:35rpx;font-family:Myriad Pro;font-weight:400;color:rgba(193,14,4,1);">￥</text>
+              <text style="font-size:43rpx;font-family:Lantinghei SC;font-weight:800;color:rgba(193,14,4,1);">{{item.vipPrice}}</text>
+              <text style="font-size:24rpx;font-family:Myriad Pro;font-weight:400;text-decoration:line-through;color:rgba(78,45,0,1);margin-left:18rpx;">￥{{item.goodPrice}}</text>
+            </view>
+            <view class="growth">
+              <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-26/16/yuelvhuivHi1mjc3oF1587889710.png"></image>
+              <text>成长值{{item.growthValue}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <block>
+      <listTwoLine id="listTwo" inner-text="{{list}}">
+      </listTwoLine>
+    </block>
+  </view>
+</scroll-view>
+<view class="commodity_screenshowModal" bindtap="hideModal" wx:if="{{showModal}}"></view>
+<view animation="{{animationData}}" bindtap='hideModal' class="commodity_attr_boxshowModal" wx:if="{{showModal}}">
+  <view class="image">
+    <image src="/images/line/share.png"></image>
+  </view>
+</view>
+<!-- 授权按钮 -->
+<!-- <button class="authorizationStatus" open-type="getUserInfo" bindgetuserinfo='login' wx:if="{{authorizationStatus}}"></button> -->
+<!-- <view class="commodity_screenshowModal" wx:if="{{isShareSuccess}}" bindtap='ShareSuccess'></view>
+<view class="ShareSuccess" bindtap='ShareSuccess' wx:if="{{isShareSuccess}}">
+  <view wx:if="{{datas.isCard == 0}}"> 请选择您要购买的大礼包成为会员</view>
+  <view wx:else>挑选精美大礼包送好友</view>
+</view> -->
+
+
+
+
+<!-- 弹出优惠券 -->
+<view class="bg" wx:if="{{couponFrame}}"></view>
+<view class="coupon_box" wx:if="{{couponFrame}}">
+  <image bindtap="closeFrame" src="https://image.yuelvhui.com/pubfile/2019/11/13/line_1573651034_12457.png"></image>
+</view>

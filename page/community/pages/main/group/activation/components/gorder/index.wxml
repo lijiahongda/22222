@@ -1,0 +1,97 @@
+<view class="shareRecord">
+  <view class="title">
+    <view class="name">团特卖订单</view>
+    <view class="Range">
+      <picker mode="date" value="{{startDate}}" start="2000-01-01" end="2100-01-01" bindchange="bindDateChangeS">
+        <view class="datemsg">
+          <view class="ymddate">{{startDate}}</view>
+          <view>
+            <image src="../../../../../../image/datesj.png" bindload="loadData"></image>
+          </view>
+        </view>
+      </picker>
+      <view class="text">
+        至
+      </view>
+      <picker mode="date" value="{{endDate}}" start="2000-01-01" end="2100-01-01" bindchange="bindDateChangeE">
+        <view class="datemsg">
+          <view class="ymddate">{{endDate}}</view>
+          <view>
+            <image src="../../../../../../image/datesj.png"></image>
+          </view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="peopleNum">
+    <view>
+      <view class="num" >{{income}}</view>
+      <view class="name">今日本场特卖收入(元)</view>
+    </view>
+  </view>
+</view>
+<!-- 订单tab -->
+<!-- <view class="orderTab">
+  <view class="{{orderIndex=='0'?'chose':''}}" data-index="0" bindtap="orderTC">
+    <view class="name">所有订单</view>
+    <view class="num">(0)</view>
+  </view>
+  <view class="{{orderIndex=='1'?'chose':''}}" data-index="1" bindtap="orderTC">
+    <view class="name">有收入订单</view>
+    <view class="num">(0)</view>
+  </view>
+  <view class="{{orderIndex=='2'?'chose':''}}" data-index="2" bindtap="orderTC">
+    <view class="name">无收入订单</view>
+    <view class="num">(0)</view>
+  </view>
+</view> -->
+<!-- 分享列表 -->
+<view class="shareList"   wx:for='{{listH}}' wx:key='index' wx:if="{{ listH.length>0}}" bindtap="goDetail"  data-goodId='{{item.goods_id}}' data-skuId='{{item.sku_id}}'>
+  <!-- 头部部分 -->
+   <view class="headerMsg">
+    <view class="usermsg">
+      <!-- 头像 -->
+      <view class="titleImg">
+        <image src="{{item.member.litpic}}"></image>
+      </view>
+      <!-- 用户信息 -->
+      <view class="msg">
+        <view class="name">{{item.member.nickname}}</view>
+        <view class="isVip">
+          <view class="iconImg">
+            <image src="{{item.member.memberImg}}"></image>
+          </view>
+          <view class="vipTitle">
+            {{item.member.memberType}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="date">{{item.created_at}}</view>
+  </view>
+  <view class="tips">通过我分享的链接购买：</view>
+  <!-- 商品部分 -->
+  <view class="shareComm">
+    <view class="cover">
+      <image src="{{item.goods_cover_image}}"></image>
+    </view>
+    <view class="msg">
+      <view class="title">{{item.goods_name}}</view>
+      <view class="price">群内专享价
+        <text>￥{{item.actual_price}}</text>
+      </view>
+      <view class="getMoney">
+        <view class="gmemoney">
+          <view class="zhuan">
+            <image src="../../../../../../image/zhuan.png"></image>
+          </view>
+          <view>￥{{item.share_money}}</view>
+        </view>
+        <view class="groupMoney">
+          <!-- +群管理奖励<text>￥0.49</text> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="none" wx:if="{{listH.length==0}}" >暂无群特卖记录～</view>

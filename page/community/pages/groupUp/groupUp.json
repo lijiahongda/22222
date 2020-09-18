@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "建群升级",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "van-uploader": "/utils/weapp/uploader/index"
+  }
+}

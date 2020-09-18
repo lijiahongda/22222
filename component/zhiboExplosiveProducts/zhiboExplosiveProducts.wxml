@@ -1,0 +1,63 @@
+<banner id="banner" inner-text="{{list}}"></banner>
+<view class="TitleReturn" wx:if="{{Returnitem !=''}}">
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-18/18/yuelvhuiiOHJ8vX9PK1582020265.png"></image>
+  <view>预约返场</view>
+</view>
+<view class="goodInfo" bindtap="goodDetail" wx:for="{{Returnitem}}" data-goodid="{{item.goodsId}}" data-skuid="{{item.skuId}}" wx:key="Returnitem">
+  <view>
+    <image src="{{item.goodsCover}}"></image>
+  </view>
+  <view class="info">
+    <view class="title">
+      <text>{{item.goodsName}}</text>
+    </view>
+    <view class="TodaydDeal">
+      <view style="margin-bottom:5rpx">今日特价</view>
+      <view class="TodaydDealPrice">
+        <text>￥</text>{{item.livePrice}}
+      </view>
+    </view>
+    <view class="groupInfo">
+      <view class="price">
+        <text>市场价¥{{item.price}}</text>
+      </view>
+      <view class="OriginalPrice">会员价¥{{item.vipPrice}} </view>
+    </view>
+    <view class="ClusteringNum">
+      <view class="OpeningRegiment" bindtap="OpeningRegiment" data-actid="{{item.activityId}}" data-goodsid="{{item.goodsId}}" wx:if="{{item.state == 0}}">预约返场</view>
+      <view wx:else class="Successful">预约成功</view>
+    </view>
+  </view>
+</view>
+<view class="ShoppingGuide" wx:if="{{ShoppingGuide}}">
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-18/18/yuelvhuipquNrhJsai1582020297.png"></image>
+  <view>导购专区</view>
+</view>
+<view class="ShoppingGuideContent">
+  <view class="item" bindtap='Videodetail' wx:for="{{ShoppingGuide}}" data-videoid="{{item.dynamicId}}" wx:key="ShoppingGuide">
+    <view class="image">
+      <image src="{{item.videoGage}}"></image>
+      <view class="LiveInfo">
+        <image src="{{item.litPic}}"></image>
+        <text>{{item.nickName}}</text>
+      </view>
+    </view>
+    <view class="VideogoodInfo">
+      <view class="Videotitle">
+        <text>{{item.videoTitle}}</text>
+      </view>
+      <view class="info">
+        <image src="{{item.goodsCover}}"></image>
+        <view class="infoTitle">
+          <view>
+            <text>{{item.goodsName}}</text>
+          </view>
+          <view class="Videoprice">
+            ￥{{item.livePrice}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{!isHaveMore}}" class="isHaveMore">很遗憾，没有更多了哦～</view>

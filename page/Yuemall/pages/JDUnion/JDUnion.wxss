@@ -1,0 +1,214 @@
+page{
+  background: #F7F4F8;
+}
+.search{
+  width: 100%;
+  position: relative;
+  height: 92rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  background: #CE4130;
+  color: #fff;
+  font-size: 32rpx;
+}
+.search > input{
+  width: 100%;
+  height: 68rpx;
+  background: #fff;
+  color: #141414;
+  border-radius: 35rpx;
+  font-size: 30rpx;
+  padding-left: 70rpx;
+  box-sizing: border-box;
+}
+.search > image{
+  width: 34rpx;
+  height: 34rpx;
+  position: absolute;
+  left: 70rpx;
+  bottom: 30rpx;
+}
+.swiper{
+  width: 100%;
+  height: 70rpx;
+  background: #CE4130;
+  padding-top: 6rpx;
+  margin-bottom: 200rpx;
+}
+.swiper swiper{
+  width: 702rpx;
+  margin: 0 auto;
+  height: 278rpx;
+}
+.swiper swiper image{
+  width: 100%;
+  height: 278rpx;
+}
+.classification{
+  width: 100%;
+  padding: 155rpx 25rpx 0 25rpx;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius:0px 0px 18rpx 18rpx;
+}
+.classification .list{
+  width: 140rpx;
+  height: 154rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.classification .list > image{
+  width: 80rpx;
+  height: 80rpx;
+  display: block;
+}
+.classification .list > view{
+  text-align: center;
+  line-height: 26rpx;
+  color: #333333;
+  margin-top: 18rpx;
+}
+.tab{
+  width: 100%;
+  height: 110rpx;
+}
+.tabScroll{
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+}
+.tab .list{
+  display: inline-block;
+  min-width: 140rpx;
+  height: 100%;
+  position: relative;
+  color: #141414;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 110rpx;
+  padding: 0 16rpx;
+  box-sizing: border-box;
+}
+.tab .list .verticalBar{
+  width: 2rpx;
+  height: 24rpx;
+  background: #B8B8B8;
+  position: absolute;
+  top: 44rpx;
+  right: 0;
+}
+.tab .list:last-child .verticalBar{
+  display: none;
+}
+.tab .list.select{
+  color: #CA2519;
+  font-size: 32rpx;
+}
+.tab .list.select::after{
+  content: ' ';
+  position: absolute;
+  left: 50%;
+  margin-left: -25rpx;
+  bottom: 22rpx;
+  background: #CA2519;
+  width: 50rpx;
+  height: 8rpx;
+  border-radius: 4rpx;
+}
+.content .list{
+  width: 100;
+  height: 300rpx;
+  display: flex;
+  padding: 20rpx 24rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 18rpx;
+  margin-bottom: 20rpx;
+}
+.content .list .left{
+  width: 260rpx;
+  height: 260rpx;
+  margin-right: 22rpx;
+}
+.content .list .right{
+  width: 400rpx;
+  height: 100%;
+  position: relative;
+}
+.content .list .title{
+  width: 100%;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+.content .list .title image{
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin-right: 6rpx;
+}
+.content .list .sales{
+  color: #999999;
+  font-size: 24rpx;
+  width: 100%;
+  height: 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 25rpx;
+  text-align: center;
+}
+.content .list .sales .coupon{
+  min-width: 124rpx;
+  height: 36rpx;
+  background-image: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-18/19/yuelvhuizIikmvuGOT1582024273.png);
+  background-size: 100% 100%;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  margin-right: 60rpx;
+  text-align: center;
+}
+.content .list .price{
+  width: 100%;
+  color: #C82519;
+  font-size: 24rpx;
+  position: absolute;
+  left: 0;
+  bottom: 25rpx;
+}
+.content .list .price > text:nth-child(2){
+  font-size: 38rpx;
+  padding-right: 6rpx;
+}
+.content .list .price > text:nth-child(3){
+  color: #999999;
+  text-decoration: line-through;
+}
+.content .list .make{
+  min-width: 186rpx;
+  height: 44rpx;
+  padding: 0 8rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #CA2519;
+  background: #F4DEE0;
+  color: #CA2519;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 44rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 8rpx;
+}

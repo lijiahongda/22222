@@ -1,0 +1,3 @@
+<view bindtap='image'>
+  <image src="/images/memberInformation/Transition.jpg"></image>
+</view>

@@ -1,0 +1,115 @@
+<import src="../colorLine/colorLine.wxml" />
+<view class="orderDetails">
+  <view class="userInfo" wx:if="{{address != ''}}">
+    <view class="userInfoContent">
+      <view class="info">
+        <view class="name">{{linkName}}</view>
+        <view class="phone">{{linkTel}}</view>
+      </view>
+      <view class="location">
+        <view class="defaultContent"> </view>
+        <view class="site">
+          <view class="address">{{address}}</view>
+          <view class="image"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <template is="colorLine" />
+  <view class="goods">
+    <view class="goodsTop">
+      <view class="goodsTopImage">订单信息</view>
+    </view>
+    <view class="order">
+      <view class="orderNum">
+        <text>订单编号:</text> {{ordersn}}</view>
+      <view class="orderNum">
+        <text>下单时间:</text> {{createTime}}</view>
+    </view>
+    <view class="borderBottom">
+      <view class="ItemRight" wx:for="{{goodsInfo}}" wx:key="goodsInfo">
+        <view class="image">
+          <image src="{{item.goodsImg}}"></image>
+        </view>
+        <view class="describe">
+          <view class="title">
+            <text>{{item.goodsName}}</text>
+          </view>
+          <view style="flex:1">{{item.goodsSpec}}</view>
+          <view class="price">
+            ￥{{item.goodsPrice}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="orderInfo">
+    <view style="border-top:1px solid #ececec"></view>
+    <view class="pay">
+      <view class="payList">
+        <view class="payname">
+          <text decode="true">支付方式：</text>
+        </view>
+        <view class="payValue">微信</view>
+      </view>
+      <view class="payList">
+        <view class="payname">
+          <text decode="true">商品总额：</text>
+        </view>
+        <view class="payValue">¥{{tatal}}</view>
+      </view>
+      <view class="payList">
+        <view class="payname">
+          <text decode="true">使用抵扣：</text>
+        </view>
+        <view class="payValue">{{totelDeducPrice}}悦豆</view>
+      </view>
+      <view class="payList">
+        <view class="payname">
+          <text decode="true">优&nbsp;&nbsp;惠&nbsp;&nbsp;券：</text>
+        </view>
+        <view class="payValue">{{couponPrice}}元</view>
+      </view>
+      <view class="payList">
+        <view class="payname">
+          <text decode="true">运&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;费：</text>
+        </view>
+        <view class="payValue">{{goodFreight}}</view>
+      </view>
+      <view class="payList">
+        <view class="payname">
+          <text decode="true">应付金额：</text>
+        </view>
+        <view class="payValue">¥{{totalPrice}}</view>
+      </view>
+    </view>
+    <!-- <view style="border-top:1px solid #ececec"></view>
+    <view class="out-of-pocket">
+      <view>实付金额：</view>
+      <view style="color:#F36F5A"> ¥{{totalPrice}}</view>
+    </view> -->
+  </view>
+  <!-- 物流信息 -->
+  <!-- 普通物流 -->
+  <view class="GeneralLogistics" wx:if="{{shippingStatus == 1}}">
+    <view class="item">
+      <text>物流号：</text>
+      <text>{{logisticeNumber}}</text>
+    </view>
+    <view class="item">
+      <text>物流公司：</text>
+      <text>{{logisticeCompany}}</text>
+    </view>
+  </view>
+  <!-- 京东物流 -->
+  <view class="LogisticInfo" wx:if="{{(shippingStatus == 1&&goodsThreePartner == 3)}}">
+    <view class="listAll">
+      <view class="list" wx:for="{{info}}" wx:key="info" wx:for-index="index">
+        <view class="title" style='color:{{index == 0?"#333":""}}'>
+          <text>{{item.content}}</text>
+        </view>
+        <view class="time">{{item.msgTime}}</view>
+      </view>
+    </view>
+  </view>
+</view>

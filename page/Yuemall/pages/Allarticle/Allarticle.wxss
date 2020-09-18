@@ -1,0 +1,110 @@
+/* page/Yuemall/pages/Allarticle/Allarticle.wxss */
+
+/* 素材圈 */
+
+.articleInfo {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding-left: 4%;
+  padding-right: 4%;
+  width: 92%;
+  margin-top: 20rpx;
+}
+
+.articleInfo .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  margin-top: 30rpx;
+  margin-bottom: 50rpx;
+}
+
+.articleInfo .title .lookAll {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(241, 13, 59, 1);
+}
+
+.articleInfo .Hairpin {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 38rpx;
+}
+
+.articleInfo .Hairpin .HeadPortrait {
+  width: 78rpx;
+  height: 78rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.articleInfo .Hairpin .HeadPortrait .time {
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(166, 166, 166, 1);
+}
+
+.articleInfo .content {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(50, 50, 50, 1);
+  line-height: 38rpx;
+  margin-bottom: 39rpx;
+}
+
+.articleInfo .content text {
+  /* word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+}
+
+.articleInfo .DisplayFulltext {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(19, 129, 196, 1);
+  margin-bottom: 32rpx;
+}
+
+.articleInfo .articleImage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.articleInfo .articleImage image {
+  width: 20.9%;
+  height: 157rpx;
+  border-radius: 10rpx;
+  margin-right: 4.6%;
+  background-color: #efeff3;
+}
+
+.articleInfo .NumberHairpins {
+  margin-top: 62rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(121, 121, 121, 1);
+  margin-bottom: 63rpx;
+}

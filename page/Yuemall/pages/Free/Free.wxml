@@ -1,0 +1,19 @@
+<!--page/Yuemall/pages/Free/Free.wxml-->
+<view class="content">
+  <view class="item" wx:for="{{rule}}" wx:key="rule">
+    <view class="title">{{item.title}}</view>
+    <view>{{item.info}}</view>
+  </view>
+  <view class="tips">{{remind}}</view>
+  <view class="time">{{time}}</view>
+</view>
+<view class="button" bindtap='Free'>白拿</view>
+
+<view class="commodity_screenshowModal" wx:if="{{isCommission}}"></view>
+<view class="Commission" wx:if="{{isCommission}}">
+
+  <image mode='widthFix' class="bgred" src="https://image.yuelvhui.com/pubfile/2019/06/12/line_1560315818.png"></image>
+  <view class="info">
+    <image src="https://image.yuelvhui.com/pubfile/2019/06/12/line_1560315886.png" class="close" bindtap='closeCommission'></image>
+  </view>
+</view>

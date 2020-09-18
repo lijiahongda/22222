@@ -1,0 +1,429 @@
+/* page/Yuemall//pages/NewLevelPages/NewLevelPages.wxss */
+
+page {
+  background-color: #ececec;
+}
+
+.swiperbox {
+  height: 300rpx;
+  width: 100%;
+  border-radius: 10rpx;
+  padding-top: 31rpx;
+  margin-bottom: 30rpx;
+}
+
+.swiperbox image {
+  width: 100%;
+  height: 300rpx;
+}
+
+.top {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.topImage {
+  height: 310rpx;
+  width: 100%;
+}
+
+.classification {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 96%;
+  padding-left: 2%;
+}
+
+.classification .typeList {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 30rpx;
+}
+
+.classification .typeList image {
+  width: 86rpx;
+  height: 86rpx;
+  margin-bottom: 19rpx;
+  border-radius: 50%;
+}
+
+/* 活动 */
+
+.headTop {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.headTop image {
+  width: 100%;
+}
+
+.footerBottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -1rpx;
+}
+
+.footerBottom image.bg {
+  width: 100%;
+  height: 310rpx;
+}
+
+.footerBottom .goodList {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 89.3%;
+  top: 35rpx;
+}
+
+.footerBottom .goodposi {
+  width: 31.4%;
+  position: relative;
+  border-radius: 12rpx;
+}
+
+.footerBottom .goodList .list .goodImage {
+  width: 214rpx;
+  height: 248rpx;
+  border-radius: 12rpx;
+}
+
+.footerBottom .goodList .goodInfo {
+  background-image: url(https://image.yuelvhui.com/pubfile/2019/07/04/line_1562235200_94610.png);
+  background-size: 100%;
+  width: 213rpx;
+  background-repeat: no-repeat;
+  height: 101rpx;
+  bottom: -60rpx;
+  position: absolute;
+  left: -13rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerBottom .goodList .goodInfo .title {
+  margin-top: 22rpx;
+}
+
+.footerBottom .goodList .goodInfo .title text {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(58, 58, 58, 1);
+}
+
+.footerBottom .goodList .goodInfo .describe text {
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(58, 58, 58, 1);
+}
+
+.topGoods {
+  position: relative;
+  height: 362rpx;
+  padding-top: 20rpx;
+  width: 94.4%;
+  margin-left: 3%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  box-sizing: border-box;
+  background: #fff;
+  white-space: nowrap;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  border-radius: 0px 0px 10rpx 10rpx;
+}
+
+.topGoods .goodList {
+  display: inline-block;
+  margin-right: 10rpx;
+  width: 180rpx;
+}
+
+.topGoods .goodList .goodListImage {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+  box-shadow: 1px 2px 18px 3px rgba(35, 24, 21, 0.05);
+  margin-bottom: 19rpx;
+}
+
+.topGoods .goodList .goodListtext {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 13, 59, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.topGoods .goodList .goodListtext .OriginalPrice text {
+  font-size: 20rpx;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 10rpx;
+}
+
+.topGoods .goodList .name text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 21rpx;
+}
+
+.ActivityModule {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border-radius: 5rpx;
+  /* width: 94%; */
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.ActivityModule .Spike .title {
+  color: #f13232;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.ActivityModule .Spike .left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: -7rpx;
+}
+
+.GoodGoods {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ececec;
+  padding-top: 18rpx;
+  padding-bottom: 10rpx;
+  width: 48%;
+  padding-left: 2%;
+  background-size: 100%;
+  height: 240rpx;
+  background-repeat: no-repeat;
+}
+
+.Chop {
+  display: flex;
+  flex-direction: row;
+  width: 48%;
+  padding-left: 2%;
+}
+
+.Chop .Assemble {
+  width: 50%;
+  background-size: 100%;
+  height: 240rpx;
+  background-repeat: no-repeat;
+  border-right: 1px solid #ececec;
+  padding-top: 18rpx;
+  padding-bottom: 10rpx;
+}
+
+.Chop .Assemble image {
+  width: 155rpx;
+  height: 188rpx;
+  border-radius: 10rpx;
+  background-color: #f19149;
+}
+
+.Chop .title {
+  display: flex;
+  flex-direction: row;
+  color: #31baff;
+  font-size: 24rpx;
+  margin-bottom: 12rpx;
+}
+
+.Chop .title image {
+  width: 36rpx;
+  height: 19rpx;
+  background-color: #ff6032;
+}
+
+.Template {
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.Template .left {
+  width: 50%;
+  height: 470rpx;
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+  border-right: 1px solid #ccc;
+}
+
+.Template .right {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 470rpx;
+  flex-wrap: wrap;
+}
+
+.Template .right image {
+  width: 50%;
+  height: 235rpx;
+}
+
+/* 推荐 */
+
+.Recommend {
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 30rpx;
+  padding-bottom: 8rpx;
+  margin-top: 20rpx;
+}
+
+.Recommend .title {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(6, 4, 4, 1);
+  margin-bottom: 29rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.Recommend .content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Recommend .content .list {
+  width: 44%;
+  margin-bottom: 32rpx;
+  background-color: #fff;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 10rpx;
+  padding-bottom: 22rpx;
+}
+
+.Recommend .content .list image {
+  width: 100%;
+  height: 257rpx;
+  margin-bottom: 15rpx;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+}
+
+.Recommend .content .list .name text {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(6, 4, 4, 1);
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 38rpx;
+  margin-bottom: 24rpx;
+}
+
+.Recommend .content .list .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(243, 93, 98, 1);
+}
+
+.Recommend .content .list .price .OriginalPrice text {
+  text-decoration: line-through;
+  font-size: 22rpx;
+  color: #6a6a6a;
+  margin-left: 10rpx;
+}
+
+.brand {
+  width: 94.6%;
+  margin-left: 2.7%;
+  margin-right: 2.7%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+}
+
+.brand .title {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
+
+.brand .listImage {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+}
+
+.brand image {
+  width: 130rpx;
+  height: 130rpx;
+  display: inline-block;
+  margin-right: 31rpx;
+}

@@ -1,0 +1,29 @@
+<!--page/payment/Detailed/index.wxml-->
+<scroll-view scroll-y="{{true}}" bindscrolltolower="getTradeList" class="detailedScroll">
+  <!-- loading -->
+  <import src="/page/LoadingPopup/LoadingPopup.wxml" />
+  <block wx:if="{{LoadingStatus}}">
+    <template is="LoadingPopup" />
+  </block>
+  <view class="zcontent">
+  <!-- 有数据的时候的列表 -->
+    <view class="list" wx:for="{{list}}" wx:key="index">
+    <!-- 提示文字和金额 -->
+      <view class="top">
+        <view class="text">{{item.title}}</view>
+        <view class="addMoney" wx:if="{{item.state==0}}">+{{item.money}}元</view>
+        <view class="SubtractMoney" wx:if="{{item.state==1}}">-{{item.money}}元</view>
+      </view>
+      <!-- 时间和余额 -->
+      <view class="bottom">
+        <view class="date">{{item.time}}</view>
+        <view class="money">余额：{{item.balancemoney}}元</view>
+      </view>
+    </view>
+    <!-- 空数据提示 -->
+    <view class="listnone" wx:if="{{list.length<=0}}">
+      <image src="./nomsg.png"></image>
+      <view class="stroll" bindtap="toMain">去逛逛</view>
+    </view>
+  </view>
+</scroll-view>

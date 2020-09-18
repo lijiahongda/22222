@@ -1,0 +1,316 @@
+/* page/Yuemall//pages/RefundExamine/RefundExamine.wxss */
+
+.orderstatus {
+  height: 166rpx;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16rpx;
+  border-top: 1px solid #ebecee;
+}
+.TransitionLine {
+  background-color: #ffe4b0;
+  height: 2rpx;
+  flex: 1;
+}
+.orderstatus .state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.orderstatus .state .stateImage {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30rpx;
+  height: 40rpx;
+}
+
+.orderstatus .stateValue {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.orderstatus .stateValue view {
+  width: 26%;
+  font-size: 22rpx;
+  color: #333;
+}
+
+.orderstatus .state image {
+  width: 22rpx;
+  height: 22rpx;
+  margin-left: 8rpx;
+  margin-right: 8rpx;
+}
+
+
+
+.RefundExmaine_msg{
+  padding:47rpx 0;
+  padding-left: 25rpx;
+  background:rgba(202,37,25,1);
+  color:#fff;
+}
+.refundStatus{
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(255,255,255,1);
+}
+.RefundExmaine_resault{
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 0 25rpx;
+}
+.refundtishi{
+  padding: 31rpx 0;
+  font-size:26rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+border-bottom:1px solid rgba(0,0,0,1);
+
+}
+.refundreser{
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+padding: 15rpx 0;
+display: flex;
+align-items: center;
+}
+.crile{
+  width:6rpx;
+height:6rpx;
+background:rgba(160,160,160,1);
+border-radius:50%;
+margin-right: 17rpx
+}
+.RefundExmaine_messenge{
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 0 24rpx;
+}
+.refundTitle{
+  padding: 30rpx 0;
+  font-size: 24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.refundImage{
+  display: flex;
+  padding-bottom: 30rpx;
+  border-bottom:1px solid rgba(0,0,0,1)
+}
+.refundImage_image image{
+  width: 180rpx;
+  height: 180rpx;
+}
+.refundile{
+  padding-top: 18rpx;
+  font-size:26rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(51,51,51,1);
+padding-left: 21rpx;
+word-break: break-all;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 1;
+overflow: hidden;
+text-overflow: ellipsis;
+
+}
+.refundcon{
+  padding-top: 30rpx;
+  padding-left: 21rpx;
+  font-size:22rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(153,153,153,1);
+}
+.refundText{
+  padding: 20rpx 0;
+}
+.refundenger{
+  padding: 10rpx 0;
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.nobugs{
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:#999999;
+}
+.refundAdress{
+  padding: 31rpx 0;
+  font-size:26rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:#333333;
+border-bottom:1px solid #999999
+}
+.ExmaineAddress{
+  display: flex;
+  padding: 30rpx 0;
+}
+.ExmaineAddress_image image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.ExmaineAddress_text{
+  padding-left: 18rpx;
+  padding-top:7rpx;
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.mobile{
+  padding-left: 18rpx;
+  color:#999999;
+}
+.messenger{
+  width:750rpx;
+height:98rpx;
+background:rgba(202,37,25,1);
+font-size:32rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(255,255,255,1);
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 90rpx;
+}
+
+.bg_black{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1
+}
+.services{
+  width:750rpx;
+  background:rgba(255,255,255,1);
+  border-radius:20rpx 20rpx 0px 0px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  padding: 20rpx 24rpx;
+  box-sizing: border-box;
+}
+.services .title{
+  width: 100%;
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+  margin-top: 20rpx;
+  margin-bottom: 50rpx;
+}
+.services .close{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 24rpx;
+  top: 46rpx;
+}
+.services .tips{
+  /* height:300rpx; */
+  background:rgba(246,246,246,1);
+  border-radius:10rpx;
+  font-size: 26rpx;
+  color: #333;
+  padding: 40rpx;
+  line-height: 58rpx;
+  box-sizing: border-box;
+}
+.services .reason_radio .titles{
+  font-size: 30rpx;
+  font-weight:500;
+  line-height: 30rpx;
+  margin: 36rpx 0;
+}
+.services .radio-group{
+  display: flex;
+  flex-wrap: wrap
+}
+.services .radio-group .radio{
+  display: block;
+  width: 100%;
+  padding: 20rpx;
+  border-bottom:1px solid #ddd;
+}
+.services .radio-group .radio text{
+  margin-left: 30rpx;
+}
+
+
+.save{
+  width:100%;
+  height:98rpx;
+  background:rgba(202,37,25,1);
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  margin-top: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.express_name{
+  display: flex;
+  padding: 40rpx 0;
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+align-items: center;
+justify-content: space-between;
+border-bottom:1px solid #c1c0c0
+}
+.exName_left{
+  display: flex;
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(193,192,192,1);
+}
+.exName_image image{
+  width:13rpx;
+height:23rpx;
+margin-left: 24rpx
+}
+.express_num{
+  display: flex;
+  justify-content: space-between;
+  padding: 40rpx 0;
+  border-bottom: 1px solid #c1c0c0;
+  align-items: center;
+}
+.expreber{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(193,192,192,1);
+}

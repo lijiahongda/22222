@@ -1,0 +1,16 @@
+<!-- <scroll-view  scroll-y> -->
+  <view class="zcontent">
+    <header-com nickName='{{info.name}}' litpic='{{info.head_img}}' clickCount='{{clickCount}}'  member_count='{{info.member_count}}'   bgcolor="#fff" headerTitle="{{info.name}}" isGroup="{{true}}"></header-com>
+
+    <view class="grouptab">
+      <view class="{{tabIndex=='0'?'chose':''}}" data-index="0" bindtap="grouptabC">群分享</view>
+      <view class="{{tabIndex=='1'?'chose':''}}" data-index="1" bindtap="grouptabC">群订单</view>
+      <view class="{{tabIndex=='2'?'chose':''}}" data-index="2" bindtap="grouptabC">群成员</view>
+    </view>
+
+    <group-share id="share" wx:if="{{tabIndex=='0'}}"  bindChild='Child' bindChild2='Child2' room_id='{{room_id}}'></group-share>
+    <group-order id="order" wx:if="{{tabIndex=='1'}}" room_id='{{room_id}}' ></group-order>
+    <group-people id="people" wx:if="{{tabIndex=='2'}}"  room_id='{{room_id}}' bind:getmemberData="getmemberData" list="{{list}}"></group-people>
+    
+  </view>
+<!-- </scroll-view> -->

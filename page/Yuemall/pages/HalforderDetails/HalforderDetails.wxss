@@ -1,0 +1,312 @@
+@import "../colorLine/colorLine.wxss";
+
+.orderDetails {
+  /* margin-top:20rpx */
+}
+
+.userInfo {
+  background-color: #fbf7f5;
+  height: 200rpx;
+}
+
+.userInfoContent {
+  width: 93%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 34rpx;
+}
+
+.name {
+  font-size: 28rpx;
+  color: rgb(51, 51, 51);
+  width: 15%;
+}
+
+.phone {
+  font-size: 28rpx;
+  color: rgb(51, 51, 51);
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+
+.location .image {
+  width: 10%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.location .image image {
+  width: 14rpx;
+  height: 28rpx;
+}
+
+.location .site .address {
+  /* width:90%;  */
+  color: #999;
+  font-size: 28rpx;
+}
+
+.defaultContent {
+  width: 15%;
+}
+
+.site {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+
+.goods {
+  background-color: #fff;
+  /* margin-top:20rpx; */
+  display: flex;
+  flex-direction: column;
+}
+
+.goods .goodsTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 93%;
+  padding-left: 3.5%;
+  padding-right: 3.5%;
+  border-bottom: 1px solid #ebecee;
+}
+
+.goods .goodsTop .goodsTopImage {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  border-left: 3px solid #d3a791;
+  height: 28rpx;
+  padding-left: 3%;
+  line-height: 28rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.goods .state {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 93%;
+  margin: auto;
+  height: 100rpx;
+  align-items: center;
+}
+
+.borderBottom {
+  border-top: 1px solid #ececec;
+}
+
+.ItemRight {
+  display: flex;
+  width: 93%;
+  margin: auto;
+  height: 200rpx;
+  align-items: center;
+  flex-direction: row;
+}
+
+.ItemRight .image {
+  margin-right: 3.4%;
+}
+
+.checkbox {
+  margin-left: 40rpx;
+  margin-right: 30rpx;
+}
+
+.ItemRight .image image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.describe {
+  display: flex;
+  flex-direction: column;
+  height: 160rpx;
+  width: 100%;
+}
+
+.describe .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color: rgb(51, 51, 51);
+}
+
+.describe .title text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* font-size:12px; *//* line-height:18px;
+height:35px; */
+}
+
+.describe .price {
+  color: #a31e13;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.orderInfo {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.order {
+  /* height:296rpx; */
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  width: 93%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.orderNum {
+  margin-bottom: 10rpx;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.orderNum text {
+  color: #999;
+}
+
+.pay {
+  display: flex;
+  flex-direction: column;
+  width: 93%;
+  margin: auto;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.pay view {
+  margin-bottom: 10rpx;
+}
+
+.pay .payList {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pay .payList .payname {
+  color: #999;
+}
+
+.pay .payList .payname text {
+  /* width:25% *//* text-align: justify; */
+}
+
+.pay .payList .payValue {
+  /* width:75% */
+}
+
+.out-of-pocket {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 93%;
+  margin: auto;
+}
+
+.out-of-pocket view {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  color: #333;
+  font-size: 28rpx;
+}
+
+/* 物流信息 */
+
+/* 普通物流 */
+
+.GeneralLogistics {
+  height: 163rpx;
+  background-color: #fff;
+  padding-left: 4%;
+  width: 92%;
+  padding-right: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20rpx;
+  line-height: 61rpx;
+  margin-bottom: 20rpx;
+}
+
+.GeneralLogistics .item {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.LogisticInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 96%;
+  padding-left: 4%;
+}
+
+.LogisticInfo .spot {
+  width: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.LogisticInfo .listAll {
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  padding-right: 4%;
+  /* margin-left: 5%; */
+}
+
+.LogisticInfo .list {
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+  width: 100%;
+  border-bottom: 1px solid #ededed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.LogisticInfo .list .title {
+  color: #999;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.LogisticInfo .list .time {
+  color: #999;
+  font-size: 24rpx;
+}

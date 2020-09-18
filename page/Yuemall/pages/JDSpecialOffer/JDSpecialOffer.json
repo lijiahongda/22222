@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "京东特价",
+  "usingComponents": {
+    "jdCom": "/component/jdCom/jdCom"
+  }
+}

@@ -1,0 +1,149 @@
+<!--page/Mall/pages/HelpDetails/HelpDetails.wxml-->
+<view class="Helpbg">
+  <view class="HelpDetails">
+    <view class="goodInfo">
+      <view>
+        <image src="{{bargain.goods_img}}"></image>
+      </view>
+      <view class="info">
+        <view class="title">
+          <text>{{bargain.goods_name}}</text>
+        </view>
+        <view class="CountDown" wx:if="{{bargain.status == 2}}">
+          <!-- <view class="list">{{countDownDay}}</view><view class="colon">天</view> -->
+          <view class="list">{{countDownHour}}</view>
+          <view class="colon">:</view>
+          <view class="list">{{countDownMinute}}</view>
+          <view class="colon">:</view>
+          <view class="list">{{countDownSecond}}</view>
+          <view class="tips">后砍价过期</view>
+        </view>
+        <view class="groupInfo">
+          <view class="title">官网价：¥{{bargain.origin_price}}</view>
+          <view class="price">已有{{bargain.cyrs}}帮砍</view>
+        </view>
+      </view>
+    </view>
+    <view class="NumberBargaining">已砍
+      <text>{{bargain.yk_price}}</text>元，还剩
+      <text>{{bargain.sy_price}}</text>元
+    </view>
+    <view class="progress">
+      <progress percent="{{bargain.percentage}}" color="#FF7666" border-radius="10" stroke-width="12" />
+    </view>
+    <!-- 没授权并且帮好友砍价 -->
+    <view class="button" wx:if="{{(uid == '' && isFriend && isOneself)}}">
+      <!-- wx:if="{{bargain.status == 2}}" -->
+      <button  bindtap='login'>
+        <view class="HelpFriends">帮好友砍一刀</view>
+        {{uid}}{{isFriend}}{{isChopping}}{{isOneself}}
+      </button>
+      <!-- <view class="InviteFriends" style="background-color:#999" wx:else>砍价已结束</view> -->
+    </view>
+    <!-- 受过权并且帮忙砍价也砍过一次 -->
+    <view class="button" wx:elif="{{(uid  && isFriend && isChopping && isOneself)}}">
+      <view class="HelpFriends" style="background-color:#999">{{isNewPepole?remind:'您已帮好友砍过价'}}</view>
+      <!-- {{uid}}{{isFriend}}{{isChopping}}{{isOneself}} -->
+    </view>
+    <!-- 自己进入砍价详情 -->
+    <view class="button" wx:else>
+      <block wx:if="{{uid}}">
+
+      <!-- {{uid}}{{isFriend}}{{isChopping}}{{isOneself}} -->
+        <view class="InviteFriends" wx:if="{{bargain.status == 2}}" bindtap='shareBox'>邀请好友砍一刀</view>
+        <view class="InviteFriends" style="background-color:#999;width:{{bargain.status == 3?'100%':''}}" wx:else>砍价已结束</view>
+        <view class="gopay" bindtap='gopay' wx:if="{{bargain.status != 3}}">去支付</view>
+      </block>
+      <block wx:else>
+        <button open-type="getUserInfo" bindgetuserinfo='login'>
+          <view class="HelpFriends">邀请好友砍一刀</view>
+        </button>
+        <button open-type="getUserInfo" bindgetuserinfo='login'>
+          <view class="HelpFriends" bindtap='gopay'>去支付</view>
+        </button>
+      </block>
+    </view>
+    <image src="/images/personalCenter/HasEnded.png" wx:if="{{bargain.status != 2}}" class="HasEnded"></image>
+  </view>
+</view>
+<view class="BargainList">
+  <view class="PriceList">
+    <view class="title">砍价榜</view>
+    <view class="GroupList" wx:for="{{GroupList}}" wx:key="GroupList" wx:for-index="index" style="border-bottom:{{index == (GroupList.length - 1)?'none':''}}">
+      <view class="SenderInfo">
+        <image src="{{item.head_pic}}" class=""></image>
+        <view>
+          <text>{{item.nickname}}</text>
+        </view>
+      </view>
+      <view class="GroupInfo">
+        <view class="GoGroup">已砍{{item.help_price}}元</view>
+      </view>
+    </view>
+    <view class="lookMore" bindtap='lookMore'>
+      <view class="">查看更多</view>
+      <image src="/images/personalCenter/bottomRoow.png"></image>
+    </view>
+  </view>
+</view>
+<view class="Invitation">
+  <view class="titlemore">
+    <view class="title">砍价砍到手发软</view>
+    <view class="more" bindtap='BargainPriceList' data-url="/hd/bargainLists" data-title="砍价">
+      <view>查看更多</view>
+      <image src="/images/YueMall/roow.png"></image>
+    </view>
+  </view>
+  <view class="shopList">
+    <view class="list" bindtap='AssembleDetail' data-id="{{item.activityId}}" wx:for-index="index" data-skuid="{{item.skuId}}" wx:for="{{assembleList}}" wx:if="{{index == 0 || index == 1}}" wx:key="assembleList">
+      <image src="{{item.goodsImg}}"></image>
+       <view class="goodtitle">
+        <text>{{item.goodsName}}</text>
+      </view>
+      <view class="goodInfo">
+        <view>最低砍至：</view>
+        <view class="price">
+          ¥
+          <text>{{item.bargainPrice}}</text>
+        </view>
+      </view>
+      <view class="SpellNum">官网价：¥{{item.originPrice}}</view>
+    </view>
+  </view>
+</view>
+<!-- 分享弹窗 -->
+<view class="share-layer" wx:if="{{ sharelayer }}">
+  <view class="share-layer-mask" bindtap='shareLayerClosed'>
+  </view>
+  <view class="share-layer-block">
+    <view class="share-layer-block-img">
+      <button open-type='share'>
+        <image src="/images/YueMall/WeChatShare.png"></image>
+      </button>
+    </view>
+    <view class="share-layer-block-img" bindtap='goPoster'>
+      <image src="/images/YueMall/posterShare.png"></image>
+    </view>
+  </view>
+  <view class="share-layer-cancel" bindtap='shareLayerClosed'>
+    <view>取消</view>
+  </view>
+</view>
+<!-- 好友砍价 -->
+<view wx:if="{{FriendsBargain && isFriend}}" class="commodity_screenshowModal" bindtap="hideModal"></view>
+<view class="FriendsBargain" wx:if="{{FriendsBargain && isFriend}}">
+  <image mode='widthFix' style="top: 203rpx;left: 8%" src="https://image.yuelvhui.com/pubfile/2019/04/16/line_1555418801.png"></image>
+  <view class="BargainInfor">
+    <image src="{{head_pic}}"></image>
+    <view class="AlreadyBargain">您已成功帮助好友砍掉{{help_price}}元</view>
+    <view class="tips">
+      <text>送你新人福利，自己砍价免费拿 第一刀最多砍<text class="text">100</text>元哦</text>
+    </view>
+    <view class="ClickCollect" bindtap='ClickCollect'>点击领取</view>
+  </view>
+</view>
+<view bindtap="ClickClose" wx:if="{{isclose}}" class="Qrcode_diabox"></view>
+<view class="Qrcode"  wx:if="{{isclose}}">
+  <view bindtap="ClickClose" class="dialog_close">X</view>
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-08-18/18/yuelvhuiVVWVbHj1Gk1597746779.png"></image>
+</view>

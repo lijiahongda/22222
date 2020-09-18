@@ -1,0 +1,512 @@
+.scrollView {
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  position: static;
+}
+/* 授权按钮 */
+.authorizationStatus{
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx
+}
+.bg1 {
+  width: 100%;
+  height: 420rpx;
+  display: block;
+  position: relative;
+}
+
+.bg2 {
+  width: 100%;
+  display: block;
+  position: absolute;
+  height: 100%;
+}
+
+.container-out {
+  height: 585rpx;
+  width: 700rpx;
+  background-color: #ffd905;
+  margin: 58rpx auto;
+  border-radius: 28rpx;
+  box-shadow: 0 10rpx 0 #a82a72;
+  position: relative;
+}
+
+.container-in {
+  width: 635rpx;
+  height: 530rpx;
+  background-color: #f49704;
+  border-radius: 40rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 6rpx;
+  bottom: 0;
+  margin: auto;
+}
+
+/**小圆球
+box-shadow: inset 3px 3px 3px #fff2af;*/
+
+.circle {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  height: 20rpx;
+  width: 20rpx;
+}
+
+.content-out {
+  position: absolute;
+  height: 168rpx;
+  width: 206rpx;
+  background-color: #f5f0fc;
+  border-radius: 26rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #774140;
+}
+
+/**居中 加粗*/
+
+.start-btn {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 40rpx;
+  height: 168rpx;
+  width: 206rpx;
+  background-color: #ffe400;
+  color: #f6251e;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 54rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.award-image {
+  height: 74rpx;
+  width: 98rpx;
+}
+
+/* 弹窗 中奖*/
+
+.WinningPrize {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1200;
+  color: #fff;
+}
+
+.WinningPrize_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2000;
+  padding-top: 20rpx;
+  height: 100%;
+  top: 100rpx;
+}
+
+.WinningPrize_box .image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100%;
+  position: relative;
+}
+
+.WinningPrize_box .image image {
+  height: 376rpx;
+  width: 506rpx;
+  margin: 25% auto;
+}
+
+.WinningPrize_box .tip {
+  position: absolute;
+  color: #fff;
+  font-size: 40rpx;
+  top: 350rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.WinningPrize_box .TermValidity {
+  font-size: 24rpx;
+  margin-top: 15rpx;
+  margin-bottom: 20rpx;
+}
+
+.WinningPrize_box .ToInvite {
+  text-align: center;
+  line-height: 88rpx;
+  width: 248rpx;
+  height: 64rpx;
+  border-radius: 40rpx;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+button[class="con_listbox"]::after {
+  border: none;
+}
+
+.WinningPrize_box .close {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  line-height: 80rpx;
+  text-align: center;
+  margin-top: 80rpx;
+}
+
+/* 未中奖弹窗 */
+
+.Noprize {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1200;
+  color: #fff;
+}
+
+.Noprize_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2000;
+  padding-top: 20rpx;
+  height: 100%;
+  top: 100rpx;
+}
+
+.Noprize_box .image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100%;
+  position: relative;
+}
+
+.Noprize_box .image image {
+  height: 576rpx;
+  width: 486rpx;
+  margin: 25% auto;
+}
+
+.Noprize_box .tip {
+  position: absolute;
+  color: #333;
+  font-size: 30rpx;
+  top: 520rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.Noprize_box .TermValidity {
+  font-size: 24rpx;
+  margin-top: 15rpx;
+  margin-bottom: 53rpx;
+}
+
+.Noprize_box .ToInvite {
+  text-align: center;
+  line-height: 88rpx;
+  width: 248rpx;
+  height: 64rpx;
+  border-radius: 40rpx;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.Noprize_box .close {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  line-height: 80rpx;
+  text-align: center;
+  margin-top: 80rpx;
+  color: #fff;
+}
+
+/* 无次数弹窗 */
+
+.NoFrequency {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1200;
+  color: #fff;
+}
+
+.NoFrequency_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2000;
+  padding-top: 20rpx;
+  height: 100%;
+  top: 100rpx;
+}
+
+.NoFrequency_box .image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100%;
+  position: relative;
+}
+
+.NoFrequency_box .image image {
+  height: 576rpx;
+  width: 486rpx;
+  margin: 25% auto;
+}
+
+.NoFrequency_box .tip {
+  position: absolute;
+  color: #333;
+  font-size: 30rpx;
+  top: 520rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.NoFrequency_box .TermValidity {
+  font-size: 24rpx;
+  margin-top: 15rpx;
+  margin-bottom: 53rpx;
+}
+
+.NoFrequency_box .ToInvite {
+  text-align: center;
+  line-height: 88rpx;
+  width: 248rpx;
+  height: 64rpx;
+  border-radius: 40rpx;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.NoFrequency_box .close {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  line-height: 80rpx;
+  text-align: center;
+  margin-top: 80rpx;
+  color: #fff;
+}
+
+/* 抽奖规则 */
+
+.lottery_rule {
+  position: relative;
+  top: 38rpx;
+  margin: auto 4%;
+}
+
+.lottery_rule image {
+  width: 690rpx;
+  height: 276rpx;
+}
+
+.lottery_ruleList {
+  position: absolute;
+  top: 34rpx;
+  color: #be5923;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.lottery_ruleList .title {
+  font-weight: bold;
+  font-size: 34rpx;
+  margin-bottom: 24rpx;
+}
+
+.lottery_ruleList .info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.lottery_ruleList .info .ToInvite {
+  color: #ca1c08;
+}
+
+.Remarks {
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  margin-bottom: 50rpx;
+}
+
+.swiper_container {
+  position: absolute;
+  top: 120rpx;
+  width: 100%;
+  height: 350rpx;
+  overflow: hidden;
+}
+.swiper_container .itemList{
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 1s ease;
+}
+
+.swiper_container .itemList .item {
+  height: 115rpx;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1rpx solid #DFA344FF;
+}
+.swiper_container .itemList .item .avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.swiper_container .itemList .item .avatar image{
+  width: 100%;
+  height: 100%;
+}
+.swiper_container .itemList .item .itemCont{
+  flex: 1;
+  color:#BE5923FF;
+  height: 80rpx;
+  padding-left: 20rpx;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+.swiper_container .itemList .item .itemCont .result_name{
+  font-size: 28rpx;
+}
+.swiper_container .itemList .item .itemCont .time{
+  position: absolute;
+  right: 0rpx;
+  top: 0rpx;
+  color: #BE5923FF;
+}
+
+.success_recordList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 114rpx;
+  border-bottom: 1px solid #DFA344;
+}
+
+.recordList {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  padding-left: 25rpx;
+}
+
+.success_recordContent {
+  position: relative;
+  top: 38rpx;
+  margin: auto 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+.success_recordContent .title{
+  position: absolute;
+  color:#BE5923;
+  font-size: 34rpx;
+  top: 34rpx;
+}
+/* 弹幕 */
+.Barrage{
+  background-color: #0000;
+  position: absolute;
+  top: 277rpx;
+  width: 100%;
+}
+.Barrage view{
+  background-color:rgba(0, 0, 0, 0.24);
+  padding:10rpx;
+  border-radius:10rpx;
+  color:#fff;
+}
+.container-out-mk{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100
+}

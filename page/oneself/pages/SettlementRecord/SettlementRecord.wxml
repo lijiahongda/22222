@@ -1,0 +1,20 @@
+<view class="Commission">
+  <view class="HistoricalCommission">
+    <view class="AccumulatedAmount">
+      <text>￥</text>{{total}}</view>
+    <view class="title">累积结算</view>
+  </view>
+</view>
+<view class="FunctionalCommission">
+  <view class="SettlementTitle">
+    <view class="border"></view>
+    <view>明细</view>
+  </view>
+  <view class="Division" wx:for="{{list}}" wx:key="list">
+    <view class="title">{{item.createTime}}</view>
+    <view class="state">{{item.descript}}</view>
+    <view class="price">
+      ￥{{item.amount}}
+    </view>
+  </view>
+</view>

@@ -1,0 +1,304 @@
+<view class="orderList">
+  <view class="head">
+    <view class="left {{tabStatus==0?'activeHead':''}} " bindtap='getSc'>
+      <view>商城订单</view>
+    </view>
+    <view class="center {{tabStatus==2?'activeHead':''}}" bindtap='getJd'>
+      <view style="display:flex;align-items: center;justify-content: center;"> 京东订单
+      </view>
+    </view>
+    <view class="right {{tabStatus==1?'activeHead':''}}" bindtap='getPdd'>
+      <view style="display:flex;align-items: center;justify-content: center;"> 拼多多订单
+      </view>
+    </view>
+  </view>
+  <!-- 商城tab -->
+  <view class="tab-h" wx:if="{{tabStatus == 0}}">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">全部
+    </view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">待付款
+    </view>
+    
+    <!-- <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">已取消
+    </view> -->
+    <view class="tab-item {{currentTab==7?'active':''}}" data-current="7" bindtap="swichNav">待发货
+    </view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">待收货
+    </view>
+    <view class="tab-item {{currentTab==6?'active':''}}" data-current="6" bindtap="swichNav">待评价
+    </view>
+    <view class="tab-item {{currentTab==5?'active':''}}" style="width:16%" data-current="5" bindtap="swichNav">退货/售后
+    </view>
+  </view>
+  <!-- pdd tab -->
+  <view class="tab-pdd" wx:if="{{tabStatus == 1}}">
+    <view class="pdd-item {{currentTabPdd==0?'active':''}}" data-current="0" bindtap="swichNavPdd">全部
+    </view>
+    <view class="pdd-item {{currentTabPdd==1?'active':''}}" data-current="1" bindtap="swichNavPdd">待到账
+    </view>
+    <view class="pdd-item {{currentTabPdd==2?'active':''}}" data-current="2" bindtap="swichNavPdd">已到账
+    </view>
+  </view>
+  <!-- jd tab -->
+  <view class="tab-jd" wx:if="{{tabStatus == 2}}">
+    <view class="jd-item {{currentTabJd==0?'activeJd':''}}" data-current="0" bindtap="swichNavJd">全部
+    </view>
+    <view class="jd-item {{currentTabJd==1?'activeJd':''}}" data-current="1" bindtap="swichNavJd">待到账
+    </view>
+    <view class="jd-item {{currentTabJd==2?'activeJd':''}}" data-current="2" bindtap="swichNavJd">已到账
+    </view>
+  </view>
+  <view class="Explain" bindtap="PinExplain" wx:if="{{tabStatus == 2 || tabStatus == 1}}">
+    <view style="display:flex;">
+      <view class="exImg">
+        <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-02-24\/11\/yuelvhuiDXC4FxZ9VX1582515864.png"></image>
+      </view>
+      <text>订单状态和佣金提现说明</text>
+    </view>
+
+    <view class="exImg2">
+      <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-02-24\/11\/yuelvhuimM527HHHgV1582515912.png"></image>
+    </view>
+  </view>
+  <!-- 商城订单 -->
+  <view class="tab-content" wx:if="{{tabStatus == 0}}">
+    <!--菜单-->
+    <view wx:if="{{wholelist.length == 0 && currentTab == 0}}" class="noData">
+      <image src="https://image.yuelvhui.com/pubfile/2019/08/13/line_1565701372_90399.png"></image>
+      <view>暂无订单</view>
+    </view>
+    <view wx:elif="{{list.length == 0 && currentTab != 0 && currentTab != 5}}" class="noData">
+      <image src="https://image.yuelvhui.com/pubfile/2019/08/13/line_1565701372_90399.png"></image>
+      <view>暂无订单</view>
+    </view>
+
+    <view wx:elif="{{AfterSale.length == 0 && currentTab == 5}}" class="noData">
+      <image src="https://image.yuelvhui.com/pubfile/2019/08/13/line_1565701372_90399.png"></image>
+      <view>暂无订单</view>
+    </view>
+    <view class="scoll-h" wx:else>
+      <view class="list" style="padding-top:{{item.orderState == 4?'':'29rpx'}}" wx:if="{{currentTab != 5}}" wx:for="{{currentTab == 0?wholelist:list}}" wx:for-index="index" wx:key="index">
+        <view class="title">
+          <view class="state">
+            <view style="display: flex;flex-direction: row;align-items: center;">
+              <image class="malllogo" src="https://image.yuelvhui.com/pubfile/2019/08/13/line_1565692601_40920.png"></image>
+            </view>
+            <view style="display: flex;flex-direction: row;align-items: center;">
+              <view>
+                <text wx:if="{{item.orderState == 0}}" style='color:#F22644;font-size:30rpx;font-family:PingFangSC-Regular;font-weight:400;'>等待付款</text>
+                <text wx:elif="{{item.orderState == 1}}">已支付</text>
+                <text wx:elif="{{item.orderState == 3}}">已取消</text>
+                <image wx:elif="{{item.orderState == 4}}" src="https://image.yuelvhui.com/pubfile/2019/08/13/line_1565693077_18369.png" style="width:145rpx;height:98rpx;"></image>
+              </view>
+              <image class="delete" src="https://image.yuelvhui.com/pubfile/2019/08/13/line_1565692292_92447.png" wx:if="{{item.orderState == 3 || item.orderState == 4}}" data-orderno="{{item.orderNo}}" bindtap='delete'></image>
+            </view>
+          </view>
+        </view>
+        <view class="ListContent complete" data-type="{{item.orderType}}" data-state="{{item.orderState}}" bindtap='orderDetails' data-orderSon="{{item.orderNo}}" wx:if="{{item.isSingle == 1}}">
+          <view class='cont'>
+            <view class="image">
+              <image src="{{item.goodCover[0]}}"></image>
+            </view>
+            <view class="describe">
+              <view class="title">
+                <text>{{item.goodName}}</text>
+              </view>
+              <!-- 如果是书籍加字段 -->
+              <view wx:if="{{item.is_dangdang==1}}">作者名:{{item.authorName}}</view>
+              <view wx:if="{{item.is_dangdang==1 && item.publishName !=''}}">出版社:{{item.publishName}}</view>
+            </view>
+          </view>
+          <view class='money'>
+            <view class="price">
+              <text>￥</text>{{item.payPrice}}</view>
+            <view class="Number">共{{item.goodNum}}件</view>
+          </view>
+        </view>
+        <view class="ListContent tobe_aid" wx:else data-type="{{item.orderType}}" data-state="{{item.orderState}}" bindtap='orderDetails' data-orderSon="{{item.orderNo}}">
+          <view class="content">
+            <view class="image">
+              <scroll-view scroll-x>
+                <image wx:for="{{item.goodCover}}" wx:for-index="index" wx:key="index" wx:for-item="cont" src="{{cont}}"></image>
+              </scroll-view>
+            </view>
+            <view class='money'>
+              <view class="price">
+                <text>￥</text>{{item.payPrice}}</view>
+              <view class="Number">共{{item.goodNum}}件</view>
+            </view>
+          </view>
+
+        </view>
+        <view class="button">
+          <view bindtap='BuyAgain' class="pay" data-orderstatus="{{item.orderStatus}}" data-orderson="{{item.orderNo}}" data-paystatus="{{item.payStatus}}" data-ismembergoods="{{item.isMemberGoods}}" wx:if="{{item.orderState == 0}}">去支付</view>
+          <!-- <view bindtap='ConfirmReceipt' data-orderson="{{item.orderSon}}" wx:if="{{item.orderState == 2}}">确认收货</view> -->
+          <!-- <view bindtap='Repurchase' data-skuid="{{item.productSkuId}}" data-goodid="{{item.goodId}}" wx:if="{{(item.orderState == 4 &&item.version == 2) }}">再次购买</view> -->
+          <!-- wx:if="{{item.orderState == 4 && item.isCanComment == 1}}" -->
+          <view bindtap='evaluate' data-orderno="{{item.recordId}}" data-goodid="{{item.goodId}}" data-skuid="{{item.productSkuId}}" wx:if="{{item.orderState == 4 && item.isCanComment == 1}}" data-img="{{item.goodCover[0]}}">评价</view>
+        </view>
+      </view>
+
+      <!-- 售后 -->
+      <view class="list" style="padding-top:29rpx" wx:if="{{currentTab == 5}}" wx:for="{{AfterSale}}" wx:for-index="index" wx:key="index">
+        <view class="title">
+          <view class="state">
+            <view style="display: flex;flex-direction: row;align-items: center;">
+              <image class="malllogo" src="https://image.yuelvhui.com/pubfile/2019/08/13/line_1565692601_40920.png"></image>
+            </view>
+            <view>
+              {{item.refund_status_text}}
+            </view>
+          </view>
+        </view>
+        <view class="ListContent complete" bindtap='orderDetails' data-type="service" data-state="{{item.refund_status}}" data-orderSon="{{item.order_no}}">
+          <view class='cont'>
+            <view class="image">
+              <image src="{{item.good_cover[0]}}"></image>
+            </view>
+            <view class="describe">
+              <view class="title">
+                <text>{{item.good_name}}</text>
+              </view>
+              <!-- 如果是书籍加字段 -->
+              <view wx:if="{{item.is_dangdang==1}}">作者名:{{item.authorName}}</view>
+              <view wx:if="{{item.is_dangdang==1}}">出版社:{{item.publishName}}</view>
+            </view>
+          </view>
+          <view class='money'>
+            <view class="price">
+              <text>￥</text>{{item.refund_price}}
+            </view>
+          </view>
+        </view>
+        <view class="button">
+          <!-- <view bindtap='Repurchase' data-skuid="{{item.product_sku_id}}" data-goodid="{{item.good_id}}">再次购买</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 拼多多订单 -->
+  <view class="tab-content" wx:if="{{tabStatus == 1}}">
+    <view class="noData" wx:if="{{doc.length == 0 }}">
+      <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-02-22\/17\/yuelvhuiOKjiofTAww1582364592.png" class="pddImg"></image>
+      <view class="tipsN">您还没有订单哦～</view>
+      <view class="see" bindtap="see">去逛逛</view>
+    </view>
+    <view class="scoll-h" style="margin-top:20rpx;" wx:if="{{doc.length > 0 }}">
+      <view class="pddCon" wx:for='{{doc}}' wx:key='doc'>
+        <view class="pddOne">
+          <view>
+            <text>订单号:{{item.group_id}}</text>
+            <text class="copy" bindtap='copyTextJd' data-text="{{item.group_id}}">复制</text>
+          </view>
+          <view style="color:#C82519;" wx:if='{{item.order_status == 0}}'>待到账</view>
+          <view style="color:#C82519;" wx:if='{{item.order_status == 1 }}'>已到账</view>
+          <view style="color:#C82519;" wx:if='{{item.order_status == 4 }}'>已失效(退款)</view>
+        </view>
+        <view class="lineN"></view>
+        <view class="pddTwo" bindtap="goPddDetail" data-id="{{item.goods_id}}">
+          <view>
+            <image class="pddTwoImg" src="{{item.goods_thumbnail_url}}"></image>
+          </view>
+          <view>
+            <view class="conNt" style="width:">
+              <image class="pddImgN" src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-02-23\/00\/yuelvhuiIxneIsasBK1582387469.png"></image>
+              <text>{{item.goods_name}}</text>
+            </view>
+            <view class="twoCons">
+              <view>付款金额</view>
+              <view>预估佣金</view>
+            </view>
+            <view class="twoConx">
+              <view>
+                <text class="rmb">￥</text>{{item.order_amount}}</view>
+              <view style="color:#C82519;">
+                <text class="rmb">￥</text>{{item.promotion_amount}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="pddThree" bindtap="goPddDetail" data-id="{{item.goods_id}}">
+          <view>{{item.order_create_time}}</view>
+          <!-- <view class="zhuanxiang">会员专享</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 京东订单 -->
+  <view class="tab-content" wx:if="{{tabStatus == 2}}">
+    <view class="noData" wx:if="{{jdData.length == 0 }}">
+      <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-02-22\/17\/yuelvhuiOKjiofTAww1582364592.png" class="pddImg"></image>
+      <view class="tipsN">您还没有订单哦～</view>
+      <view class="see" bindtap="seeJd">去逛逛</view>
+    </view>
+    <view class="scoll-h" style="margin-top:20rpx;" wx:if="{{jdData.length > 0 }}">
+      <view class="pddCon" wx:for='{{jdData}}' wx:key='doc'>
+        <view class="pddOne">
+          <view>
+            <text>订单号:{{item.orderSn}}</text>
+            <text class="copy" bindtap='copyTextJd' data-text="{{item.orderSn}}">复制</text>
+          </view>
+          <view style="color:#C82519;" wx:if='{{item.status == 0}}'>待到账</view>
+          <view style="color:#C82519;" wx:if='{{item.status == 1 }}'>已到账</view>
+
+          <view style="color:#C82519;" wx:if='{{item.status == 2 }}'>已失效</view>
+          <view style="color:#C82519;" wx:if='{{item.status == 3 }}'>已失效(退款)</view>
+        </view>
+        <view class="lineN"></view>
+        <view class="pddTwo" bindtap="goJdDetail" data-id="{{item.goodsId}}">
+          <view>
+            <image class="pddTwoImg" src="{{item.goodsImg}}"></image>
+          </view>
+          <view>
+            <view class="conNt" style="width:">
+              <image class="pddImgN" src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-02-24\/10\/yuelvhuiV0xRpktMVt1582513012.png"></image>
+              <text>{{item.goodsName}}</text>
+            </view>
+            <view class="twoCons">
+              <view>付款金额</view>
+              <view>预估佣金</view>
+            </view>
+            <view class="twoConx">
+              <view>
+                <text class="rmb">￥</text>{{item.estimateCosPrice}}</view>
+              <view style="color:#C82519;">
+                <text class="rmb">￥</text>{{item.estimateFee}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="pddThree" bindtap="goJdDetail" data-id="{{item.goods_id}}">
+          <view>{{item.orderTime}}</view>
+          <!-- <view class="zhuanxiang">会员专享</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 物流信息 -->
+
+<view class="commodity_screenshowModal" bindtap="hideModal" wx:if="{{showModal}}"></view>
+<view animation="{{animationData}}" bindtap='' class="commodity_attr_boxshowModal" wx:if="{{showModal}}">
+  <view class="popup">
+    <view class="popupInfo">
+      <view class="info">
+        <view>运输状态：{{logistice_state}}</view>
+        <view>运输公司：{{logistice_company}}</view>
+        <view>运输单号：{{logistice_number}}</view>
+      </view>
+      <view class="DuplicateNum" bindtap='copyText' data-text="{{logistice_number}}">复制单号</view>
+    </view>
+    <image class='img' src="/images/personalCenter/popup.png"></image>
+    <image class='close' src="/images/personalCenter/close.png" bindtap="hideModal"></image>
+  </view>
+</view>
+<view class="commodity_screenshowModal" wx:if="{{isdel}}"></view>
+<view class="deletePopu" wx:if="{{isdel}}">
+  <view class="info">
+    <view class="tips">确认删除此订单？</view>
+    <view class="Inquiry">
+      <view class="cancel" bindtap="canceldelete">取消</view>
+      <view class="confirm" bindtap='confirm'>删除</view>
+    </view>
+  </view>
+</view>
+<!-- 平台客服 -->
+<image src="/images/personalCenter/CustomerService.png" bindtap="CustomerService" class="Customer_Service"></image>

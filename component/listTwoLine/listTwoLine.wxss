@@ -1,0 +1,136 @@
+.content {
+  margin: 0 auto;
+  width: 712rpx;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gopay{
+  width: auto;
+  height: 44rpx;
+  background: #1A1716;
+  padding: 2rpx 10rpx;
+  padding-right: 16rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 22rpx;
+}
+.gopay > image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 6rpx;
+}
+.list .info .pricebutton .price .gopay text{
+  color: #FFFEEF;
+  font-size: 24rpx;
+}
+
+.list {
+  width: 346rpx;
+  margin-bottom: 16rpx;
+  overflow: hidden;
+  /* height: 574rpx; */
+  background: #fff;
+  border-radius: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.list:nth-child(2n) {
+  margin-right: 0;
+}
+
+.list .info {
+  padding: 0 20rpx;
+}
+
+.list .image {
+  width: 346rpx;
+  height: 343rpx;
+  border-radius: 20rpx;
+}
+
+.list .info .describe {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 24rpx;
+  line-height: 30rpx;
+  margin: 16rpx 0;
+  font-family: PingFangSC-Regular;
+  font-weight: 600;
+  color: #000;
+  height: 60rpx;
+  margin-bottom: 10rpx;
+}
+
+.list .info .coupon {
+  padding: 0 10rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  border: 2rpx solid rgba(200, 37, 25, 1);
+  border-radius: 8rpx;
+  font-size: 20rpx;
+  color: #c82519;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 30rpx;
+}
+
+.list .info .pricebutton {
+  display: flex;
+  flex-direction: row;
+  color: #999;
+  font-size: 24rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list .info .pricebutton .price .Company {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #B1291A;
+}
+
+.list .info .pricebutton .price text {
+  font-size: 38rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #B1291A;
+}
+
+.list .info .pricebutton .price .OriginalPrice {
+  font-size: 16rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: #b4b4b4;
+  margin-left: 18rpx;
+}
+
+.MustBuy {
+  width: 295rpx;
+  height: 49rpx;
+  background: rgba(217, 53, 59, 1);
+  border-radius: 25rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6rpx;
+}
+
+.MustBuy image {
+  width: 26rpx;
+  height: 22rpx;
+  margin-right: 9rpx;
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "暖心圣诞节",
+  "usingComponents": {
+    "redPopup": "/component/redPopup/redPopup"
+  }
+}

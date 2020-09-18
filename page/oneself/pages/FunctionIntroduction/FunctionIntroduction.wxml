@@ -1,0 +1,7 @@
+<view style="background-color:{{color}}" class="content">
+  <image src="{{image}}" mode="widthFix"></image>
+  <view class="MyreCode" wx:if="{{type == 4}}">
+    <view>我的邀请码</view>
+    <view class="code">{{MyreCode}}</view>
+  </view>
+</view>

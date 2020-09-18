@@ -1,0 +1,60 @@
+<!--page/Yuemall/pages/JDclassification/JDclassification.wxml-->
+<!-- 优惠券弹框 -->
+<couponPopup  id="couponPopup" inner-text="{{list}}"></couponPopup>
+<import src="/page/LoadingPopup/LoadingPopup.wxml" />
+<block wx:if="{{LoadingStatus}}">
+  <template is="LoadingPopup"/>
+</block>
+<view class="searchVessel">
+  <view class="search" bindtap='search'>
+    <image src="/images/YueMall/search.png"></image>
+    <view wx:if="{{channelId == 3}}">搜索京东自营商品</view>
+    <view wx:elif="{{channelId == 1}}">搜索寺库商品</view>
+    <view wx:else>搜索网易考拉商品</view>
+  </view>
+</view>
+<view class='classification'>
+  <scroll-view class='ClassA' scroll-y="true" scroll-x='false' style="height:{{secondLevelheight}}px;">
+    <view class="title {{classAID == item.goodTypeId?'active':''}}" wx:for="{{classA}}" wx:key="classA" data-id="{{item.goodTypeId}}" bindtap='classA'>
+      <view class="border" wx:if="{{classAID == item.goodTypeId}}"></view>
+      <view class="name" style="color:{{classAID == item.goodTypeId?'':''}};font-size:{{classAID == item.goodTypeId?'24rpx':''}}">{{item.goodTypeName}}</view>
+    </view>
+  </scroll-view>
+  <scroll-view class='secondLevel' scroll-y style="height:{{secondLevelheight}}px;">
+    <image class="banner" wx:if="{{banner.url}}" src="{{banner.url}}" bindtap='classificationList' data-hotid="{{item.id}}" data-typeid="{{item.typeid}}" data-name="{{item.name}}" data-redirecttype="{{item.redirectType}}" data-id="{{item.id == undefined?item.parentTypeId:item.id}}"
+      data-channelid="{{item.channelId}}"></image>
+    <!-- <view class="total">共1234件商品</view> -->
+
+    <bolck>
+      <view class="secondLevelItem" wx:if="{{brand != ''}}">
+        <view class="title">
+          <view>推荐品牌</view>
+        </view>
+        <view class="ification">
+          <view class="item" style="border: 1px solid #f6f6f6;width:32%;padding-top:15rpx;padding-bottom:15rpx" wx:for="{{brand}}" bindtap="classificationList" data-redirecttype="49" data-id="{{item.brandId}}" data-name="{{item.brandName}}" wx:key="brand" data-brandid='{{item.brandId}}'>
+            <image src="{{item.brandImg}}"></image>
+          </view>
+        </view>
+      </view>
+      <view class="border"></view>
+    </bolck>
+    <bolck wx:for="{{secondLevelItem}}" wx:for-item="secondLevel" wx:key="secondLevelItem" wx:for-index="index">
+      <view class="secondLevelItem">
+        <view class="title">
+          <view>{{secondLevel.title}}</view>
+          <!-- <view class="time" wx:if="{{index == 0}}">更新于1分钟前</view> -->
+        </view>
+        <view class="ification">
+          <view class="item" wx:for="{{secondLevel.ThreeLevel}}" data-aid="{{secondLevel.titleId}}" data-name="{{item.goodTypeName}}" bindtap='JDList' data-categorysecondid="{{secondLevel.titleId}}" data-id="{{item.goodTypeId}}" wx:key="Level">
+            <image src="{{item.goodTypeImg}}"></image>
+            <view style="width:124rpx;">
+              <text>{{item.goodTypeName}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="border"></view>
+    </bolck>
+
+  </scroll-view>
+</view>

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "结算",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "my-code": "../AlertCom/code/index",
+    "my-moneypsw": "../AlertCom/moneyPsw/index",
+    "my-nowpsw": "../AlertCom/nowPsw/index"
+  }
+}

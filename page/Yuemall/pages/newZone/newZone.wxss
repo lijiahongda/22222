@@ -1,0 +1,197 @@
+/* page/Yuemall/pages/newZone/newZone.wxss */
+page{
+  background: #B02F33;
+}
+.top{
+  width: 100%;
+  height: 828rpx;
+}
+.pri{
+  position: absolute;
+  top: 26%;
+  left:59%;
+  color: #7E4E21;
+  font-size: 32rpx;
+}
+.title{
+  position: absolute;
+  width: 296rpx;
+  height: 37rpx;
+  left: 30%;
+  top: 64%;
+}
+.box{
+  position: absolute;
+  top: 42%;
+  padding:0 20rpx;
+  z-index: 100;
+  width: 710rpx;
+}
+.txt  {
+  width: 350rpx;
+  height: 58rpx;
+  margin: 10rpx auto 30rpx;
+}
+.txt image {
+  width: 100%;
+  height: 100%;
+}
+.couponBox{
+  position: absolute;
+  top: 35%;
+  left: 24rpx;
+  width: 702rpx;
+  height: 200rpx;
+}
+.coupon{
+  width: 100%;
+  height: 100%;
+}
+.con{
+  position: absolute;
+  top: 43%;
+  left: 15%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.con .btn{
+  font-size: 24rpx;
+  /* margin-left: 5%; */
+}
+.new{
+  color: #141414;
+  font-size: 32rpx;
+  font-family:PingFang SC;
+  font-weight:500
+}
+.conLeft{
+  display: flex;
+  align-items: center ;
+  color: #C12F32;
+  font-size: 50rpx;
+}
+.conLeft view:nth-child(2){
+  font-size: 88rpx;
+}
+.explosive{
+  background: #fff;
+  border-radius:16rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  margin-bottom: 18rpx;
+}
+.left{
+  width:220rpx;
+  height:220rpx;
+}
+.right{
+  width:64%;
+}
+.goodName{
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 72rpx;
+}
+ .progress{
+  width: 100%;
+  color: #E24745;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 16rpx;
+}
+ .progress .line{
+  width: 204rpx;
+  height: 18rpx;
+  background: #F8E8EB;
+  border-radius: 10rpx;
+  border: 2rpx solid #DA4643;
+  margin-right: 13rpx;
+}
+ .progress .line view{
+  height: 100%;
+  background: #DA4643;
+  border-radius: 10rpx;
+}
+.price{
+  color: #C82519;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 30rpx;
+}
+.priLeft{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.btn{
+  width:140rpx;
+  height:58rpx;
+  background:rgba(218,70,67,1);
+  border-radius:16rpx;
+  line-height: 58rpx;
+  text-align: center;
+  color: #fff;
+}
+.old{
+  text-decoration: line-through;
+  color:#999999;
+  margin-left:10rpx;
+}
+.new{
+  font-size: 38rpx;
+  line-height: 35rpx;
+  margin-bottom: 10rpx;
+}
+.none{
+  color: #fff;
+  text-align: center;
+  margin: 10% 0;
+  width: 100%;
+}
+.received{
+  position: absolute;
+  right: 10%;
+  top: 39%;
+}
+.received image{
+  width: 136rpx;
+  height: 136rpx;
+}
+.djs {
+  position: absolute;
+  top: 22%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family:PingFang SC;
+  font-weight:400;  
+  color: #fff;
+  font-size: 32rpx;
+  margin: 20rpx 0;
+}
+.hour {
+  width: 54rpx;
+  height: 50rpx;
+  background: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-07/21/yuelvhuiLambfXC6xN1586266831.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  line-height: 50rpx;
+  text-align: center;
+  color: #141414;
+  font-size: 32rpx;
+  box-shadow:0 10rpx 5rpx 0 rgba(204,26,14,0.14);
+  border-radius:8rpx;
+  margin: 0  10rpx;
+}

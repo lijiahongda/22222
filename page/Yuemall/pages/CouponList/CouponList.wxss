@@ -1,0 +1,75 @@
+/* page/Yuemall//pages/CouponList/CouponList.wxss */
+
+.content {
+  width: 94%;
+  margin-left: 3%;
+}
+
+.list {
+  background-size: 100%;
+  height: 167rpx;
+  background-repeat: no-repeat;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.list .info {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-left: 21%;
+}
+
+.list .info .title {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 19rpx;
+}
+
+.list .info .FullReduction {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: 19rpx;
+}
+
+.list .info .FullReduction .price {
+  font-size: 60rpx;
+}
+
+.list .info .FullReduction .Company {
+  font-size: 18rpx;
+  margin-bottom: 10rpx;
+}
+
+.list .button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 39%;
+}
+
+.list .button view {
+  height: 56rpx;
+  padding-left: 28rpx;
+  padding-right: 18rpx;
+  background: rgba(255, 33, 80, 1);
+  border-radius: 28rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}

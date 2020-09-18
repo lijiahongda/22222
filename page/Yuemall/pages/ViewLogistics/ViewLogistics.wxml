@@ -1,0 +1,27 @@
+<!--page/Yuemall//pages/ViewLogistics/ViewLogistics.wxml-->
+<view class="LogisticsInfo">
+  <view class="ItemRight">
+    <view class="image">
+      <image src="{{img}}"></image>
+    </view>
+    <view class="describe">
+      <view class="title">
+        <text>{{name}}</text>
+      </view>
+      <view class="Specifications">数量：{{num}} 规格：{{spec}}</view>
+      <view class="price">
+        <text>￥</text>{{price}}
+      </view>
+    </view>
+  </view>
+  <view bindtap='copyText' data-text="{{list.logistice_number}}">物流单号 ：{{list.logistice_number}}</view>
+  <view>物流公司 ：{{list.logistice_company}}</view>
+</view>
+<view class="LogisticsDetail">
+  <view class="list" wx:for="{{list.logistice_info}}" wx:key="logistice_info">
+    <view>{{item.status}}</view>
+    <view>{{item.context}}</view>
+    <view class="time">{{item.time}}</view>
+
+  </view>
+</view>

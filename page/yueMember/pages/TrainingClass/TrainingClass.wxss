@@ -1,0 +1,91 @@
+/* page/yueMember/pages/TrainingClass/TrainingClass.wxss */
+
+page {
+  background-color: #f4f4f4;
+}
+
+.swiper-box {
+  width: 100%;
+  height: 210rpx;
+  background-color: #ffac49;
+}
+
+.swiper-box image {
+  width: 100%;
+  height: 210rpx;
+}
+
+.ClassContent {
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #fff;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.ClassContent .item {
+  width: 31.8%;
+  border-radius: 10rpx;
+  height: 110rpx;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-bottom: 15rpx;
+}
+
+.listContent {
+  background-color: #fff;
+  padding-left: 2.6%;
+  padding-right: 2.6%;
+  width: 94.8%;
+}
+
+.listContent .list {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.listContent .list image {
+  width: 200rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+  background-color: #eee;
+  margin-right: 29rpx;
+}
+
+.listContent .list .info {
+  display: flex;
+  flex-direction: column;
+  width: 66%;
+}
+
+.listContent .list .info .title text {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(17, 17, 17, 1);
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.listContent .list .info .time {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(17, 17, 17, 1);
+  margin-top: 38rpx;
+}
+

@@ -1,0 +1,33 @@
+
+<!--page/oneself/pages/myWalletContent/myWalletContent.wxml-->
+<view class="Commission">
+  <view class="HistoricalCommission">
+    <image src="{{member.avatar}}"></image>
+    <view class="AccumulatedAmount">{{member.name}}</view>
+    <view class="myPush">{{team.total}}<text style="font-size:30rpx">人</text></view>
+  </view>
+</view>
+<view class="list" wx:for="{{order}}" wx:key="order" bindtap='MyPush'>
+  <view class="PersonnelInfo">
+    <view>
+      <image src="{{item.avatar}}"></image>
+    </view>
+    <view class="info">
+      <view class="name">
+        <view class="nameText">
+          <text>{{item.name}}</text>
+        </view>
+        <!-- <view class="series">{{item.mobile}}</view> -->
+      </view>
+      <view class="time">{{item.createTime}}</view>
+      <view>{{item.mobile}}</view>
+    </view>
+  </view>
+  <view class="StatusSum">
+    <!-- <image src="/images/memberInformation/right.png"></image> -->
+    <view class="Amount">
+      {{item.joinTime}}
+    </view>
+  </view>
+</view>
+

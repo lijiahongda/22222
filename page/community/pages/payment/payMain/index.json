@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "消费余额",
+  "usingComponents": {
+    "my-code": "../component/code/index",
+    "my-moneypsw": "../component/moneyPsw/index",
+    "my-nowpsw": "../component/nowPsw/index",
+    "my-other": "../component/otherPrice/index",
+    "my-agreement": "../component/agreement/index"
+  }
+}

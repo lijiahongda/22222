@@ -1,0 +1,115 @@
+
+<view class="top_cont">
+  <view>{{coinInfo.available}}</view>
+  <view style="font-size:24rpx;">剩余悦豆</view>
+</view>
+
+
+<view class="content">
+  <view class="top">
+    <view class="top_list" bindtap="bean" data-type='0' data-num="{{coinInfo.total}}">
+      <view class="number">
+        <view>{{coinInfo.total}}</view>
+        <view style="font-size:20rpx;">历史累计悦豆</view>
+      </view>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-09/16/yuelvhui1CvNyy5ICG1575879144.png"></image>
+    </view>
+    <view class="top_list" bindtap="bean" data-type='3' data-num="{{coinInfo.available}}">
+      <view class="number">
+        <view>{{coinInfo.available}}</view>
+        <view style="font-size:20rpx;">即将到期悦豆</view>
+      </view>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-09/16/yuelvhui1CvNyy5ICG1575879144.png"></image>
+    </view>
+    <view class="top_list" bindtap="bean" data-type='2' data-num="{{coinInfo.consume}}">
+      <view class="number">
+        <view>{{coinInfo.consume}}</view>
+        <view style="font-size:20rpx;">消耗悦豆</view>
+      </view>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-09/16/yuelvhui1CvNyy5ICG1575879144.png"></image>
+    </view>
+  </view>
+
+  <view class="title_top">
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-09/19/yuelvhuiF58TBUduBN1575890316.png"></image>
+    <view>旅游产品</view>
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-09/19/yuelvhui8azN0jXm0h1575890296.png"></image>
+  </view>
+  <view class="ContentArea">
+    <view class="flex_list">
+      <view class="item" wx:for="{{travel}}" wx:for-index="index" wx:key="index" wx:if="{{index%2==0}}" data-goodsid="{{item.goodsId}}" bindtap='details' data-skuid="{{item.skuId}}">
+        <view class="shopImageLeft">
+          <image class="" src="{{item.goodsImg}}"></image>
+        </view>
+        <view class="itemInfo">
+          <view class="title">
+            <text>{{item.goodsName}}</text>
+          </view>
+          <view class="describe">
+            <text>{{item.goodsInfo}}</text>
+          </view>
+          <view>
+            <view class="price" wx:if="{{item.type == 0}}">
+              <view>{{item.integralPrice}}悦豆</view>
+            </view>
+            <view class="price" wx:else>
+              <view>{{item.integralPrice}}悦豆+￥{{item.integralCash}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="flex_list">
+      <view class="item" wx:for="{{travel}}" wx:for-index="index" wx:key="index" wx:if="{{index%2!=0}}" data-goodsid="{{item.goodsId}}" bindtap='details' data-skuid="{{item.skuId}}">
+        <view class="shopImageLeft">
+          <image class="" src="{{item.goodsImg}}"></image>
+        </view>
+        <view class="itemInfo">
+          <view class="title">
+            <text>{{item.goodsName}}</text>
+          </view>
+          <view class="describe">
+            <text>{{item.goodsInfo}}</text>
+          </view>
+          <view>
+            <view class="price" wx:if="{{item.type == 0}}">
+              <view>{{item.integralPrice}}悦豆</view>
+            </view>
+            <view class="price" wx:else>
+              <view>{{item.integralPrice}}悦豆+￥{{item.integralCash}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="title_top">
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-09/19/yuelvhuiF58TBUduBN1575890316.png"></image>
+    <view>生活服务</view>
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-09/19/yuelvhui8azN0jXm0h1575890296.png"></image>
+  </view>
+  <view class="content_list">
+    <view class="item" wx:for="{{life}}" wx:key="life" data-goodsid="{{item.goodsId}}" bindtap='details' data-skuid="{{item.skuId}}">
+      <view class="shopImageLeft">
+        <image mode="aspectFill" class="" src="{{item.goodsImg}}"></image>
+      </view>
+      <view class="itemInfo">
+        <view class="title">
+          <text>{{item.goodsName}}</text>
+        </view>
+        <view class="describe">
+          <text>{{item.goodsInfo}}</text>
+        </view>
+        <view>
+          <view class="price" wx:if="{{item.type == 0}}">
+            <view>{{item.integralPrice}}悦豆</view>
+          </view>
+          <view class="price" wx:else>
+            <view>{{item.integralPrice}}悦豆+￥{{item.integralCash}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

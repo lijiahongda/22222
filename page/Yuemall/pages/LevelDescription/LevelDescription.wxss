@@ -1,0 +1,96 @@
+/* page/Yuemall/pages/LevelDescription/LevelDescription.wxss */
+page{
+  background-color: #ECECEC
+}
+.CurrentLevel{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+.CurrentLevel .Level{
+  display: flex;
+  flex-direction: row;
+  font-size: 36rpx;
+  color: #3CCBFD;
+}
+.CurrentLevel .Level .title{
+  color: #000;
+}
+.CurrentLevel .Surplus{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #000;
+  font-size: 30rpx;
+}
+.CurrentLevel .Surplus image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 17rpx;
+  margin-right: 17rpx;
+}
+.list{
+  width: 88%;
+  background-color: #fff;
+  margin-left: 4%;
+  margin-right: 4%;
+  padding-left: 2%;
+  padding-right: 2%;
+  height: 180rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx
+}
+.list .image image{
+  width: 99rpx;
+  height: 99rpx;
+  margin-right: 55rpx;
+}
+.list .info{
+  display: flex;
+  flex-direction: column
+}
+.list .info .title{
+  font-size: 36rpx;
+  margin-bottom: 8rpx;
+}
+.list .info .condition{
+  color: #999;
+  font-size: 30rpx;
+}
+.describe{
+  width: 84%;
+  padding-left:4%;
+  padding-right: 4%;
+  margin-left:4%;
+  margin-right: 4%;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding-top: 15rpx;
+  padding-bottom: 30rpx;
+  margin-bottom: 20rpx
+}
+.membertitle{
+  color:#000;
+  font-size: 36rpx;
+  margin-left: 4%;
+  margin-bottom: 20rpx;
+  /* margin-top: 20rpx; */
+}
+.item{
+  display: flex;
+  flex-direction: column;
+  font-size: 30rpx;
+}
+.item .title{
+  font-size: 36rpx;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx
+}

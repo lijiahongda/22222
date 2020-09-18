@@ -1,0 +1,5 @@
+/* page/oneself/pages/growthRule/growthRule.wxss */
+image{
+  width: 100%;
+  display: block;
+}

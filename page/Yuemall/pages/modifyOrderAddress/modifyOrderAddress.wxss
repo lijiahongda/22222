@@ -1,0 +1,269 @@
+page {
+  background-color: #eee;
+}
+
+.tips {
+  width: 94.6%;
+  margin-left: 2.7%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  height: 50rpx;
+  background: rgba(255, 244, 205, 1);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tips .tipsinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(237, 123, 0, 1);
+}
+
+.tips .tipsinfo image {
+  width: 21rpx;
+  height: 24rpx;
+  margin-right: 20rpx;
+  margin-left: 30rpx;
+}
+
+.tips .close {
+  width: 18rpx;
+  height: 17rpx;
+  margin-right: 26rpx;
+}
+
+.editAddress {
+  background-color: #fff;
+  height: 100%;
+  padding-bottom: 20rpx;
+}
+
+.favourable {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.favourable .titlewai {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(2, 0, 0, 1);
+  margin-top: 30rpx;
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 23rpx;
+}
+
+.favourable .item {
+  width: 90%;
+  margin: auto;
+  height: 106rpx;
+  line-height: 100rpx;
+  color: rgb(51, 51, 51);
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.favourable .item image {
+  width: 26rpx;
+  height: 10rpx;
+}
+
+.PcAt text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #999;
+}
+
+.textareaitem {
+  width: 90%;
+  margin: auto;
+  line-height: 100rpx;
+  color: rgb(51, 51, 51);
+  font-size: 30rpx;
+  display: flex;
+  justify-content: row;
+  z-index: 0rpx;
+}
+
+.Remarks {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(158, 158, 158, 1);
+  margin-top: 25rpx;
+  margin-left: 5%;
+}
+
+.textareaitem .title {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(140, 140, 140, 1);
+}
+
+.favourable .item .title {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(140, 140, 140, 1);
+}
+
+.borderBottom {
+  border-bottom: 1px solid #ececec;
+}
+
+.detailed {
+  height: 100rpx;
+  color: #020000;
+}
+
+.check {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 60rpx;
+  align-items: center;
+}
+
+.check image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.footr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 69.6%;
+  margin: auto;
+  line-height: 68rpx;
+  text-align: center;
+  margin-top: 80rpx;
+  height: 68rpx;
+}
+
+.settle {
+  width: 100%;
+  height: 68rpx;
+  background: linear-gradient(0deg, rgba(255, 86, 84, 1) 0%, rgba(247, 48, 55, 1) 100%);
+  border-radius: 34px;
+  color: #fff;
+}
+
+.settle .address {
+  line-height: 68rpx;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+}
+
+textarea {
+  width: 70%;
+  /* margin-top: 35rpx; */
+  height: 150rpx;
+  z-index: 1000;
+}
+
+/* 所在地区 */
+
+.commodity_screenlong {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1200;
+  color: #fff;
+}
+
+.commodity_attr_boxlong {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10000;
+  padding-top: 20rpx;
+  height: 92%;
+  background-color: #fff;
+}
+
+.commodity_attr_boxlong .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #333;
+  font-size: 36rpx;
+  margin-bottom: 35rpx;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.commodity_attr_boxlong .item {
+  border-bottom: 1px solid #ededed;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 20rpx;
+  color: #ff6032;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.commodity_attr_boxlong .item view {
+  margin-right: 30rpx;
+}
+
+.commodity_attr_boxlong .title image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.commodity_attr_boxlong .region {
+  padding-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.commodity_attr_boxlong .region .regionList {
+  display: flex;
+  flex-direction: row;
+  color: #333;
+  font-size: 24rpx;
+  margin-bottom: 40rpx;
+  align-items: center;
+}
+
+.commodity_attr_boxlong .region .regionList .active {
+  color: #ff6032;
+}
+
+.commodity_attr_boxlong .region .regionList image {
+  width: 28rpx;
+  height: 20rpx;
+  margin-left: 20rpx;
+}

@@ -1,0 +1,34 @@
+<!--page/MobileRecharge/pages/orders/orders.wxml-->
+<!-- 横排分类 -->
+<view class="line-class">
+  <view bindtap="choseClass" wx:for="{{type_value}}" wx:for-index="index" wx:key="index" data-index="{{index}}" data-id="{{item.id}}" class="{{choseCIndex==index?'active':''}}" >{{item.name}}</view>
+</view>
+
+<!-- 订单列表 -->
+<view class="order-list">
+  <view class="item">
+    <image></image>
+    <view>
+      <view class="header">
+        <text class="name">花花</text>
+        <text class="status success">已充值</text>
+      </view>
+      <text class="phone-number">17888883333</text>
+      <text class="money">面值：20元</text>
+    </view>
+  </view>
+  <view class="item">
+    <image></image>
+    <view>
+      <view class="header">
+        <text class="name">花花</text>
+        <text class="status error">待付款</text>
+      </view>
+      <text class="phone-number">17888883333</text>
+      <view class="footer">
+        <text class="money">面值：20元</text>
+        <button>去支付</button>
+      </view>
+    </view>
+  </view>
+</view>

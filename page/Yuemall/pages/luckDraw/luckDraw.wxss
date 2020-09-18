@@ -1,0 +1,637 @@
+/* page/Yuemall/pages/luckDraw/luckDraw.wxss */
+
+page {
+  background-color: #f4f6f6;
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.top {
+  height: 68rpx;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  padding-left: 25rpx;
+}
+
+.leftB {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topLeft image {
+  width: 48rpx;
+  height: 48rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+}
+
+.topCenter {
+  padding: 0 10rpx;
+  float: right;
+}
+
+.topRight {
+  width: 145rpx;
+  height: 68rpx;
+  background: rgba(255, 53, 70, 1);
+  border-radius: 34px 0px 0px 34px;
+  line-height: 68rpx;
+  text-align: center;
+}
+
+.content {
+  /* margin-bottom: 200rpx; */
+  margin-top: 20rpx;
+  padding: 0 24rpx;
+}
+
+.goodList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.InviteFriends {
+  width: 380rpx;
+  height: 88rpx;
+  border-radius: 44rpx;
+  background: #ca2519;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 88rpx;
+  margin: 0 auto;
+}
+
+button[class="con_listbox"]::after {
+  border: 0;
+}
+
+button {
+  width: 100%;
+  height: 88rpx;
+  background-color: #fff;
+  border: 0;
+  padding: 0;
+  border-color: #fff;
+  box-shadow: 0;
+  line-height: 88rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.conB {
+  padding: 0 20rpx;
+  background-color: #fff;
+  border-radius: 18rpx;
+  width: 662rpx;
+  margin: 20rpx auto;
+}
+
+.first {
+  height: 76rpx;
+  line-height: 76rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.open {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(236, 2, 49, 1);
+}
+
+.commander {
+  width: 32rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
+}
+
+.goodInfo {
+  background-color: #fff;
+  width: 342rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  border-radius: 18rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+}
+
+.goodInfoH {
+  display: flex;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.goodInfoH .goodsImg {
+  width: 260rpx;
+  height: 260rpx;
+  margin-right: 24rpx;
+}
+
+.goodInfo .goodsImg {
+  width: 302rpx;
+  height: 302rpx;
+  /* background: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-19/14/yuelvhuiU8Luv9ia7f1576736515.png); */
+  background-size: 243rpx 243rpx;
+}
+
+.goodInfo .info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.goodInfo .info .title text {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #141414;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 20rpx;
+  height: 90rpx;
+}
+
+.goodInfoH .info .title text {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #141414;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10rpx;
+}
+
+.goodInfoH .info .introduction text, .goodInfo .info .introduction text {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #666;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  width: 302rpx !important;
+}
+
+.goodInfo .info .groupInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.groupInfoCon {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.goodInfo .info .groupInfo .price {
+  font-size: 38rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #c82519;
+}
+
+.goodInfo .info .groupInfo .price text {
+  font-size: 24rpx;
+}
+
+.goodInfo .info .OriginalPrice {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: #bbb;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}
+
+.ClusteringNum {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999;
+}
+
+.ClusteringNum .num {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120rpx;
+  height: 56rpx;
+  border-radius: 28rpx 0px 0px 28rpx;
+}
+
+.rob {
+  width: 120rpx;
+  height: 48rpx;
+  border-radius: 24rpx;
+  background: linear-gradient(90deg, rgba(255, 51, 71, 1), rgba(254, 98, 51, 1));
+  box-shadow: 0px 5px 15px 0px rgba(255, 53, 70, 0.3);
+}
+
+.rob image {
+  width: 100%;
+  height: 100%;
+}
+
+.priceH {
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(202, 37, 25, 1);
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Invitationl {
+  width: 58rpx;
+  height: 57rpx;
+  border-radius: 50%;
+  margin-left: -29rpx;
+}
+
+.Invitationl image {
+  width: 58rpx;
+  height: 57rpx;
+  border-radius: 50%;
+}
+
+.Invitationl:nth-child(1) {
+  margin-left: 0;
+}
+
+.squ {
+  width: 46rpx;
+  height: 40rpx;
+  background: rgba(0, 0, 0, 1);
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 40rpx;
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.txtB {
+  margin-left: 10rpx;
+  color: rgba(236, 2, 49, 1);
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+}
+
+.red {
+  font-size: 26rpx;
+}
+
+.participate {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 10rpx;
+}
+
+.groupInfoH {
+  display: flex;
+}
+
+.isHaveMore {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 40rpx;
+  margin-bottom: 115rpx;
+}
+
+/* 底部 */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 22rpx;
+  color: rgb(155, 155, 155);
+  position: fixed;
+  background-color: #fff;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1990;
+  height: 98rpx;
+  border-top: 2rpx solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.footer > .left {
+  width: 50%;
+  height: 100%;
+  color: #999;
+  font-size: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.footer > .left > image {
+  width: 44rpx;
+  height: 44rpx;
+  margin-bottom: 8rpx;
+}
+
+.footer > .left .shopNum {
+  position: absolute;
+  top: 4rpx;
+  right: 0rpx;
+  width: 34rpx;
+  height: 34rpx;
+  color: #fff;
+  background: #f22300;
+  text-align: center;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  border-radius: 50%;
+}
+
+.scoll-h {
+  height: 100%;
+  position: relative;
+}
+
+.invitation {
+  width: 531rpx;
+  height: 80rpx;
+  background: #ca2519;
+  border-radius: 40rpx;
+  margin: 20rpx auto;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+}
+
+/* 暂无商品 */
+
+.NoCommodityData {
+  width: 100%;
+  padding-top: 150rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #b3b3b3;
+}
+
+.NoCommodityData image {
+  width: 172rpx;
+  height: 166rpx;
+  margin-bottom: 44rpx;
+}
+
+.assembleB {
+  /* margin-bottom: 400rpx; */
+}
+
+.swiper {
+  width: 100%;
+  height: 70rpx;
+  margin-bottom: 230rpx;
+}
+
+.swiper swiper {
+  width: 702rpx;
+  margin: 0 auto;
+  height: 300rpx;
+  border-radius: 16px;
+}
+
+.swiper swiper image {
+  width: 100%;
+  height: 278rpx;
+  border-radius: 16rpx;
+}
+
+.couponModel {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.con {
+  width: 520rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 18rpx;
+  margin: 267rpx 75rpx 0 75rpx;
+  padding: 40rpx 30rpx 36rpx 30rpx;
+}
+
+.tit {
+  text-align: center;
+  margin-bottom: 60rpx;
+  color: rgba(20, 20, 20, 1);
+  font-size: 36rpx;
+}
+
+.swiper-pt {
+  width: 352rpx;
+  height: 32rpx;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8rpx;
+  position: absolute;
+  top: 650rpx;
+  left: 25rpx;
+  font-size: 24rpx;
+  color: #fff;
+  padding: 8rpx 10rpx;
+  overflow: hidden;
+}
+
+.slide-imagePt {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.txtPt {
+  width: 330rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.infoH {
+  width: 250rpx !important;
+  font-size: 26rpx;
+}
+
+.fewPeopleH {
+  color: rgba(153, 153, 153, 1);
+}
+
+.authorizationStatus {
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+}
+
+.popup {
+  z-index: 9;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popup-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  max-width: 600rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 20rpx;
+  box-sizing: bordre-box;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 35rpx;
+}
+
+.user {
+  margin-top: -60rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.user image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.shop {
+  width: 320rpx;
+  height: 320rpx;
+}
+
+.shop image {
+  width: 100%;
+  height: 100%;
+}
+
+.draw {
+  width: 520rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: rgba(236, 2, 49, 1);
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  text-align: center;
+  color: #fff;
+  margin-top: 37rpx;
+}
+
+.drawN {
+  width: 520rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  text-align: center;
+  color: #fff;
+  margin-top: 37rpx;
+  background: #ccc;
+}
+
+.name {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  margin: 32rpx 0 18rpx;
+}
+
+.zhuli {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(20, 20, 20, 1);
+  margin-bottom: 40rpx;
+}
+
+.sign{
+  position: absolute;
+  top: 0;
+  width: 260rpx;
+  height: 260rpx;
+  background:rgba(255,255,255,.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sign image{
+  margin: aoto;
+  width:150rpx;
+  height:150rpx
+}

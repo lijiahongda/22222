@@ -1,0 +1,126 @@
+<!--page/oneself/pages/myWalletContent/myWalletContent.wxml-->
+<import src="../../../../wxParse/wxParse/wxParse.wxml" />
+ <!-- 弹窗组件 -->
+  <view class="alert" wx:if="{{alertShow}}">
+    <my-code id="myCode" bindclosealert="closeAlert" bindnextCom="nextAlert" wx:if="{{comIndex==0}}" userPhone="{{userMsg.mobile}}"></my-code>
+    <my-moneypsw wx:if="{{comIndex==1}}" bindclosealert="closeAlert" bindnextCom="nextAlert"></my-moneypsw>
+    <my-nowpsw wx:if="{{comIndex==2}}" bindclosealert="closeAlert" bindnextCom="nextAlert"></my-nowpsw>
+    <my-other wx:if="{{comIndex==3}}" bindclosealert="closeAlert" bindnextCom="nextAlert"></my-other>
+    <my-agreement wx:if="{{comIndex==4}}" bindclosealert="closeAlert" bindnextCom="nextAlert" textValue="{{textValue}}"></my-agreement>
+  </view>
+<view class="Commission">
+  <view class="HistoricalCommission">
+    <view class="AccumulatedAmount">
+      <text>￥</text>{{data.historyBalance}}</view>
+    <view class="title">累计收益</view>
+  </view>
+  <view class="CommissionsDescription" bindtap="Division" data-statu="open">结算记录</view>
+</view>
+<view class="FunctionalCommission">
+  <view class="Division" bindtap='Division' data-statu="open" style="border-top-left-radius: 10rpx;border-top-right-radius: 10rpx">
+    <view class="title">可提收益</view>
+    <view class="price">
+      <view>￥{{data.balance}}</view>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-20/22/yuelvhuix4yet28hHu1582208093.png"></image>
+    </view>
+  </view>
+  <view class="Division" bindtap="Division" data-statu="open">
+    <view class="title">采购结算</view>
+    <view class="price">
+      <view>￥{{data.gPackage}}</view>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-20/22/yuelvhuix4yet28hHu1582208093.png"></image>
+    </view>
+  </view>
+  <view class="Division" bindtap='toPage' data-statu="open" style="border-bottom-left-radius: 10rpx;border-bottom-right-radius: 10rpx">
+    <view class="title">销售结算</view>
+    <view class="price">
+      <view>￥{{data.sale}}</view>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-20/22/yuelvhuix4yet28hHu1582208093.png"></image>
+    </view>
+  </view>
+  <view class="Division" bindtap='openPayment' data-statu="open" style="border:0;border-bottom-left-radius: 10rpx;border-bottom-right-radius: 10rpx">
+    <view class="title">消费余额</view>
+    <view class="price">
+      <view>￥{{data.balanceMoney}}</view>
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-20/22/yuelvhuix4yet28hHu1582208093.png"></image>
+    </view>
+  </view>
+</view>
+<view class="wxParse" wx:if="{{false}}">
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
+<!-- <view class="contentList">
+  <view class="tab-h">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">一度人脉
+    </view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">二度人脉
+    </view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">潜在人脉
+    </view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">消费返佣
+    </view>
+  </view>
+  <view class="LyingEarn" wx:if="{{currentTab == 3}}">
+    <view class="item">
+      <view class="title">3日内躺赚</view>
+      <view class="price">￥{{daySum7}}</view>
+    </view>
+    <view class="item">
+      <view class="title">30天躺赚</view>
+      <view class="price">￥{{daySum30}}</view>
+    </view>
+    <view class="item">
+      <view class="title">12个月内躺赚</view>
+      <view class="price">￥{{monthSum12}}</view>
+    </view>
+  </view>
+  <view class="tab-content" bindchange="switchTab">
+    <block wx:if="{{order == ''}}">
+      <view class="NoIncome">
+        <image src="/images/hotel/NoDataAvailable.png"></image>
+        <view>暂无收入，您需要加油哦~</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="list" wx:for="{{order}}" wx:key="order">
+        <view class="PersonnelInfo">
+          <view>
+            <image src="{{item.headerUrl}}"></image>
+          </view>
+          <view class="info">
+            <view class="name">
+              <view class="nameText">
+                <text>{{item.trueName}}</text>
+              </view>
+              <view class="series">{{item.levelName}}</view>
+            </view>
+            <view class="time">{{item.createTime}}</view>
+            <view>
+              <text style=" word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;text-overflow: ellipsis;">{{item.content}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="StatusSum">
+          <view class="Amount" wx:if="{{item.action2 == 1}}">潜在佣金：
+            <text>￥{{item.amount}}</text>
+          </view>
+          <view class="Amount" style="color:#0A6AEB" wx:elif="{{item.action2 == 2}}">可提佣金：
+            <text>￥{{item.amount}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view> -->
+
+
+
+<view class="commodity_screenshowModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+  <view class="drawer_content">
+    <view>您好，小程序暂不提供提现服务，请在
+      <text style="color:#FF4C45">”悦淘“</text>微信公众号中下载APP或者在各大应用市场搜索
+      <text style="color:#FF4C45">”悦淘“</text>进行下载提现 </view>
+  </view>
+</view>
+<image src="/images/login/close.png" bindtap="hideModal" animation="{{animationData}}" class="closeImage" wx:if="{{showModalStatus}}"></image>

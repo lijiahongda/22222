@@ -1,0 +1,373 @@
+/* pages/bring/bring.wxss */
+
+page {
+  background: #f8f8f8;
+}
+
+.top {
+  background: #fff;
+}
+
+.bring_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  padding-left: 26rpx;
+}
+
+.image {
+  width: 750rpx;
+  height: 340rpx;
+}
+
+.swiperbox {
+  width: 750rpx;
+  height: 340rpx;
+}
+
+.videotk {
+  padding: 20rpx;
+}
+
+.vid_list {
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.scroll-view-item_H {
+  display: inline-block;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  margin: 23rpx auto;
+  position: relative;
+  padding-right: 23rpx;
+  width: 25%;
+}
+
+.price {
+  color: #df4a52;
+  font-size: 24rpx;
+}
+
+.price text {
+  font-size: 30rpx !important;
+}
+
+.old_price {
+  color: #999;
+  font-size: 20rpx;
+  text-decoration: line-through;
+}
+
+.vidlist_image image {
+  width: 100%;
+  height: 194rpx;
+  border-radius: 12rpx;
+}
+
+.video_title {
+  display: flex;
+  height: 111rpx;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.vid_image {
+  width: 32rpx;
+  height: 31rpx;
+}
+
+.vid_title {
+  padding-left: 11rpx;
+  font-size: 32rpx;
+}
+
+.title_left {
+  padding-left: 31rpx;
+  color: rgba(51, 51, 51, 1);
+  font-size: 28rpx;
+}
+
+.special {
+  padding: 0 20rpx;
+}
+
+.videolist {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.tabvid {
+  color: #df4a52;
+}
+
+.active:after {
+  content: "";
+  display: block;
+  height: 4rpx;
+  width: 30rpx;
+  border-radius: 3rpx;
+  background: rgba(248, 248, 248, 1);
+  margin: 0 auto;
+  margin-top: 8rpx;
+}
+
+.tabvid:after {
+  content: "";
+  display: block;
+  height: 4rpx;
+  width: 30rpx;
+  border-radius: 3rpx;
+  background: #df4a52;
+  margin: 0 auto;
+  margin-top: 8rpx;
+}
+.flex:nth-child(2n) {
+  margin-right: 0;
+}
+
+.goodlist {
+  width: 345rpx;
+  position: relative;
+  background: #fff;
+  border-radius: 12rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+
+.special_nav {
+  display: flex;
+  padding: 30rpx 160rpx;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10rpx;
+}
+
+.goodlist_image {
+  width: 345rpx;
+  height: 345rpx;
+  position: relative;
+}
+
+.goodlist_image image {
+  width: 100%;
+  height: 345rpx;
+  border-top-right-radius: 12rpx;
+  border-top-left-radius: 12rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.goodinfo {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 30%;
+  color: #fff;
+}
+
+.goodinfos {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 20rpx;
+  color: #fff;
+}
+
+.goodinfo_image image {
+  width: 65rpx;
+  height: 65rpx;
+  margin-left: 20rpx;
+  border-radius: 50%;
+}
+
+.goodinfo_text {
+  padding-left: 10rpx;
+  font-size: 28rpx;
+}
+
+.goodinfo_jian {
+  font-size: 24rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.shopInfo {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  padding-bottom: 14rpx;
+}
+
+.shopInfo_image image {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 8rpx;
+  margin-left: 20rpx;
+}
+
+.shop_title {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  color: #333;
+  font-size: 24rpx;
+  line-height: 26rpx;
+}
+
+.shopInfo_text {
+  padding-left: 10rpx;
+  font-size: 24rpx;
+  color: #df4a52;
+}
+
+.shopInfo_jian text {
+  font-size: 30rpx;
+}
+
+.goodlist_image .play {
+  width: 70rpx;
+  height: 70rpx;
+  position: absolute;
+  top: 42%;
+  left: 40%;
+  z-index: 999;
+}
+
+/* 顶部直播 */
+
+.live_top {
+  height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26rpx;
+  box-sizing: border-box;
+}
+
+.live_top .live_left {
+  width: 1rpx;
+  height: 1rpx;
+}
+
+.live_top .live_num {
+  width: 182rpx;
+  height: 52rpx;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 26px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.live_top .live_num image {
+  width: 14rpx;
+  height: 10rpx;
+  margin-left: 12rpx;
+}
+
+.live_top .live_icon {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+/* 顶部直播列表 */
+
+.live_more {
+  width: 100%;
+  height: 169rpx;
+  background-color: #fff;
+}
+
+.live_more .live_scroll {
+  display: flex;
+  align-items: center;
+}
+
+.live_more .live_list {
+  width: 127rpx;
+  margin-right: 42rpx;
+  margin-top: 20rpx;
+}
+
+.live_more .live_list:first-child {
+  margin-left: 32rpx;
+}
+
+.live_more .live_list .live_broadcast {
+  width: 134rpx;
+  height: 134rpx;
+  margin-bottom: 26rpx;
+  position: relative;
+}
+
+.live_more .live_list .live_broadcast .bg {
+  width: 134rpx;
+  height: 134rpx;
+  position: absolute;
+  z-index: 3;
+}
+
+.live_more .live_list .live_broadcast .img {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+  left: 16rpx;
+  top: 12rpx;
+  position: absolute;
+  z-index: 1;
+}
+
+.live_more .live_list .live_title {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #333;
+  text-align: center;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.live_more .live_list .live_type {
+  width: 100%;
+  height: 28rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  z-index: 99;
+}
+
+.live_more .live_list .live_types {
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 20rpx;
+  color: #fff;
+  padding: 0 6rpx;
+  background: linear-gradient(264deg, rgba(241, 56, 75, 1), rgba(244, 71, 88, 1));
+  border: 3rpx solid rgba(22, 24, 34, 1);
+  border-radius: 2rpx;
+  display: inline-block;
+}

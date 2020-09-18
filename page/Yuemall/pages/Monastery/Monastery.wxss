@@ -1,0 +1,241 @@
+page {
+  background-color: #fff;
+}
+/* 授权按钮 */
+.authorizationStatus{
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx
+}
+.swiper-box {
+  width: 100%;
+  height: 300rpx;
+  /* background-color: #ffac49; */
+}
+
+.swiper-box image {
+  width: 100%;
+  height: 300rpx;
+  /* background-color: #ffac49; */
+}
+
+.LyingEarn {
+  color: #FF6032;
+  border: 1px solid #FF6032;
+  font-size: 22rpx;
+  padding:2rpx 4rpx;
+  border-radius: 8rpx;
+  display:inline-block;
+  flex-direction: row;
+  margin-top: 10rpx;
+  margin-right: 10rpx
+}
+
+.LyingEarn text {
+  font-size: 30rpx;
+}
+
+.dContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  bottom: 6rpx;
+  right: 0;
+}
+
+.posi {
+  /* position: absolute; */
+  bottom: 0;
+  right: 0;
+  background-color: #ff6032;
+  background: linear-gradient(120deg, transparent 2em, #ff6032 0);
+  padding-left: 50rpx;
+}
+
+.posi text {
+  /* position: absolute; */
+  bottom: 6rpx;
+  right: 8rpx;
+  font-size: 22rpx;
+  color: #fff;
+  margin-left: 20rpx;
+  margin-top: 24rpx;
+}
+
+.shopImageLeft {
+  position: relative;
+}
+
+/* tab */
+
+.topnav {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.tab-h {
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 80rpx;
+  background: #fff;
+  font-size: 16px;
+  white-space: nowrap;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 4rpx 8px #ddd;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.tab-h image {
+  width: 40rpx;
+  height: 28rpx;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.exploreViewList {
+  width: 94%;
+  padding-left: 3%;
+}
+
+.tab-item {
+  margin: 0 5%;
+  /* width: 11.5%; */
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  padding-left: 2%;
+}
+
+.tab-item.active {
+  color: #ff6636;
+  /*position: relative;*/
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 6rpx;
+  width: 100%;
+  background: #ff6636;
+  position: absolute;
+  bottom: 0;
+  left: 5rpx;
+}
+
+.tab-con image {
+  width: 100%;
+  height: 100%;
+}
+
+.tab-con {
+  padding: 25rpx 0;
+  min-height: 100%;
+  position: relative;
+}
+
+.tab-con.gwc {
+  padding-bottom: 125rpx;
+}
+
+.tabImage {
+  text-align: center;
+}
+
+.tabImage image {
+  width: 28rpx;
+  height: 14rpx;
+}
+
+/* 内容区 */
+
+.ContentArea {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 94%;
+  padding-left: 3%;
+  justify-content: space-between;
+  margin-top: 27rpx;
+}
+
+.ContentArea .item {
+  width: 49%;
+  background-color: #fff;
+  box-shadow:0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.ContentArea .item image {
+  width: 100%;
+  height: 329rpx;
+  background-color: #f4f4f4;
+}
+
+.ContentArea .item .itemInfo {
+  padding: 18rpx;
+}
+
+.ContentArea .item .itemInfo .title {
+  color: #333;
+  font-size: 30rpx;
+  margin-bottom: 11rpx;
+}
+
+.ContentArea .item .itemInfo .title text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ContentArea .item .itemInfo .price {
+  font-size: 24rpx;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  line-height: 36rpx;
+  flex-wrap: wrap;
+}
+
+.ContentArea .item .itemInfo .price .MonasteryPrice {
+  color: rgb(243, 111, 90);
+  line-height: 36rpx;
+}
+
+.ContentArea .item .itemInfo .price .MonasteryPrice text {
+  font-size: 27rpx;
+}
+
+.ContentArea .item .itemInfo .price .OriginalPrice text {
+  text-decoration: line-through;
+}
+
+.ContentArea .item .itemInfo .Deductible {
+  width: 142rpx;
+  height: 26rpx;
+  border-radius: 3rpx;
+  line-height: 26rpx;
+  text-align: center;
+  color: #ff6032;
+  border: 1px solid #ff6032;
+  font-size: 18rpx;
+  margin-top: 13rpx;
+}

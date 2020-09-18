@@ -1,0 +1,3 @@
+
+
+<makeupFood id="makeupFood"  bind:myevent="onMyEvent" inner-text="{{list}}"></makeupFood>

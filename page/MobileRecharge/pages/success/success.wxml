@@ -1,0 +1,9 @@
+<!--page/MobileRecharge/pages/success/success.wxml-->
+<view class="page">
+  <image src='https://image.yuelvhui.com/pubfile/2019/10/12/line_1570869446_50083.png'></image>
+  <text>支付成功</text>
+  <view class="button-group">
+    <button>返回首页</button>
+    <button>查看订单</button>
+  </view>
+</view>

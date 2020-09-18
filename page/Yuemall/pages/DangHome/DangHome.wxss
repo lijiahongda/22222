@@ -1,0 +1,238 @@
+/* page/Yuemall//pages/DangHome/DangHome.wxss */
+@import "/page/LoadingPopup/LoadingPopup.wxss";
+page{
+  background:#ffffff;
+}
+.dangSearch{
+  width:700rpx;
+  height:60rpx;
+  margin-left:25rpx;
+  margin-right:25rpx;
+  margin-top:10rpx;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom:-5rpx;
+}
+.search{
+  width:614rpx;
+  background:#F6F6F6;
+  font-size:24rpx;
+  height:60rpx;
+  border-radius:30rpx;
+  padding-left:40rpx;
+  box-sizing: border-box;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+.searchImg{
+  width:26rpx;
+  height:25rpx;
+  padding-right:16rpx;
+  margin-left:-15rpx;
+}
+.img_Box{
+  width:700rpx;
+  height:300rpx;
+  margin:24rpx;
+}
+.img_Box image{
+  width:100%;
+  height:100%;
+}
+.icon_Page{
+  height:150rpx;
+  /* background:#f00; */
+  display:flex;
+  /* justify-content: space-between; */
+}
+.icon_Page .pink_Icon{
+  flex:1;
+  width:180rpx;
+  text-align:center;
+  
+}
+.icon_Page .pink_Icon view{
+  font-size:23rpx;
+  /* text-align:center; */
+  color:#666666;
+  margin-top:5rpx;
+  padding-left:9rpx;
+  box-sizing:border-box;
+}
+.icon_Page image{
+  width:80rpx;
+  height:80rpx;
+  margin-left:2rpx;
+}
+.bg{
+  height:20rpx;
+  background:#F2F2F2;
+}
+.dangthree_book{
+width:82rpx;
+  height:24rpx;
+  /* border-radius:10rpx; */
+  position:absolute;
+  top:20rpx;
+  right:0;
+  background: #fe3c2b;
+color: white;
+text-align: center;
+padding: 0 10rpx;
+font-size: 18rpx;
+border-bottom-left-radius: 20rpx;
+border-top-left-radius: 20rpx;
+}
+.Recommend{
+  width:725rpx;
+  /* background:#ccc; */
+  margin-left:25rpx;
+}
+.Recommend_Top{
+  height:84rpx;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Recommend_Top_Left{
+  display:flex;
+}
+.img_Red{
+  width:7rpx;
+  height:33rpx;
+  /* background:#f00; */
+  margin-right:14rpx;
+}
+
+.Rec{
+  color:#121212;
+  font-size:30rpx;
+  margin-top:-2rpx;
+}
+.Recommend_Top_Right{
+  display:flex;
+  margin-right:20rpx;
+}
+.all{
+  padding-right:20rpx;
+  color:#666666;
+  font-size:26rpx;
+}
+.Right_Point{
+  width:16rpx;
+  height:28rpx;
+  padding-top:5rpx;
+}
+.topGoods{
+  /* height: 362rpx; */
+  /* padding-top: 20rpx; */
+  /* width: 94.4%; */
+  /* margin-left: 3%; */
+  /* padding-left: 2.5%;
+  padding-right: 2.5%; */
+  box-sizing: border-box;
+  background: #fff;
+  white-space: nowrap;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  border-radius: 0px 0px 10rpx 10rpx;
+
+}
+.book_Box{
+  display: inline-block;
+  margin-right: 10rpx;
+  width:29.3%;
+  position:relative;
+
+
+}
+.book_Rec{
+  display:flex;
+}
+.scroll-view-x{
+  display:flex;
+}
+
+/* .book_Box:nth-child(2){
+  margin-left:20rpx;
+  margin-right:20rpx;
+} */
+.book_Img image{
+  width:220rpx;
+  height:315rpx;
+  border-radius:10rpx;
+}
+.book_Size{
+  width:211rpx;
+  height:65rpx;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(18,18,18,1);
+  margin-top:25rpx;
+  margin-bottom:13rpx;
+}
+.book_Size text{
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+.book_Name text{
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.book_Price{
+  display:flex;
+  margin-top:13rpx;
+}
+.Red_Price{
+  /* width:71rpx; */
+  /* height:20rpx; */
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(255,90,85,1);
+}
+.Blow_Price{
+/* width:72rpx; */
+/* height:17rpx; */
+font-size:22rpx;
+font-family:PingFang SC;
+font-weight:400;
+text-decoration:line-through;
+color:rgba(153,153,153,1);
+margin-left:15rpx;
+margin-bottom:40rpx;
+}
+.dang_book{
+  width:82rpx;
+  height:23rpx;
+  border-radius:10rpx;
+  position:absolute;
+  top:20rpx;
+  right:0;
+}
+.dang_book image{
+  width:100%;
+  height:100%;
+  
+}
+
+

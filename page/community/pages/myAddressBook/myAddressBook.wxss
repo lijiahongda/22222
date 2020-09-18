@@ -1,0 +1,67 @@
+page{
+  background: #F9F9F9;
+}
+.fanList{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  color: #333333;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+.fanList .header{
+  height: 86rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+.fanList .header .desc{
+  color: #666666;
+  font-size: 22rpx;
+  padding-left: 20rpx;
+}
+.fanList .detail{
+  height: 140rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.fanList .detail > image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.fanList .detail .right .desc{
+  color: #666666;
+  font-size: 22rpx;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.fanList .detail .desc input{
+  width: 200rpx;
+}
+.fanList .detail .desc image{
+  width: 22rpx;
+  height: 22rpx;
+  margin-left: 20rpx;
+}
+.fanList .white{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fanList .white .line{
+  width: 75rpx;
+  height: 2rpx;
+  background: #E5E5E5;
+}
+.fanList .white view:nth-of-type(2){
+  margin: 0 20rpx;
+}

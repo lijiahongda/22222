@@ -1,0 +1,251 @@
+page {
+  background-image: url(http://image.yuelvhui.com/pubfile/2018/06/04/line_1528122107.png);
+  background-color: #fff;
+  /* background-size: 100%; */
+  height: 100%;
+}
+
+.content {
+  /* display: flex; */
+  margin: auto;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.title {
+  color: #f4aa11;
+  font-size: 50rpx;
+}
+
+.letter {
+  display: flex;
+}
+
+.letter view {
+  padding-left: 25rpx;
+  margin-top: 40rpx;
+  color: #f4aa11;
+  font-size: 24rpx;
+}
+
+.tour {
+  margin-top: 100rpx;
+  width: 91%;
+}
+
+/* .tab{
+  background-image: url(https://zhiliao-pic.oss-cn-beijing.aliyuncs.com/334429154255523525.png);
+ 
+  height:100rpx;
+  background-repeat: no-repeat 
+}  */
+
+.tab-content {
+  /* background-color:#fff; */
+  height: 100%;
+  /* position: absolute; */
+  width: 100%;
+}
+
+.tab-h {
+  height: 100rpx;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 100rpx;
+  background: #fff;
+  font-size: 16px;
+  white-space: nowrap;
+  z-index: 99;
+}
+
+.tab-item {
+  width: 100%;
+  color: #f4aa11;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  font-size: 32rpx;
+  transform: skewX(0deg);
+  background-image: url(https://zhiliao-pic.oss-cn-beijing.aliyuncs.com/334429154255523525.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.tab-item.active {
+  color: #fff;
+  /* background-color: rgb(77,211,153) */
+}
+
+.tab-item.active:after {
+  display: block;
+  height: 6rpx;
+  width: 100%;
+  background: #1ebe62;
+  position: absolute;
+  bottom: 0;
+  left: 5rpx;
+}
+
+.tab-con image {
+  width: 100%;
+  height: 100%;
+}
+
+.tab-con {
+  /* padding: 25rpx 0; */
+  min-height: 100%;
+  position: relative;
+}
+
+.tab-con.gwc {
+  padding-bottom: 125rpx;
+}
+
+.scoll-h {
+  height: 100%;
+  position: relative;
+  padding: 15px;
+  padding-top: 60rpx;
+}
+
+.place {
+  display: flex;
+}
+
+.nameVIew {
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  color: #bdbcbc;
+  position: absolute;
+  bottom: 50rpx;
+}
+
+checkbox .wx-checkbox-input {
+  width: 30rpx; /* 背景的宽 */
+  height: 30rpx; /* 背景的高 */
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: none;
+  background: #f4aa11;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%; /* 圆角 */
+  width: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 24rpx; /* 对勾大小 30rpx */
+  color: #fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.placeholder {
+  color: rgb(192, 192, 192);
+}
+
+.case {
+  background-color: #fff;
+  width: 100%;
+  margin-top: 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.case .caeetitle {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 126rpx;
+}
+
+.case .caeetitle .wire {
+  color: #ccc;
+}
+
+.case .caeetitle .tit {
+  color: #f4aa11;
+  font-size: 30rpx;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.case .item {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 41rpx;
+}
+
+.case .item .image {
+  height: 336rpx;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: flex-end;
+}
+
+.case .item .image .note {
+  background-color: rgba(0, 0, 0, 0.34);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 96%;
+  height: 44rpx;
+  padding-left: 2%;
+  padding-right: 2%;
+  color: #fff;
+  font-size: 22rpx;
+  align-items: center;
+}
+
+.case .item .lineTitle {
+  color: #303030;
+  font-size: 28rpx;
+  margin-top:18rpx
+}
+
+.case .item .introduce{
+  width:83%;
+  margin-top:18rpx
+}
+.case .item .introduce text{
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color:#999;
+  font-size: 26rpx
+}
+ .case .item .money {
+  color: #f4aa11;
+  margin-top: 22rpx;
+}
+.case .item .unit {
+  font-size: 24rpx;
+}
+.case .item .num {
+  font-size: 38rpx;
+}
+.case .item .qi {
+  font-size: 26rpx;
+}
+.case .item .save{
+  color:#666;
+  font-size: 24rpx;
+  margin-left:3%
+}

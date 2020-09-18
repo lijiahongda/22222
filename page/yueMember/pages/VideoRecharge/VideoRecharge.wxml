@@ -1,0 +1,17 @@
+
+<view class="conter">
+  <image class="bg" mode="widthFix" src="{{material.background}}" role="img"></image>
+  <view class="info">
+    <view class="content">
+      <view class="item" wx:for="{{list}}" wx:key="list" data-projectid="{{item.projectId}}" bindtap="VideoRechargeDetail">
+        <image src="{{item.image}}"></image>
+        <view>{{item.name}}</view>
+        <view class="Recharge">立即充值</view>
+      </view>
+    </view>
+    <view class="tips">
+      <view wx:for="{{material.index_docs}}" wx:key="index_docs">{{item}}</view>
+    </view>
+    <view class="button" wx:if="{{cardType == 0}}" bindtap="join">开通会员享优惠</view>
+  </view>
+</view>

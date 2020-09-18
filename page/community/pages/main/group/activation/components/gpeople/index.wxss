@@ -1,0 +1,198 @@
+/* page/community/pages/main/group/activation/components/gpeople/index.wxss */
+.peopleList{
+  width: 100%;
+  /* height: 200rpx; */
+  background: #fff;
+  margin-top: 20rpx;
+  padding-bottom: 20rpx;
+  /* margin-bottom:50rpx; */
+
+}
+
+.peopleList>.title{
+  width: 702rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+
+.peopleList>.title>.ctrl{
+  display: flex;
+}
+
+.peopleList>.title>.ctrl>view>image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.peopleList>.readioCtrl{
+  width: 702rpx;
+  height: 100rpx;
+  border-bottom: 2rpx solid rgba(238,238,238,1);
+  margin:0 auto;
+  display: flex;
+}
+
+.peopleList>.readioCtrl>.redioBt{
+  display: flex;
+  line-height: 44rpx;
+  margin-right: 90rpx;
+}
+
+.peopleList>.readioCtrl>.redioBt>.clr{
+  width:44rpx;
+  height:44rpx;
+  border:2rpx solid rgba(221,221,221,1);
+  border-radius:50%;
+}
+
+.peopleList>.readioCtrl>.redioBt>.vip{
+  width:44rpx;
+  height:44rpx;
+  background:rgba(249,226,174,1);
+  border-radius:50%;
+  border:2rpx solid rgb(255, 255, 255);
+}
+
+.peopleList>.readioCtrl>.redioBt>view:nth-child(2){
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(27,23,22,1);
+  margin-left: 20rpx;
+  transition: all ease 0.2s;
+}
+
+
+.user{
+  /* width: 100%; */
+  height: 85rpx;
+  display: flex;
+  justify-content:space-between;
+  margin: 0 20rpx;
+  margin-top: 30rpx;
+}
+.user:last-child{
+  margin-bottom: 30rpx;
+}
+.user:nth-child(1){
+  padding-top: 30rpx;
+}
+.user>.cover{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 10rpx;
+}
+
+.user>.cover>image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user>.msg{
+  width: 300rpx;
+  height: 80rpx;
+}
+
+.user>.msg>.name{
+  width: 100%;
+  height: 40rpx;
+  line-height: 30rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(20,20,20,1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* .user>.msg>.seeNum{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} */
+
+
+.user>.msg>.isVip{
+  width: 156rpx;
+  height: 44rpx;
+  background:rgba(4,3,3,1);
+  border-radius:22rpx;
+  /* margin-top: 10rpx; */
+  display: flex;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height: 44rpx;
+}
+
+.user>.msg>.isVip>.iconImg{
+  width: 24rpx;
+  height: 24rpx;
+  margin-top: 10rpx;
+  margin-left: 17rpx;
+  margin-right: 5rpx;
+}
+
+.user>.msg>.isVip>.iconImg>image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+.user>.tips{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  margin-right: 40rpx;
+}
+
+.user>.copyBt{
+  width: 132rpx;
+  height: 58rpx;
+  /* background:rgba(187,187,187,1); */
+  border-radius:8rpx;
+  text-align: center;
+  line-height: 58rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  border:1px solid rgba(221,221,221,1);
+  margin-top: 10rpx;
+}
+.click{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+}
+.none{
+  width: 100%;
+  color: #999;
+  text-align: center;
+  font-size: 24rpx;
+  /* margin-top: 40rpx; */
+}

@@ -1,0 +1,18 @@
+<view class="content">
+  <view class="header">
+    <view wx:for="{{tab}}" wx:for-index="index" wx:key="index" bindtap="nav" data-id="{{item.id}}" class="nav {{current==item.id?'active':''}}">
+      {{item.title}}
+    </view>
+    <view class="line" style="{{current==0?'left:118rpx':'left:466rpx;'}}"></view>
+  </view>
+
+  <view class="cont">
+    <image class="logo" src="{{icon}}"></image>  
+    <view class="list">
+      <view wx:for="{{current==0?list:list1}}" wx:for-index="index" wx:key="index">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="btn" bindtap="goAdult">打开大人小程序</view>
+
+</view>

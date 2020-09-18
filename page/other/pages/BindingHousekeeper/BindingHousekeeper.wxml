@@ -1,0 +1,24 @@
+<!--page/other//pages/BindingHousekeeper/BindingHousekeeper.wxml-->
+<view class="input">
+  <input value='{{reCode}}' bindinput='input' placeholder='请输入邀请人悦淘号(选填)'></input>
+</view>
+<view class="Remarks" bindtap='Remarks' wx:if="{{type != 'modify'}}">暂时跳过，您将绑定默认管家</view>
+<view class="bind" bindtap='complete'>{{type == 'modify'?'确认':'绑定'}}</view>
+<view class="commodity_screenshowModal" wx:if="{{binding}}" bindtap="hideModal"></view>
+<view class="FriendsBargain" wx:if="{{binding}}">
+  <view class="BargainInfor">
+    <view class="tips">
+      您将绑定管家
+    </view>
+    <image src="{{headimgurl}}"></image>
+    <view class="AlreadyBargain">
+      <view>{{nickName}}</view>
+      <view>悦淘号：{{codeNumber}}</view>
+    </view>
+
+    <view class="ClickCollect">
+      <view bindtap='ClickCollect' bindtap='sure'>绑定</view>
+      <view bindtap='shareBox' class="color:#999" bindtap='cancel'>取消</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,57 @@
+<!--page/oneself/pages/Instructions/Instructions.wxml-->
+<view class="top">
+  <view class="ToUse" bindtap='ToUse'>
+    <image src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569232830_24058.png"></image>
+    <text>邀请好友</text>
+  </view>
+  <view class="Total">
+    <view class="item">
+      <view>总计次数</view>
+      <view class="num">{{sale.total}}</view>
+    </view>
+    <view class="s"></view>
+    <view class="item">
+      <view>已用次数</view>
+      <view class="num">{{sale.use}}</view>
+    </view>
+    <view class="s"></view>
+    <view class="item">
+      <view>剩余次数</view>
+      <view class="num">{{sale.unUse}}</view>
+    </view>
+  </view>
+</view>
+<view class="con">
+  <view class="GetInstructions">
+    <view class="title">
+      获取途径
+    </view>
+    <view class="content">
+      推荐的用户，线上支付399元成为会员后，可增加一次立减50元优惠次数。
+    </view>
+  </view>
+  <view class="GetInstructions">
+    <view class="title">
+      使用说明
+    </view>
+    <view class="content">
+      <view>1. 客房满150元/间夜，所有房型可用</view>
+      <view>2. 每单仅限使用一次立减50元优惠（系统自动减免）</view>
+    </view>
+  </view>
+  <view class="case">
+    <view class="tit">
+      案例说明
+    </view>
+    <view class="caseContent">
+      <view class="item">
+        <view class="casetitle">1.如帐号有直推立减50元优惠次数，则预定酒店时默认使用</view>
+        <image src="/images/personalCenter/rule1.png" style="height:390rpx;"></image>
+      </view>
+      <view class="item">
+        <view class="casetitle">2.立减50元优惠明细</view>
+        <image src="/images/personalCenter/rule2.png" style="height:336rpx"></image>
+      </view>
+    </view>
+  </view>
+</view>

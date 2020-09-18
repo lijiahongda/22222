@@ -1,0 +1,45 @@
+<view class="header">
+  <view>已获得成长值</view>
+  <view class="nowValue">{{data.all}}</view>
+  <view class="poorValue">{{data.remind}}</view>
+  <view class="rules" bindtap="changeRules">
+    <text>成长规则</text>
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-24/18/yuelvhuieCurChdtmb1587723231.png"></image>
+  </view>
+</view>
+<!-- <view class="tab">
+  <view class="{{type==1?'active':''}}" data-type="1" bindtap="changeType">已到账</view>
+  <view class="{{type==2?'active':''}}" data-type="2" bindtap="changeType">已退款</view>
+</view> -->
+<view class="list" wx:for='{{listData}}'>
+  <view class="headerTitle">订单号：{{item.orderNo}}</view>
+  <view class="detail">
+    <image src="{{item.goodsImg}}"></image>
+    <view class="middle">
+      <view class="title">{{item.goodsName}}</view>
+      <view class="price">
+        <text>付款金额 ￥</text>
+        <text class="num">{{item.payMoney}}</text>
+      </view>
+    </view>
+    <view class="right">
+      <view>{{item.state==0?'+':'-'}}{{item.growthValue}}</view>
+      <view>预估成长值</view>
+    </view>
+  </view>
+</view>
+<view class="white" wx:if='{{listData.length==0}}'>
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-28/03/yuelvhuiQzsf4FgJKL1588016013.png"></image>
+  <view>仅显示2020年4月28号之后的成长明细</view>
+</view>
+<view class="nomore" wx:elif='{{showNomore}}'>没有更多了</view>
+
+<!-- 规则详情 -->
+<view class="rulesDetail" wx:if='{{showRules}}'>
+  <view>
+    <view class="title">{{rulesData.title}}</view>
+    <view class="rulesList" wx:for='{{rulesList}}'>{{item}}</view>
+    <view class="footer">{{rulesData.end}}</view>
+  </view>
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-25/16/yuelvhuiJiTqvfoJ9P1582619414.png" bindtap="changeRules"></image>
+</view>

@@ -1,0 +1,17 @@
+<view class="list" wx:for='{{list}}'>
+  <view class="header">
+    <image src="{{item.avatar}}"></image>
+    <view>{{item.nickname}}</view>
+  </view>
+  <view class="detail">
+    <view class="left">
+      <view class="desc" wx:for='{{item.content}}' wx:for-item='itemSon'>{{itemSon}}</view>
+      <view class="tag">{{item.extraContent}}</view>
+      <image src="{{item.image}}" mode='widthFix' data-img="{{item.posterImg}}" bindtap="sharePosterImg"></image>
+    </view>
+    <view class="copy" data-text="{{item.text}}" bindtap="copy">复制文字</view>
+  </view>
+</view>
+<view wx:if='{{showPosterImg}}' class="showPosterImg" bindtap="hideImg">
+  <image src="{{posterImg}}" data-url="{{posterImg}}" mode='widthFix' bindlongpress="saveImg"></image>
+</view>

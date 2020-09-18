@@ -1,0 +1,12 @@
+<!--page/payment/component/code/index.wxml-->
+<view class="codeAlert">
+  <view class="close" bindtap="closeMyself">
+    <text class="iconfont icon-guanbi"></text>
+  </view>
+  <view class="text">输入当前支付密码</view>
+  <view class="inputCode">
+    <input type="number" placeholder="请输入6位密码" password="{{true}}" value="{{password}}" bindinput="setPsw"></input>
+  </view>
+  <view class="sText" bindtap="paswj">忘记密码</view>
+  <view class="alertBt" style="{{password!=''?'':'background:rgba(153,153,153,1)'}}" bindtap="nextAlert">提交</view>
+</view>

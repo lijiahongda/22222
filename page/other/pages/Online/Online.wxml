@@ -1,0 +1,2 @@
+<!--page/other/pages/Online/Online.wxml-->
+  <web-view src="https://m.haodf.com/ndynamic/coronalactivity/activity?businesstype=yuetao&mini_h5login=true"></web-view>

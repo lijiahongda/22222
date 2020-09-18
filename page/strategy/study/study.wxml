@@ -1,0 +1,16 @@
+<scroll-view bindscrolltolower='more' class="content" scroll-y>
+  <!-- <view class="header">
+    <view></view>
+    <view>赚钱技巧</view>
+  </view> -->
+  <view class="list" bindtap="webUrl" data-url="{{item.webUrl}}" wx:for='{{list}}'>
+    <view class="title"></view>
+    <view class="detail">
+      <image src="{{item.coverImg}}"></image>
+      <view class="right">
+        <view class="desc">{{item.title}}</view>
+        <view class="button">去学习 ></view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

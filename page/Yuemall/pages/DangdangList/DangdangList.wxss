@@ -1,0 +1,246 @@
+/* page/Yuemall//pages/DangdangList/DangdangList.wxss */
+@import "/page/LoadingPopup/LoadingPopup.wxss";
+
+page {
+  background: #fff;
+}
+
+.dang_list_nav {
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+}
+
+.scroll-view-item_H {
+  display: inline-block;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  margin: 23rpx auto;
+  position: relative;
+  padding-left: 23rpx;
+}
+
+.scroll-view-item_H_tab {
+  width: 0;
+  height: 0;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+  border-top: 14rpx solid #fff;
+}
+
+.scroll-view-item_H_tab_actives {
+  width: 0;
+  height: 0;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+  border-top: 14rpx solid rgba(254, 60, 43, 1);
+  position: absolute;
+  bottom: -19rpx;
+  left: 50%;
+}
+
+.image_img {
+  position: relative;
+}
+
+.image_fixed {
+  position: absolute;
+  right: 0rpx;
+  top: 36rpx;
+  background: #fe3c2b;
+  color: white;
+  text-align: center;
+  padding: 0 10rpx;
+  font-size: 22rpx;
+  border-bottom-left-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+}
+
+.active {
+  /* font-size: 30rpx; */
+  font-family: PingFang SC;
+  font-weight: 400;
+  position: relative;
+  color: rgba(254, 60, 43, 1);
+}
+
+.dang_list_btn, .dang_list_list {
+  padding-left: 3.2%;
+  padding-right: 3.2%;
+  width: 93.6%;
+}
+
+.dang_list_naver {
+  display: inline-block;
+}
+
+.dang_list_naver_all {
+  line-height: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(7, 7, 7, 1);
+  margin: 20rpx auto;
+  height: 28rpx;
+  font-size: 30rpx;
+  margin-left: 24rpx;
+}
+
+.actives {
+  line-height: 28rpx;
+  height: 28rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(254, 60, 43, 1);
+}
+
+.hr {
+  width: 100%;
+  height: 1px;
+  background: rgba(242, 242, 242, 1);
+}
+
+.dang_list_btn {
+  margin-top: 15rpx;
+}
+
+.dang_list_btn_sla {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  /* width:95rpx; */
+  padding: 0 24rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  color: rgba(7, 7, 7, 1);
+  justify-content: space-between;
+}
+
+.dang_list_btn_sla_tab {
+  width: 0;
+  height: 0;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+  border-top: 14rpx solid #fff;
+  position: absolute;
+  top: 40%;
+  right: 4rpx;
+}
+
+.dang_list_btn_sla_tap {
+  width: 0;
+  height: 0;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+  border-bottom: 14rpx solid #fff;
+  position: absolute;
+  top: 40%;
+  right: 4rpx;
+}
+
+.hidden {
+  display: none;
+}
+
+.dang_list_btn_sla_active {
+  text-align: center;
+  line-height: 48rpx;
+  color: rgba(255, 255, 255, 1);
+  border-radius: 24rpx;
+  background: #fe3c2b;
+}
+
+.image {
+  display: flex;
+}
+
+.image_img image {
+  width: 176rpx;
+  height: 227rpx;
+  background: #ccc;
+  margin-top: 20rpx;
+}
+
+.image_text {
+  margin-left: 20rpx;
+  width: 515rpx;
+  border-bottom: 1px solid rgba(242, 242, 242, 1);
+  padding-bottom: 20rpx
+}
+
+.image_text_name text {
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  color: rgba(7, 7, 7, 1);
+}
+
+.image_text_name  text, .image_text_order text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.image_text_order {
+  font-size: 22rpx;
+  margin-top: 20rpx;
+  color: rgba(102, 102, 102, 1);
+}
+
+.image_text_chuban {
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  color: rgba(102, 102, 102, 1);
+}
+
+.image_text_price {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(254, 60, 43, 1);
+  margin-top: 54rpx;
+}
+
+.image_text_oldprice {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.image_text_footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60rpx;
+}
+
+.image_text_footer_buy {
+  width: 162rpx;
+  height: 48rpx;
+  background: linear-gradient(90deg, rgba(250, 93, 113, 1) 0%, rgba(254, 56, 36, 1) 100%);
+  border-radius: 24rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 48rpx;
+  right: 20rpx;
+}
+
+.none_image image {
+  width: 168rpx;
+  height: 206rpx;
+  margin: 232rpx 0;
+}
+
+.none_image {
+  display: flex;
+  justify-content: center;
+}

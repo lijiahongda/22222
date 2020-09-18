@@ -1,0 +1,70 @@
+.openMember{
+  width: 100%;
+  height: 120rpx;
+  background: #fff;
+}
+.openMember image{
+  width: 700rpx;
+  height: 100rpx;
+  display: block;
+  margin: 0 auto;
+}
+.title{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border-radius:0px 0px 18rpx 18rpx;
+  padding: 0 28rpx 32rpx 24rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.title .titleDetail{
+  width: 100%;
+  line-height: 42rpx;
+  color: #141414;
+  font-size: 28rpx;
+  font-weight:500;
+}
+.title .titleDetail image{
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+.title .titleDetail text{
+  vertical-align: middle;
+}
+.title > text{
+  /* verticle-align : middle; */
+  vertical-align: middle;
+  line-height: 34rpx;
+  color: #666666;
+  font-size: 24rpx;
+  padding-top: 16rpx;
+  display: block;
+}
+.reason{
+  width: 100%;
+  height: auto;
+  padding: 20rpx 24rpx 33rpx 24rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius:16rpx;
+  margin-bottom: 20rpx;
+}
+.reason > view{
+  background: #F9FAFF;
+  border-radius:16rpx;
+  padding: 22rpx 36rpx 20rpx 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  color: #CA2519;
+  font-size: 24rpx;
+  line-height: 36rpx;
+}
+.reason > view > text{
+  vertical-align: middle;
+}
+.reason > view > text:last-child{
+  color: #141414;
+}

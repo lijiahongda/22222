@@ -1,0 +1,97 @@
+<view class="orderList">
+  <view class="tab-h">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">全部
+    </view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">待付款
+    </view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">已付款
+    </view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">已取消
+    </view>
+    <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">已完成
+    </view>
+  </view>
+  <view class="tab-content" bindchange="switchTab">
+    <!--菜单-->
+    <view class="scoll-h">
+      <view class="list" wx:for="{{currentTab == 0?wholelist:list}}" wx:for-index="index" wx:key="index">
+        <view class="title">
+          <view class="state">
+            <view>
+              <image class="malllogo" src="/images/YueMall/malllogo.png"></image>
+            </view>
+            <view style=" display: flex;flex-direction: row;align-items: center;">
+              <view>
+                <text wx:if="{{item.orderState == 0}}" style='color:#FF6032'>待付款</text>
+                <text wx:elif="{{item.orderState == 1}}">已支付</text>
+                <text wx:elif="{{item.orderState == 3}}">已取消</text>
+                <text wx:elif="{{item.orderState == 4}}" style='color:#FF6032'>已完成</text>
+                <text wx:else="{{item.orderState == 2}}" style='color:#FF6032'>待收货</text>
+              </view>
+              <image class="delete" src="https://image.yuelvhui.com/pubfile/2019/06/24/line_1561355786.png" wx:if="{{item.orderState == 3 || item.orderState == 4}}" data-orderno="{{item.orderNo}}" bindtap='delete'></image>
+            </view>
+          </view>
+        </view>
+        <view class="borderBottom"></view>
+        <!-- 已付款 已完成 -->
+        <view class="ListContent complete" data-type="{{item.orderType}}" data-state="{{item.orderState}}" bindtap='orderDetails' data-orderSon="{{item.orderNo}}" wx:if="{{item.goodCover.length == 1}}">
+          <view class='cont'>
+            <view class="image">
+              <image src="{{item.goodCover[0]}}"></image>
+            </view>
+            <view class="describe">
+              <view class="title">
+                {{item.goodName}}
+              </view>
+            </view>
+          </view>
+          <view class='money'>共{{item.goodNum}}件商品 需付款：￥{{item.payPrice}}</view>
+        </view>
+        <!-- 待付款 已取消 -->
+        <view class="ListContent tobe_aid" wx:else data-type="{{item.orderType}}" data-state="{{item.orderState}}" bindtap='orderDetails' data-orderSon="{{item.orderNo}}">
+          <view class="image">
+            <image wx:for="{{item.goodCover}}" wx:for-index="index" wx:key="index" wx:for-item="cont" src="{{cont}}"></image>
+          </view>
+          <view class='money'>共{{item.goodNum}}件商品 需付款：￥{{item.payPrice}}</view>
+        </view>
+
+        <view class="borderBottom"></view>
+        <view class="button">
+          <!-- -->
+          <view bindtap='BuyAgain' class="pay" data-orderstatus="{{item.orderStatus}}" data-orderson="{{item.orderNo}}" data-paystatus="{{item.payStatus}}" wx:if="{{item.orderState == 0}}">去支付</view>
+          <view bindtap='ConfirmReceipt' data-orderson="{{item.orderSon}}" wx:if="{{item.orderState == 2}}">确认收货</view>
+          <view bindtap='Repurchase' data-goodid="{{item.goodId}}" wx:if="{{(item.orderState == 4 &&item.version == 2) }}">再次购买</view>
+          <view bindtap='evaluate' data-orderno="{{item.recordId}}" data-goodid="{{item.goodId}}" data-skuid="{{item.productSkuId}}" data-img="{{item.goodCover[0]}}" wx:if="{{item.orderState == 4 && item.isCanComment == 1}}">评价</view>
+          <!-- -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 物流信息 -->
+
+<view class="commodity_screenshowModal" bindtap="hideModal" wx:if="{{showModal}}"></view>
+<view animation="{{animationData}}" bindtap='' class="commodity_attr_boxshowModal" wx:if="{{showModal}}">
+  <view class="popup">
+    <view class="popupInfo">
+      <view class="info">
+        <view>运输状态：{{logistice_state}}</view>
+        <view>运输公司：{{logistice_company}}</view>
+        <view>运输单号：{{logistice_number}}</view>
+      </view>
+      <view class="DuplicateNum" bindtap='copyText' data-text="{{logistice_number}}">复制单号</view>
+    </view>
+    <image class='img' src="/images/personalCenter/popup.png"></image>
+    <image class='close' src="/images/personalCenter/close.png" bindtap="hideModal"></image>
+  </view>
+</view>
+<view class="commodity_screenshowModal" wx:if="{{isdel}}"></view>
+<view class="deletePopu" wx:if="{{isdel}}">
+  <view class="info">
+    <view class="tips">确认删除此订单？</view>
+    <view class="Inquiry">
+      <view class="cancel" bindtap="canceldelete">取消</view>
+      <view class="confirm" bindtap='confirm'>删除</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<!--page/payment/component/code/index.wxml-->
+<view class="codeAlert">
+  <view class="close" bindtap="closeMyself">
+    <image src="./image/closebt.png"></image>
+  </view>
+  <view class="text">充值协议</view>
+  <view class="contentText">
+    <textarea value="{{textValue}}" maxlength="10000" disabled="{{true}}"/>
+    <!-- <rich-text nodes="{{textValue}}"></rich-text> -->
+    <!-- <view class="text">{{textValue}}</view> -->
+  </view>
+</view>

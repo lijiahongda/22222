@@ -1,0 +1,455 @@
+@import "../colorLine/colorLine.wxss";
+
+page {
+  background-color: #f8f8f8;
+}
+.info .image{
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.info image{
+  width: 25rpx;
+  height: 31rpx;
+}
+.item .price{
+  color:#FF6636
+}
+.balance {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+}
+
+.stockNum {
+  color: #ff6636;
+  margin-left: 5%;
+}
+
+.userInfo {
+  background-color: #fff;
+  height: 200rpx;
+}
+
+.userInfoContent {
+  width: 93%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 34rpx;
+  align-items: center;
+}
+
+.name {
+  font-size: 28rpx;
+  color: rgb(51, 51, 51);
+  width: 15%;
+}
+
+.name text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.phone {
+  font-size: 28rpx;
+  color: rgb(51, 51, 51);
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+
+.location .image {
+  width: 10%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.location .image image {
+  width: 14rpx;
+  height: 28rpx;
+}
+
+.location .address {
+  width: 90%;
+  color: #999;
+}
+
+.immediateUse {
+  background-color: rgb(252, 105, 49);
+  color: #fff;
+  border: rgb(252, 105, 49);
+  width: 110rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 22rpx;
+}
+
+.default {
+  border: 1px solid rgb(244, 170, 17);
+  color: rgb(244, 170, 17);
+  width: 60rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  border-radius: 4rpx;
+  text-align: center;
+}
+
+.defaultContent {
+  width: 15%;
+}
+
+.site {
+  display: flex;
+  flex-direction: row;
+  /* width:85% */
+}
+
+.favourable {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.favourable .item {
+  width: 93%;
+  margin: auto;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #ececec;
+  color: rgb(51, 51, 51);
+  font-size: 30rpx;
+  display: flex;
+  justify-content: row;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.borderBottom {
+  border-bottom: 1px solid #ececec;
+}
+
+.ItemRight {
+  display: flex;
+  width: 93%;
+  margin: auto;
+  height: 200rpx;
+  align-items: center;
+  flex-direction: row;
+}
+
+.ItemRight .image {
+  margin-right: 3.4%;
+}
+
+/* .checkbox{
+  margin-left: 40rpx;
+  margin-right: 30rpx;
+} */
+
+.ItemRight .image image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.describe {
+  display: flex;
+  flex-direction: column;
+  height: 160rpx;
+  width: 100%;
+}
+
+.describe .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color: rgb(51, 51, 51);
+}
+
+.describe .title text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.describe .specifications {
+  display: flex;
+  align-items: flex-end;
+}
+
+.describe .money {
+  display: flex;
+  align-items: flex-end;
+  color: rgb(51, 51, 51);
+  font-size: 30rpx;
+}
+
+.footr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22rpx;
+  color: rgb(155, 155, 155);
+  border-top: 1px solid #eee;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  line-height: 49px;
+  text-align: center;
+  z-index: 1990;
+}
+
+.total {
+  font-size: 34rpx;
+  background-color: #fff;
+  flex: 1;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F34746;
+}
+
+.settle {
+  font-size: 34rpx;
+  background-color: #F34746;
+  flex: 1;
+  height: 90rpx;
+  color: rgb(240, 242, 246);
+}
+
+.originalCost {
+  color: rgb(204, 204, 204);
+  font-size: 24rpx;
+  margin-right: 5%;
+}
+
+.originalCost text {
+  text-decoration: line-through;
+}
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #f8f8f8;
+  padding-top: 20rpx;
+}
+
+.close {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 93%;
+  margin: auto;
+}
+
+.workability {
+  margin-top: 20rpx;
+  width: 93%;
+  margin: auto;
+  margin-bottom: 20rpx;
+}
+
+.ite {
+  height: 120px;
+  margin-top: 20rpx;
+  width: 93%;
+  margin: auto;
+}
+
+.bg {
+  position: relative;
+  top: -80px;
+  left: -5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.TagName {
+  font-size: 32rpx;
+  color: #333;
+  margin-top: 10rpx;
+}
+
+.site {
+  font-size: 26rpx;
+  color: #333;
+  /* margin-top:8px; */
+  width: 80%;
+}
+
+.time {
+  font-size: 26rpx;
+  color: rgb(153, 153, 153);
+  margin-top: 30rpx;
+}
+
+.operation {
+  margin-left: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cnsh {
+  color: rgb(234, 19, 19);
+  /* margin-left:20% */
+}
+
+.character {
+  font-size: 56rpx;
+}
+
+.residue {
+  font-size: 20rpx;
+  color: #333;
+  /* margin-left:20% */
+}
+
+.coupon {
+  width: 126rpx;
+  height: 126rpx;
+}
+
+button[class="con_listbox"]::after {
+  border: 0;
+}
+
+.con_listbox {
+  border-radius: 20px;
+  border: 1px solid #fc6931;
+  width: 55px;
+  font-size: 22rpx;
+  height: 20px;
+  padding: 0px;
+  line-height: 20px;
+  margin-top: 0px;
+  /* margin-left:-7%;  */
+}
+
+.deduction {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+checkbox .wx-checkbox-input {
+  border: 1px solid rgb(252, 205, 49);
+  width: 40rpx; /* 背景的宽 */
+  height: 40rpx; /* 背景的高 */
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: 1px solid rgb(248, 126, 34);
+  background: rgb(244, 170, 17);
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%; /* 圆角 */
+  width: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 20rpx; /* 对勾大小 30rpx */
+  color: #fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.GroupInfor{
+  height: 206rpx;
+  width: 92%;
+  padding-left:4%;
+  padding-right: 4%;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx
+}
+.GroupInfor .title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 92rpx;
+  color: #303030;
+  font-size: 28rpx
+}
+.GroupInfor .title .image image{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 16rpx;
+}
+.HeadPortrait {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.HeadPortrait .image {
+  position: relative;
+  margin-right: 40rpx;
+  margin-left: 33rpx;
+}
+
+.HeadPortrait .image .head {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.HeadPortrait .image .RegimentalCommander {
+  position: absolute;
+  bottom: 0rpx;
+  width: 72rpx;
+  height: 18rpx;
+  left: 5.5rpx;
+}

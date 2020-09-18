@@ -1,0 +1,164 @@
+<!--page/Yuemall/pages/luckDraw/luckDraw.wxml-->
+<!-- <view class="top">
+  <view class="leftB">
+    <view class="topLeft">
+      <image src=""></image>
+    </view>
+    <view class="topCenter">恭喜某某用户 ，0.01元获得iPhoneX手机1部</view>
+  </view>
+  <view class="topRight">
+    活动规则
+  </view>
+</view> -->
+<!-- 商品列表 -->
+<view>
+
+
+  <view class="content" wx:if="{{mall}}">
+    <view class="swiper">
+      <swiper>
+        <swiper-item wx:for='{{banner}}' wx:key='*this' data-redirecttype="{{item.redirectType}}" data-id="{{item.id}}" data-hotid="{{item.id}}" data-path='{{item.link}}'>
+          <image src="{{item}}"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+
+    <view wx:if="{{item.length > 0}}" class='goodList'>
+      <view class="goodInfo" wx:for="{{item}}" wx:key="item" data-id="{{item.id}}" data-skuid="{{item.skuId}}" data-url="/page/Yuemall/pages/luckDrawDetail/luckDrawDetail" bindtap='detail'>
+        <view style="position:relative">
+          <image class="goodsImg" src="{{item.path}}"></image>
+        </view>
+        <view class="info">
+          <view class="title">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="groupInfo">
+            <view class="groupInfoCon">
+              <view class="price">
+                <text>¥ </text>{{item.raffle_price}}</view>
+            </view>
+            <view class="rob">
+              <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-22/19/yuelvhuimFw6tQpEKY1584875427.png"></image>
+            </view>
+          </view>
+
+        </view>
+      </view>
+      <view wx:if="{{!isHaveMore}}" class="isHaveMore">没有更多了～</view>
+      <view style="width:100%;height:200rpx;"></view>
+    </view>
+    <view class="NoCommodityData" wx:else>
+      <image src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569318188_35989.png"></image>
+      <view>暂无商品...</view>
+    </view>
+  </view>
+
+  <!-- 我的抽奖 -->
+  <view wx:if="{{assemble}}" class="assembleB">
+    <view>
+      <view class="content" wx:if="{{list.length>0}}">
+        <view class="conB" wx:for="{{list}}" wx:key="list" bindtap='godetail' data-url="/page/Yuemall/pages/invitationDraw/invitationDraw" data-id="{{item.activityId}}">
+          <view class="first">
+            <view wx:if='{{item.lottery_status == 0}}'>
+              <view style="display:flex;align-items: center;color:#666;">
+                <view style="margin-right:15rpx;">距离开奖剩余</view> 
+                <view class="squ" wx:if="{{item.countDownDay != 0}}">{{item.countDownDay}}</view>
+                <view wx:if="{{item.countDownDay != 0}}">天</view>
+                <view class="squ" >{{item.countDownHour}}</view> :
+                <view class="squ">{{item.countDownMinute}}</view>:
+                <view class="squ">{{item.countDownSecond}}</view>
+              </view>
+            </view>
+            <!-- kaijianghzuangtai -->
+            <view wx:if='{{item.lottery_status == 1}}'>
+              {{item.lottery_time_tostr}}
+            </view>
+            <view class='open'>{{item.draw_status_remark}}</view>
+          </view>
+          <view class="goodInfoH">
+            <view style="position:relative">
+              <view class="sign" wx:if='{{item.draw_status == 2}}'>
+                <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-24/13/yuelvhuiUz56jTHKte1585027411.png"></image>
+              </view>
+              <view class="sign" wx:if='{{item.draw_status == 1}}'>
+                <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-24/13/yuelvhuitRiGyX0Jju1585027358.png"></image>
+              </view>
+              <image class="goodsImg" src="{{item.goodsImg}}"></image>
+            </view>
+            <view class="info">
+              <view class="title">
+                <text>{{item.goodsName}}</text>
+              </view>
+              <view class="introduction">
+                <text>{{item.goodsInfo}}</text>
+              </view>
+              <view class="groupInfoH">
+                <view class='box'>
+                  <view class="Invitationl" wx:for='{{item.user_logos}}' wx:key='index'>
+                    <image src="{{item}}"></image>
+                  </view>
+                  <block wx:if='{{item.invitation_status == 1 }}'>
+                    <view class="Invitationl">
+                      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-22/21/yuelvhuic8sxFu76Pk1584883512.png"></image>
+                    </view>
+                  </block>
+                  <view class="txtB" wx:if='{{item.draw_status == 0&&item.invitation_status == 1}}'>邀请好友</view>
+                  <view class="txtB" wx:if='{{item.draw_status == 3}}'>邀请好友获得抽奖资格</view>
+                  <view class="txtB" wx:if='{{item.invitation_status == 0&&item.draw_status==0}}'>已邀{{item.invite_member_num}}好友</view>
+                  <view class="txtB" wx:if='{{item.draw_status == 2}}'>共邀{{item.invite_member_num}}好友</view>
+                  <!-- draw_status1-zhong  2,mei,3meiyouchujiangzige -->
+                </view>
+              </view>
+              <view class="participate">
+                参与人数{{item.join_people}}人
+              </view>
+              <view class="groupInfoCon">
+                <view class="priceH">
+                  <text class="red">¥ </text>{{item.nowPrice}}</view>
+              </view>
+            </view>
+          </view>
+          <view style="height:1rpx;width:200rpx"></view>
+        </view>
+        <view wx:if="{{!isHaveMoreN}}" class="isHaveMore">没有更多了～</view>
+        <view style="width:100%;height:200rpx;"></view>
+      </view>
+      <view class="NoCommodityData" wx:else>
+        <image src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569318188_35989.png"></image>
+        <view>快去下单吧...</view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 新底部 -->
+  <view class="footer">
+    <view class="left" bindtap='getMall'>
+      <image wx:if="{{mall}}" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-25/21/yuelvhui100h1ErgDh1585144711.png"></image>
+      <image wx:else src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-22/18/yuelvhuivHMuZh6D3H1584874197.png"></image>
+      <view>商品列表</view>
+    </view>
+    <view class="left" bindtap='getAssemble'>
+      <image wx:if="{{assemble}}" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-22/18/yuelvhuiJTResN3wAl1584874259.png"></image>
+      <image wx:else src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-22/18/yuelvhuiuU8b9gXLzL1584874297.png"></image>
+      <view>我的抽奖</view>
+    </view>
+  </view>
+  <!-- 授权按钮 -->
+  <view class="authorizationStatus" bindtap='VerificationCode' wx:if="{{authorizationStatus}}"></view>
+
+  <!-- 立即抽奖弹框 -->
+  <view class="popup" wx:if="{{draw}}">
+    <view class="popup-container">
+      <view class="user">
+        <image src="{{dataZ.shareLogo}}"></image>
+      </view>
+      <view class="name">{{dataZ.shareNickName}} 分享的1分钱抽奖口号</view>
+      <view class="zhuli">拜托帮我助力一下，我们一起抽大奖！</view>
+      <view class="shop">
+        <image src="{{dataZ.goodsImg}}"></image>
+      </view>
+      <view class=" {{status==1 ? 'draw' :'drawN'}} " bindtap="drawNow">立即助力</view>
+    </view>
+  </view>
+</view>

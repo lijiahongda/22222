@@ -1,0 +1,1221 @@
+/*引入 加载中 */
+@import "/page/LoadingPopup/LoadingPopup.wxss";
+/* 平台客服 */
+.Customer_Service {
+  width: 105rpx;
+  height: 110rpx;
+  position: fixed;
+  top: 700rpx;
+  right: 10rpx
+}
+
+/* 商城订单状态 */
+
+.orderBox {
+  background: #fff;
+  width: 100%;
+  height: 440prx;
+  margin-top: -55rpx;
+}
+
+.order_Status {
+  width: 89.5%;
+  margin-left: 3.2%;
+  margin-right: 3.2%;
+  padding-left: 2.2%;
+  padding-right: 2.2%;
+  padding-bottom: 3.2%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10rpx;
+  margin-top: 150rpx;
+}
+
+.order_Status .order_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-top: 41rpx;
+  margin-bottom: 40rpx;
+}
+
+.icon {
+  width: 7rpx;
+  height: 34rpx;
+  background: linear-gradient(0deg, rgba(255, 215, 140, 1) 0%, rgba(231, 166, 49, 1) 100%);
+  border-radius: 4rpx;
+  margin-left: 25rpx;
+}
+
+.order_Status .order_title image {
+  width: 12rpx;
+  height: 22rpx;
+}
+
+.order_Status .all_status {
+  padding: 0 6%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order_Status .all_status .all_status_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #1b1a1b;
+}
+
+.order_Status .all_status .all_status_item image {
+  width: 48rpx;
+  height: 45rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 物流 */
+
+.logistics {
+  width: 656rpx;
+  height: 142rpx;
+  background: rgba(246, 246, 246, 1);
+  border-radius: 10rpx;
+  padding: 14rpx 16rpx;
+  font-size: 22rpx;
+  color: #999;
+  box-sizing: border-box;
+  margin-top: 30rpx;
+}
+
+.logistics .title {
+  line-height: 46rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logistics .logistics_cont {
+  display: flex;
+  align-items: center;
+}
+
+.logistics .logistics_cont .log_img {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+  margin-right: 38rpx;
+}
+
+.logistics .logistics_cont .logistics_info {
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+
+.logistics .logistics_cont .logistics_info .prog {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #c74440;
+}
+
+.logistics .logistics_cont .logistics_info .prog image {
+  width: 40rpx;
+  height: 30rpx;
+  margin-right: 26rpx;
+}
+
+.logistics .logistics_cont .logistics_info .log_state {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 500rpx;
+}
+
+page {
+  background-color: #f5f5f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 授权按钮 */
+
+.authorizationStatus {
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx;
+}
+
+.profitTop {
+  /* padding-top:30px; */
+  height: 300rpx;
+  background-image: url(http://image.yuelvhui.com/pubfile/2018/12/05/line_1544002812.jpg);
+  background-size: 100%;
+  color: #fff;
+  /* display: flex; *//* flex-direction: column; */
+}
+
+.proTxr {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.profitFirstLine {
+  height: 250rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profitFirstLines {
+  background-color: rgba(255, 255, 255, 0.28);
+  opacity: 0.5;
+  text-align: center;
+  border-radius: 40px;
+  width: 150px;
+  height: 35px;
+  margin: auto;
+  margin-bottom: 0px;
+}
+
+.textPosi {
+  color: #fff;
+  /* position: relative;
+  top: -30px;
+  left: 295rpx; */
+  font-size: 17px;
+  background-color: rgba(255, 255, 255, 0.28);
+  width: 150px;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 40px;
+  text-align: center;
+}
+
+.textPosiMy {
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+}
+
+.textPosit {
+  color: #fff;
+  position: absolute;
+  top: 0px;
+  left: -75px;
+  font-size: 10px;
+}
+
+.imagePosi {
+  vertical-align: middle;
+  width: 30rpx;
+  height: 27rpx;
+  margin-right: 10rpx;
+}
+
+.profitSecondLine {
+  display: flex;
+  margin-top: 35px;
+}
+
+.profitSecondLine text {
+  padding: 10rpx 0;
+}
+
+.dayProfit, .monthProfit {
+  width: 50%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dayProfits, .monthProfits {
+  width: 50%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #ececec;
+}
+
+.dayProfits text, .monthProfits text {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.monthProfit {
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.listItem {
+  height: 50px;
+  display: flex;
+  font-size: 28rpx;
+  color: rgb(0, 0, 0);
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  border-bottom: 1px solid #efeff3;
+  width: 90%;
+  margin: auto;
+}
+
+.infoList {
+  background-color: #fff;
+  margin-top: 100rpx;
+}
+
+.listItem image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.itemBtnRight {
+  display: flex;
+  align-items: center;
+}
+
+.itemBtnRight text {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.itemTxt {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.deliveryAdd {
+  position: absolute;
+  top: 135rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 91.6%;
+  padding-left: 4.2%;
+  padding-right: 4.2%;
+  padding-bottom: 125rpx;
+  padding-top: 20rpx;
+}
+
+.img {
+  width: 750rpx;
+  height: 550rpx;
+  position: relative;
+}
+
+.deliveryAdd .install {
+  width: 39rpx;
+  height: 40rpx;
+}
+
+.userInfoDeliver {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 62rpx;
+}
+
+.deliveryAdd .userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  margin-left: 20rpx;
+}
+
+.deliveryAdd .userInfo .userName {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 26rpx;
+}
+
+.userAddress {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.addressLabel {
+  font-size: 24rpx;
+  color: #999;
+  padding: 4rpx;
+  height: 12.5px;
+  line-height: 12px;
+  text-align: center;
+}
+
+.card {
+  border-radius: 40rpx;
+  border-top-right-radius: 0rpx;
+  width: 186rpx;
+  height: 40rpx;
+  font-size: 24rpx;
+  background-color: #f4b445;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.card image {
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.gorightBtn {
+  width: 12rpx;
+  height: 22rpx;
+}
+
+.money {
+  font-size: 36rpx;
+  color: #fc6931;
+}
+
+.money image {
+  height: 103rpx;
+  width: 103rpx;
+  border: 4rpx solid rgba(241, 184, 67, 1);
+  border-radius: 50%;
+}
+
+.myWallet {
+  background-color: #fff;
+  height: 91rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #f7f7f7;
+  width: 90%;
+  /* padding-left: 5%; */
+  align-items: center;
+  margin: auto;
+}
+
+.CommonFunction {
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+
+.CommonFunction, .MyTask {
+  background-color: #fff;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  width: 92%;
+  align-items: center;
+  margin: auto;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.myWallet image {
+  width: 7rpx;
+  height: 34rpx;
+}
+
+.CommonFunction image {
+  margin-left: 30rpx;
+}
+
+.CommonFunction image, .MyTask image {
+  width: 7rpx;
+  height: 34rpx;
+}
+
+.CommonFunction .borderLeft, .MyTask .borderLeft {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+  margin-left: 3.6%;
+}
+
+.myWallet .borderLeft {
+  color: #333;
+  font-size: 34rpx;
+  margin-left: 3.6%;
+}
+
+.myWalletContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  width: 93.6%;
+  margin-left: 3.2%;
+  margin-right: 3.2%;
+  position: relative;
+  height: 203rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.myWalletContent image {
+  height: 203rpx;
+  width: 100%;
+}
+
+.myWalletContent .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 94%;
+  padding-left: 3%;
+}
+
+.myWalletContent .list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.myWalletContent .list .title {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+.myWalletContent .list .num {
+  font-size: 41rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 33rpx;
+}
+
+.myWalletContent text {
+  color: rgb(51, 51, 51);
+  font-size: 36rpx;
+}
+
+.CommonFunctionContent {
+  display: flex;
+  flex-direction: row;
+  color: #333;
+  width: 92%;
+  background-color: #fff;
+  flex-wrap: wrap;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  margin-bottom: 30rpx;
+}
+
+.CommonFunctionContent .listItme {
+  width: 33.1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: crnter;
+  color: #333;
+  padding-top: 51rpx;
+  padding-bottom: 51rpx;
+  font-size: 26rpx;
+  position: relative;
+  border-right: 1px solid #f9f9f9;
+  border-bottom: 1px solid #f9f9f9;
+  /* border:20px solid rgba(249,249,249,1); */
+}
+
+.CommonFunctionContent .listItme .num {
+  width: 22rpx;
+  height: 22rpx;
+  background: #e4311f;
+  border-radius: 50%;
+  right: 70rpx;
+  top: -26rpx;
+  position: absolute;
+  /* border: 3px solid transparent;
+  border-color: transparent;
+  border-color: rgba(228,49,31,1,0.5); */
+}
+
+.CommonFunctionContent .listItme image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.CommonFunctionContent .listItme view {
+  margin-top: 19rpx;
+}
+
+.MyTaskContent {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 90%;
+  /* padding-left: 5%; */
+  align-items: center;
+  margin: auto;
+}
+
+.MyTaskContent .MyTaskItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 130rpx;
+  align-items: center;
+  color: #333;
+  width: 100%;
+  border-bottom: 1px solid #ebecee;
+}
+
+.MyTaskContent .MyTaskItem .ToFinish {
+  width: 140rpx;
+  height: 60rpx;
+  border: 1px solid #ff6032;
+  color: #ff6032;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+}
+
+.MyTaskContent .MyTaskItem .Completed {
+  width: 140rpx;
+  height: 60rpx;
+  background-color: #f2f3f5;
+  color: #333;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+}
+
+.MyTaskContent .MyTaskItem .TaskInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 70%;
+}
+
+.MyTaskContent .MyTaskItem .TaskInfo .TaskReward {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.MyTaskContent .MyTaskItem .TaskInfo .TaskName {
+  color: #333;
+  font-size: 30rpx;
+}
+
+.MyTaskContent .MyTaskItem .TaskInfo image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 3%;
+}
+
+.AdvertisingPosition {
+  display: flex;
+  width: 92%;
+  height: 189rpx;
+  /* margin-top:40rpx */
+}
+
+.AdvertisingPosition image {
+  width: 100%;
+  height: 189rpx;
+  margin-bottom: 39rpx;
+}
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 90%;
+  top: 160px;
+  text-align: center;
+  margin-left: 5%;
+  border-radius: 5px;
+  overflow: hidden;
+  position: fixed;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 114rpx;
+  padding-bottom: 114rpx;
+}
+
+.commodity_attr_box view {
+  font-size: 30rpx;
+  color: rgb(51, 51, 51);
+}
+
+button[class="conButton"]::after {
+  border: 0;
+}
+
+.conButton {
+  width: 260rpx;
+  font-size: 34rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40px;
+  box-shadow: 0 4rpx 8px #ddd;
+}
+
+radio .wx-radio-input {
+  border-radius: 50%; /* 圆角 */
+  border: 1px dashed #f4aa11;
+  width: 84rpx;
+  height: 84rpx;
+}
+
+/* 选中后的 背景样式 （可根据UI需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked {
+  /* border: none; */
+  border: 1px solid #f4aa11 !important;
+  background-color: transparent !important;
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%; /* 圆角 */
+  width: 84rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 84rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 84rpx;
+  text-align: center;
+  font-size: 60rpx; /* 对勾大小 30rpx */
+  color: #f4aa11; /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.AdCampaign {
+  width: 92%;
+  height: 280rpx;
+  margin-top: 124rpx;
+  border-radius: 10rpx;
+  margin-left: 4%;
+}
+
+/* 会员升级 */
+
+.MemberUpgrade {
+  height: 92rpx;
+  width: 92%;
+  margin: auto;
+  border-radius: 10rpx;
+  background-color: #fff;
+  margin-top: 4rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #ff6032;
+  margin-bottom: 12rpx;
+  font-size: 24rpx;
+}
+
+.MemberUpgrade .title {
+  width: 28.3%;
+  height: 32rpx;
+  border-right: 1px solid #ededed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-right: 3%;
+  color: #333;
+}
+
+.MemberUpgrade .title image {
+  width: 30rpx;
+  height: 28rpx;
+}
+
+.MemberUpgrade .title .OpenMembership {
+  width: 123rpx;
+  height: 32rpx;
+  margin-right: 2%;
+}
+
+.commodity_attr_box_house {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2000;
+  padding-top: 20rpx;
+  max-height: 1084rpx;
+  min-height: 800rpx;
+  background-color: #fff;
+}
+
+.commodity_attr_box_house .button {
+  display: flex;
+  flex-direction: row;
+  height: 90rpx;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.commodity_attr_box_house .button .OnlinePayment {
+  width: 57%;
+  height: 90rpx;
+  color: #333;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 90rpx;
+  background-color: #fff;
+}
+
+.commodity_attr_box_house .button .Reserve {
+  width: 43%;
+  height: 90rpx;
+  background-color: #ff6636;
+  color: #f2f3f5;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+/* 推荐会员 */
+
+.RecommendedMember {
+  height: 220rpx;
+  background-color: #fff;
+  width: 92%;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14rpx;
+  align-items: center;
+}
+
+.RecommendedMember .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 90rpx;
+  width: 92%;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.RecommendedMember .title image {
+  width: 8rpx;
+  height: 34rpx;
+  margin-right: 18rpx;
+}
+
+.RecommendedMember .content {
+  display: flex;
+  flex-direction: row;
+  width: 92%;
+  margin-top: 20rpx;
+}
+
+.RecommendedMember .content .item {
+  width: 34%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  font-size: 24rpx;
+}
+
+.RecommendedMember .content .item .num {
+  color: #333;
+  font-size: 34rpx;
+  margin-top: 10rpx;
+}
+
+.msg {
+  background-color: #fff;
+  width: 84%;
+  padding-left: 4%;
+  padding-right: 4%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #333;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 14rpx;
+}
+
+.msg image {
+  width: 32rpx;
+  height: 26rpx;
+  margin-right: 25rpx;
+}
+
+.Instructions {
+  width: 160rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  border: 1px solid #ff5112;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  text-align: center;
+  margin-left: 29rpx;
+  color: #ff5112;
+}
+
+/* 功能介绍÷ */
+
+.FunctionIntroduction {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10rpx;
+  background-color: #fff;
+  width: 88%;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-bottom: 11rpx;
+}
+
+.FunctionIntroduction .list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ededed;
+  height: 86rpx;
+}
+
+.FunctionIntroduction .list .title {
+  display: flex;
+  flex-direction: row;
+  color: #333;
+  font-size: 28rpx;
+  align-items: center;
+}
+
+.FunctionIntroduction .list .title image {
+  display: flex;
+  flex-direction: row;
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 14rpx;
+}
+
+.FunctionIntroduction .list .introduce {
+  display: flex;
+  flex-direction: row;
+  color: #ff5112;
+  font-size: 24rpx;
+  align-items: center;
+}
+
+.FunctionIntroduction .list .introduce image {
+  display: flex;
+  flex-direction: row;
+  width: 12rpx;
+  height: 22rpx;
+  margin-left: 20rpx;
+}
+
+.giftBack {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.gift {
+  width: 100%;
+}
+
+.gift .list {
+  width: 87.5%;
+  margin-left: 3.2%;
+  margin-right: 3.2%;
+  padding-left: 3.2%;
+  padding-right: 3.2%;
+  background-color: #fff;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 30rpx;
+  align-items: center;
+}
+
+.gift .list .title {
+  width: 302rpx;
+  height: 63rpx;
+  margin-bottom: 30rpx;
+}
+
+.gift .list .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 30rpx;
+}
+
+.gift .list .info text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gift .list .lookDetail {
+  width: 221rpx;
+  height: 60rpx;
+  background: #ffc11f;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gift .payPrice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 47rpx;
+  font-family: Impact;
+  font-weight: 400;
+  color: #ffc11f;
+  width: 100%;
+}
+
+.gift .payPrice text {
+  font-size: 68rpx;
+  font-family: Impact;
+  font-weight: 400;
+  color: #ffc11f;
+}
+
+.gift .payPrice .time {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #666;
+}
+
+.cardType {
+  background: linear-gradient(-90deg, rgba(212, 178, 129, 1) 0%, rgba(255, 235, 197, 1) 100%);
+  padding-left: 14rpx;
+  padding-right: 16rpx;
+  padding-top: 6rpx;
+  padding-bottom: 6rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40rpx;
+  font-size: 18rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  margin-left: 21rpx;
+}
+
+.cardType image {
+  width: 20rpx;
+  height: 16rpx;
+  margin-right: 6rpx;
+}
+
+.YueBrigade {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 241, 241, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.YueBrigade .copy {
+  margin-left: 24rpx;
+  width: 52rpx;
+  height: 30rpx;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 6rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.happy {
+  width: 640rpx;
+  height: 106rpx;
+  margin: 0 auto;
+}
+
+.Connections {
+  width: 702rpx;
+  height: 220rpx;
+  border-radius: 20rpx;
+  background: linear-gradient(0deg, rgba(255, 192, 58, 1) 0%, rgba(255, 223, 156, 1) 100%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20rpx;
+}
+
+.Connections .item {
+  display: flex;
+  flex-direction: column;
+  font-size: 38rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #733800;
+  width: 49%;
+  align-items: center;
+  justify-content: center;
+}
+
+.Connections .item .title {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #733800;
+}
+
+.Connections .item text {
+  font-size: 24rpx;
+}
+
+.Connections image {
+  width: 1px;
+  height: 30rpx;
+}
+
+.CommonFunctionContent .listItme .Stars {
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  left: 127rpx;
+  top: 30rpx;
+}
+
+.adListswiperbox {
+  width: 703rpx;
+  height: 158rpx;
+  margin-top: 21rpx;
+  margin-bottom: 12rpx;
+}
+
+.adListswiperbox image {
+  width: 703rpx;
+  height: 158rpx;
+}
+
+.spot {
+  width: 10rpx;
+  height: 10rpx;
+  background: rgba(199, 68, 64, 1);
+  border-radius: 50%;
+  position: absolute;
+  right: 0rpx;
+  top: 0;
+}
+
+.numSc {
+  width: 27rpx;
+  height: 27rpx;
+  border: 3rpx solid rgba(250, 106, 55, 1);
+  border-radius: 50%;
+  color: rgba(250, 104, 54, 1);
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 27rpx;
+  margin-left: 65rpx;
+  margin-bottom: -9rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.numSc1 {
+  width: 27rpx;
+  height: 27rpx;
+  border-radius: 50%;
+  color: rgba(250, 104, 54, 1);
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 27rpx;
+  margin-left: 65rpx;
+  margin-bottom: -9rpx;
+}
+
+.expire {
+  margin-left: 16rpx;
+  width: 146rpx;
+  height: 30rpx;
+  border: 1rpx solid rgba(98, 98, 98, 1);
+  border-radius: 15rpx;
+  font-size: 16rpx;
+  color: rgba(98, 98, 98, 1);
+  text-align: center;
+  line-height: 30rpx;
+}
+.bug{
+  margin-top:10rpx;
+}

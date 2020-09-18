@@ -1,0 +1,21 @@
+/* page/zhiboceshi/zhibo.wxss */
+.liveList{
+  width: 49%;
+  height: 500rpx;
+  background-color: #e4393c;
+  border-radius: 10rpx;
+}
+.content{
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+image{
+  width: 100%;
+  height: 500rpx;
+}

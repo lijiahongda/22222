@@ -1,0 +1,15 @@
+<!--page/Yuemall/pages/MemberPurchase/MemberPurchase.wxml-->
+<image class="topImage" src="{{background.upImg}}"></image>
+<image class="contentImage" src="{{background.downImg}}" mode="widthFix"></image>
+<view class="content">
+  <view class="item" wx:for="{{goodsList}}" wx:key="goodsList" wx:for-index="id">
+    <image class="titleImage" src="{{item.title}}" style="height:{{id == 2?'195rpx':''}}"></image>
+    <view class="list">
+      <image class="goodImage" bindtap='detail' data-id="{{item.goodsId}}" wx:for="{{item.goodsInfo}}" wx:key="goodsInfo" src="{{item.goodsImg}}"></image>
+    </view>
+  </view>
+  <view class="Source">
+    <view class="">{{background.upMes}}</view>
+    <view class="">{{background.downMes}}</view>
+  </view>
+</view>

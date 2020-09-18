@@ -1,0 +1,148 @@
+<view class="coulist_content" style="background:{{activityInfo.backColor}};">
+	<view class="banner">
+		<image mode="scaleToFill" src="{{backGround.url}}"></image>
+	</view>
+
+	<!-- 列表 -->
+	<!-- <view class="ulike">
+		<view class="li-box">
+			<view class="li" wx:for="{{shopinfoList}}" wx:key="shopinfoList">
+				<image mode="scaleToFill" class="cover" src="{{item.goodCover}}"></image>
+				<view class="in">
+					<view class="in-tit">
+						{{item.goodName}}
+					</view>
+					<view class="pri-box">
+						<view class="new-pri">
+							<span class="spe">¥</span>
+							<span>{{item.goodVipPrice}}</span>
+						</view>
+						<view class="old-pri">¥{{item.goodPrice}}</view>
+						<view class="addshopcarbtn" data-item="{{item}}" bindtap="skudetailShopcar">+</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view> -->
+
+    <view class="LikeContent">
+      <view class="likelist" wx:for="{{shopinfoList}}" wx:key="shopinfoList">
+        <image src="{{item.goodCover}}"></image>
+        <view class="likeTitle">
+          <text>{{item.goodName}}</text>
+        </view>
+        <!-- <view class="tag">
+          <view wx:for="{{item.tag}}" wx:key="tag">{{item}}</view>
+        </view> -->
+        <view class="price">
+          <view class="vipPrice">
+            <text>¥</text>{{item.goodVipPrice}}</view>
+          <view class="OriginalPrice">
+            <text>¥{{item.goodPrice}}</text>
+          </view>
+					<view class="addshopcarbtn" data-item="{{item}}" bindtap="skudetailShopcar">+</view>
+        </view>
+      </view>
+    </view>
+
+
+
+	<!--    底部-->
+	<view class="bottom_btn">
+		<view class="service_a" bindtap="goShopcar">
+			<image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-17/14/yuelvhui0wUHYVsqJC1579242209.png"></image>
+			<view class="jiaobiao" wx:if="{{shopCarNum>0}}">{{shopCarNum}}</view>
+		</view>
+		<view class="pay_buy" bindtap="goShopcar">确定</view>
+	</view>
+
+
+
+
+</view>
+
+<!-- 规格 -->
+<view class="commodity_screen" bindtap="hideModal" catchtouchmove="disMove" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" catchtouchmove="disMove" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+	<view class="close" data-statu="close" bindtap="hideModal">
+		<image src="/images/YueMall/close.png" style="width:26rpx;height:24rpx"></image>
+		<!-- <icon type="cancel" size="20" color="black" class="icon btn_close" data-statu="close" bindtap="hideModal" /> -->
+	</view>
+
+	<view class="commodity" style="">
+		<view class="images" style="background-color:#fff">
+			<image src="{{Specificationsimg}}" data-src="{{Specificationsimg}}" catchtap="imgYu" data-list="{{bannerItem}}"></image>
+		</view>
+		<view class="describe">
+			<view class="money">
+				<!-- <view style="color:#CA2519;margin-right:30rpx" wx:if="{{isUseCoupon == 1}}">{{couponRemind}}：￥
+              <text style="font-size:40rpx">{{couponPrice}}</text>
+            </view> -->
+				<block wx:if="{{isZhiboGoods == 1}}">
+					<view style="color:#CA2519;margin-right:30rpx">直播价：￥
+						<text style="font-size:40rpx">{{zhiboPrice}}</text>
+					</view>
+					<view>{{priceName}}￥{{zhiboOriginPrice}}</view>
+				</block>
+				<block wx:if="{{goodsType == 3}}">
+					<view style="color:#CA2519;margin-right:30rpx">活动价：￥
+						<text style="font-size:40rpx">{{showPrice}}</text>
+					</view>
+					<view>官网价￥{{hiddenPrice}}</view>
+				</block>
+				<block wx:else>
+					<block wx:if="{{isZhiboGoods != 1}}">
+						<view style="color:#CA2519;margin-right:30rpx">会员价：￥
+							<text style="font-size:40rpx">{{goodVipPrice}}</text>
+						</view>
+						<view wx:if="{{goodsFlashState == 1}}">抢购价￥{{goodsFlashPrice}}/</view>
+						<view wx:else>{{priceName}}￥{{goodPrice}}</view>
+					</block>
+				</block>
+			</view>
+			<view class="NoGoods" wx:if="{{isSale.saleState == 0}}">
+				<text>无货</text>
+			</view>
+			<view class="specification">
+				<text>已选：</text>
+				<text wx:for='{{sizeSelectText}}' wx:key='item'>{{item}}</text>
+			</view>
+
+		</view>
+	</view>
+		<view class="size" wx:for="{{colorSize}}" style="margin-top:{{isSale.saleState == 0?'124rpx':''}}" wx:for-index="idx" wx:key="colorSize" wx:for-item="colorSize" data-idx="{{idx}}">
+			<view class="sizeName">{{colorSize.title}}</view>
+			<view class="channelContent">
+				<view data-aaa="{{item.isEnable}}" class="{{statusArr[idx] == index?'active':''}}" wx:for="{{colorSize.buttons}}" wx:key="label" data-index='{{index}}' data-idx="{{idx}}" data-name="{{item.text}}" bindtap='swichLabel' data-sku="{{item.skuList}}">
+					<text>{{item.text}}</text>
+				</view>
+			</view>
+		</view>
+
+		<view class="amount">
+			<view class="sizeName">数量</view>
+			<view class="regulation">
+				<view class="subtract" bindtap='subtract' data-num="{{amountNumber}}">-
+				</view>
+				<view class="amountNumber">
+					<input value="{{amountNumber}}" bindinput="amountNumberInput"></input>
+				</view>
+				<view class="addNumber" bindtap='addNumber' data-num="{{amountNumber}}">+
+				</view>
+			</view>
+		</view>
+	<block>
+		<view style="position:absolute;bottom:0;width:100%;padding-bottom:{{isFill?'20':''}}rpx;">
+			<!-- <view class="serialNum">商品编号 {{last_sku}}</view> -->
+			<view class="operationButton">
+				<view class="gopay" bindtap='sure' style="text-align:center;width:100%">加入购物车
+				</view>
+			</view>
+		</view>
+	</block>
+
+
+</view>
+<view class="commodity_screenshowModal" bindtap="hideModal" wx:if="{{showModal}}"></view>
+<view animation="{{animationData}}" bindtap='hideModalShare' class="commodity_attr_boxshowModal" wx:if="{{showModal}}">
+</view>

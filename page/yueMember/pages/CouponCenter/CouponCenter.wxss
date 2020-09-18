@@ -1,0 +1,190 @@
+/* page/yueMember/pages/CouponCenter/CouponCenter.wxss */
+
+.baimg {
+  width: 100%;
+  height: 503rpx;
+  padding-bottom: 27rpx;
+}
+
+.coupon {
+  display: flex;
+  flex-direction: row;
+  width: 96.4%;
+  margin-left: 1.8%;
+  margin-right: 1.8%;
+  height: 176rpx;
+  margin-bottom: 27rpx;
+}
+
+.coupon .info {
+  width: 71%;
+  height: 176rpx;
+  position: relative;
+}
+
+.coupon .info .bg {
+  display: flex;
+  flex-direction: row;
+  height: 176rpx;
+  width: 100%;
+}
+
+.coupon .info .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 15rpx;
+  width: 100%;
+  justify-content: center;
+}
+
+.coupon .info .content .goodImage {
+  width: 148rpx;
+  height: 148rpx;
+  margin-right: 20rpx;
+}
+
+.coupon .info .content .couponInfo {
+  display: flex;
+  flex-direction: column;
+  width: 62%
+}
+
+.coupon .info .content .couponInfo .name text {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: bold;
+  color: rgba(255, 114, 60, 1);
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 21rpx;
+}
+
+.coupon .info .content .couponInfo .price {
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: bold;
+  color: rgba(255, 114, 60, 1);
+  align-items: center;
+}
+
+.coupon .info .content .couponInfo .price text {
+  font-size: 62rpx;
+  margin-top: -20rpx;
+}
+
+.coupon .info .content .couponInfo .tips{
+  font-size: 20rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(102, 102, 102, 1);
+}
+.coupon .info .content .couponInfo .tips text{
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.coupon .Receive {
+  width: 29%;
+  height: 176rpx;
+  position: relative;
+}
+
+.coupon .Receive .ReceiveImmediately {
+  position: absolute;
+  width: 150rpx;
+  height: 38rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 19rpx;
+  top: 70rpx;
+  left: 31rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(226, 122, 1, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.coupon .Receive .bg {
+  display: flex;
+  flex-direction: row;
+  height: 176rpx;
+  width: 100%;
+}
+
+.commodity_screenlong {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.4;
+  overflow: hidden;
+  z-index: 1200;
+  color: #fff;
+}
+
+.isReceive {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  position: fixed;
+  left: 15%;
+  top: 15%;
+  z-index: 10000;
+}
+
+.isReceive .Top {
+  display: flex;
+  flex-direction: column;
+}
+
+.isReceive .Top .close {
+  width: 100%;
+  align-items: flex-end;
+  justify-content: flex-end;
+  display: flex;
+  margin-bottom: 157rpx;
+}
+
+.isReceive .Top .close image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 28rpx;
+}
+
+.isReceive .Top .content {
+  background-color: #fff;
+  width: 100%;
+  height: 261rpx;
+  border-radius: 20rpx;
+  font-size: 34rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.isReceive .Top .content .tipsimage {
+  width: 208rpx;
+  height: 107rpx;
+  margin-bottom: 37rpx;
+}
+

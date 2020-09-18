@@ -1,0 +1,84 @@
+<!--page/Mall/pages/GroupDetail/GroupDetail.wxml-->
+<view class="goodInfo">
+  <view>
+    <image src="{{productInfo.goods_img}}"></image>
+  </view>
+  <view class="info">
+    <view class="title">
+      <text>{{productInfo.goods_name}}</text>
+    </view>
+    <view class="groupInfo">
+      <view class="title">{{productInfo.needer}}人拼团仅需：</view>
+      <view class="price">¥{{productInfo.team_price}}</view>
+    </view>
+    <view class="OriginalPrice">官网价：¥{{productInfo.origin_price}} </view>
+  </view>
+</view>
+<view class="NumberGroups">
+  <view class="title" wx:if="{{teamStatus != 2}}">
+    还差
+    <text>{{productInfo.needer - productInfo.joins}}人 </text>即可拼团成功
+  </view>
+  <view class="title" wx:else>
+    已成团
+  </view>
+  <view class="HeadPortrait">
+    <view class="image" wx:for="{{team}}" wx:key="team">
+      <image class="head" src="{{item.headpic}}" bindtap='ImmediateDelegation'></image>
+      <image class="RegimentalCommander" wx:if="{{item.type}}" src="/images/YueMall/RegimentalCommander.png"></image>
+    </view>
+  </view>
+</view>
+<view class="ImmediateDelegation" bindtap='ImmediateDelegbation' wx:if="{{teamStatus != 2}}">立即参团</view>
+<view class="ImmediateDelegation" bindtap='GoDetail' wx:else>发起拼团</view>
+ <view class="authorizationStatus" bindtap='VerificationCode' wx:if="{{authorizationStatus}}"></view>
+<!-- 规格 -->
+<view class="commodity_screen" bindtap="hideModal" catchtouchmove="disMove" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" catchtouchmove="disMove" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class="close" data-statu="close" bindtap="hideModal">
+    <image src="/images/YueMAll/close.png" style="width:26rpx;height:24rpx"></image>
+  </view>
+  <view class="commodity" style="">
+    <view class="images" style="background-color:#fff">
+      <image src="{{boxbanner}}" data-src="{{Specificationsimg}}" catchtap="imgYu" data-list="{{bannerItem}}"></image>
+    </view>
+    <view class="describe">
+      <view class="money">
+        <view style="color:#FF5012;margin-right:30rpx">￥
+          <text style="font-size:40rpx">{{productInfo.team_price}}</text>
+        </view>
+        <view>官网价￥{{productInfo.origin_price}}</view>
+      </view>
+      <view class="specification">
+        <text>商品编号：{{skuid}}</text>
+      </view>
+    </view>
+  </view>
+  <scroll-view scroll-y style="height: 378px;">
+    <view class="size" wx:for="{{colorSize}}" style="margin-top:{{isSale.saleState == 0?'124rpx':''}}" wx:for-index="idx" wx:key="colorSize" wx:for-item="colorSize" data-idx="{{idx}}">
+      <view class="sizeName">{{colorSize.title}}</view>
+      <view class="channelContent">
+        <view data-aaa="{{item.isEnable}}" class="{{statusArr[idx] == index?'active':''}}" wx:for="{{colorSize.buttons}}" wx:key="label" data-index='{{index}}' data-idx="{{idx}}" data-name="{{item.text}}" bindtap='{{item.isEnable?"swichLabel":""}}' data-sku="{{item.skuList}}">
+          <text class="{{item.isEnable?'':'NotOptional'}}">{{item.text}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="amount">
+      <view class="sizeName">数量</view>
+      <view class="regulation">
+        <view class="subtract" bindtap='subtract' data-num="{{amountNumber}}">-</view>
+        <view class="amountNumber">{{amountNumber}}</view>
+        <view class="addNumber" bindtap='addNumber' data-num="{{amountNumber}}">+</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view style="position:absolute;bottom:0;width:100%">
+    <view class="operationButton">
+      <view class="SeparatePurchase" bindtap='sure'>
+        <view class="">确定</view>
+      </view>
+    </view>
+  </view>
+</view>
+ <!-- 授权按钮 -->
+ <view class="authorizationStatus" bindtap='VerificationCode' wx:if="{{authorizationStatus}}"></view>

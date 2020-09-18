@@ -1,0 +1,85 @@
+<view class="requirement">
+  <view class="reTitle">
+    <text>订单信息</text>
+  </view>
+  <view class="deliveryAdd">
+    <view class="userInfo">
+      <view class="userAddress">
+        <view class="addressLabel">
+          订单编号：
+          <text>{{orderNumber}}</text>
+        </view>
+      </view>
+      <view class="userAddress">
+        <view class="addressLabel">
+          订单时间：{{addTime}}
+        </view>
+      </view>
+      <view class="userAddress">
+        <view class="addressLabel">
+          订单状态：{{statusDesc}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="requirement">
+  <view class="reTitle">
+    <text>商品信息</text>
+  </view>
+  <view class="deliveryAdd">
+    <view class="userInfo">
+      <view class="userAddress">
+        <view class="addressLabel">
+          商品名称：{{title}}{{buyNumber}}张
+        </view>
+      </view>
+      <view class="userAddress">
+        <view class="addressLabel">
+          商品价格：￥{{price}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class="requirement">
+  <view class="reTitle">
+    <text>联系人信息</text>
+  </view>
+  <view class="deliveryAdd">
+    <view class="userInfo">
+      <view class="userAddress">
+        <view class="addressLabel">
+          姓名：{{contacts}}
+        </view>
+      </view>
+      <view class="userAddress">
+        <view class="addressLabel">
+          电话：{{tel}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+<view class="footr" bindtap='goDetails' wx:if="{{status == 5}}">
+  <view style="font-size:22rpx;background-color:#fff;width:100%;height:49px">
+    实际支付：
+    <text style="color:rgb(252,105,49)">￥</text>
+    <text style="font-size:35rpx;color:rgb(252,105,49)">{{price}}</text>
+  </view>
+
+</view>
+<view class="footr" bindtap='goDetails' wx:else>
+  <view style="font-size:34rpx;background-color:#fff;width:50%;height:49px;color:rgb(51,51,51)">
+    实际支付：
+    <text style="color:#ff6032">￥</text>
+    <text style="font-size:34rpx;color:#ff6032">{{price}}</text>
+  </view>
+  <view style="font-size:22rpx;background-color:#ff6032;width:50%;height:49px;color:rgb(240,242,246);font-size:32rpx" bindtap='gopay'>
+    去支付
+  </view>
+</view>

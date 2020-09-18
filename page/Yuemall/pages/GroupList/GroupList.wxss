@@ -1,0 +1,73 @@
+/* page/Mall/pages/GroupList/GroupList.wxss */
+page{
+  background-color: #ECECEC;
+  padding-top: 30rpx;
+}
+.list{
+  width: 84%;
+  margin-left: 4%;
+  margin-right: 4%;
+  padding-left: 4%;
+  padding-right: 4%;
+  border-radius: 18rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 34rpx;
+  padding-bottom: 34rpx;
+}
+.list .SenderInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 24rpx;
+  color: #000;
+}
+
+.list .SenderInfo image {
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 50%;
+  background-color: #ff7666;
+  margin-right: 20rpx;
+}
+.list .GroupInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.list .SenderInfo .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.list .SenderInfo .info .fewPeople {
+  color: #0a0204;
+  font-size: 28rpx;
+  margin-bottom: 15rpx;
+}
+
+.list .SenderInfo .info .fewPeople text {
+  color: #ff4e49;
+}
+
+.list .SenderInfo .info .time {
+  color: #303030;
+  font-size: 28rpx;
+}
+
+.list .GroupInfo .GoGroup {
+  width: 162rpx;
+  height: 56rpx;
+  background: linear-gradient(90deg, rgba(255, 111, 91, 1) 0%, rgba(255, 78, 73, 1) 100%);
+  border-radius: 10rpx;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 56rpx;
+  margin-left: 57rpx;
+}

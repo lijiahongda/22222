@@ -1,0 +1,43 @@
+<view class="couponDetail {{(type==7)?'':'couponDetailActivity'}} {{noCanGet == true || state ==1?'noCanGet':''}}">
+  <view>
+    <view class="left">
+      <view>{{couponInfo.couponName}}</view>
+      <view class="price">
+        <text>￥</text>
+        <text>{{couponInfo.amount}}</text>
+        <text>优惠券</text>
+      </view>
+      <view>有效期:{{couponInfo.usedRemind}}</view>
+      <image wx:if='{{!noCanGet || state != 1}}' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-12/17/yuelvhuiVSYC6rYE6G1581501534.png" alt=""></image>
+      <image wx:else src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-12/17/yuelvhuiqvuxi0jk5R1581501580.png" alt=""></image>
+    </view>
+    <view wx:if='{{getCoupons==1}}' class="right" bindtap="{{noCanGet?'':'getCoupons'}}">
+      <view wx:if='{{getCoupons == 1&&type == 5}}'>
+        <view wx:if='{{!noCanGet}}' bindtap="getCoupons">立即领取</view>
+        <view wx:if='{{noCanGet}}' bindtap="getUse">立即使用</view>
+      </view>
+      <view wx:else bindtap="getCoupons">立即领取</view>
+    </view>
+    <view wx:else class="right">
+      <button open-type='share'>立即分享</button>
+    </view>
+  </view>
+</view>
+<block wx:if='{{type!=5}}'>
+  <image mode='widthFix' src="{{img}}" alt="" class='activityImg' wx:if='{{type!=7}}'> </image>
+</block>
+<view class="activity" data-hotid="{{id}}" data-name="专区" data-redirecttype="39" data-typeid="undefined" bindtap="activityDetail" wx:if='{{type!=7 && type!=5  }}'>查看活动</view>
+
+<view class="goodsDetail" wx:if='{{type==7}}' bindtap="goHome">
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-15/21/yuelvhui3eTHPKuuBV1581774315.png"></image>
+</view>
+
+<view class="explain">
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-12/16/yuelvhuiy5Y0C2bEpX1581497589.png" alt=""></image>
+  <view>
+    <text wx:for='{{remind}}' wx:key="*this">{{item}}</text>
+  </view>
+</view>
+
+<!-- 授权按钮 -->
+<view class="authorizationStatus" bindtap='VerificationCode' wx:if="{{authorizationStatus}}"></view>

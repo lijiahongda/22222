@@ -1,0 +1,33 @@
+<block wx:if="{{isBrigadeFestival}}">
+ 
+    <image src="{{onShare}}"></image>
+    <view class="ToInvite" catchtap='onShare'>
+      <button open-type="share" style="margin-top:0rpx;padding:0rpx;line-height:0;background-color:#fff;margin-bottom:5rpx" class='con_listbox'>
+
+        <view style="background-color: #FFB536;height:88rpx;color:#fff;line-height:88rpx;">去邀请</view>
+      </button>
+    </view>
+</block>
+<block wx:else>
+  <view class="invitationsNum">
+    <view class="info">
+      <view class="number">邀请人数：{{invitedNum}}人</view>
+      <view class="Deadline">截止时间：{{endTime}}</view>
+    </view>
+    <view class="GiftPackage" style="background-color:{{hadReceive == 2?'#fff':''}};color:{{hadReceive == 2?'#ccc':''}}" bindtap='{{hadReceive == 1?"GiftPackage":""}}'>{{GiftPackage}}</view>
+  </view>
+  <view class="title">赢得奖励人员名单</view>
+  <scroll-view scroll-y="true">
+    <view class="item" wx:for="{{order}}" wx:key="item">
+      <view class="itemleft">
+        <image src="{{item.url}}"></image>
+        <view>
+          <text>{{item.trueName}}</text>
+        </view>
+      </view>
+      <view class="itemRight">邀请人数：{{item.invitedNum}}人</view>
+    </view>
+  </scroll-view>
+</block>
+ <!-- 授权按钮 -->
+<button class="authorizationStatus" open-type="getUserInfo" bindgetuserinfo='login' wx:if="{{authorizationStatus}}"></button>

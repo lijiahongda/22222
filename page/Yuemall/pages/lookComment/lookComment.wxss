@@ -1,0 +1,95 @@
+/* page/Yuemall//pages/lookComment/lookComment.wxss */
+/* 评论 */
+
+.comment {
+  background-color: #fff;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 30rpx;
+}
+.comment .PersonalComments {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid #ebecee;
+  margin-bottom: 31rpx;
+}
+
+.comment .PersonalComments .userInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 23rpx;
+}
+
+.comment .PersonalComments .userInfo .Head {
+  width: 54rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 14rpx;
+}
+
+.comment .PersonalComments .userInfo .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment .PersonalComments .userInfo .info .stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.comment .PersonalComments .userInfo .info .stars image {
+  width: 17rpx;
+  height: 16rpx;
+  margin-right: 8rpx;
+  margin-top: 9rpx;
+}
+
+.comment .PersonalComments .WrittenWords text {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 21rpx;
+}
+
+.comment .PersonalComments .tab-hSecondLevel {
+  height: 180rpx;
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+}
+
+.comment .PersonalComments .tab-hSecondLevel image {
+  width: 180rpx;
+  height: 180rpx;
+  background-color: #ccc;
+  margin-right: 10rpx;
+}
+
+.comment .PersonalComments .Specifications {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-bottom: 30rpx;
+}
+

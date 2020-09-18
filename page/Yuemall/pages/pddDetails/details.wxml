@@ -1,0 +1,177 @@
+<import src="../../../../wxParse/wxParse/wxParse.wxml" />
+<scroll-view
+ scroll-y="true"
+ scroll-with-animation="true"
+ bindscroll="bindscroll"
+ class='productFeatures'
+ scroll-into-view="{{scrollId}}"
+ style="height:{{windowHeight}}px"
+>
+	<!-- <block wx:if="{{scrollTop > 100}}"> -->
+	<!--导航-->
+	<!-- <view class="{{ scrollTop > 100 ? 'tabContainer1' : '' }}">
+      <view class="tabContainer">
+        <view class='tabItem' bindtap='NavTab' wx:for-index="index" data-index="{{item.title == '购买须知'?'4':index}}" wx:for="{{lineText}}" wx:key="lineText" wx:if='{{item.title!="评论"||(item.title=="评论"&&comment.result.length>0)}}'>
+          <view class='space'></view>
+          <text class='{{ index == tabIndex ? "tabTitleSelected":"tabTitle" }}'>{{item.title}}</text>
+          <view class='space'></view>
+          <view class='tabDiv' wx:if='{{tabIndex == index}}'></view>
+        </view>
+      </view>
+    </view> -->
+	<!-- </block> -->
+	<view class="detailContent">
+		<scroll-view scroll-y>
+			<view id="d0">
+				<view class="swiper-index">
+					<swiper
+					 autoplay="false"
+					 interval="10000"
+					 duration="300"
+					 bindchange='bindChange'
+					>
+						<block
+						 wx:for="{{bannerItem}}"
+						 wx:key="bannerItem"
+						 wx:for-index="index"
+						>
+							<swiper-item>
+								<view style="position: relative;height:100%">
+									<image src="{{item}}" class="slide-image" />
+									<image
+									 wx:if="{{index == 0 &&videoInfo.isVideo == 1 && videoInfo.videoPath != ''}}"
+									 src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-06/10/yuelvhuiBIZGB8uBVv1578279354.png"
+									 bindtap="PlayVideo"
+									 class="video"
+									 style="width: 120rpx;height: 120rpx;"
+									></image>
+								</view>
+								<view class="digits">
+									<text class="slide-text">{{current+1}}/{{bannerItem.length}}</text>
+								</view>
+							</swiper-item>
+						</block>
+					</swiper>
+				</view>
+			</view>
+
+			<!-- 授权按钮 -->
+			<!-- <view class="authorizationStatus" bindtap='VerificationCode' wx:if="{{authorizationStatus}}"></view> -->
+
+			<view class="pddTitle">
+				<view class="titOne">{{title}} </view>
+				<view class="titTwo">
+					<view>
+						￥
+						<text class="pricePdd">{{jh_price}}</text>
+						抢购
+						<text class="though">￥{{min_normal_price}}</text>
+					</view>
+					<view style="color:#555555">已售:{{sales_tip}}</view>
+				</view>
+				<swiper
+				 wx:if='{{coupon.length > 0}}'
+				 style="height:126rpx"
+				 autoplay="true"
+				 interval="10000"
+				 duration="300"
+				 bindchange='bindChange'
+				>
+					<block
+					 wx:for="{{coupon}}"
+					 wx:key="coupon"
+					 wx:for-index="index"
+					>
+						<swiper-item>
+							<view class="titThree" style=" background:url(https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-02-21\/16\/yuelvhuicWuUqGW3Ir1582272615.png);background-repeat: no-repeat;background-size: 100%;">
+								<view style="margin-top:-20rpx;">
+									<view>￥
+										<text style="font-size:54rpx; ">{{item.coupon_discount}}</text>
+										优惠券
+									</view>
+									<view>使用时间：{{item.coupon_start_time}}-{{item.coupon_end_time}}</view>
+								</view>
+								<view class="receive" bindtap="goPdd">立即领券</view>
+							</view>
+
+						</swiper-item>
+					</block>
+				</swiper>
+				<view class="PDDbox" bindtap="PDDClick">
+					<view>规则：</view>
+
+					<view class="selected">
+						预估成长值说明
+					</view>
+					<view class="end">
+						<text class="end1">></text>
+					</view>
+				</view>
+			</view>
+
+			<!-- 商品详情 -->
+			<view
+			 class="CommodityDetails"
+			 id="d3"
+			 style="margin-bottom:150rpx;"
+			>
+				<view class="CommodityDetailsTitle">
+					<view>
+						<text decode='true'>商品详情</text>
+					</view>
+				</view>
+				<view wx:for='{{bannerItem}}' wx:key='goods_gallery_urls'>
+					<image style="width:750rpx;height:750rpx;" src="{{item}}"></image>
+				</view>
+				<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+			</view>
+			<!-- 评价 -->
+			<!-- <view class="pjBox">
+        <view>{{mall_name}}</view>
+        <view>
+         <view><宝贝描述:{{desc_txt}}</view>
+         <view><卖家服务:{{serv_txt}}</view>
+         <view><物流服务:{{lgst_txt}}</view>
+        </view>
+      </view> -->
+		</scroll-view>
+
+		<!-- 底部 -->
+		<view class="footerPdd">
+			<button
+			 wx:if='{{newShareScore.type == 0}}'
+			 class="footB"
+			 bindtap="sharePage"
+			>
+				<view class="footB1">
+					<view>
+						分享预估赚
+					</view>
+					<view>
+						¥{{newShareScore.share}}
+					</view>
+				</view>
+			</button>
+			<button
+			 wx:else
+			 class="footB"
+			 bindtap="sharePage"
+			>
+				分享送
+				<text >{{newShareScore.share}}成长值</text>
+			</button>
+			<view class="footR" bindtap="goPdd">
+				<view class="footR1">
+					<view>
+						购买预估送
+					</view>
+					<view>
+						{{newShareScore.buy}}成长值
+					</view>
+				</view>
+
+			</view>
+		</view>
+	</view>
+</scroll-view>
+

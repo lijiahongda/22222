@@ -1,0 +1,17 @@
+<view class="wrap">
+  <image class="bgImg" mode="widthFix" src="{{bgImg}}"></image>
+  <view class="content">
+    <view class="receive" bindtap='{{give == 0 ? "gotoReceive" : ""}}'>{{give == 0 ? '会员免费领取' : give == 1 ? '已领取' : '已领取,等待发放'}}</view>
+    <view class="info" bindtap='gotoReceiveInfo'>了解详情 ></view>
+    <view class="qrcode" style="background-image:url({{qrcode}});"></view>
+    <view class="info info1" bindtap='gotoReceiveInfo'>了解详情 ></view>
+  </view>
+  <view class="noMember" wx:if="{{noMember}}">
+    <view class="noMemberCont">
+      <image class="noMemberImg" src="{{noMemberImg}}"></image>
+      <view class="refused" bindtap='refused'>残忍拒绝</view>
+      <view class="accept" bindtap='accept'>升级，领年卡</view>
+      <view class="colseNomember" bindtap='colseNomember'>×</view>
+    </view>
+  </view>
+</view>

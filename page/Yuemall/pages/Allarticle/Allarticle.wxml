@@ -1,0 +1,22 @@
+<!--page/Yuemall/pages/Allarticle/Allarticle.wxml-->
+<view class="articleInfo" wx:for="{{articleInfo}}" wx:key="articleInfo">
+  <view class="title">
+    <view class="">发素材圈</view>
+  </view>
+  <view class="Hairpin">
+    <image class="HeadPortrait" src="{{item.headImg}}"></image>
+    <view>
+      <view>{{item.nickName}}</view>
+      <view class="time">{{item.createdTime}}</view>
+    </view>
+  </view>
+  <view class="content">
+    <text style="-webkit-line-clamp:{{isDisplayFulltext?'0':'3'}}; display: -webkit-box;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis">{{item.content}}</text>
+  </view>
+  <view class="DisplayFulltext" bindtap='DisplayFulltext' wx:if="{{isDisplayFulltext}}">收起</view>
+  <view class="DisplayFulltext" bindtap='DisplayFulltext' wx:else>显示全文</view>
+  <view class="articleImage" wx:for="{{item.images}}" wx:key="{{item.image}}">
+    <image src="{{item}}"></image>
+  </view>
+  <view class="NumberHairpins">{{item.count}}人已发圈</view>
+</view>

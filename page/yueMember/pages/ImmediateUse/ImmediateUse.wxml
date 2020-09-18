@@ -1,0 +1,63 @@
+<!--page/yueMember/pages/ImmediateUse/ImmediateUse.wxml-->
+<view class="top" style="background-image:url({{couponInfo.backGroundImg}})">
+  <view class="coupon">
+    <view class="info">
+      <image class="bg" src="https://image.yuelvhui.com/pubfile/2019/07/04/line_1562228989_46090.png"></image>
+      <view class="content">
+        <view class="couponInfo">
+          <view class="name">
+            <text>{{couponInfo.couponName}}</text>
+          </view>
+          <view class="price">
+            <view class="tips">满{{couponInfo.samount}}减</view>
+            <view>{{couponInfo.amount}}元</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="Receive">
+      <image class="bg" src="https://image.yuelvhui.com/pubfile/2019/07/04/line_1562229079_40385.png"></image>
+      <view class="ReceiveImmediately" data-goodid="{{goodsInfo.goodsId}}" data-skuid="{{goodsInfo.skuId}}" bindtap='lookDetail'wx:if="{{couponInfo.couponState == 2}}">立即使用</view>
+      <view class="ImmediateUse" data-cid="{{cid}}" bindtap='ReceiveImmediately' wx:if="{{couponInfo.couponState == 0}}">立即领取</view>
+       <view class="ImmediateUse" bindtap='closeisReceive' wx:if="{{couponInfo.couponState == 1}}"  style="background-color:#ccc;color:#fff">过期</view>
+       <view class="ImmediateUse" bindtap='closeisReceive' wx:if="{{couponInfo.couponState == 3}}"  style="background-color:#ccc;color:#fff">已使用</view>
+    </view>
+  </view>
+  <view class="goods" bindtap='lookDetail' data-goodid="{{goodsInfo.goodsId}}" data-skuid="{{goodsInfo.skuId}}">
+    <view class="goodInfo">
+      <image class="goodImage" src="{{goodsInfo.goodsImg}}"></image>
+      <view class="info">
+        <view class="name">
+          <text>{{goodsInfo.goodsName}}</text>
+        </view>
+        <view class="OriginalPrice">{{goodsInfo.priceName}}：
+          <text>¥{{goodsInfo.goodsVipPrice}}</text>
+        </view>
+        <view class="ConcessionalRate">用券后：¥{{goodsInfo.goodsCouponPrice}}</view>
+      </view>
+    </view>
+    <view class="lookDetail">查看商品详情</view>
+  </view>
+</view>
+<view class="ExplainTitle">
+  <image src="https://image.yuelvhui.com/pubfile/2019/07/04/line_1562230584_26906.png" class="ExplainTitle"></image>
+</view>
+<view class="Explain">
+  <text wx:for="{{remind}}" wx:key="remind">{{item}}</text>
+</view>
+<view class="commodity_screenlong" wx:if="{{isReceive}}"></view>
+<view class="isReceive" wx:if="{{isReceive}}">
+  <view class="Top">
+    <view class="close">
+      <view bindtap='closeisReceive'>
+        <image src="https://image.yuelvhui.com/pubfile/2019/07/04/line_1562225857_61688.png"></image>
+      </view>
+    </view>
+    <view class="content">
+      <image class="tipsimage" src="https://image.yuelvhui.com/pubfile/2019/07/04/line_1562226199_22391.png"></image>
+      <view>恭喜您，领取成功</view>
+    </view>
+  </view>
+</view>
+<!-- 授权按钮 -->
+<view class="authorizationStatus" bindtap='VerificationCode' wx:if="{{authorizationStatus}}"></view>

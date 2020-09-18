@@ -1,0 +1,29 @@
+<view class="top_cont">
+  <view>{{num}}</view>
+  <view style="font-size:24rpx;">
+    <view bindtap="{{type==3?'goBack':''}}">
+      {{type==0?title+todayAdd+'豆':title}}
+      <image wx:if="{{type==3}}" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-09/23/yuelvhuiOeuKoS0fEp1575904656.png"></image>
+    </view>
+  </view>
+
+  <block wx:if="{{type==0}}">
+    <view class="tip" bindtap="tips">
+      悦豆说明
+      <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2019-12-09/23/yuelvhuiA145JZsL7P1575906072.png"></image>
+    </view>
+    <view class="use" bindtap="goBack">去使用</view>
+  </block>
+</view>
+
+
+  <view class="content">
+    <view class="list" wx:for="{{list}}" wx:for-index="index" wx:key="index">
+      <view class="cont">
+        <view>{{item.content}}</view>
+        <view class="time">{{item.addTime}}</view>
+      </view>
+      <view class="number" wx:if="{{item.type==1}}">-{{item.number}}</view>
+      <view class="number" style="color:#FFBF17" wx:if="{{item.type==2}}">+{{item.number}}</view>
+    </view>
+  </view>

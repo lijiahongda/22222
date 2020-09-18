@@ -1,0 +1,38 @@
+/* page/Popup/Popup.wxss */
+.commodity_screenlong {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1200;
+  color: #fff;
+}
+/* 大红包弹窗 */
+.Advertisement {
+  position: fixed;
+  width: 100%;
+  top: 23%;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+
+.Advertisement  .slide-image {
+  width: 540rpx;
+  height: 680rpx;
+}
+
+.Advertisement .close {
+  width: 46rpx;
+  height: 46rpx;
+  margin-left: 70%;
+  position: relative;
+  top: 20rpx;
+  left:0;
+}

@@ -1,0 +1,40 @@
+<view class="header">
+  <view class="{{type==1?'active':''}}" data-type="1" bindtap="changeType">直推群</view>
+  <view class="{{type==2?'active':''}}" data-type="2" bindtap="changeType">间推群</view>
+</view>
+<view class="list" wx:for='{{list}}'>
+  <view class="left">
+    <view>{{item.groupName}}</view>
+    <view>群编号：{{item.groupNo}}</view>
+  </view>
+  <block wx:if='{{item.isShowUpgrade==1}}'>
+    <!-- isShowUpgrade ： 0-不显示、1-显示。升级按钮 -->
+    <!-- statusV2 ： 1-审核中、 其他-升级 -->
+    <view class="rightButton" data-id="{{item.groupId}}" wx:if='{{item.isShowUpgrade.statusV2==1}}'>审核中</view>
+    <view class="rightButton"  bindtap="upLv" data-groupid="{{item.groupId}}" wx:else>升级</view>
+  </block>
+  <block wx:else>
+    <!-- isHasAssistant-0 ,status-2 申请助理 -->
+    <!-- isHasAssistant-1 ,status-2 已开通 -->
+    <!--status-1 审核中 -->
+    <view class="right"  bindtap="goOpen" data-id="{{item.groupId}}" wx:if='{{item.isHasAssistant==0&&item.status==2}}'>
+      <view>申请助理</view>
+      <image  src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-02/14/yuelvhui6QlHcKzU4o1583132025.png"></image>
+    </view>
+    <view class="right" wx:if='{{item.isHasAssistant==1&&item.status==2}}'>
+      <view>已开通</view>
+      <image style='opacity:0' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-02/14/yuelvhui6QlHcKzU4o1583132025.png"></image>
+    </view>
+    <view class="right" wx:if='{{item.status==1}}'>
+      <view>审核中</view>
+      <image style='opacity:0' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-02/14/yuelvhui6QlHcKzU4o1583132025.png"></image>
+    </view>
+  </block>
+</view>
+<!-- <view class="add" >新增一个群后即可申请群助手</view> -->
+<view class="tip" wx:if='{{data.status!=1&&type==1&&list}}'>新增一个群后即可申请群助手</view>
+<view class="add" bindtap="goGroupUp" wx:if='{{data.status!=1&&type==1}}'>新增一个群</view>
+<view class="content">
+  <view class="title">建推广群赚更多收益</view>
+  <view class="desc">您还可以建专门用于购物推广的微信群，每天往群里推广爆品好物，群人数越多，收益越高。</view>
+</view>

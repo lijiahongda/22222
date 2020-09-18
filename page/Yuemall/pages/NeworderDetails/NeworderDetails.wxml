@@ -1,0 +1,157 @@
+<import src="../colorLine/colorLine.wxml" />
+<view class="TopContent">
+  <view class="status">
+    <block wx:if="{{orderType == 1}}">
+      <image src="https://image.yuelvhui.com/pubfile/2019/08/13/line_1565695631_63730.png"></image>
+      <view>等待付款</view>
+    </block>
+    <block wx:if="{{orderType == 2 || orderType == 5}}">
+      <image src="https://image.yuelvhui.com/pubfile/2019/08/13/line_1565702679_36281.png" style="height:39rpx;"></image>
+      <view>已付款</view>
+    </block>
+    <block wx:if="{{orderType == 3}}">
+      <image src="https://image.yuelvhui.com/pubfile/2019/08/13/line_1565702767_70087.png" style="width:37rpx;height:37rpx;"></image>
+      <view>已取消</view>
+    </block>
+    <block wx:if="{{orderType == 4}}">
+      <image src="https://image.yuelvhui.com/pubfile/2019/08/13/line_1565702852_65596.png" style="width:35rpx;height:35rpx;"></image>
+      <view>已完成</view>
+    </block>
+  </view>
+  <view class="payButton" bindtap='BuyAgain' data-orderson="{{ordersn}}" wx:if="{{orderType == 1}}">去支付</view>
+</view>
+<view class="orderDetails">
+  <view class="userInfo" wx:if="{{address != ''}}">
+    <view class="userInfoContent">
+      <view class="info">
+        <view class="contentInfo">
+          <image src="https://image.yuelvhui.com/pubfile/2019/08/13/line_1565695892_72832.png"></image>
+          <view class="name">{{linkName}}</view>
+          <view class="phone">{{linkTel}}</view>
+        </view>
+        <view class="modify" bindtap="modify" wx:if="{{updateStatus == 1}}">修改 ></view>
+      </view>
+      <view class="location">
+        <view class="defaultContent"> </view>
+        <view class="site">
+          <view class="address">地址：{{addressdetail}}</view>
+          <view class="image"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <template is="colorLine" /> -->
+  <view class="goods">
+    <view class="borderBottom">
+      <view class="ItemRight" wx:for="{{goodsInfo}}" wx:key="goodsInfo" wx:for-index="index" style="border-top-left-radius:{{index == 0?'30rpx':''}};border-top-right-radius:{{index == 0?'30rpx':''}};border-bottom-left-radius: {{index == ((goodsInfo.length)-1)?'30rpx':''}};border-bottom-right-radius:{{index == ((goodsInfo.length)-1)?'30rpx':''}}">
+        <view class="image">
+          <image src="{{item.goodsImg}}"></image>
+        </view>
+        <view class="describe">
+          <view class="title">
+            <text>{{item.goodsName}}</text>
+          </view>
+           <!-- 如果是书籍加字段 -->
+          <view wx:if="{{item.channelId == 8}}">作者名:{{item.authorName}}</view>
+          <view wx:if="{{item.channelId == 8 && item.publishName !=''}}">出版社:{{item.publishName}}</view>
+          <view class="Specifications">数量：{{item.goodsNum}} 规格：{{item.goodsSpec}}</view>
+          <!-- 普通活动 -->
+          <view class="price" wx:if='{{item.activityPrice}}'>
+            <text>￥</text>{{item.activityPrice}}
+          </view> 
+          <view class="price" wx:else>
+            <text>￥</text>{{item.goodsPrice}}
+          </view>
+          <view class="ViewLogistics">
+            <view class="apply" wx:if="{{type!='' }} ">
+              <block wx:if="{{item.refundButtonType> 0}}">
+                <view bindtap="{{item.refundButtonType == 1?'refundbutton':item.refundButtonType == 2?'applyrefund':''}}" data-item="{{item}}" data-subordersn="{{item.subOrderSn}}" class="applys">{{item.refundButtonText}}</view>
+              </block>
+            </view>
+            <view bindtap="ViewLogistics" wx:if="{{item.isCan == 1}}" data-recordid="{{item.recordId}}" data-img="{{item.goodsImg}}" data-name="{{item.goodsName}}" data-num="{{item.goodsNum}}" data-spec="{{item.goodsSpec}}" data-price="{{item.goodsPrice}}" class="look">查看物流</view>
+             <view bindtap="ConfirmReceipt" wx:if="{{item.isMakesure == 1}}" class="Confirm_receipt" data-orderson="{{item.subOrderSn}}">确认收货</view>
+             <!-- <view class="applys" bindtap="refundbutton">申请退款</view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class=" order ">
+      <view class="orderNum" bindtap="copyText" data-text="{{ordersn}}">
+        <text>订单编号:</text> {{ordersn}}</view>
+      <view class="orderNum ">
+        <text>下单时间:</text> {{createTime}}</view>
+    </view>
+  </view>
+  <view class="orderInfo ">
+    <view class="pay ">
+      <view class="payList ">
+        <view class="payname ">
+          <text decode="true ">支付方式：</text>
+        </view>
+        <view class="payValue ">微信</view>
+      </view>
+      <view class="payList ">
+        <view class="payname ">
+          <text decode="true ">商品总额：</text>
+        </view>
+        <view class="payValue ">¥{{tatal}}</view>
+      </view>
+      <!-- <view class="payList ">
+        <view class="payname ">
+          <text decode="true ">使用抵扣：</text>
+        </view>
+        <view class="payValue ">{{totelDeducPrice}}悦豆</view>
+      </view> -->
+      <view class="payList ">
+        <view class="payname ">
+          <text decode="true ">优&nbsp;&nbsp;惠&nbsp;券：</text>
+        </view>
+        <view class="payValue ">{{couponPrice}}元</view>
+      </view>
+      <view class="payList ">
+        <view class="payname ">
+          <text decode="true ">运&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;费：</text>
+        </view>
+        <view class="payValue ">{{goodFreight}}</view>
+      </view>
+      <view class="payList ">
+        <view class="payname ">
+          <text decode="true " wx:if="{{orderType==1 || orderType==3 }} ">应&nbsp;&nbsp;付&nbsp;款：</text>
+          <text decode="true " wx:else>实&nbsp;&nbsp;付&nbsp;款：</text>
+          <!-- 1 3 应付款 2 4 实付款 -->
+        </view>
+        <view class="payValue ">¥{{totalPrice}}</view>
+      </view>
+    </view>
+    <!-- <view style="border-top:1px solid #ececec "></view>
+    <view class="out-of-pocket ">
+      <view>实付金额：</view>
+      <view style="color:#F36F5A "> ¥{{totalPrice}}</view>
+    </view> -->
+  </view>
+  <!-- 物流信息 -->
+  <!-- 普通物流 -->
+  <!-- <view class="GeneralLogistics " wx:if="{{shippingStatus==1 }} ">
+    <view class="item ">
+      <text>物流号：</text>
+      <text>{{logisticeNumber}}</text>
+    </view>
+    <view class="item ">
+      <text>物流公司：</text>
+      <text>{{logisticeCompany}}</text>
+    </view>
+  </view> -->
+  <!-- 京东物流 -->
+  <!-- <view class="LogisticInfo " wx:if="{{(shippingStatus==1 &&goodsThreePartner==3 )}} ">
+    <view class="listAll ">
+      <view class="list " wx:for="{{info}} " wx:key="info " wx:for-index="index ">
+        <view class="title " style='color:{{index == 0?"#333 ":" "}}'>
+          <text>{{item.content}}</text>
+        </view>
+        <view class="time ">{{item.msgTime}}</view>
+      </view>
+    </view>
+  </view> -->
+</view>
+<!-- 平台客服 -->
+<image src="/images/personalCenter/CustomerService.png" bindtap="CustomerService" class="Customer_Service"></image>

@@ -1,0 +1,13 @@
+<!--page/yueMember//pages/NethongVillaDetail/NethongVillaDetail.wxml-->
+<view class="content" style="background-image:url({{backImg.url}});width:{{backImg.width}}rpx;height:{{backImg.height}}rpx">
+  <view class="card" wx:for="{{order}}" wx:key="order" style="background-image:url({{yellowBackImg.url}});width:{{yellowBackImg.width}}rpx;height:{{yellowBackImg.height}}rpx">
+    <view class="title">
+      <image src="https://image.yuelvhui.com/pubfile/2019/08/28/line_1566989505_93743.png"></image>
+      <view>您的卡号</view>
+    </view>
+    <view class="cardNum">{{item}}</view>
+    <image class="copy" src="https://image.yuelvhui.com/pubfile/2019/08/28/line_1566989830_99964.png" bindtap='copyText' data-text="{{item}}"></image>
+  </view>
+  <view class="remind">{{remind}}</view>
+  <image wx:for="{{img}}" class="img" wx:key="img" src="{{item.url}}" style="width:{{item.width}}rpx;height:{{item.height}}rpx;"></image>
+</view>

@@ -1,0 +1,13 @@
+
+<view>
+  <image class="img" src="{{img}}"></image>
+
+  <view class="btn" bindtap="btn">立即支付</view>
+</view>
+
+<view wx:if="{{shwoAgain}}" class="bg" bindtap="again"></view>
+<view wx:if="{{shwoAgain}}" class="frame">
+  <view>支付失败，请尝试重新支付</view>
+  <view class="again" bindtap="again">再试一次</view>
+</view>
+

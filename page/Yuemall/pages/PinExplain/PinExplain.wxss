@@ -1,0 +1,37 @@
+/* page/Yuemall//pages/PinExplain/PinExplain.wxss */
+
+page {
+  background: #fff;
+}
+
+.pinExplain {
+  padding: 0 25rpx;
+}
+
+.pinExplain_title {
+  padding: 31rpx 0;
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(20, 20, 20, 1);
+}
+
+.pinExplain_cont {
+  background: #f6ebd5;
+  padding: 15rpx;
+  margin-bottom: 200rpx;
+}
+
+.pinExplain_nei {
+  background: #fff;
+  padding-left: 30rpx;
+}
+
+.item {
+  padding: 35rpx 0;
+  font-size: 26rpx;
+}
+
+.question {
+  color: #ca2519;
+}

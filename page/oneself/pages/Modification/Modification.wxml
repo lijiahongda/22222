@@ -1,0 +1,13 @@
+<!--page/oneself/pages/Modification/Modification.wxml-->
+<view class="content">
+  <view wx:if="{{type == '地址'}}">详细地址</view>
+  <picker wx:if="{{type == 'picker'}}" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view wx:if="{{region == ''}}">当前选择：请选择省市区</view>
+    <view class="picker" wx:else>
+      当前选择：{{region[0]}} {{region[1]}} {{region[2]}}
+    </view>
+  </picker>
+  <input wx:else style="width:{{type == '地址'?'80%':''}};margin-left:{{type == '地址'?'2%':''}}" placeholder='{{placeholder}}' bindinput='inputValue' placeholder-style='color:#cacaca' value="{{inputValue}}"></input>
+</view>
+<view class="tips">{{tips}}</view>
+<view class="Preservation" bindtap='Preservation'>保存</view>

@@ -1,0 +1,68 @@
+/* page/other/pages/LiveNotice/LiveNotice.wxss */
+
+page {
+  background-color: #14051e;
+}
+
+.content {
+  width: 100%;
+  height: 479rpx;
+}
+
+.Notice {
+  width: 248rpx;
+  height: 68rpx;
+  background: rgba(193, 36, 191, 1);
+  border-radius: 34rpx;
+  margin: auto;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin-bottom: 29rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.CountDown {
+  display: flex;
+  flex-direction: row;
+  margin-top: 29rpx;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(253, 223, 171, 1);
+  margin-bottom: 34rpx;
+}
+
+.CountDown .list {
+  width: 48rpx;
+  height: 48rpx;
+  background: rgba(93, 137, 219, 0);
+  border: 2rpx solid rgba(253, 223, 171, 1);
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.CountDown .colon {
+  margin-left: 12rpx;
+  margin-right: 12rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(253, 223, 171, 1);
+}
+
+.videos {
+  border-radius: 20rpx;
+  height: 430rpx;
+  margin-left: 7%;
+  width: 86%;
+}

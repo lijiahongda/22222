@@ -1,0 +1,14 @@
+<!--page/yueMember/pages/UniversityDetails/UniversityDetails.wxml-->
+<!-- <import src="../../../../wxParse/wxParse/wxParse.wxml" />
+<block wx:if="{{type == 0}}">
+  <image class="" src="{{coverImg}}"></image>
+  <view class="content">
+    <view class="title">{{title}}</view>
+    <view class="time">{{time}}</view>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</block>
+<block wx:if="{{type == 1}}">
+  <image class="typeOne" src="https://image.yuelvhui.com/pubfile/2019/06/03/line_1559557250.jpg"></image>
+</block> -->
+<web-view src="{{WebViewUrl}}" bindload="bindload" binderror="binderror"></web-view>

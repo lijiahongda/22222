@@ -1,0 +1,102 @@
+/* page/Yuemall//pages/Dangsearch/Dangsearch.wxss */
+@import "/page/LoadingPopup/LoadingPopup.wxss";
+page {
+  background: #fff;
+}
+
+.dangsearch {
+  margin-left: 23rpx;
+  margin-top: 20rpx;
+}
+
+.dangsearch_top {
+  display: flex;
+}
+
+.dangsearch_input_image image {
+  width: 26rpx;
+  height: 26rpx;
+  margin: 18rpx;
+}
+
+.dangsearch_input {
+  width: 85%;
+  height: 60rpx;
+  display: flex;
+  background: rgba(246, 246, 246, 1);
+  border-radius: 30rpx;
+}
+
+.dangsearch_input_inp {
+  font-size: 24rpx;
+  width: 100%;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 10rpx;
+}
+
+.dangsearch_top_del {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(12, 12, 12, 1);
+  margin-top: 12rpx;
+  margin-left: 10rpx;
+}
+
+.dangsearch_model {
+  margin-top: 40rpx;
+}
+
+.dangsearch_model_records {
+  display: flex;
+  justify-content: space-between;
+}
+.dangsearch_model_record {
+  display: flex;
+}
+
+.dangsearch_model_record_text {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+.dangsearch_model_record_image image {
+  width: 19rpx;
+  height: 20rpx;
+  margin-right: 47rpx;
+}
+
+.dangsearch_model_record_texts {
+  height: 66rpx;
+  background: rgba(246, 246, 246, 1);
+  border-radius: 33rpx;
+  font-size: 26rpx;
+  display: inline-block;
+  font-family: PingFang SC;
+  font-weight: 400;
+  padding: 0 26rpx;
+  color: rgba(33, 33, 33, 1);
+  margin-top: 25rpx;
+  line-height: 66rpx;
+  margin-right: 20rpx;
+}
+.modalDlg {
+ width: 92%;
+ padding-left: 4%;
+ height: 100%;
+ position: fixed;
+ top: 70rpx;
+ left: 0;
+ background: #fff;
+ z-index: 9000;
+ opacity: 1;
+}
+
+.modeContent{
+  padding-top:41rpx;
+  border-bottom:1px solid rgba(246, 246, 246, 1)
+}

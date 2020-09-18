@@ -1,0 +1,32 @@
+<import src="../../../wxParse/wxParse/wxParse.wxml" />
+<!-- wx:if="{{index==0&&item.status==2?false:true}}" -->
+<view class="list" wx:for='{{list}}' wx:key="list" wx:for-index="index" data-index="{{index}}">
+	<view class="title">
+		<view style=" display: flex;flex-direction: row;align-items: center;justify-content: center;width:77%">
+			<view class="num">{{index+1}}</view>
+			<view class="text">{{item.title}}</view>
+		</view>
+		<view wx:if="{{index == 0}}" style="width:20%;line-heigth:73rpx;margin-left:4%;" bindtap="goVideo" data-url="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-06-07/14/ylhvideoT1Mr6BqU9P1591512799.mp4">查看教程</view>
+	</view>
+	<view class="desc">
+		<template is="wxParse" data="{{wxParseData:item.richText.nodes}}" />
+		<!-- <rich-text nodes="{{item.content}}"></rich-text> -->
+	</view>
+	<view class="phoneImg" wx:if="{{index==0}}">
+		<image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-05-20/17/yuelvhuiSYGrhDsOWm1589966657.png"></image>
+	</view>
+	<view class="footer">
+		<view class="button" wx:if='{{index==0}}' bindtap="goGroupUp" data-status="{{item.status}}" style='opacity:{{item.buttonText?"1":"0"}}'>{{item.buttonText}}</view>
+
+		<view class="button" bindtap="goIndex" wx:if='{{index==1&&item.status==2}}' style='opacity:{{item.buttonText?"1":"0"}}'>{{item.buttonText}}</view>
+		<view class="button gray" bindtap="gray" wx:if='{{index==1&&item.status!=2}}' style='opacity:{{item.buttonText?"1":"0"}}'>{{item.buttonText}}</view>
+
+		<view class="button" wx:if='{{index==2}}' bindtap="copy" data-text="{{item.copyText}}" style='opacity:{{item.buttonText?"1":"0"}}'>{{item.buttonText}}</view>
+
+		<button class="button" wx:if='{{index==3}}' open-type='share' style='opacity:{{item.buttonText?"1":"0"}}'>{{item.buttonText}}</button>
+		<view class="video" bindtap="goVideo" data-url="{{item.videoUrl}}" style="opacity:{{item.videoUrl?'1':'0'}}">
+			<image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-02/17/yuelvhuiaJBBsyROIc1585819827.png"></image>
+			<view>查看教学视频</view>
+		</view>
+	</view>
+</view>

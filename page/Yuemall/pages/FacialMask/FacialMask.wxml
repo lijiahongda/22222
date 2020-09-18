@@ -1,0 +1,15 @@
+<!--page/Yuemall/pages/FacialMask/FacialMask.wxml-->
+<view class="content">
+  <view>{{rushStatus}}</view>
+  <view class="CountDown">
+    <view class="list">{{countDownDay}}</view>
+    <view class="colon">天</view>
+    <view class="list">{{countDownHour}}</view>
+    <view class="colon">:</view>
+    <view class="list">{{countDownMinute}}</view>
+    <view class="colon">:</view>
+    <view class="list">{{countDownSecond}}</view>
+  </view>
+</view>
+<image src="" class="topImages" src="{{backGround.upImg}}"></image>
+<image class="contentImage" bindtap='detail' src="{{backGround.downImg}}" mode="widthFix"></image>

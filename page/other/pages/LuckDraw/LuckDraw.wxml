@@ -1,0 +1,118 @@
+<!--index.wxml-->
+<view class="scrollView" style="">
+  <image src="{{bg1_mini}}" class="bg1"></image>
+  <!-- <view class="Barrage">
+    <block wx:for='{{BarrageList}}' wx:key="BarrageList">
+      <view style='margin-left: 50%;position: absolute;top:{{topList[index]}}rpx;' animation="{{animationList[index]}}" >{{item}}</view>
+    </block>
+  </view> -->
+  <image src="{{bg2}}" class="bg2" mode="widthFix"></image>
+  <view class="container-out">
+    <view class="container-out-mk" wx:if="{{isRunning == false}}"> </view>
+    <image src="{{run_border}}" style="width:100%;height:596rpx"></image>
+    <view class="container-in" style="">
+      <view class="content-out" wx:for="{{awardList}}" wx:for-index="id" wx:key="awardList" style="top:{{(id == 0 || id == 1||id == 2)?'8':id == 3?'182':id == 4?'356':id == 5?'356':id==6?'354':id==7?'182':''}}rpx;left:{{id == 0?'8':id==1?'214':id==2?'420':id == 3?'418':id == 4?'418':id == 5?'212':id==6?'8':id==7?'8':''}}rpx;background-color: {{(id==indexSelect)?colorAwardSelect:colorAwardDefault}};color:{{id==indexSelect?'#fff':''}}">
+        <image class="award-image" src="{{item.image}}" style="width:{{(id==3||id==7)?'84':id==4?'70':''}}rpx;height:{{(id==3||id==7)?'84':id==4?'116':''}}rpx;"></image>
+        <view>{{item.name}}</view>
+      </view>
+      
+       <view class="start-btn" wx:if="{{changeNum == 0}}" bindtap="changeNumling" style=" background-color:{{isRunning?'#e7930a':'#ffe400'}}">
+        <image src="{{click_bg}}" class="Winningecord" style=" height: 168rpx;width: 206rpx;"></image>
+        <view class="" style="color:#fff;font-size:24rpx;bottom:10rpx;position: absolute;left:25%;">{{changeNum}}次机会</view>
+      </view>
+      <view class="start-btn" wx:else bindtap="startGame" style=" background-color:{{isRunning?'#e7930a':'#ffe400'}}">
+        <image src="{{click_bg}}" class="Winningecord" style=" height: 168rpx;width: 206rpx;"></image>
+        <view class="" style="color:#fff;font-size:24rpx;bottom:10rpx;position: absolute;left:25%;">{{changeNum}}次机会</view>
+      </view>
+    </view>
+  </view>
+  <image src="{{click_record}}" bindtap='MyWinningRecord' style="position: relative;width:306rpx;height:86rpx;margin:auto 30%"></image>
+  <view class="lottery_rule">
+    <image src="{{lottery_rule}}"></image>
+    <view class="lottery_ruleList">
+      <view class="title">-抽奖规则-</view>
+      <view class="info" wx:for="{{rule}}" wx:key="rule">
+        <view>{{item.title}}</view>
+        <view>
+          <button wx:if="{{item.type != 0}}" open-type="share" style="margin-top:0rpx;padding:0rpx;line-height:0;background-color:transparent;margin-bottom:5rpx;width:112rpx;height:38rpx;border-radius:40rpx;font-size:30rpx" class='con_listbox'>
+            <view style="height:38rpx;line-height:38rpx;color:#CA1C08;">去邀请></view>
+          </button>
+        </view>
+      </view>
+    </view>
+    <view class="Remarks">{{comment}}</view>
+  </view>
+  <view class="success_recordContent">
+    <image src="{{success_record}}" class="success_record" style="height:500rpx;position: relative;width:690rpx;"></image>
+    <view class="title">- 中奖记录 -</view>
+    <view class="swiper_container">
+      <view class='itemList' style='height:{{list.length * 114 }}rpx;top:{{-toTop * 114}}rpx;'>
+        <view class='item' wx:for="{{list}}" wx:key="index">
+          <view class='avatar'>
+            <image src='{{item.litpic}}'></image>
+          </view>
+          <view class='itemCont'>
+            <view style="margin-bottom:9rpx">{{item.nickname}}</view>
+            <view class='result_name'>{{item.result_name}}</view>
+            <view class='time'>{{item.created_at}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 中奖 -->
+<view class="WinningPrize" bindtap="hideModal" wx:if="{{WinningPrize}}"></view>
+<view animation="{{animationData}}" bindtap='hideModal' class="WinningPrize_box" wx:if="{{WinningPrize}}">
+  <view class="image">
+    <image src="{{success_bg}}"></image>
+    <view class="tip">
+      <view>{{tip}}</view>
+      <view class="TermValidity">有效期</view>
+      <view class="ToInvite" catchtap='onShare'>
+        <button open-type="share" style="margin-top:0rpx;padding:0rpx;line-height:0;background-color:#fff;margin-bottom:5rpx;width:248rpx;height:64rpx;border-radius:40rpx" class='con_listbox'>
+          <view style="background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,241,166,1));height:88rpx;color:#fff;line-height:64rpx;color:#7F4E01;">分享</view>
+        </button>
+      </view>
+      <view class="close" bindtap='hideModal'>X</view>
+    </view>
+  </view>
+</view>
+<!-- 未中奖 -->
+<view class="Noprize" bindtap="hideModal" wx:if="{{Noprize}}"></view>
+<view animation="{{animationData}}" bindtap='hideModal' class="Noprize_box" wx:if="{{Noprize}}">
+  <view class="image">
+    <image src="{{fail_bg}}"></image>
+    <view class="tip">
+      <view>很遗憾，奖品溜走了</view>
+      <view class="TermValidity">换个姿势，再来一次</view>
+      <view class="ToInvite" catchtap='Keeptrying'>
+        <button style="margin-top:0rpx;padding:0rpx;line-height:0;background-color:#fff;margin-bottom:5rpx;width:248rpx;height:64rpx;border-radius:40rpx;font-size:24rpx" class='con_listbox'>
+          <view style="background: linear-gradient(to right, rgba(255,95,0,1), rgba(255,158,0,1));height:88rpx;color:#fff;line-height:64rpx;color:#fff;">继续试试</view>
+        </button>
+      </view>
+      <view class="close" bindtap='hideModal'>X</view>
+    </view>
+  </view>
+</view>
+
+<!-- 次数用尽 -->
+<view class="NoFrequency" bindtap="hideModal" wx:if="{{NoFrequency}}"></view>
+<view animation="{{animationData}}" bindtap='hideModal' class="NoFrequency_box" wx:if="{{NoFrequency}}">
+  <view class="image">
+    <image src="{{times_over}}"></image>
+    <view class="tip">
+      <view>今天机会已用完</view>
+      <view class="TermValidity">邀请新用户获取机会</view>
+      <view class="ToInvite" catchtap='Keeptrying'>
+        <button open-type="share" style="margin-top:0rpx;padding:0rpx;line-height:0;background-color:#fff;margin-bottom:5rpx;width:248rpx;height:64rpx;border-radius:40rpx;font-size:24rpx" class='con_listbox'>
+          <view style="background: linear-gradient(to right, rgba(255,95,0,1), rgba(255,158,0,1));height:88rpx;color:#fff;line-height:64rpx;color:#fff;" bindtap='hideModal'>去分享</view>
+        </button>
+      </view>
+      <view class="close" bindtap='hideModal'>X</view>
+    </view>
+  </view>
+</view>
+ <!-- 授权按钮 -->
+<button class="authorizationStatus" open-type="getUserInfo" bindgetuserinfo='login' wx:if="{{authorizationStatus}}"></button>

@@ -1,0 +1,34 @@
+<view class="payment">
+  <view class="list">
+    <view class="title">姓名：</view>
+    <!-- <input bindinput="nameInput" value="{{name}}" wx:if="{{!name}}"></input> -->
+    <view class="cont">{{name}}</view>
+  </view>
+  <view class="list">
+    <view class="title">银行卡号：</view>
+    <!-- <input bindinput="bankInput" value="{{bank}}" wx:if="{{!bank}}"></input> -->
+    <view class="cont">{{bank}}</view>
+    <view class="copy" bindtap="copy" data-item="{{bank}}">复制</view>
+  </view>
+  <view class="list">
+    <view class="title">银行名称：</view>
+    <!-- <input bindinput="alipayInput" value="{{alipay}}" wx:if="{{!alipay}}"></input> -->
+    <view class="cont" >{{alipay}}</view>
+    <view class="copy" bindtap="copy" data-item="{{alipay}}">复制</view>
+  </view>
+  <view class="list">
+    <view class="title">联系方式：</view>
+    <view class="cont" >{{mobile}}</view>
+  </view>
+  <view class="notice" wx:if="{{notice}}">{{notice}}</view>
+</view>
+
+<view class="voucher">
+  <view class="add_icon" wx:if="{{!wxImg}}" bindtap="loadImg">
+    <image src="https://image.yuelvhui.com/pubfile/2019/11/07/line_1573117447_16567.png"></image>
+  </view>
+  <image class="add_icon" wx:else mode="aspectFill" src="{{wxImg}}"></image>
+  上传支付凭证
+</view>
+
+<view class="save" bindtap="save">提交</view>

@@ -1,0 +1,63 @@
+<!-- <view class="head">
+  <view class="content">
+    <view class="title">{{title}}</view>
+    <view class='cont'>
+      <view class='iphone' bindtap='jumpCity'>
+        <view>+{{countryCode}}</view>
+        <image src="https://image.yuelvhui.com/pubfile/2019/06/13/line_1560441212.png"></image>
+      </view>
+      <view class='tel-input' style="width:100%;">
+        <input bindinput="phone" placeholder='{{mobile == ""?"手机号":""}}' value='{{mobile == ""?"":mobile}}' type="number" style='width:100%;' placeholder='手机号'></input>
+      </view>
+    </view>
+    <view class='cont'>
+      <view class='tel-input'>
+        <input bindinput="code"  style="width:281rpx" placeholder-class="z-index:1" type="code" placeholder='验证码'></input>
+        <view bindtap='allow' class='send-code'>{{ countdown != '60'?countdown:'获取验证码' }}</view>
+      </view>
+    </view>
+    <view class='cont' wx:if="{{isOldUse}}">
+      <view class='tel-input' style="background: rgba(241, 243, 248, 1);padding-left:4.5%;width:95.5%">
+        悦淘号：
+        <input value="{{codeNumber}}" type="text" bindinput='reCodeChange' disabled='{{isDixon == 1?false:true}}' placeholder='邀请码（非必填）'></input>
+      </view>
+    </view>
+  </view>
+  <button open-type="getUserInfo" class="bind" bindgetuserinfo="getPerson">{{title}}</button>
+</view>
+<view class="commodity_screenshowModal" wx:if="{{binding}}" bindtap="hideModal"></view>
+<view class="FriendsBargain" wx:if="{{binding}}">
+  <view class="BargainInfor">
+    <view class="tips">
+      您将绑定管家
+    </view>
+    <image src="{{headimgurl}}"></image>
+    <view class="AlreadyBargain">
+      <view>{{nickName}}</view>
+      <view>悦淘号：{{codeNumber}}</view>
+    </view>
+
+    <view class="ClickCollect">
+      <view bindtap='ClickCollect' bindtap='sure'>绑定</view>
+      <view bindtap='shareBox' class="color:#999" bindtap='cancel'>取消</view>
+    </view>
+  </view>
+</view> -->
+<image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-24/11/yuelvhuidgf7WQryFz1582514890.png" class="logo"></image>
+<view class="func">
+  <view bindtap="TemporarilyLoggedIn" class="TemporarilyLoggedIn">暂不登录</view>
+  <button open-type="getPhoneNumber" bindgetphonenumber="LoginImmediately" class="LoginImmediately">立即登录</button>
+</view>
+<view class="UserAgreement">登录即表明您同意我们的
+  <text bindtap="UserAgreement">《悦淘服务协议》</text>
+</view>
+<image class="slogn" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-24/13/yuelvhuiJBdcsFlU4R1582522737.png"></image>
+
+<!-- 用户授权 -->
+<view class="commodity_screenlong" wx:if="{{isauthorization}}"></view>
+<view class="authorization" wx:if="{{isauthorization}}">
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-24/18/yuelvhui9E2CwfrgQX1582539976.png"></image>
+  <view>悦淘申请获取您的公开信息</view>
+  <view>（包含头像、昵称等）</view>
+  <button open-type="getUserInfo" class="bind" bindgetuserinfo="getPerson">授权</button>
+</view>

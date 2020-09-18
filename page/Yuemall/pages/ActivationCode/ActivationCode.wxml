@@ -1,0 +1,12 @@
+<!--page/Yuemall//pages/ActivationCode/ActivationCode.wxml-->
+<view class="content">
+  <view class="list">
+    <view class="title">激活码</view>
+    <view class="code">{{init.code}}</view>
+    <view class="UseProcess">使用流程：</view>
+    <view class="item" wx:for="{{init.msg}}" wx:key="msg">
+      {{item}}
+    </view>
+    <view class="remind">{{init.remind}}</view>
+  </view>
+</view>

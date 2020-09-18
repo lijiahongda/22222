@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText":"邀请有礼",
+  "usingComponents":{
+    "gift-pop": "/component/giftPop/giftPop"
+  }
+    
+}

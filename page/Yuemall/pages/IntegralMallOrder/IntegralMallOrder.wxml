@@ -1,0 +1,67 @@
+<view class="orderList">
+  <block wx:if="{{wholelist}}">
+    <view class="list" wx:for="{{wholelist}}" wx:for-index="index" wx:key="index">
+      <view class="title">
+        <view class="state">
+          <view>
+            <image class="malllogo" src="/images/YueMall/malllogo.png"></image>
+          </view>
+          <view style=" display: flex;flex-direction: row;align-items: center;">
+            <view>
+              <text style='color:#FF6032'>{{item.stateName}}</text>
+            </view>
+            <image class="delete" src="https://image.yuelvhui.com/pubfile/2019/06/24/line_1561355786.png" data-orderno="{{item.ordersn}}" bindtap='delete'></image>
+          </view>
+        </view>
+      </view>
+      <view class="borderBottom"></view>
+      <view class="ListContent complete" bindtap='orderDetails' data-id="{{item.orderid}}">
+        <view class='cont'>
+          <view class="image">
+            <image src="{{item.goodsImg}}"></image>
+          </view>
+          <view class="describe">
+            <view class="title">
+              {{item.goodsName}}
+            </view>
+          </view>
+        </view>
+        <view class='money'>共{{item.goodsNum}}件商品 悦豆：{{item.goodsCoin}}</view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="noorder">
+      <image src="https://image.yuelvhui.com/pubfile/2019/05/15/line_1557903491.png"></image>
+      <view class="go" bindtap='ToExchange'>去兑换</view>
+    </view>
+  </block>
+
+</view>
+<!-- 物流信息 -->
+
+<view class="commodity_screenshowModal" bindtap="hideModal" wx:if="{{showModal}}"></view>
+<view animation="{{animationData}}" bindtap='' class="commodity_attr_boxshowModal" wx:if="{{showModal}}">
+  <view class="popup">
+    <view class="popupInfo">
+      <view class="info">
+        <view>运输状态：{{logistice_state}}</view>
+        <view>运输公司：{{logistice_company}}</view>
+        <view>运输单号：{{logistice_number}}</view>
+      </view>
+      <view class="DuplicateNum" bindtap='copyText' data-text="{{logistice_number}}">复制单号</view>
+    </view>
+    <image class='img' src="/images/personalCenter/popup.png"></image>
+    <image class='close' src="/images/personalCenter/close.png" bindtap="hideModal"></image>
+  </view>
+</view>
+<view class="commodity_screenshowModal" wx:if="{{isdel}}"></view>
+<view class="deletePopu" wx:if="{{isdel}}">
+  <view class="info">
+    <view class="tips">确认删除此订单？</view>
+    <view class="Inquiry">
+      <view class="cancel" bindtap="canceldelete">取消</view>
+      <view class="confirm" bindtap='confirm'>删除</view>
+    </view>
+  </view>
+</view>

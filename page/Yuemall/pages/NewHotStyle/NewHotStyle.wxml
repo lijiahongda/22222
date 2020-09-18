@@ -1,0 +1,1 @@
+<NewHotStyle id="NewHotStyle"  bind:myevent="onMyEvent" inner-text="{{list}}"></NewHotStyle>

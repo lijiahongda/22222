@@ -1,0 +1,58 @@
+<view class="requirement">
+  <view class="requir-title">{{statusname}}</view>
+  <view class="time">下单时间：{{add_time}}</view>
+</view>
+
+<view class="requirement">
+  <view class="time">充值的视频手机号：{{mobile}}</view>
+</view>
+
+<view class="requirement detail">
+  <view class="cont">
+    <image mode="aspectFill" src="{{goods_image}}"></image>
+    <view class="title-detail">
+      <view class="title-all">
+        <view class="title">爱奇艺vip黄金会员自动充值天/月/季/年卡</view>
+        <!-- <view class="price"><text>￥12.34</text><text style="font-size:22rpx;color:#999;text-decoration: line-through;margin-left:10rpx;">￥{{official_price}}</text></view> -->
+      </view>
+      <view class="card-type">
+        <text>月卡</text>
+        <text>x1</text>
+      </view>
+    </view>
+  </view>
+  <view class="total" style="margin-bottom:30rpx;">
+    <text>订单总计</text>
+    <text wx:if="{{cardType ==0}}">￥{{official_price}}</text>
+    <text wx:else>￥{{total_amount}}</text>
+  </view>
+  <view class="total">
+    <text>待付金额</text>
+    <text wx:if="{{cardType ==0}}">￥{{official_price}}</text>
+    <text wx:else>￥{{total_amount}}</text>
+  </view>
+  <view class="total" wx:if="{{cardType > 0}}" style="margin-top:30rpx;">
+    <text>优惠金额</text>
+    <text>￥{{spread_price}}</text>
+  </view>
+</view>
+
+
+
+
+<block wx:if="{{order_status == 1}}">
+  <view class="footr" bindtap='pay' wx:if="{{cardType >0}}">
+    <view>立即支付{{total_amount}}元
+      <text style="font-size:24rpx;">已节省{{spread_price}}元</text>
+    </view>
+  </view>
+  <view class="footr" bindtap='pay' wx:else>
+    <view>立即支付{{official_price}}元</view>
+  </view>
+</block>
+
+
+<view class="explain">
+  <view class="explain-title">充值说明</view>
+  <view wx:for="{{order_docs}}" wx:key="order_docs">{{item}}</view>
+</view>

@@ -1,0 +1,21 @@
+<view class='siku' wx:if="{{type == 'siku'}}">
+  <view class='bgImg'>
+    <image src="{{backGround.upUrl}}" mode="widthFix"></image>
+  </view>
+  <view class="AllCategories" style="background-image:url('{{backGround.downUrl}}')">
+    <view class="AllItem" wx:for="{{skuTypeInfo}}" wx:key="skuTypeInfo" data-typeid="{{item.goodTypeId}}" data-name="{{item.goodTypeName}}" bindtap='AllCategories' style="background-image:url('{{item.goodsTypeImg}}')">
+      <image src="{{item.goodsTypeImg}}"></image>
+    </view>
+  </view>
+</view>
+
+<view class='wangyi' wx:if="{{type == 'wangyi'}}">
+  <view class='bgImg'>
+    <image src="{{backGround.upUrl}}" mode="widthFix"></image>
+  </view>
+  <view class="AllCategories" style="background-color:#FCFAED">
+    <view class="AllItem" wx:for="{{skuTypeInfo}}" wx:key="skuTypeInfo" data-typeid="{{item.goodTypeId}}" data-name="{{item.goodTypeName}}" bindtap='AllCategories'>
+      <image src="{{item.goodsTypeImg}}"></image>
+    </view>
+  </view>
+</view>

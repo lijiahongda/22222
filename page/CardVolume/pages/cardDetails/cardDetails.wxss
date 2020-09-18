@@ -1,0 +1,260 @@
+ page{
+  background-color: #f8f8f8
+}
+
+.AllianceCard{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  margin: auto;
+  /* background-color: #fff; */
+  border-radius: 20rpx;
+  height:320rpx;
+  margin-top:30rpx;
+}
+.AllianceCard .topImage{
+  height:320rpx;
+  width:690rpx;
+  background-color: #ccc;
+  color:#fff;
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  padding: 49rpx 26rpx 33rpx 40rpx;
+  position: relative;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+.CardName{
+  color:#fff;
+  font-size: 30rpx;
+  margin-bottom:20rpx;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.CardCont{
+  color:#fff;
+  font-size: 24rpx;
+  margin-bottom:24rpx
+}
+.CardText{
+  color:#fff;
+  font-size: 24rpx;
+}
+.CardTime{
+  position: absolute;
+  right: 26rpx;
+  top: 50rpx;
+  font-size: 24rpx;
+}
+.introduce{
+  width: 230rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+  text-align: center;
+  color: #FF6032;
+  font-size: 24rpx;
+  position: absolute;
+  bottom: 33rpx;
+  left: 50%;
+  margin-left: -115rpx;
+  background-color: #fff;
+  border-radius: 31rpx;
+}
+
+
+.cardDetails{
+  display: flex;
+  flex-direction: column;
+}
+
+.briefIntroduction{
+  /* background-color: #fff; */
+  margin-top:30rpx;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* height:828rpx */
+}
+.briefIntroductionContent{
+  width: 90%;
+  /* height:173rpx; */
+  color:#333;
+  font-size: 28rpx;
+  line-height: 50rpx
+}
+.briefIntroduction .item .name{
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color:#333;
+  font-size: 28rpx;
+  margin-bottom:20rpx;
+  padding-bottom:20rpx;
+  font-weight: bold;
+}
+
+.briefIntroduction .button{
+  background-color: #ff6032;
+  width:88%;
+  height:80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color:#fff;
+  border-radius: 8rpx;
+}
+.buttonContent{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  width:100%;
+  justify-content: center;
+  margin-bottom:30rpx;
+}
+.SelectionProvinces{
+  margin-top:40rpx;
+  margin-bottom: 40rpx;
+}
+
+checkbox .wx-checkbox-input{
+  border: 1px dashed #cecece;
+  border-radius: 50%;
+  width: 30rpx; /* 背景的宽 */
+  height: 30rpx; /* 背景的高 */
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+    border: 1px solid #f4aa11;
+   background: #f4aa11;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   border-radius: 50%;/* 圆角 */
+   width: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   line-height: 40rpx;
+   text-align: center;
+   font-size:20rpx; /* 对勾大小 30rpx */
+   color:#fff; /* 对勾颜色 白色 */
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+.radioContent{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width:80%
+}
+.radioContent view{
+  margin-right:6%;
+  margin-bottom:40rpx;
+}
+.briefIntroduction .item{
+  padding-top:20rpx;
+  padding-bottom:20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  width:92%;
+  margin:auto;
+  border-radius: 10rpx;
+  margin-bottom: 15rpx;
+}
+.briefIntroduction .CollectionTime{
+  display: flex;
+  width: 78%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom:20rpx;
+  margin-top:20rpx;
+}
+.CollectionTime{
+  color:rgb(238,120,73);
+  font-size: 28rpx;
+}
+.cardInfo{
+  background-color: #fff;
+  height:62rpx;
+  display: flex;
+  flex-direction: column;
+  padding-left:11%;
+  padding-right:11%;
+  padding-top:30rpx;
+  padding-bottom:50rpx;
+  margin-top:20rpx;
+  font-size: 28rpx
+}
+.RegistrationCode{
+  margin-top:10rpx
+}
+.cardInfo text{
+  text-decoration: underline;
+  color:#f4aa11
+}
+
+.noMember{
+  z-index: 111;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.2);
+}
+.noMember .noMemberCont{
+  width: 100%;
+  padding: 0 50rpx;
+  height: 570rpx;
+  box-sizing: border-box;
+  z-index: 112;
+  position: fixed;
+  top: 200rpx;
+  left: 0;
+}
+.noMember .noMemberCont image{
+  width: 100%;
+  height: 100%;
+}
+.noMember .noMemberCont .refused,.noMember .noMemberCont .accept{
+  width: 196rpx;
+  height: 62rpx;
+  border-radius: 31rpx;
+  background-color: #fff;
+  text-align: center;
+  line-height: 62rpx;
+  position: absolute;
+  bottom:30rpx;
+  font-size: 26rpx;
+}
+.noMember .noMemberCont .refused{
+  left: 22%;
+  color: #666;
+}
+.noMember .noMemberCont .accept{
+  right: 22%;
+  color: #ED7C1CFF;
+}
+.noMember .noMemberCont .colseNomember{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  bottom: -120rpx;
+  left: 50%;
+  margin-left: -30rpx;
+  border: 1rpx solid #fff;
+  color: #fff;
+  font-size: 40rpx;
+  text-align: center;
+  line-height: 54rpx;
+  border-radius: 50%;
+  cursor: pointer;
+}

@@ -1,0 +1,121 @@
+/* page/Yuemall/pages/Free/Free.wxss */
+
+page {
+  background-color: #f4f4f4;
+}
+
+.content {
+  background-color: #fff;
+  border-radius: 10rpx;
+  width: 84%;
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-left: 4%;
+  margin-right: 4%;
+  padding-top: 9rpx;
+  padding-bottom: 32rpx;
+  margin-top: 23rpx;
+  margin-bottom: 42rpx;
+}
+
+.content .title {
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 30rpx;
+}
+
+.content .item {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  border-bottom: 1px solid #ebecee;
+  padding-bottom: 29rpx;
+  padding-top: 32rpx;
+}
+
+.content .tips {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 48rpx;
+  margin-top: 31rpx;
+}
+
+.content .time {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 48rpx;
+}
+
+.button {
+  width: 92%;
+  margin-left: 4%;
+  height: 88rpx;
+  background: rgba(243, 71, 70, 1);
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+
+.commodity_screenshowModal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.7;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+.Commission {
+  position: fixed;
+  top: 0rpx;
+  width: 100%;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Commission .close {
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 556rpx;
+}
+
+.Commission .bgred {
+  position: relative;
+  top: 334rpx;
+}
+
+.Commission .info {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  font-size: 65rpx;
+  top: 355rpx;
+  color: #fff;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.Commission .info text {
+  font-size: 33rpx;
+}

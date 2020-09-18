@@ -1,0 +1,152 @@
+@import '../../../utils/iconfont/iconfont.wxss';
+page{
+  background: #F9F9F9;
+  min-height: 100%;
+  padding-top: 88rpx;
+  box-sizing: border-box;
+}
+.tab{
+  width: 100%;
+  height: 88rpx;
+  padding: 0 56rpx;
+  box-sizing: border-box;
+  color: #999999;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.tab > view{
+  height: 100%;
+  line-height: 88rpx;
+}
+.tab .active{
+  color: #E4311F;
+  font-size: 30rpx;
+  position: relative;
+}
+.tab .active::after{
+  content: ' ';
+  width: 50rpx;
+  height: 5rpx;
+  background: #E4311F;
+  border-radius: 3rpx;
+  position: absolute;
+  bottom: 11rpx;
+  left: 50%;
+  margin-left: -25rpx;
+}
+.hide{
+  display: none;
+}
+.scontent{
+  width: 100%;
+  background: #fff;
+  margin-top: 30rpx;
+  padding-top: 20rpx;
+  padding-bottom: 150rpx;
+}
+.speed{
+  width: 100%;
+  /* height: 100rpx; */
+}
+.speed>.speedTop{
+  width: 540rpx;
+  height: 80rpx;
+  display: flex;
+  margin: 0 auto;
+}
+.speed>.speedTop>.line{
+  width: 180rpx;
+  height: 2rpx;
+  background:rgba(245,245,245,1);
+  margin-top: 25rpx;
+}
+.speed>.speedTop>.clr{
+  width:60rpx;
+  height:60rpx;
+  background:rgba(245,245,245,1);
+  border-radius:50%;
+  position: relative;
+}
+.speed>.speedTop>.clr>.sClr{
+  width:36rpx;
+  height:36rpx;
+  background:rgba(187,187,187,1);
+  border-radius:50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 18rpx;
+  line-height: 36rpx;
+  text-align: center;
+  color: #fff;
+}
+.speed>.speedBottom{
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.speed>.speedBottom>view{
+  width: 25%;
+  text-align: center;
+}
+.footer{
+  width: 100%;
+  height: 150rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  z-index: 2;
+}
+
+.footer>.subBotton{
+  margin: 0 auto;
+  width:702rpx;
+  height:88rpx;
+  background:rgba(187,187,187,1);
+  box-shadow:0rpx 5rpx 15rpx 0rpx rgba(210,210,210,0.3);
+  border-radius:16rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size:34rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  position: relative;
+}
+.footer>.subBotton>button{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.footer>.groupZ{
+  width: 100%;
+  text-align: center;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(20,20,20,1); 
+  line-height:60rpx;
+}
+
+.zzc{
+  width: 100%;
+  height: 90%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  /* background: red; */
+}

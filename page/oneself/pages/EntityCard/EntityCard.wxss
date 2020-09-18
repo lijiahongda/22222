@@ -1,0 +1,65 @@
+page{
+  /* background-color: #fff; */
+  height: 100%;
+  background: #fff;
+}
+.contentInfo{
+  border-top: 1px solid #ececec;
+  background-color: #fff;
+  padding-left: 4%;
+  padding-right: 4%;
+  width: 92%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ececec;
+}
+.contentInfo .item{
+  height: 83rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ececec;
+}
+.contentInfo .item .title{
+  width: 500rpx;
+  display: flex;
+  align-items: center;
+  color:#333;
+  font-size: 28rpx;
+}
+.icon{
+  width: 37rpx;
+  height: 35rpx;
+  margin-right: 6%;
+}
+.icons{
+  width: 26rpx;
+  height: 40rpx;
+  margin-right: 6%;
+}
+.codes{
+  height: 25rpx;
+  border-right: 1rpx solid #ddd;
+}
+.getCode{
+  width:160rpx;
+  height: 50rpx;
+  color:#C7423F;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.ConfirmBinding{
+  width:702rpx;
+height:68rpx;
+background:rgba(221,221,221,1);
+border-radius:34px;
+  color:#fff;
+  font-size: 24rpx;
+  line-height: 68rpx;
+  text-align: center;
+  margin: auto;
+  margin-top: 100rpx; 
+  
+}

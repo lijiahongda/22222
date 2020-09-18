@@ -1,0 +1,134 @@
+@import "../colorLine/colorLine.wxss";
+page{
+  background-color: #F6F6F6;
+}
+.balance{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 200rpx;
+}
+/* 授权按钮 */
+
+.authorizationStatus {
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx;
+}
+
+/* 新版 */
+.listNew{
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  margin-top: 26rpx;
+  border-radius: 18rpx;
+  overflow: hidden;
+}
+.listNew > view{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  top: 0;
+  padding: 30rpx 40rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+.listNew .member{
+  width: 100%;
+  height: 100%;
+  border-radius: 18rpx;
+  color: #141414;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+}
+.listNew .member view:first-child{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 140rpx;
+}
+.listNew .member .default{
+  padding: 4rpx 6rpx;
+  background: #F7EBEB;
+  border-radius: 4rpx;
+  display: flex;
+  align-items: center;
+  color: #BB3627;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+}
+.listNew .editNew{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -30rpx;
+  width: 102rpx;
+  height:  60rpx;
+  border-left: 2rpx solid #EEEEEE;
+  text-align: center;
+  line-height: 60rpx;
+  color: #999999;
+  font-size: 28rpx;
+}
+.listNew .member view:last-child{
+  color: #999999;
+  margin-left: 146rpx;
+}
+.listNew .delete{
+  position: absolute;
+  top: 0;
+  background-color: rgb(215,27,27);
+  width: 121rpx;
+  text-align: center;
+  z-index: 1;
+  right: 0;
+  color: #fff;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.listNew .delete image{
+  width: 41rpx;
+  height: 43rpx;
+}
+.listNew .site{
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 28rpx;
+  color: #333333;
+  font-size: 28rpx;
+  width: 80%;
+}
+.footer{
+  width: 702rpx;
+  height: 88rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #BB3627;
+  font-size: 32rpx;
+  color: #fff;
+  border-radius: 44rpx;
+  position: fixed;
+  left: 24rpx;
+  bottom: 80rpx;
+  z-index: 2;
+}
+.white{
+  text-align: center;
+  padding-top: 500rpx;
+  color: #999999;
+  font-size: 26rpx;
+}

@@ -1,0 +1,17 @@
+<view style="background-image: url({{bg}});" class="content">
+  <view class="buttonBox">
+    <view>
+      <image src="{{button}}" class="go" bindtap="go" mode='widthFix'></image>
+    </view>
+    <!-- <view>
+      <image src="{{button}}" class="go" bindtap="go"></image>
+    </view> -->
+  </view>
+  <button open-type="share" class="shareBox">
+    <image src="{{share}}" class="share" bindtap="goShare"></image>
+  </button>
+  <view class="sm">
+    <text>{{sm.title}}</text>
+    <text class="list" wx:for='{{sm.content}}' wx:key='*this'>{{item}}</text>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+<!--page/payment/component/code/index.wxml-->
+<view class="codeAlert">
+  <view class="close" bindtap="closeMyself">
+    <text class="iconfont icon-guanbi"></text>
+  </view>
+  <view class="text">请输入金额</view>
+  <view class="inputCode">
+    <input type="number" placeholder="请输入金额" value="{{price}}" bindinput="setPre"></input>
+  </view>
+  <view class="alertBt" style="{{price!=''?'':'background:rgba(153,153,153,1)'}}" bindtap="nextAlert">去充值{{price}}元</view>
+</view>

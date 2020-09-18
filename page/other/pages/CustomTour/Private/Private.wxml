@@ -1,0 +1,59 @@
+<view class="container" style="padding-top:0px">
+  <view class="deliveryAddress" style="background-color:#fff;">
+    <view style="padding:26rpx;padding-left:18rpx" hover-class="none">
+      <view class="deliveryAdd">
+        <view class="userInfo" style="">
+          <view class="userName">
+            联系人信息
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="InputContiner">
+    <view class="registLine">
+      <view class="middleInfo">
+        <view class="middleLeft" wx:if="{{ide =='企业定制'}}">
+          <view class="telLine telLineCard">
+            <input type="text" placeholder="企业名称" placeholder-class="placeholder" bindinput="bindEnterpriseName"style="width:100%" />
+          </view>
+        </view>
+        <view class="middleLeft">
+          <view class="telLine telLineCard">
+            <input type="text" placeholder="联系人姓名" placeholder-class="placeholder" bindinput="bindKinName"style="width:100%"/>
+          </view>
+        </view>
+        <view class="middleLeft">
+          <view class="telLine telLineCard">
+            <input type="number" placeholder="联系电话" placeholder-class="pslaceholder" bindinput="bindKinphone"style="width:100%" />
+          </view>
+        </view>
+        <view class="middleLeft">
+          <view class="telLine telLineCard">
+            <input type="text" placeholder="电子邮箱(非必填）" placeholder-class="placeholder" bindblur="BlurBudget" bindinput="bindEmail"style="width:100%" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="deliveryAddress" style="background-color:#fff;">
+    <view style="padding:26rpx;padding-left:18rpx" hover-class="none">
+      <view class="deliveryAdd">
+        <view class="userInfo" style="">
+          <view class="userName">
+            更多服务
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="section">
+    <textarea bindblur="bindTextAreaBlur" bindinput='bindTextarea' placeholder="选填，您可以在此输入一些个性需求，如需要接车服务，对行程的期许等......"maxlength="100" />
+    <view class="textarea">
+      <view style='flex:1;'></view>
+      <view style="justify-content:  flex-end;margin-right:30rpx">{{quantity}}/100</view>
+    </view>
+  </view>
+  <button class="conListbox" type="default" size="{{defaultSize}}" style="border:none;background-color:{{color}};color:#fff;margin-top:40px" bindtap="nextStep" disabled='{{isColor}}'> 9.9元 获取方案 </button>
+  <view class="Explain">说明：支付9.9元方案费后获得20悦豆，线路支付可抵扣20悦豆，9.9元不予退款</view>
+</view>

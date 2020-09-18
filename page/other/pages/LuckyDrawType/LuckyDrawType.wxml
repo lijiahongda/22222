@@ -1,0 +1,20 @@
+<!--page/other/pages/LuckyDrawType/Lucky drawType.wxml-->
+<view class="wrap">
+  <image class="bgimg" src="{{listCont.bgImage}}" mode='widthFix'></image>
+  <view class="content">
+    <view class='resultTitle'>{{resultTitle}}</view>
+    <view class="winningInformation">
+      <view class="itemList" style="height:{{itemLenght*80}}rpx;top:{{-toTop * 60 }}rpx;">
+        <view class="item" wx:for="{{list}}" wx:for-index="index" wx:key="index">
+          <text class="text1">{{item.name}}</text>
+          <text class="text2">{{item.number}}</text>
+          <text class="text3">{{item.prize}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="code" bindtap="gotoLuckCode" data-title="{{title}}">我的{{title}}消费码</view>
+
+    <view class="rule" bindtap="gotoLuckRule">规则说明</view>
+  </view>
+</view>

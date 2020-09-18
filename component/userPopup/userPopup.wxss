@@ -1,0 +1,208 @@
+/* page/Popup/Popup.wxss */
+
+.commodity_screenlong {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  z-index: 1200;
+  color: #fff;
+}
+
+.Advertisement {
+  position: fixed;
+  width: 100%;
+  top: 23%;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Advertisement  .slide-image {
+  width: 540rpx;
+  height: 720rpx;
+  position: relative;
+}
+
+.authorizationStatus {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+}
+
+.close {
+  width: 46rpx;
+  height: 46rpx;
+  margin-left: 70%;
+  position: relative;
+  top: 20rpx;
+  left: 0;
+  z-index: 1000001 !important;
+}
+
+/* word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+
+.center {
+  position: absolute;
+  top: 19%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgba(217, 55, 42, 1);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.expand {
+  position: absolute;
+  top: 68%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 58%;
+  font-family: PingFang SC;
+  font-weight: 500;
+}
+
+.up {
+  width: 410rpx;
+  font-size: 50rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.djs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #7e4e21;
+  font-size: 32rpx;
+  margin: 20rpx 0;
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  font-size: 50rpx;
+  margin: 10rpx 0;
+}
+
+.money {
+  font-size: 128rpx;
+  line-height: 120rpx;
+}
+
+.hour {
+  width: 54rpx;
+  height: 50rpx;
+  background: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-07/21/yuelvhuiLambfXC6xN1586266831.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  line-height: 50rpx;
+  text-align: center;
+  color: #141414;
+  font-size: 32rpx;
+  box-shadow: 0 10rpx 5rpx 0 rgba(204, 26, 14, 0.14);
+  border-radius: 8rpx;
+  margin: 0 10rpx;
+}
+
+.effective {
+  width: 292rpx;
+  height: 48rpx;
+  border: 2rpx solid rgba(216, 68, 66, 1);
+  border-radius: 24rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(214, 70, 68, 1);
+  text-align: center;
+  line-height: 48rpx;
+}
+
+.btng {
+  position: absolute;
+  top: 75%;
+  width: 340rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  background: url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-08/14/yuelvhuiGuub6GL3Mq1586326464.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-size: 38rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(187, 17, 0, 1);
+}
+
+.btnCon {
+  margin-right: 10rpx;
+}
+
+.Advertisement .chai {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0;
+  background: none;
+}
+
+.Advertisement button::after {
+  border: none;
+}
+
+.chai  .slide-image {
+  width: 540rpx;
+  height: 720rpx;
+  position: relative;
+}
+.moneyN{
+  font-size:42rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(152,15,47,1);
+  position: absolute;
+  top: 86%;
+  left: 55%;
+}
+.priceN{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  font-size: 50rpx;
+  margin: 10rpx 0;
+  color: #fff;
+  position: absolute;
+  top: 30%;
+}
+.priceN .money {
+  font-size: 158rpx;
+  line-height: 140rpx;
+}

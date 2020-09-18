@@ -1,0 +1,26 @@
+/* page/CardVolume/pages/Explain/Explain.wxss */
+page{
+  height: 100%
+}
+.backgroundImage{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top:0rpx
+  
+}
+.content{
+  width: 80%;
+  margin-top: 200rpx;
+  color:#fff;
+}
+.content .title{
+  color:#f4aa11;
+  font-size: 35rpx;
+  margin-bottom: 57rpx;
+}
+.content .list{
+  margin-bottom: 25rpx;
+}

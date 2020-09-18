@@ -1,0 +1,8 @@
+<view  style="background:#{{data.bgColor}};padding-bottom:200rpx;">
+  <image src="{{data.imgUrl}}" class="top"></image>
+  <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-13/16/yuelvhui9yIpLfLO321584089624.gif" class="go" bindtap="goThree"></image>
+  <view class="rules" style="background:#{{data.ruleCoulr}}">
+    <view class="header">规则说明</view>
+    <view class="list" wx:for='{{data.explain}}'>{{index+1}}:{{item}}</view>
+  </view>
+</view>

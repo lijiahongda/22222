@@ -1,0 +1,318 @@
+/* page/yueMember/pages/ImmediateUse/ImmediateUse.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.top {
+  background-size: 100%;
+  height: 811rpx;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 65rpx;
+}
+/* 授权按钮 */
+
+.authorizationStatus {
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx;
+}
+.coupon {
+  display: flex;
+  flex-direction: row;
+  width: 94.2%;
+  margin-left: 2.9%;
+  margin-right: 2.9%;
+  height: 226rpx;
+  margin-bottom: 116rpx;
+  margin-top: 113rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+
+.coupon .info {
+  width: 64.3%;
+  height: 226rpx;
+  position: relative;
+}
+
+.coupon .info .bg {
+  display: flex;
+  flex-direction: row;
+  height: 226rpx;
+  width: 100%;
+}
+
+.coupon .info .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 15rpx;
+  width: 100%;
+  justify-content: center;
+}
+
+.coupon .info .content .couponInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.coupon .info .content .couponInfo .name text {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: bold;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 21rpx;
+}
+
+.coupon .info .content .couponInfo .price {
+  display: flex;
+  flex-direction: row;
+  font-size: 85rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: bold;
+  align-items: center;
+}
+
+.coupon .info .content .couponInfo .price .tips {
+  font-size: 20rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  margin-top: 40rpx;
+  margin-right: 3rpx;
+}
+
+.coupon .Receive {
+  width: 30%;
+  height: 226rpx;
+  position: relative;
+}
+
+.coupon .Receive .ReceiveImmediately {
+  position: absolute;
+  width: 180rpx;
+  height: 56rpx;
+  border: 1px solid rgba(228, 49, 31, 1);
+  border-radius: 28rpx;
+  top: 87rpx;
+  left: 37rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #f32f30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.coupon .Receive .bg {
+  display: flex;
+  flex-direction: row;
+  height: 176rpx;
+  width: 100%;
+}
+
+.goods {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  width: 96.5%;
+  margin-left: 1.75%;
+  height: 341rpx;
+  border-radius: 1px 0px 10rpx 10rpx;
+}
+
+.goods .goodInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding-top: 14rpx;
+  padding-bottom: 10rpx;
+}
+
+.goods .goodInfo .goodImage {
+  width: 260rpx;
+  height: 260rpx;
+  margin-right: 25rpx;
+}
+
+.goods .goodInfo .info {
+  display: flex;
+  flex-direction: column;
+  width: 59%;
+}
+
+.goods .goodInfo .info .name text {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(49, 48, 48, 1);
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 58rpx;
+}
+
+.goods .goodInfo .info .OriginalPrice {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(139, 139, 139, 1);
+  margin-bottom: 23rpx;
+}
+
+.goods .goodInfo .info .OriginalPrice text {
+  text-decoration: line-through;
+}
+
+.goods .goodInfo .info .ConcessionalRate {
+  font-size: 36rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(228, 49, 31, 1);
+}
+
+.goods .lookDetail {
+  width: 100%;
+  height: 57rpx;
+  background: rgba(228, 49, 31, 1);
+  border-radius: 1px 0px 10rpx 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.ExplainTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40rpx;
+}
+
+.ExplainTitle image {
+  width: 227rpx;
+  height: 64rpx;
+}
+
+.Explain {
+  width: 91.4%;
+  margin-left: 4.3%;
+  color: #959595;
+  font-size: 24rpx;
+}
+
+.Explain text {
+  line-height: 48rpx;
+  display: block
+}
+
+.commodity_screenlong {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.4;
+  overflow: hidden;
+  z-index: 1200;
+  color: #fff;
+}
+
+.isReceive {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  position: fixed;
+  left: 15%;
+  top: 15%;
+  z-index: 10000;
+}
+
+.isReceive .Top {
+  display: flex;
+  flex-direction: column;
+}
+
+.isReceive .Top .close {
+  width: 100%;
+  align-items: flex-end;
+  justify-content: flex-end;
+  display: flex;
+  margin-bottom: 157rpx;
+}
+
+.isReceive .Top .close image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 28rpx;
+}
+
+.isReceive .Top .content {
+  background-color: #fff;
+  width: 100%;
+  height: 261rpx;
+  border-radius: 20rpx;
+  font-size: 34rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.isReceive .Top .content .tipsimage {
+  width: 208rpx;
+  height: 107rpx;
+  margin-bottom: 37rpx;
+}
+
+.ImmediateUse {
+  width: 180rpx;
+  height: 56rpx;
+  background: #F32F30;
+  border-radius: 28rpx;
+  position: absolute;
+  top: 87rpx;
+  left: 37rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

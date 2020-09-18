@@ -1,0 +1,40 @@
+/* page/yueMember/pages/UniversityDetails/UniversityDetails.wxss */
+@import "../../../../wxParse/wxParse/wxParse.wxss";
+
+page {
+  background-color: #fff;
+}
+
+image {
+  width: 100%;
+  height: 310rpx;
+}
+
+.content {
+  width: 92%;
+  margin-left: 4%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-top: 41rpx;
+  margin-bottom: 41rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+}
+
+.time {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-bottom: 40rpx;
+}
+
+.typeOne {
+  width: 100%;
+  height: 2180rpx;
+}

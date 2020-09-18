@@ -1,0 +1,2 @@
+<!--page/Yuemall//pages/MaterialCircle/MaterialCircle.wxml-->
+<view bindtap='downloadImgs'>下载发圈</view>

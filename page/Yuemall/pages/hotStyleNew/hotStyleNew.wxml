@@ -1,0 +1,58 @@
+<view class="hotGoods">
+  <view class="header">
+    <view class="{{type==1?'active':''}}" bindtap="changeHot" data-type="1">今日爆款</view>
+    <view class="{{type==2?'active':''}}" bindtap="changeHot" data-type="2">明日预告</view>
+  </view>
+  <view class="list" wx:for='{{goodsList}}' wx:key='*this' bindtap="flashGoodsDetail" data-goodsid="{{item.goodId}}" data-activityid="{{item.activityId}}">
+    <image src="{{item.goodCover}}" class="left"></image>
+    <view class="right">
+      <view class="title">{{item.goodName}}</view>
+      <view class="sku">{{item.goodsInfo}}</view>
+      <view class="progress" wx:if='{{data.act_status==1}}'>
+        <view class="bar">
+          <view style="width:{{item.discount}}%"></view>
+        </view>
+        <view>已售{{item.discount}}%</view>
+      </view>
+      <view class="time" wx:if='{{data.act_status==0}}'>{{data.act_starttime}}</view>
+      <view class="price">
+        <view class="priceDetail">
+          <view>¥{{item.goodVipPrice}}</view>
+          <view>¥{{item.goodPrice}}</view>
+        </view>
+        <view class="goBuy"  wx:if='{{data.act_status==1}}'>抢购</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<image class="newHeader" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-04/02/yuelvhuiWC2FNJonFV1585938456.png"></image>
+<view class="detail"  style="padding-top:{{tabTop?'108rpx':''}}">
+  <view class="tab {{tabTop?'tabTop':''}}">
+    <scroll-view class="tabScroll" scroll-x>
+      <view class="tabList {{tabIndex==index?'select':''}}" wx:for='{{tabList}}' wx:key='*this' data-index="{{index}}" bindtap="switchTab">
+        <view>{{item.name}}</view>  
+      </view>
+    </scroll-view>
+  </view>
+  <view class="list" wx:for='{{tabGoods}}' wx:key='*this' bindtap="goodsDetail" data-goodsid="{{item.goodId}}" data-skuid="{{item.skuId}}">
+    <image src="{{item.goodCover}}" class="left"></image>
+    <view class="right">
+      <view class="title">{{item.goodName}}</view>
+      <view class="sku">{{item.goodInfo}}</view>
+      <view class="price">
+        <view class="priceDetail">
+          <view wx:if='{{item.activityPrice>0}}'>¥{{item.activityPrice}}</view>
+          <view wx:else>¥{{item.goodVipPrice}}</view>
+          <view>¥{{item.goodPrice}}</view>
+        </view>
+        <view class="goBuyDetail">去抢购</view>
+      </view>
+    </view>
+    <view class="top" style="background-image:url({{index<3?'https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-21/17/yuelvhuiLDcrQM0FNM1584782404.png':'https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-21/17/yuelvhuiIeg7S45HiB1584782743.png'}})">
+      <view>{{index+1}}</view>
+      <view>TOP</view>
+    </view>
+  </view>
+  <view class="more">我也是有底线的~</view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "限时半价",
+  "usingComponents": {
+    "limited-time": "/component/LimitedTime/LimitedTime"
+  }
+}

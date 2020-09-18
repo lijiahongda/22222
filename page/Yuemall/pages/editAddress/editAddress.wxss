@@ -1,0 +1,243 @@
+page {
+  background-color: #F6F6F6;
+}
+/* 授权按钮 */
+
+.authorizationStatus {
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx;
+}
+.editAddress {
+  background-color: #fff;
+  height: 100%;
+  padding-bottom: 20rpx;
+}
+
+.favourable {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  border-radius: 18rpx;
+}
+
+.favourable .item {
+  width: 702rpx;
+  margin: auto;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #EEEEEE;
+  color: rgb(51, 51, 51);
+  font-size: 30rpx;
+  display: flex;
+  justify-content: row;
+  align-items: center;
+}
+
+.favourable .item image {
+  width: 26rpx;
+  height: 10rpx;
+}
+
+.PcAt text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color:#999
+}
+
+.textareaitem {
+  width: 93%;
+  margin: auto;
+  line-height: 100rpx;
+  color: rgb(51, 51, 51);
+  font-size: 30rpx;
+  display: flex;
+  justify-content: row;
+  z-index: 0rpx;
+}
+
+.favourable .item .title {
+  color: #141414;
+  font-size: 28rpx;
+  font-weight:400;
+}
+
+.borderBottom {
+  border-bottom: 1px solid #ececec;
+}
+
+.detailed {
+  height: 100rpx;
+  width: 70%;
+  color: #141414;
+  font-weight:400;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+}
+
+.check {
+  display: flex;
+  flex-direction: row;
+  margin-top: 60rpx;
+  align-items: center;
+  width: 100%;
+  height: 110rpx;
+  background: #fff;
+  color: #999999;
+  font-size: 24rpx;
+  padding: 0 22rpx;
+  box-sizing: border-box;
+  border-radius: 18rpx;
+}
+.check > view:first-child{
+  color: #141414;
+  font-size: 28rpx;
+  margin-right: 8rpx;
+}
+.check image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx
+}
+.footer{
+  width: 702rpx;
+  height: 88rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #BB3627;
+  font-size: 32rpx;
+  color: #fff;
+  border-radius: 44rpx;
+  position: fixed;
+  left: 24rpx;
+  bottom: 80rpx;
+}
+
+.settle {
+  width: 100%;
+  height: 91rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: linear-gradient(to right, #ff6b03, #ff5012);
+}
+
+.settle .address {
+  line-height: 91rpx;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+}
+
+textarea {
+  width: 70%;
+  /* margin-top: 35rpx; */
+  height: 150rpx;
+  z-index: 1000;
+}
+
+/* 所在地区 */
+
+.commodity_screenlong {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1200;
+  color: #fff;
+}
+
+.commodity_attr_boxlong {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10000;
+  padding-top: 20rpx;
+  height: 92%;
+  background-color: #fff;
+}
+
+.commodity_attr_boxlong .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #333;
+  font-size: 36rpx;
+  margin-bottom: 35rpx;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.commodity_attr_boxlong .item {
+  border-bottom: 1px solid #ededed;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 20rpx;
+  color: #ff6032;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.commodity_attr_boxlong .item view {
+  margin-right: 30rpx;
+}
+
+.commodity_attr_boxlong .title image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.commodity_attr_boxlong .region {
+  padding-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.commodity_attr_boxlong .region .regionList {
+  display: flex;
+  flex-direction: row;
+  color: #333;
+  font-size: 24rpx;
+  margin-bottom: 40rpx;
+  align-items: center;
+}
+
+.commodity_attr_boxlong .region .regionList .active {
+  color: #ff6032;
+}
+
+.commodity_attr_boxlong .region .regionList image {
+  width: 28rpx;
+  height: 20rpx;
+  margin-left: 20rpx;
+}
+.wx-switch-input{
+  zoom: 0.8;
+}
+.default{
+  margin-left: 20rpx;
+  flex: 1;
+  text-align: right;
+}

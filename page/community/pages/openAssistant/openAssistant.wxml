@@ -1,0 +1,70 @@
+<view class="header">
+  <view class="{{step>=0?'pass':''}}">
+    <view>第一步</view>
+    <view>修改微信群名称</view>
+  </view> 
+  <view class="{{step>=1?'pass':''}}">
+    <view>第二步</view>
+    <view>选择您的群人数</view>
+  </view> 
+  <view class="{{step>=2?'pass':''}}">
+    <view>第三步</view>
+    <view>去开通助理</view>
+  </view> 
+</view>
+<view class="progress">
+  <view class="line {{step>=1?'pass':''}}"></view>
+  <view class="line {{step>=2?'pass':''}}" ></view>
+  <image wx:for='{{step+1}}'  src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-08/21/yuelvhuiDj1GZBahcL1586352897.png"></image>
+  <view class="circle" wx:for='{{2-step}}'></view>
+</view>
+
+<!-- 步骤一 -->
+<block wx:if='{{step==0}}'>
+  <view class="tip">
+    <view>务必修改群名称为</view>
+    <view>{{data.groupName}}</view>
+    <view class="copy" bindtap="copy" data-text="{{data.groupName}}">复制</view>
+  </view>
+  <image class="tipImg" mode="widthFix" src="{{oneStep.img}}"></image>
+  <view class="attention">
+    <view class="list" wx:for='{{oneStep.content}}'>{{item}}</view>
+  </view>
+</block>
+
+<!-- 步骤二 -->
+<view wx:if='{{step==1}}' class="twoStep">
+  <view>{{twoStep.title}}</view>
+  <view class="detail">
+    <view class="title">
+      <text>正式模式</text>
+    </view>
+    <view class="num">
+      <view>我的群人数>={{data.userNum}}人</view>
+      <view bindtap="apply">点这里申请助理</view>
+    </view>
+    <view class="list">
+      <view wx:for='{{twoStep.content}}'>{{item}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 步骤三 -->
+<view wx:if='{{step==2}}' class="threeStep">
+  <view class="number">
+    为您分配助理微信号：<text>{{number}}</text>
+  </view>
+  <view class="title">{{threeStep[0].title}}</view>
+  <view class="title">{{content[0].text}}</view>
+  <view class="copy" bindtap="copy" data-text="{{number}}">点击复制助理微信</view>
+  <image src="{{content[0].img}}" mode="widthFix"></image>
+  <view class="title">{{content[1].text}}</view>
+  <image src="{{content[1].img}}" mode="widthFix"></image>
+  <view class="list" wx:for='{{threeStep}}' wx:if='{{index>0}}'>
+    <view>{{item.title}}</view>
+    <view wx:for='{{item.content}}' wx:for-item="itemSon">{{itemSon}}</view>
+  </view>
+</view>
+
+<view class="next" bindtap="next" wx:if='{{step==0}}'>下一步</view>
+<view class="next" bindtap="pre" wx:if='{{step==1}}'>上一步</view>

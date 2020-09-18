@@ -1,0 +1,50 @@
+
+ <view class="two_class">
+    <scroll-view scroll-x class="two_scroll_view">
+      <view wx:for="{{activities}}" wx:for-index="index" wx:key="index" class="two_tab_item {{twoIndex==index?'two_tab_active':''}}" bindtap="onTwoItemClick" data-index="{{index}}" data-item="{{item}}">
+        <view>{{item.title}}</view>
+      </view>
+    </scroll-view>
+  </view>
+
+
+
+<banner id="banner" inner-text="{{list}}">
+</banner>
+
+<!-- <listOneLine id="listOne" inner-text="{{list}}" wx:if="{{type=='line'}}">
+</listOneLine> -->
+
+<listTwoLine id="listTwo" inner-text="{{list}}">
+</listTwoLine>
+
+
+
+<view class='operation'>
+  <!-- <image bindtap='switchs' data-type="square" wx:if="{{type=='line'}}" class='line' src='https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-09/15/yuelvhuioSqKj9ULNT1578553276.png'></image>
+  <image bindtap='switchs' data-type="line" wx:else class='square' src='https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-09/15/yuelvhuiqp9Wl2h6pR1578553323.png'></image> -->
+  <image bindtap='onShare' src='https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-09/15/yuelvhuixo53igb7Mc1578553262.png'></image>
+</view>
+
+
+
+<!-- <listTwoLine id="listTwo" inner-text="{{list}}" wx:else>
+</listTwoLine> -->
+
+
+<!-- 分享弹窗 -->
+<view class="share-layer" wx:if="{{ sharelayer }}">
+  <view class="share-layer-mask" bindtap='shareLayerClosed'>
+
+  </view>
+  <view class="share-layer-block">
+    <view class="share-layer-block-img">
+      <button open-type='share'>
+        <image src="/images/YueMall/WeChatShare@2x.png"></image>
+      </button>
+    </view>
+    <view class="share-layer-block-img" bindtap='goPoster'>
+      <image src="/images/YueMall/posterShare@2x.png"></image>
+    </view>
+  </view>
+</view>

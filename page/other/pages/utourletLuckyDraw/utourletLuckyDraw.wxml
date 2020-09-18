@@ -1,0 +1,11 @@
+<!--page/other/pages/utourletLuckyDraw/utourletLuckyDraw.wxml-->
+<view class="wrap">
+  <view class="banner" bindtap='clickBanner'>
+    <image class="" src="{{list.headImage}}"></image>
+  </view>
+  <view class="utourletLuckyDraw">
+    <image class="itemImg" src="{{list.dayImage}}" bindtap='LuckyDraw' data-type="1" data-text="天天乐"></image>
+    <image class="itemImg" src="{{list.weekImage}}" bindtap='LuckyDraw' data-type="2" data-text="周周乐"></image>
+  </view>
+  <view class="process" bindtap='goToLuckProcess' data-text="">参与流程</view>
+</view>

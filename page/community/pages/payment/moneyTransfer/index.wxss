@@ -1,0 +1,148 @@
+@import "/page/LoadingPopup/LoadingPopup.wxss";
+/* page/payment/moneyTransfer/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.zcontent{
+  width: 100%;
+  height: 100%;
+}
+.zcontent>.tips{
+  width:750rpx;
+  height:68rpx;
+  background:rgba(251,228,226,1);
+  line-height: 68rpx;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(187,54,39,1);
+  text-indent: 24rpx;
+}
+.zcontent>.userMoney{
+  padding: 0 24rpx;
+  /* width: 100%; */
+  height: 129rpx;
+  line-height: 129rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+.zcontent>.userMoney>.title{
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(20,20,20,1);
+}
+.zcontent>.userMoney>.title>text{
+  color: #CA2519;
+  font-size: 35rpx;
+}
+.zcontent>.userMoney>.money{
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+.zcontent>.inputMoney{
+  width: 100%;
+  height: 328rpx;
+  margin-top: 20rpx;
+  background: #fff;
+}
+.zcontent>.inputMoney>.title{
+  padding: 0 24rpx;
+  height: 121.5rpx;
+  line-height: 121.5rpx;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(20,20,20,1);
+}
+.zcontent>.inputMoney>.inputCtrl{
+  width: 702rpx;
+  height: 121.5rpx;
+  border-bottom: 2rpx solid rgba(238,238,238,1);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  box-sizing:border-box;
+  /* line-height: 100rpx; */
+  padding-top: 40rpx;
+}
+.zcontent>.inputMoney>.inputCtrl>.icon{
+  font-size:36rpx;
+  /* line-height: 36rpx; */
+  line-height: 100rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(20,20,20,1);
+}
+.zcontent>.inputMoney>.text{
+  padding: 0 24rpx;
+  height: 85rpx;
+  line-height: 85rpx;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.zcontent>.inputMoney>.inputCtrl>.icon{
+  font-size:36rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(20,20,20,1);
+  line-height: 110rpx;
+}
+.zcontent>.inputMoney>.inputCtrl>.input{
+  width: 600rpx;
+  font-size:40rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(221,221,221,1);
+  line-height: 95rpx;
+}
+.zcontent>.inputMoney>.inputCtrl>.input>input{
+  width: 100%;
+  height: 68rpx;
+  font-weight:500;
+  color:rgba(20,20,20,1);
+  line-height: 120rpx;
+  font-size:68rpx;
+  margin-top: 10rpx;
+}
+.zcontent>.inputMoney>.inputCtrl>.allbt{
+  width:88rpx;
+  height:48rpx;
+  border:2rpx solid rgba(202,37,25,1);
+  border-radius:24rpx;
+  line-height: 48rpx;
+  text-align: center;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(202,37,25,1);
+  margin-top: 20rpx;
+}
+.zcontent>.subBt{
+  width:702rpx;
+  height:88rpx;
+  background:rgba(153,153,153,1);
+  border-radius:16rpx;
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 88rpx;
+  margin:35rpx auto;
+}
+
+.alert{
+  width:100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5)
+}

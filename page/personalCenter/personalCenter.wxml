@@ -1,0 +1,317 @@
+<!-- 加载中 -->
+<import src="/page/LoadingPopup/LoadingPopup.wxml" />
+<block wx:if="{{LoadingStatus}}">
+  <template is="LoadingPopup" />
+</block>
+<image class="img" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-02-23/17/yuelvhuiZGkTlr3eCW1582449256.png"></image>
+
+<view class="deliveryAdd" style="{{list == ''?'padding-bottom:10rpx;':''}}">
+  <view class="userInfoDeliver" bindtap="{{uid?'goMemberInformation':'bindLogin'}}">
+    <block wx:if="{{uid}}">
+      <view class="money">
+        <image src="{{cardImg}}"></image>
+      </view>
+      <view class="userInfo" style="">
+        <view class="userName">
+          <view>{{name}}</view>
+          <view class="cardType">
+            <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/17\/yuelvhui2CiMXZumse1578216700.png"></image>
+            <view >{{levelText}}</view>
+          </view>
+          <view class="expire" wx:if="{{experienceState == 1}}">{{experienceTime}} 到期</view>
+        </view>
+        <view class="YueBrigade">
+          <view>悦淘号：{{reCode}}</view>
+          <view class="copy" data-text="{{reCode}}" catchtap="copyText">复制</view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="money">
+        <image src="/images/memberInformation/UnloggedAvatar.png"></image>
+      </view>
+      <view class="userInfo">
+        <view class="userName">
+          绑定并登录
+        </view>
+      </view>
+    </block>
+    <image class="gorightBtn" src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/17\/yuelvhuikVaWKWOwg21578216481.png"></image>
+  </view>
+  <image class="happy" src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/15\/yuelvhuiaAuqknlY4t1578207869.png"></image>
+  <view class="Connections">
+    <view class="item">
+      <view>{{push}}</view>
+      <view class="title">一度人脉</view>
+    </view>
+    <!-- <image class="" src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569310079_48891.png"></image> -->
+    <view class="item">
+      <view>
+        <text>￥</text>{{saveMoney}}
+      </view>
+      <view class="title">当前累计省钱</view>
+    </view>
+    <!-- <image class="" src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569310079_48891.png"></image> -->
+    <view class="item">
+      <view>{{leftCardNum}}</view>
+      <view class="title">剩余卡数</view>
+    </view>
+  </view>
+</view>
+
+<view class="orderBox" >
+  <view class="order_Status">
+    <view class="order_title">
+      <view>商城订单</view>
+      <view style="color:#646464;" bindtap="NewmallOrder" data-cur="0"> <text style="margin-right:10rpx;"  >查看全部订单</text> <image  src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/17\/yuelvhuifviavsbR581578216248.png"></image>
+      </view> 
+    </view>
+    <view class="all_status" >
+      <view class="all_status_item" bindtap="NewmallOrder" data-cur="1">
+        <view class="numSc" wx:if="{{orderCount.waitPay > 0}}">{{orderCount.waitPay}}</view>
+        <image class="bug" src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/15\/yuelvhuiz08wMWNlxT1578210372.png"></image>
+        <view>待付款</view>
+      </view>
+      <view class="all_status_item" bindtap="NewmallOrder" data-cur="2">
+        <view class="numSc" wx:if="{{orderCount.paidCount > 0}}">{{orderCount.paidCount}}</view ><view class="numSc1" wx:else></view>
+        <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/15\/yuelvhuimjR4PYCZay1578210452.png" ></image>
+        <view>待收货</view>
+      </view>
+      <view class="all_status_item" bindtap="NewmallOrder" data-cur="6">
+        <view class="numSc" wx:if="{{orderCount.commentCount > 0}}">{{orderCount.commentCount}}</view><view class="numSc1" wx:else></view>
+        <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/15\/yuelvhuirnBstTnDHd1578210487.png"></image>
+        <view>待评价</view>
+      </view>
+      <view class="all_status_item" bindtap="NewmallOrder" data-cur="5">
+        <view class="numSc1" ></view>
+        <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/15\/yuelvhuiENaOhSc2MY1578210604.png"></image>
+        <view>退换/售后</view>
+      </view>
+    </view>
+    <!-- 快递 -->
+    <view class="logistics" wx:if="{{iscenterExpress}}" bindtap="ViewLogistics" data-recordid="{{recordId}}" data-img="{{goodsImg}}" data-name="{{goodsName}}" data-num="{{goodsNum}}" data-spec="{{goodsSpec}}" data-price="{{goodsPrice}}">
+      <view class="title">
+        <view>最新物流</view>
+        <view>{{expressInfo.time}}</view>
+      </view>
+      <view class="logistics_cont">
+        <image class="log_img" src="{{goodsImg}}" mode="aspectFill"></image>
+        <view class="logistics_info">
+          <view class="prog">
+            <image src="https://image.yuelvhui.com/pubfile/2019/10/21/line_1571638955_10591.pic.jpg"></image>
+            <!-- <view>已揽件</view> -->
+          </view>
+          <view class="log_state">{{expressInfo.context}}</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>
+<view wx:if="{{list == ''}}"></view>
+<view class="giftBack" wx:else>
+  <view class="gift">
+    <view class="list">
+      <image class="title" src="https://image.yuelvhui.com/pubfile/2019/09/24/line_1569314387_73983.png"></image>
+
+      <view class="info">
+        <view >
+          <text>{{list.title}}</text>
+        </view>
+      </view>
+      <view class="payPrice">
+        <view>
+          <view>¥
+            <text>{{list.goodPrice}}</text>
+          </view>
+          <view class="time">{{list.createTimes}}</view>
+        </view>
+        <view class="lookDetail" bindtap='lookDetail' data-orderno="{{item.orderNo}}" wx:if="{{list.buttonType == 2}}">查看订单</view>
+        <view class="lookDetail" wx:else bindtap='lookDetail' data-orderno="{{item.orderNo}}">填写地址领礼包</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="myWalletContent">
+  <view class="content">
+    <view bindtap='myWalletContent' class="list">
+      <view class="num">￥{{balance}}</view>
+      <view class="title">我的钱包</view>
+    </view>
+    <view bindtap='MyParticulars' class="list">
+      <view class="num">{{coin}}</view>
+      <view class="title">悦豆(个)</view>
+    </view>
+    <view bindtap='CardVolume' class="list">
+      <view class="num">{{coupon}}</view>
+      <view class="title">优惠券(张)</view>
+      <view class="spot" wx:if="{{coupon >1}}"></view>
+    </view>
+    <view bindtap='Instructions' class="list">
+      <view class="num">{{sale.unUse?sale.unUse:0}}</view>
+      <view class="title">立减50(次)</view>
+      <view class="spot" wx:if="{{sale.unUse >1}}"></view>
+    </view>
+  </view>
+</view>
+
+
+<swiper class="adListswiperbox" bindchange="intervalChange" wx:if="{{adList}}" indicator-dots="{{indicatorDots}}" autoplay="true" interval='3000' style="margin-top:{{showViewHeight?80:''}}rpx">
+  <block wx:for="{{adList}}" wx:key="adList">
+    <swiper-item bindtap="classificationList" data-hotid="{{item.id}}" data-skuid="{{item.skuId}}" data-redirecttype="{{item.redirectType}}" data-typeid="{{item.id}}" data-id="{{item.id}}" data-name="{{item.name}}">
+      <image class='image' src='{{item.url}}'></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!--style="margin-top:{{list != ''?'248rpx':''}};" -->
+<view class="CommonFunction" style="margin-top:{{adList?'':'20rpx'}}">
+  <!-- <image src="https://image.yuelvhui.com/pubfile/2019/07/21/line_1563696817_20450.png"></image> -->
+  <view class="icon"></view>
+  <view class="borderLeft">常用功能</view>
+</view>
+<view class="CommonFunctionContent">
+  <!-- <view class="listItme" bindtap='join'>
+    <image src="/images/memberInformation/memberCard.png"></image>
+    <view>会员卡</view>
+  </view> -->
+  <view class="listItme" bindtap="personalStores">
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhuiunFdmD03ln1578212234.png"></image>
+    <view>我的店铺</view>
+    <!-- <image class="img" class="Stars" mode="aspectFill" src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhuigRreCKVrIN1578213049.png" role="img">
+    </image> -->
+  </view>
+  <!-- <view class="listItme" bindtap="goMemberCenter">
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhuiWVqQtnYEKY1578212279.png"></image>
+    <view>我的订单</view>
+  </view> -->
+  <view class="listItme" catchtap="group">
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-10/18/yuelvhuiBfT0uYHHmB1586512872.png"></image>
+    <view>群助手</view>
+  </view>
+  <view class="listItme" catchtap="addressBook" style="border-right:0rpx">
+    <image src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-10/18/yuelvhuiqFbBHxRfJS1586512881.png"></image>
+    <view>社群通讯录</view>
+  </view>
+  <view class="listItme" bindtap='calltel' data-tel="4001109600">
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/17\/yuelvhuiwOjfifUf4p1578215047.png"></image>
+    <view>客服电话</view>
+  </view>
+  <view class="listItme" bindtap='goMemberInformation'>
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhuid3jtzR094v1578212493.png"></image>
+    <view>完善信息</view>
+  </view>
+  <view class="listItme"  style="border-right:0rpx" catchtap="goinviteFriends">
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhui4whoL0ytg81578212533.png"></image>
+    <view>我的邀请</view>
+    <!-- <view class="num"></view> -->
+  </view>
+  <!-- <view class="listItme" bindtap='MyCollection' >
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhui7PXD6fZce11578212637.png"></image>
+    <view>我的收藏</view>
+  </view> -->
+  <view class="listItme" catchtap="QRCode">
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhuixGyNeWEFf91578212325.png"></image>
+    <view>我的二维码</view>
+  </view>
+  <view class="listItme" catchtap='goEntityCard'>
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhuiYyc3Q4BVhS1578212675.png"></image>
+    <view>实体卡绑定</view>
+  </view>
+  <view class="listItme"  style="border-right:0rpx" catchtap='adults'>
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhuiCpIJoDfQRf1578212717.png"></image>
+    <view>带货王都在这</view>
+  </view>
+  <view class="listItme" bindtap='IntegralMall' style="border-bottom:0rpx">
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhuiXLfWOF7avb1578212764.png"></image>
+    <view>积分商城</view>
+    <!-- <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhuiCpIJoDfQRf1578212717.png"></image>
+    <view>带货王都在这</view> -->
+  </view>
+  <!-- <view class="listItme" catchtap='RemittanceShop'>
+    <image src="https://image.yuelvhui.com/pubfile/2019/07/21/line_1563696305_22955.png"></image>
+    <view>阅读拼团赚钱</view>
+  </view> -->
+  <view class="listItme" bindtap='join' style="border-bottom:0rpx">
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhuiVJ5oXj9R8g1578212930.png"></image>
+    <view>会员权益</view>
+  </view>
+  <view class="listItme" bindtap='CouponCenter' style="border-right:0rpx;border-bottom:0rpx">
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhui9apCJ8LBid1578212966.png"></image>
+    <view>领券中心</view>
+  </view>
+  <!-- <view class="listItme" bindtap='LuckDraw'>
+    <image src="/images/personalCenter/LuckDraw.png"></image>
+    <view>每日抽奖</view>
+  </view>
+  <view class="listItme" bindtap='utourletLuckyDraw'>
+    <image src="/images/personalCenter/LotteryCode.png"></image>
+    <view>我的消费抽奖码</view>
+  </view> -->
+
+
+  <!-- <view class="listItme" bindtap='MyBonus'>
+    <image src="/images/personalCenter/MyBonus.png"></image>
+    <view>我的奖品</view>
+  </view> -->
+  <view class="listItme" bindtap='lineDrtail' wx:if="{{hasFiveHundred == 1}}">
+    <image src="/images/memberInformation/CouponRoom.png"></image>
+    <view>500元券</view>
+  </view>
+</view>
+<!-- <view class="CommonFunction">
+  <view class="icon"></view>
+  <view class="borderLeft">三方权益</view>
+</view>
+<view class="CommonFunctionContent">
+  <view class="listItme" bindtap='StandardYearCard'>
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhuiL73moD8Uqd1578211963.png"></image>
+    <view >旅游年卡</view>
+  </view>
+  <view class="listItme" bindtap='NethongVilla'>
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhuiS1W1V0Ar5V1578212007.png"></image>
+    <view >网红别墅</view>
+  </view>
+  <view class="listItme" bindtap='PartTimeJob' style="border-right:0rpx;">
+    <image src="https:\/\/yuetao-1300766538.cos.ap-beijing.myqcloud.com\/yuetao\/image\/2020-01-05\/16\/yuelvhuiuohveXF5nA1578214352.png"></image>
+    <view >我要创业</view>
+  </view>
+</view> -->
+<swiper class="AdvertisingPosition" bindchange="intervalChange" indicator-dots="{{indicatorDots}}" autoplay="true" interval='3000' style="margin-top:{{showViewHeight?80:''}}rpx">
+  <block wx:for="{{adListNew}}" wx:key="adListNew">
+    <swiper-item bindtap="classificationList" data-hotid="{{item.id}}" data-skuid="{{item.skuId}}" data-redirecttype="{{item.redirectType}}" data-typeid="{{item.id}}" data-id="{{item.id}}" data-name="{{item.name}}">
+      <image class='image' src='{{item.url}}'></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <image src="../../images/personalCenter/card.png" style="width:45px;height:35px;margin-bottom:35rpx"></image>
+  <view>尊敬的会员您好，有品位旅行年卡已经</view>
+  <view>发放，请到个人中心查看</view>
+  <view style="flex-direction: row;display: flex;margin-top:100rpx">
+    <button class="conButton" type="default" size="{{defaultSize}}" style="background-color:#f4aa11;color:#fff;z-index:1001;margin-top:0px;" bindtap="recharge"> 查看 </button>
+    <button class="conButton" type="default" size="{{defaultSize}}" style="background-color:#ededed;color:rgb(102,102,102);z-index:1001;margin-top:0px;" bindtap="recharge"> 取消 </button>
+
+  </view>
+</view>
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModal}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModal}}">
+  <view class="group" style="margin-bottom:30rpx">
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" style="margin-right:15px;">
+        <radio value="" checked="true" />
+      </label>
+    </radio-group>
+  </view>
+  <view>尊敬的会员您好，您已成功邀请10人</view>
+  <view>解锁邀请次数，并奖励50悦豆</view>
+  <view style="flex-direction: row;display: flex;margin-top:100rpx">
+    <button class="conButton" type="default" size="{{defaultSize}}" style="background-color:#f4aa11;color:#fff;z-index:1001;margin-top:0px;" bindtap="recharge"> 查看 </button>
+  </view>
+</view>
+
+<!-- 授权按钮 -->
+<view class="authorizationStatus" bindtap='VerificationCode' wx:if="{{authorizationStatus}}"></view>
+
+<!-- 平台客服 -->
+<image src="/images/personalCenter/CustomerService.png" bindtap="CustomerService" class="Customer_Service"></image>

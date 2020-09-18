@@ -1,0 +1,56 @@
+<!--page/Yuemall//pages/evaluate/evaluate.wxml-->
+<view class="goods">
+  <image src="{{img}}"></image>
+  <view class="stars">
+    <image wx:for="{{goodstars}}" wx:key="goodstars" wx:index="{{index}}" data-id="{{index+1}}" src="{{item?redImage:GrayImage}}" bindtap='starsGoods'></image>
+  </view>
+</view>
+<view class="tips">分享你的使用体验吧</view>
+<view class="CommentaryArea">
+  <view class="section">
+    <image src="https://image.yuelvhui.com/pubfile/2019/06/13/line_1560411380.png"></image>
+    <textarea bindblur="bindTextAreaBlur" placeholder="快来写下你的心得体验吧" maxlength="40" />
+  </view>
+  <view class="upload" bindtap='upload' wx:if="{{imgs == ''}}">
+    <image src="https://image.yuelvhui.com/pubfile/2019/06/13/line_1560412034.png"></image>
+    <view>添加图片</view>
+  </view>
+  <view class="Exhibition" wx:else>
+    <view class="image" wx:for="{{imgs}}" wx:key="imgs">
+      <image class="images" src="{{item}}"></image>
+      <image class="deleteImg" data-index="{{index}}" catchtap="deleteImg" src="https://image.yuelvhui.com/pubfile/2019/06/13/line_1560413763.png"></image>
+    </view>
+    <image bindtap='upload' class="upload" wx:if="{{imgs.length < 6}}" src="https://image.yuelvhui.com/pubfile/2019/06/13/line_1560414106.jpeg"></image>
+  </view>
+  <view class="anonymous">
+    <image wx:if="{{isanonymous}}" src="https://image.yuelvhui.com/pubfile/2019/06/13/line_1560415161.png" bindtap='anonymous'></image>
+    <image wx:else src="https://image.yuelvhui.com/pubfile/2019/06/13/line_1560415157.png" bindtap='anonymous'></image>
+    <view>匿名评价</view>
+  </view>
+</view>
+<view class="tips">继续评价</view>
+<view class="serve">
+  <view class="title">
+    <image src="https://image.yuelvhui.com/pubfile/2019/06/13/line_1560415924.png"></image>
+    <view>物流服务评价</view>
+  </view>
+  <view class="item">
+    <view>快速包装</view>
+    <view class="stars">
+      <image wx:for="{{packstars}}" wx:key="packstars" wx:index="{{index}}" data-id="{{index+1}}" src="{{item?redImage:GrayImage}}" bindtap='packstars'></image>
+    </view>
+  </view>
+  <view class="item">
+    <view>送货速度</view>
+    <view class="stars">
+      <image wx:for="{{deliverstars}}" wx:key="deliverstars" wx:index="{{index}}" data-id="{{index+1}}" src="{{item?redImage:GrayImage}}" bindtap='deliverstars'></image>
+    </view>
+  </view>
+  <view class="item">
+    <view>配送员服务</view>
+    <view class="stars">
+      <image wx:for="{{deliverystars}}" wx:key="deliverystars" wx:index="{{index}}" data-id="{{index+1}}" src="{{item?redImage:GrayImage}}" bindtap='deliverystars'></image>
+    </view>
+  </view>
+</view>
+<view class="Submission" bindtap='Submission'>提交</view>

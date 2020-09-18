@@ -1,0 +1,94 @@
+<view class="content">
+  <view style="display:flex; align-items: center;flex-direction: column; ">
+    <view class="title" style="">定制游</view>
+    <view class="letter">
+      <view>一分钟提交需求</view>
+      <view>30分钟专家推荐</view>
+      <view>5小时获取行程</view>
+    </view>
+  </view>
+  <view style="box-shadow: 0 4rpx 8px #ddd;border-radius:15rpx" class="content tour">
+    <view class="tab place" style="padding:0px;margin:0px;position: relative;line-height:100rpx">
+      <image src="{{url}}" style="height:100rpx;width:680rpx"></image>
+      <view style="position: absolute;top:0px;left:110rpx;color:{{have}};width:200rpx" data-title="私人订制" bindtap='title'>私人定制</view>
+      <view style="position: absolute;top:0px;right:40rpx;color:{{not}};width:200rpx" data-title="企业定制" bindtap='title'>企业定制</view>
+    </view>
+    <view class="tab-content" bindchange="switchTab">
+      <view class="scoll-h">
+        <view class="place">
+          <view class="place" style="border-bottom:1px solid #e0e0e0;padding-bottom:10rpx;width:290rpx">
+            <image src="../../../../images/EntityCard/position.png" style="width:30rpx;height:44rpx"></image>
+            <input placeholder="北京" bindinput="bindleavecity" placeholder-class="placeholder" style="margin-left:15rpx"></input>
+          </view>
+          <view style="width:36rpx">
+            <image src="../../../../images/EntityCard/left.png" style="width:36rpx;height:22rpx"></image>
+          </view>
+          <view style="border-bottom:1px solid #e0e0e0;padding-bottom:10rpx;width:290rpx;color:#c0c0c0;padding-left:10rpx">
+            <input placeholder="目的地" placeholder-class="placeholder" bindinput="bindaimcity" style="margin-left:15rpx"></input>
+          </view>
+        </view>
+        <view class="place" style="justify-content:space-between;margin-top:30rpx;border-bottom:1px solid #e0e0e0;padding-bottom:30rpx">
+          <view style='color:#c1c1c1;' bindtap='pushSelcetTime'>{{selcetTime}}</view>
+          <view style='clor:rgb(192,192,192);'>
+            <checkbox-group bindchange="checkboxadjusttime">
+              <label class="checkbox" wx:for="{{items}}" wx:key="items">
+                <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+              </label>
+            </checkbox-group>
+          </view>
+        </view>
+        <view class="place" style="margin-top:30rpx">
+          <view class="place" style="border-bottom:1px solid #e0e0e0;padding-bottom:30rpx;width:290rpx;color:#c0c0c0;">
+            <input placeholder="成人数" value="{{adultnum}}" style="" bindinput='bindadultnum' placeholder-class="placeholder" bindblur="complete" bindfocus='clear' type="number"></input>
+          </view>
+          <view style="width:36rpx"></view>
+          <view style="border-bottom:1px solid #e0e0e0;padding-bottom:30rpx;width:290rpx;color:#c0c0c0;padding-left:10rpx">
+            <input placeholder="儿童数(非必填)" value="{{childnum}}" placeholder-class="placeholder" bindinput='bindchildnum' style="margin-left:15rpx" bindblur="completeChild" bindfocus='clearChild' type="number"></input>
+          </view>
+        </view>
+        <view class="place" style="margin-top:30rpx;justify-content:space-between;border-bottom:1px solid #e0e0e0;">
+          <view class="place" style="padding-bottom:30rpx;width:290rpx;color:#c0c0c0;">
+            <input placeholder="人均预算" bindblur="BlurBudget" placeholder-class="placeholder" bindinput='bindbudget' style=""></input>
+          </view>
+          <view style="width:36rpx"></view>
+          <view style="clor:rgb(192,192,192);">
+            <checkbox-group bindchange="checkboxadjustbudget">
+              <label class="checkbox" wx:for="{{items}}" wx:key="itemsCheckbox">
+                <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+              </label>
+            </checkbox-group>
+          </view>
+        </view>
+        <button class="conListbox" type="default" size="{{defaultSize}}" style="border:none;background-color:{{color}};color:#fff;margin-top:60rpx" bindtap="nextStepPrivate" disabled='{{isColor}}'> 下一步 </button>
+      </view>
+    </view>
+  </view>
+  <view class="case" wx:if="{{list != ''}}">
+    <view class="caeetitle">
+      <text class="wire">——</text>
+      <text class="tit">经典案例</text>
+      <text class="wire">——</text>
+    </view>
+    <view class="item" wx:for="{{list}}" wx:key="listCustomTour" bindtap='CustomTourDetails' data-id="{{item.customized_id}}">
+      <view class="image" style="background-image: url({{item.first_banner}})">
+        <view class="note">
+          <view class="left">{{item.type }} | {{item.start_place}}出发</view>
+          <view>{{item.join_number}}人出行 | {{item.satisfaction}}满意</view>
+        </view>
+      </view>
+      <view class="lineTitle">{{item.main_title}}</view>
+      <view class="introduce">
+        <text>{{item.slave_title}}</text>
+      </view>
+      <view class="money">
+        <text class="unit">￥</text>
+        <text class="num">{{item.price}}</text>
+        <text class="qi">起</text>
+        <text class="save">已省￥{{item.economize_price}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='nameVIew'>
+      <text decode="{{true}}">——&nbsp;&nbsp;&nbsp;悦旅行 · 悦快乐&nbsp;&nbsp;&nbsp;——</text>
+    </view> -->
+</view>

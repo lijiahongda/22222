@@ -1,0 +1,99 @@
+/* page/MobileRecharge/pages/detail/detail.wxss */
+.detail-header{
+  background: #FC4A4B;
+  color: #fff;
+  
+}
+.detail-header view{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail-header view view{
+  padding-left: 28rpx;
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ font-size: 24rpx;
+}
+.detail-header .title{
+font-size:36rpx;
+padding-bottom: 28rpx;
+}
+.detail-header view image{
+  width: 91rpx;
+  height: 91rpx;
+  margin-right: 79rpx;
+}
+view.phone-number{
+  color: #333333;
+  font-size:30rpx;
+  background: #fff;
+  border-radius: 20rpx 20rpx 0 0;
+  height: 84rpx;
+  margin-top: 40rpx;   
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 28rpx;
+}
+view.phone-number image{
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 19rpx;
+}
+
+/* 详情 */
+.detail-body{
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 30rpx 30rpx 10rpx 30rpx;
+}
+.detail-body image{
+  width: 148rpx;
+  height: 148rpx;
+  border: 1px solid #ccc;
+  margin-right: 29rpx;
+}
+.body-header{
+  display: flex;
+}
+.body-header view{
+  width: 522rpx;
+}
+.body-header view view{
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  font-family:PingFang SC;
+font-weight:400;
+color:rgba(51,51,51,1);
+}
+.body-header .provider-name{
+  font-size: 30rpx;
+  padding-top: 12rpx;
+  padding-bottom: 30rpx;
+}
+.body-main{
+  margin-top: 49rpx;
+}
+.body-main view{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20rpx;
+}
+
+/* 支付按钮 */
+button{
+  font-size:36rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(255,255,255,1);
+  width:690rpx;
+height:88rpx;
+background:rgba(252,74,75,1);
+border-radius:10rpx;
+position: fixed;
+bottom: 30rpx;
+left: 30rpx;
+}

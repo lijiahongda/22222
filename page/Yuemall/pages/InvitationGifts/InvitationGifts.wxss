@@ -1,0 +1,298 @@
+/* page/Yuemall/pages/InvitationGifts/InvitationGifts.wxss */
+page{
+  background: rgb(244, 26, 20);
+}
+.bg{
+  width: 100%;
+  height: 100%;
+}
+.top{
+  width: 100%;
+  height: 830rpx;
+  background: #fff;
+  position: relative;
+}
+
+.rule{
+  width: 145rpx;
+  height: 44rpx;
+  position: absolute;
+  right: 0;
+  top:40rpx;
+}
+.left{
+  font-size: 110rpx;
+  color: #DD1E03;
+  max-width: 250rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.right{
+  font-size: 110rpx;
+  color: #DD1E03;
+  max-width: 250rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.price{
+  font-size: 60rpx;
+}
+.shareBox{
+  width: 750rpx;
+  height: 165rpx;
+  background: none;
+  border: 0rpx solid #eee;
+  outline: none;
+  position: absolute;
+  top: 600rpx;
+}
+.shareBox::after{
+  border: none;
+}
+.share{
+  width: 100%;
+  height: 100%;
+}
+.bottom{
+  width: 610rpx;
+  /* height: 600rpx;  */
+  padding: 20rpx;
+  background:rgba(227,14,4,1);
+  border-radius:18rpx;
+  margin: 0 auto;
+  position:absolute;
+  top: 780rpx;
+  left: 50rpx;
+  margin-bottom: 120rpx;
+
+}
+.content{
+  width:100%;
+  height: 100%;
+  background: #fff;
+  border-radius:4rpx;
+
+}
+.record{
+  font-size:34rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(20,20,20,1);
+  text-align: center;
+  padding: 20rpx 0;
+}
+.center{
+  margin-top: 20rpx;
+  padding: 0 54rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center；
+}
+.child{
+  text-align: center;
+  font-size: 26rpx;
+  color: #666666;
+}
+.bigBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.big{
+  font-size:44rpx;
+  font-family:PingFang SC;
+  font-weight:600;
+  color:rgba(20,20,20,1);
+  margin-right: 5rpx;
+  max-width: 120rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.list{
+  margin-top: 40rpx;
+  border-top: 1rpx solid #DDDDDD;
+}
+.listCon{
+  padding: 15rpx 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color:rgba(153,153,153,1);
+}
+.listCon:nth-of-type(odd){
+  background:rgba(248,248,248,1);
+}
+.listCon:nth-of-type(even){
+  background:#fff;
+}
+.imgBox{
+  width: 74rpx;
+  height: 74rpx;
+  margin-right: 18rpx;
+}
+.imgBox image{
+  width: 74rpx;
+  height: 74rpx;
+  border:2rpx solid rgba(221,221,221,1);
+  border-radius:50%;
+}
+.people{
+  margin-right: 50rpx;
+}
+.user{
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-bottom: 15rpx;
+}
+.time{
+  margin-top: 50rpx;
+}
+/* 分享层 */
+
+.share-layer {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+}
+
+.share-layer-mask {
+  width: 100%;
+  height: 100%;
+}
+
+.share-layer-block {
+  position: absolute;
+  bottom: 140rpx;
+  width: 100%;
+  border-top-left-radius: 28rpx;
+  border-top-right-radius: 28rpx;
+  height: 280rpx;
+  background: #fff;
+  text-align: center;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+}
+
+.share-layer-cancel {
+  position: absolute;
+  bottom: 0rpx;
+  width: 100%;
+  height: 150rpx;
+  background: #fff;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-layer-cancel view {
+  width:672rpx;
+  height:88rpx;
+  border:2px solid rgba(221,221,221,1);
+  border-radius:44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60rpx;
+}
+
+.share-layer-block-img {
+  width: 100%;
+  height: 100%;
+}
+
+.share-layer-block image {
+  margin-top: 21rpx;
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.share-layer-block-img button {
+  width: 100%;
+  height: 140rpx;
+  background: #fff;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-color: #fff;
+  box-shadow: 0;
+  border-radius: 28rpx;
+}
+
+.share-layer-block-img button::after {
+  border: none;
+}
+.model{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:rgba(0,0,0,.7);
+  z-index: 1001
+}
+.top1{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(20,20,20,1);
+  line-height: 70rpx;
+  margin-bottom: 50rpx;
+  text-align: center;
+}
+.rulecontent{
+  width:520rpx;
+  height:620rpx;
+  background:rgba(255,255,255,1);
+  border-radius:18px;
+  color: #141414;
+  font-size: 28rpx;
+  margin: 260rpx auto 50rpx;
+  padding: 40rpx;
+}
+
+/* 授权 */
+.authorizationStatus {
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  top: 0rpx;
+  margin-top: 0rpx;
+}
+.none{
+  text-align: center;
+  margin-top: 20rpx;
+}
+.priceN{
+  width: 80%;
+  padding: 0 10%;
+  position: absolute;
+  top: 280rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.imgClose{
+  width: 100%;
+}
+.close{
+  display: block;
+  margin: 0 auto;
+  width: 62rpx;
+  height: 62rpx;
+}

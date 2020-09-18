@@ -1,0 +1,160 @@
+<!--page/Yuemall/pages/luckDrawDetail/luckDrawDetail.wxml-->
+<import src="../../../../wxParse/wxParse/wxParse.wxml" />
+<scroll-view scroll-y="true" scroll-with-animation="true" bindscroll="bindscroll" class='productFeatures' scroll-into-view="{{scrollId}}" style="height:{{windowHeight}}px">
+  <!-- <block wx:if="{{scrollTop > 100}}">
+    <view class="{{ scrollTop > 100 ? 'tabContainer1' : '' }}">
+      <view class="tabContainer">
+        <view class='tabItem' bindtap='NavTab' wx:for-index="index" data-index="{{index}}" wx:for="{{lineText}}" wx:if='{{item.title!="评论"||(item.title=="评论"&&comment.result.length>0)}}' wx:key="lineText">
+          <view class='space'></view>
+          <text class='{{ index == tabIndex ? "tabTitleSelected":"tabTitle" }}'>{{item.title}}</text>
+          <view class='space'></view>
+          <view class='tabDiv' wx:if='{{tabIndex == index}}'></view>
+        </view>
+      </view>
+    </view>
+  </block> -->
+  <view class="" style="margin-bottom:100rpx;">
+    <view id="d0" style="margin-bottom:20rpx;">
+      <!-- 轮播 -->
+      <view class="swiper-index">
+        <swiper autoplay="false" interval="15000" duration="300" bindchange='bindChange'>
+          <block wx:for="{{banner}}" wx:key="bannerItem">
+            <swiper-item>
+              <image src="{{item}}" class="slide-image" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="digits">
+          <text class="slide-text">{{current+1}}/{{banner.length}}</text>
+        </view>
+      </view>
+     
+      <!-- 商品信息 -->
+      <view class="goodInfo" >
+        <view class="SellInfo">
+          <view class="price"> <view style="font-size:50rpx;">￥</view>{{drawInfo.draw_Price}}</view>
+          <view >
+            <view class="OriginalPrice">原价{{goodPrice}}</view>
+            <view class="jion">{{drawInfo.join_people}}人参与</view>
+          </view>
+        </view>
+        <view class="yifenBox" style="width:227rpx;height:140rpx;" style="background:url(https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-22/23/yuelvhuiIGGQE1pOu81584891221.png);background-repeat: no-repeat; background-size:100% 100%;">
+          <image class="yifen" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-03-23/00/yuelvhuipjOJVtHoNq1584892898.png"></image>
+          <view class="yifenTxt">距离开奖剩余</view>
+          <view style="display:flex;align-items: center;color:#000;" >
+            <view class="squ" wx:if='{{countDownDay != 0}}'>{{countDownDay}}</view>
+            <view wx:if='{{countDownDay != 0}}'>天</view>
+            <view class="squ"  >{{countDownHour}}</view> :
+            <view class="squ">{{countDownMinute}}</view>:
+            <view class="squ">{{countDownSecond}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- 标题组件-->
+      <lineTwoListFlow id="lineTwoListFlow" inner-text="{{list}}"></lineTwoListFlow>
+      <title id='title' inner-text="{{list}}"></title>
+      <!-- 删除 -->
+      <!-- <view class="listItem" wx:if='{{}}'>
+        <view class="itemTxt">
+          <text class="LyingEarn">供应商：{{goodSupplier}}</text>
+        </view>
+      </view> -->
+      <!-- 优惠券、地址、规格、运费 组件 -->
+    <select bindaddress="address" bindgetCoupon='GetSoupons' bindToUp='SelectionSpecification' goodsCoupon='{{goodsCoupon}}' address='{{address}}' goodFreight='{{goodFreight}}' sizeSelectText="{{sizeSelectText}}"></select>
+      <!-- 授权按钮 -->
+      <view class="authorizationStatus" bindtap='VerificationCode' wx:if="{{authorizationStatus}}"></view>
+      <!-- 评论组件 -->
+      <comment comment='{{comment}}' bindlookComment='lookComment' goodsId='{{goodsId}}'></comment>
+      <!-- 评论 -->
+      <!-- 删除 -->
+      <view id="d1" wx:if='{{}}'>
+        <view class="comment" wx:if="{{comment.comment_total != 0}}">
+          <view class="title">
+            <view class="Total">评价({{comment.comment_total}})</view>
+            <view class="Commentary">好评度 {{comment.good_favourable}}</view>
+          </view>
+          <view class="PersonalComments" wx:for="{{comment.result}}" wx:key="result" wx:for-item="result">
+            <view class="userInfo">
+              <image class="Head" src="{{result.litpic}}"></image>
+              <view class="info">
+                <view>{{result.nickname}}</view>
+                <view class="stars">
+                  <image wx:for="{{result.goods_score}}" wx:key="red" src="https://image.yuelvhui.com/pubfile/2019/06/12/line_1560327457.png"></image>
+                  <image wx:for="{{5-result.goods_score}}" wx:key="gray" src="https://image.yuelvhui.com/pubfile/2019/06/12/line_1560327461.png"></image>
+                </view>
+              </view>
+            </view>
+            <view class="WrittenWords">
+              <text>{{result.comment}}</text>
+            </view>
+            <view class="tab-hSecondLevel">
+              <scroll-view scroll-x class='exploreViewList' scroll-with-animation="true">
+                <image wx:for="{{result.imgs}}" src="{{item}}" data-src="{{item}}" catchtap="imgYu" data-list="{{result.imgs}}" wx:key="imagenum"></image>
+              </scroll-view>
+            </view>
+            <view class="Specifications">{{item.goods_spec}}</view>
+          </view>
+          <view class="lookComment" wx:if="{{comment.comment_total >2}}">
+            <view bindtap='lookComment'>查看全部评价</view>
+          </view>
+        </view>
+        <view wx:else class="NoEvaluationYet">
+          <view class="title">
+            <view class="left">
+              <view class="">评价</view>
+              <view class="stars">
+                <image wx:for="{{three}}" wx:key="red" src="https://image.yuelvhui.com/pubfile/2019/06/12/line_1560327457.png"></image>
+              </view>
+            </view>
+            <view class="right">
+              共0条评论
+            </view>
+          </view>
+          <view class="tips">暂无评论</view>
+        </view>
+      </view>
+
+      <!-- 商品详情 -->
+      <view class="articletitle" id="d2">商品详情</view>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+
+    <!-- 新底部 -->
+    <view class="footer">
+      <view class="right  {{drawInfo.draw_status_code == 0 || drawInfo.draw_status_code == 3 ?'rightN':''}} " bindtap='sure' data-type="1">
+        {{drawInfo.draw_Price}}元马上抢
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 分享弹窗 -->
+<view class="share-layer" wx:if="{{ sharelayer }}">
+  <view class="share-layer-mask" bindtap='shareLayerClosed'>
+  </view>
+  <view class="share-layer-block">
+    <view class="share-layer-block-img">
+      <button open-type='share'>
+        <image src="/images/YueMall/WeChatShare.png"></image>
+      </button>
+    </view>
+    <view class="share-layer-block-img" bindtap='goPoster'>
+      <image src="/images/YueMall/posterShare.png"></image>
+    </view>
+  </view>
+  <view class="share-layer-cancel" bindtap='shareLayerClosed'>
+    <view>取消</view>
+  </view>
+</view>
+
+
+<!-- 未实名的弹框 -->
+<view wx:if="{{realName}}" class="real_name">
+  <view class="bg"></view>
+  <view class="cont">
+    <view class="title">实名认证</view>
+    <view>根据海关清关要求需实名认证</view>
+    <view>请到悦淘app进行实名认证后购买</view>
+    <view class="btn" bindtap="closeRealName">确认</view>
+  </view>
+</view>

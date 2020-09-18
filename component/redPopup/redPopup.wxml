@@ -1,0 +1,9 @@
+<!-- 新人领红包 诱导用户注册 -->
+<!-- 大红包 -->
+<block wx:if="{{isRedPopup}}">
+  <view class="commodity_screenlong" bindtap="hideModal"></view>
+  <view class="Advertisement">
+    <image class="close" src="https://image.yuelvhui.com/pubfile/2019/09/27/line_1569568154_14644.png" bindtap='closeisredPopup'></image>
+    <image src="{{list.image}}" style="width:{{list.width}}rpx;height:{{list.height}}rpx" class="slide-image"  bindtap='classificationList' data-type="{{list.type}}" data-typeid="{{list.typeId}}" data-redirecttype="{{list.redirectType}}"/>
+  </view>
+</block>

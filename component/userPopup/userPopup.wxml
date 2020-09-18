@@ -1,0 +1,67 @@
+<!-- 新人领红包 诱导用户注册 -->
+<!-- 大红包 -->
+<block wx:if="{{isRedPopup}}">
+  <view class="commodity_screenlong" bindtap="closeisredPopup"></view>
+  <view class="Advertisement">
+    <image class="close" src="https://image.yuelvhui.com/pubfile/2019/09/27/line_1569568154_14644.png" bindtap='closeisredPopup'></image>
+    <!-- 潜在用户图 -->
+    <image wx:if='{{userLayer == 1 || userLayer == 0}}' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-07/19/yuelvhuixlwQchO2WS1586258974.png" style="width:680rpx;height:806rpx" class="slide-image" bindtap='go' />
+    <!-- 新用户拆红包 -->
+    <button class="chai" open-type='share' data-type="user">
+      <image wx:if='{{userLayer == 2 && popType == 2}}' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-09/11/yuelvhuirPgK2HJNQA1586402105.png" style="width:680rpx;" class="slide-image" />
+    </button>
+    <!-- 新用户 -->
+          <!-- urlType: options.CouponInfo.urlType, -->
+    <image wx:if='{{userLayer == 2 && popType != 2 ||userLayer == 3 && popType == 10||userLayer == 3 && popType == 8 }}' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-08/14/yuelvhuiTYf5cQImxA1586326393.png" style="width:680rpx;" class="slide-image" bindtap='goNew' data-userlayer='{{userLayer}}' data-urlType="{{urlType}}" data-urltype="{{urlType}}"  data-type="{{popType}}" data-couponid="{{couponid}}"
+    />
+    <!-- 老用户  -->
+    <image wx:if='{{userLayer == 3&& popType == 6 }}' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-08/14/yuelvhuiuG3pizHp9H1586328640.png" style="width:680rpx;" class="slide-image" bindtap='goNew' data-userlayer='{{userLayer}}' data-urltype="{{urlType}}" data-type="{{popType}}" data-couponid="{{couponid}}" />
+    <!-- 限时福利 -->
+    <image wx:if='{{userLayer == 3&& popType == 7 }}' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-08/14/yuelvhuiufTPMo8nXC1586328718.png" style="width:840rpx;;" class="slide-image" />
+    <view wx:if='{{userLayer == 3&& popType == 7 }}'  class="priceN">
+      <view class='money'>{{couponInfo.amount}}</view> 元
+    </view>
+    <view wx:if='{{userLayer == 3&& popType == 7 }}'  class="moneyN"  >{{couponInfo.amount}}</view>
+    <!-- 膨胀红包 -->
+    <image wx:if='{{userLayer == 3 && popType == 9}}' src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-04-08/14/yuelvhui4042BeyI3o1586328821.png" style="width:680rpx;height:rpx;" class="slide-image" />
+
+    <view class="center">
+      <view wx:if='{{userLayer == 2 && popType == 10||userLayer == 3 && popType == 10}}' class="up">你有1张{{couponInfo.amount}}元优惠券</view>
+      <view  wx:if='{{userLayer == 3 && popType == 8}}'>获得一张现金优惠券</view>
+      <view wx:if='{{userLayer == 2 && popType == 3 || popType == 4|| popType == 5}}' class="up">恭喜你</view>
+      <view class="up" wx:if='{{userLayer == 3&& popType == 9}}'>你的红包面值</view>
+      <view class="djs" wx:if='{{userLayer == 2 && popType == 10||userLayer == 3 && popType == 10}}'>
+        <view class="hour">{{countDownDay}}</view>天
+        <view class="hour" >{{countDownHour}}</view>:
+        <view class="hour">{{countDownMinute}}</view>:
+        <view class="hour" >{{countDownSecond}}</view>后失效
+      </view>
+      <view wx:if='{{userLayer == 2 && popType == 5}}'>被红包砸中了</view>
+      <view wx:if='{{userLayer == 2 && popType == 3}}'>获得新人优惠券</view>
+      <view wx:if='{{userLayer == 2 && popType == 4}}'>获得新人专属福利</view>
+      <view wx:if='{{userLayer == 2 && popType != 2 ||userLayer == 3 && popType == 9||popType == 10||popType == 8}}' class="price">
+        <view class='money'>{{couponInfo.amount}}</view> 元
+      </view>
+      <view wx:if='{{userLayer == 2 && popType == 3 || popType == 4|| popType == 5||popType == 8}}' class="effective">{{couponInfo.antedate}}日内有效</view>
+
+    </view>
+    <view wx:if='{{userLayer == 3 && popType == 9}}' class="expand">
+      <view style="font-size:32rpx;color:#141414;">红包膨胀系数</view>
+      <view style="font-size:42rpx;color:#C12F32;">1～11倍</view>
+      <view style="font-size:24rpx;color:#fff;margin-top:20rpx;font-weight:400;">截止{{couponInfo.end_days}},连续{{couponInfo.antedate}}天每天登陆，红包面额会变大哦～ </view>
+      <view class="btng" style="margin-top:100rpx;">
+        <view class="btnCon" bindtap='goNew' data-userlayer='{{userLayer}}' data-urltype="{{urlType}}" data-couponid="{{couponid}}" data-urltype='{{urlType}}'>立即使用</view>
+      </view>
+    </view>
+    <view class="btng" bindtap='goNew' data-userlayer='{{userLayer}}' data-urltype="{{urlType}}"  data-type="{{popType}}" data-couponid="{{couponid}}"  wx:if='{{userLayer == 2 && popType != 2 }}'>
+      <view class="btnCon"  wx:if='{{userLayer == 2 && popType == 10 ||userLayer == 3 && popType == 10}}'>立即前往</view>
+      <view class="btnCon" wx:if='{{userLayer == 2 && popType == 3||popType == 5 }}'>立即使用</view>
+      <view class="btnCon" wx:if='{{ popType == 8}}'>立即使用</view>
+      <view class="btnCon" wx:if='{{userLayer == 2 && popType == 4}}'>立即下单</view>
+    </view>
+    <view class="btng" bindtap='goNew' data-userlayer='{{userLayer}}' data-urltype="{{urlType}}" data-type="{{popType}}" data-couponid="{{couponid}}"  wx:if='{{userLayer == 3 && popType == 8 }}'>
+      <view class="btnCon" >立即使用</view>
+    </view>
+  </view>
+
+</block>

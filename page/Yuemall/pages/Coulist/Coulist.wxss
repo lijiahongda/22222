@@ -1,0 +1,525 @@
+.coulist {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+}
+
+.banner {
+  width: 100%;
+  height: 810rpx;
+  overflow: hidden;
+  margin-bottom: 12rpx;
+}
+.banner image{
+  width: 100%;
+  height: 100%;
+}
+
+.ulike {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 12rpx 35rpx 12rpx;
+}
+
+.ulike-tit {
+  width: 100%;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ulike-icon {
+  width: 21rpx;
+  height: 21rpx;
+  margin-right: 10rpx;
+  background: red;
+}
+
+.f1 {
+  font-size: 17rpx;
+  color: #141414;
+  margin-right: 5rpx;
+}
+
+.f2 {
+  color: #999999;
+  font-size: 14rpx;
+}
+
+.li-box {
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.li {
+  width: 48%;
+  height:auto;
+  overflow: auto;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+  background: #ffffff;
+}
+
+.cover {
+  width: 100%;
+  height: 250rpx;
+}
+
+.in {
+  width: 100%;
+  height: 110rpx;
+  box-sizing: border-box;
+  padding: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.in-tit {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 18rpx;
+  color: #141414;
+}
+
+
+
+.pri-box {
+  display: flex;
+  align-items: center;
+}
+
+.new-pri {
+  font-size: 17rpx;
+  color: #bb3627;
+  margin-right: 5rpx;
+}
+
+.spe {
+  font-size: 15rpx;
+}
+
+.old-pri {
+  font-size: 15rpx;
+  color: #999999;
+  text-decoration: line-through;
+}
+
+.btm {
+  font-size: 13rpx;
+  color: #999;
+}
+
+
+/* footer */
+.bottom_btn {
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.service_a {
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+}
+
+.service_a image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.jiaobiao {
+  width: 30rpx;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  top: -15rpx;
+  right: -15rpx;
+  text-align: center;
+  line-height: 30rpx;
+  color: #fff;
+}
+
+.pay_buy {
+  width: 60%;
+  height: 65rpx;
+  background: red;
+  text-align: center;
+  line-height: 65rpx;
+  border-radius: 30rpx;
+  color: #fff;
+}
+
+
+/* guige */
+commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  position: fixed;
+  z-index: 1990;
+  background: #fff;
+  padding-top: 20rpx;
+  bottom: 0rpx;
+  left: 0rpx;
+  overflow: visible;
+  height: 1000rpx;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  width: 96%;
+  background-color: #fff;
+  height: 140rpx;
+}
+
+.close icon {
+  margin-right: 3%;
+}
+
+.commodity {
+  display: flex;
+  flex-direction: row;
+  width: 87%;
+  margin: auto;
+  position: absolute;
+  top: 0rpx;
+  z-index: 1999;
+  margin-left: 3%;
+}
+
+.commodity .images image {
+  width: 180rpx;
+  height: 180rpx;
+  background-color: #fff;
+}
+
+.commodity .describe {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  margin-top: 45rpx;
+  padding-top: 45rpx;
+  width: 70%;
+  padding-left: 2%;
+  background-color: #fff;
+}
+
+.commodity .describe view {
+  /* margin-left: 30rpx; */
+}
+
+.commodity .describe .money {
+  color: #333;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.commodity .describe .specification {
+  color: #333;
+  font-size: 24rpx;
+  /* margin-left:60rpx */
+}
+
+.NoGoods {
+  color: #ed5d2f;
+  font-size: 30rpx;
+  /* margin-left:60rpx */
+}
+
+.size {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 3.5%;
+  margin-top: 118rpx;
+}
+
+.sizeName {
+  font-size: 28rprpx;
+  color: #141414;
+}
+
+.channelContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.channelContent view {
+  min-height: 56rpx;
+  padding-left: 35rpx;
+  padding-right: 35rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ececec;
+  margin-right: 4.64%;
+  color: #333;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+}
+
+.channelContent view.active {
+  color: #ca2519;
+  padding-left: 33rpx;
+  padding-right: 33rpx;
+  background: #fae9e8;
+  border: 1rpx solid #ca2519;
+}
+
+.channelContent view .NotOptional {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 93%;
+  margin: auto;
+  margin-top: 20rpx;
+  margin-bottom: 138rpx;
+}
+
+.regulation {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+
+.addNumber {
+  border: 1rpx solid #ececec;
+  width: 56rpx;
+  height: 56rpx;
+  border-left: none;
+  text-align: center;
+  line-height: 56rpx;
+  /* border-radius: 4rpx; */
+}
+
+.amountNumber {
+  border: 1rpx solid #ececec;
+  width: 88rpx;
+  height: 56rpx;
+  text-align: center;
+  line-height: 56rpx;
+}
+
+.amountNumber input {
+  height: 56rpx;
+}
+
+.subtract {
+  border: 1rpx solid #ececec;
+  width: 56rpx;
+  height: 56rpx;
+  border-right: none;
+  text-align: center;
+  line-height: 56rpx;
+  /* border-radius: 4rpx */
+}
+.footr {
+  box-shadow: 0rpx 0rpx 18rpx 3rpx rgba(6, 4, 4, 0.16);
+  display: flex;
+  align-items: center;
+  font-size: 22rpx;
+  color: rgb(155, 155, 155);
+  position: fixed;
+  background-color: #fff;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1990;
+  height: 98rpx;
+}
+
+.gopay {
+  background: #ca2519;
+  width: 100%;
+  height: 87rpx;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 87rpx;
+  text-align: center;
+}
+
+.add {
+  font-size: 30rpx;
+  background-color: #2d2d2d;
+  width: 50%;
+  height: 87rpx;
+  color: #fff;
+  border-top: 1rpx solid #ececec;
+  line-height: 87rpx;
+}
+.serialNum {
+  color: #999;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 60rpx;
+  width: 100%;
+  height: 60rpx;
+}
+
+
+
+ .LikeContent {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+ .LikeContent .likelist {
+  display: flex;
+  flex-direction: column;
+  width: 48.5%;
+  background-color: #fff;
+  border-radius: 18rpx;
+  margin-bottom: 21rpx;
+}
+
+ .LikeContent .likelist image {
+  width: 100%;
+  height: 347rpx;
+  border-top-left-radius: 18rpx;
+  border-top-right-radius: 18rpx;
+  margin-bottom: 16rpx;
+}
+
+ .LikeContent .likelist .likeTitle {
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+ .LikeContent .likelist .likeTitle text {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(25, 25, 25, 1);
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 39rpx;
+}
+
+ .LikeContent .likelist .tag {
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 29rpx;
+  flex-wrap: wrap;
+}
+
+ .LikeContent .likelist .tag view {
+  padding-left: 6rpx;
+  padding-right: 6rpx;
+  padding-top: 3rpx;
+  padding-bottom: 3rpx;
+  border-radius: 5rpx;
+  margin-right: 10rpx;
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: bold;
+  color: rgba(230, 0, 18, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(230, 0, 18, 1);
+}
+
+ .LikeContent .likelist .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-bottom: 22rpx;
+  position: relative;
+}
+
+ .LikeContent .likelist .price .vipPrice {
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #bb3627;
+}
+
+ .LikeContent .likelist .price .vipPrice text {
+  font-size: 24rpx;
+}
+
+ .LikeContent .likelist .price .OriginalPrice text {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  text-decoration: line-through;
+  color: rgba(153, 153, 153, 1);
+  margin-left: 10rpx;
+}
+.addshopcarbtn {
+  width: 30rpx;
+  height: 30rpx;
+  text-align: center;
+  line-height: 25rpx;
+  color: #fff;
+  background: red;
+  border-radius: 50%;
+  font-size: 25rpx;
+  position: absolute;
+  right: 15rpx;
+  bottom: 15rpx;
+}

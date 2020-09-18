@@ -1,0 +1,36 @@
+<!--page/MyRoteDetail/MyRoteDetail.wxml-->
+<view class="content-rote">
+	<view class="top">
+		<view class="list-box">
+			<view class="top-box">
+				<view class="price-box">
+					<text class="icon">¥</text>
+					<text style="font-weight:700">{{money}}</text>
+				</view>
+        <view class="nav-box">
+          <view class="{{nav[0] ? 'nav active' : 'nav'}}" catchtap="changeNav" data-idx="0">累计<view class="line" wx:if="{{nav[0]}}"></view></view>
+          <view class="{{nav[1] ? 'nav active' : 'nav'}}" catchtap="changeNav" data-idx="1">今日<view class="line" wx:if="{{nav[1]}}"></view></view>
+          <view class="{{nav[2] ? 'nav active' : 'nav'}}" catchtap="changeNav" data-idx="2">昨日<view class="line" wx:if="{{nav[2]}}"></view></view>
+          <view class="{{nav[3] ? 'nav active' : 'nav'}}" catchtap="changeNav" data-idx="3">本月<view class="line" wx:if="{{nav[3]}}"></view></view>
+        </view>
+        <view class="tab-box">
+          <view class="{{tab[0] ? 'tab active' : 'tab'}}" catchtap="changeTab" data-idx="0">结算金额</view>
+          <view class="{{tab[1] ? 'tab active' : 'tab'}}" catchtap="changeTab" data-idx="1">待到账金额：<text style="font-size:24rpx">¥</text>0.00</view>
+        </view>
+			</view>
+      <view class="list" wx:for="{{list}}" wx:key="{{index}}">
+        <image class="avatar" href="{{item.avatar}}"></image>
+        <view class="right-box">
+          <view class="t">
+            <view class="l">{{item.name}}</view>
+            <view class="r">{{item.time}}</view>
+          </view>
+          <view class="b">
+            <view class="l">{{item.text || ''}}</view>
+            <view class="r">{{item.money}}</view>
+          </view>
+        </view>
+      </view>
+		</view>
+	</view>
+</view>

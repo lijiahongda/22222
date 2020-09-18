@@ -1,0 +1,14 @@
+<!--page/other/pages/calendar/calendar.wxml-->
+<calendar 
+   weeks-type="cn"
+   days-color="{{dayStyle}}"
+   binddayClick="dayClick"
+   calendar-style="demo5-calendar"
+   header-style="demo5-header"
+   board-style="demo5-board"
+ />
+ <!-- <view class="container-fluid">
+  <view class="demo5">
+    <calendar cell-size="30" weeks-type="cn" next="{{true}}" prev="{{true}}" show-more-days="{{false}}" calendar-style="demo5-calendar" header-style="demo5-header" board-style="demo5-board" days-color="{{demo5_days_style}}" binddayClick="dayClick" year='{{year}}' month='{{month}}' />
+  </view>
+</view> -->

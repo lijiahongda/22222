@@ -1,0 +1,14 @@
+<!--page/payment/component/code/index.wxml-->
+<view class="codeAlert">
+  <view class="close" bindtap="closeMyself" style="{{userMsgIsNeed==1?'opacity:0':''}}">
+    <text class="iconfont icon-guanbi"></text>
+  </view>
+  <view class="text">输入验证码</view>
+  <view class="phoneText">验证码发送至{{phone}}</view>
+  <view class="inputCode">
+    <input type="number" placeholder="此处输入验证码" value="{{codeValue}}" bindinput="setCode"></input>
+  </view>
+  <view class="sText" wx:if="{{!sendSwitch}}">{{second}}秒后重新发送</view>
+  <view class="sText" bindtap="countdownFun" wx:if="{{sendSwitch}}">重新发送</view>
+  <view class="alertBt" style="{{codeValue==''?'background:rgba(153,153,153,1)':''}}" bindtap="nextAlert">下一步</view>
+</view>

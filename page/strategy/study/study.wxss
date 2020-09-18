@@ -1,0 +1,79 @@
+.content{
+  background: #fff;
+  height: 100vh;
+  padding-bottom: 88rpx;
+  box-sizing: border-box;
+}
+.header{
+  width: 100%;
+  height: 86rpx;
+  display: flex;
+  align-items: center;
+  color: #E4311F;
+  font-size: 28rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.header > view:first-child{
+  width: 5rpx;
+  height: 26rpx;
+  background: #E4311F;
+  border-radius: 5rpx;
+  margin-right: 12rpx;
+}
+.list{
+  width: 690rpx;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 30rpx;
+}
+.list .title{
+  color: #333333;
+  font-size: 28rpx;
+  font-weight:500;
+  margin-bottom: 20rpx;
+  line-height: 1;
+}
+.list .detail{
+  width: 100%;
+  height: 180rpx;
+  display: flex;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #EEEEEE;
+}
+.list .detail image{
+  width: 240rpx;
+  height: 180rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+.list .detail .right{
+  width: 388rpx;
+  position: relative;
+  height: 100%;
+}
+.list .detail .desc{
+  width: 100%;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #999999;
+  font-size: 26rpx;
+}
+.list .detail .button{
+  width: 122rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 26rpx;
+  background:linear-gradient(-83deg,rgba(255,81,24,1) 0%,rgba(255,0,60,1) 100%);
+  border-radius:24rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

@@ -1,0 +1,619 @@
+/* page/Mall/pages/HelpDetails/HelpDetails.wxss */
+.HasEnded{
+  width: 132rpx;
+  height: 120rpx;
+  position: absolute;
+  right: 33rpx;
+  top: 55rpx;
+}
+.Helpbg {
+  background-image: url(https://image.yuelvhui.com/pubfile/2019/04/12/line_1555059992.png);
+  height: 616rpx;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40rpx;
+  padding-bottom: 20rpx;
+  background-repeat: no-repeat;
+  background-color: #ff4c42;
+  position: relative;
+}
+
+.Helpbg .HelpDetails {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 86%;
+  border-radius: 16rpx;
+  background-color: #fff;
+  padding-bottom: 61rpx;
+}
+
+.goodInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding-top: 30rpx;
+}
+
+.goodInfo image {
+  width: 240rpx;
+  height: 240rpx;
+  margin-right: 30rpx;
+  background-color: #ffac49;
+}
+
+.goodInfo .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.goodInfo .info .title text {
+  color: #303030;
+  font-size: 30rpx;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 19rpx;
+}
+
+.goodInfo .info .groupInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22rpx;
+  margin-bottom: 23rpx;
+}
+
+.goodInfo .info .groupInfo .title {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.goodInfo .info .groupInfo .price {
+  color: #ff7666;
+}
+
+/* 倒计时 */
+
+.CountDown {
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  font-size: 34rpx;
+  align-items: center;
+  margin-bottom: 17rpx;
+}
+
+.CountDown .list {
+  height: 48rpx;
+  width: 48rpx;
+  background-color: #303030;
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.CountDown .colon {
+  margin-left: 12rpx;
+  margin-right: 12rpx;
+  color: #303030;
+}
+
+.CountDown .tips {
+  color: #303030;
+  font-size: 26rpx;
+  margin-left: 24rpx;
+}
+
+.NumberBargaining {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #303030;
+  font-size: 26rpx;
+}
+
+.NumberBargaining text {
+  color: #ff7666;
+}
+
+.progress {
+  width: 554rpx;
+  margin-left: 53rpx;
+  margin-top: 54rpx;
+  margin-bottom: 40rpx;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.button .HelpFriends{
+  width: 100%;
+  height: 74rpx;
+  border-radius: 37rpx;
+  background-color: #ff4c48;
+  color: #fff;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 74rpx;
+}
+.button .InviteFriends {
+  width: 290rpx;
+  height: 74rpx;
+  border-radius: 37rpx;
+  background-color: #ff4c48;
+  color: #fff;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 74rpx;
+}
+
+.button .gopay {
+  width: 290rpx;
+  height: 74rpx;
+  border-radius: 37rpx;
+  background-color: #ff4c48;
+  color: #fff;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 74rpx;
+}
+
+button[class="con_listbox"]::after {
+  border: 0;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-color: #fff;
+  box-shadow: 0;
+  line-height: 1;
+}
+
+button::after {
+  border: none;
+}
+
+.BargainList {
+  background-color: #ff4c42;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.BargainList .PriceList {
+  background-color: #fff;
+  padding-top: 29rpx;
+  padding-bottom: 38rpx;
+  border-radius: 16rpx;
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.BargainList .PriceList .title {
+  font-size: 30rpx;
+  color: #303030;
+  font-weight: 400;
+}
+
+.GroupList {
+  border-bottom: 1px solid #ececec;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.GroupList .SenderInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 24rpx;
+  color: #000;
+  width: 53%;
+}
+.GroupList .SenderInfo view{
+  width: 40%
+}
+.GroupList .SenderInfo text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.GroupList .SenderInfo image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background-color: #ff7666;
+  margin-right: 20rpx;
+}
+
+.GroupList .GroupInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.GroupList .GroupInfo .GoGroup {
+  font-size: 30rpx;
+  color: #ff6f5b;
+}
+
+.lookMore{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 24rpx;
+}
+.lookMore image{
+  margin-left: 14rpx;
+  height: 12rpx;
+  width: 20rpx
+}
+.Invitation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 52rpx;
+  background-color: #fff;
+  padding-top: 30rpx;
+  padding-bottom: 34rpx;
+}
+.Invitation .titlemore{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 37rpx;
+  width: 62%;
+  margin-left: 30%;
+}
+.Invitation .titlemore .more{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color:#999;
+  font-size: 20rpx;
+}
+.Invitation .titlemore .more image{
+  width: 14rpx;
+  height: 22rpx;
+  margin-left: 18rpx;
+}
+.Invitation .title {
+  font-size: 36rpx;
+  font-family: STYuanti-SC-Bold;
+  font-weight: bold;
+  color: rgba(247, 206, 224, 1);
+  background: linear-gradient(157deg, rgba(255, 112, 91, 1) 0%, rgba(255, 79, 74, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Invitation .shopList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 92%;
+}
+
+.Invitation .shopList .list {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 43%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-top: 12rpx;
+  padding-bottom: 38rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.Invitation .shopList .list image {
+  height: 318rpx;
+  width: 100%;
+  background-color: #ffac49;
+}
+
+.Invitation .shopList .list .goodtitle {
+  font-size: 24rpx;
+  color: #333;
+  font-weight: bold;
+  margin-top: 20rpx;
+}
+
+.Invitation .shopList .list .goodtitle text {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  line-height: 18px;
+  height: 35px;
+}
+
+.Invitation .shopList .list .goodInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.Invitation .shopList .list .goodInfo .price {
+  font-size: 30rpx;
+  color: #fd6974;
+}
+
+.Invitation .shopList .list .goodInfo .price text {
+  font-size: 30rpx;
+}
+
+.Invitation .shopList .list .goodInfo .SpellNum {
+  font-size: 18rpx;
+  color: #999;
+  margin-top: 32rpx;
+}
+
+.Invitation .shopList .list .goodInfo .HeadPortrait {
+  position: relative;
+  width:22%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end
+}
+
+.Invitation .shopList .list .goodInfo .HeadPortrait image {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+
+.Invitation .shopList .list .goodInfo .HeadPortrait image.one {
+  background-color: #ff4c48;
+  left: 0rpx;
+  z-index: 10rpx;
+}
+
+.Invitation .shopList .list .goodInfo .HeadPortrait image.two {
+  background-color: #ff7666;
+  left: 20rpx
+}
+
+
+/* 分享层 */
+
+.share-layer {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+}
+
+.share-layer-mask {
+  width: 100%;
+  height: 100%;
+}
+
+.share-layer-block {
+  position: absolute;
+  bottom: 105rpx;
+  left: 4%;
+  width: 92%;
+  /* border-radius: 28rpx; */
+  border-top-left-radius: 28rpx;
+  border-top-right-radius: 28rpx;
+  height: 150rpx;
+  background: #fff;
+  text-align: center;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+}
+.share-layer-cancel{
+  position: absolute;
+  bottom: 30rpx;
+  left: 4%;
+  width: 92%;
+  border-bottom-left-radius: 28rpx;
+  border-bottom-right-radius: 28rpx;
+  height: 75rpx;
+  background: #fff;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+.share-layer-cancel view{
+  width: 92%;
+  border-top: 1px solid #DEDEDE;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 75rpx;
+}
+.share-layer-block-img {
+  width: 100%;
+  height: 100%;
+  /* float: left; */
+}
+
+.share-layer-block image {
+  margin-top: 21rpx;
+  width: 130rpx;
+  height: 110rpx;
+}
+
+.share-layer-block-img button {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-color: #fff;
+  box-shadow: 0;
+  border-radius: 28rpx;
+}
+
+.share-layer-block-img button::after {
+  border: none;
+}
+.commodity_screenshowModal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.FriendsBargain{
+  position: fixed;
+  top: 0rpx;
+  height: 100%;
+  width: 100%;
+  z-index: 10000
+}
+.FriendsBargain image{
+  width: 628rpx;
+  height: 759rpx;
+  position: relative;
+}
+.FriendsBargain .BargainInfor{
+  position: absolute;
+  top: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-top: 228rpx;
+}
+.FriendsBargain .BargainInfor image{
+  width: 124rpx;
+  height: 124rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-bottom: 40rpx;
+}
+.FriendsBargain .BargainInfor .AlreadyBargain{
+  color: #fff;
+  font-size: 26rpx;
+  margin-bottom: 32rpx
+}
+.FriendsBargain .BargainInfor .tips{
+  font-size: 38rpx;
+  width: 74%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 294rpx
+}
+.FriendsBargain .BargainInfor .tips .text{
+  color: #FABF3F
+}
+.FriendsBargain .BargainInfor .ClickCollect{
+  width: 457rpx;
+  height: 66rpx;
+  border-radius: 16rpx;
+  background-color: #FFBC48;
+  font-size: 32rpx;
+  line-height: 66rpx;
+  text-align: center
+}
+.Qrcode_diabox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+.Qrcode{
+  position: fixed;
+  top: 20%;
+  width: 70%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 10000
+}
+.Qrcode .dialog_close{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  border:1rpx solid #fff;
+  color: #fff;
+  text-align: center;
+  line-height: 52rpx;
+  font-size: 30rpx;
+  float: right;
+  margin-right: -50rpx;
+}
+.Qrcode image{
+  width: 100%;
+  height: 600rpx;
+}

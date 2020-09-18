@@ -1,0 +1,609 @@
+page {
+  background: #F8F8F8;
+  padding-bottom: 100rpx;
+}
+
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.bring_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  padding-left: 26rpx;
+}
+
+.image {
+  width: 710rpx;
+  height: 340rpx;
+}
+
+.notice{
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  z-index: 100;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 6rpx;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 12rpx;
+}
+.notice image {
+  width: 21rpx;
+  height: 20rpx;
+  margin-right: 8rpx;
+}
+.banner .person,.videolist .person{
+  position: absolute;
+  left: 20rpx;
+  bottom: 40rpx;
+  width: 226rpx;
+  height: 65rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #fff;
+}
+.banner .person > image,.videolist .person > image{
+  width: 65rpx;
+  height: 65rpx;
+  margin-right: 10rpx;
+  border-radius: 50%;
+}
+.banner .person > view,.videolist .person > view{
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 160rpx;
+}
+.videolist .person{
+  bottom: 20rpx;
+}
+.liveing  .person{
+  left: 10rpx;
+  bottom: 10rpx;
+}
+.liveing  .person > view{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.swiperbox {
+  width: 710rpx;
+  height: 340rpx;
+  margin: 0 auto;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.videotk {
+  padding: 20rpx;
+}
+
+.vid_list {
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+}
+
+.video_title {
+  display: flex;
+  height: 111rpx;
+  justify-content: flex-start;
+  align-items: center;
+}
+.vid_list .list{
+  width: 280rpx;
+  height: 386rpx;
+  background: #fff;
+  margin-right: 20rpx;
+  border-radius: 18rpx;
+  overflow: hidden;
+  display: inline-block;
+}
+.vid_list .list .video{
+  width: 280rpx;
+  height: 280rpx;
+  background-size: 100%;
+  position: relative;
+  background-position: center;
+}
+.vid_list .list .video > image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 70rpx;
+  height: 70rpx;
+}
+.vid_list .list .video .person{
+  width: 100%;
+  height: 56rpx;
+  position: absolute;
+  left: 10rpx;
+  bottom: 10rpx;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 24rpx;
+}
+.vid_list .list .person image{
+  width: 56rpx;
+  height: 56rpx;
+  margin-right: 10rpx;
+  border-radius: 28rpx;
+}
+.vid_list .list .person view{
+  max-width: 150rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.vid_list .list .goods{
+  width: 100%;
+  padding: 16rpx;
+  box-sizing: border-box;
+  position: relative;
+  padding-left: 104rpx;
+}
+.vid_list .list .goods > image{
+  position: absolute;
+  left: 16rpx;
+  top: 16rpx;
+  width: 74rpx;
+  height: 74rpx;
+  border-radius: 4rpx;
+}
+.vid_list .list .goods .title{
+  color: #333333;
+  font-size: 22rpx;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.vid_list .list .goods .price{
+  width: 100%;
+  color: #DF4A52;
+  font-size: 22rpx;
+  margin-top: 10rpx;
+}
+.vid_list .list .goods .price > text:last-child{
+  font-size: 30rpx;
+}
+
+
+
+
+.vid_image {
+  width: 32rpx;
+  height: 31rpx;
+}
+
+.vid_title {
+  padding-left: 11rpx;
+  color: #333333;
+  font-size: 32rpx;
+  font-weight:500;
+}
+
+.title_left {
+  padding-left: 31rpx;
+  color: #333333;
+  font-size: 28rpx;
+}
+
+.special {
+  padding: 0 20rpx;
+}
+
+.videolist {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+}
+
+.tabvid {
+  color: #E04B53;
+}
+
+.active:after {
+  content: "";
+  display: block;
+  height: 4rpx;
+  width: 30rpx;
+  border-radius: 3rpx;
+  background: rgba(248, 248, 248, 1);
+  margin: 0 auto;
+  margin-top: 8rpx;
+}
+
+.tabvid:after {
+  content: "";
+  display: block;
+  height: 4rpx;
+  width: 30rpx;
+  border-radius: 2rpx;
+  background: #DF4A52;
+  margin: 0 auto;
+  margin-top: 8rpx;
+}
+
+.flex {
+  column-count: 1;
+  width: 345rpx;
+  margin-right: 20rpx;
+}
+
+.flex:nth-child(2n) {
+  margin-right: 0;
+}
+
+.goodlist {
+  width: 345rpx;
+  position: relative;
+  background: #fff;
+  border-radius: 12rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+
+.special_nav {
+  display: flex;
+  padding: 30rpx 57rpx;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10rpx;
+}
+
+.goodlist_image {
+  width: 345rpx;
+  height: 345rpx;
+  position: relative;
+  display: flex;
+}
+
+.goodlist_image navigator > image,.goodlist_image navigator{
+  width: 100%;
+  height: 100%;
+}
+
+.goodlist_image .image {
+  width: 100%;
+  height: 345rpx;
+  border-top-right-radius: 12rpx;
+  border-top-left-radius: 12rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.goodinfo {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 30%;
+  color: #fff;
+  z-index: 3
+}
+
+.goodinfos {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 20rpx;
+  color: #fff;
+  z-index: 3
+}
+
+.goodinfo_image image {
+  width: 65rpx;
+  height: 65rpx;
+  margin-left: 20rpx;
+  border-radius: 50%;
+}
+
+.goodinfo_text {
+  padding-left: 10rpx;
+  font-size: 28rpx;
+}
+
+.goodinfo_jian {
+  font-size: 24rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.shopInfo {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  padding-bottom: 14rpx;
+}
+
+.shopInfo_image image {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 8rpx;
+  margin-left: 20rpx;
+}
+
+.shop_title {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  color: #333;
+  font-size: 24rpx;
+  line-height: 26rpx;
+}
+
+.shopInfo_text {
+  padding-left: 10rpx;
+  font-size: 24rpx;
+  color: #df4a52;
+  height: 90rpx;
+}
+
+.shopInfo_jian text {
+  font-size: 30rpx;
+}
+
+.goodlist_image .play {
+  width: 70rpx;
+  height: 70rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 999;
+}
+
+/* 顶部直播 */
+
+.live_top {
+  height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26rpx;
+  box-sizing: border-box;
+}
+
+.live_top .live_left {
+  width: 1rpx;
+  height: 1rpx;
+}
+
+.live_top .live_num {
+  width: 182rpx;
+  height: 52rpx;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 26px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.live_top .live_num image {
+  width: 14rpx;
+  height: 10rpx;
+  margin-left: 12rpx;
+}
+
+.live_top .live_icon {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+/* 顶部直播列表 */
+
+.live_more {
+  width: 100%;
+  height: 169rpx;
+  background-color: #fff;
+}
+
+.live_more .live_scroll {
+  display: flex;
+  align-items: center;
+}
+
+.live_more .live_list {
+  width: 127rpx;
+  margin-right: 42rpx;
+  margin-top: 20rpx;
+}
+
+.live_more .live_list:first-child {
+  margin-left: 32rpx;
+}
+
+.live_more .live_list .live_broadcast {
+  width: 134rpx;
+  height: 134rpx;
+  margin-bottom: 26rpx;
+  position: relative;
+}
+
+.live_more .live_list .live_broadcast .bg {
+  width: 134rpx;
+  height: 134rpx;
+  position: absolute;
+  z-index: 3;
+}
+
+.live_more .live_list .live_broadcast .img {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+  left: 16rpx;
+  top: 16rpx;
+  position: absolute;
+  z-index: 1;
+}
+
+.live_more .live_list .live_title {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #333;
+  text-align: center;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.live_more .live_list .live_type {
+  width: 100%;
+  height: 28rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  z-index: 99;
+}
+
+.live_more .live_list .live_types {
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 20rpx;
+  color: #fff;
+  padding: 0 6rpx;
+  background: linear-gradient(264deg, rgba(241, 56, 75, 1), rgba(244, 71, 88, 1));
+  border-radius: 2rpx;
+  display: inline-block;
+}
+
+.Notice {
+  position: absolute;
+  left: 20rpx;
+  top: 20rpx;
+  z-index: 100;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 6rpx;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 12rpx;
+}
+
+.goodlist_image .Notice image {
+  width: 21rpx;
+  height: 20rpx;
+  margin-right: 8rpx;
+}
+
+.NoticeContent {
+  width: 95rpx;
+  height: 40rpx;
+  background: linear-gradient(264deg, rgba(101, 62, 179, 1), rgba(149, 108, 222, 1));
+  border-radius: 6rpx;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10rpx;
+  justify-content: center
+}
+.Mask{
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  opacity: 0
+}
+
+.lineOne{
+  width: 710rpx;
+  height: 710rpx;
+}
+.lineOne .goodlist_image{
+  width: 100%;
+  height: 100%;
+}
+.lineOne .goodlist_image .image{
+  height: 100%;
+}
+.liveing{
+  width: 100%;
+  white-space: nowrap;
+}
+.liveing .goodlist{
+  display: inline-block;
+  margin-right: 20rpx;
+  width: 280rpx;
+  height: 280rpx;
+}
+.liveing .goodlist_image{
+  width: 100%;
+  height: 100%;
+}
+.liveing .goodlist_image .image{
+  height: 100%;
+}
+
+.mask{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));
+}
+.huifangImg{
+  width: 100rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+}
+.emptyVideo{
+  width: 710rpx;
+  height: 710rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}

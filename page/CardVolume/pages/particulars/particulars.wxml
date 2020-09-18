@@ -1,0 +1,63 @@
+<view class="myProfitContent">
+  <view class="profitTop">
+    <view class="tips" wx:if="{{flag == 1}}">
+      <view>提醒：您有
+        <text>{{tips.total}}</text>悦豆即将在
+        <text>{{tips.text}}</text>过期，请尽快使用！</view>
+      <view class="close" bindtap='close'>X</view>
+    </view>
+    <view class="ContentArea">
+      <view class="Explain" bindtap='Explain'>
+        <view>悦豆说明</view>
+        <view class="QuestionMark">?</view>
+      </view>
+      <view class="Surplus">
+        <view class="num">{{available}}</view>
+        <view>当前可用悦豆，今日获得{{todayTotal}}币</view>
+      </view>
+      <view class="ToUse" bindtap='ToUse'>
+        <image src="https://image.yuelvhui.com/pubfile/2019/09/23/line_1569232830_24058.png"></image>
+        <text>去使用</text>
+      </view>
+    </view>
+  </view>
+  <view class="Total">
+    <view class="item">
+      <view>历史总额</view>
+      <view class="num">{{hisTotal}}</view>
+    </view>
+    <view class="s"></view>
+    <view class="item">
+      <view>消费总额</view>
+      <view class="num">{{consume}}</view>
+    </view>
+    <view class="s"></view>
+    <view class="item">
+      <view>过期币额</view>
+      <view class="num">{{expire}}</view>
+    </view>
+  </view>
+  <view class="contentList">
+    <view class="tab-h">
+      <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">全部
+      </view>
+      <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">收入
+      </view>
+      <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">支出
+      </view>
+      <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">过期
+      </view>
+    </view>
+    <view class="list" wx:for="{{list}}" wx:key="list">
+      <view style="width:80%">
+        <view class="title">
+          <text>{{item.content}}</text>
+        </view>
+        <view class="time">{{item.addTime}}</view>
+      </view>
+      <view style="color:{{item.type == 2?'#EE5854':'#9d9d9d'}};font-size:30rpx;">
+        <text wx:if="{{item.type == 2}}">+</text>
+        <text wx:else>-</text>{{item.number}}</view>
+    </view>
+  </view>
+</view>

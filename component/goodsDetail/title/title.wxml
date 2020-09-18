@@ -1,0 +1,22 @@
+<!-- <block wx:if='{{!typeC}}'>
+  <view class="openMember" bindtap="openMember" wx:if='{{openMember==0}}'>
+    <image   src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-16/22/yuelvhuiOdDg2WzNJw1579185669.png"></image>
+  </view>
+</block> -->
+<!-- <view class="openMember" bindtap="openMember" wx:if='{{openMember==0}}'>
+  <image  src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-16/22/yuelvhuiOdDg2WzNJw1579185669.png"></image>
+</view> -->
+
+<view class="title">
+  <view class="titleDetail">
+    <image wx:if='{{image}}' src="{{image}}"></image>
+    <text bindtap="copy" data-text="{{title}}">{{title}}</text>
+  </view>
+  <text>{{tip}}</text>
+</view>
+<view class="reason" wx:if='{{reasonShow}}'>
+  <view>
+    <text>推荐理由：</text>
+    <text>{{reasonData}}</text>
+  </view>
+</view>

@@ -1,0 +1,82 @@
+/* page/payment/Detailed/index.wxss */
+/* page/payment/payMain/index.wxss */
+@import "/page/LoadingPopup/LoadingPopup.wxss";
+page{
+  width: 100%;
+  height: 100%;
+}
+.detailedScroll{
+  width: 100%;
+  height: 100%;
+}
+.zcontent{
+  width: 100%;
+  min-height: 100%;
+}
+.zcontent>.list{
+  width: 100%;
+  height: 162rpx;
+  background: #fff;
+  margin-top:20rpx;
+  overflow: hidden;
+}
+.zcontent>.list>.top{
+  padding: 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+  line-height: 32rpx;
+  margin-top: 39rpx;
+}
+.zcontent>.list>.top>.text{
+  width: 357rpx;
+  height: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(20,20,20,1);
+}
+.zcontent>.list>.top>.addMoney{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(202,37,25,1);
+}
+.zcontent>.list>.top>.SubtractMoney{
+  color: #141414;
+}
+.zcontent>.list>.bottom{
+  padding: 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+  line-height: 24rpx;
+  margin-top: 35rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+.zcontent>.listnone{
+  width: 100%;
+  text-align: center;
+}
+.zcontent>.listnone>image{
+  width: 491rpx;
+  height: 344rpx;
+  margin-top: 179rpx;
+}
+.zcontent>.listnone>.stroll{
+  width:140rpx;
+  height:58rpx;
+  border:2rpx solid rgba(187,54,39,1);
+  border-radius:29rpx;
+  text-align: center;
+  line-height: 58rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(187,54,39,1);
+  margin: 0 auto;
+}

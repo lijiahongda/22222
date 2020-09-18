@@ -1,0 +1,81 @@
+/* page/MobileRecharge/pages/orders/orders.wxss */
+/* 分类 */
+.line-class{
+  line-height: 86rpx;
+  background:rgba(255,255,255,1);
+  border-top: 1rpx solid rgba(238,238,238,1);
+  margin: 0 auto;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  color:rgba(0,0,0,1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.line-class view{
+  border-bottom: 3rpx solid #fff;
+  width: 230rpx;
+  text-align: center;
+}
+.line-class view.active{
+  border-bottom: 4rpx solid rgba(243,85,67,1);
+  color: rgba(243,85,67,1);
+}
+
+
+/* 列表 */
+.order-list{
+  padding: 0 30rpx;
+  border-radius:5rpx;
+}
+.item{
+  background: #fff;
+  width: 690rpx;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  border-radius: 5rpx;
+}
+image{
+  width: 98rpx;
+  height: 98rpx;
+  margin: 0 31rpx 0 20rpx;
+  border-radius: 50%;
+  border: 1rpx solid #ccc;
+}
+.item>view{
+  display: flex;
+  flex-direction: column;
+  width: 542rpx;
+   font-family:PingFang SC;
+  font-weight:400;
+font-size:24rpx;
+}
+text.name,text.phone-number{
+  color:rgba(0,0,0,1);
+  line-height: 43rpx;
+}
+text.money{
+color:rgba(146,146,146,1);
+line-height: 43rpx;
+}
+view.header,.footer{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 36rpx;
+}
+.header .success{
+  color: #FC4A4B;
+}
+.footer button{
+width:103rpx;
+height:42rpx;
+font-size:23rpx;
+margin: 0 -13rpx 0 0;
+line-height: 42rpx;
+padding: 0;
+color:rgba(255,255,255,1);
+background:rgba(252,74,75,1);
+border-radius:10rpx;
+}

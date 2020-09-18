@@ -1,0 +1,90 @@
+<!-- 引入大红包 -->
+<redPopup  id="redPopup" inner-text="{{list}}"></redPopup>
+<import src="/page/LoadingPopup/LoadingPopup.wxml" />
+<block wx:if="{{LoadingStatus}}">
+  <template is="LoadingPopup" />
+</block>
+
+<!-- 小红包 -->
+<image class="SmallRedPopup" wx:if="{{isSmallRedPopup}}" src="https://image.yuelvhui.com/pubfile/2019/09/27/line_1569568647_47171.png" bindtap="VerificationCode" style="right:{{SmallRed?'-70rpx':''}}"></image>
+
+
+
+<video id="myVideo" bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{orderList.PlayURL}}" title="{{orderList.title}}" autoplay  enable-play-gesture="{{true}}" show-fullscreen-btn="{{isvslide}}" loop vslide-gesture-in-fullscreen="{{isvslide}}" auto-pause-if-open-native="true"></video>
+<!-- <video bindtouchstart="touchStart" bindtouchend="touchEnd" src="{{orderList.playUrl}}" bindended="playEnd"></video> -->
+
+<view class='content'>
+  <!-- 右边操作 -->
+  <view class='operation'>
+    <view class='operation-like' bindtap='handZan'>
+      <image src='https://image.yuelvhui.com/pubfile/2019/11/14/line_1573726701_39908.png' wx:if="{{orderList.is_zan==0}}" ></image>
+      <image src='https://image.yuelvhui.com/pubfile/2019/11/14/line_1573726738_40370.png' wx:else></image>
+      {{orderList.zan_num?orderList.zan_num:'赞'}}
+    </view>
+
+    <view class='operation-share' catchtap='onShare' wx:if="{{mid}}">
+      <image src='https://image.yuelvhui.com/pubfile/2019/11/14/line_1573726783_69407.png'></image>
+      {{orderList.share_num!=0?orderList.share_num:'转发'}}
+    </view>
+  </view>
+
+  <view class='content-bottom' >
+    <block wx:if="{{videoConFirst}}">
+
+      <!-- 关联商品 -->
+      <view class='goods' bindtap='playEnd' wx:if="{{orderList.showGoods}}">
+        <view class='goods-cont'>
+          <image class='goods-video' src='https://image.yuelvhui.com/pubfile/2019/11/14/line_1573730678_63728.png'></image>
+          <view class='title'>{{orderList.titleOut}}</view>
+        </view>
+      </view>
+
+
+      <!-- 发布人信息 -->
+      <view class='person'>
+        <view class="person-img">
+          <image class='head-img' src='{{auth_info.headerurl}}' mode="aspectFill"></image>
+          <image class="add" src="https://image.yuelvhui.com/pubfile/2019/11/20/line_1574229923_61834.png"></image>
+        </view>
+        <view>{{auth_info.nickname}}</view>
+      </view>
+
+
+    </block>
+
+    <block wx:if="{{videoConSecond}}" >
+
+      <!-- 关联商品 -->
+      <view class='goodsBox' wx:if="{{orderList.showGoods}}">
+        <view class="shop_title">{{orderList.titleIn}}</view>
+        <view class="goodsDetail">
+          <image class='goods-img' catchtap='goBuy' mode="aspectFill" src='{{orderList.productImage}}'></image>
+          <view class='title' catchtap='goBuy'>{{orderList.productName}}</view>
+          <image catchtap='closeSecond' class='closeGray' src='https://image.yuelvhui.com/pubfile/2019/11/14/line_1573730340_80935.png'></image>
+        </view>
+        <view class='goods-bot' catchtap='goBuy'>去逛逛 ></view>
+      </view>
+      
+    </block>
+  </view>
+</view>
+
+
+
+
+
+<!-- 分享弹窗 -->
+<view class="share-layer" wx:if="{{ sharelayer }}" catchtap='shareLayerClosed'>
+  <view class='share-layer-cont'>
+    <view class="share-layer-block">
+      <view class="share-layer-block-img">
+        <button open-type='share'>
+          <image src="/images/YueMall/WeChatShare@2x.png"></image>
+        </button>
+      </view>
+      <!-- <view class="share-layer-block-img" bindtap='goPoster'>
+        <image src="/images/YueMall/posterShare@2x.png"></image>
+      </view> -->
+    </view>
+  </view>
+</view>

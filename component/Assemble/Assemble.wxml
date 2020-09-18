@@ -1,0 +1,21 @@
+<banner id="banner" inner-text="{{list}}"></banner>
+
+<view class="goodInfo" wx:for="{{item}}" wx:key="item" data-id="{{item.id}}" data-skuid="{{item.skuId}}" data-url="/page/Yuemall/pages/AssembleDetail/AssembleDetail" bindtap='detail'>
+  <view>
+    <image src="{{item.goodsImg}}"></image>
+  </view>
+  <view class="info">
+    <view class="title">
+      <text>{{item.goodsName}}</text>
+    </view>
+    <view class="groupInfo">
+      <view class="price"><text>¥ </text>{{item.teamPrice}}</view>
+      <view class="OriginalPrice">{{item.remind}}：¥{{item.originPrice}} </view>
+    </view>
+    <view class="ClusteringNum">
+      <view class="num">{{item.needer}}人团</view>
+      <view class="OpeningRegiment">立即开团</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{!isHaveMore}}" class="isHaveMore">没有更多了～</view>

@@ -1,0 +1,70 @@
+/* page/MyRote/MyRote.wxss */
+.content-rote {
+  width: 100%;
+  background: #f8f8f8;
+}
+
+.content-rote .top {
+  width: 100%;
+  height: 300rpx;
+  background: linear-gradient(#ec4b46, #fafafa);
+}
+
+.content-rote .list-box {
+  width: 697rpx;
+  position: absolute;
+  top: 100rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.content-rote .list-box .top-box {
+  width: 697rpx;
+  height: 240rpx;
+  background: #fff;
+  border-radius: 13rpx;
+  margin-bottom: 13rpx;
+  overflow: hidden;
+}
+
+.content-rote .list-box .top-box .price-box {
+  width: 100%;
+  text-align: center;
+  font-size: 67rpx;
+  color: #333;
+  margin-top: 64rpx;
+  margin-bottom: 20rpx;
+}
+
+.content-rote .list-box .top-box .price-box .icon {
+  font-size: 33rpx;
+}
+
+.content-rote .list-box .top-box .total {
+  width: 100%;
+  text-align: center;
+  font-size: 31rpx;
+}
+
+.content-rote .list-box .list {
+  width: 100%;
+  height: 79rpx;
+  background: #fff;
+  border-radius: 13rpx;
+  box-sizing: border-box;
+  padding: 0 60rpx 0 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 15rpx;
+}
+
+.content-rote .list-box .list .right {
+  width: 11rpx;
+  height: 19rpx;
+  position: absolute;
+  top: 50%;
+  right: 27rpx;
+  transform: translateY(-50%);
+}

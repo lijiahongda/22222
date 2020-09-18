@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "一分钱抽奖",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "title": "/component/goodsDetail/titleNew/title",
+    "select": "/component/goodsDetail/select/select",
+    "comment": "/component/goodsDetail/comment/comment"
+  },
+  "navigationBarTextStyle": "black"
+}

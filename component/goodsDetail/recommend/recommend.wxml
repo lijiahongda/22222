@@ -1,0 +1,14 @@
+<view class="recommend">
+  <image  class="header" src="https://yuetao-1300766538.cos.ap-beijing.myqcloud.com/yuetao/image/2020-01-16/18/yuelvhuiSsDwnSQ2Xr1579172177.png"></image>
+  <scroll-view class="content" scroll-x>
+    <view class="list" wx:for="{{recommendGoods}}" bindtap="detail" data-goodsid="{{item.goodId}}" data-skuid="{{item.productSkuId}}" wx:key="recommendGoods">
+      <image src="{{item.goodCover}}"></image>
+      <view>{{item.goodName}}</view>
+      <view class="price">
+        <text>￥</text>
+        <text>{{item.goodVipPrice}}</text>
+        <text>￥{{item.goodPrice}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
